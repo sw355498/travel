@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400&display=swap');
+
+footer {
+  height: 203px;
+  background: #000;
+  font-weight: 400;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.td-footer {
+  padding-top: 25px;
+  width: 458px;
+  margin: auto;
+}
+
+.td-footer-contact {
+  height: 30px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  /* width: 224.87px; */
+}
+.td-footer-contact-text {
+  margin-right: 22px;
+}
+
+.td-footer-contact i {
+  font-size: 30px;
+}
+.td-footer-contact .fab:first-child {
+  padding-right: 25px;
+}
+.td-footer-line {
+  width: 100%;
+  border: 1px solid #ffffff;
+}
+.td-footer-notion {
+  margin-top: 25px;
+}

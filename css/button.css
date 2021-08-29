@@ -1,0 +1,103 @@
+.td-btn-smill-o {
+  width: 63px;
+  height: 28px;
+  padding: 6px 12px;
+  align-items: center;
+  background: #ff9c00;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
+.td-btn-medium-o {
+  width: 85px;
+  height: 40px;
+  padding: 10px 20px;
+  align-items: center;
+  background: #ff9c00;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
+.td-btn-large-o {
+  width: 115px;
+  height: 48px;
+  padding: 12px 32px;
+  /* align-items: center; */
+  background: #ff9c00;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
+.td-btn-large-delete {
+  width: 115px;
+  height: 48px;
+  background: #ff9c00;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
+.td-btn-large-gopay {
+  width: 192px;
+  height: 60px;
+  background: #ff9c00;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
+.td-btn-smill-b {
+  width: 63px;
+  height: 28px;
+  padding: 6px 12px;
+  align-items: center;
+  background: #174157;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
+.td-btn-medium-b {
+  width: 85px;
+  height: 40px;
+  padding: 10px 20px;
+  align-items: center;
+  background: #174157;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
+.td-btn-large-b {
+  width: 115px;
+  height: 48px;
+  padding: 12px 32px;
+  align-items: center;
+  background: #174157;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
+.td-btn-large-pay {
+  width: 192px;
+  height: 60px;
+  align-items: center;
+  background: #fd9c9c;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
+.td-btn-large-Sort {
+  width: 130px;
+  height: 50px;
+  align-items: center;
+  background: #fec90d;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
