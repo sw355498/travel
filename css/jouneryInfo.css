@@ -1,0 +1,61 @@
+.journey-info-name {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 40px;
+  color: #072b7b;
+}
+
+.jounery-info-like {
+  color: #ff9564;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.jounery-info-price {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.journey-info-point {
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height, or 150% */
+  text-align: center;
+  color: #fec90d;
+}
+
+.journey-info-smalltitle p {
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #000000;
+}
+
+
+.jounery-info i {
+  font-size: 36px;
+  color: rgb(0,0,0);
+}
+.jounery-info .fa-map-marker-alt {
+  font-size: 36px;
+  color: rgba(245, 8, 8, 1);
+  margin-left: 6px;
+}
+
+.mt-40{
+    margin-top: 40px;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+
+
+
+
