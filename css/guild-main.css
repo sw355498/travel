@@ -1,0 +1,350 @@
+/* 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400&display=swap');
+
+/* 顏色 */
+:root {
+  --blue-color: rgba(7, 43, 123, 1);
+  --heart--color: rgba(255, 149, 100, 1);
+  --bg-color: rgba(232, 247, 255, 1);
+  --btn-color: rgba(255, 156, 0, 1);
+  --tribe-color: rgba(61, 60, 60, 1);
+}
+
+/* ---------------------------------------------------------- */
+/* 導遊列表頁面 */
+article {
+  margin-top: 75px;
+  margin-bottom: 25px;
+}
+
+/* BANNER */
+.guildlist-banner {
+  position: relative;
+  margin-bottom: 75px;
+  margin-top: 75px;
+}
+.guildlist-banner-slider {
+  height: 444px;
+}
+.guildlist-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.dots {
+  max-width: 150px;
+  height: 15px;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.dots span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.dots span:first-child {
+  background-color: rgba(7, 43, 123, 1);
+}
+
+/* 快速篩選 */
+.guildlist-filter {
+  color: var(--blue-color);
+  margin-bottom: 75px;
+}
+.filter-title,
+.guildlist-newcm-title {
+  color: var(--blue-color);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 18px;
+}
+
+/* 快速篩選-共用 */
+.filter-tribe,
+.filter-language,
+.filter-stars {
+  width: 100%;
+  border: 1px solid var(--blue-color);
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+.filter-tribe-title p,
+.filter-language-title p,
+.filter-stars-title p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.filter-tribe-title-bg,
+.filter-language-title-bg,
+.filter-stars-title-bg {
+  width: 100%;
+  height: 100%;
+  background-color: var(--blue-color);
+  border-radius: 10px;
+}
+.filter-language-title,
+.filter-stars-title {
+  width: 128px;
+  height: 48px;
+  margin-right: 25px;
+}
+
+/* 部落篩選 */
+.filter-tribe-title {
+  width: 127px;
+  height: 96px;
+  margin-right: 25px;
+}
+.tribe-check-input {
+  visibility: hidden;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.tribe-check-input::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--blue-color);
+  border-radius: 50%;
+  visibility: visible;
+}
+.tribe-check-input:checked::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  visibility: visible;
+  background: var(--blue-color);
+}
+.tribe-check-label {
+  font-size: 20px;
+  line-height: 30px;
+  margin-right: 50px;
+}
+
+/* 語言篩選 */
+.language-check-input,
+.stars-check-input {
+  visibility: hidden;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.language-check-input::after,
+.stars-check-input::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--blue-color);
+  border-radius: 50%;
+  visibility: visible;
+}
+.language-check-input:checked::after,
+.stars-check-input:checked::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  visibility: visible;
+  background: var(--blue-color);
+}
+.language-check-label {
+  font-size: 20px;
+  line-height: 30px;
+  margin-right: 90px;
+}
+
+/* 導遊item共用 */
+.filter-result-item-main,
+.guildlist-newcm {
+  width: 263px;
+  height: 400px;
+}
+
+/* 篩選結果 */
+.guildlist-filter-result {
+  margin-bottom: 25px;
+}
+.filter-result-item {
+  width: 350px;
+  height: 450px;
+  background-color: var(--bg-color);
+  margin-bottom: 50px;
+}
+.guild-tribe {
+  top: 15px;
+  right: 15px;
+  color: var(--tribe-color);
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.guild-info {
+  margin-bottom: 25px;
+  width: 100%;
+}
+.guild-info-avatar {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+.guild-info-name {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
+.guild-info-stars {
+  width: 145.79px;
+  height: 24.44px;
+  background: yellow;
+}
+.interview-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+.interview-content {
+  width: 100%;
+  height: 48px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* 預約btn */
+.btn-booking {
+  width: 115px;
+  height: 48px;
+  padding: 12px 32px;
+  align-items: center;
+  background: var(--btn-color);
+  border: none;
+  border-radius: 25.5px;
+  margin-top: 46px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* 頁碼 */
+.guildlist-pages {
+  width: 149px;
+  height: 33.39px;
+  background: #000;
+  margin-top: -25px;
+}
+
+/* 新人導遊推薦 */
+.guildlist-newcm {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+}
+.guildlist-newcm-item {
+  width: 350px;
+  height: 450px;
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+
+/* ---------------------------------------------------------- */
+
+/* 導遊詳細頁面 */
+.guilddt-banner {
+  height: 573px;
+  margin-bottom: 75px;
+  margin-top: 75px;
+}
+
+.guilddt-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.guilddt-banner-content {
+  background: rgba(239, 239, 239, 0.6);
+  width: 700px;
+  height: 379px;
+  top: 97px;
+  left: 107px;
+  border-radius: 35px;
+  box-shadow: 3px 4px 4px 0px rgba(254, 254, 254, 0.25);
+}
+.quote {
+  width: 70.69px;
+  height: 58px;
+  margin-left: 35px;
+  margin-top: 35px;
+}
+.guilddt-banner-text {
+  width: 449px;
+  height: auto;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  margin-left: 50px;
+  color: var(--tribe-color);
+}
+.guild-intro {
+  background: var(--bg-color);
+  width: 100%;
+}
+.guild-intro-title {
+  background: var(--blue-color);
+  width: 696px;
+  height: 79px;
+  color: #fff;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+}
+.guild-intro-title h1 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 40px;
+}
+.guild-intro-title-review .score {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+}
+.guild-intro-title-review .star {
+  width: 130.79px;
+  height: 22.88px;
+  background: #fff;
+}
+.guild-intro-title-review .num {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+.guild-intro-content-img {
+  width: 542px;
+  height: 705px;
+}
+.guild-intro-content-dt {
+  margin-top: 79px;
+}
