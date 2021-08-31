@@ -1,0 +1,32 @@
+.box {
+  /* Rectangle 115 */
+
+  position: absolute;
+  width: 130px;
+  height: 44px;
+  left: 1101px;
+  bottom: 1108px;
+
+  background: #fec90d;
+  border-radius: 50px;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+.nav-article-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  /* display: flex; */
+  left: 69px;
+  top: 28px;
+}
+
+.nav-member-avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  margin-top: 24px;
+}

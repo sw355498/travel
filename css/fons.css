@@ -50,3 +50,14 @@ body {
   font-size: 16px;
   line-height: 28px;
 }
+
+/* "nav"字體及間距設定 */
+
+.nav-member-size18 {
+  font-size: 18px;
+  line-height: 30px;
+}
+.nav-member2-size18 {
+  font-size: 18px;
+  line-height: 55px;
+}
