@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="../css/spacing.css" />
     <!-- 按鈕設定css -->
     <link rel="stylesheet" href="../css/button.css" />
-
+    <!-- checkbox style -->
+    <link rel="stylesheet" href="../css/checkbox.css" />
     <style>
       /* 內容區塊設定 */
       .td-content {
@@ -109,10 +110,22 @@
       .shoppingcart-continue:hover {
         cursor: pointer;
       }
-      /* 推薦商品 */
+      /* 推薦商品區塊設定 */
+      .recommend-card {
+        width: 18rem;
+      }
+      /* 推薦商品圖片設定 */
       .recommend-img {
         width: 18rem;
         height: 185px;
+      }
+      /* 推薦商品文字介紹設定 */
+      .recommend-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
       }
     </style>
   </head>
@@ -198,8 +211,8 @@
             <td class="shoppingcart-checkbox-td">
               <img
                 class="td-my-25 shoppingcart-img"
-                src="../img/奇美部落4.png"
-                alt="奇美部落4"
+                src="../img/奇美部落大圖1.png"
+                alt="奇美部落大圖1"
               />
             </td>
             <!-- 行程內容 -->
@@ -233,8 +246,8 @@
             <td class="shoppingcart-checkbox-td">
               <img
                 class="td-my-25 shoppingcart-img"
-                src="../img/奇美部落4.png"
-                alt="奇美部落4"
+                src="../img/奇美部落大圖1.png"
+                alt="奇美部落大圖1"
               />
             </td>
             <!-- 行程內容 -->
@@ -283,15 +296,20 @@
             </td>
             <!-- 前往結帳 -->
             <td class="text-center">
-              <button class="btn td-btn-large-gopay text-title-size24">
+              <a
+                class="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
+                href="payment.html"
+              >
                 前往結帳
-              </button>
+              </a>
             </td>
           </tr>
         </table>
         <!-- 繼續購物連結 -->
         <div class="d-flex justify-content-end td-mt-25">
-          <a class="text-title-size24 shoppingcart-continue">繼續購物 ＞</a>
+          <a class="text-title-size24 shoppingcart-continue" href="#"
+            >繼續購物 ＞</a
+          >
         </div>
       </div>
       <!-- 其旅客還購買 -->
@@ -300,7 +318,7 @@
         <div class="shoppingcart-bg">
           <div class="d-flex justify-content-around td-my-25">
             <!-- 第一項推薦 -->
-            <div class="card td-my-25" style="width: 18rem">
+            <div class="card td-my-25 recommend-card">
               <img
                 class="recommend-img"
                 src="../img/馬太鞍部落03.jpg"
@@ -308,16 +326,18 @@
                 title="馬太鞍部落03"
               />
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                <h5 class="card-title">馬太鞍部落</h5>
+                <p
+                  class="card-text recommend-text"
+                  title="馬太鞍是一個阿美族（邦查）部落的稱呼，位在花蓮縣光復鄉馬錫山山腳下，早期是一群阿美族人生活在馬太鞍溪與烏卡蓋溪（現今大興溪）形成的一塊沖積扇地形，後來因鹽水港製糖廠（現今花蓮糖廠）的設立，在原來靠北的土地上廣植蔗糖原料－甘蔗，而使得當地的阿美族人不得不往南遷移。"
+                >
+                  馬太鞍是一個阿美族（邦查）部落的稱呼，位在花蓮縣光復鄉馬錫山山腳下，早期是一群阿美族人生活在馬太鞍溪與烏卡蓋溪（現今大興溪）形成的一塊沖積扇地形，後來因鹽水港製糖廠（現今花蓮糖廠）的設立，在原來靠北的土地上廣植蔗糖原料－甘蔗，而使得當地的阿美族人不得不往南遷移。
                 </p>
                 <a href="#" class="btn td-btn-medium-o">查看</a>
               </div>
             </div>
             <!-- 第二項推薦 -->
-            <div class="card td-my-25" style="width: 18rem">
+            <div class="card td-my-25 recommend-card">
               <img
                 class="recommend-img"
                 src="../img/靜浦06.jpg"
@@ -325,16 +345,18 @@
                 title="靜浦06"
               />
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                <h5 class="card-title">靜浦部落</h5>
+                <p
+                  class="card-text recommend-text"
+                  title="靜浦部落，一個洋溢熱血與熱情的太陽部落，跟著靜浦部落達人，體驗超精彩的漁獵生活吧！划上膠筏欣賞秀姑巒溪出海口豐富生態景致，學習智慧古法捕捉浪花蟹，還可體驗傳統拉弓射箭趣，簡單的半日時光，深度體驗靜浦部落生活樂！"
+                >
+                  靜浦部落，一個洋溢熱血與熱情的太陽部落，跟著靜浦部落達人，體驗超精彩的漁獵生活吧！划上膠筏欣賞秀姑巒溪出海口豐富生態景致，學習智慧古法捕捉浪花蟹，還可體驗傳統拉弓射箭趣，簡單的半日時光，深度體驗靜浦部落生活樂！
                 </p>
                 <a href="#" class="btn td-btn-medium-o">查看</a>
               </div>
             </div>
             <!-- 第三項推薦 -->
-            <div class="card td-my-25" style="width: 18rem">
+            <div class="card td-my-25 recommend-card">
               <img
                 class="recommend-img"
                 src="../img/水璉部落3.jpg"
@@ -342,31 +364,35 @@
                 title="水璉部落3"
               />
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                <h5 class="card-title">水璉部落</h5>
+                <p
+                  class="card-text recommend-text"
+                  title="阿美族語中的水璉部落，寫作Ciwidian知維地岸，是「此地多蛭」的意思。聽起來，以為水璉是個荒蕪之地，然而，這裡卻是和平閒適的小盆地，在山海的包圍下，從牧牛平原到高深峽谷，從溪流沿岸到動人沙灘，都展現出水璉之美，在靜謐中，帶有無限生命力。"
+                >
+                  阿美族語中的水璉部落，寫作Ciwidian知維地岸，是「此地多蛭」的意思。聽起來，以為水璉是個荒蕪之地，然而，這裡卻是和平閒適的小盆地，在山海的包圍下，從牧牛平原到高深峽谷，從溪流沿岸到動人沙灘，都展現出水璉之美，在靜謐中，帶有無限生命力。
                 </p>
                 <a href="#" class="btn td-btn-medium-o">查看</a>
               </div>
             </div>
             <!-- 第四項推薦 -->
-            <div class="card td-my-25" style="width: 18rem">
+            <!-- <div class="card td-my-25 recommend-card">
               <img
                 class="recommend-img"
-                src="../img/太巴塱部落05.jpg"
-                alt="太巴塱部落05"
-                title="太巴塱部落05"
+                src="../img/奇美部落4.png"
+                alt="奇美部落4"
+                title="奇美部落4"
               />
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                <h5 class="card-title">奇美部落4</h5>
+                <p
+                  class="card-text recommend-text"
+                  title="奇美部落的地名原來是源自於一種草，這種草的阿美族名字叫做「Kiwit」，以往在奇美這個區域很多，尤其在水源地一帶更是盛產。我們部落就因為「Kiwit」這種草叢生而叫做「Kiwit」。日據時期日本人將「Kiwit」的地名譯為「奇密」，應該是取近似音翻譯的，一直到現在瑞穗這一帶的閩客族群，稱呼奇美部落的方式，依然是習慣沿用日據時期的「奇密社」（台語或客語）。國民政府來了以後呢，又將「奇密」改成「奇美」。"
+                >
+                  奇美部落的地名原來是源自於一種草，這種草的阿美族名字叫做「Kiwit」，以往在奇美這個區域很多，尤其在水源地一帶更是盛產。我們部落就因為「Kiwit」這種草叢生而叫做「Kiwit」。日據時期日本人將「Kiwit」的地名譯為「奇密」，應該是取近似音翻譯的，一直到現在瑞穗這一帶的閩客族群，稱呼奇美部落的方式，依然是習慣沿用日據時期的「奇密社」（台語或客語）。國民政府來了以後呢，又將「奇密」改成「奇美」。
                 </p>
                 <a href="#" class="btn td-btn-medium-o">查看</a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
