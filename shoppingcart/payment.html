@@ -115,6 +115,29 @@
       .shoppingcart-continue {
         text-decoration: none;
       }
+      .mask {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.8);
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        display: none;
+      }
+      .mask.active {
+        display: block;
+      }
+      .modal {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 300px;
+        transform: translate(-50%, -50%);
+      }
     </style>
   </head>
   <body>
@@ -606,7 +629,7 @@
                     <img
                       class="td-my-25 shoppingcart-img"
                       src="../img/奇美部落大圖1.png"
-                      alt="奇美部落大圖1"
+                      alt="奇美部落4"
                     />
                   </td>
                   <!-- 行程內容 -->
@@ -650,9 +673,21 @@
                   </td>
                   <!-- 前往結帳 -->
                   <td class="text-center">
-                    <button class="btn td-btn-large-gopay text-title-size24">
-                      前往結帳
+                    <button
+                      class="btn td-btn-large-gopay text-title-size24"
+                      id="pay"
+                    >
+                      確認付款
                     </button>
+                    <div class="mask" id="mask">
+                      <div class="modal">
+                        <h3>是否確認?</h3>
+                        <div>
+                          <button id="gobuy">關閉</button>
+                          <button id="close">關閉</button>
+                        </div>
+                      </div>
+                    </div>
                   </td>
                 </tr>
               </table>
@@ -695,4 +730,20 @@
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"
   ></script>
+  <script>
+    let pay = document.querySelector('#pay')
+    let close = document.querySelector('#close')
+    let mask = document.querySelector('#mask')
+    pay.addEventListener('click', function () {
+      mask.classList.add('active')
+    })
+    gobuy.addEventListener('click', function () {
+      mask.classList.remove('active')
+      window.location.href = 'http://127.0.0.1:5501/checkbox.html'
+    })
+    close.addEventListener('click', function () {
+      mask.classList.remove('active')
+      window.location.href = 'http://127.0.0.1:5501/checkbox.html'
+    })
+  </script>
 </html>
