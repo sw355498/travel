@@ -27,8 +27,6 @@
     <link rel="stylesheet" href="/css/guild-main.css" />
     <!-- reset設定css -->
     <link rel="stylesheet" href="/css/reset.css" />
-
-
     <!-- 字體設定css -->
     <link rel="stylesheet" href="/css/fons.css" />
     <!-- 間距設定css -->
@@ -76,9 +74,9 @@
       </div>
     </header>
     <!-- content -->
-    <article class="guild-dt">
+    <article class="container guild-dt td-mb-25">
       <!-- 大圖 -->
-      <div class="guilddt-banner position-relative">
+      <div class="guilddt-banner position-relative td-mt-75">
           <img class="img-fluid guilddt-banner-img" src="img/大圖2.jpg"  alt="">
           <div class="guilddt-banner-content position-absolute d-flex">
             <img class="quote" src="img/quotes.png" alt="">
@@ -86,38 +84,201 @@
           </div>
       </div>
       <!-- 導遊介紹主要內容 -->
-      <main class="container">
-        <section class="guild-intro position-relative">
-          <div class="guild-intro-title d-flex align-items-center justify-content-center position-absolute mx-auto">
+      <!-- <main class="container"> -->
+        <!-- 導遊資料 -->
+        <section class="guild-intro" >
+          <!-- 標題 -->
+          <div class="guild-intro-title d-flex align-items-center justify-content-center position-relative mx-auto ">
             <h1>瓦丹的瘋狂冒險團</h1>
-            <div class="guild-intro-title-review d-flex">
+            <div class="guild-intro-title-review d-flex align-items-center">
               <div class="score">4.0</div>
               <div class="star"></div>
               <div class="review-num">(27)</div>
             </div>
-
           </div>
-          <div class="guild-intro-content d-flex">
-            <div class="guild-intro-content-img"></div>
-            <div class="guild-intro-content-dt">
-              <div class="guild-intro-content-tribe">
-                <p>帶團部落</p>
-                <p>靜浦步落</p>
+          <div class="guild-intro-box d-flex justify-content-between td-mb-75">
+            <!-- 導遊圖片 -->
+            <div class="guild-intro-item-img">
+              <div class="intro-item-img-t d-flex justify-content-between align-items-end">
+                <img class="t-left"src="/img/導遊2-2.jpg" alt="">
+                <img class="t-right"src="/img/導遊2-3.jpeg" alt="">
               </div>
-              <div class="guild-intro-content-license">
-                <p>證照</p>
-                <p>華語導遊證照</p>
+              <div class="intro-item-img-b d-flex align-items-start justify-content-between">
+                <img class="b-left"src="/img/導遊2-1.jpg" alt="" >
+                <img class="b-right" src="/img/導遊2-4.jpg" alt="">
               </div>
-              <div class="guild-intro-content-language">
-                <p>語言</p>
-                <p>中文、英文</p>
+            </div>
+            <!-- 導遊介紹 -->
+            <div class="guild-intro-item-group d-flex flex-column td-mb-25">
+              <div class="guild-intro-item-dt">
+                <div class="guild-intro-tribe d-flex align-items-center">
+                  <div class="item-icon"></div>
+                  <div class="guild-intro-item-tribe">
+                    <p class="item-tribe-title">帶團部落</p>
+                    <p class="item-tribe-txt">靜浦步落</p>
+                  </div>
+                </div>
+                <div class="guild-intro-license d-flex align-items-center">
+                <div class="item-icon"></div>
+                <div class="guild-intro-item-license">
+                  <p class="item-license-title">證照</p>
+                  <p class="item-license-txt">華語導遊證照</p>
+                </div>
+                </div>
+                <div class="guild-intro-lan d-flex align-items-center">
+                <div class="item-icon"></div>
+                <div class="guild-intro-item-lan"> 
+                  <p class="item-lan-title">語言</p>
+                  <p class="item-lan-txt">中文、英文</p>
+                </div>
+                </div>
+                <button class="btn-consult text-white">諮詢</button>
               </div>
-              <button class="btn-booking text-white">諮詢</button>
-
+              <!-- 影片 -->
+              <div class="guild-intro-video">
+              <iframe width="505" height="296" src="https://www.youtube.com/embed/du6uL8LsDnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </section>
-      </main>
+        <!-- 預約 -->
+        <section class="guild-booking td-mb-75">
+          <h1 class="guild-booking-title">預約出團日期</h1>
+          <input type="date" class="form-control" id="date" name="date">
+        </section>
+        <!-- 體驗行程 -->
+        <section class="guild-journey td-mb-75 d-flex flex-column">
+          <h1 class="guild-journey-title">體驗行程</h1>
+          <!-- 體驗行程1 -->
+          <div class="guild-journey-item td-mb-25">
+            <!-- 白色bg -->
+            <div class="guild-journey-item-bg float-end">
+              <div class="guild-journey-tribe position-absolute">
+                <i class="fas fa-tags"></i><span>靜浦部落</span>
+              </div>
+              <!-- 內容 -->
+              <div class="guild-journey-content position-relative">
+                <!-- title部分 -->
+                <div class="guild-journey-item-title">
+                  <div class="guild-journey-item-name">花蓮｜獵人學校特色體驗</div>
+                  <div class="line"></div>
+                </div>
+                <div class="guild-jorney-item-price "><span>NT$1800</span></div>
+                <div class="guild-jorney-item-txt">一場旅行，見證一包鹽、一把刀就能在山林生存的強大技能。跟著耆老獵人進入獵場、在山裡生活，沒有安排好的橋段，穿梭在山林中親身體驗獵人的日常。真實走入，一樣發生在這塊土地上另一群人的生活。
+                </div>
+                <div class="guild-journey-act d-flex flex-column align-items-center position-absolute">
+                  <button class="act-btn btn-detail">詳細</button>
+                  <button class="act-btn btn-booking-md">預約</button>
+                  <a class="act-btn heart"><img src="/img/collect.png" alt=""></a>
+                </div>
+                <div class="guild-journey-review d-flex align-items-center">
+                  <div class="guild-journey-review-title">評價：</div>
+                  <div class="guild-journey-review-score">4.0</div>
+                  <div class="guild-journey-review-star"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- 體驗行程2 -->
+          <div class="guild-journey-item position-relative">
+            <!-- 白色bg -->
+            <div class="guild-journey-item-bg  float-end">
+              <div class="guild-journey-tribe position-absolute">
+                <i class="fas fa-tags"></i><span>靜浦部落</span>
+              </div>
+              <!-- 內容 -->
+              <div class="guild-journey-content position-relative">
+                <!-- title部分 -->
+                <div class="guild-journey-item-title">
+                  <div class="guild-journey-item-name">花蓮｜獵人學校特色體驗</div>
+                  <div class="line"></div>
+                </div>
+                <div class="guild-jorney-item-price "><span>NT$1800</span></div>
+                <div class="guild-jorney-item-txt">一場旅行，見證一包鹽、一把刀就能在山林生存的強大技能。跟著耆老獵人進入獵場、在山裡生活，沒有安排好的橋段，穿梭在山林中親身體驗獵人的日常。真實走入，一樣發生在這塊土地上另一群人的生活。
+                </div>
+                <div class="guild-journey-act d-flex flex-column align-items-center position-absolute">
+                  <button class="act-btn btn-detail">詳細</button>
+                  <button class="act-btn btn-booking-md">預約</button>
+                  <a class="act-btn heart"><img src="/img/collect.png" alt=""></a>
+                </div>
+                <div class="guild-journey-review d-flex align-items-center">
+                  <div class="guild-journey-review-title">評價：</div>
+                  <div class="guild-journey-review-score">4.0</div>
+                  <div class="guild-journey-review-star"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+        <!-- 旅客評價 -->
+        <section class="guild-intro-guest td-mb-25 ">
+          <div class="guild-intro-guest-title d-flex justify-content-between position-relative">
+            <h1 >旅客評價</h1>
+            <button class="btn-sort d-flex justify-content-center position-absolute">
+              <span>排序</span>
+              <a href=""><img src="/img/排序 icon.png" alt=""></a>
+            </button>
+          </div>
+          <div class="intro-guest-box">
+            <!-- 旅客評價item1 -->
+            <div class="intro-guest-item td-mb-75">
+              <!-- 旅客頭像/姓名/星等 -->
+              <div class="intro-guest-info d-flex">
+                <img class="avatar" src="/img/avatar.png" alt="">
+                <div class="intro-guest-dt ">
+                  <p class="intro-guest-dt-name">Cindy</p>
+                  <div class="stars">
+                    <img src="/img/star.png" alt="">
+                    <img src="/img/star.png" alt="">
+                    <img src="/img/star.png" alt="">
+                    <img src="/img/star.png" alt="">
+                    <img src="/img/star.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <!-- 旅客評價 -->
+              <div class="intro-guest-review td-mb-25">
+                <p class="intro-guest-review-txt">獨木舟好好玩，謝謝C大帶我們去玩。</p>
+                <img src="/img/奇美部落4.png" alt="">
+              </div>
+              <!-- 導遊回覆 -->
+              <div class="intro-guest-reply d-flex align-items-center">
+                <img class="avatar" src="/img/avatar.png" alt="">
+                <p>很開心你會喜歡，歡迎下次再來。</p>
+              </div>
+            </div>
+            <!-- 旅客評價item2 -->
+            <div class="intro-guest-item">
+              <!-- 旅客頭像/姓名/星等 -->
+              <div class="intro-guest-info d-flex">
+                <img class="avatar" src="/img/avatar.png" alt="">
+                <div class="intro-guest-dt ">
+                  <p class="intro-guest-dt-name">Cindy</p>
+                  <div class="stars">
+                    <img src="/img/star.png" alt="">
+                    <img src="/img/star.png" alt="">
+                    <img src="/img/star.png" alt="">
+                    <img src="/img/star.png" alt="">
+                    <img src="/img/star.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <!-- 旅客評價 -->
+              <div class="intro-guest-review td-mb-25">
+                <p class="intro-guest-review-txt">獨木舟好好玩，謝謝C大帶我們去玩。</p>
+                <img src="/img/奇美部落4.png" alt="">
+              </div>
+              <!-- 導遊回覆 -->
+              <div class="intro-guest-reply d-flex align-items-center">
+                <img class="avatar" src="/img/avatar.png" alt="">
+                <p>很開心你會喜歡，歡迎下次再來。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      <!-- </main> -->
+    </article>
     <!-- content end-->
     <!-- footer -->
     <footer class="text-content-footer text-white">

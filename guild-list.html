@@ -27,8 +27,6 @@
     <link rel="stylesheet" href="/css/guild-main.css" />
     <!-- reset設定css -->
     <link rel="stylesheet" href="/css/reset.css" />
-
-
     <!-- 字體設定css -->
     <link rel="stylesheet" href="/css/fons.css" />
     <!-- 間距設定css -->
@@ -57,7 +55,7 @@
             <a href="#"><span>在地導遊</span></a>
           </ul>
           <!-- 導覽列登入前右側 -->
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center"> 
             <button class="td-btn-medium-o td-header-login">登入</button>
             <button class="td-btn-medium-b td-header-register">註冊</button>
           </div>
@@ -78,7 +76,7 @@
     <!-- content -->
     <article class="">
       <!-- 大圖 -->
-      <section class="container guildlist-banner col-12 ">
+      <section class="container guildlist-banner position-relative td-mt-75 td-mb-75 ">
         <div class="guildlist-banner-slider">
           <img class="img-fluid guildlist-banner-img" src="img/大圖2.jpg"  alt="">
         </div>
@@ -90,7 +88,7 @@
           </div>
       </section>
       <!-- 篩選 -->
-      <section class="container guildlist-filter col-12">
+      <section class="container guildlist-filter td-mb-75">
         <h2 class="filter-title">快速篩選</h2>
         <!-- 部落篩選 -->
         <div class="filter-tribe d-flex">
@@ -99,34 +97,53 @@
             <div class="filter-tribe-title-bg"></div>
           </div>
           <!-- checkbox選項 -->
-            <div class="filter-tribe-check my-auto">
+            <div class="filter-tribe-check d-flex flex-wrap">
+              <div>
                 <input type="checkbox" class="tribe-check-input position-relative" name="" id="" value="" checked>
                 <label class="tribe-check-label">靜浦部落</label>
+              </div>
+              <div>
                 <input type="checkbox" class="tribe-check-input position-relative" name="" id="" value="" >
                 <label class="tribe-check-label">新社部落</label>
+              </div>
+              <div>
                 <input type="checkbox" class="tribe-check-input position-relative" name="" id="" value="" >
                 <label class="tribe-check-label">太巴塱部落</label>
+              </div>
+              <div>
                 <input type="checkbox" class="tribe-check-input position-relative" name="" id="" value="" >
                 <label class="tribe-check-label">撒固兒部落</label>
+              </div>
+              <div>
                 <input type="checkbox" class="tribe-check-input position-relative" name="" id="" value="" >
                 <label class="tribe-check-label">馬太鞍部落</label>
+              </div>
+              <div>
                 <input type="checkbox" class="tribe-check-input position-relative" name="" id="" value="" >
-                <label class="tribe-check-label">水璉部落</label><input type="checkbox" class="tribe-check-input position-relative" name="" id="" value="" >
+                <label class="tribe-check-label">水璉部落</label>
+              </div>
+              <div>
+                <input type="checkbox" class="tribe-check-input position-relative" name="" id="" value="" >
                 <label class="tribe-check-label">奇美部落</label>
+              </div>
             </div>
         </div>
         
         <!-- 語言篩選 -->
-        <div class="filter-language d-flex"> 
+        <div class="filter-language d-flex align-items-center"> 
           <div class="filter-language-title position-relative">
             <p class="position-absolute text-white">語言</p>
             <div class="filter-language-title-bg"></div>
           </div>
-          <div class="filter-language-check my-auto">
-            <input type="checkbox" class="language-check-input position-relative" name="" id="" value="" checked>
-            <label class="language-check-label">中文</label>
-            <input type="checkbox" class="language-check-input position-relative" name="" id="" value="" >
-            <label class="language-check-label">英文</label> 
+          <div class="filter-language-check d-flex">
+            <div>
+              <input type="checkbox" class="language-check-input position-relative" name="" id="" value="" checked>
+              <label class="language-check-label">中文</label>
+            </div>
+            <div>
+              <input type="checkbox" class="language-check-input position-relative" name="" id="" value="" >
+              <label class="language-check-label">英文</label> 
+            </div>
           </div>      
         </div>
        
@@ -136,20 +153,34 @@
             <p class="position-absolute text-white">星等</p>
             <div class="filter-stars-title-bg"></div>
           </div>
-          <div class="filter-stars-check my-auto">
-            <input type="checkbox" class="stars-check-input position-relative" name="" id="" value="" checked>
-            <label class="stars-check-label">中文</label>
-            <input type="checkbox" class="stars-check-input position-relative" name="" id="" value="" >
-            <label class="stars-check-label">英文</label>  
+          <div class="filter-stars-check my-auto d-flex ">
+            <div>
+              <input type="checkbox" class="stars-check-input position-relative" name="" id="" value="" checked>
+              <label class="stars-check-label"><img src="/img/five-stars.png" alt=""></label>
+            </div>
+            <div>
+              <input type="checkbox" class="stars-check-input position-relative" name="" id="" value="" >
+              <label class="stars-check-label"><img src="/img/four-stars.png" alt=""></label>
+            </div>
+            <div>
+              <input type="checkbox" class="stars-check-input position-relative" name="" id="" value="" >
+              <label class="stars-check-label"><img src="/img/three-stars.png" alt=""></label>
+            </div>
+            <div>
+              <input type="checkbox" class="stars-check-input position-relative" name="" id="" value="" >
+              <label class="stars-check-label"><img src="/img/two-stars.png" alt=""></label>
+
+            </div>
+
+
           </div>     
         </div>
-
       </section>
 
       <!-- 篩選結果 -->
-      <section class="container guildlist-filter-result col-12">
+      <section class="container guildlist-filter-result td-mb-25">
         <h2 class="filter-title">篩選結果：</h2>
-        <div class="filter-result-box d-flex flex-wrap justify-content-between">
+        <div class="filter-result-box d-flex flex-wrap justify-content-between td-mb-25">
           <!-- 導遊item1 -->
           <div class="filter-result-item position-relative d-flex align-items-center">
             <div class="guild-tribe position-absolute">靜浦部落</div>
@@ -171,7 +202,6 @@
               <button class="btn-booking text-white">預約</button>
             </div>
           </div>
-        
           <!-- 導遊item2 -->
           <div class="filter-result-item position-relative d-flex align-items-center">
             <div class="guild-tribe position-absolute">靜浦部落</div>
@@ -193,7 +223,6 @@
               <button class="btn-booking text-white">預約</button>
             </div>
           </div>
-
           <!-- 導遊item3 -->
           <div class="filter-result-item position-relative d-flex align-items-center">
             <div class="guild-tribe position-absolute">靜浦部落</div>
@@ -215,7 +244,6 @@
               <button class="btn-booking text-white">預約</button>
             </div>
           </div>
-
           <!-- 導遊item4 -->
           <div class="filter-result-item position-relative d-flex align-items-center">
             <div class="guild-tribe position-absolute">靜浦部落</div>
@@ -237,7 +265,6 @@
               <button class="btn-booking text-white">預約</button>
             </div>
           </div>
-        
           <!-- 導遊item5 -->
           <div class="filter-result-item position-relative d-flex align-items-center">
             <div class="guild-tribe position-absolute">靜浦部落</div>
@@ -259,7 +286,6 @@
               <button class="btn-booking text-white">預約</button>
             </div>
           </div>
-
           <!-- 導遊item6 -->
           <div class="filter-result-item position-relative d-flex align-items-center">
             <div class="guild-tribe position-absolute">靜浦部落</div>
@@ -282,18 +308,35 @@
             </div>
           </div>
         </div>
-        <div class="guildlist-pages mx-auto"></div>
+        <!-- 頁碼 -->
+        <nav aria-label="Page navigation example" >
+          <ul class="pagination mx-auto">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true"><</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link align-middle" href="#"><span >1</span></a></li>
+            <li class="page-item"><a class="page-link" href="#"><span class="text-center">2</span></a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span class="text-center"aria-hidden="true">></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </section>
 
       <!-- 新人導遊推薦 -->
-      <section class="guildlist-newcm">
-        <div class="container guildlist-new-box d-flex justify-content-between">
-          <h2 class="guildlist-newcm-title">新人導遊推薦</h2>
+      <section class="guildlist-new td-mb-25">
+        <div class="container guildlist-new-box">
+          <h2 class="guildlist-new-title ">新人導遊推薦</h2>
+          <div class="guildlist-new-box d-flex flex-wrap justify-content-between">
           <!-- 新人導遊item1 -->
-          <div class="guildlist-newcm-item position-relative d-flex align-items-center">
+          <div class="guildlist-new-item position-relative d-flex align-items-center">
             <div class="guild-tribe position-absolute">靜浦部落</div>
-            <div class="guildlist-newcm-main mx-auto d-flex flex-wrp flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
+            <div class="guildlist-new-main mx-auto d-flex flex-wrp flex-column align-items-center">
               <div class="guild-info">
                 <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
                 <div class="guild-info-name text-center">
@@ -311,9 +354,9 @@
             </div>
           </div>
           <!-- 新人導遊item2 -->
-          <div class="guildlist-newcm-item position-relative d-flex align-items-center">
+          <div class="guildlist-new-item position-relative d-flex align-items-center">
             <div class="guild-tribe position-absolute">靜浦部落</div>
-            <div class="guildlist-newcm-main mx-auto d-flex flex-wrp flex-column align-items-center">
+            <div class="guildlist-new-main mx-auto d-flex flex-wrp flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
                 <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
@@ -332,9 +375,9 @@
             </div>
           </div>
           <!-- 新人導遊item3 -->
-          <div class="guildlist-newcm-item position-relative d-flex align-items-center">
+          <div class="guildlist-new-item position-relative d-flex align-items-center">
             <div class="guild-tribe position-absolute">靜浦部落</div>
-            <div class="guildlist-newcm-main mx-auto d-flex flex-wrp flex-column align-items-center">
+            <div class="guildlist-new-main mx-auto d-flex flex-wrp flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
                 <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
@@ -355,6 +398,7 @@
         </div>
 
       </section>
+ 
     </article>
     <!-- content end-->
     <!-- footer -->
