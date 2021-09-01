@@ -83,11 +83,6 @@ header {
   font-size: 14px;
   font-weight: 500;
 }
+
 @media screen and (max-width: 576px) {
 }
-/* 主內容 */
-/* .main-container {
-  margin: auto;
-  height: 100%;
-  border: 1px solid red;
-} */
