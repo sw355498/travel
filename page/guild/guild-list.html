@@ -20,7 +20,7 @@
       crossorigin="anonymous"
     />
     <!-- header設定css -->
-    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="/css/header.css" />
     <!-- footer設定css -->
     <link rel="stylesheet" href="/css/footer.css" />
     <!-- 主要內容設定css -->
@@ -36,11 +36,11 @@
   </head>
   <style></style>
   <body>
-    <!-- heater -->
+    <!-- 頁首 -->
     <header class="td-header">
       <div class="container td-header-main d-flex align-items-center">
         <!-- LOGO區  -->
-        <a class="td-logo d-flex" href="#">
+        <a class="td-logo d-flex" href="/home.html">
           <img class="td-logo-img" src="/img/logo.png" alt="logo" />
           <img
             class="td-logo-text"
@@ -51,25 +51,25 @@
         <!-- 導覽列左側 -->
         <nav class="td-nav align-items-center">
           <ul class="left-nav d-flex my-auto">
-            <a href="#"><span>部落行程</span></a>
-            <a href="#"><span>在地導遊</span></a>
+            <a href="/page/jounery/journey.html"><span>部落行程</span></a>
+            <a href="/page/guild/guild-list.html"><span>在地導遊</span></a>
           </ul>
           <!-- 導覽列登入前右側 -->
-          <div class="d-flex align-items-center"> 
+          <!-- <div class="d-flex align-items-center">
             <button class="td-btn-medium-o td-header-login">登入</button>
             <button class="td-btn-medium-b td-header-register">註冊</button>
-          </div>
+          </div> -->
 
           <!-- 導覽列登入後右側 -->
-          <!-- <div class="right-nav">
+          <div class="right-nav">
             <a href="通知"><i class="fas fa-comment-dots"></i></a>
-            <a class="td-cart" href="購物車"
-              ><img src="img/cart.png" alt="cart"
+            <a class="td-cart" href="/page/shoppingcart/shoppingcart-cart-list.html"
+              ><img src="/img/cart.png" alt="cart"
             /></a>
             <a class="td-member" href="會員首頁#"
-              ><img class="td-member-avatar" src="img/avatar.png" alt="avatar"
+              ><img class="td-member-avatar" src="/img/avatar.png" alt="avatar"
             /></a>
-          </div> -->
+          </div>
         </nav>
       </div>
     </header>
@@ -78,7 +78,7 @@
       <!-- 大圖 -->
       <section class="container guildlist-banner position-relative td-mt-75 td-mb-75 ">
         <div class="guildlist-banner-slider">
-          <img class="img-fluid guildlist-banner-img" src="img/大圖2.jpg"  alt="">
+          <img class="img-fluid guildlist-banner-img" src="/img/大圖2.jpg"  alt="">
         </div>
           <div class="dots d-flex justify-content-between">
             <span></span>
@@ -187,7 +187,7 @@
             <div class="filter-result-item-main mx-auto d-flex flex-wrp flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
-                <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
+                <img class="guild-info-avatar d-block mx-auto" src="/img/導遊2-1.jpg" alt="guild-avatar">
                 <div class="guild-info-name text-center">
                  拉庫克
                 </div>
@@ -199,7 +199,7 @@
                 <p class="interview-content text-center">謝謝導遊的解說，這鋼旅程非常開心，下次要再來！</p>
               </div>
             <!-- 預約button -->
-              <button class="btn-booking text-white">預約</button>
+            <a class="btn-booking text-white  btn d-flex align-items-center justify-content-center" href="guild-intro.html">預約</a>
             </div>
           </div>
           <!-- 導遊item2 -->
@@ -208,7 +208,7 @@
             <div class="filter-result-item-main mx-auto d-flex flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
-                <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
+                <img class="guild-info-avatar d-block mx-auto" src="/img/導遊2-1.jpg" alt="guild-avatar">
                 <div class="guild-info-name text-center">
                  拉庫克
                 </div>
@@ -220,7 +220,7 @@
                 <p class="interview-content text-center">謝謝導遊的解說，這鋼旅程非常開心，下次要再來！</p>
               </div>
             <!-- 預約button -->
-              <button class="btn-booking text-white">預約</button>
+            <a class="btn-booking text-white  btn d-flex align-items-center justify-content-center" href="guild-intro.html">預約</a>
             </div>
           </div>
           <!-- 導遊item3 -->
@@ -229,7 +229,7 @@
             <div class="filter-result-item-main mx-auto d-flex flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
-                <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
+                <img class="guild-info-avatar d-block mx-auto" src="/img/導遊2-1.jpg" alt="guild-avatar">
                 <div class="guild-info-name text-center">
                  拉庫克
                 </div>
@@ -241,7 +241,7 @@
                 <p class="interview-content text-center">謝謝導遊的解說，這鋼旅程非常開心，下次要再來！</p>
               </div>
             <!-- 預約button -->
-              <button class="btn-booking text-white">預約</button>
+            <a class="btn-booking text-white  btn d-flex align-items-center justify-content-center" href="guild-intro.html">預約</a>
             </div>
           </div>
           <!-- 導遊item4 -->
@@ -250,7 +250,7 @@
             <div class="filter-result-item-main mx-auto d-flex flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
-                <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
+                <img class="guild-info-avatar d-block mx-auto" src="/img/導遊2-1.jpg" alt="guild-avatar">
                 <div class="guild-info-name text-center">
                  拉庫克
                 </div>
@@ -262,7 +262,7 @@
                 <p class="interview-content text-center">謝謝導遊的解說，這鋼旅程非常開心，下次要再來！</p>
               </div>
             <!-- 預約button -->
-              <button class="btn-booking text-white">預約</button>
+            <a class="btn-booking text-white  btn d-flex align-items-center justify-content-center" href="guild-intro.html">預約</a>
             </div>
           </div>
           <!-- 導遊item5 -->
@@ -271,7 +271,7 @@
             <div class="filter-result-item-main mx-auto d-flex flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
-                <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
+                <img class="guild-info-avatar d-block mx-auto" src="/img/導遊2-1.jpg" alt="guild-avatar">
                 <div class="guild-info-name text-center">
                  拉庫克
                 </div>
@@ -283,7 +283,7 @@
                 <p class="interview-content text-center">謝謝導遊的解說，這鋼旅程非常開心，下次要再來！</p>
               </div>
             <!-- 預約button -->
-              <button class="btn-booking text-white">預約</button>
+            <a class="btn-booking text-white  btn d-flex align-items-center justify-content-center" href="guild-intro.html">預約</a>
             </div>
           </div>
           <!-- 導遊item6 -->
@@ -292,7 +292,7 @@
             <div class="filter-result-item-main mx-auto d-flex flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
-                <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
+                <img class="guild-info-avatar d-block mx-auto" src="/img/導遊2-1.jpg" alt="guild-avatar">
                 <div class="guild-info-name text-center">
                  拉庫克
                 </div>
@@ -304,7 +304,7 @@
                 <p class="interview-content text-center">謝謝導遊的解說，這鋼旅程非常開心，下次要再來！</p>
               </div>
             <!-- 預約button -->
-              <button class="btn-booking text-white">預約</button>
+            <a class="btn-booking text-white  btn d-flex align-items-center justify-content-center" href="guild-intro.html">預約</a>
             </div>
           </div>
         </div>
@@ -338,7 +338,7 @@
             <!-- 上方導遊基本資料 -->
             <div class="guildlist-new-main mx-auto d-flex flex-wrp flex-column align-items-center">
               <div class="guild-info">
-                <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
+                <img class="guild-info-avatar d-block mx-auto" src="/img/導遊2-1.jpg" alt="guild-avatar">
                 <div class="guild-info-name text-center">
                  拉庫克
                 </div>
@@ -350,7 +350,7 @@
                 <p class="interview-content text-center">謝謝導遊的解說，這鋼旅程非常開心，下次要再來！</p>
               </div>
             <!-- 預約button -->
-              <button class="btn-booking text-white">預約</button>
+            <a class="btn-booking text-white  btn d-flex align-items-center justify-content-center" href="guild-intro.html">預約</a>
             </div>
           </div>
           <!-- 新人導遊item2 -->
@@ -359,7 +359,7 @@
             <div class="guildlist-new-main mx-auto d-flex flex-wrp flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
-                <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
+                <img class="guild-info-avatar d-block mx-auto" src="/img/導遊2-1.jpg" alt="guild-avatar">
                 <div class="guild-info-name text-center">
                  拉庫克
                 </div>
@@ -371,7 +371,7 @@
                 <p class="interview-content text-center">謝謝導遊的解說，這鋼旅程非常開心，下次要再來！</p>
               </div>
             <!-- 預約button -->
-              <button class="btn-booking text-white">預約</button>
+            <a class="btn-booking text-white  btn d-flex align-items-center justify-content-center" href="guild-intro.html">預約</a>
             </div>
           </div>
           <!-- 新人導遊item3 -->
@@ -380,7 +380,7 @@
             <div class="guildlist-new-main mx-auto d-flex flex-wrp flex-column align-items-center">
             <!-- 上方導遊基本資料 -->
               <div class="guild-info">
-                <img class="guild-info-avatar d-block mx-auto" src="img/奇美部落4.png" alt="guild-avatar">
+                <img class="guild-info-avatar d-block mx-auto" src="/img/導遊2-1.jpg" alt="guild-avatar">
                 <div class="guild-info-name text-center">
                  拉庫克
                 </div>
@@ -392,7 +392,7 @@
                 <p class="interview-content text-center">謝謝導遊的解說，這鋼旅程非常開心，下次要再來！</p>
               </div>
             <!-- 預約button -->
-              <button class="btn-booking text-white">預約</button>
+              <a class="btn-booking text-white  btn d-flex align-items-center justify-content-center" href="guild-intro.html">預約</a>
             </div>
           </div>
         </div>

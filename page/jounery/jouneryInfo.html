@@ -24,53 +24,57 @@
 
 
   <!-- header設定css -->
-  <link rel="stylesheet" href="./css/header.css" />
+  <link rel="stylesheet" href="/css/header.css" />
   <!-- footer設定css -->
-  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
   <!-- 字體設定css -->
-  <link rel="stylesheet" href="./css/fons.css" />
+  <link rel="stylesheet" href="/css/fons.css" />
   <!-- 間距設定css -->
-  <link rel="stylesheet" href="./css/spacing.css" />
+  <link rel="stylesheet" href="/css/spacing.css" />
   <!-- 按鈕設定css -->
-  <link rel="stylesheet" href="./css/button.css" />
-  <link rel="stylesheet" href="./css/journeyInfo.css">
+  <link rel="stylesheet" href="/css/button.css" />
+  <link rel="stylesheet" href="/css/journeyInfo.css">
 </head>
 <style></style>
 
 <body>
-  <!-- header -->
-  <header class="td-header">
-    <div class="container td-header-main d-flex align-items-center">
-      <!-- LOGO區  -->
-      <a class="td-logo d-flex" href="#">
-        <img class="td-logo-img" src="./img/logo.png" alt="logo" />
-        <img class="td-logo-text" src="./img/花島（黑）.png" alt="花島（黑）" />
-      </a>
-      <!-- 導覽列左側 -->
-      <nav class="td-nav align-items-center">
-        <ul class="left-nav d-flex my-auto">
-          <a href="#"><span>部落行程</span></a>
-          <a href="#"><span>在地導遊</span></a>
-        </ul>
-        <!-- 導覽列登入前右側 -->
-        <div class="d-flex align-items-center">
-          <button class="td-btn-medium-o td-header-login">登入</button>
-          <button class="td-btn-medium-b td-header-login">註冊</button>
-        </div>
+    <!-- 頁首 -->
+    <header class="td-header">
+      <div class="container td-header-main d-flex align-items-center">
+        <!-- LOGO區  -->
+        <a class="td-logo d-flex" href="/home.html">
+          <img class="td-logo-img" src="/img/logo.png" alt="logo" />
+          <img
+            class="td-logo-text"
+            src="/img/花島（黑）.png"
+            alt="花島（黑）"
+          />
+        </a>
+        <!-- 導覽列左側 -->
+        <nav class="td-nav align-items-center">
+          <ul class="left-nav d-flex my-auto">
+            <a href="/page/jounery/journey.html"><span>部落行程</span></a>
+            <a href="/page/guild/guild-list.html"><span>在地導遊</span></a>
+          </ul>
+          <!-- 導覽列登入前右側 -->
+          <!-- <div class="d-flex align-items-center">
+            <button class="td-btn-medium-o td-header-login">登入</button>
+            <button class="td-btn-medium-b td-header-register">註冊</button>
+          </div> -->
 
-        <!-- 導覽列登入後右側 -->
-        <!-- <div class="right-nav">
+          <!-- 導覽列登入後右側 -->
+          <div class="right-nav">
             <a href="通知"><i class="fas fa-comment-dots"></i></a>
-            <a class="td-cart" href="購物車"
-              ><img src="img/cart.png" alt="cart"
+            <a class="td-cart" href="/page/shoppingcart/shoppingcart-cart-list.html"
+              ><img src="/img/cart.png" alt="cart"
             /></a>
             <a class="td-member" href="會員首頁#"
-              ><img class="td-member-avatar" src="img/avatar.png" alt="avatar"
+              ><img class="td-member-avatar" src="/img/avatar.png" alt="avatar"
             /></a>
-          </div> -->
-      </nav>
-    </div>
-  </header>
+          </div>
+        </nav>
+      </div>
+    </header>
   <!-- content -->
   <!-- content -->
   <!-- banner start -->
@@ -87,13 +91,13 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./data/小banner圖/靜浦-部落射箭體驗.jpg" class="d-block w-100" alt="靜浦部落" />
+            <img src="/data/小banner圖/靜浦-部落射箭體驗.jpg" class="d-block w-100" alt="靜浦部落" />
           </div>
           <div class="carousel-item">
-            <img src="./data/小banner圖/水璉部落.png" class="d-block w-100" alt="水璉部落" />
+            <img src="/data/小banner圖/水璉部落.png" class="d-block w-100" alt="水璉部落" />
           </div>
           <div class="carousel-item">
-            <img src="./data/小banner圖/太巴塱.jpg" class="d-block w-100" alt="太巴塱部落" />
+            <img src="/data/小banner圖/太巴塱.jpg" class="d-block w-100" alt="太巴塱部落" />
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -199,10 +203,10 @@
       <p>商品說明</p>
     </div>
     <div class=" td-mt-25 ">
-      <img src="./data/行程照片/靜浦-竹筏漫遊.jpg" class="journey-info-pic" alt="">
+      <img src="/data/行程照片/靜浦-竹筏漫遊.jpg" class="journey-info-pic" alt="">
     </div>
     <div class=" mt-10 journey-info-pic">
-      <img src="./data/行程照片/靜浦-追花逐浪花蟹.jpg" class="journey-info-pic" alt="">
+      <img src="/data/行程照片/靜浦-追花逐浪花蟹.jpg" class="journey-info-pic" alt="">
     </div>
   </div>
   </div>
@@ -228,7 +232,7 @@
         <div class="col-4  text-center">
           <div class="card">
             <p class="smalltag">奇美部落</p>
-            <img src="./data/奇美部落/導遊/導遊1.jpg" class="card-img-top" alt="...">
+            <img src="/data/奇美部落/導遊/導遊1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">雅馨</h5>
               <div class="journey-selectguide-star"> <a>⭐</a> <a>⭐</a> <a>⭐</a> <a>⭐</a><a>⭐</a></div>
@@ -241,7 +245,7 @@
         <div class="col-4 text-center d-flex justify-content-center">
           <div class="card">
             <p class="smalltag">奇美部落</p>
-            <img src="./data/奇美部落/導遊/導遊1.jpg" class="card-img-top" alt="...">
+            <img src="/data/奇美部落/導遊/導遊1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">雅馨</h5>
               <div class="journey-selectguide-star"> <a>⭐</a> <a>⭐</a> <a>⭐</a> <a>⭐</a><a>⭐</a></div>
@@ -254,7 +258,7 @@
         <div class="col-4 text-center  d-flex justify-content-end">
           <div class="card">
             <p class="smalltag">奇美部落</p>
-            <img src="./data/奇美部落/導遊/導遊1.jpg" class="card-img-top" alt="...">
+            <img src="/data/奇美部落/導遊/導遊1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">雅馨</h5>
               <div class="journey-selectguide-star"> <a>⭐</a> <a>⭐</a> <a>⭐</a> <a>⭐</a><a>⭐</a></div>
@@ -336,7 +340,7 @@
       <p>旅客評價</p>
     </div>
     <div class="row td-mt-25">
-      <div class="col-md-1 col-2 d-flex justify-content-center"><img src="./data/旅客圖片/male1-70.jpg" alt="旅客1" class="coustomerreview-img
+      <div class="col-md-1 col-2 d-flex justify-content-center"><img src="/data/旅客圖片/male1-70.jpg" alt="旅客1" class="coustomerreview-img
         "></div>
       <div class="col-md-3 col-4">
         <p class="mb-3">Joe</p>
@@ -350,7 +354,7 @@
         <p>
           獨木舟好好玩，謝謝C大帶我們去玩。
         </p>
-        <img src="./data/旅客評價內行程圖/水璉部落6.jpg" alt="" class="coustomerreview-journeyimg">
+        <img src="/data/旅客評價內行程圖/水璉部落6.jpg" alt="" class="coustomerreview-journeyimg">
       </div>
     </div>
   </div>
@@ -359,7 +363,7 @@
     <div class="row td-mt-25">
       <div class="col-1"></div>
       <div class="col-11 d-flex  td-mt-25 align-items-center">
-        <img src="./data/旅客圖片/woman1-70.jpg" alt="旅客1" class="coustomerreview-img
+        <img src="/data/旅客圖片/woman1-70.jpg" alt="旅客1" class="coustomerreview-img
         ">
         <p class="text-title-size20 coutomerreview-guideresponse">很開心你會喜歡，歡迎下次再來。</p>
       </div>
@@ -371,7 +375,7 @@
   <div class="container td-mt-25 coustomerreview ">
    
     <div class="row td-mt-25">
-      <div class="col-md-1 col-2 d-flex justify-content-center"><img src="./data/旅客圖片/male1-70.jpg" alt="旅客1" class="coustomerreview-img
+      <div class="col-md-1 col-2 d-flex justify-content-center"><img src="/data/旅客圖片/male1-70.jpg" alt="旅客1" class="coustomerreview-img
         "></div>
       <div class="col-md-3 col-4">
         <p class="mb-3">Joe</p>
@@ -385,7 +389,7 @@
         <p>
           獨木舟好好玩，謝謝C大帶我們去玩。
         </p>
-        <img src="./data/旅客評價內行程圖/水璉部落6.jpg" alt="" class="coustomerreview-journeyimg">
+        <img src="/data/旅客評價內行程圖/水璉部落6.jpg" alt="" class="coustomerreview-journeyimg">
       </div>
     </div>
   </div>
@@ -394,7 +398,7 @@
     <div class="row td-mt-25">
       <div class="col-1"></div>
       <div class="col-11 d-flex  td-mt-25 align-items-center">
-        <img src="./data/旅客圖片/woman1-70.jpg" alt="旅客1" class="coustomerreview-img
+        <img src="/data/旅客圖片/woman1-70.jpg" alt="旅客1" class="coustomerreview-img
         ">
         <p class="text-title-size20 coutomerreview-guideresponse">很開心你會喜歡，歡迎下次再來。</p>
       </div>

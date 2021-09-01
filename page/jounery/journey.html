@@ -15,54 +15,58 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
     <!-- header設定css -->
-    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="/css/header.css" />
     <!-- footer設定css -->
-    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
     <!-- 字體設定css -->
-    <link rel="stylesheet" href="./css/fons.css" />
+    <link rel="stylesheet" href="/css/fons.css" />
     <!-- 間距設定css -->
-    <link rel="stylesheet" href="./css/spacing.css" />
+    <link rel="stylesheet" href="/css/spacing.css" />
     <!-- 按鈕設定css -->
-    <link rel="stylesheet" href="./css/button.css" />
-    <link rel="stylesheet" href="./css/journey.css" />
+    <link rel="stylesheet" href="/css/button.css" />
+    <link rel="stylesheet" href="/css/journey.css" />
 </head>
 <style></style>
 <script>
 </script>
 <body>
-    <!-- heater -->
+    <!-- 頁首 -->
     <header class="td-header">
         <div class="container td-header-main d-flex align-items-center">
-            <!-- LOGO區  -->
-            <a class="td-logo d-flex" href="#">
-                <img class="td-logo-img" src="./img/logo.png" alt="logo" />
-                <img class="td-logo-text" src="./img/花島（黑）.png" alt="花島（黑）" />
-            </a>
-            <!-- 導覽列左側 -->
-            <nav class="td-nav align-items-center">
-                <ul class="left-nav d-flex my-auto">
-                    <a href="#"><span>部落行程</span></a>
-                    <a href="#"><span>在地導遊</span></a>
-                </ul>
-                <!-- 導覽列登入前右側 -->
-                <div class="d-flex align-items-center">
-                    <button class="td-btn-medium-o td-header-login">登入</button>
-                    <button class="td-btn-medium-b td-header-login">註冊</button>
-                </div>
-
-                <!-- 導覽列登入後右側 -->
-                <!-- <div class="right-nav">
-            <a href="通知"><i class="fas fa-comment-dots"></i></a>
-            <a class="td-cart" href="購物車"
-              ><img src="img/cart.png" alt="cart"
-            /></a>
-            <a class="td-member" href="會員首頁#"
-              ><img class="td-member-avatar" src="img/avatar.png" alt="avatar"
-            /></a>
-          </div> -->
-            </nav>
+          <!-- LOGO區  -->
+          <a class="td-logo d-flex" href="/home.html">
+            <img class="td-logo-img" src="/img/logo.png" alt="logo" />
+            <img
+              class="td-logo-text"
+              src="/img/花島（黑）.png"
+              alt="花島（黑）"
+            />
+          </a>
+          <!-- 導覽列左側 -->
+          <nav class="td-nav align-items-center">
+            <ul class="left-nav d-flex my-auto">
+              <a href="/page/jounery/journey.html"><span>部落行程</span></a>
+              <a href="/page/guild/guild-list.html"><span>在地導遊</span></a>
+            </ul>
+            <!-- 導覽列登入前右側 -->
+            <!-- <div class="d-flex align-items-center">
+              <button class="td-btn-medium-o td-header-login">登入</button>
+              <button class="td-btn-medium-b td-header-register">註冊</button>
+            </div> -->
+  
+            <!-- 導覽列登入後右側 -->
+            <div class="right-nav">
+              <a href="通知"><i class="fas fa-comment-dots"></i></a>
+              <a class="td-cart" href="/page/shoppingcart/shoppingcart-cart-list.html"
+                ><img src="/img/cart.png" alt="cart"
+              /></a>
+              <a class="td-member" href="會員首頁#"
+                ><img class="td-member-avatar" src="/img/avatar.png" alt="avatar"
+              /></a>
+            </div>
+          </nav>
         </div>
-    </header>
+      </header>
     <!-- content -->
     <!-- banner start -->
     <section>
@@ -78,13 +82,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./data/小banner圖/靜浦-部落射箭體驗.jpg" class="d-block w-100" alt="靜浦部落" />
+                        <img src="/data/小banner圖/靜浦-部落射箭體驗.jpg" class="d-block w-100" alt="靜浦部落" />
                     </div>
                     <div class="carousel-item">
-                        <img src="./data/小banner圖/水璉部落.png" class="d-block w-100" alt="水璉部落" />
+                        <img src="/data/小banner圖/水璉部落.png" class="d-block w-100" alt="水璉部落" />
                     </div>
                     <div class="carousel-item">
-                        <img src="./data/小banner圖/太巴塱.jpg" class="d-block w-100" alt="太巴塱部落" />
+                        <img src="/data/小banner圖/太巴塱.jpg" class="d-block w-100" alt="太巴塱部落" />
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -379,7 +383,7 @@
         <h5 class="page-title text-md-left text-center">篩選結果:奇美部落</h5>
         <div class="row filter-result ">
             <div class="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-                <img src="./data/行程圖片/奇美部落.png" alt="">
+                <img src="/data/行程圖片/奇美部落.png" alt="">
             </div>
             <div class="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
                 <div class="row ">
@@ -417,7 +421,8 @@
                     <div class="col-7 col-md-12 d-md-flex justify-content-md-center">
                         <p class="mt-3">TWD 3,110</p>
                     </div>
-                    <div class="col-5 col-md-12 d-flex flex-md-column align-items-md-center justify-content-between "> <button class="td-btn-medium-w">
+                    <div class="col-5 col-md-12 d-flex flex-md-column align-items-md-center justify-content-between "> 
+                        <button class="td-btn-medium-w">
                             詳細
                         </button>
                         <button class="td-btn-medium-o">
@@ -440,7 +445,7 @@
     <div class="container td-mt-25 filter-resultcontainer">
         <div class="row filter-result ">
             <div class="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-                <img src="./data/行程圖片/奇美部落.png" alt="">
+                <img src="/data/行程圖片/奇美部落.png" alt="">
             </div>
             <div class="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
                 <div class="row ">
@@ -500,7 +505,7 @@
     </div>   <div class="container td-mt-25 filter-resultcontainer">
         <div class="row filter-result ">
             <div class="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-                <img src="./data/行程圖片/奇美部落.png" alt="">
+                <img src="/data/行程圖片/奇美部落.png" alt="">
             </div>
             <div class="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
                 <div class="row ">
@@ -561,7 +566,7 @@
        <div class="container td-mt-25 filter-resultcontainer">
         <div class="row filter-result ">
             <div class="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-                <img src="./data/行程圖片/奇美部落.png" alt="">
+                <img src="/data/行程圖片/奇美部落.png" alt="">
             </div>
             <div class="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
                 <div class="row ">
@@ -622,7 +627,7 @@
        <div class="container td-mt-25 filter-resultcontainer">
         <div class="row filter-result ">
             <div class="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-                <img src="./data/行程圖片/奇美部落.png" alt="">
+                <img src="/data/行程圖片/奇美部落.png" alt="">
             </div>
             <div class="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
                 <div class="row ">
@@ -729,7 +734,7 @@
     </footer>
     <div class="container main-container"></div>
 </body>
-<script src="./js/jquery-3.2.1.min.js"></script>
-        <script src="./js/popper.js"></script>
-        <script src="./js/bootstrap.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+        <script src="/js/popper.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
 </html>

@@ -1,0 +1,89 @@
+/* 內容區塊設定 */
+.td-content {
+  min-height: 100vh;
+}
+/* 小人走務流程圖設定 */
+.process-bg {
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  background: #072b7b;
+}
+.process-bg p {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+.process-text {
+  text-align: center;
+  font-size: 24px;
+}
+.process-text-data {
+  margin-left: 80px;
+}
+.process-text-pay {
+  margin-left: 70px;
+}
+.process-dotted {
+  width: 120px;
+  height: 30px;
+  border-bottom: 2px dashed black;
+}
+
+.menu-title {
+  color: #072b7b;
+  font-weight: bold;
+}
+
+.menu-bg {
+  background: #e8f7ff;
+}
+/*付款切換用*/
+.pay-switch {
+  display: none;
+}
+/* 訂單明細 */
+.shoppingcart-bg {
+  width: 100%;
+}
+.shoppingcart-img {
+  width: 264px;
+  height: 176px;
+}
+.shoppingcart-img-td {
+  width: 264px;
+}
+/* checkbox-td區塊大小設定 */
+.shoppingcart-checkbox-td {
+  width: 86px;
+}
+/* 行程分隔線 */
+.shoppingcart-solid {
+  border-bottom: 1px solid #cccccc;
+}
+/* 行程標題連結樣式 */
+.shoppingcart-title {
+  color: #072b7b;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* 購物車清單價格樣式 */
+.shoppingcart-price {
+  color: #072b7b;
+  font-weight: bold;
+}
+/* 繼續購買連結去除底線 */
+.shoppingcart-continue {
+  text-decoration: none;
+}
+
+/* 收藏dom設定 */
+.collect {
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  background-image: url('../img/collect.png');
+}
+.collect.like {
+  background-image: url('../img/collect-click.png');
+}
