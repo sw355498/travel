@@ -71,11 +71,10 @@
       .menu-bg {
         background: #e8f7ff;
       }
-      .menu-checkbox {
-        width: 25px;
-        height: 25px;
+      /*付款切換用*/
+      .pay-switch{
+        display: none;
       }
-
       /* 訂單明細 */
       .shoppingcart-bg {
         width: 100%;
@@ -86,11 +85,6 @@
       }
       .shoppingcart-img-td {
         width: 264px;
-      }
-      /* checkbox設定 */
-      .shoppingcart-checkbox {
-        width: 36px;
-        height: 36px;
       }
       /* checkbox-td區塊大小設定 */
       .shoppingcart-checkbox-td {
@@ -219,9 +213,7 @@
                   <div class="col-6">
                     <label for="formGroupExampleInput" class="form-label">
                       <span class="text-title-size20">名字</span>
-                      <span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="text"
@@ -234,10 +226,8 @@
                   <!-- 姓氏區塊 -->
                   <div class="col-6">
                     <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">姓氏</span
-                      ><span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-title-size20">姓氏</span>
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="text"
@@ -250,10 +240,8 @@
                   <!-- 連絡電話區塊 -->
                   <div class="col-6 td-mt-50">
                     <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">連絡電話</span
-                      ><span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-title-size20">連絡電話</span>
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="text"
@@ -266,9 +254,7 @@
                   <div class="col-6 td-mt-50">
                     <label for="validationDefault04" class="form-label">
                       <span class="text-title-size20">國家/地區</span>
-                      <span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
 
                     <select
@@ -287,10 +273,8 @@
                   <!-- 聯絡地址 -->
                   <div class="col-12 td-mt-50">
                     <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">地址</span
-                      ><span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-title-size20">地址</span>
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="text"
@@ -303,10 +287,8 @@
                   <!-- 聯絡信箱 -->
                   <div class="col-12 td-mt-50">
                     <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">信箱</span
-                      ><span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-title-size20">信箱</span>
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="email"
@@ -320,7 +302,7 @@
                   <div class="td-mt-75">
                     <div class="form-check">
                       <input
-                        class="form-check-input menu-checkbox"
+                        class="form-check-input"
                         type="checkbox"
                         value=""
                         id="flexCheckChecked"
@@ -368,10 +350,8 @@
                   <!-- 姓名區塊 -->
                   <div class="col-6">
                     <label for="formGroupExampleInput" class="form-label">
-                      <span class="text-title-size20">名字</span
-                      ><span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-title-size20">名字</span>
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="text"
@@ -384,10 +364,8 @@
                   <!-- 姓氏區塊 -->
                   <div class="col-6">
                     <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">姓氏</span
-                      ><span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-title-size20">姓氏</span>
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="text"
@@ -400,10 +378,8 @@
                   <!-- 連絡電話區塊 -->
                   <div class="col-6 td-mt-50">
                     <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">連絡電話</span
-                      ><span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-title-size20">連絡電話</span>
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="text"
@@ -416,9 +392,7 @@
                   <div class="col-6 td-mt-50">
                     <label for="validationDefault04" class="form-label">
                       <span class="text-title-size20">國家/地區</span>
-                      <span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
 
                     <select
@@ -437,10 +411,8 @@
                   <!-- 聯絡地址 -->
                   <div class="col-12 td-mt-50">
                     <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">地址</span
-                      ><span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-title-size20">地址</span>
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="text"
@@ -453,10 +425,8 @@
                   <!-- 聯絡信箱 -->
                   <div class="col-12 td-mt-50">
                     <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">信箱</span
-                      ><span class="text-danger td-ms-15 text-title-size20"
-                        >*</span
-                      >
+                      <span class="text-title-size20">信箱</span>
+                      <span class="text-danger td-ms-15 text-title-size20">*</span>
                     </label>
                     <input
                       type="email"
@@ -470,7 +440,7 @@
                   <div class="td-mt-75">
                     <div class="form-check">
                       <input
-                        class="form-check-input menu-checkbox"
+                        class="form-check-input"
                         type="checkbox"
                         value=""
                         id="flexCheckChecked"
@@ -520,13 +490,59 @@
                   <span class="text-danger td-ms-15 text-title-size20">*</span>
                 </label>
                 <div class="">
-                  <input class="td-ms-50" type="radio" name="pay" id="" />
+                  <input class="td-ms-50" type="radio" name="pay" id="creditCard" />
                   <span class="text-title-size20">信用卡付款</span>
-                  <input class="td-ms-50" type="radio" name="pay" id="" />
+                  <input class="td-ms-50" type="radio" name="pay" id="transfer" />
                   <span class="text-title-size20">轉帳代繳</span>
                 </div>
-              </div>
-
+                <!-- 信用卡付款資料填寫 -->
+                <div class="td-mt-25 pay-switch" id="creditCardMaterial">
+                  <div class="row">
+                    <div class="col-sm-2">
+                      <label>信用卡號:</label>
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" placeholder="1-4碼" aria-label="信用卡1-4碼">
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" placeholder="5-8碼" aria-label="信用卡5-8碼">
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" placeholder="9-12碼" aria-label="信用卡9-12碼">
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" placeholder="13-16碼" aria-label="信用卡13-16碼">
+                    </div>
+                  </div>
+                  <div class="row td-mt-25 ">
+                    <div class="col-sm-2">
+                      <label>有效日期:</label>
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" placeholder="MM" aria-label="有效日期/月">
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" placeholder="YY" aria-label="有效日期/年">
+                    </div>
+                    <div class="col-sm-2">
+                      <label>背面檢驗碼:</label>
+                    </div>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" placeholder="3碼" aria-label="檢驗碼">
+                    </div>
+                  </div>
+                </div>
+                <!-- 轉帳代繳付款資料填寫 -->
+                <div class="td-mt-25 pay-switch" id="transferMaterial">
+                  <div class="row td-mt-25 ">
+                    <div class="col-sm-2">
+                      <label>轉帳帳號:</label>
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control" placeholder="轉帳帳號" aria-label="轉帳帳號">
+                    </div>
+                  </div>
+                </div>
               <!-- 發票資料 -->
               <div class="col-6 td-mt-50">
                 <label for="validationDefault04" class="form-label">
@@ -650,10 +666,7 @@
                   </td>
                   <!-- 前往結帳 -->
                   <td class="text-center">
-                    <!-- <button class="btn td-btn-large-gopay text-title-size24">
-                      確認付款
-                    </button> -->
-                    <!-- Button trigger modal -->
+                    <!-- 前往結帳title -->
                     <button
                       type="button"
                       class="btn td-btn-large-gopay text-title-size24"
@@ -741,4 +754,21 @@
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"
   ></script>
+  <script>
+    /*信用卡付款*/
+    let creditCard = document.getElementById('creditCard')
+    let creditCardMaterial = document.getElementById('creditCardMaterial')
+    creditCard.addEventListener('click', function(){
+      creditCardMaterial.classList.remove('pay-switch')
+      transferMaterial.classList.add('pay-switch')
+    })
+    /*轉帳代繳*/
+    let transfer = document.getElementById('transfer')
+    let transferMaterial = document.getElementById('transferMaterial')
+    transfer.addEventListener('click', function(){
+      creditCardMaterial.classList.add('pay-switch')
+      transferMaterial.classList.remove('pay-switch')
+    })
+
+  </script>
 </html>
