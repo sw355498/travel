@@ -1,5 +1,5 @@
 .filter-title {
-  font-size: 1.25rem;;
+  font-size: 1.25rem;
   line-height: 1.438rem;
   color: #ffffff;
   display: flex;
@@ -16,12 +16,12 @@
 }
 
 .filter-radio p {
-  font-size: 1.25rem;;
+  font-size: 1.25rem;
   line-height: 1.438rem;
   color: #072b7b;
 }
-.filter-bystar input{
-  margin-top: 10px
+.filter-bystar input {
+  margin-top: 10px;
 }
 .page-title {
   font-weight: bold;
@@ -45,7 +45,6 @@
   }
 }
 
-
 @media only screen and (max-width: 992px) {
   .journey-info .title {
     font-weight: bold;
@@ -53,42 +52,39 @@
     line-height: 2rem;
     color: #000000;
     margin-top: 0.3rem;
-}
- .journey-info .tag {
+  }
+  .journey-info .tag {
     font-weight: bold;
     font-size: 1rem;
     line-height: 1.313rem;
     color: #072b7b;
     margin-top: 0.6rem;
-}
-.reviewStar a{
-  font-size: 10px;
-}
-.reviewStar-point{
-  font-size: 1rem;
-}
+  }
+  .reviewStar a {
+    font-size: 10px;
+  }
+  .reviewStar-point {
+    font-size: 1rem;
+  }
 
-.journey-info .reviewStar a {
+  .journey-info .reviewStar a {
     font-size: 1.25rem !important;
-}
+  }
 }
 @media only screen and (max-width: 768px) {
   .filter-bystar .form-check {
     display: none;
   }
- 
 }
 
 @media only screen and (min-width: 1400px) {
-  .filter .form-check a{
+  .filter .form-check a {
     font-size: 1.063rem;
-
-  
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .filter{
+  .filter {
     display: none;
   }
 }
@@ -108,7 +104,6 @@
     margin-top: 25px;
   }
 
-
   .dropdown-menu.show {
     display: block;
     position: absolute;
@@ -119,7 +114,6 @@
     max-width: 445px;
   }
 
-  
   .dropdown-menu.show {
     display: block;
     position: absolute;
@@ -138,11 +132,11 @@
     line-height: 23px;
     font-weight: 500;
     color: #000000;
-    margin-right: .75rem;
-    margin-left:1.4rem;
+    margin-right: 0.75rem;
+    margin-left: 1.4rem;
   }
   .filter-dropdown .stars a {
-    font-size:13px;
+    font-size: 13px;
   }
 }
 .filter-dropdown h6 {
@@ -156,7 +150,7 @@
   height: auto;
 }
 .filter-border a {
-  font-size: 1.25rem;;
+  font-size: 1.25rem;
 }
 .link-right {
   width: 35%;
@@ -175,7 +169,7 @@
 
 .journey-info .tag {
   font-weight: bold;
-  font-size: 1.25rem;;
+  font-size: 1.25rem;
   line-height: 1.313rem;
   /* identical to box height */
   color: #072b7b;
@@ -198,15 +192,15 @@
   color: #000000;
   padding: 0%;
 }
-.reviewStar-content{
+.reviewStar-content {
   padding: 0%;
 }
 
- .reviewStar .fa-heart-show{
-     font-size: 2.188rem;
+.reviewStar .fa-heart-show {
+  font-size: 2.188rem;
   color: pink;
   margin-top: 0.625rem;
- }
+}
 .journey-info .reviewStar a {
   margin: 0.5rem;
   font-size: 1.625rem;
@@ -218,45 +212,45 @@
 .journey-price p {
   font-weight: 500;
   font-size: 1.25rem;
- line-height: 1.625rem;
+  line-height: 1.625rem;
   /* identical to box height, or 130% */
   color: #000000;
 }
 
-.filter-resultcontainer .filter-result-imgarea{
-padding: 0%;
-}
-@media only screen and (max-width:768px){
-.journey-price .fa-heart-hide{
-  display: none;
-}
-.filter-resultcontainer{
-  margin-top: 50px;
-}
-
-.filter-resultcontainer .filter-result-imgarea{
+.filter-resultcontainer .filter-result-imgarea {
   padding: 0%;
-  height: 80%;
 }
-.filter-resultcontainer img{
-  width: 100%;
-  height: auto;
+@media only screen and (max-width: 768px) {
+  .journey-price .fa-heart-hide {
+    display: none;
+  }
+  .filter-resultcontainer {
+    margin-top: 50px;
+  }
+
+  .filter-resultcontainer .filter-result-imgarea {
+    padding: 0%;
+    height: 80%;
+  }
+  .filter-resultcontainer img {
+    width: 100%;
+    height: auto;
+  }
 }
-}
-@media only screen and (min-width:768px){
-.journey-price .td-btn-medium-w{
-  margin-top: 45px;
-}
-.journey-price .td-btn-medium-o{
-  margin-top: 10px;
-}
-.journey-info .reviewStar a {
-  margin: auto;
-  font-size: 1.625rem;
-}
- .reviewStar .fa-heart-show{
- display: none;
- }
+@media only screen and (min-width: 768px) {
+  .journey-price .td-btn-medium-w {
+    margin-top: 45px;
+  }
+  .journey-price .td-btn-medium-o {
+    margin-top: 10px;
+  }
+  .journey-info .reviewStar a {
+    margin: auto;
+    font-size: 1.625rem;
+  }
+  .reviewStar .fa-heart-show {
+    display: none;
+  }
 }
 .journey-price i {
   font-size: 2.188rem;
@@ -267,7 +261,6 @@ padding: 0%;
 .filter-result img {
   border-radius: 10px;
   width: 100%;
-
 }
 
 .pagination-container nav {

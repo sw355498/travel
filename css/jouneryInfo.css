@@ -1,19 +1,17 @@
-
-
 .journey-info-name {
   font-weight: bold;
   font-size: 28px;
   line-height: 40px;
   color: #072b7b;
 }
-@media only screen and (max-width:768px) {
-.journey-info-name {
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 40px;
-  color: #072b7b;
-  text-align: center;
-}
+@media only screen and (max-width: 768px) {
+  .journey-info-name {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 40px;
+    color: #072b7b;
+    text-align: center;
+  }
 }
 .jounery-info-like {
   color: #ff9564;
@@ -22,31 +20,35 @@
   align-items: center;
   margin-bottom: 15px;
 }
-@media only screen and (max-width:768px) {
-.jounery-info-like {
-  color: #ff9564;
-  font-size: 35px;
-  display: flex;
-  align-items: center;
-margin: 0%;
-}
-.jounery-info-price {
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-}
-}
-@media only screen and (max-width:768px) {
+
+@media only screen and (max-width: 768px) {
+  .jounery-info-like {
+    color: #ff9564;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    margin: 0%;
+  }
+
   .jounery-info-price {
-font-weight: 500;
-font-size: 20px;
-line-height: 40px;
-color: #072B7B;
-margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+  }
 }
+
+@media only screen and (max-width: 768px) {
+  .jounery-info-price {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    color: #072b7b;
+    margin-bottom: 20px;
+  }
 }
+
 .journey-info-point {
   font-size: 20px;
   line-height: 30px;
@@ -60,33 +62,35 @@ margin-bottom: 20px;
   line-height: 23px;
   color: #000000;
 }
-@media only screen and (max-width:768px) {
-.journey-info-smalltitle p {
-  font-size: 20px;
-  line-height: 23px;
-  color: #000000;
-  text-align: center;
-  margin-top: 25px;
-}
-}
 
+@media only screen and (max-width: 768px) {
+  .journey-info-smalltitle p {
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    text-align: center;
+    margin-top: 25px;
+  }
+}
 
 .jounery-info i {
   font-size: 36px;
   color: rgb(0, 0, 0);
 }
+
 .jounery-info .fa-map-marker-alt {
   font-size: 36px;
   color: rgba(245, 8, 8, 1);
   margin-left: 6px;
 }
 
-.journey-info-pic{
-  width:  100%;
+.journey-info-pic {
+  width: 100%;
   max-width: 729px;
   max-height: 400px;
   height: auto;
 }
+
 .mt-10 {
   margin-top: 10px;
 }
@@ -94,11 +98,13 @@ margin-bottom: 20px;
 .mt-40 {
   margin-top: 40px;
 }
+
 .jounery-reservationarea-container {
   width: 100%;
   height: auto;
   background: #e8f7ff;
 }
+
 .jounery-selectguide .card {
   margin-top: 0%;
   margin-left: 0%;
@@ -109,8 +115,8 @@ margin-bottom: 20px;
 
 .jounery-selectguide .card-img-top {
   margin-top: 50px;
-
 }
+
 .necessary {
   display: block;
   height: 40px;
@@ -157,35 +163,34 @@ margin-bottom: 20px;
   color: #3d3c3c;
 }
 
-@media only screen and (max-width:768px) {
-.jounery-selectguide .smalltag {
-  position: absolute;
-  right: 5%;
-  top: 2%;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 27px;
-  /* identical to box height, or 169% */
-  color: #3d3c3c;
-}
-.jounery-selectguide .card-text {
- font-weight: bold;
-font-size: 18px;
-line-height: 27px;
-/* identical to box height, or 150% */
-text-align: center;
-font-feature-settings: 'salt' on, 'liga' off;
-color: #18191F;
-}
+@media only screen and (max-width: 768px) {
+  .jounery-selectguide .smalltag {
+    position: absolute;
+    right: 5%;
+    top: 2%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    /* identical to box height, or 169% */
+    color: #3d3c3c;
+  }
 
-
+  .jounery-selectguide .card-text {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height, or 150% */
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191f;
+  }
 }
 .jounery-selectguide .card-text {
   font-size: 16px;
   line-height: 24px;
   text-align: center;
   font-feature-settings: 'salt' on, 'liga' off;
-margin: 0%;
+  margin: 0%;
   color: #a5a5a8;
 }
 
@@ -210,55 +215,55 @@ margin: 0%;
   color: #000000;
 }
 
-.jounery-notes .remark{
-font-weight: 500;
-font-size: 14px;
-line-height: 21px;
-color: #6D6D6D;
+.jounery-notes .remark {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #6d6d6d;
 }
 
-.jounery-watchoutnote{
-   font-weight: 500;
+.jounery-watchoutnote {
+  font-weight: 500;
   font-size: 18px;
   line-height: 27px;
   color: #000000;
   background: rgba(255, 149, 100, 0.1);
-border-radius: 10px;
+  border-radius: 10px;
 }
 
-.coustomerreview-img{
+.coustomerreview-img {
   border-radius: 50%;
   max-width: 70px;
   max-height: 70px;
 }
 
-.coustomerreview i{
-  color:#ffffff;
+.coustomerreview i {
+  color: #ffffff;
   font-size: 16px;
   margin-left: 8px;
-
 }
 
-.coustomerreview-journeyimg{
+.coustomerreview-journeyimg {
   max-width: 318px;
   max-height: 244;
   border-radius: 32px;
 }
 
-.coustomerreview-area{
-background: #E8F7FF;
-border-radius: 20px;
-height: 120px;
+.coustomerreview-area {
+  background: #e8f7ff;
+  border-radius: 20px;
+  height: 120px;
 }
 
-.coutomerreview-guideresponse{
+.coutomerreview-guideresponse {
   margin: 0 0 0 25px;
 }
 
-@media only screen and (max-width:768px) {
-.coustomerreview button {
- display: none;
-}}
+@media only screen and (max-width: 768px) {
+  .coustomerreview button {
+    display: none;
+  }
+}
 .pagination-container nav {
   width: 149px !important;
   height: 33.39px !important;
@@ -288,8 +293,8 @@ height: 120px;
 }
 
 .page-item.active .page-link {
-    z-index: 3;
-    color: #fff;
-    background-color: #072B7B;
-    border-color: #072B7B;
+  z-index: 3;
+  color: #fff;
+  background-color: #072b7b;
+  border-color: #072b7b;
 }
