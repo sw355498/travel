@@ -13,7 +13,7 @@
     text-align: center;
   }
 }
-.jounery-info-like {
+.journey-info-like {
   color: #ff9564;
   font-size: 35px;
   display: flex;
@@ -22,7 +22,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .jounery-info-like {
+  .journey-info-like {
     color: #ff9564;
     font-size: 35px;
     display: flex;
@@ -30,7 +30,7 @@
     margin: 0%;
   }
 
-  .jounery-info-price {
+  .journey-info-price {
     font-weight: 500;
     font-size: 28px;
     line-height: 40px;
@@ -40,7 +40,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .jounery-info-price {
+  .journey-info-price {
     font-weight: 500;
     font-size: 20px;
     line-height: 40px;
@@ -73,12 +73,12 @@
   }
 }
 
-.jounery-info i {
+.journey-info i {
   font-size: 36px;
   color: rgb(0, 0, 0);
 }
 
-.jounery-info .fa-map-marker-alt {
+.journey-info .fa-map-marker-alt {
   font-size: 36px;
   color: rgba(245, 8, 8, 1);
   margin-left: 6px;
@@ -99,13 +99,13 @@
   margin-top: 40px;
 }
 
-.jounery-reservationarea-container {
+.journey-reservationarea-container {
   width: 100%;
   height: auto;
   background: #e8f7ff;
 }
 
-.jounery-selectguide .card {
+.journey-selectguide .card {
   margin-top: 0%;
   margin-left: 0%;
   margin-right: 0%;
@@ -113,7 +113,7 @@
   max-width: 350px;
 }
 
-.jounery-selectguide .card-img-top {
+.journey-selectguide .card-img-top {
   margin-top: 50px;
 }
 
@@ -123,13 +123,13 @@
   width: 100%;
 }
 
-.jounery-selectguide img {
+.journey-selectguide img {
   border-radius: 50%;
   max-width: 125px;
   margin: 25px auto auto auto;
 }
 
-.jounery-select-guide .card-title {
+.journey-select-guide .card-title {
   margin-top: 5px;
   font-weight: bold;
   font-size: 18px;
@@ -139,12 +139,12 @@
   color: #18191f;
 }
 
-.jounery-selectguide-star {
+.journey-selectguide-star {
   margin-top: 10px;
   font-size: 20px;
 }
 
-.jounery-selectguide-title {
+.journey-selectguide-title {
   margin-top: 25px;
   font-size: 24px;
   line-height: 32px;
@@ -152,7 +152,7 @@
   color: #18191f;
 }
 
-.jounery-selectguide .smalltag {
+.journey-selectguide .smalltag {
   position: absolute;
   right: 5%;
   top: 2%;
@@ -164,7 +164,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .jounery-selectguide .smalltag {
+  .journey-selectguide .smalltag {
     position: absolute;
     right: 5%;
     top: 2%;
@@ -175,7 +175,7 @@
     color: #3d3c3c;
   }
 
-  .jounery-selectguide .card-text {
+  .journey-selectguide .card-text {
     font-weight: bold;
     font-size: 18px;
     line-height: 27px;
@@ -185,7 +185,7 @@
     color: #18191f;
   }
 }
-.jounery-selectguide .card-text {
+.journey-selectguide .card-text {
   font-size: 16px;
   line-height: 24px;
   text-align: center;
@@ -194,7 +194,7 @@
   color: #a5a5a8;
 }
 
-.jounery-reservation-button {
+.journey-reservation-button {
   width: 325px;
   background: #ff9c00;
   border: 1px solid #ffffff;
@@ -208,21 +208,21 @@
   margin-bottom: 10px;
 }
 
-.jounery-notes {
+.journey-notes {
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
   color: #000000;
 }
 
-.jounery-notes .remark {
+.journey-notes .remark {
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
   color: #6d6d6d;
 }
 
-.jounery-watchoutnote {
+.journey-watchoutnote {
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
