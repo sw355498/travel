@@ -1,10 +1,20 @@
+
+
 .journey-info-name {
   font-weight: bold;
   font-size: 28px;
   line-height: 40px;
   color: #072b7b;
 }
-
+@media only screen and (max-width:768px) {
+.journey-info-name {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 40px;
+  color: #072b7b;
+  text-align: center;
+}
+}
 .jounery-info-like {
   color: #ff9564;
   font-size: 35px;
@@ -12,7 +22,14 @@
   align-items: center;
   margin-bottom: 15px;
 }
-
+@media only screen and (max-width:768px) {
+.jounery-info-like {
+  color: #ff9564;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+margin: 0%;
+}
 .jounery-info-price {
   font-weight: 500;
   font-size: 28px;
@@ -20,7 +37,16 @@
   display: flex;
   align-items: center;
 }
-
+}
+@media only screen and (max-width:768px) {
+  .jounery-info-price {
+font-weight: 500;
+font-size: 20px;
+line-height: 40px;
+color: #072B7B;
+margin-bottom: 20px;
+}
+}
 .journey-info-point {
   font-size: 20px;
   line-height: 30px;
@@ -32,9 +58,18 @@
 .journey-info-smalltitle p {
   font-size: 20px;
   line-height: 23px;
-
   color: #000000;
 }
+@media only screen and (max-width:768px) {
+.journey-info-smalltitle p {
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+  text-align: center;
+  margin-top: 25px;
+}
+}
+
 
 .jounery-info i {
   font-size: 36px;
@@ -46,6 +81,12 @@
   margin-left: 6px;
 }
 
+.journey-info-pic{
+  width:  100%;
+  max-width: 729px;
+  max-height: 400px;
+  height: auto;
+}
 .mt-10 {
   margin-top: 10px;
 }
@@ -63,10 +104,13 @@
   margin-left: 0%;
   margin-right: 0%;
   margin-bottom: 25px;
-
   max-width: 350px;
 }
 
+.jounery-selectguide .card-img-top {
+  margin-top: 50px;
+
+}
 .necessary {
   display: block;
   height: 40px;
@@ -84,17 +128,14 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 27px;
-  /* identical to box height, or 150% */
-
   text-align: center;
   font-feature-settings: 'salt' on, 'liga' off;
-
   color: #18191f;
 }
 
 .jounery-selectguide-star {
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .jounery-selectguide-title {
@@ -102,7 +143,6 @@
   font-size: 24px;
   line-height: 32px;
   text-align: center;
-  font-feature-settings: 'salt' on, 'liga' off;
   color: #18191f;
 }
 
@@ -117,12 +157,35 @@
   color: #3d3c3c;
 }
 
+@media only screen and (max-width:768px) {
+.jounery-selectguide .smalltag {
+  position: absolute;
+  right: 5%;
+  top: 2%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 27px;
+  /* identical to box height, or 169% */
+  color: #3d3c3c;
+}
+.jounery-selectguide .card-text {
+ font-weight: bold;
+font-size: 18px;
+line-height: 27px;
+/* identical to box height, or 150% */
+text-align: center;
+font-feature-settings: 'salt' on, 'liga' off;
+color: #18191F;
+}
+
+
+}
 .jounery-selectguide .card-text {
   font-size: 16px;
   line-height: 24px;
   text-align: center;
   font-feature-settings: 'salt' on, 'liga' off;
-
+margin: 0%;
   color: #a5a5a8;
 }
 
@@ -183,7 +246,7 @@ border-radius: 10px;
 }
 
 .coustomerreview-area{
-  background: #E8F7FF;
+background: #E8F7FF;
 border-radius: 20px;
 height: 120px;
 }
@@ -192,6 +255,10 @@ height: 120px;
   margin: 0 0 0 25px;
 }
 
+@media only screen and (max-width:768px) {
+.coustomerreview button {
+ display: none;
+}}
 .pagination-container nav {
   width: 149px !important;
   height: 33.39px !important;
