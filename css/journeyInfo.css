@@ -1,0 +1,300 @@
+.journey-info-name {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 40px;
+  color: #072b7b;
+}
+@media only screen and (max-width: 768px) {
+  .journey-info-name {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 40px;
+    color: #072b7b;
+    text-align: center;
+  }
+}
+.journey-info-like {
+  color: #ff9564;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .journey-info-like {
+    color: #ff9564;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    margin: 0%;
+  }
+
+  .journey-info-price {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .journey-info-price {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    color: #072b7b;
+    margin-bottom: 20px;
+  }
+}
+
+.journey-info-point {
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height, or 150% */
+  text-align: center;
+  color: #fec90d;
+}
+
+.journey-info-smalltitle p {
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+}
+
+@media only screen and (max-width: 768px) {
+  .journey-info-smalltitle p {
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    text-align: center;
+    margin-top: 25px;
+  }
+}
+
+.journey-info i {
+  font-size: 36px;
+  color: rgb(0, 0, 0);
+}
+
+.journey-info .fa-map-marker-alt {
+  font-size: 36px;
+  color: rgba(245, 8, 8, 1);
+  margin-left: 6px;
+}
+
+.journey-info-pic {
+  width: 100%;
+  max-width: 729px;
+  max-height: 400px;
+  height: auto;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.journey-reservationarea-container {
+  width: 100%;
+  height: auto;
+  background: #e8f7ff;
+}
+
+.journey-selectguide .card {
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-bottom: 25px;
+  max-width: 350px;
+}
+
+.journey-selectguide .card-img-top {
+  margin-top: 50px;
+}
+
+.necessary {
+  display: block;
+  height: 40px;
+  width: 100%;
+}
+
+.journey-selectguide img {
+  border-radius: 50%;
+  max-width: 125px;
+  margin: 25px auto auto auto;
+}
+
+.journey-select-guide .card-title {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  font-feature-settings: 'salt' on, 'liga' off;
+  color: #18191f;
+}
+
+.journey-selectguide-star {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.journey-selectguide-title {
+  margin-top: 25px;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #18191f;
+}
+
+.journey-selectguide .smalltag {
+  position: absolute;
+  right: 5%;
+  top: 2%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 27px;
+  /* identical to box height, or 169% */
+  color: #3d3c3c;
+}
+
+@media only screen and (max-width: 768px) {
+  .journey-selectguide .smalltag {
+    position: absolute;
+    right: 5%;
+    top: 2%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    /* identical to box height, or 169% */
+    color: #3d3c3c;
+  }
+
+  .journey-selectguide .card-text {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height, or 150% */
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #18191f;
+  }
+}
+.journey-selectguide .card-text {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  font-feature-settings: 'salt' on, 'liga' off;
+  margin: 0%;
+  color: #a5a5a8;
+}
+
+.journey-reservation-button {
+  width: 325px;
+  background: #ff9c00;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.journey-notes {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000000;
+}
+
+.journey-notes .remark {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #6d6d6d;
+}
+
+.journey-watchoutnote {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000000;
+  background: rgba(255, 149, 100, 0.1);
+  border-radius: 10px;
+}
+
+.coustomerreview-img {
+  border-radius: 50%;
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.coustomerreview i {
+  color: #ffffff;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.coustomerreview-journeyimg {
+  max-width: 318px;
+  max-height: 244;
+  border-radius: 32px;
+}
+
+.coustomerreview-area {
+  background: #e8f7ff;
+  border-radius: 20px;
+  height: 120px;
+}
+
+.coutomerreview-guideresponse {
+  margin: 0 0 0 25px;
+}
+
+@media only screen and (max-width: 768px) {
+  .coustomerreview button {
+    display: none;
+  }
+}
+.pagination-container nav {
+  width: 149px !important;
+  height: 33.39px !important;
+}
+.pagination {
+  width: 149px !important;
+  height: 33.39px !important;
+  margin: 0%;
+}
+
+.pagination .page-item .page-number {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.pagination .page-item .page-sign {
+  width: 32px !important;
+  height: 33.39px !important;
+}
+
+.page-item {
+  margin-right: 7px;
+}
+
+.page-sign-next {
+  margin-right: 0%;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #072b7b;
+  border-color: #072b7b;
+}

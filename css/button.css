@@ -19,6 +19,17 @@
   border: none;
   color: #ffffff;
 }
+.td-btn-medium-w {
+  width: 85px;
+  height: 40px;
+  padding: 10px 20px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 50px;
+  border: none;
+  color:  #ff9c00;
+  border:1px solid  #ff9c00;
+}
 
 .td-btn-large-o {
   width: 115px;

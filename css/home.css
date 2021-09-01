@@ -1,0 +1,638 @@
+
+.banner {
+  min-height: 100vh;
+  background-image: url("../img/首頁大圖.png");
+  background-size: cover;
+  background-position: center center;
+  height: auto;
+  position: relative;
+  width: 100%;
+  
+}
+
+.banner h2 {
+  color: #fff;
+  display: block;
+  width: 50%;
+  line-height: 40px;
+  font-size: 28px;
+  text-align: center;
+}
+
+@media only screen and (max-width:576px) {
+  .banner h2 {
+  color: #fff;
+  display: block;
+  width: 50%;
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+}
+}
+
+
+@media only screen and (max-width:1100px) {
+  .banner h2 {
+  color: #fff;
+  display: block;
+  width: 50%;
+  line-height: 40px;
+  font-size: 24px;
+  text-align: center;
+}
+}
+
+@media only screen and (max-width:900px) {
+  .banner h2 {
+  color: #fff;
+  display: block;
+  width: 50%;
+  line-height: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+}
+.banner img {
+  width: 50%;
+  height: auto;
+}
+
+.dropdown button {
+  width: 50%;
+  border-radius: 20px;
+  height: auto;
+  background: #fff;
+  opacity: 0.7;
+  color: rgba(23, 65, 87, 1);
+  font-size: 18px;
+  transform: translateY(-120%);
+}
+.dropdown .show {
+  width: 50%;
+  margin-top: 10px;
+  background: rgba(196, 196, 196, 0.79);
+  opacity: 0.7;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.dropdown .show h6 {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 38px;
+  color: #000000;
+}
+.dropdown .show input {
+  width: 25px;
+  height: 25px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  border-radius: 50%;
+}
+
+.dropdown .show .list h6 {
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+}
+.dropdown .show .list {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #000000;
+}
+
+
+
+.aboutus-img{
+  width: 100%;
+}
+
+.home-aboutus p{
+font-size: 24px;
+line-height: 40px;
+text-align: center;
+color: #072B7B;
+/* width: 50%;
+text-align: right;
+position: absolute;
+transform: translateY(-120%);
+}
+
+@media only screen and (max-width:1200px) {
+.home-aboutus p{
+font-size: 20px;
+line-height: 40px;
+text-align: center;
+color: #072B7B;
+/* width: 50%; */
+position: absolute;
+transform: translateY(-120%);
+}
+}
+
+@media only screen and (max-width:992px) {
+.home-aboutus p{
+font-size: 20px;
+line-height: 40px;
+text-align: center;
+color: #072B7B;
+position:relative;
+transform: translateY(0%);
+
+}
+}
+
+@media only screen and (max-width:768px) {
+.home-aboutus p{
+font-size: 16px;
+line-height: 40px;
+text-align: center;
+color: #072B7B;
+position:relative;
+transform: translateY(0%);
+
+}
+}
+.gallery-area p {
+  font-weight: bold;
+  font-size: 28px;
+  color: rgba(7, 43, 123, 1);
+}
+#journey {
+  /* outline: 2px solid red; */
+  width: auto;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 20px;
+  
+}
+
+#journey img {
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  
+}
+
+.journey-tag {
+  max-width: 356.67px;
+  width: 100%     ;
+  height: 72px;
+  background: rgba(7, 43, 123, 0.8);
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  transform: translateY(-72px);
+}
+
+.journey-tag-3 {
+  max-width: 733.33px;
+  width: 100%     ;
+  height: 72px;
+  background: rgba(7, 43, 123, 0.8);
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  transform: translateY(-73px);
+}
+.journey-tag-3 p{
+ font-size: 20px;
+  text-align: center;
+  color: #f6f6f6;
+}
+
+.journey-tag p {
+  font-size: 20px;
+  text-align: center;
+  color: #f6f6f6;
+}
+
+#journey img:hover {
+  background: rgb(0, 0, 0, 0.5);
+}
+.journey-tag-price {
+  font-weight: 500;
+  font-size: 16px;
+
+  /* identical to box height, or 150% */
+
+  text-align: center;
+  font-feature-settings: "salt" on, "liga" off;
+
+  /* 淡淡灰 */
+
+  color: #f6f6f6;
+}
+
+.journey-paterungan {
+  grid-row: 1/3;
+  grid-column: 1/2;
+  /* background: rosybrown; */
+  border-radius: 10px;
+  
+}
+.journey-paterungan img{
+ border-radius: 10px;
+}
+
+.journey-kiwit {
+  grid-row: 3/5;
+  grid-column: 1/2;
+  background: aqua;
+  border-radius: 10px;
+}
+.journey-kiwit img{
+ border-radius: 10px;
+}
+
+.journey-cawi {
+  grid-row: 1/2;
+  grid-column: 2/4;
+  background: red;
+  border-radius: 10px;
+}
+.journey-cawi img{
+ border-radius: 10px;
+}
+.journey-ciwidian {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  background: yellow;
+  border-radius: 10px;
+}
+.journey-ciwidian img{
+ border-radius: 10px;
+}
+.journey-tafalong {
+  grid-row: 3/5;
+  grid-column: 2/3;
+  background: blueviolet;
+  border-radius: 10px;
+}
+
+.journey-tafalong img{
+ border-radius: 10px;
+}
+
+.journey-sakur {
+  grid-row: 2/4;
+  grid-column: 3/4;
+  background: blue;
+  border-radius: 10px;
+}
+.journey-sakur img{
+ border-radius: 10px;
+}
+.journey-vataan {
+  grid-row: 4/5;
+  grid-column: 3/4;
+  background: khaki;
+  border-radius: 10px;
+}
+.journey-vataan img{
+ border-radius: 10px;
+}
+.gallery-area .journey-paterungan {
+  position: relative;
+}
+.gallery-area .journey-kiwit {
+  position: relative;
+}
+.gallery-area .journey-cawi {
+  position: relative;
+}
+.gallery-area .journey-ciwidian {
+  position: relative;
+}
+.gallery-area .journey-tafalong {
+  position: relative;
+}
+.gallery-area .journey-vataan {
+  position: relative;
+}
+.gallery-area .journey-sakur {
+  position: relative;
+  
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.2s ease;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 11;
+}
+.gallery-area .journey-paterungan:hover .overlay {
+  opacity: 1;
+}
+.gallery-area .journey-kiwit:hover .overlay {
+  opacity: 1;
+}
+.gallery-area .journey-cawi:hover .overlay {
+  opacity: 1;
+}
+.gallery-area .journey-ciwidian:hover .overlay {
+  opacity: 1;
+}
+.gallery-area .journey-tafalong:hover .overlay {
+  opacity: 1;
+}
+.gallery-area .journey-sakur:hover .overlay {
+  opacity: 1;
+}
+.gallery-area .journey-vataan:hover .overlay {
+  opacity: 1;
+}
+
+.gallery-area .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#excellent-guide {
+  margin-top: 75px;
+}
+#excellent-guide .excellent-guide-title {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 40px;
+  color: rgba(7, 43, 123, 1);
+}
+
+#excellent-guide .card .tag {
+  font-weight: 500px;
+  font-size: 16px;
+  line-height: 27px;
+  color: #3d3c3c;
+}
+#excellent-guide .card {
+  margin-right: 10%;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+#excellent-guide .card .guideImgBig {
+  width: 50%;
+  max-width: 165px;
+  height: auto;
+  border-radius: 50%;
+
+}
+@media only screen and (max-width:992px) {
+#excellent-guide .card .guideImgBig {
+  width:100%;
+  max-width: 125px;
+  height: auto;
+  border-radius: 50%;
+margin-top: 12.5px;
+}
+}
+
+#excellent-guide .smalltag {
+  position: absolute;
+  right: 0;
+font-size: 16px;
+line-height: 27px;
+/* identical to box height, or 169% */
+color: #3D3C3C;
+   
+}
+@media only screen and (max-width:768px) {
+#excellent-guide .smalltag {
+  display: block;
+ font-size: 14px;
+ color:black 
+}
+}
+
+#excellent-guide .card-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.stars a {
+  opacity: 50%;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.stars:hover a {
+  opacity: 1;
+}
+.stars a:hover {
+  opacity: 1;
+}
+
+.stars a:hover ~ a {
+  opacity: 50%;
+}
+
+#excellent-guide {
+  width: 100%;
+  background: #e8f7ff;
+  border-radius: 50px 50px 0px 0px;
+}
+#excellent-guide .card-text {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #3d3c3c;
+  margin-top: 25px;
+  display: block;
+}
+#excellent-guide .guide-bigbutton {
+  background: #ff9c00;
+  border-radius: 50px;
+  max-width: 115px;
+  max-height: 48px;
+  width: 200%;
+  height: 100%;
+  margin-top: 50px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#excellent-guide .coustomer-review {
+  font-weight: 600px;
+  font-size: 20px;
+  line-height: 32px;
+  margin-top: 75px;
+  text-align: center;
+  color: #0c1d1e;
+}
+
+#excellent-guide h6 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: #0c1d1e;
+  margin-top: 25px;
+}
+#coustomer-review {
+  position: relative;
+}
+
+.link-left {
+  width: 35%;
+  height: 1px;
+  border-top: solid #666 1px;
+  position: absolute;
+  top: 50%;
+}
+
+/*畫一條再右邊的豎線*/
+.link-right {
+  width: 35%;
+  height: 1px;
+  border-top: solid #666 1px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+@media only screen and (max-width:992px) {
+.link-left {
+  width: 20%;
+  height: 1px;
+  border-top: solid #666 1px;
+  position: absolute;
+  top: 50%;
+}
+
+/*畫一條再右邊的豎線*/
+.link-right {
+  width: 20%;
+  height: 1px;
+  border-top: solid #666 1px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+}
+
+.review-area .card {
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0c1d1e;
+}
+
+.review-area .card h5 {
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+}
+@media only screen and (max-width:992px) {
+.coustomer-name{
+  text-align: center !important;
+
+}
+}
+@media only screen and (max-width:992px) {
+.coustomer-name{
+  text-align: center !important;
+
+}
+}
+
+.review-area .card img {
+  width: 50%;
+  max-width: 70px;
+  max-height: 70px;
+  height: 150%;
+  border-radius: 50%;
+ 
+}
+
+@media only screen and (max-width:992px) {
+.guide-firstcomment{
+  margin-top: 25px;
+
+}
+}
+
+.guide-figure img {
+  border-radius: 50%;
+  max-width: 125px;
+  margin-top: 25px;
+}
+
+#excellent-guide .card {
+
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-bottom: 25px;
+
+}
+
+.guide-figure h5 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: #0c1d1e;
+  margin-top: 10px;
+}
+.guide-figure .stars {
+  margin-top: 10px;
+}
+.guide-figure .card-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #0c1d1e;
+}
+
+.guide-figure p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #a5a5a8;
+}
+
+.guide-figure .card-body button {
+  max-width: 115px;
+  max-height: 48px;
+  width: 200%;
+  height: 100%;
+  height: auto;
+  background: #ff9c00;
+  border-radius: 25.5px;
+  color: white;
+  margin-top: 37px;
+}
+
+/*---------------------------------------------------- */
+/*----------------------------------------------------*/

@@ -20,15 +20,16 @@
       crossorigin="anonymous"
     />
     <!-- header設定css -->
-    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="./css/header.css" />
     <!-- footer設定css -->
-    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
     <!-- 字體設定css -->
-    <link rel="stylesheet" href="/css/fons.css" />
+    <link rel="stylesheet" href="./css/fons.css" />
     <!-- 間距設定css -->
-    <link rel="stylesheet" href="/css/spacing.css" />
+    <link rel="stylesheet" href="./css/spacing.css" />
     <!-- 按鈕設定css -->
-    <link rel="stylesheet" href="/css/button.css" />
+    <link rel="stylesheet" href="./css/button.css" />
+    <link rel="stylesheet" href="./css/jouneryInfo.css">
   </head>
   <style></style>
   <body>
@@ -37,10 +38,10 @@
       <div class="container td-header-main d-flex align-items-center">
         <!-- LOGO區  -->
         <a class="td-logo d-flex" href="#">
-          <img class="td-logo-img" src="/img/logo.png" alt="logo" />
+          <img class="td-logo-img" src="./img/logo.png" alt="logo" />
           <img
             class="td-logo-text"
-            src="/img/花島（黑）.png"
+            src="./img/花島（黑）.png"
             alt="花島（黑）"
           />
         </a>
@@ -70,7 +71,148 @@
       </div>
     </header>
     <!-- content -->
+  <!-- content -->
+    <!-- banner start -->
+    <section>
+        <div class="container td-mt-75">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./data/小banner圖/靜浦-部落射箭體驗.jpg" class="d-block w-100" alt="靜浦部落" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./data/小banner圖/水璉部落.png" class="d-block w-100" alt="水璉部落" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./data/小banner圖/太巴塱.jpg" class="d-block w-100" alt="太巴塱部落" />
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- banner end -->
+    <!-- content start  -->
+    <div class="container td-mt-75 jounery-info">
+        <div class="row d-flex align-content-md-between tb jounery-intro">
+            <div class="col-6 journey-info-name">
+                <p>靜浦部落</p>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <i class="far fa-heart td-me-50 jounery-info-like"></i>
+                <p class="jounery-info-price">TWD 1,110 起</p>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-end journey-info-point">
+            <div class="d-flex justify-content-end">
+                <p class="journey-point"></p>5.0 &nbsp;<a>⭐</a> <a>⭐</a> <a>⭐</a> <a>⭐</a><a>⭐</a>
+            </div>
+        </div>
+        <div class="journey-info-smalltitle">
+            <p>一&nbsp;行程資訊&nbsp;一</p>
+        </div>
+        <div class="d-flex flex-row bd-highlight td-mt-25">
+            <div class="p-2 bd-highlight text-center "><i class="fas fa-map-marker-alt icon"></i></div>
+            <div class="p-2 bd-highlight">
+                <div class="text-title-size20 mt-1">台灣&nbsp;|&nbsp;靜浦部落 </div>
+            </div>
+        </div>
 
+        <div class="d-flex flex-row bd-highlight td-mt-25">
+            <div class="p-2 bd-highlight text-center"> <i class="far fa-clock icon"></i></div>
+            <div class="p-2 bd-highlight">
+                <div class="text-title-size20 mt-1">行程長度：約 2.5小時（含著裝及解說時間，不含盥洗及接駁時間）</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <div class="d-flex flex-row bd-highlight td-mt-25">
+                    <div class="p-2 bd-highlight text-center"><i class="fas fa-globe"></i></div>
+                    <div class="p-2 bd-highlight">
+                        <div class="text-title-size20 mt-1">中文 導覽
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="d-flex flex-row bd-highlight td-mt-25">
+                    <div class="p-2 bd-highlight text-center"><i class="fas fa-motorcycle"></i></div>
+
+                    <div class="p-2 bd-highlight">
+                        <div class="text-title-size20 mt-1">機車
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="journey-info-smalltitle td-mt-50">
+            <p>一&nbsp;行程簡介&nbsp;一</p>
+        </div>
+        <div class="journey-info-smalltitle td-mt-25">
+            <p>半日漁獵生活體驗:</p>
+        </div>
+        <div class="journey-info-smalltitle td-mt-25">
+            <p>踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗) </p>
+        </div>
+        <div class="journey-info-name mt-40">
+            <p>商品說明</p>
+        </div>
+
+        <div class="journey-info-smalltitle td-mt-25">
+            <p>一&nbsp;行程資訊&nbsp;一</p>
+        </div>
+        <div class="journey-info-smalltitle td-mt-25">
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;上午場-09：00 / 下午場-14：00</p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;-花蓮靜浦部落集合
+            </p>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;開啟靜浦部落的半日漁獵生活體驗：</p>
+            <p> →踏上膠筏，划向秀姑巒溪(約50分鐘)
+            </p>
+            <p> →岸邊找尋浪花蟹X八卦網捕魚體驗(約60分鐘)
+            </p>
+            <p> →部落神射手－射箭體驗(約40分鐘)
+            </p>
+        </div> 
+
+         <div class="journey-info-name td-mt-75">
+            <p>商品說明</p>
+        </div>
+           <div class="journey-info-name td-mt-25">
+            <img src="./data/行程照片/靜浦-竹筏漫遊.jpg" alt="">
+        </div>
+          <div class="journey-info-name mt-10">
+            <img src="./data/行程照片/靜浦-追花逐浪花蟹.jpg" alt="">
+        </div>
+
+
+
+
+
+
+
+    </div>
+    </div>
+
+    <!-- content end-->
     <!-- content end-->
     <!-- footer -->
     <footer class="text-content-footer text-white">
