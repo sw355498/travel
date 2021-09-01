@@ -40,12 +40,15 @@ transform: matrix(1, 0, 0, -1, 0, 0);
 */
 
 .box-1 {
-  margin-left: 15px;
+  position: relative;
+  left: 15px;
+  top: 10px;
   color: #ffffff;
 }
 .box-2 {
-  margin-left: 15px;
-  color: #ffffff;
+  position: relative;
+  left: 25px;
+  background-color: #fec90d;
 }
 
 .main-article-article {
@@ -147,11 +150,12 @@ transform: matrix(1, 0, 0, -1, 0, 0);
   color: rgb(2, 2, 2);
   text-decoration: none;
 }
+.list p {
+  color: #072b7b;
+  text-decoration: none;
+}
 
 a:hover {
-  color: #072b7b;
-}
-.member-list-text {
   color: #072b7b;
 }
 

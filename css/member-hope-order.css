@@ -129,13 +129,18 @@ main {
 }
 
 .list {
-  margin-top: 25px;
   list-style-type: none;
   text-align: center;
 }
 .list a {
   color: rgb(2, 2, 2);
   text-decoration: none;
+}
+.list p {
+  position: relative;
+  top: 10px;
+  color: #072b7b;
+  margin: 20px 0;
 }
 
 a:hover {

@@ -7,7 +7,7 @@ main {
 
 .main-article {
   height: 1431px;
-  width: 834px;
+  width: 825px;
   top: 166px;
   left: 450px;
   background: #ffffff;
@@ -94,14 +94,15 @@ main {
 
   top: 399px;
 }
-.nav-article-section-text8 {
+/* .nav-article-section-text8 {
   width: 302px;
   height: 69px;
   border-radius: 20px;
   position: absolute;
   font-weight: bold;
-  top: 399px;
-}
+  top: 25px;
+  left: 19px;
+} */
 
 .nav-article-section-delete {
   width: 115px;
@@ -144,6 +145,11 @@ main {
   color: rgb(2, 2, 2);
   text-decoration: none;
 }
+.list p {
+  color: #072b7b;
+  position: relative;
+  top: 10px;
+}
 
 a:hover {
   color: #072b7b;
@@ -165,12 +171,69 @@ a:hover {
   margin-top: 24px;
 }
 .flexbox {
-  display: flex;
   width: 130px;
-  height: 30px;
-
-  justify-content: space-between;
+  height: 130px;
+  list-style-type: none;
 }
+
+.flexbox-text1 {
+  font-weight: bold;
+  position: relative;
+  left: 19px;
+  top: 25px;
+}
+
+.flexbox-text2 {
+  position: relative;
+  left: 19px;
+  top: 50px;
+}
+
+.flexbox-text3 {
+  position: relative;
+  left: 19px;
+  top: 75px;
+}
+
+.flexbox-text4 {
+  position: relative;
+  left: 19px;
+  top: 100px;
+}
+
+.flex1box {
+  width: 130px;
+  height: 130px;
+  list-style-type: none;
+}
+
+.flex1box-text1 {
+  font-weight: bold;
+  position: relative;
+  left: 160px;
+  top: -25px;
+}
+
+.flex1box-text2 {
+  position: relative;
+  left: 160px;
+}
+
+.flex1box-image {
+  width: 27px;
+  height: 24px;
+  position: relative;
+  left: -10px;
+  top: 0 px;
+}
+
+.flex1box-text3 {
+  position: relative;
+  left: 160px;
+  top: 25px;
+}
+
+/* 
 .item {
   width: 100px;
   height: 25px;
@@ -178,6 +241,19 @@ a:hover {
   text-align: center;
   display: flex;
   justify-content: space-between;
+} */
+.journey-info-name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  color: #072b7b;
+}
+.journey-info-name1 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  color: black;
+  line-height: 27px;
 }
 
 .nav-article-section-detel {
@@ -187,7 +263,47 @@ a:hover {
   background: #000;
   position: absolute;
   left: 1169px;
-  top: 1819px;
+  top: 1902px;
   border: 1px solid #ff9c00;
   background: #ff9c00;
+}
+.section-journey-info {
+  position: relative;
+  left: 18px;
+  top: 179px;
+}
+.journey-info-smalltitle p {
+  font-size: 18px;
+  line-height: 15px;
+
+  color: #000000;
+}
+.journey-info-smalltitle-list {
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #000000;
+}
+.journey-info-icon-text {
+  height: 30px;
+  width: 80px;
+}
+.main-order-evaluation {
+  height: 30px;
+  width: 80px;
+  position: absolute;
+  left: 451px;
+  top: 1672px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #072b7b;
+}
+.main-order-evaluation1 {
+  height: 150px;
+  width: 825px;
+  border-radius: 10px;
+  position: absolute;
+  left: 451px;
+  top: 1727px;
+  border: 1px gray solid;
 }
