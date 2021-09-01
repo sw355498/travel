@@ -23,20 +23,41 @@
   border: 1px splid red;
 } */
 .sign-container {
-  height: 400px;
+  margin-top: 150px;
   border: 1px solid #ccc;
 }
 .sign-icon i {
+  font-size: 40px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+.sign-icon i:last-child {
+  padding-right: 0px;
+}
+.lines {
+  /* border: 1px solid #ccc; */
+}
+.sign-in-form > i {
   font-size: 30px;
-  height: 240px;
-}
-.line {
-  border: 1px solid red;
-  width: 100px;
-}
-label > i {
-  font-size: 10px;
 }
 .sign-btn {
-  background-color: 3ec6ff;
+  height: 45px;
+  background: rgba(62, 198, 255, 1);
+  padding-top: 10px;
+}
+
+.sign-in-form {
+  color: #666;
+}
+.content-main {
+  margin-bottom: 20px;
+}
+.sign-up-href {
+  color: #666;
+}
+p {
+  color: #666;
+}
+.or {
+  margin-bottom: 25px;
 }
