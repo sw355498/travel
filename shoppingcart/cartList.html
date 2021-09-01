@@ -119,6 +119,17 @@
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
       }
+
+      /* 收藏dom設定 */
+      .collect {
+        width: 36px;
+        height: 36px;
+        background-repeat: no-repeat;
+        background-image: url('../img/collect.png');
+      }
+      .collect.like {
+        background-image: url('../img/collect-click.png');
+      }
     </style>
   </head>
   <body>
@@ -217,11 +228,15 @@
             </td>
             <!-- 收藏.刪除及價錢 -->
             <td class="text-center">
-              <div class="td-mt-25">
-                <img src="../img/collect.png" alt="" />
+              <div>
+                <a class="td-mt-25 btn">
+                  <img class="collect" src="../img/collect.png" alt="" />
+                </a>
               </div>
-              <div class="td-mt-25">
-                <img src="../img/delete.png" alt="" />
+              <div>
+                <a class="td-mt-25 btn">
+                  <img src="../img/delete.png" alt="" />
+                </a>
               </div>
               <div class="text-title-size28 shoppingcart-price td-mt-25">
                 <div>TWD 1,799</div>
@@ -252,11 +267,15 @@
             </td>
             <!-- 收藏.刪除及價錢 -->
             <td class="text-center">
-              <div class="td-mt-25">
-                <img src="../img/collect.png" alt="collect" />
+              <div>
+                <a class="td-mt-25 btn">
+                  <img class="collect" src="../img/collect.png" alt="" />
+                </a>
               </div>
-              <div class="td-mt-25">
-                <img src="../img/delete.png" alt="delete" />
+              <div>
+                <a class="td-mt-25 btn">
+                  <img src="../img/delete.png" alt="" />
+                </a>
               </div>
               <div class="text-title-size28 shoppingcart-price td-mt-25">
                 <div>TWD 1,799</div>
@@ -403,4 +422,13 @@
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"
   ></script>
+  <script>
+    /*收藏*/
+    let collect = document.querySelectorAll('.collect')
+    for (let k = 0; k < collect.length; k++) {
+      collect[k].addEventListener('click', function () {
+        this.classList.toggle('like')
+      })
+    }
+  </script>
 </html>
