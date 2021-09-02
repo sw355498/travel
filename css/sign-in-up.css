@@ -1,0 +1,63 @@
+/* body {
+  background-image: url('https://picsum.photos/1440/1440/?random=1'); */
+/* background-size: 1440px 1440px; */
+/* }
+.container {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 10px 10px 10px 5px rgba(37, 37, 37, 0.3);
+  width: 800px;
+  height: 400px;
+  margin-top: 15vh;
+}
+#signInTab:target,
+#signUpTab:target {
+  border: 1px splid red;
+} */
+/* 頁籤 */
+/* #signInTab:target ~ .sign-in-btn-tab,
+#signUnTab:target ~ .sign-up-btn-tab {
+  border: 1px splid red;
+}
+#signIn,
+#signUp {
+  border: 1px splid red;
+} */
+.sign-container {
+  margin-top: 150px;
+  border: 1px solid #ccc;
+}
+.sign-icon i {
+  font-size: 40px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+.sign-icon i:last-child {
+  padding-right: 0px;
+}
+.lines {
+  /* border: 1px solid #ccc; */
+}
+.sign-in-form > i {
+  font-size: 30px;
+}
+.sign-btn {
+  height: 45px;
+  background: rgba(62, 198, 255, 1);
+  padding-top: 10px;
+}
+
+.sign-in-form {
+  color: #666;
+}
+.content-main {
+  margin-bottom: 20px;
+}
+.sign-up-href {
+  color: #666;
+}
+p {
+  color: #666;
+}
+.or {
+  margin-bottom: 25px;
+}
