@@ -117,7 +117,7 @@ font-size: 24px;
 line-height: 40px;
 text-align: center;
 color: #072B7B;
-/* width: 50%;
+width: 50%;
 text-align: right;
 position: absolute;
 transform: translateY(-120%);
@@ -129,7 +129,7 @@ font-size: 20px;
 line-height: 40px;
 text-align: center;
 color: #072B7B;
-/* width: 50%; */
+ width: 100%; 
 position: absolute;
 transform: translateY(-120%);
 }
@@ -143,6 +143,20 @@ text-align: center;
 color: #072B7B;
 position:relative;
 transform: translateY(0%);
+
+}
+}
+
+@media only screen and (min-width:1200px) {
+.home-aboutus p{
+font-size: 28px;
+line-height: 40px;
+text-align: center;
+color: #072B7B;
+position:relative;
+ width: 100%; 
+
+transform: translateY(-100%);
 
 }
 }
@@ -633,6 +647,32 @@ color: #3D3C3C;
   color: white;
   margin-top: 37px;
 }
+
+@media only screen and (max-width:1200px) {
+  .guide-figure .card-body button {
+    max-width: 115px;
+    max-height: 48px;
+    width: 200%;
+    height: 100%;
+    height: auto;
+    background: #ff9c00;
+    border-radius: 25.5px;
+    color: white;
+    margin-top: 20px !important;
+}
+
+#excellent-guide .card-text {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #3d3c3c;
+    margin-top: 25px;
+    display: block;
+    margin-top: 20px !important;
+
+}
+}
+
 
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
