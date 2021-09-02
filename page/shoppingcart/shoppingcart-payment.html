@@ -385,26 +385,30 @@
         </h2>
         <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
           <div class="accordion-body menu-bg">
-            <table class="td-mt-25 shoppingcart-bg">
+            <div class="td-mt-25 shoppingcart-bg">
               <!-- 第一筆行程 -->
-              <tr class="shoppingcart-solid container">
+              <div class="row align-items-center text-center">
                 <!-- 行程圖片 -->
-                <td class="shoppingcart-checkbox-td">
-                  <img class="td-my-25 shoppingcart-img" src="/img/奇美部落大圖1.png" alt="奇美部落大圖1"/>
-                </td>
+                <div class="col-5">
+                  <img
+                    class="td-my-25 shoppingcart-img"
+                    src="/img/奇美部落大圖1.png"
+                    alt="奇美部落大圖1"
+                  />
+                </div>
                 <!-- 行程內容 -->
-                <td class="text-title-size20">
-                  <a class="td-ms-25 shoppingcart-title" href="/page/jounery/jouneryInfo.html">
-                    阿美族 Tatadok (達達鹿) 泛舟體驗
+                <div class="col-4 text-title-size20">
+                  <a class="shoppingcart-title" href="">
+                    阿美族 Tatadok 泛舟體驗
                   </a>
-                  <div class="td-ms-25 td-mt-25">2021-06-26</div>
-                  <div class="td-ms-25 td-mt-25">人數：1人</div>
-                </td>
+                  <div class="td-mt-25">2021-06-26</div>
+                  <div class="td-mt-25">人數：1人</div>
+                </div>
                 <!-- 收藏.刪除及價錢 -->
-                <td class="text-center">
+                <div class="col-3">
                   <div>
                     <a class="td-mt-25 btn">
-                      <img class="collect" src="/img/collect.png" alt=""/>
+                      <img class="collect" src="/img/collect.png" alt="" />
                     </a>
                   </div>
                   <div>
@@ -412,30 +416,36 @@
                       <img src="/img/delete.png" alt="" />
                     </a>
                   </div>
-                  <div class="text-title-size28 shoppingcart-price td-mt-25">
+                  <div class="text-title-size24 shoppingcart-price td-mt-25">
                     <div>TWD 1,799</div>
                   </div>
-                </td>
-              </tr>
+                </div>
+              </div>
+              <!-- 分隔線 -->
+              <div class="col-12 shoppingcart-solid"></div>
               <!-- 第二筆行程 -->
-              <tr class="shoppingcart-solid container">
+              <div class="row align-items-center text-center">
                 <!-- 行程圖片 -->
-                <td class="shoppingcart-checkbox-td">
-                  <img class="td-my-25 shoppingcart-img" src="/img/奇美部落大圖1.png" alt="奇美部落4"/>
-                </td>
+                <div class="col-5">
+                  <img
+                    class="td-my-25 shoppingcart-img"
+                    src="/img/奇美部落大圖1.png"
+                    alt="奇美部落大圖1"
+                  />
+                </div>
                 <!-- 行程內容 -->
-                <td class="text-title-size20">
-                  <a class="td-ms-25 shoppingcart-title" href="/page/jounery/jouneryInfo.html">
-                    阿美族 Tatadok (達達鹿) 泛舟體驗
+                <div class="col-4 text-title-size20">
+                  <a class="shoppingcart-title" href="">
+                    阿美族 Tatadok 泛舟體驗
                   </a>
-                  <div class="td-ms-25 td-mt-25">2021-06-26</div>
-                  <div class="td-ms-25 td-mt-25">人數：1人</div>
-                </td>
+                  <div class="td-mt-25">2021-06-26</div>
+                  <div class="td-mt-25">人數：1人</div>
+                </div>
                 <!-- 收藏.刪除及價錢 -->
-                <td class="text-center">
+                <div class="col-3">
                   <div>
                     <a class="td-mt-25 btn">
-                      <img class="collect" src="/img/collect.png" alt=""/>
+                      <img class="collect" src="/img/collect.png" alt="" />
                     </a>
                   </div>
                   <div>
@@ -443,28 +453,24 @@
                       <img src="/img/delete.png" alt="" />
                     </a>
                   </div>
-                  <div class="text-title-size28 shoppingcart-price td-mt-25">
+                  <div class="text-title-size24 shoppingcart-price td-mt-25">
                     <div>TWD 1,799</div>
                   </div>
-                </td>
-              </tr>
+                </div>
+              </div>
+              <div class="col-12 shoppingcart-solid"></div>
               <!-- 總顯示區塊 -->
-              <tr>
-                <td></td>
-                <!-- 總數量&總價格 -->
-                <td class="d-flex td-my-25 align-items-center justify-content-end">
-                  <div class="text-title-size20 td-me-25">2件商品合計</div>
+              <div class="row  td-py-25">
+                <div class="col d-flex  flex-row-reverse align-items-center text-center">
+                  <div class="text-title-size20 me-2">2件商品合計</div>
                   <div><img src="/img/total.png" alt="total" /></div>
-                  <div class="text-title-size28 shoppingcart-price">
-                    TWD 3,598
-                  </div>
-                </td>
-                <!-- 前往結帳 -->
-                <td class="text-center">
+                  <div class="text-title-size24 shoppingcart-price">TWD 3,598</div>
+                </div>
+                <div class="col-3">
                   <!-- 前往結帳title -->
                   <button type="button" class="btn td-btn-large-gopay text-title-size24" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     確認付款
-                  </button>
+                    </button>
 
                   <!-- Modal -->
                   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -486,9 +492,9 @@
                       </div>
                     </div>
                   </div>
-                </td>
-              </tr>
-            </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
