@@ -11,122 +11,114 @@
   background: #e8f7ff;
   display: flex;
 }
+main {
+  height: 1095px;
+  width: 100%;
+  background: #e8f7ff;
+  display: flex;
+}
 
 .main-article {
-  height: 1000px;
+  height: 967px;
   width: 825px;
-  top: 92px;
-  left: 10px;
-  /*   
   top: 175px;
-  left: 520px; */
+  left: 609px;
   background: #ffffff;
-  position: relative;
-  display: flex;
-  /* display: flex; */
+  position: absolute;
+  border-radius: 10px;
 }
 
 .box {
   height: 44px;
   width: 130px;
-  position: absolute;
-  left: 640px;
-  top: 25px;
+  margin-left: 640px;
+  margin-top: 15px;
   background: #fec90d;
   border-radius: 50px;
 }
 
-.box-icon {
-  position: absolute;
-  left: 83px;
-  top: 5px;
-  color: #ffffff;
-}
-.box-text {
-  position: absolute;
-  left: 10px;
-  top: 8.5px;
-  color: #ffffff;
-}
-
 .main-article-article {
-  height: 400px;
+  height: 270px;
   width: 786px;
   left: 20px;
-  top: 94px;
+  top: 25px;
   background: #ffffff;
-  position: relative;
+  position: absolute;
   border-radius: 10px;
-  border: 1px solid rgb(172, 172, 172);
+  background: #e8f7ff;
+}
+
+.nav-article-section-image {
+  width: 251px;
+  height: 220px;
+  background: #000;
+  display: flex;
+  margin-left: 20px;
+  margin-top: 25px;
+}
+.nav-article-section-text1 {
+  width: 106px;
+  height: 33px;
+  border-radius: 20px;
+  position: absolute;
+  left: 297px;
+  top: 58px;
+}
+.nav-article-section-text2 {
+  width: 302px;
+  height: 69px;
+  border-radius: 20px;
+  position: absolute;
+  left: 297px;
+  top: 113px;
+}
+
+.nav-article-section-delete {
+  width: 115px;
+  height: 48px;
+  left: 64.15px;
+  top: 25px;
+  border-radius: 50px;
+  position: absolute;
+  left: 514px;
+  top: 197px;
+  border: 1px solid #ff9c00;
+  background: #ff9c00;
+}
+.nav-article-section-detel {
+  width: 115px;
+  height: 48px;
+  left: 64.15px;
+  top: 25px;
+  border-radius: 50px;
+  background: #000;
+  position: absolute;
+  left: 650px;
+  top: 197px;
+  border: 1px solid #ff9c00;
+  background: #ffffff;
+  color: #ff9c00;
 }
 
 .main-article-article2 {
-  height: 400px;
+  height: 270px;
   width: 786px;
-  left: 0px;
-  top: 80px;
+  left: 20px;
+  top: 320px;
   background: #ffffff;
-  position: relative;
-  border-radius: 10px;
-  border: 1px solid rgb(172, 172, 172);
-}
-.nav-article-section-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #000;
   position: absolute;
-  left: 69px;
-  top: 28px;
+  border-radius: 10px;
+  background: #e8f7ff;
 }
-.nav-article-section-name {
-  width: 51px;
-  height: 28px;
-  left: 133.5px;
-  top: 25px;
-  border-radius: 20px;
-  position: relative;
-}
-.nav-article-section-star {
-  width: 105px;
-  height: 20px;
-  left: 128px;
-  top: 5px;
-  border-radius: 20px;
-  background: #000;
-  position: relative;
-  /* margin-top: 129px;
-    margin-left: 64px; */
-}
-
-.nav-article-section-text {
-  width: 280px;
-  height: 28px;
-  left: 79.5px;
-  top: 25px;
-  position: relative;
-}
-.nav-article-section-image {
-  width: 250px;
-  height: 222px;
-  left: 64.15px;
-  top: 25px;
-  border-radius: 20px;
-  background: #000;
-  position: relative;
-  /* margin-top: 129px;
-    margin-left: 64px; */
-}
-
-/* "nav"字體及間距設定 */
-
-.nav-member-size18 {
-  font-size: 18px;
-  line-height: 30px;
-}
-.nav-member2-size18 {
-  font-size: 18px;
-  line-height: 55px;
+.main-article-article3 {
+  height: 270px;
+  width: 786px;
+  left: 20px;
+  top: 615px;
+  background: #ffffff;
+  position: absolute;
+  border-radius: 10px;
+  background: #e8f7ff;
 }
 
 .left-member {
@@ -150,16 +142,6 @@
 }
 
 .list {
-  position: relative;
-  top: 30px;
-  margin-top: 25px;
-  list-style-type: none;
-  text-align: center;
-}
-.list1 {
-  position: relative;
-  left: -18px;
-  margin-top: 25px;
   list-style-type: none;
   text-align: center;
 }
@@ -168,8 +150,10 @@
   text-decoration: none;
 }
 .list p {
+  position: relative;
+  top: 10px;
   color: #072b7b;
-  text-decoration: none;
+  margin: 20px 0;
 }
 
 a:hover {
@@ -193,9 +177,6 @@ a:hover {
   left: 64px;
 }
 
-.box10 {
-  display: flex;
-}
 .flex {
   display: flex;
   width: 130px;
@@ -230,8 +211,4 @@ a:hover {
 }
 .item3 {
   border-radius: 0px 5px 5px 0px;
-}
-.list-color {
-  color: #072b7b;
-  text-decoration: none;
 }
