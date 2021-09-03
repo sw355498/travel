@@ -107,11 +107,11 @@
       <!-- 購物車清單內容 -->
       <div class="td-mt-75">
         <div class="text-title-size24 d-none d-lg-block">
-          <span>購物車</span
-          ><span class="text-black-50">> 填寫資料與付款 >訂購完成</span>
+          <span>購物車</span>
+          <span class="text-black-50">> 填寫資料與付款 >訂購完成</span>
         </div>
         <div class="td-mt-25 shoppingcart-bg">
-          <div class="text-title-size28 shoppingcart-title text-center td-mt-25 d-lg-none d-block">購物車</div>
+          <div class="text-title-size28 shoppingcart-title text-center td-pt-25 d-lg-none d-block">購物車</div>
           <!-- 第一筆行程 -->
           <div class="row align-items-center text-center">
             <!-- checkbox -->
@@ -195,7 +195,7 @@
           <!-- 分隔線 -->
           <div class="col-12 shoppingcart-solid"></div>
           <!-- 總顯示區塊 -->
-          <div class="row align-items-center text-center td-py-25 mt-2">
+          <div class="row align-items-center text-center td-py-25 ">
             <div class="col-3 col-lg-1">
               <input class="my-auto" type="checkbox" />
             </div>
@@ -205,7 +205,7 @@
                 刪除已選項目<img src="/img/三角.png" alt="" />
               </button>
             </div>
-            <div class="col-12 col-lg-4 my-3 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
+            <div class="col-12 col-lg-4 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
               <div class="text-title-size20 me-1">2件商品合計</div>
               <div><img src="/img/total.png" alt="total" /></div>
               <div class="text-title-size24 shoppingcart-price">TWD 3,598</div>
@@ -230,8 +230,8 @@
           </a>
         </div>
       </div>
-      <!-- 其旅客還購買 -->
-      <div class="td-mt-75">
+      <!-- 其旅客還購買web版 -->
+      <div class="td-mt-75 d-none d-lg-block">
         <div class="text-title-size28">其它旅客還購買</div>
         <div class="shoppingcart-bg">
           <div class="d-flex justify-content-around td-my-25">
@@ -293,6 +293,85 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <!-- 其旅客還購買rwd版 -->
+      <div class="shoppingcart-bg td-mt-75 td-mb-25  d-block d-lg-none">
+        <div class="text-title-size28 shoppingcart-title text-center td-pt-25 d-lg-none d-block">其它旅客還購買</div>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- 第一項推薦 -->
+            <div class="carousel-item active ">
+              <div class="card td-my-25 recommend-card container p-0">
+                <img
+                  class="recommend-img"
+                  src="/img/馬太鞍部落03.jpg"
+                  alt="馬太鞍部落03"
+                  title="馬太鞍部落03"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">馬太鞍部落</h5>
+                  <p
+                    class="card-text recommend-text"
+                    title="馬太鞍是一個阿美族（邦查）部落的稱呼，位在花蓮縣光復鄉馬錫山山腳下，早期是一群阿美族人生活在馬太鞍溪與烏卡蓋溪（現今大興溪）形成的一塊沖積扇地形，後來因鹽水港製糖廠（現今花蓮糖廠）的設立，在原來靠北的土地上廣植蔗糖原料－甘蔗，而使得當地的阿美族人不得不往南遷移。"
+                  >
+                    馬太鞍是一個阿美族（邦查）部落的稱呼，位在花蓮縣光復鄉馬錫山山腳下，早期是一群阿美族人生活在馬太鞍溪與烏卡蓋溪（現今大興溪）形成的一塊沖積扇地形，後來因鹽水港製糖廠（現今花蓮糖廠）的設立，在原來靠北的土地上廣植蔗糖原料－甘蔗，而使得當地的阿美族人不得不往南遷移。
+                  </p>
+                  <a href="#" class="btn td-btn-medium-o">查看</a>
+                </div>
+              </div>
+            </div>
+            <!-- 第二項推薦 -->
+            <div class="carousel-item">
+              <div class="card td-my-25 recommend-card container p-0">
+                <img
+                  class="recommend-img"
+                  src="/img/靜浦06.jpg"
+                  alt="靜浦06"
+                  title="靜浦06"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">靜浦部落</h5>
+                  <p
+                    class="card-text recommend-text"
+                    title="靜浦部落，一個洋溢熱血與熱情的太陽部落，跟著靜浦部落達人，體驗超精彩的漁獵生活吧！划上膠筏欣賞秀姑巒溪出海口豐富生態景致，學習智慧古法捕捉浪花蟹，還可體驗傳統拉弓射箭趣，簡單的半日時光，深度體驗靜浦部落生活樂！"
+                  >
+                    靜浦部落，一個洋溢熱血與熱情的太陽部落，跟著靜浦部落達人，體驗超精彩的漁獵生活吧！划上膠筏欣賞秀姑巒溪出海口豐富生態景致，學習智慧古法捕捉浪花蟹，還可體驗傳統拉弓射箭趣，簡單的半日時光，深度體驗靜浦部落生活樂！
+                  </p>
+                  <a href="#" class="btn td-btn-medium-o">查看</a>
+                </div>
+              </div>
+            </div>
+             <!-- 第三項推薦 -->
+            <div class="carousel-item">
+              <div class="card td-my-25 recommend-card container p-0">
+                <img
+                  class="recommend-img"
+                  src="/img/水璉部落3.jpg"
+                  alt="水璉部落3"
+                  title="水璉部落3"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">水璉部落</h5>
+                  <p
+                    class="card-text recommend-text"
+                    title="阿美族語中的水璉部落，寫作Ciwidian知維地岸，是「此地多蛭」的意思。聽起來，以為水璉是個荒蕪之地，然而，這裡卻是和平閒適的小盆地，在山海的包圍下，從牧牛平原到高深峽谷，從溪流沿岸到動人沙灘，都展現出水璉之美，在靜謐中，帶有無限生命力。"
+                  >
+                    阿美族語中的水璉部落，寫作Ciwidian知維地岸，是「此地多蛭」的意思。聽起來，以為水璉是個荒蕪之地，然而，這裡卻是和平閒適的小盆地，在山海的包圍下，從牧牛平原到高深峽谷，從溪流沿岸到動人沙灘，都展現出水璉之美，在靜謐中，帶有無限生命力。
+                  </p>
+                  <a href="#" class="btn td-btn-medium-o">查看</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </div>
