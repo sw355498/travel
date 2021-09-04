@@ -241,6 +241,7 @@
 
 
 
+
 .journey-info .reviewStar {
   margin-top: 60px;
   font-size: 1.25rem;
@@ -250,7 +251,9 @@
   padding: 0%;
 
 }
-
+.reviewStar-point {
+  margin-top: 13px;
+}
 
 .reviewStar .fa-heart-show {
   font-size: 2.188rem;

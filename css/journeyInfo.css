@@ -100,11 +100,6 @@
   }
 }
 
-.journey-info i {
-  font-size: 36px;
-  color: rgb(0, 0, 0);
-}
-
 .journey-info .fa-map-marker-alt {
   font-size: 36px;
   color: rgba(245, 8, 8, 1);
@@ -164,11 +159,6 @@
   text-align: center;
   font-feature-settings: 'salt' on, 'liga' off;
   color: #18191f;
-}
-
-.journey-selectguide-star {
-  margin-top: 10px;
-  font-size: 20px;
 }
 
 .journey-selectguide-title {
@@ -264,7 +254,7 @@
   max-height: 70px;
 }
 
-.coustomerreview i {
+.coustomerreview .fa-align-left{
   color: #ffffff;
   font-size: 16px;
   margin-left: 8px;

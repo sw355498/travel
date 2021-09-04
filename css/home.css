@@ -1,61 +1,80 @@
 
 .banner {
   min-height: 100vh;
-  background-image: url("../img/首頁大圖.png");
+  background-image: url('/img/首頁大圖加背景2.png');
   background-size: cover;
   background-position: center center;
   height: auto;
-  position: relative;
   width: 100%;
-  
+  position: relative;
+
 }
 
+
 .banner h2 {
-  color: #fff;
+  color: black;
   display: block;
-  width: 50%;
   line-height: 40px;
   font-size: 28px;
   text-align: center;
 }
 
-@media only screen and (max-width:576px) {
+@media only screen and (max-width: 576px) {
   .banner h2 {
-  color: #fff;
-  display: block;
-  width: 50%;
-  line-height: 40px;
-  font-size: 16px;
-  text-align: center;
+    color: black;
+    display: block;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .banner h2 {
+    font-size: 24px;
+  }
+  .banner img {
+  margin-top: 200px !important;
 }
 }
 
-
-@media only screen and (max-width:1100px) {
+@media only screen and (max-width: 992px) {
   .banner h2 {
-  color: #fff;
-  display: block;
-  width: 50%;
-  line-height: 40px;
-  font-size: 24px;
-  text-align: center;
+    font-size: 20px;
+  }
+  .banner img {
+  margin-top: 80% !important;
 }
 }
-
-@media only screen and (max-width:900px) {
+@media only screen and (max-width: 768px) {
   .banner h2 {
-  color: #fff;
-  display: block;
-  width: 50%;
-  line-height: 40px;
-  font-size: 20px;
-  text-align: center;
+    font-size: 20px;
+  }
+  .banner img {
+  margin-top: 35% !important;
 }
 }
 .banner img {
-  width: 50%;
   height: auto;
+  margin-top: 25%;
 }
+/* .whitebird{
+animation: moveright 1s linear 1;
+}
+
+.first-h2{
+  animation: moveright 1s linear 1;
+  animation-delay: 1s;
+}
+
+@keyframes moveright {
+  0%{
+    transform: translatex(-1000px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+} */
 
 .dropdown button {
   width: 50%;
@@ -108,70 +127,48 @@
   color: #000000;
 }
 
-
-
-.aboutus-img{
+.aboutus-img {
   width: 100%;
 }
 
-.home-aboutus p{
-font-size: 1.5rem;
-line-height: 40px;
-text-align: center;
-color: #072B7B;
- width: 40%;
-text-align:left;
-position: absolute;
-transform: translateY(-120%);
+.home-aboutus p {
+  font-size: 1.5rem;
+  line-height: 40px;
+  text-align: center;
+  color: #072b7b;
+  width: 40%;
+  text-align: left;
+  position: absolute;
+  transform: translateY(-120%);
 }
-@media only screen and (max-width:1400px) {
-.home-aboutus p{
-font-size: 20px;
-line-height: 40px;
-text-align: center;
-color: #072B7B;
-width: 40%;
-position: absolute;
-transform: translateY(-100%);
-}
+@media only screen and (max-width: 1400px) {
+  .home-aboutus p {
+    font-size: 20px;
+    transform: translateY(-100%);
+  }
 }
 
-
-@media only screen and (max-width:1100px) {
-.home-aboutus p{
-font-size: 20px;
-line-height: 40px;
-text-align: center;
-color: #072B7B;
-width: 40%;
-position: absolute;
-transform: translateY(-90%);
-}
+@media only screen and (max-width: 1100px) {
+  .home-aboutus p {
+    position: absolute;
+    transform: translateY(-90%);
+  }
 }
 
-@media only screen and (max-width:992px) {
-.home-aboutus p{
-font-size: 20px;
-line-height: 40px;
-text-align: center;
-color: #072B7B;
-position:relative;
-width: 100%;
-transform: translateY(0%);
-
-}
+@media only screen and (max-width: 992px) {
+  .home-aboutus p {
+    position: relative;
+    width: 100%;
+    transform: translateY(0%);
+  }
 }
 
-@media only screen and (max-width:768px) {
-.home-aboutus p{
-font-size: 16px;
-line-height: 40px;
-text-align: center;
-color: #072B7B;
-position:relative;
-transform: translateY(0%);
-
-}
+@media only screen and (max-width: 768px) {
+  .home-aboutus p {
+    font-size: 16px;
+    position: relative;
+    transform: translateY(0%);
+  }
 }
 .gallery-area p {
   font-weight: bold;
@@ -187,7 +184,6 @@ transform: translateY(0%);
   grid-template-rows: 1fr 1fr 1fr 1fr;
   row-gap: 20px;
   column-gap: 20px;
-  
 }
 
 #journey img {
@@ -196,12 +192,11 @@ transform: translateY(0%);
   height: 100%;
   width: 100%;
   position: relative;
-  
 }
 
 .journey-tag {
   max-width: 500px;
-  width: 100%     ;
+  width: 100%;
   height: 72px;
   background: rgba(7, 43, 123, 0.8);
   border-radius: 10px;
@@ -215,7 +210,7 @@ transform: translateY(0%);
 
 .journey-tag-3 {
   max-width: 900px;
-  width: 100%     ;
+  width: 100%;
   height: 72px;
   background: rgba(7, 43, 123, 0.8);
   border-radius: 10px;
@@ -226,8 +221,8 @@ transform: translateY(0%);
   position: absolute;
   transform: translateY(-73px);
 }
-.journey-tag-3 p{
- font-size: 20px;
+.journey-tag-3 p {
+  font-size: 20px;
   text-align: center;
   color: #f6f6f6;
 }
@@ -248,7 +243,7 @@ transform: translateY(0%);
   /* identical to box height, or 150% */
 
   text-align: center;
-  font-feature-settings: "salt" on, "liga" off;
+  font-feature-settings: 'salt' on, 'liga' off;
 
   /* 淡淡灰 */
 
@@ -260,10 +255,9 @@ transform: translateY(0%);
   grid-column: 1/2;
   /* background: rosybrown; */
   border-radius: 10px;
-  
 }
-.journey-paterungan img{
- border-radius: 10px;
+.journey-paterungan img {
+  border-radius: 10px;
 }
 
 .journey-kiwit {
@@ -272,8 +266,8 @@ transform: translateY(0%);
   background: aqua;
   border-radius: 10px;
 }
-.journey-kiwit img{
- border-radius: 10px;
+.journey-kiwit img {
+  border-radius: 10px;
 }
 
 .journey-cawi {
@@ -282,8 +276,8 @@ transform: translateY(0%);
   background: red;
   border-radius: 10px;
 }
-.journey-cawi img{
- border-radius: 10px;
+.journey-cawi img {
+  border-radius: 10px;
 }
 .journey-ciwidian {
   grid-row: 2/3;
@@ -291,8 +285,8 @@ transform: translateY(0%);
   background: yellow;
   border-radius: 10px;
 }
-.journey-ciwidian img{
- border-radius: 10px;
+.journey-ciwidian img {
+  border-radius: 10px;
 }
 .journey-tafalong {
   grid-row: 3/5;
@@ -301,8 +295,8 @@ transform: translateY(0%);
   border-radius: 10px;
 }
 
-.journey-tafalong img{
- border-radius: 10px;
+.journey-tafalong img {
+  border-radius: 10px;
 }
 
 .journey-sakur {
@@ -311,8 +305,8 @@ transform: translateY(0%);
   background: blue;
   border-radius: 10px;
 }
-.journey-sakur img{
- border-radius: 10px;
+.journey-sakur img {
+  border-radius: 10px;
 }
 .journey-vataan {
   grid-row: 4/5;
@@ -320,8 +314,8 @@ transform: translateY(0%);
   background: khaki;
   border-radius: 10px;
 }
-.journey-vataan img{
- border-radius: 10px;
+.journey-vataan img {
+  border-radius: 10px;
 }
 .gallery-area .journey-paterungan {
   position: relative;
@@ -343,7 +337,6 @@ transform: translateY(0%);
 }
 .gallery-area .journey-sakur {
   position: relative;
-  
 }
 
 .overlay {
@@ -420,34 +413,32 @@ transform: translateY(0%);
   max-width: 165px;
   height: auto;
   border-radius: 50%;
-
 }
-@media only screen and (max-width:992px) {
-#excellent-guide .card .guideImgBig {
-  width:100%;
-  max-width: 125px;
-  height: auto;
-  border-radius: 50%;
-margin-top: 12.5px;
-}
+@media only screen and (max-width: 992px) {
+  #excellent-guide .card .guideImgBig {
+    width: 100%;
+    max-width: 125px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 12.5px;
+  }
 }
 
 #excellent-guide .smalltag {
   position: absolute;
   right: 20px;
-  top:5px;
-font-size: 16px;
-line-height: 27px;
-/* identical to box height, or 169% */
-color: #3D3C3C;
-   
+  top: 5px;
+  font-size: 16px;
+  line-height: 27px;
+  /* identical to box height, or 169% */
+  color: #3d3c3c;
 }
-@media only screen and (max-width:768px) {
-#excellent-guide .smalltag {
-  display: block;
- font-size: 14px;
- color:black 
-}
+@media only screen and (max-width: 768px) {
+  #excellent-guide .smalltag {
+    display: block;
+    font-size: 14px;
+    color: black;
+  }
 }
 
 #excellent-guide .card-title {
@@ -521,24 +512,22 @@ color: #3D3C3C;
   right: 0;
   top: 50%;
 }
-@media only screen and (max-width:992px) {
-.link-left {
-  width: 20%;
-  height: 1px;
-  border-top: solid #666 1px;
-  position: absolute;
-  top: 50%;
-}
+@media only screen and (max-width: 992px) {
+  .link-left {
+    width: 20%;
+    position: absolute;
+    top: 50%;
+  }
 
-/*畫一條再右邊的豎線*/
-.link-right {
-  width: 20%;
-  height: 1px;
-  border-top: solid #666 1px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-}
+  /*畫一條再右邊的豎線*/
+  .link-right {
+    width: 20%;
+    height: 1px;
+    border-top: solid #666 1px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
 }
 
 .review-area .card {
@@ -553,17 +542,10 @@ color: #3D3C3C;
   line-height: 23px;
   color: #000000;
 }
-@media only screen and (max-width:992px) {
-.coustomer-name{
-  text-align: center !important;
-
-}
-}
-@media only screen and (max-width:992px) {
-.coustomer-name{
-  text-align: center !important;
-
-}
+@media only screen and (max-width: 992px) {
+  .coustomer-name {
+    text-align: center !important;
+  }
 }
 
 .review-area .card img {
@@ -574,28 +556,21 @@ color: #3D3C3C;
   border-radius: 50%;
 }
 
-@media only screen and (max-width:3000px) {
-.review-area .stars-check-label img{
-width: 100% !important; 
-max-width: 100px !important;
 
-}
-}
 
-@media only screen and (max-width:992px) {
-.guide-firstcomment{
-  margin-top: 25px;
-
-}
+@media only screen and (max-width: 992px) {
+  .guide-firstcomment {
+    margin-top: 25px;
+  }
 }
 
-@media only screen and (max-width:1400px) {
-.guide-figure img {
-  border-radius: 50%;
-  max-width: 125px;
-  margin-top: 10px !important;
-}
-.guide-figure .card-body button {
+@media only screen and (max-width: 1400px) {
+  .guide-figure img {
+    border-radius: 50%;
+    max-width: 125px;
+    margin-top: 10px !important;
+  }
+  .guide-figure .card-body button {
     max-width: 115px;
     max-height: 48px;
     width: 200%;
@@ -605,16 +580,16 @@ max-width: 100px !important;
     border-radius: 25.5px;
     color: white;
     margin-top: 25px !important;
-}
+  }
 }
 
-@media only screen and (min-width:1400px) {
-.guide-figure img {
-  border-radius: 50%;
-  max-width: 125px;
-  margin-top: 10px !important;
-}
-.guide-figure .card-body button {
+@media only screen and (min-width: 1400px) {
+  .guide-figure img {
+    border-radius: 50%;
+    max-width: 125px;
+    margin-top: 10px !important;
+  }
+  .guide-figure .card-body button {
     max-width: 115px;
     max-height: 48px;
     width: 200%;
@@ -624,13 +599,11 @@ max-width: 100px !important;
     border-radius: 25.5px;
     color: white;
     margin-top: 20px !important;
+  }
+  .guide-figure .card-text {
+    margin-top: 35px !important;
+  }
 }
-.guide-figure .card-text {
- 
-  margin-top: 35px !important;
-}
-}
-
 
 .guide-figure img {
   border-radius: 50%;
@@ -639,11 +612,9 @@ max-width: 100px !important;
 }
 
 #excellent-guide .card {
-
   margin-left: 0%;
   margin-right: 0%;
   margin-bottom: 25px;
-
 }
 
 .guide-figure h5 {

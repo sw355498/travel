@@ -61,3 +61,13 @@ body {
   font-size: 18px;
   line-height: 55px;
 }
+
+.fa-star{
+  font-size: 25px;
+  color :rgba(254, 201, 13, 1);
+}
+
+.small-star{
+  font-size: 20px;
+  color :rgba(254, 201, 13, 1);
+}
