@@ -1,3 +1,7 @@
+button:hover{
+transform: translateY(-5px);
+}
+
 .filter-title {
   font-size: 1.25rem;
   line-height: 1.438rem;
