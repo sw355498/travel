@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>花島</title>
+  <title>行程資訊</title>
   <!-- Bootstrap引入 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous" />
@@ -34,46 +34,53 @@
 
 <body>
     <!-- 頁首 -->
-    <header class="td-header">
-      <div class="container td-header-main d-flex align-items-center">
-        <!-- LOGO區  -->
-        <a class="td-logo d-flex" href="/home.html">
-          <img class="td-logo-img" src="/img/logo.png" alt="logo" />
-          <img
-            class="td-logo-text"
-            src="/img/花島（黑）.png"
-            alt="花島（黑）"
-          />
-        </a>
-        <!-- 導覽列左側 -->
-        <nav class="td-nav align-items-center">
-          <ul class="left-nav d-flex my-auto">
-            <a href="/page/jounery/journey.html"><span>部落行程</span></a>
-            <a href="/page/guild/guild-list.html"><span>在地導遊</span></a>
-          </ul>
-          <!-- 導覽列登入前右側 -->
-          <!-- <div class="d-flex align-items-center">
-            <button class="td-btn-medium-o td-header-login">登入</button>
-            <button class="td-btn-medium-b td-header-register">註冊</button>
-          </div> -->
+     <header class="td-header">
+    <div class="container td-header-main d-flex align-items-center  position-relative">
+      <!-- LOGO區  -->
+      <a class="td-logo d-flex" href="/home.html">
+        <img class="td-logo-img" src="/img/logo.png" alt="logo" />
+        <img class="td-logo-text" src="/img/花島（黑）.png" alt="花島（黑）" />
+      </a>
+      <!-- 導覽列左側 -->
+      <nav class="td-nav align-items-center d-flex justify-">
+        <ul class="left-nav d-flex my-auto">
+          <a href="/page/jounery/journey.html"><span>部落行程</span></a>
+          <a href="/page/guild/guild-list.html"><span>在地導遊</span></a>
+        </ul>
+        <!-- 導覽列登入前右側 -->
+        <!-- <div class="td-nav-before d-flex align-items-center">
+          <a class="btn td-btn-medium-o td-header-login text-center">登入</a>
+          <a class="btn td-btn-medium-b td-header-register text-center">註冊</a>
+        </div> -->
 
-          <!-- 導覽列登入後右側 -->
-          <div class="right-nav">
-            <a href="通知"><i class="fas fa-comment-dots"></i></a>
-            <a
-              class="td-cart"
-              href="/page/shoppingcart/shoppingcart-cart-list.html"
-              ><img src="/img/cart.png" alt="cart"
-            /></a>
-            <a
-              class="td-member"
-              href="http://127.0.0.1:5500/page/member/member-information.html"
-              ><img class="td-member-avatar" src="/img/avatar.png" alt="avatar"
-            /></a>
-          </div>
-        </nav>
-      </div>
-    </header>
+        <!-- 導覽列登入後右側 -->
+        <div class="td-right-nav">
+          <a href="通知"><i class="fas fa-comment-dots"></i></a>
+          <a class="td-cart" href="/page/shoppingcart/shoppingcart-cart-list.html"><img src="/img/cart.png"
+              alt="cart" /></a>
+          <a class="td-member" href="/page/member/member-information.html"><img class="td-member-avatar"
+              src="/img/avatar.png" alt="avatar" /></a>
+        </div>
+
+        <!-- 漢堡 -->
+        <div class="td-burger">
+          <input type="checkbox" id="td-burger-toggle">
+          <label for="td-burger-toggle" class="td-burger-btn d-flex flex-column">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <!-- 漢堡選單 -->
+          <ul class="td-burger-list d-flex flex-column position-absolute text-center justify-content-around">
+            <a href="/home.html"><i class="fas fa-home"></i>回到首頁</a>
+            <a href="/page/jounery/journey.html"><i class="fas fa-shoe-prints"></i>花島行程</a>
+            <a href="/page/guild/guild-list.html"><i class="fas fa-street-view"></i>在地導遊</a>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+  </header>
   <!-- content -->
   <!-- content -->
   <!-- banner start -->
@@ -403,7 +410,7 @@
     </div>
   </div>
   <!-- pagination star  -->
-  <div class="container d-flex justify-content-center td-mt-25 pagination-container">
+  <div class="container d-flex justify-content-center td-mt-25 td-mb-25 pagination-container">
     <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item ">
@@ -428,32 +435,33 @@
   <!-- content end-->
 
   <!-- footer -->
-  <footer class="text-content-footer text-white td-mt-25">
+    <footer class="text-content-footer text-white">
     <div class="td-footer text-decoration-none">
-      <div class="d-flex td-footer-text justify-content-between">
+      <div class="td-footer-text mx-auto px-auto justify-content-between">
         <a href="#">關於花島</a>
         <a href="#">使用者條款</a>
         <a href="#">隱私權保護政策</a>
         <a href="#">常見問題與幫助</a>
       </div>
-      <div class="d-flex td-footer-contact">
-        <div class="d-flex mx-auto my-auto">
-          <p class="td-footer-contact-text my-auto">聯絡我們</p>
+      <!-- <div class="d-flex "> -->
+      <div class="td-footer-contact d-flex justify-content-center mx-auto ">
+        <p class="td-footer-contact-text my-auto">聯絡我們</p>
+        <div>
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-line px-0"></i></a>
         </div>
       </div>
     </div>
+    </div>
     <div class="td-footer-line"></div>
-    <div class="d-flex">
-      <p class="mx-auto td-footer-notion">
+    <div class="td-footer-notion d-flex text-center">
+      <p class="td-footer-notion-txt mx-auto ">
         此為資訊會前端班MFEE17專題使用，如有疑慮請與我們聯絡，E-MAIL:jeny@iii.org.tw，COPYRIGHT
         © 2021 All rights reserved
       </p>
     </div>
   </footer>
-  <div class="container main-container"></div>
 <script>
 function collect(x) {
   x.classList.toggle("fw-bold");
