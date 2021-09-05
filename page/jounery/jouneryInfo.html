@@ -408,7 +408,11 @@
         <p class="text-title-size20 coutomerreview-guideresponse">很開心你會喜歡，歡迎下次再來。</p>
       </div>
     </div>
+    <!-- scroll-up  -->
   </div>
+    <a href="#" class="scrollup" id="scroll-up">
+    <i class="fas fa-arrow-up scrollup-icon"></i>
+  </a>
   <!-- pagination star  -->
   <div class="container d-flex justify-content-center td-mt-25 td-mb-25 pagination-container">
     <nav aria-label="Page navigation example">
@@ -462,7 +466,15 @@
       </p>
     </div>
   </footer>
+    <script src="/js/scrollreveal.min.js"></script>
 <script>
+ // scrollUp 
+  function scrollUp() {
+    const scrollUp = document.getElementById('scroll-up');
+    if (this.scrollY >= 200) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll');
+  }
+  window.addEventListener('scroll', scrollUp);
+
 function collect(x) {
   x.classList.toggle("fw-bold");
 }

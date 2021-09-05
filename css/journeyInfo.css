@@ -139,6 +139,13 @@ transform: translateY(-5px);
   max-width: 350px;
 }
 
+.journey-selectguide .card:hover {
+  box-shadow: 4px 4px 9px -3px #636161;
+  -webkit-box-shadow: 4px 4px 9px -3px #636161;
+  -moz-box-shadow: 4px 4px 9px -3px #636161;
+  -o-box-shadow: 4px 4px 9px -3px #636161;
+}
+
 .journey-selectguide .card-img-top {
   margin-top: 50px;
 }
@@ -318,4 +325,44 @@ transform: translateY(-5px);
   color: #fff;
   background-color: #072b7b;
   border-color: #072b7b;
+}
+/* scrollup */
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  padding: 0.5rem;
+  background: #072b7b;
+  opacity: 0.6;
+  z-index: 1000;
+  transition: 0.4s;
+  height: auto;
+  
+}
+.scrollup-icon{
+  color: #ffffff;
+}
+
+.scrollup:hover{
+  background-color: #ff9c00;
+  opacity: 1;
+}
+
+.show-scroll{
+  bottom: 5rem;
+}
+
+/* scrollbar  */
+
+::-webkit-scrollbar{
+  width: .60rem;
+  background: #636161;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #a5a5a8;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color:#ff9c00;
+  opacity: 0.6;
 }

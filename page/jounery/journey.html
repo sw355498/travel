@@ -336,11 +336,11 @@
                     </div>
                 </div>
                 <div class="col-12 reviewStar">
-                    <div class="">
+                    <div>
                         <div class="row">
                             <div class="col-9 col-md-10">
                                 <div class="d-flex align-items-center reviewStar-point ">  評價&nbsp;:&nbsp;5.0 &nbsp;&nbsp;
-                                    <label class="   ml-5"><i class="fas fa-star  "></i><i class="fas fa-star   "></i><i class="fas fa-star   "></i><i class="fas fa-star   "></i><i class="fas fa-star   "></i></label>
+                                    <label class="ml-5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
                                 </div>
                             </div>
                             <div class="col-3">
@@ -484,16 +484,16 @@
             </div>
         </div>
     </div>
-    <div class="container td-mt-25 filter-resultcontainer">
-        <div class="row filter-result d-flex ">
-            <div class="col-md-4 col-12 filter-result-imgarea d-flex  ">
+   <div class="container td-mt-25 filter-resultcontainer">
+        <div class="row filter-result ">
+            <div class="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
                 <img src="/data/行程圖片/奇美部落.png" alt="">
             </div>
-            <div class="col-md-5 flex-md-column journey-info mt-lg-4">
+            <div class="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
                 <div class="row ">
                     <div class="col-md-12 order-1">
                         <div class="d-flex justify-content-between mt-md-2">
-                            <div class="title ml-3">奇萊雅族部落體驗</div>
+                            <div class="title">奇萊雅族部落體驗</div>
                             <div class="tag"> <i class="fas fa-tags">奇美部落</i></div>
                             <!-- <div class="link-right"></div> -->
                         </div>
@@ -502,23 +502,23 @@
                 <div class="col-12 reviewStar">
                     <div class="">
                         <div class="row">
-                            <div class="col-9 col-md-10  mt-xxl-4">
-                                    <div class="d-flex align-items-center reviewStar-point ">  評價&nbsp;:&nbsp;5.0 &nbsp;&nbsp;
+                            <div class="col-9 col-md-10">
+                             <div class="d-flex align-items-center reviewStar-point ">  評價&nbsp;:&nbsp;5.0 &nbsp;&nbsp;
                                     <label class="   ml-5"><i class="fas fa-star  "></i><i class="fas fa-star   "></i><i class="fas fa-star   "></i><i class="fas fa-star   "></i><i class="fas fa-star   "></i></label>
                                 </div>
                             </div>
                             <div class="col-3">
-                                <i class="far fa-heart mb-1 fa-heart-show" onclick="collect(this)" ></i>
+                                <i class="far fa-heart mb-1 fa-heart-show" onclick="collect(this)"></i>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-12 ">
-                    <div class="content ">最少出團人數 2 人，當參加人數未達上述規定的最少成團人數時，將取消旅遊行程，於出發日前 1 天發出取消旅遊的 Email 通知。</div>
+                <div class="col-12 reviewStar-content">
+                    <div class="content">最少出團人數 2 人，當參加人數未達上述規定的最少成團人數時，將取消旅遊行程，於出發日前 1 天發出取消旅遊的 Email 通知。</div>
                 </div>
             </div>
-            <div class="col-md-3 journey-price  mt-md-4 ">
+            <div class="col-md-3 journey-price  mt-md-4">
                 <div class="row">
                     <div class="col-7 col-md-12 d-md-flex justify-content-md-center">
                         <p class="mt-3">TWD 3,110</p>
@@ -594,6 +594,11 @@
             </div>
         </div>
     </div>
+       <!-- scroll-up  -->
+  </div>
+    <a href="#" class="scrollup" id="scroll-up">
+    <i class="fas fa-arrow-up scrollup-icon"></i>
+  </a>
     <!-- pagination star  -->
     <div class="container d-flex justify-content-center td-mt-25 td-mb-25 pagination-container">
         <nav aria-label="Page navigation example">
@@ -647,8 +652,16 @@
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="/js/popper.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/scrollreveal.min.js"></script>
+
 <script>
-  
+   // scrollUp 
+  function scrollUp() {
+    const scrollUp = document.getElementById('scroll-up');
+    if (this.scrollY >= 200) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll');
+  }
+  window.addEventListener('scroll', scrollUp);
+
     function collect(x) {
   x.classList.toggle("fw-bold");
 }
