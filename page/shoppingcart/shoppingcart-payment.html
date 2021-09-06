@@ -68,7 +68,7 @@
     </header>
 
     <!-- 內容 -->
-    <div class="container td-content">
+    <div class="container-lg td-content">
       <!-- 小人走路流程圖 -->
       <div class="d-flex justify-content-center">
         <div class="td-mt-75">
@@ -95,7 +95,7 @@
 
       <!-- 目前位置title -->
       <div class="td-mt-75">
-        <div class="text-title-size24">
+        <div class="text-title-size24 d-none d-lg-block">
           <span class="text-black-50">購物車 > </span>
           <span>填寫資料與付款</span>
           <span class="text-black-50"> > 訂購完成</span>
@@ -115,7 +115,7 @@
               <form class="td-mt-50" action="">
                 <div class="row">
                   <!-- 姓名區塊 -->
-                  <div class="col-6">
+                  <div class="col-12 col-lg-6">
                     <label for="formGroupExampleInput" class="form-label">
                       <span class="text-title-size20">名字</span>
                       <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -124,7 +124,7 @@
                   </div>
 
                   <!-- 姓氏區塊 -->
-                  <div class="col-6">
+                  <div class="col-12 td-mt-50 col-lg-6 mt-lg-0">
                     <label for="formGroupExampleInput2" class="form-label">
                       <span class="text-title-size20">姓氏</span>
                       <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -133,7 +133,7 @@
                   </div>
 
                   <!-- 連絡電話區塊 -->
-                  <div class="col-6 td-mt-50">
+                  <div class="col-12 col-lg-6 td-mt-50">
                     <label for="formGroupExampleInput2" class="form-label">
                       <span class="text-title-size20">連絡電話</span>
                       <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -141,7 +141,7 @@
                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="請輸入您的連絡電話"/>
                   </div>
                   <!-- 選格國家區塊 -->
-                  <div class="col-6 td-mt-50">
+                  <div class="col-12 col-lg-6 td-mt-50">
                     <label for="validationDefault04" class="form-label">
                       <span class="text-title-size20">國家/地區</span>
                       <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -209,7 +209,7 @@
               <form class="td-mt-50" action="">
                 <div class="row">
                   <!-- 姓名區塊 -->
-                  <div class="col-6">
+                  <div class="col-12 col-lg-6">
                     <label for="formGroupExampleInput" class="form-label">
                       <span class="text-title-size20">名字</span>
                       <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -218,7 +218,7 @@
                   </div>
 
                   <!-- 姓氏區塊 -->
-                  <div class="col-6">
+                  <div class="col-12 td-mt-50 col-lg-6 mt-lg-0">
                     <label for="formGroupExampleInput2" class="form-label">
                       <span class="text-title-size20">姓氏</span>
                       <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -227,7 +227,7 @@
                   </div>
 
                   <!-- 連絡電話區塊 -->
-                  <div class="col-6 td-mt-50">
+                  <div class="col-12 col-lg-6 td-mt-50">
                     <label for="formGroupExampleInput2" class="form-label">
                       <span class="text-title-size20">連絡電話</span>
                       <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -235,7 +235,7 @@
                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="請輸入您的連絡電話"/>
                   </div>
                   <!-- 選格國家區塊 -->
-                  <div class="col-6 td-mt-50">
+                  <div class="col-12 col-lg-6 td-mt-50">
                     <label for="validationDefault04" class="form-label">
                       <span class="text-title-size20">國家/地區</span>
                       <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -295,7 +295,7 @@
           <div id="collapseTree" class="accordion-collapse collapse show" aria-labelledby="headingTree" data-bs-parent="#accordionExample">
             <!-- 付款方式 -->
             <div class="accordion-body menu-bg">
-              <div class="col-6 td-mt-50">
+              <div class="col-12 col-lg-6 td-mt-50">
                 <label for="validationDefault04" class="form-label">
                   <span class="text-title-size20">付款方式</span>
                   <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -309,36 +309,36 @@
                 <!-- 信用卡付款資料填寫 -->
                 <div class="td-mt-25 pay-switch" id="creditCardMaterial">
                   <div class="row">
-                    <div class="col-sm-2">
+                    <div class="col-12 col-lg-2">
                       <label>信用卡號:</label>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-3 col-lg-2">
                       <input type="text" class="form-control" placeholder="1-4碼" aria-label="信用卡1-4碼"/>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-3 col-lg-2">
                       <input type="text" class="form-control" placeholder="5-8碼" aria-label="信用卡5-8碼"/>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-3 col-lg-2">
                       <input type="text" class="form-control" placeholder="9-12碼" aria-label="信用卡9-12碼"/>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-3 col-lg-2">
                       <input type="text" class="form-control" placeholder="13-16碼" aria-label="信用卡13-16碼"/>
                     </div>
                   </div>
                   <div class="row td-mt-25">
-                    <div class="col-sm-2">
+                    <div class="col-12 col-2">
                       <label>有效日期:</label>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-6 col-lg-2">
                       <input type="text" class="form-control" placeholder="MM" aria-label="有效日期/月"/>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-6 col-lg-2">
                       <input type="text" class="form-control" placeholder="YY" aria-label="有效日期/年"/>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-12 col-lg-2 td-mt-25 mt-lg-0">
                       <label>背面檢驗碼:</label>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-12 col-lg-2">
                       <input type="text" class="form-control" placeholder="3碼" aria-label="檢驗碼"/>
                     </div>
                   </div>
@@ -346,16 +346,16 @@
                 <!-- 轉帳代繳付款資料填寫 -->
                 <div class="td-mt-25 pay-switch" id="transferMaterial">
                   <div class="row td-mt-25">
-                    <div class="col-sm-2">
+                    <div class="col-12 col-lg-2">
                       <label>轉帳帳號:</label>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-12 col-lg-6">
                       <input type="text" class="form-control" placeholder="MM" aria-label="轉帳帳號"/>
                     </div>
                   </div>
                 </div>
                 <!-- 發票資料 -->
-                <div class="col-6 td-mt-50">
+                <div class="col-12 td-mt-50">
                   <label for="validationDefault04" class="form-label">
                     <span class="text-title-size20">發票資料</span>
                     <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -385,57 +385,67 @@
         </h2>
         <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
           <div class="accordion-body menu-bg">
-            <table class="td-mt-25 shoppingcart-bg">
-              <!-- 第一筆行程 -->
-              <tr class="shoppingcart-solid container">
-                <!-- 行程圖片 -->
-                <td class="shoppingcart-checkbox-td">
-                  <img class="td-my-25 shoppingcart-img" src="/img/奇美部落大圖1.png" alt="奇美部落大圖1"/>
-                </td>
-                <!-- 行程內容 -->
-                <td class="text-title-size20">
-                  <a class="td-ms-25 shoppingcart-title" href="/page/jounery/jouneryInfo.html">
-                    阿美族 Tatadok (達達鹿) 泛舟體驗
-                  </a>
-                  <div class="td-ms-25 td-mt-25">2021-06-26</div>
-                  <div class="td-ms-25 td-mt-25">人數：1人</div>
-                </td>
-                <!-- 收藏.刪除及價錢 -->
-                <td class="text-center">
-                  <div>
-                    <a class="td-mt-25 btn">
-                      <img class="collect" src="/img/collect.png" alt=""/>
-                    </a>
-                  </div>
-                  <div>
-                    <a class="td-mt-25 btn">
-                      <img src="/img/delete.png" alt="" />
-                    </a>
-                  </div>
-                  <div class="text-title-size28 shoppingcart-price td-mt-25">
-                    <div>TWD 1,799</div>
-                  </div>
-                </td>
-              </tr>
+            <div class="td-mt-25 shoppingcart-bg">
+          <!-- 第一筆行程 -->
+          <div class="row align-items-center text-center">
+            <!-- 行程圖片 -->
+            <div class="col-12 col-lg-5 d-flex justify-content-center">
+              <img
+                class="td-my-25 shoppingcart-img"
+                src="/img/奇美部落大圖1.png"
+                alt="奇美部落大圖1"
+              />
+            </div>
+            <!-- 行程內容 -->
+            <div class="col-12 col-lg-4 text-title-size20">
+              <a class="shoppingcart-title" href="">
+                阿美族 Tatadok 泛舟體驗
+              </a>
+              <div class="td-mt-25">2021-06-26</div>
+              <div class="td-mt-25">人數：1人</div>
+            </div>
+            <!-- 收藏.刪除及價錢 -->
+            <div class="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center">
+              <div>
+                <a class="td-mt-25 btn">
+                  <img class="collect" src="/img/collect.png" alt="" />
+                </a>
+              </div>
+              <div>
+                <a class="td-mt-25 btn">
+                  <img src="/img/delete.png" alt="" />
+                </a>
+              </div>
+              <div class="text-title-size24 shoppingcart-price td-mt-25">
+                <div>TWD 1,799</div>
+              </div>
+            </div>
+          </div>
+          <!-- 分隔線 -->
+          <div class="col-12 shoppingcart-solid"></div>
               <!-- 第二筆行程 -->
-              <tr class="shoppingcart-solid container">
+              <div class="row align-items-center text-center">
                 <!-- 行程圖片 -->
-                <td class="shoppingcart-checkbox-td">
-                  <img class="td-my-25 shoppingcart-img" src="/img/奇美部落大圖1.png" alt="奇美部落4"/>
-                </td>
+                <div class="col-12 col-lg-5 d-flex justify-content-center">
+                  <img
+                    class="td-my-25 shoppingcart-img"
+                    src="/img/奇美部落大圖1.png"
+                    alt="奇美部落大圖1"
+                  />
+                </div>
                 <!-- 行程內容 -->
-                <td class="text-title-size20">
-                  <a class="td-ms-25 shoppingcart-title" href="/page/jounery/jouneryInfo.html">
-                    阿美族 Tatadok (達達鹿) 泛舟體驗
+                <div class="col-12 col-lg-4 text-title-size20">
+                  <a class="shoppingcart-title" href="">
+                    阿美族 Tatadok 泛舟體驗
                   </a>
-                  <div class="td-ms-25 td-mt-25">2021-06-26</div>
-                  <div class="td-ms-25 td-mt-25">人數：1人</div>
-                </td>
+                  <div class="td-mt-25">2021-06-26</div>
+                  <div class="td-mt-25">人數：1人</div>
+                </div>
                 <!-- 收藏.刪除及價錢 -->
-                <td class="text-center">
+                <div class="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center">
                   <div>
                     <a class="td-mt-25 btn">
-                      <img class="collect" src="/img/collect.png" alt=""/>
+                      <img class="collect" src="/img/collect.png" alt="" />
                     </a>
                   </div>
                   <div>
@@ -443,52 +453,30 @@
                       <img src="/img/delete.png" alt="" />
                     </a>
                   </div>
-                  <div class="text-title-size28 shoppingcart-price td-mt-25">
+                  <div class="text-title-size24 shoppingcart-price td-mt-25">
                     <div>TWD 1,799</div>
                   </div>
-                </td>
-              </tr>
+                </div>
+              </div>
+              <!-- 分隔線 -->
+              <div class="col-12 shoppingcart-solid"></div>
               <!-- 總顯示區塊 -->
-              <tr>
-                <td></td>
-                <!-- 總數量&總價格 -->
-                <td class="d-flex td-my-25 align-items-center justify-content-end">
-                  <div class="text-title-size20 td-me-25">2件商品合計</div>
+              <div class="row align-items-center text-center td-py-25 ">
+                <div class="col-12 col-lg-9 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
+                  <div class="text-title-size20 me-1">2件商品合計</div>
                   <div><img src="/img/total.png" alt="total" /></div>
-                  <div class="text-title-size28 shoppingcart-price">
-                    TWD 3,598
-                  </div>
-                </td>
-                <!-- 前往結帳 -->
-                <td class="text-center">
-                  <!-- 前往結帳title -->
-                  <button type="button" class="btn td-btn-large-gopay text-title-size24" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    確認付款
-                  </button>
-
-                  <!-- Modal -->
-                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                          <h4>感謝您的訂購！</h4>
-                          <h5>祝您有段美好的旅程</h5>
-                            <a href="/page/jounery/journey.html" role="button" class="btn td-btn-large-gopay text-title-size24 py-3" data-bs-content="Popover body content is set in this attribute.">
-                              再去逛逛
-                            </a>
-                          </p>
-                        </div>
-                        <div class="modal-footer">
-                          <a type="button" class="btn td-btn-medium-b py-2" data-bs-dismiss="modal">
-                            Close
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </table>
+                  <div class="text-title-size24 shoppingcart-price">TWD 3,598</div>
+                </div>
+                <div class="col-12 col-lg-3">
+                  <a
+                  class="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
+                  href="/page/shoppingcart/shoppingcart-payment.html"
+                >
+                  前往結帳
+                </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
