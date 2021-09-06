@@ -39,10 +39,11 @@
 .btn-booking {
   width: 115px;
   height: 48px;
-  border: 1px solid var(--btn-color);
+  /* border: 1px solid var(--btn-color); */
   border-radius: 50px;
   color: #fff;
   background-color: var(--btn-color);
+  text-decoration: none;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -61,6 +62,7 @@
 .btn-sort {
   width: 115px;
   height: 48px;
+  display: flex;
   align-items: center;
   background: var(--btnorder-color);
   border: none;
@@ -78,4 +80,48 @@
 .btn-sort a {
   width: 35.17px;
   height: 32.41px;
+}
+
+/* 頁碼 */
+
+.pagination {
+  width: 149px;
+}
+.page-link{
+  padding:0px;
+  text-align: center;
+}
+.page-link:hover{
+  background-color: var(--blue-color);
+}
+.page-item:hover span,
+.page-link:focus span{ 
+  color: #fff;
+}
+.page-link:focus{ 
+   box-shadow:none;
+   background-color: var(--blue-color);
+}
+.page-item {
+  padding-right: 7px;
+}
+.page-item > a {
+  height: 32px;
+  width: 32px;
+}
+.page-item span {
+  color: rgba(196, 196, 196, 1);
+  font-weight: normal;
+  font-size: 20px;
+  vertical-align: middle;
+  }
+/* 頭像共用 */
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.stars-s i{
+  font-size: 20px;
+  color: var(--btnorder-color);
 }
