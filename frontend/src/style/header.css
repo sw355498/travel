@@ -47,7 +47,7 @@ header {
 }
 .left-nav {
   height: 30px;
-  padding-left:32px;
+  padding-left: 32px;
 }
 /* left nav */
 .left-nav a {
@@ -57,8 +57,8 @@ header {
   font-size: 20px;
   font-weight: 500;
 }
-.left-nav a:hover{
-  color:var(--blue-color);
+.left-nav a:hover {
+  color: var(--blue-color);
 }
 .left-nav a:first-child {
   margin-right: 30px;
@@ -103,27 +103,25 @@ header {
 }
 
 /* 漢堡隱藏 */
-.td-burger
-  {
+.td-burger {
   display: none;
 }
-  
 
-@media screen and  (min-width: 576px) and(max-width:768px) , (max-width:992px){
+@media screen and(max-width:768px), (max-width: 992px) {
   .td-nav {
-    justify-content:flex-end;
+    justify-content: flex-end;
   }
   /* LOGO */
   .td-logo {
     align-items: center;
   }
-  .td-logo-img ,
-  .td-logo-text{
+  .td-logo-img,
+  .td-logo-text {
     margin-top: 0;
   }
   /* 文字消失  */
-  .left-nav a{
-   display:none;
+  .left-nav {
+    display: none !important;
   }
   /* 登入前button位置 */
   .td-header-login {
@@ -131,31 +129,30 @@ header {
   }
   /* 登入後的nav調整 */
   .td-right-nav {
-    width: 162px;
+    max-width: 162px;
     height: 42px;
   }
-       
-  /* 漢堡選單 */ 
-  .td-burger{
+
+  /* 漢堡選單 */
+  .td-burger {
     display: block;
   }
-  .td-burger-btn{
+  .td-burger-btn {
     height: 18px;
     width: 27px;
-    right:0 ;
+    right: 0;
     margin-left: 30px;
-
   }
-  .td-burger-btn span{
+  .td-burger-btn span {
     background-color: var(--blue-color);
     height: 3px;
     width: 100%;
-    margin:auto;
-    position:relative
+    margin: auto;
+    position: relative;
   }
 
   /* 漢堡按鈕變化 */
-  #td-burger-toggle{
+  #td-burger-toggle {
     display: none;
   }
 
@@ -164,51 +161,51 @@ header {
     padding: 2px;
     height: 25px;
   }
-  #td-burger-toggle:checked + .td-burger-btn  span{
+  #td-burger-toggle:checked + .td-burger-btn span {
     background-color: #fff;
     border-radius: 10px;
-    transition: ease-in-out .2s;
-    top:0 ;
+    transition: ease-in-out 0.2s;
+    top: 0;
   }
-  #td-burger-toggle:checked + .td-burger-btn span:nth-child(1){
+  #td-burger-toggle:checked + .td-burger-btn span:nth-child(1) {
     transform: rotate(45deg);
     top: 5px;
     /* transition:top .1s ease-in-out, transform .1s ease-in-out .1s; */
   }
-  #td-burger-toggle:checked + .td-burger-btn span:nth-child(2){
+  #td-burger-toggle:checked + .td-burger-btn span:nth-child(2) {
     transform: rotate(-45deg);
-    top:-5px;
+    top: -5px;
     /* transition:top.1s ease-in-out, transform .1s ease-in-out .1s ; */
   }
-  #td-burger-toggle:checked + .td-burger-btn span:nth-child(3){
+  #td-burger-toggle:checked + .td-burger-btn span:nth-child(3) {
     display: none;
   }
 
   /* 選單內容 */
- .td-burger-list{
+  .td-burger-list {
     width: 240px;
     height: 270px;
     border: 3px solid var(--blue-color);
     box-sizing: border-box;
     border-radius: 10px;
     right: 0px;
-    top:83px;
+    top: 83px;
     z-index: 500;
-    background:#fff;
+    background: #fff;
     padding: 0;
-    margin:0;
+    margin: 0;
     transform: scaleY(0);
-    transition: transform .2s ease-in;
+    transition: transform 0.2s ease-in;
     transform-origin: 50% 0;
   }
-  .td-burger-list i{
-    margin-right:20px;
+  .td-burger-list i {
+    margin-right: 20px;
     font-size: 22px;
   }
-  .td-burger-list .fa-street-view{
+  .td-burger-list .fa-street-view {
     font-size: 27.5px;
   }
-  .td-burger-list a{
+  .td-burger-list a {
     display: block;
     width: 100%;
     height: 60px;
@@ -217,21 +214,41 @@ header {
     font-weight: normal;
     font-size: 20px;
     line-height: 30px;
-    padding:14px 0 14px 0; 
+    padding: 14px 0 14px 0;
     /* border-bottom: 1px solid var(--blue-color); */
-
   }
 
-  .td-burger-list a:focus{
+  .td-burger-list a:focus {
     width: 100%;
     height: 60px;
     border-radius: 5px;
     color: #fff;
-    background-color:var(--blue-color);
+    background-color: var(--blue-color);
   }
-   #td-burger-toggle:checked ~ .td-burger-list{
+  #td-burger-toggle:checked ~ .td-burger-list {
     transform: scaleY(1);
   }
+}
+@media screen and (max-width: 576px) {
+  .td-nav {
+    margin-left: 10px;
+  }
+  .td-right-nav {
+    width: 100%;
+    height: 35px;
+  }
+  .td-right-nav .fa-comment-dots {
+    font-size: 30px;
+  }
+  .fa-comment-dots {
+    color: rgba(255, 156, 0);
+  }
 
-
-} 
+  .td-member-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgb(54, 30, 30);
+    vertical-align: middle;
+  }
+}
