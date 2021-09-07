@@ -29,7 +29,6 @@
   height: 30px;
   border-bottom: 2px dashed black;
 }
-
 /* 購物車清單內容設定 */
 .shoppingcart-bg {
   background: #e8f7ff;
@@ -38,13 +37,6 @@
 .shoppingcart-img {
   width: 264px;
   height: 176px;
-}
-.shoppingcart-img-td {
-  width: 264px;
-}
-/* checkbox-td區塊大小設定 */
-.shoppingcart-checkbox-td {
-  width: 86px;
 }
 /* 行程分隔線 */
 .shoppingcart-solid {
