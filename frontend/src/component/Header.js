@@ -4,7 +4,7 @@ import '../style//spacing.css'
 
 // 圖片引入
 import logo from '../img/logo.png'
-import hualsland from '../../src/img/花島（黑）.png'
+import hualsland from '../img/花島（黑）.png'
 import cart from '../img/cart.png'
 import avatar from '../img/avatar.png'
 
@@ -39,10 +39,7 @@ function Header() {
               <a href="通知">
                 <i className="fas fa-comment-dots"></i>
               </a>
-              <a
-                className="td-cart"
-                href="../pages/shoppingcart/ShoppingcartCartList"
-              >
+              <a className="td-cart" href="../pages/shoppingcart/ShoppingcartCartList">
                 <img src={cart} alt="cart" />
               </a>
               <a

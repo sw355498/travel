@@ -3,7 +3,7 @@ import HomeAboutUs from './home_component/homeAboutUs'
 import HomeBanner from './home_component/homeBanner'
 import HomeExcellentGuide from './home_component/homeExcellentGuide'
 import HomeGallryArea from './home_component/homeGallryArea'
-import ScrollUp from '../components/scrollUp'
+import ScrollUp from '../component/scrollUp'
 
 // css引入
 import '../style/button.css'

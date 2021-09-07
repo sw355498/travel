@@ -1,4 +1,5 @@
 
+
 /* 導遊詳細頁面 */
 /* BANNER */
 .guilddt-banner {
@@ -6,9 +7,10 @@
 }
 
 .guilddt-banner-img {
-  width: 100%;
+
+  max-width: 100%;
   height: 100%;
-  object-fit:cover;
+  object-fit: cover;
   object-position: top;
 }
 .guilddt-banner-content {
@@ -41,10 +43,11 @@
   width: 100%;
   margin-top: 113px;
 }
-.guild-intro-box{
+
+.guild-intro-box {
   display: flex;
 }
-.guild-intro-box-rwd{
+.guild-intro-box-rwd {
   display: none;
 }
 .guild-intro-item-dt {
@@ -78,8 +81,9 @@
   font-size: 20px;
   line-height: 30px;
 }
-.intro-title-star i{
-  font-size:25px;
+
+.intro-title-star i {
+  font-size: 25px;
 }
 .guild-intro-title-review .num {
   font-weight: normal;
@@ -149,7 +153,8 @@
   width: 100%;
   height: 100%;
 }
-.btn-consult{
+
+.btn-consult {
   margin-top: 40px;
 }
 /* ------------------------------------------------------- */
@@ -169,7 +174,8 @@
   width: 100%;
   height: 365px;
 }
-.guild-journey-img{
+
+.guild-journey-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -180,12 +186,12 @@
   height: 100%;
   background: rgba(255, 255, 255, 0.69);
   box-shadow: 5px 5px 4px rgba(255, 253, 253, 0.25);
-  /* 瀏覽器支援度 */
+
   backdrop-filter: blur(10px);
   border-radius: 22.5px;
   right: 0;
-  top:0;
-  position:absolute;
+  top: 0;
+  position: absolute;
 }
 .guild-journey-content {
   margin-top: 30px;
@@ -217,7 +223,8 @@
   width: 475px;
   margin-top: 20px;
 }
-.guild-jorney-item-price {
+
+.guild-journey-item-price {
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
@@ -225,7 +232,8 @@
   margin-right: 0px;
   text-align: right;
 }
-.guild-jorney-item-txt {
+
+.guild-journey-item-txt {
   width: 320px;
   font-weight: normal;
   font-size: 18px;
@@ -301,51 +309,41 @@
   color: var(--tribe-color);
 }
 
-
-/* ------------RWD ------------*/
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .guilddt-banner {
     height: 510px;
   }
-  .guild-intro-item-group{
+  .guild-intro-item-group {
     margin-left: 25px;
   }
-  .guild-intro-video  {
-    width:auto; 
-    height:auto;
+  .guild-intro-video {
+    width: auto;
+    height: auto;
   }
-  
 }
 
-@media only screen  and (max-width:992px) {
-  /* BANNER */
+@media only screen and (max-width: 992px) {
+  /* RWD BANNER */
   .guilddt-banner {
     height: 480px;
   }
-  
-  .guilddt-banner-content{
-    width: 457px;
-    height: 275px;
+
+  .guilddt-banner-content {
+    width: 447px;
+    height: 265px;
     padding-top: 15px;
     padding-right: 15px;
     top: 47px;
     left: 47px;
   }
   .guilddt-banner-text {
-    max-width: 413px;
+
     height: auto;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 40px;
-    margin: 50px;
+    font-size: 22px;
+    line-height: 1.5;
+    margin: 30px;
     color: var(--tribe-color);
-  }
-  
-  .guilddt-banner-text{
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    margin-left: 15px;
   }
   .quote {
     width: 20px;
@@ -357,10 +355,10 @@
   /* 標題 */
 
   .guild-intro-title {
-    width: 100%;
+
+    max-width: 100%;
     transform: none;
   }
-  
   .guild-intro-title h1 {
     font-weight: 500;
     font-size: 24px;
@@ -372,7 +370,8 @@
     font-size: 18px;
     line-height: 27px;
   }
-  .intro-title-star i{
+
+  .intro-title-star i {
     font-size: 20px;
   }
   .item-tribe-title,
@@ -388,63 +387,67 @@
     margin-bottom: 25px;
   }
 
-  .guild-intro-box{
+
+  .guild-intro-box {
     display: none;
   }
-  .guild-intro-box-rwd{
+  .guild-intro-box-rwd {
     display: flex;
     flex-direction: column;
   }
   .guild-intro-item-dt {
-    margin-top:25px;
+
+    margin-top: 25px;
     margin-bottom: 75px;
-  
   }
+  /* RWD導遊圖片 */
   .guild-intro-item-img {
     width: 470px;
     height: 765px;
   }
   .guild-intro-item-img .t-left,
-  .guild-intro-item-img .t-right{
+
+  .guild-intro-item-img .t-right {
     width: 100%;
     height: 100%;
-  } 
-  .guild-intro-item-img img{
+  }
+  .guild-intro-item-img img {
     object-fit: cover;
   }
-  .guild-intro-video{
+
+  .guild-intro-video {
     height: 305px;
   }
- .btn-consult {
-    margin-top:25px;
+  .btn-consult {
+    margin-top: 25px;
   }
   .guild-booking-title,
   .guild-journey-title,
   .guild-intro-guest-title > h1 {
-   margin:auto;
-   margin-bottom: 25px;
-}
-  .guild-journey{
+
+    margin: auto;
+    margin-bottom: 25px;
+  }
+  .guild-journey {
     align-items: center;
   }
-  .guild-journey-item{
-    height: auto;  
-    width: 420px;
+  .guild-journey-item {
+    height: auto;
+    max-width: 420px;
   }
-   .guild-journey-img{
-     border-radius: unset;
-   }
-   .guild-journey-item-bg {
+  .guild-journey-img {
+    border-radius: unset;
+  }
+  .guild-journey-item-bg {
     width: 100%;
     height: 289px;
-    background:var(--bg-color);
+    background: var(--bg-color);
     border-radius: unset;
-    position:unset;
-    top:-70px;
-  
+    position: unset;
+    top: -70px;
   }
   /* rwd體驗行程 */
-  .guild-journey-content{
+  .guild-journey-content {
     height: 100%;
     margin: 0;
     padding: 25px 15px;
@@ -458,6 +461,7 @@
   .line {
     display: none;
   }
+
   /* rwd行程體驗-部落 */
   .guild-journey-tribe i {
     font-size: 20px;
@@ -469,72 +473,74 @@
     line-height: 21px;
   }
   /* rwd行程體驗-價格 */
-  .guild-jorney-item-price {
+
+  .guild-journey-item-price {
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
     text-align: right;
     position: absolute;
-    left:15px;
-    bottom:25px;
+
+    left: 15px;
+    bottom: 25px;
   }
   /* rwd行程體驗-介紹 */
-  .guild-jorney-item-txt {
-    margin-top:70px;
+  .guild-journey-item-txt {
+    margin-top: 70px;
     width: 100%;
     font-weight: normal;
     font-size: 16px;
     line-height: 24px;
     height: 68px;
     overflow: hidden;
-    text-overflow:ellipsis;
+
+    text-overflow: ellipsis;
   }
-  .guild-jorney-item-txt p{
+  .guild-journey-item-txt p {
     height: 100%;
   }
 
   /* rwd行程體驗-評論 */
   .guild-journey-review {
-    margin:0;
+
+    margin: 0;
     position: absolute;
-    top:77px;
+    top: 77px;
   }
-    /* rwd行程體驗-按鈕*/
+  /* rwd行程體驗-按鈕*/
   .guild-journey-act {
-    top:0;
+    top: 0;
     bottom: 0;
-    position:absolute;
+    position: absolute;
     flex-direction: row;
-    align-items:flex-end;
+    align-items: flex-end;
     margin-bottom: 25px;
   }
-  .guild-journey-act .heart
-  {
+  .guild-journey-act .heart {
     position: absolute;
     align-self: flex-start;
     margin-top: 78px;
     right: 45px;
-
   }
   .btn-detail,
-  .btn-booking-md{
+  .btn-booking-md {
     bottom: 0;
     margin-right: 15px;
   }
-  .act-btn .heart{
+  .act-btn .heart {
     position: absolute;
-    margin:0px;
+    margin: 0px;
     top: -40px;
   }
   /* rwd旅客評論 */
-  .intro-guest-box{
+  .intro-guest-box {
     display: flex;
     overflow: hidden;
   }
-  .guild-intro-guest .intro-guest-item{
+  .guild-intro-guest .intro-guest-item {
     margin-bottom: 0;
   }
-  .intro-guest-item{
+  .intro-guest-item {
     margin-right: 34px;
   }
   .guild-intro-guest .btn-sort {
@@ -544,46 +550,88 @@
     display:none;
   }
 
-
-
-
-  
+  .guild-intro-guest nav .pagination {
+    display: none;
+  }
 }
-  
-@media only screen  and (max-width:576px) {
+
+@media screen and (max-width: 768px) {
   /* BANNER */
   .guilddt-banner {
-    height: 450px;
+    height: 380px;
   }
-  
-  .guilddt-banner-content{
-    width: 340px;
-    height: 184px;
-    padding-top: 15px;
-    padding-right: 15px;
-    top: 47px;
-    left: 47px;
+  .guilddt-banner-content {
+    max-width: 280px;
+    top: 40px;
+    left: 30px;
+    padding: 10px;
   }
   .guilddt-banner-text {
-    max-width: 413px;
-    height: auto;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 40px;
-    margin: 50px;
-    color: var(--tribe-color);
-  }
-  
-  .guilddt-banner-text{
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    margin-left: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 15px;
   }
   .quote {
     width: 20px;
     height: 16px;
-    margin-left: 13px;
+
+    margin-left: 10px;
     margin-top: 0px;
+  }
+  .guild-intro-title h1 {
+    margin: 0;
+  }
+  /* 導遊介紹圖片 */
+  .guild-intro-item-img {
+    max-width: 100%;
+    height: 465px;
+  }
+  .guild-intro-item-img .t-left,
+  .guild-intro-item-img .t-right {
+    width: 100%;
+    height: 100%;
+  }
+  .guild-intro-item-img img {
+    object-fit: cover;
+  }
+  /* 團名 */
+  .guild-intro-title {
+    flex-direction: column;
+  }
+  .guild-intro-title h1 {
+    font-size: 22px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .intro-title-star i {
+    font-size: 20px;
+  }
+  .item-tribe-title,
+  .item-license-title,
+  .item-lan-title {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 458px) {
+  .guild-journey-content {
+    padding: 10px;
+  }
+  .guild-journey-tribe {
+    color: var(--blue-color);
+    right: 10px;
+    top: 50px;
+  }
+  .guild-journey-act .heart {
+    right: 10px;
+  }
+  .guild-journey-item-txt {
+    margin-top: 80px;
+  }
+  .btn-detail,
+  .btn-booking-md {
+    margin-right: 10px;
   }
 }

@@ -5,7 +5,7 @@ import JourneyReservationArea from './journey_info_component/journeyReservationA
 import JourneyShoppingNote from './journey_info_component/journeyShoppingNote'
 import JourneyCoustomerReview from './journey_info_component/journeyCoustomerReview'
 import Pagination from './journey_component/Pagination'
-import ScrollUp from '../components/scrollUp'
+import ScrollUp from '../component/scrollUp'
 function Journey_info() {
   return (
     <>

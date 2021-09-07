@@ -4,7 +4,7 @@ import JourneyFilter from './journey_component/journeyFilter'
 import JourneyDropdownFilter from './journey_component/journeyDropdownFilter'
 import JournetFilterResult from './journey_component/journetFilterResult'
 import Pagination from './journey_component/Pagination'
-import ScorllUp from '../components/scrollUp'
+import ScorllUp from '../component/scrollUp'
 function Journey() {
   return (
     <>
