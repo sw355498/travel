@@ -1,0 +1,26 @@
+input[type='checkbox'] {
+  cursor: pointer; /*屬標樣式*/
+  position: relative;
+  width: 25px;
+  height: 25px;
+  font-size: 0.9rem;
+  visibility: hidden; /*不顯示但仍占空間*/
+}
+input[type='checkbox']::after {
+  position: absolute;
+  top: -4px;
+  background-color: #fec90d;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  visibility: visible; /*顯示*/
+  text-align: center;
+  content: ''; /*::before和::after偽元素中插入內容*/
+  border-radius: 5px;
+}
+input[type='checkbox']:checked::after {
+  content: '✔';
+  font-size: 22px;
+  font-weight: bold;
+}
