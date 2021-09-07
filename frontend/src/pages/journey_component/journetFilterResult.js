@@ -1,4 +1,5 @@
 import React from 'react'
+import journeyImg from '../../data/行程圖片/奇美部落.png'
 
 function journetFilterResult() {
   return (
@@ -7,7 +8,7 @@ function journetFilterResult() {
         <h5 className="page-title text-center">篩選結果:奇美部落</h5>
         <div className="row filter-result ">
           <div className="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-            <img src="/data/行程圖片/奇美部落.png" alt="" />
+            <img src={journeyImg} alt="" />
           </div>
           <div className="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
             <div className="row ">
@@ -75,7 +76,7 @@ function journetFilterResult() {
       <div className="container td-mt-25 filter-resultcontainer">
         <div className="row filter-result ">
           <div className="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-            <img src="/data/行程圖片/奇美部落.png" alt="" />
+            <img src={journeyImg} alt="" />
           </div>
           <div className="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
             <div className="row ">
@@ -143,7 +144,7 @@ function journetFilterResult() {
       <div className="container td-mt-25 filter-resultcontainer">
         <div className="row filter-result ">
           <div className="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-            <img src="/data/行程圖片/奇美部落.png" alt="" />
+            <img src={journeyImg} alt="" />
           </div>
           <div className="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
             <div className="row ">
@@ -211,7 +212,7 @@ function journetFilterResult() {
       <div className="container td-mt-25 filter-resultcontainer">
         <div className="row filter-result ">
           <div className="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-            <img src="/data/行程圖片/奇美部落.png" alt="" />
+            <img src={journeyImg} alt="" />
           </div>
           <div className="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
             <div className="row ">
@@ -279,7 +280,7 @@ function journetFilterResult() {
       <div className="container td-mt-25 filter-resultcontainer">
         <div className="row filter-result ">
           <div className="col-md-4 col-12 filter-result-imgarea d-flex align-content-between ">
-            <img src="/data/行程圖片/奇美部落.png" alt="" />
+            <img src={journeyImg} alt="" />
           </div>
           <div className="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
             <div className="row ">
