@@ -1,0 +1,309 @@
+main {
+  height: 1898px;
+  width: 100%;
+  background: #e8f7ff;
+  display: flex;
+}
+
+.main-article {
+  height: 1431px;
+  width: 825px;
+  top: 166px;
+  left: 450px;
+  background: #ffffff;
+  position: absolute;
+  border-radius: 10px;
+  border: 1px solid rgb(172, 172, 172);
+}
+
+.main-article-text {
+  font-size: 20px;
+  color: #072b7b;
+  font-weight: bold;
+  position: absolute;
+  top: 25px;
+  left: 13px;
+}
+
+.nav-article-section-image {
+  width: 250px;
+  height: 220px;
+  background: #000;
+  display: flex;
+  margin-left: 19px;
+  margin-top: 87px;
+}
+.nav-article-section-text {
+  left: 346px;
+}
+.nav-article-section-text1 {
+  width: 249x;
+  height: 28px;
+  border-radius: 20px;
+  position: absolute;
+  top: 87px;
+  font-weight: bold;
+}
+.nav-article-section-text2 {
+  width: 302px;
+  height: 69px;
+  border-radius: 20px;
+  position: absolute;
+
+  top: 140px;
+}
+
+.nav-article-section-text3 {
+  width: 302px;
+  height: 69px;
+  border-radius: 20px;
+  position: absolute;
+
+  top: 195px;
+}
+.nav-article-section-text4 {
+  width: 302px;
+  height: 69px;
+  border-radius: 20px;
+  position: absolute;
+
+  top: 248px;
+}
+
+.nav-article-section-text5 {
+  width: 213px;
+  height: 27px;
+  border-radius: 5px;
+  position: absolute;
+
+  top: 295px;
+}
+.nav-article-section-text6 {
+  width: 302px;
+  height: 69px;
+  border-radius: 20px;
+  position: absolute;
+
+  top: 347px;
+}
+.nav-article-section-text7 {
+  width: 302px;
+  height: 69px;
+  border-radius: 20px;
+  position: absolute;
+
+  top: 399px;
+}
+/* .nav-article-section-text8 {
+  width: 302px;
+  height: 69px;
+  border-radius: 20px;
+  position: absolute;
+  font-weight: bold;
+  top: 25px;
+  left: 19px;
+} */
+
+.nav-article-section-delete {
+  width: 115px;
+  height: 48px;
+  border-radius: 50px;
+  position: absolute;
+  left: 689px;
+  top: 477px;
+  border: 1px solid #ff9c00;
+  background: #ffffff;
+  color: #ff9c00;
+}
+
+.left-member {
+  height: 304px;
+  width: 255px;
+  left: 164px;
+  top: 175px;
+  position: absolute;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.left-member2 {
+  height: 355px;
+  width: 255px;
+  left: 164px;
+  top: 529px;
+  position: absolute;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.list {
+  margin-top: 25px;
+  list-style-type: none;
+  text-align: center;
+}
+.list a {
+  color: rgb(2, 2, 2);
+  text-decoration: none;
+}
+.list p {
+  color: #072b7b;
+  position: relative;
+  top: 10px;
+}
+
+a:hover {
+  color: #072b7b;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.nav-member-avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  margin-top: 24px;
+}
+.flexbox {
+  width: 130px;
+  height: 130px;
+  list-style-type: none;
+}
+
+.flexbox-text1 {
+  font-weight: bold;
+  position: relative;
+  left: 19px;
+  top: 25px;
+}
+
+.flexbox-text2 {
+  position: relative;
+  left: 19px;
+  top: 50px;
+}
+
+.flexbox-text3 {
+  position: relative;
+  left: 19px;
+  top: 75px;
+}
+
+.flexbox-text4 {
+  position: relative;
+  left: 19px;
+  top: 100px;
+}
+
+.flex1box {
+  width: 130px;
+  height: 130px;
+  list-style-type: none;
+}
+
+.flex1box-text1 {
+  font-weight: bold;
+  position: relative;
+  left: 160px;
+  top: -25px;
+}
+
+.flex1box-text2 {
+  position: relative;
+  left: 160px;
+}
+
+.flex1box-image {
+  width: 27px;
+  height: 24px;
+  position: relative;
+  left: -10px;
+  top: 0 px;
+}
+
+.flex1box-text3 {
+  position: relative;
+  left: 160px;
+  top: 25px;
+}
+
+/* 
+.item {
+  width: 100px;
+  height: 25px;
+  color: #000000;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+} */
+.journey-info-name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  color: #072b7b;
+}
+.journey-info-name1 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px;
+  color: black;
+  line-height: 27px;
+}
+
+.nav-article-section-detel {
+  width: 115px;
+  height: 48px;
+  border-radius: 50px;
+  background: #000;
+  position: absolute;
+  left: 1169px;
+  top: 1902px;
+  border: 1px solid #ff9c00;
+  background: #ff9c00;
+}
+.section-journey-info {
+  position: relative;
+  left: 18px;
+  top: 179px;
+}
+.journey-info-smalltitle p {
+  font-size: 18px;
+  line-height: 15px;
+
+  color: #000000;
+}
+.journey-info-smalltitle-list {
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #000000;
+}
+.journey-info-icon-text {
+  height: 30px;
+  width: 80px;
+}
+.main-order-evaluation {
+  height: 30px;
+  width: 80px;
+  position: absolute;
+  left: 451px;
+  top: 1672px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #072b7b;
+}
+.main-order-evaluation1 {
+  height: 150px;
+  width: 825px;
+  border-radius: 10px;
+  position: absolute;
+  left: 451px;
+  top: 1727px;
+  border: 1px gray solid;
+}
