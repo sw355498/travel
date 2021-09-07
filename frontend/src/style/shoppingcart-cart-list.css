@@ -18,6 +18,26 @@
   text-align: center;
   font-size: 24px;
 }
+@media only screen and (max-width: 992px) {
+  /* 小人走務流程圖設定 */
+.people-img{
+  width: 40px;
+}
+.process-bg {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background: #072b7b;
+}
+.process-bg p {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+  .process-text{
+    font-size: 16px;
+  }
+}
 .process-text-data {
   margin-left: 80px;
 }
