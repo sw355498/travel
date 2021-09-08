@@ -5,13 +5,13 @@ import '../../../style/fons.css'
 
 // 圖片引入
 import people from '../../../img/走路小人.png'
-function People() {
+function PayPeople() {
   return (
     <>
       {/* 小人走路流程圖 */}
       <div className="d-flex justify-content-center">
         <div className="td-mt-75">
-          <div className="d-flex justify-content-start ">
+          <div className="d-flex justify-content-center ">
             <img className="people-img" src={people} alt="走路小人" />
           </div>
           <div className="d-flex justify-content-between ">
@@ -44,4 +44,4 @@ function People() {
   )
 }
 
-export default People
+export default PayPeople
