@@ -25,28 +25,34 @@ function Header() {
                 <span>部落行程</span>
               </Link>
 
-              <Link to="guild">
+              <Link to="/Guild">
                 <span>在地導遊</span>
               </Link>
             </ul>
             {/* 導覽列登入前右側 */}
             {/* <div className="td-nav-before d-flex align-items-center">
-          <a className="btn td-btn-medium-o td-header-login text-center">登入</a>
-          <a className="btn td-btn-medium-b td-header-register text-center">註冊</a>
-        </div> */}
+              <a className="btn td-btn-medium-o td-header-login text-center">
+                登入
+              </a>
+              <a className="btn td-btn-medium-b td-header-register text-center">
+                註冊
+              </a>
+            </div> */}
 
             {/* 導覽列登入後右側 */}
             <div className="td-right-nav">
               <a href="通知">
                 <i className="fas fa-comment-dots"></i>
               </a>
-              <Link to="/Shoppingcart"
+              <Link
+                to="/Shoppingcart"
                 className="td-cart"
                 href="../pages/shoppingcart/ShoppingcartCartList"
               >
                 <img src={cart} alt="cart" />
               </Link>
-              <Link to="member"
+              <Link
+                to="member"
                 className="td-member"
                 href="/page/member/member-information.html"
               >

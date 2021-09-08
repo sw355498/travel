@@ -87,25 +87,25 @@
 .pagination {
   width: 149px;
 }
-.page-link{
-  padding:0px;
+.page-link {
+  padding: 0px;
   text-align: center;
 }
-.page-link:hover{
+.page-link:hover {
   background-color: var(--blue-color);
 }
 .page-item:hover span,
-.page-link:focus span{ 
+.page-link:focus span {
   color: #fff;
 }
-.page-link:focus{ 
-   box-shadow:none;
-   background-color: var(--blue-color);
+.page-link:focus {
+  box-shadow: none;
+  background-color: var(--blue-color);
 }
 .page-item {
   padding-right: 7px;
 }
-.page-item > a {
+.page-item .page-link {
   height: 32px;
   width: 32px;
 }
@@ -114,14 +114,14 @@
   font-weight: normal;
   font-size: 20px;
   vertical-align: middle;
-  }
+}
 /* 頭像共用 */
 .avatar {
   width: 70px;
   height: 70px;
   border-radius: 50%;
 }
-.stars-s i{
+.stars-s i {
   font-size: 20px;
   color: var(--btnorder-color);
 }

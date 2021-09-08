@@ -5,6 +5,9 @@ import Journey from './pages/Journey'
 import Shoppingcart from './pages/shoppingcart/ShoppingcartCartList'
 import Header from '../src/component/Header'
 import Footer from '../src/component/Footer'
+import Guild from './pages/Guild'
+import GuildInfo from './pages/GuildInfo'
+
 import './style/header.css'
 import './style/footer.css'
 
@@ -16,6 +19,8 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/journey" component={Journey} />
         <Route path="/Shoppingcart" component={Shoppingcart} />
+        <Route path="/Guild" component={Guild} />
+        <Route path="/GuildInfo" component={GuildInfo} />
         <Redirect to="/home" />
       </Switch>
       <Footer />
