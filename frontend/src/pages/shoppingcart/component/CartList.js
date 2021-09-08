@@ -45,6 +45,7 @@ function CartList() {
               阿美族 Tatadok 泛舟體驗
             </a>
             <div className="td-mt-25">2021-06-26</div>
+            <div className="td-mt-25">帶團導遊：巴隆</div>
             <div className="td-mt-25">人數：1人</div>
           </div>
           {/* 收藏.刪除及價錢 */}
@@ -86,7 +87,8 @@ function CartList() {
               阿美族 Tatadok 泛舟體驗
             </a>
             <div className="td-mt-25">2021-06-26</div>
-            <div className="td-mt-25">人數：1人</div>
+            <div className="td-mt-25">帶團導遊：巴隆</div>
+            <div className="td-mt-25">參團人數：1人</div>
           </div>
           {/* 收藏.刪除及價錢 */}
           <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center">
@@ -131,7 +133,7 @@ function CartList() {
           <div className="col-12 col-lg-3">
             <a
               className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
-              href="/page/shoppingcart/shoppingcart-payment.html"
+              href="/"
             >
               前往結帳
             </a>
