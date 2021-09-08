@@ -1,10 +1,4 @@
 import React from 'react'
-import journeyBanner1 from '../../data/小banner圖/靜浦-部落射箭體驗.jpg'
-import journeyBanner2 from '../../data/小banner圖/水璉部落.png'
-import journeyBanner3 from '../../data/小banner圖/太巴塱.jpg'
-import journeyBanner4 from '../../data/撒固兒部落/大圖1.jpg'
-
-
 
 function journeyBanner() {
   return (
@@ -46,28 +40,24 @@ function journeyBanner() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src={journeyBanner1}
+                src="/images/data/小banner圖/靜浦-部落射箭體驗.jpg"
                 className="d-block w-100"
                 alt="靜浦部落"
               />
             </div>
             <div className="carousel-item">
               <img
-                src={journeyBanner2}
+                src="/images/data/小banner圖/水璉部落.png"
                 className="d-block w-100"
                 alt="水璉部落"
               />
             </div>
             <div className="carousel-item">
-              <img
-                src={journeyBanner3}
-                className="d-block w-100"
-                alt="太巴塱部落"
-              />
+              <img src="images/" className="d-block w-100" alt="太巴塱部落" />
             </div>
             <div className="carousel-item">
               <img
-                src={journeyBanner4}
+                src="/data/小banner圖/太巴塱.jpg"
                 className="d-block w-100"
                 alt="太巴塱部落"
               />

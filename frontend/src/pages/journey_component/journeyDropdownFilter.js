@@ -7,9 +7,8 @@ function journeyDropdownFilter() {
         <button
           className="btn  dropdown-toggle btn-lg"
           type="button"
-          id="dropdownMenuButton"
-          data-toggle="dropdown"
-          aria-haspopup="true"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           快速篩選

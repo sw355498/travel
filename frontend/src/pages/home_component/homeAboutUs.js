@@ -1,6 +1,4 @@
 import React from 'react'
-import aboutus from '../../img/aboutus-img.png'
-
 function homeAboutUs() {
   return (
     <>
@@ -9,7 +7,11 @@ function homeAboutUs() {
           <div class="row">
             <div class="col-12">
               {' '}
-              <img src={aboutus} alt="" class="aboutus-img " />
+              <img
+                src="images/img/aboutus-img.png"
+                alt=""
+                className="aboutus-img "
+              />
             </div>
             <div class="col-lg-6 col-md-3 "></div>
             <div class="col-lg-6 col-md-7">

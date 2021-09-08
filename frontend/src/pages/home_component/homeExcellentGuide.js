@@ -1,7 +1,4 @@
 import React from 'react'
-import guide1 from '../../data/水璉部落/導遊/導遊7.jpg'
-import guide2 from '../../data/奇美部落/導遊/導遊1.jpg'
-import coustomer1 from '../../data/旅客圖片/male3-70.jpg'
 function homeExcellentGuide() {
   return (
     <>
@@ -15,7 +12,7 @@ function homeExcellentGuide() {
                 <div className="card-body">
                   <div className=" d-flex justify-content-center position-relative">
                     <img
-                      src={guide1}
+                      src="images/data/水璉部落/導遊/導遊7.jpg"
                       className="card-img-top guideImgBig"
                       alt="..."
                     />
@@ -50,7 +47,7 @@ function homeExcellentGuide() {
                       <div className="row">
                         <div className="col-lg-4 col-md-12 d-flex justify-content-lg-end align-items-lg-center justify-content-center align-items-md-center guide-firstcomment">
                           <img
-                            src={coustomer1}
+                            src="/images/data/旅客圖片/male3-70.jpg"
                             className="card-img-top "
                             alt="..."
                           />
@@ -77,7 +74,7 @@ function homeExcellentGuide() {
                       <div className="row">
                         <div className="col-lg-4 col-md-12 d-flex justify-content-lg-end align-items-lg-center justify-content-center align-items-md-center">
                           <img
-                            src={coustomer1}
+                            src="images/data/旅客圖片/male3-70.jpg"
                             className="card-img-top "
                             alt="..."
                           />
@@ -114,7 +111,7 @@ function homeExcellentGuide() {
                         <div className="col">
                           {' '}
                           <img
-                            src={guide2}
+                            src="/images/data/奇美部落/導遊/導遊1.jpg"
                             className="card-img-top"
                             alt="奇美導遊"
                           />
@@ -156,7 +153,7 @@ function homeExcellentGuide() {
                         <div className="col">
                           {' '}
                           <img
-                            src={guide2}
+                            src="/images/data/奇美部落/導遊/導遊1.jpg"
                             className="card-img-top"
                             alt="奇美導遊"
                           />
@@ -196,7 +193,7 @@ function homeExcellentGuide() {
                         <div className="col">
                           {' '}
                           <img
-                            src={guide2}
+                            src="/images/data/奇美部落/導遊/導遊1.jpg"
                             className="card-img-top"
                             alt="奇美導遊"
                           />

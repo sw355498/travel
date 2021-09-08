@@ -63,11 +63,11 @@ body {
 }
 
 .fa-star{
-  font-size: 25px;
+  font-size: 1.563rem;
   color :rgba(254, 201, 13, 1);
 }
 
 .small-star{
-  font-size: 20px;
+  font-size: 1.25rem;
   color :rgba(254, 201, 13, 1);
 }

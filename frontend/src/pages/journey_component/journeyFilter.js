@@ -4,7 +4,7 @@ function journeyFilter() {
   return (
     <section>
       <div className="container td-mt-75 filter">
-        <h5 className="page-title ">快速篩選</h5>
+        <h5 className="page-title">快速篩選</h5>
         <div className="td-mt-25">
           <div className="div d-flex filter-border">
             <div className="col-2 filter-title">
@@ -127,11 +127,11 @@ function journeyFilter() {
                     checked
                   />
                   <label className="form-check-label" for="flexRadioDefault1">
-                    <i className="fas fa-star   mt-1"></i>
-                    <i className="fas fa-star  "></i>
-                    <i className="fas fa-star  "></i>
-                    <i className="fas fa-star  "></i>
-                    <i className="fas fa-star  "></i>{' '}
+                    <i className="fas fa-star mt-1"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>{' '}
                   </label>
                 </div>
                 <div className="div"></div>
