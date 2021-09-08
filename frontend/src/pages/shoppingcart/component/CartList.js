@@ -44,7 +44,7 @@ function CartList() {
             <div className="td-mt-25">人數：1人</div>
           </div>
           {/* 收藏.刪除及價錢 */}
-          <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center">
+          <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
             <div>
               <a className="td-mt-25 btn">
                 <img className="collect" src="/img/collect.png" alt="" />

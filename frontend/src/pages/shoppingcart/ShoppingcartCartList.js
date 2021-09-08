@@ -12,14 +12,11 @@ import '../../style/checkbox.css'
 import '../../style/shoppingcart-cart-list.css'
 import '../../style/fons.css'
 
-
-
 function ShoppingcartCartList() {
   return (
     <>
       {/* 頁首 */}
       <Header />
-
 
       {/* 內容 */}
       <div className="container td-content">
@@ -32,11 +29,11 @@ function ShoppingcartCartList() {
           <CartList />
         </div>
 
-        {/* 其旅客還購買 */}
-        
+        {/* 其它旅客還購買 */}
         <CartRecommend />
       </div>
 
+      {/* 頁尾 */}
       <Footer />
     </>
   )

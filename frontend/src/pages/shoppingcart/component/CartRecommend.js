@@ -15,7 +15,7 @@ function CartTitle() {
     <>
       {/* 其旅客還購買web版 */}
       <div className="td-mt-75 d-none d-lg-block">
-        <div className="text-title-size28">其它旅客還購買</div>
+        <div className="text-title-size28 fw-bold">其它旅客還購買</div>
         <div className="shoppingcart-bg">
           <div className="d-flex justify-content-around td-my-25">
             {/* 第一項推薦 */}
