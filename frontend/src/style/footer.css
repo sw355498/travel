@@ -15,12 +15,14 @@ footer a {
   margin: auto;
 }
 
+
 .td-footer-text a {
   margin-right: 30px;
 }
 .td-footer-text a:last-child {
   margin-right: 0px;
 }
+
 
 .td-footer-contact {
   height: 30px;
@@ -44,6 +46,7 @@ footer a {
 .td-footer-notion-txt {
   margin-top: 25px;
 }
+
 @media screen and (max-width: 992px) {
   .td-footer-text {
     display: none;
@@ -53,6 +56,7 @@ footer a {
     align-items: center;
     margin-top: 25px;
     margin-bottom: 25px;
+
   }
   .td-footer-contact-text {
     margin-right: 0;
@@ -78,3 +82,4 @@ footer a {
     margin-bottom: 25px;
   }
 }
+

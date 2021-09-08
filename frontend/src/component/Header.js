@@ -7,23 +7,24 @@ import logo from '../img/logo.png'
 import hualsland from '../img/花島（黑）.png'
 import cart from '../img/cart.png'
 import avatar from '../img/avatar.png'
-
+import { Link } from 'react-router-dom'
 function Header() {
   return (
     <>
       <header className="td-header">
         <div className="container td-header-main d-flex align-items-center  position-relative">
           {/* LOGO區 */}
-          <a className="td-logo d-flex" href="/">
+          <Link className="td-logo d-flex" to="/home">
             <img className="td-logo-img" src={logo} alt="logo" />
             <img className="td-logo-text" src={hualsland} alt="花島（黑）" />
-          </a>
+          </Link>
           {/* 導覽列左側 */}
           <nav className="td-nav align-items-center d-flex justify-">
             <ul className="left-nav d-flex my-auto">
-              <a href="/">
+              <Link to="/journey">
                 <span>部落行程</span>
-              </a>
+              </Link>
+
               <a href="/">
                 <span>在地導遊</span>
               </a>
@@ -39,7 +40,10 @@ function Header() {
               <a href="通知">
                 <i className="fas fa-comment-dots"></i>
               </a>
-              <a className="td-cart" href="../pages/shoppingcart/ShoppingcartCartList">
+              <a
+                className="td-cart"
+                href="../pages/shoppingcart/ShoppingcartCartList"
+              >
                 <img src={cart} alt="cart" />
               </a>
               <a
@@ -63,12 +67,13 @@ function Header() {
               </label>
               {/* 漢堡選單 */}
               <ul className="td-burger-list d-flex flex-column position-absolute text-center justify-content-around">
-                <a href="/">
+                <Link to="/home">
                   <i className="fas fa-home"></i>回到首頁
-                </a>
-                <a href="/">
+                </Link>
+
+                <Link href="/home">
                   <i className="fas fa-shoe-prints"></i>花島行程
-                </a>
+                </Link>
                 <a href="/">
                   <i className="fas fa-street-view"></i>在地導遊
                 </a>

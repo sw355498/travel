@@ -1,3 +1,4 @@
+
 /* 導遊列表頁面 */
 
 /* BANNER 輪播圖*/
@@ -17,6 +18,7 @@
   height: 15px;
   bottom: 15px;
 }
+
 .carousel-indicators button {
   height: 15px;
 }
@@ -28,6 +30,7 @@
   margin-right: 30px;
   opacity: unset;
 }
+
 .carousel-indicators [data-bs-target].active {
   background-color: var(--blue-color);
 }
@@ -37,12 +40,14 @@
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
+
   background: rgb(0, 0, 0, 0.4);
   padding: 5px;
   width: 3rem;
   height: 3rem;
 }
 .carousel-control-prev-icon i,
+
 .carousel-control-next-icon i {
   font-size: 2rem;
 }
@@ -57,6 +62,7 @@
   margin-bottom: 25px;
   display: flex;
 }
+
 
 .filter-lan-title,
 .filter-stars-title {
@@ -95,6 +101,7 @@
 .guildlist-filter {
   color: var(--blue-color);
 }
+
 .guildlist-filter-rwd {
   display: none;
 }
@@ -111,6 +118,7 @@
   background-color: var(--blue-color);
   border-radius: 10px;
 }
+
 .filter-tribe-check {
   display: flex;
   flex-wrap: wrap;
@@ -189,6 +197,7 @@
   font-size: 20px;
   line-height: 30px;
 }
+
 .filter-lan-check div {
   width: 175px;
 }
@@ -202,6 +211,7 @@
   height: 450px;
   background-color: var(--bg-color);
   margin-bottom: 50px;
+
   transition: all 0.3s;
 }
 .filter-result-item:hover,
@@ -296,6 +306,7 @@
   .guildlist-new-title {
     text-align: center;
   }
+
   .filter-result-item {
     margin-bottom: 25px;
   }
@@ -303,6 +314,7 @@
   .filter-result-item:nth-child(5),
   .filter-result-item:nth-child(6) {
     margin-bottom: 25px;
+
   }
   .filter-result-box {
     margin-bottom: 0px;
@@ -345,6 +357,7 @@
     padding-left: 15px;
     padding-bottom: 0;
   }
+
   .filter-title-web {
     font-weight: 500;
     font-size: 18px;
@@ -377,6 +390,7 @@
     font-size: 18px;
     line-height: 27px;
   }
+
   .filter-stars-check-item {
     margin-bottom: 15px;
   }
@@ -397,3 +411,4 @@
     margin-right: 10px;
   }
 }
+
