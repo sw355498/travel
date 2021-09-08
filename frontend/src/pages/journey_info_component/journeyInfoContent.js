@@ -101,7 +101,7 @@ function journeyInfoContent() {
       </div>
 
       <div className="journey-info-name td-mt-75 ">
-        <p>商品說明</p>
+        <p>行程照片</p>
       </div>
       <div className=" td-mt-25 ">
         <img

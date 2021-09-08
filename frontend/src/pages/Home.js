@@ -16,7 +16,7 @@ function home() {
   return (
     <>
       <HomeBanner />
-        <HomeAboutUs />
+      <HomeAboutUs />
       <HomeGallryArea />
       <HomeExcellentGuide />
       <ScrollUp />
