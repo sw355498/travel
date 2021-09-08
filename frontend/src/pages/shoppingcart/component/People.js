@@ -14,16 +14,16 @@ function People() {
           <div className="d-flex justify-content-start ">
             <img className="people-img" src={people} alt="走路小人" />
           </div>
-          <div className="d-flex justify-content-between">
-            <div className="process-bg">
+          <div className="d-flex justify-content-between ">
+            <div className="process-bg pt-1 pt-lg-2">
               <p>1</p>
             </div>
             <div className="process-dotted"></div>
-            <div className="process-bg">
+            <div className="process-bg pt-1 pt-lg-2">
               <p>2</p>
             </div>
             <div className="process-dotted"></div>
-            <div className="process-bg">
+            <div className="process-bg pt-1 pt-lg-2">
               <p>3</p>
             </div>
           </div>
@@ -33,7 +33,11 @@ function People() {
               <div className="process-text">填寫資料</div>
               <div className="process-text">與付款方式</div>
             </div>
-            <div className="process-text process-text-pay">訂購完成</div>
+            <div className="process-text process-text-pay">
+            <div className="process-text">訂購</div>
+            <div className="process-text">完成</div>
+            </div>
+            
           </div>
         </div>
       </div>

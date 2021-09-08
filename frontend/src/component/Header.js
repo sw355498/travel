@@ -25,9 +25,9 @@ function Header() {
                 <span>部落行程</span>
               </Link>
 
-              <a href="/">
+              <Link to="guild">
                 <span>在地導遊</span>
-              </a>
+              </Link>
             </ul>
             {/* 導覽列登入前右側 */}
             {/* <div className="td-nav-before d-flex align-items-center">
@@ -40,18 +40,18 @@ function Header() {
               <a href="通知">
                 <i className="fas fa-comment-dots"></i>
               </a>
-              <a
+              <Link to="/Shoppingcart"
                 className="td-cart"
                 href="../pages/shoppingcart/ShoppingcartCartList"
               >
                 <img src={cart} alt="cart" />
-              </a>
-              <a
+              </Link>
+              <Link to="member"
                 className="td-member"
                 href="/page/member/member-information.html"
               >
                 <img className="td-member-avatar" src={avatar} alt="avatar" />
-              </a>
+              </Link>
             </div>
 
             {/* 漢堡 */}

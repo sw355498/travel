@@ -1,6 +1,4 @@
 // 元件引入
-import Header from '../../component/Header'
-import Footer from '../../component/Footer'
 import People from './component/People'
 import CartList from './component/CartList'
 import CartRecommend from './component/CartRecommend'
@@ -15,12 +13,7 @@ import '../../style/fons.css'
 function ShoppingcartCartList() {
   return (
     <>
-      {/* 頁首 */}
-      <Header />
-
-      {/* 內容 */}
-      <div className="container td-content">
-
+      <div className="container">
         {/* 小人走路流程圖 */}
         <People />
 
@@ -32,9 +25,6 @@ function ShoppingcartCartList() {
         {/* 其它旅客還購買 */}
         <CartRecommend />
       </div>
-
-      {/* 頁尾 */}
-      <Footer />
     </>
   )
 }
