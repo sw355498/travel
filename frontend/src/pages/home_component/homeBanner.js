@@ -1,5 +1,5 @@
 import React from 'react'
-import Bannerimg from '../../img/花島（黑）.png'
+import Zoom from 'react-reveal/Zoom'
 
 function homeBanner() {
   return (
@@ -9,9 +9,17 @@ function homeBanner() {
           <div className="row  d-flex align-items-center">
             <div className="col-md-5 ">
               <div className="banner-content d-flex flex-column">
-                <img src={Bannerimg} alt="" className="whitebird img-fluid " />
-                <h2 className="first-h2 text-center">感受生活</h2>
-                <h2 className="first-h2 text-center">帶領你認識花蓮深入部落</h2>
+                <Zoom>
+                  <img
+                    src="/images/img/花島（黑）.png"
+                    alt=""
+                    className="whitebird img-fluid "
+                  />
+                  <h2 className="first-h2 text-center">感受生活</h2>
+                  <h2 className="first-h2 text-center">
+                    帶領你認識花蓮深入部落
+                  </h2>
+                </Zoom>
               </div>
             </div>
           </div>
@@ -23,14 +31,17 @@ function homeBanner() {
             className="btn btn-secondary dropdown-toggle btn-lg"
             type="button"
             id="dropdownMenuButton"
-            data-toggle="dropdown"
+            data-bs-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false"
           >
             快速搜尋
           </button>
-          <form action="">
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div
+            className="dropdown-menu td-mt-50"
+            aria-labelledby="dropdownMenuButton"
+          >
+            <form action="">
               <h6 className="ml-3">進階選項:</h6>
               <div className="mt-3 list ml-3">
                 <h6 className="mt-3 mr-3 mb-3">搜尋部落:</h6>
@@ -153,8 +164,8 @@ function homeBanner() {
                   送出
                 </a>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </>

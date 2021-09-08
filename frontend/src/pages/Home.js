@@ -1,4 +1,5 @@
 import React from 'react'
+//引入首頁組件
 import HomeAboutUs from './home_component/homeAboutUs'
 import HomeBanner from './home_component/homeBanner'
 import HomeExcellentGuide from './home_component/homeExcellentGuide'
@@ -15,7 +16,7 @@ function home() {
   return (
     <>
       <HomeBanner />
-      <HomeAboutUs />
+        <HomeAboutUs />
       <HomeGallryArea />
       <HomeExcellentGuide />
       <ScrollUp />
