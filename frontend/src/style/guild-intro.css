@@ -1,5 +1,3 @@
-
-
 /* 導遊詳細頁面 */
 /* BANNER */
 .guilddt-banner {
@@ -7,8 +5,7 @@
 }
 
 .guilddt-banner-img {
-
-  max-width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
@@ -82,8 +79,9 @@
   line-height: 30px;
 }
 
-.intro-title-star i {
+.guild-intro-title-review .intro-title-star i {
   font-size: 25px;
+  color: #fff;
 }
 .guild-intro-title-review .num {
   font-weight: normal;
@@ -186,7 +184,6 @@
   height: 100%;
   background: rgba(255, 255, 255, 0.69);
   box-shadow: 5px 5px 4px rgba(255, 253, 253, 0.25);
-
   backdrop-filter: blur(10px);
   border-radius: 22.5px;
   right: 0;
@@ -226,8 +223,8 @@
 
 .guild-journey-item-price {
   font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 22px;
+  line-height: 33px;
   margin-top: 15px;
   margin-right: 0px;
   text-align: right;
@@ -248,7 +245,7 @@
   align-items: center;
 }
 .act-btn {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 /* 體驗行程評分 */
 .guild-journey-review {
@@ -281,7 +278,7 @@
   border-radius: 32px;
 }
 .intro-guest-info {
-  margin-bottom: 27px;
+  margin-bottom: 15px;
 }
 .intro-guest-reply {
   background: var(--bg-color);
@@ -300,6 +297,7 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 36px;
+  margin-bottom: 5px;
 }
 .intro-guest-review-txt {
   font-weight: normal;
@@ -337,7 +335,6 @@
     left: 47px;
   }
   .guilddt-banner-text {
-
     height: auto;
     font-weight: 400;
     font-size: 22px;
@@ -355,7 +352,6 @@
   /* 標題 */
 
   .guild-intro-title {
-
     max-width: 100%;
     transform: none;
   }
@@ -387,7 +383,6 @@
     margin-bottom: 25px;
   }
 
-
   .guild-intro-box {
     display: none;
   }
@@ -396,7 +391,6 @@
     flex-direction: column;
   }
   .guild-intro-item-dt {
-
     margin-top: 25px;
     margin-bottom: 75px;
   }
@@ -406,7 +400,6 @@
     height: 765px;
   }
   .guild-intro-item-img .t-left,
-
   .guild-intro-item-img .t-right {
     width: 100%;
     height: 100%;
@@ -424,7 +417,6 @@
   .guild-booking-title,
   .guild-journey-title,
   .guild-intro-guest-title > h1 {
-
     margin: auto;
     margin-bottom: 25px;
   }
@@ -502,7 +494,6 @@
 
   /* rwd行程體驗-評論 */
   .guild-journey-review {
-
     margin: 0;
     position: absolute;
     top: 77px;
@@ -525,7 +516,7 @@
   .btn-detail,
   .btn-booking-md {
     bottom: 0;
-    margin-right: 15px;
+    margin-right: 20px;
   }
   .act-btn .heart {
     position: absolute;
@@ -546,8 +537,8 @@
   .guild-intro-guest .btn-sort {
     display: none;
   }
-  .guild-intro-guest nav .pagination{
-    display:none;
+  .guild-intro-guest nav .pagination {
+    display: none;
   }
 
   .guild-intro-guest nav .pagination {

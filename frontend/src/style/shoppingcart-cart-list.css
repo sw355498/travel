@@ -1,34 +1,4 @@
-/* 內容區塊設定 */
-.td-content {
-  min-height: 100vh;
-}
-/* 小人走務流程圖設定 */
-.process-bg {
-  width: 60px;
-  height: 60px;
-  border-radius: 100px;
-  background: #072b7b;
-}
-.process-bg p {
-  color: white;
-  font-size: 40px;
-  text-align: center;
-}
-.process-text {
-  text-align: center;
-  font-size: 24px;
-}
-.process-text-data {
-  margin-left: 80px;
-}
-.process-text-pay {
-  margin-left: 70px;
-}
-.process-dotted {
-  width: 120px;
-  height: 30px;
-  border-bottom: 2px dashed black;
-}
+
 /* 購物車清單內容設定 */
 .shoppingcart-bg {
   background: #e8f7ff;

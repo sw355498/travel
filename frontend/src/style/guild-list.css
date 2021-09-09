@@ -1,8 +1,5 @@
-
 /* 導遊列表頁面 */
-
 /* BANNER 輪播圖*/
-
 .carousel-item {
   max-width: 100%;
   height: 444px;
@@ -36,22 +33,27 @@
 }
 .carousel-control-next,
 .carousel-control-prev {
-  opacity: unset;
+  opacity: 0.8;
+}
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+  box-shadow: unset;
+  transform: unset;
+  transition: unset;
+  opacity: 1;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-
   background: rgb(0, 0, 0, 0.4);
   padding: 5px;
   width: 3rem;
   height: 3rem;
 }
 .carousel-control-prev-icon i,
-
 .carousel-control-next-icon i {
   font-size: 2rem;
 }
-/* 共用 */
+
 /* 快速篩選-共用 */
 .filter-tribe,
 .filter-lan,
@@ -62,7 +64,6 @@
   margin-bottom: 25px;
   display: flex;
 }
-
 
 .filter-lan-title,
 .filter-stars-title {
@@ -81,7 +82,7 @@
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
-.filter-title,
+.guildlist-filter-title,
 .filter-result-title,
 .guildlist-new-title {
   color: var(--blue-color);
@@ -98,6 +99,11 @@
 }
 
 /* 快速篩選 */
+input[type='checkbox'] {
+  width: unset;
+  height: unset;
+  font-size: unset;
+}
 .guildlist-filter {
   color: var(--blue-color);
 }
@@ -128,16 +134,17 @@
   display: flex;
   align-items: center;
 }
-.tribe-check-input {
+.filter-tribe-check .tribe-check-input {
   visibility: hidden;
   cursor: pointer;
   width: 15px;
   height: 15px;
   margin-right: 10px;
 }
-.tribe-check-input::after {
+.filter-tribe-check .tribe-check-input::after {
   content: '';
   position: absolute;
+  background: unset;
   top: 0;
   width: 15px;
   height: 15px;
@@ -145,7 +152,7 @@
   border-radius: 50%;
   visibility: visible;
 }
-.tribe-check-input:checked::after {
+.filter-tribe-check .tribe-check-input:checked::after {
   content: '';
   width: 15px;
   height: 15px;
@@ -173,10 +180,11 @@
   height: 15px;
   margin-right: 10px;
 }
-.lan-check-input::after,
-.stars-check-input::after {
+.filter-lan .lan-check-input::after,
+.filter-stars .stars-check-input::after {
   content: '';
   position: absolute;
+  background: unset;
   top: 0;
   width: 15px;
   height: 15px;
@@ -184,8 +192,8 @@
   border-radius: 50%;
   visibility: visible;
 }
-.lan-check-input:checked::after,
-.stars-check-input:checked::after {
+.filter-lan .lan-check-input:checked::after,
+.filter-stars .stars-check-input:checked::after {
   content: '';
   width: 15px;
   height: 15px;
@@ -283,21 +291,59 @@
   margin-bottom: 25px;
   transition: all 0.3s;
 }
-
+.pagination .page-link {
+  padding: 5px 0 5px 0;
+}
 /* ------------RWD---------- */
 @media screen and (max-width: 1200px) {
   .filter-result-box {
     justify-content: space-around;
   }
-  .filter-stars-title {
-    height: auto;
-  }
+
   .stars-label-group {
     margin-top: 5px;
     margin-bottom: 5px;
   }
 }
 @media screen and (max-width: 992px) {
+  /* 去掉特效 */
+  .guildlist-filter-rwd .dropdown button {
+    opacity: 1;
+    transform: unset;
+  }
+
+  .guildlist-filter-rwd .dropdown button:hover {
+    transition: unset;
+    box-shadow: unset;
+    opacity: unset;
+  }
+  .guildlist-banner .carousel-indicators button:hover {
+    transition: unset;
+    transform: unset;
+    box-shadow: unset;
+  }
+  .guildlist-filter-rwd .dropdown .show {
+    margin: 0;
+  }
+  .guildlist-filter-rwd .dropdown .show input {
+    width: unset;
+    height: unset;
+    margin-left: 0;
+  }
+  .guildlist-filter-rwd input[type='checkbox']:after {
+    width: unset;
+    height: unset;
+    font-size: unset;
+    background: unset;
+    border-radius: 50%;
+  }
+  .guildlist-filter-rwd input[type='checkbox']:checked:after {
+    width: unset;
+    height: unset;
+    font-size: unset;
+    content: '';
+  }
+  /* ------------------------------------------ */
   .carousel-item {
     max-width: 100%;
     max-height: 385px;
@@ -314,44 +360,43 @@
   .filter-result-item:nth-child(5),
   .filter-result-item:nth-child(6) {
     margin-bottom: 25px;
-
   }
   .filter-result-box {
     margin-bottom: 0px;
   }
-  .filter-title,
+  .guildlist-filter-title,
   .filter-tribe,
   .filter-lan,
   .filter-stars {
     display: none;
   }
 
-  /* 搜尋 */
-  .guildlist-filter-rwd {
+  /* 搜尋rwd */
+  .guildlist-filter .guildlist-filter-rwd {
     display: block;
   }
   .filter-result-item,
   .guildlist-new-item {
     margin-right: 15px;
   }
-  .dropdown-toggle {
+  .guildlist-filter-rwd .dropdown-toggle {
     width: 445px;
     height: 48px;
     background-color: var(--blue-color);
     border: none;
     border-radius: 100px;
   }
-  .dropdown-toggle:after {
+  .guildlist-filter-rwd .dropdown-toggle:after {
     border: none;
   }
-  .dropdown-toggle .fas {
+  .guildlist-filter-rwd .dropdown-toggle .fas {
     font-size: 20px;
     position: absolute;
     right: 20px;
     transform: rotate(0deg);
   }
 
-  .dropdown-menu {
+  .guildlist-filter-rwd .dropdown-menu {
     width: 445px;
     background-color: var(--bg-color);
     padding-left: 15px;
@@ -364,7 +409,7 @@
     line-height: 27px;
   }
   /* 部落篩選rwd */
-  .dropdown-menu h2 {
+  .guildlist-filter-rwd .dropdown-menu h2 {
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
@@ -375,17 +420,18 @@
     margin-right: 50px;
     margin-bottom: 15px;
   }
-  .dropdown-menu input:after {
+  /* rwd篩選input */
+  .guildlist-filter-rwd .dropdown-menu input:after {
     border: 1px solid #000;
     width: 18px;
     height: 18px;
   }
-  .dropdown-menu input:checked:after {
+  .guildlist-filter-rwd .dropdown-menu input:checked:after {
     width: 18px;
     height: 18px;
     background: #000;
   }
-  .dropdown-menu label {
+  .guildlist-filter-rwd .dropdown-menu label {
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
@@ -411,4 +457,3 @@
     margin-right: 10px;
   }
 }
-
