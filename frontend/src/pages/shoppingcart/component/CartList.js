@@ -1,6 +1,7 @@
-//模組引入
+//模組,元件引入
 import React, { useState } from 'react'
 import { withRouter, Link } from 'react-router-dom'
+import QuantityButton from './QuantityButton'
 
 // css引入
 import '../../../style/spacing.css'
@@ -17,6 +18,13 @@ import collect from '../../../img/collect.png'
 import tribe from '../../../img/奇美部落大圖1.png'
 
 function CartList(props) {
+  const [people, setPeople] = useState(1)
+
+  const PeopleQuantity = (value) => {
+    setPeople(people + value)
+  }
+
+  const [price, setPrice] = useState(1700)
   return (
     <>
       <div className="text-title-size24 d-none d-lg-block fw-bold">
@@ -47,7 +55,13 @@ function CartList(props) {
             </a>
             <div className="td-mt-25">2021-06-26</div>
             <div className="td-mt-25">帶團導遊：巴隆</div>
-            <div className="td-mt-25">人數：1人</div>
+            <div className="td-mt-25">
+              人數：
+              <QuantityButton PeopleQuantity={PeopleQuantity} value={-1}/>
+              {people}
+              <QuantityButton PeopleQuantity={PeopleQuantity} value={1}/>
+              人
+            </div>
           </div>
           {/* 收藏.刪除及價錢 */}
           <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
@@ -62,7 +76,7 @@ function CartList(props) {
               </a>
             </div>
             <div className="text-title-size24 shoppingcart-price td-mt-25">
-              <div>TWD 1,799</div>
+              <div>TWD {price * people}</div>
             </div>
           </div>
         </div>
@@ -94,7 +108,7 @@ function CartList(props) {
           {/* 收藏.刪除及價錢 */}
           <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center">
             <div>
-              <a className="td-mt-25 btn">
+              <a className="td-mt-25 btn text-center">
                 <img className="collect" src={collect} alt="" />
               </a>
             </div>
