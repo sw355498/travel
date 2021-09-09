@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import journeyinfoData from '../../data/journeyInfoData'
 import JourneyBanner from '../journey/banner/journeyBanner'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
@@ -12,7 +12,6 @@ function Journey_info(props) {
   const findResult = journeyinfoData.Info.find(
     (x) => x._id === props.match.params.id
   )
-  const [pData, setPData] = useState(findResult)
   if (!findResult) {
     return <div>找不到您想要的行程</div>
   }
@@ -133,7 +132,7 @@ function Journey_info(props) {
           />
         </div>
       </div>
-      <JourneyReservationArea pData={pData}/>
+      <JourneyReservationArea findResult={findResult}/>
       <JourneyShoppingNote />
       <JourneyCoustomerReview />
       <Pagination />
