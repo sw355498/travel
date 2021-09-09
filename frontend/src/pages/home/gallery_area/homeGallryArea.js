@@ -9,7 +9,7 @@ function homeGallryArea() {
           <div id="journey" className="td-mt-25">
             <div
               className="journey-paterungan img-fluid "
-              onclick="location.href='/page/jounery/journey.html';"
+              onClick="location.href='/page/jounery/journey.html';"
             >
               <div className="card">
                 <div className="imgBx">
@@ -33,7 +33,7 @@ function homeGallryArea() {
             </div>
             <div
               className="journey-kiwit img-fluid "
-              onclick="location.href='/page/jounery/journey.html';"
+              onClick="location.href='/page/jounery/journey.html';"
             >
               <div className="card">
                 <div className="imgBx">
@@ -58,7 +58,7 @@ function homeGallryArea() {
             </div>
             <div
               className="journey-cawi img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
+              onClick="location.href='/page/jounery/journey.html';"
             >
               <div className="card">
                 <div className="imgBx">
@@ -83,7 +83,7 @@ function homeGallryArea() {
             </div>
             <div
               className="journey-ciwidian img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
+              onClick="location.href='/page/jounery/journey.html';"
             >
               <div className="card">
                 <div className="imgBx">
@@ -108,7 +108,7 @@ function homeGallryArea() {
             </div>
             <div
               className="journey-tafalong img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
+              onClick="location.href='/page/jounery/journey.html';"
             >
               <div className="card">
                 <div className="imgBx">
@@ -133,7 +133,7 @@ function homeGallryArea() {
             </div>
             <div
               className="journey-sakur img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
+              onClick="location.href='/page/jounery/journey.html';"
             >
               <div className="card">
                 <div className="imgBx">
@@ -158,7 +158,7 @@ function homeGallryArea() {
             </div>
             <div
               className="journey-vataan img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
+              onClick="location.href='/page/jounery/journey.html';"
             >
               <img
                 src="images/data/首頁部落圖/馬太鞍部落封面.jpg"
@@ -167,7 +167,7 @@ function homeGallryArea() {
             </div>
             <div
               className="journey-vataan img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
+              onClick="location.href='/page/jounery/journey.html';"
             >
               <div className="card">
                 <div className="imgBx">

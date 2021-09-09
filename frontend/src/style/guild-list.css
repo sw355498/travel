@@ -152,7 +152,7 @@ input[type='checkbox'] {
   border-radius: 50%;
   visibility: visible;
 }
-.filter-tribe-check .tribe-check-input:checked::after {
+.tribe-check-input:checked::after {
   content: '';
   width: 15px;
   height: 15px;
@@ -160,6 +160,7 @@ input[type='checkbox'] {
   visibility: visible;
   background: var(--blue-color);
 }
+
 .tribe-check-label {
   font-weight: normal;
   font-size: 20px;

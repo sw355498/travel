@@ -7,8 +7,6 @@ import Header from '../src/component/Header'
 import Footer from '../src/component/Footer'
 import Guild from './pages/Guild'
 import GuildInfo from './pages/GuildInfo'
-import Shoppingcart from './pages/shoppingcart/Shoppingcart'
-
 import './style/header.css'
 import './style/footer.css'
 
@@ -17,7 +15,7 @@ function App() {
     <>
       <Header />
       <Switch>
-      {/* Home跟journey路徑我改成我的版本，如影響到其他檔案我再改過 */}
+        {/* Home跟journey路徑我改成我的版本，如影響到其他檔案我再改過 */}
         <Route path="/" component={Home} exact />
         <Route path="/journey" component={Journey} exact />
         <Route path="/journey_info/:id" component={journeyInfo} />
