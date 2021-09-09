@@ -79,12 +79,12 @@ function Header() {
                   <i className="fas fa-home"></i>回到首頁
                 </Link>
 
-                <Link href="/home">
-                  <i className="fas fa-shoe-prints"></i>花島行程
+                <Link to="/journey">
+                  <i className="fas fa-shoe-prints"></i>部落行程
                 </Link>
-                <a href="/">
+                <Link to="/Guild">
                   <i className="fas fa-street-view"></i>在地導遊
-                </a>
+                </Link>
               </ul>
             </div>
           </nav>
