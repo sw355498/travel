@@ -1,6 +1,5 @@
 import React from 'react'
-
-function journeyReservationArea() {
+function journeyReservationArea(props) {
   return (
     <div className="journey-reservationarea-container td-mt-75 ">
       <div className="necessary"></div>
