@@ -10,9 +10,6 @@ import GuildInfo from './pages/GuildInfo'
 import Shoppingcart from './pages/shoppingcart/Shoppingcart'
 import Pay from './pages/shoppingcart/Pay'
 
-import './style/header.css'
-import './style/footer.css'
-
 function App() {
   return (
     <>
