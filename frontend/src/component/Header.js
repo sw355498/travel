@@ -1,6 +1,6 @@
 // css引入
 import '../style/header.css'
-import '../style//spacing.css'
+import '../style/spacing.css'
 
 // 圖片引入
 import logo from '../img/logo.png'
