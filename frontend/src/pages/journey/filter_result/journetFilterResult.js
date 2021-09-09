@@ -1,15 +1,13 @@
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Rating from '../../../component/Rating'
 import JourneyData from '../../../data/journeyData'
-import Journey_info from '../../journey_info/Journey_info'
 
 function journetFilterResult() {
   return (
     <>
       <div className="container td-mt-75 filter-resultcontainer ">
         <h5 className="page-title text-center">篩選結果:奇美部落</h5>
-        <Route path="/journey/:id" component={Journey_info}></Route>
         {JourneyData.journey.map((journey) => (
           <>
             <div className="row filter-result td-mb-25">
@@ -58,7 +56,10 @@ function journetFilterResult() {
                     <p className="mt-3">TWD&nbsp;{journey.price}</p>
                   </div>
                   <div className="col-5 col-md-12 d-flex flex-md-column align-items-md-center justify-content-between ">
-                    <Link className="td-btn-medium-w" to="/journey_info">
+                    <Link
+                      className="td-btn-medium-w"
+                      to={`journey_Info/${journey._id}`}
+                    >
                       <span>詳細</span>
                     </Link>
                     <button className="td-btn-medium-o">選擇</button>
