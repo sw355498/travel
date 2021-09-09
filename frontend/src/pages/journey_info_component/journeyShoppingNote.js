@@ -3,11 +3,11 @@ import React from 'react'
 function journeyShoppingNote() {
   return (
     <>
-      <div class="container td-mt-75 journey-notes">
-        <div class="journey-info-name ">
+      <div className="container td-mt-75 journey-notes">
+        <div className="journey-info-name ">
           <p>購買須知</p>
         </div>
-        <div class="td-mt-25">
+        <div className="td-mt-25">
           <p>-因顧及安全，恕不接待寵物一同參與泛舟活動，敬請見諒</p>
           <p>
             -孕婦、氣喘、心臟病、高血壓、癲癇、骨質疏鬆等患者，禁止參加泛舟活動
@@ -26,12 +26,12 @@ function journeyShoppingNote() {
           </p>
         </div>
       </div>
-      <div class="container td-mt-75 journey-watchoutnote">
-        <div class="td-mt-25">&nbsp;</div>
-        <div class="journey-info-name ">
+      <div className="container td-mt-75 journey-watchoutnote">
+        <div className="td-mt-25">&nbsp;</div>
+        <div className="journey-info-name ">
           <p>注意事項</p>
         </div>
-        <div class="td-mt-25 ">
+        <div className="td-mt-25 ">
           <p>-因顧及安全，恕不接待寵物一同參與泛舟活動，敬請見諒</p>
           <p>
             -孕婦、氣喘、心臟病、高血壓、癲癇、骨質疏鬆等患者，禁止參加泛舟活動
@@ -49,17 +49,17 @@ function journeyShoppingNote() {
             小時，如欲在花蓮火車站搭車的旅客，請留意火車時間
           </p>
         </div>
-        <div class="td-md-25">&nbsp;</div>
+        <div className="td-md-25">&nbsp;</div>
       </div>
 
-      <div class="container td-mt-75 journey-notes">
-        <div class="journey-info-name ">
+      <div className="container td-mt-75 journey-notes">
+        <div className="journey-info-name ">
           <p>取消政策</p>
         </div>
-        <div class="td-mt-25">
+        <div className="td-mt-25">
           <p>- 所選日期 3 天（含）之前取消，收取手續費 0%</p>
           <p> - 所選日期 0 ~ 2 天之間取消，收取手續費 100%</p>
-          <p class="remark">
+          <p className="remark">
             注意：由於站內商品來自全球各地，訂單取消時間將依該供應商所在時區判定。供應商需
             2-5
             個工作天進行取消流程，依照您購買的商品取消政策收取手續費，並於取消流程完成後14

@@ -114,8 +114,6 @@ button:hover ,.btn:hover {
 
 
 
-
-
 @media only screen and (min-width: 768px) {
   .filter-resultcontainer .page-title {
     text-align: left !important;
@@ -133,29 +131,17 @@ button:hover ,.btn:hover {
     color: #ffffff;
     background: #072b7b;
     border-radius: 100px;
-    margin-top: 25px;
+    margin-top: 75px;
   }
 
   .dropdown-menu.show {
     display: block;
-    position: absolute;
     will-change: transform;
-    transform: translate3d(2.188rem, 4.688rem, 0px) !important;
+    margin: 0 auto;
     background: #e8f7ff;
     border-radius: 10px;
     max-width: 445px;
-  }
-
-  .dropdown-menu.show {
-    display: block;
-    position: absolute;
-    will-change: transform;
-    top: 0px;
-    left: 0px;
-    transform: translate3d(2.188rem, 4.688rem, 0px) !important;
-    background: #e8f7ff;
-    border-radius: 10px;
-    max-width: 445px;
+    left: 0 !important;
   }
   .filter-dropdown .form-check {
     max-width: 150px;
@@ -166,9 +152,7 @@ button:hover ,.btn:hover {
     margin-right: 0.75rem;
     margin-left: 1.4rem;
   }
-  .filter-dropdown .stars a {
-    font-size: 13px;
-  }
+
 }
 .filter-dropdown h6 {
   margin-left: 20px;
@@ -289,6 +273,7 @@ button:hover ,.btn:hover {
   /* identical to box height, or 130% */
   color: #000000;
 }
+
 
 .filter-resultcontainer .filter-result-imgarea {
   padding: 0%;

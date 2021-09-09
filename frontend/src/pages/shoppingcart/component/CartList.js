@@ -1,3 +1,6 @@
+//模組引入
+import React, { useState } from 'react'
+
 // css引入
 import '../../../style/spacing.css'
 import '../../../style/button.css'
@@ -9,6 +12,7 @@ import '../../../style/fons.css'
 import triangle from '../../../img/三角.png'
 import total from '../../../img/total.png'
 import ashcan from '../../../img/delete.png'
+import collect from '../../../img/collect.png'
 import tribe from '../../../img/奇美部落大圖1.png'
 
 function CartList() {
@@ -41,13 +45,14 @@ function CartList() {
               阿美族 Tatadok 泛舟體驗
             </a>
             <div className="td-mt-25">2021-06-26</div>
+            <div className="td-mt-25">帶團導遊：巴隆</div>
             <div className="td-mt-25">人數：1人</div>
           </div>
           {/* 收藏.刪除及價錢 */}
           <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
             <div>
               <a className="td-mt-25 btn">
-                <img className="collect" src="/img/collect.png" alt="" />
+                <img className="collect" src={collect} alt="" />
               </a>
             </div>
             <div>
@@ -82,13 +87,14 @@ function CartList() {
               阿美族 Tatadok 泛舟體驗
             </a>
             <div className="td-mt-25">2021-06-26</div>
-            <div className="td-mt-25">人數：1人</div>
+            <div className="td-mt-25">帶團導遊：巴隆</div>
+            <div className="td-mt-25">參團人數：1人</div>
           </div>
           {/* 收藏.刪除及價錢 */}
           <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center">
             <div>
               <a className="td-mt-25 btn">
-                <img className="collect" src="/img/collect.png" alt="" />
+                <img className="collect" src={collect} alt="" />
               </a>
             </div>
             <div>
@@ -112,7 +118,7 @@ function CartList() {
             <button className="btn text-title-size20">全選 (0)</button>
             <button className="btn text-title-size20">
               刪除已選項目
-              <img src={triangle} alt="" />
+              <img src="/images/三角.png" alt="" />
             </button>
           </div>
           <div className="col-12 col-lg-4 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
@@ -127,7 +133,7 @@ function CartList() {
           <div className="col-12 col-lg-3">
             <a
               className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
-              href="/page/shoppingcart/shoppingcart-payment.html"
+              href="/"
             >
               前往結帳
             </a>
