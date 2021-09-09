@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Rating(props) {
-  const { rating, amountRating, journey } = props
+  const { rating, amountRating } = props
   return (
     <>
       <div className="d-flex align-items-center reviewStar-point ">
@@ -59,5 +59,4 @@ export default function Rating(props) {
       </div>
     </>
   )
- 
 }

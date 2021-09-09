@@ -1,8 +1,8 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { Route, Redirect, Switch } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Journey from './pages/journey/Journey'
-import JourneyInfo from './pages/journey_info/Journey_info'
+import journeyInfo from './pages/journey_info/Journey_info'
 import Header from '../src/component/Header'
 import Footer from '../src/component/Footer'
 import Guild from './pages/Guild'
@@ -15,45 +15,21 @@ import './style/footer.css'
 
 function App() {
   return (
-    <Router>
-      <>
-        <Header />
-        <Switch>
-          <Route path="/journey">
-            <Journey />
-          </Route>
-
-          <Route path="/journey_info">
-            <JourneyInfo />
-          </Route>
-
-          <Route path="journey_info/:id?">
-            <JourneyInfo />
-          </Route>
-
-          <Route path="/Guild">
-            <Guild />
-          </Route>
-
-          <Route path="/GuildInfo">
-            <GuildInfo />
-          </Route>
-
-          <Route path="/Shoppingcart">
-            <Shoppingcart />
-          </Route>
-
-          <Route path="/Pay">
-            <Pay />
-          </Route>
-
-          <Route exapt path="/">
-            <Home />
-          </Route>
-        </Switch>
-        <Footer />
-      </>
-    </Router>
+    <>
+      <Header />
+      <Switch>
+      {/* Home跟journey路徑我改成我的版本，如影響到其他檔案我再改過 */}
+        <Route path="/" component={Home} exact />
+        <Route path="/journey" component={Journey} exact />
+        <Route path="/journey_info/:id" component={journeyInfo} />
+        <Route path="/Guild" component={Guild} />
+        <Route path="/GuildInfo" component={GuildInfo} />
+        <Route path="/Shoppingcart" component={Shoppingcart} />
+        <Route path="/Pay" component={Pay} />
+        <Redirect to="/" />
+      </Switch>
+      <Footer />
+    </>
   )
 }
 
