@@ -125,7 +125,7 @@ function PayContent() {
                       class="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
                       href="/page/shoppingcart/shoppingcart-payment.html"
                     >
-                      前往結帳
+                      付款
                     </a>
                   </div>
                 </div>

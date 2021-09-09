@@ -5,7 +5,7 @@ import PayConnection from './component/PayConnection'
 import PaymentProfile from './component/PaymentProfile'
 import PayContent from './component/PayContent'
 
-function Pay() {
+function Pay(props) {
   return (
     <>
       {/* 內容  */}

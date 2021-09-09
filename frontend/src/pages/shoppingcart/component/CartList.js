@@ -1,5 +1,6 @@
 //模組引入
 import React, { useState } from 'react'
+import { withRouter, Link } from 'react-router-dom'
 
 // css引入
 import '../../../style/spacing.css'
@@ -15,7 +16,7 @@ import ashcan from '../../../img/delete.png'
 import collect from '../../../img/collect.png'
 import tribe from '../../../img/奇美部落大圖1.png'
 
-function CartList() {
+function CartList(props) {
   return (
     <>
       <div className="text-title-size24 d-none d-lg-block fw-bold">
@@ -131,26 +132,31 @@ function CartList() {
             </div>
           </div>
           <div className="col-12 col-lg-3">
-            <a
+            <button
               className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
-              href="/"
+              onClick={() => {
+                props.history.push('/Pay')
+              }}
             >
               前往結帳
-            </a>
+            </button>
+            {/* <Link
+              className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
+              href="/Shoppingcart/Pay"
+            >
+              前往結帳
+            </Link> */}
           </div>
         </div>
       </div>
       {/* 繼續購物連結 */}
       <div className="d-flex justify-content-end td-mt-25">
-        <a
-          className="text-title-size24 shoppingcart-continue"
-          href="/page/jounery/journey.html"
-        >
-          繼續購物 ＞
-        </a>
+        <Link to="/journey" className="text-title-size24 shoppingcart-continue">
+          <span>繼續購物 ＞</span>
+        </Link>
       </div>
     </>
   )
 }
 
-export default CartList
+export default withRouter(CartList)
