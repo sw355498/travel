@@ -1,14 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Rating from '../../component/Rating'
-import JourneyData from '../../data/journeyData'
+import { Link, Route } from 'react-router-dom'
+import Rating from '../../../component/Rating'
+import JourneyData from '../../../data/journeyData'
+import Journey_info from '../../journey_info/Journey_info'
 
 function journetFilterResult() {
   return (
     <>
       <div className="container td-mt-75 filter-resultcontainer ">
         <h5 className="page-title text-center">篩選結果:奇美部落</h5>
-
+        <Route path="/journey/:id" component={Journey_info}></Route>
         {JourneyData.journey.map((journey) => (
           <>
             <div className="row filter-result td-mb-25">

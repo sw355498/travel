@@ -1,11 +1,4 @@
 import React from 'react'
-import tribe1 from '../../data/首頁部落圖/新社稻草人.jpg'
-import tribe2 from '../../data/首頁部落圖/奇美部落大圖4.png'
-import tribe3 from '../../data/首頁部落圖/靜埔遺址.jpg'
-import tribe4 from '../../data/首頁部落圖/水璉部落-大圖1.jpg'
-import tribe5 from '../../data/首頁部落圖/大圖４.jpg'
-import tribe6 from '../../data/首頁部落圖/撒固兒１０.jpg'
-import tribe7 from '../../data/首頁部落圖/馬太鞍部落封面.jpg'
 
 function homeGallryArea() {
   return (
@@ -21,7 +14,7 @@ function homeGallryArea() {
               <div className="card">
                 <div className="imgBx">
                   <a href="/page/jounery/journey.html" title="新社部落">
-                    <img src={tribe1} alt="" />
+                    <img src="/images/data/首頁部落圖/新社稻草人.jpg" alt="" />
                   </a>
                   <div className="journey-tag">
                     <p>新社部落</p>
@@ -44,7 +37,10 @@ function homeGallryArea() {
             >
               <div className="card">
                 <div className="imgBx">
-                  <img src={tribe2} alt="奇美部落" />
+                  <img
+                    src="/images/data/首頁部落圖/奇美部落大圖4.png"
+                    alt="奇美部落"
+                  />
                   <div className="journey-tag">
                     <p>奇美部落</p>
                     <div className="journey-tag-price mt-2">TW330</div>
@@ -66,7 +62,10 @@ function homeGallryArea() {
             >
               <div className="card">
                 <div className="imgBx">
-                  <img src={tribe3} alt="靜埔遺址" />
+                  <img
+                    src="images/data/首頁部落圖/靜埔遺址.jpg"
+                    alt="靜埔遺址"
+                  />
                   <div className="journey-tag">
                     <p>靜浦部落</p>
                     <div className="journey-tag-price mt-2">TW330</div>
@@ -88,7 +87,10 @@ function homeGallryArea() {
             >
               <div className="card">
                 <div className="imgBx">
-                  <img src={tribe4} alt="水璉部落" />
+                  <img
+                    src="images/data/首頁部落圖/水璉部落-大圖1.jpg"
+                    alt="水璉部落"
+                  />
                   <div className="journey-tag">
                     <p>水璉部落</p>
                     <div className="journey-tag-price mt-2">TW330</div>
@@ -110,7 +112,10 @@ function homeGallryArea() {
             >
               <div className="card">
                 <div className="imgBx">
-                  <img src={tribe5} alt="太巴塱部落" />
+                  <img
+                    src="images/data/首頁部落圖/大圖４.jpg"
+                    alt="太巴塱部落"
+                  />
                   <div className="journey-tag">
                     <p>太巴塱部落</p>
                     <div className="journey-tag-price mt-2">TW330</div>
@@ -132,7 +137,10 @@ function homeGallryArea() {
             >
               <div className="card">
                 <div className="imgBx">
-                  <img src={tribe6} alt="撒固兒部落" />
+                  <img
+                    src="images/data/首頁部落圖/撒固兒１０.jpg"
+                    alt="撒固兒部落"
+                  />
                   <div className="journey-tag">
                     <p>撒固兒部落</p>
                     <div className="journey-tag-price mt-2">TW330</div>
@@ -152,7 +160,10 @@ function homeGallryArea() {
               className="journey-vataan img-fluid"
               onclick="location.href='/page/jounery/journey.html';"
             >
-              <img src={tribe7} alt="馬太鞍部落" />
+              <img
+                src="images/data/首頁部落圖/馬太鞍部落封面.jpg"
+                alt="馬太鞍部落"
+              />
             </div>
             <div
               className="journey-vataan img-fluid"
@@ -160,7 +171,10 @@ function homeGallryArea() {
             >
               <div className="card">
                 <div className="imgBx">
-                  <img src={tribe7} alt="馬太鞍部落" />
+                  <img
+                    src="images/data/首頁部落圖/馬太鞍部落封面.jpg"
+                    alt="馬太鞍部落"
+                  />
                   <div className="journey-tag">
                     <p>馬太鞍部落</p>
                     <div className="journey-tag-price mt-2">TW330</div>
