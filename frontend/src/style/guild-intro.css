@@ -184,7 +184,6 @@
   height: 100%;
   background: rgba(255, 255, 255, 0.69);
   box-shadow: 5px 5px 4px rgba(255, 253, 253, 0.25);
-
   backdrop-filter: blur(10px);
   border-radius: 22.5px;
   right: 0;
@@ -224,8 +223,8 @@
 
 .guild-journey-item-price {
   font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 22px;
+  line-height: 33px;
   margin-top: 15px;
   margin-right: 0px;
   text-align: right;
@@ -246,7 +245,7 @@
   align-items: center;
 }
 .act-btn {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 /* 體驗行程評分 */
 .guild-journey-review {
@@ -279,7 +278,7 @@
   border-radius: 32px;
 }
 .intro-guest-info {
-  margin-bottom: 27px;
+  margin-bottom: 15px;
 }
 .intro-guest-reply {
   background: var(--bg-color);
@@ -298,6 +297,7 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 36px;
+  margin-bottom: 5px;
 }
 .intro-guest-review-txt {
   font-weight: normal;
@@ -516,7 +516,7 @@
   .btn-detail,
   .btn-booking-md {
     bottom: 0;
-    margin-right: 15px;
+    margin-right: 20px;
   }
   .act-btn .heart {
     position: absolute;
