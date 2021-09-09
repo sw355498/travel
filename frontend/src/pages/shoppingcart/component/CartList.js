@@ -118,7 +118,7 @@ function CartList() {
             <button className="btn text-title-size20">全選 (0)</button>
             <button className="btn text-title-size20">
               刪除已選項目
-              <img src={triangle} alt="" />
+              <img src="/images/三角.png" alt="" />
             </button>
           </div>
           <div className="col-12 col-lg-4 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
