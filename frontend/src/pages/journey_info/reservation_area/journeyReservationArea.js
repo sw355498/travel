@@ -41,7 +41,6 @@ function JourneyReservationArea(props) {
     handleShow()
   }
 
-
   const messageModal = (
     <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
       <Modal.Header closeButton>
@@ -49,10 +48,15 @@ function JourneyReservationArea(props) {
       </Modal.Header>
       <Modal.Body>{journeyName} </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button
+          className="btn journey-reservation-button mx-auto"
+          variant="secondary"
+          onClick={handleClose}
+        >
           繼續購物
         </Button>
         <Button
+          className="btn journey-reservation-button mx-auto"
           variant="primary"
           onClick={() => {
             props.history.push('/Shoppingcart')
@@ -173,12 +177,15 @@ function JourneyReservationArea(props) {
                   {' '}
                   讓奇美部落的勇士帶著你順著溪水一路說故事、撒網、抓蝦、野炊、玩耍、盡情融入阿美族文化與大自然嬉戲。讓你放鬆心情慢慢體會古老部落的文化智慧，以及大自然的驚奇。
                 </p>
-                <button href="#" className="btn td-btn-large-o td-mt-25"
-                                onClick={() => {
-                updateCartToLocalStorage({
-                  guild:'雅馨',
-                })
-              }}>
+                <button
+                  href="#"
+                  className="btn td-btn-large-o td-mt-25"
+                  onClick={() => {
+                    updateCartToLocalStorage({
+                      guild: '雅馨',
+                    })
+                  }}
+                >
                   選擇
                 </button>
               </div>
@@ -186,18 +193,20 @@ function JourneyReservationArea(props) {
           </div>
         </div>
         <div className="d-flex justify-content-center mt--2">
-          <button className="btn journey-reservation-button"
-           onClick={() => {
-                updateCartToLocalStorage({
-                  id: props.findResult._id,
-                  name: props.findResult.introname,
-                  amount: 1,
-                  img:props.findResult.img1,
-                  go_time:2021-10-15,
-                  guild:'雅馨',
-                  price: props.findResult.price,
-                })
-              }}>
+          <button
+            className="btn journey-reservation-button"
+            onClick={() => {
+              updateCartToLocalStorage({
+                id: props.findResult._id,
+                name: props.findResult.introname,
+                amount: 1,
+                img: props.findResult.img1,
+                go_time: 2021 - 10 - 15,
+                guild: '雅馨',
+                price: props.findResult.price,
+              })
+            }}
+          >
             加入購物車
           </button>
         </div>
