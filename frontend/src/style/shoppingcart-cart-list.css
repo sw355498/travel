@@ -10,7 +10,9 @@
 }
 /* 行程分隔線 */
 .shoppingcart-solid {
-  border-bottom: 1px solid #cccccc;
+  margin: 0 auto;
+  width: 95%;
+  border-bottom: 3px solid #cccccc;
 }
 /* 行程標題連結樣式 */
 .shoppingcart-title {
