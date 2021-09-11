@@ -52,7 +52,10 @@ function homeBanner() {
                     id="inlineCheckbox1"
                     value="option1"
                   />
-                  <label className="form-check-label" for="inlineCheckbox1">
+                  <label
+                    className="form-check-label"
+                    labelFor="inlineCheckbox1"
+                  >
                     太巴塱部落
                   </label>
                 </div>
@@ -63,7 +66,10 @@ function homeBanner() {
                     id="inlineCheckbox2"
                     value="option2"
                   />
-                  <label className="form-check-label" for="inlineCheckbox2">
+                  <label
+                    className="form-check-label"
+                    labelFor="inlineCheckbox2"
+                  >
                     水璉部落{' '}
                   </label>
                 </div>
@@ -74,7 +80,10 @@ function homeBanner() {
                     id="inlineCheckbox2"
                     value="option2"
                   />
-                  <label className="form-check-label" for="inlineCheckbox2">
+                  <label
+                    className="form-check-label"
+                    labelFor="inlineCheckbox2"
+                  >
                     奇美部落
                   </label>
                 </div>
@@ -85,7 +94,10 @@ function homeBanner() {
                     id="inlineCheckbox2"
                     value="option2"
                   />
-                  <label className="form-check-label" for="inlineCheckbox2">
+                  <label
+                    className="form-check-label"
+                    labelFor="inlineCheckbox2"
+                  >
                     撒固兒部落
                   </label>
                 </div>
@@ -96,7 +108,10 @@ function homeBanner() {
                     id="inlineCheckbox2"
                     value="option2"
                   />
-                  <label className="form-check-label" for="inlineCheckbox2">
+                  <label
+                    className="form-check-label"
+                    labelFor="inlineCheckbox2"
+                  >
                     靜浦部落
                   </label>
                 </div>
@@ -107,7 +122,10 @@ function homeBanner() {
                     id="inlineCheckbox2"
                     value="option2"
                   />
-                  <label className="form-check-label" for="inlineCheckbox2">
+                  <label
+                    className="form-check-label"
+                    labelFor="inlineCheckbox2"
+                  >
                     新社部落
                   </label>
                 </div>
@@ -118,7 +136,10 @@ function homeBanner() {
                     id="inlineCheckbox2"
                     value="option2"
                   />
-                  <label className="form-check-label" for="inlineCheckbox2">
+                  <label
+                    className="form-check-label"
+                    labelFor="inlineCheckbox2"
+                  >
                     馬太鞍部落
                   </label>
                 </div>

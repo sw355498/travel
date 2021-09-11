@@ -1,6 +1,6 @@
 import React from 'react'
 
-function journeyCoustomerReview() {
+function JourneyCoustomerReview() {
   return (
     <>
       <div className="container td-mt-75 coustomerreview ">
@@ -115,4 +115,4 @@ function journeyCoustomerReview() {
   )
 }
 
-export default journeyCoustomerReview
+export default JourneyCoustomerReview

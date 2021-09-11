@@ -1,17 +1,17 @@
 import React from 'react'
 import JourneyBanner from './banner/journeyBanner'
-import JourneyFilterResult from './filter_result/journeyFillterResult'
+import Filterbar from './filter_bar/FilterBar'
+import JourneyFilterResult from './filter_result/JourneyFillterResult'
 import Pagination from './pagination/Pagination'
-import ScorllUp from '../../component/scrollUp'
 import '../../style/journey.css'
 
 function Journey() {
   return (
     <>
       <JourneyBanner />
+      <Filterbar />
       <JourneyFilterResult />
       <Pagination />
-      <ScorllUp />
     </>
   )
 }
