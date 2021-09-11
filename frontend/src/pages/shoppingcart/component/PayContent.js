@@ -13,8 +13,6 @@ import '../../../style/fons.css'
 function PayContent(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
-  //切換頁面載入的指示圖示
-  const [dataLoading, setDataLoading] = useState(false)
 
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
