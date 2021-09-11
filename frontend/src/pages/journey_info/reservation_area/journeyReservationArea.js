@@ -51,7 +51,9 @@ function JourneyReservationArea(props) {
         <Button
           className="btn journey-reservation-button mx-auto"
           variant="secondary"
-          onClick={handleClose}
+          onClick={() => {
+            props.history.push('/journey')
+          }}
         >
           繼續購物
         </Button>
@@ -201,7 +203,7 @@ function JourneyReservationArea(props) {
                 name: props.findResult.introname,
                 amount: 1,
                 img: props.findResult.img1,
-                go_time: 2021 - 10 - 15,
+                go_time: '2021-10-15',
                 guild: '雅馨',
                 price: props.findResult.price,
               })

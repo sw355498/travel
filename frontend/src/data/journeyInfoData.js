@@ -3,7 +3,7 @@ const journeyInfoData = {
     {
       _id: '1',
       name: '新社部落',
-      price: '2,000',
+      price: '2000',
       rating: '5',
       location: '新社部落',
       describe: '行程長度：約 1000小時',
@@ -21,7 +21,7 @@ const journeyInfoData = {
     {
       _id: '2',
       name: '狗狗部落',
-      price: '2,000',
+      price: '2000',
       rating: '5',
       location: '新社部落',
       describe: '行程長度：約 1000小時',
@@ -39,7 +39,7 @@ const journeyInfoData = {
     {
       _id: '3',
       name: '新社部落',
-      price: '2,000',
+      price: '2000',
       rating: '5',
       location: '新社部落',
       describe: '行程長度：約 1000小時',
@@ -57,7 +57,7 @@ const journeyInfoData = {
     {
       _id: '4',
       name: '新社部落',
-      price: '2,000',
+      price: '2000',
       rating: '5',
       location: '新社部落',
       describe: '行程長度：約 1000小時',
@@ -75,7 +75,7 @@ const journeyInfoData = {
     {
       _id: '5',
       name: '新社部落',
-      price: '2,000',
+      price: '2000',
       rating: '5',
       location: '新社部落',
       describe: '行程長度：約 1000小時',
@@ -93,7 +93,7 @@ const journeyInfoData = {
     {
       _id: '6',
       name: '新社部落',
-      price: '2,000',
+      price: '2000',
       rating: '5',
       location: '新社部落',
       describe: '行程長度：約 1000小時',
@@ -111,7 +111,7 @@ const journeyInfoData = {
     {
       _id: '7',
       name: '新社部落',
-      price: '2,000',
+      price: '2000',
       rating: '5',
       location: '新社部落',
       describe: '行程長度：約 1000小時',
