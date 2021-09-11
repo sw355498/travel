@@ -1,26 +1,27 @@
 import React from 'react'
 import TribeCheckbox from './TribeCheckbox'
-import StarFiltercheckbox from './StarFiltercheckbox'
+import Rating from '../../../component/Rating'
 
 function FilterBar(props) {
-  const { star, setStar, starsTypes, tags, setTags, tagTypes } = props
+  const { stars, setStars, starsTypes, tags, setTags, tagTypes } = props
 
   const handleChecked = (e) => {
     const value = e.target.value
     if (!tags.includes(value)) return setTags([...tags, value])
     if (tags.includes(value)) {
-      const newTags = tags.fillter((v) => v !== value)
+      const newTags = tags.filter((v) => v !== value)
       setTags(newTags)
     }
   }
-  const handleChecked2 = (v) => {
-    const value = v.target.value
-    if (!tags.includes(value)) return setStar([...star, value])
-    if (tags.includes(value)) {
-      const newStars = star.fillter((v) => v !== value)
-      setStar(newStars)
+  const handleChecked2 = (e) => {
+    const value = e.target.value
+    if (!stars.includes(value)) return setStars([...stars, value])
+    if (stars.includes(value)) {
+      const newStars = stars.filter((v) => v !== value)
+      setStars(newStars)
     }
   }
+
   return (
     <section className="container guildlist-filter td-mb-75">
       {/* <!-- WEB版篩選 --> */}
@@ -33,25 +34,37 @@ function FilterBar(props) {
           </div>
           {/* <!-- checkbox選項 --> */}
           <div className="filter-tribe-check col-10">
-            {tagTypes.map((value, i) => (
+            {tagTypes?.map((value, i) => (
               <TribeCheckbox
                 key={i}
                 value={value}
-                tags={tags}
+                checked={tags?.includes(value)}
                 handleChecked={handleChecked}
-              />
+              >
+                {value}
+              </TribeCheckbox>
             ))}
           </div>
         </div>
         {/* <!-- 星等篩選 --> */}
-        {starsTypes.map((value, i) => (
-          <StarFiltercheckbox
-            key={i}
-            value={value}
-            star={star}
-            handleChecked={handleChecked2}
-          />
-        ))}
+        <div className="filter-tribe">
+          <div className="filter-tribe-title col-2 position-relative">
+            <p className="position-absolute text-white">星等</p>
+          </div>
+          {/* <!-- checkbox選項 --> */}
+          <div className="filter-tribe-check col-10">
+            {starsTypes?.map((value, i) => (
+              <TribeCheckbox
+                key={i}
+                value={value}
+                checked={stars?.includes(value)}
+                handleChecked={handleChecked2}
+              >
+                <Rating rating={value} />
+              </TribeCheckbox>
+            ))}
+          </div>
+        </div>
       </div>
       {/* <!-- RWD版篩選 --> */}
       <div className=" container guildlist-filter-rwd position-relative">
@@ -78,12 +91,30 @@ function FilterBar(props) {
             <div className="filter-tribe-rwd td-mb-25">
               <h2>部落篩選</h2>
               <div className="filter-tribe-check col-10">
-                <TribeCheckbox />
+                {tagTypes?.map((value, i) => (
+                  <TribeCheckbox
+                    key={i}
+                    value={value}
+                    checked={tags?.includes(value)}
+                    handleChecked={handleChecked}
+                  >
+                    {value}
+                  </TribeCheckbox>
+                ))}
               </div>
               {/* <!-- 星等 --> */}
               <div className="filter-star-rwd td-mb-25">
                 <h2>星等</h2>
-                <StarFiltercheckbox />
+                {starsTypes?.map((value, i) => (
+                  <TribeCheckbox
+                    key={i}
+                    value={value}
+                    checked={stars?.includes(value)}
+                    handleChecked={handleChecked2}
+                  >
+                    <Rating rating={value} />
+                  </TribeCheckbox>
+                ))}
               </div>
             </div>
           </div>

@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import FilterBar from '../filter_bar/FilterBar'
 import JourneyList from '../journey_list/JourneyList'
-import { JourneyInfoData } from './data'
+import JourneyInfoData from '../../journey_info/JourneyInfoData/JourneyInfoData'
 
-function JourneyFillterResult() {
-  const [products, setProducts] = useState([])
-  const [displayProducts, setDisplayProducts] = useState([])
-  const [tags, setTags] = useState([])
+function JourneyFillterResult({ tribe }) {
+  const [products, setProducts] = useState(JourneyInfoData)
+  const [displayProducts, setDisplayProducts] = useState(JourneyInfoData)
+  const [tags, setTags] = useState([tribe])
+  const [stars, setStars] = useState(['5', '4', '3', '2', '1'])
   const tagTypes = [
     '靜浦部落',
     '新社部落',
@@ -16,45 +17,46 @@ function JourneyFillterResult() {
     '奇萊雅部落',
     '撒固兒',
   ]
-  const [isLoading, setIsLoading] = useState(true)
-  useEffect(() => {
-    setIsLoading(true)
+  const starsTypes = ['5', '4', '3', '2', '1']
+  // const [isLoading, setIsLoading] = useState(false)
+  // useEffect(() => {
+  //   setIsLoading(true)
 
-    setProducts(JourneyInfoData)
-    setDisplayProducts(JourneyInfoData)
+  //   setProducts(JourneyInfoData)
+  //   setDisplayProducts(JourneyInfoData)
 
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1500)
-  }, [])
+  //   setTimeout(() => {
+  //     setIsLoading(false)
+  //   }, 1500)
+  // }, [])
 
-  const handleTags = (products, tags) => {
-    let newProducts = [...products]
+  // const handleTags = (products, tags) => {
+  //   let newProducts = [...products]
 
-    if (tags.lenght > 0) {
-      newProducts = [...newProducts].filter((product) => {
-        let isFound = false
-        const productTags = product.tags.split(',')
-        for (let i = 0; i < tags.lenght; i++) {
-          if (productTags.includes(tags[i])) {
-            return true
-          }
-        }
-        return isFound
-      })
-    }
-    return newProducts
-  }
+  //   if (tags.lenght > 0) {
+  //     newProducts = [...newProducts].filter((product) => {
+  //       let isFound = false
+  //       const productTags = product.tags.split(',')
+  //       for (let i = 0; i < tags.lenght; i++) {
+  //         if (productTags.includes(tags[i])) {
+  //           return true
+  //         }
+  //       }
+  //       return isFound
+  //     })
+  //   }
+  //   return newProducts
+  // }
 
-  useEffect(() => {
-    setIsLoading(true)
-    let newProducts = []
-    newProducts = handleTags(newProducts, tags)
-    setDisplayProducts(newProducts)
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 800)
-  }, [products, tags])
+  // useEffect(() => {
+  //   setIsLoading(true)
+  //   let newProducts = []
+  //   newProducts = handleTags(newProducts, tags)
+  //   setDisplayProducts(newProducts)
+  //   setTimeout(() => {
+  //     setIsLoading(false)
+  //   }, 800)
+  // }, [products, tags])
 
   const spinner = (
     <>
@@ -67,10 +69,16 @@ function JourneyFillterResult() {
   )
   return (
     <>
-      <FilterBar tagTypes={tagTypes} tags={tags} setTags={setTags} />
+      <FilterBar
+        tagTypes={tagTypes}
+        tags={tags}
+        setTags={setTags}
+        stars={stars}
+        setStars={setStars}
+        starsTypes={starsTypes}
+      />
       <div className="container td-mt-75 filter-resultcontainer ">
-        <h5 className="page-title text-center">篩選結果:奇美部落</h5>
-        {isLoading ? spinner : <JourneyList products={displayProducts} />}
+        <JourneyList tags={tags} stars={stars} products={displayProducts} />
       </div>
     </>
   )

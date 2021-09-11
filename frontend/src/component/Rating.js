@@ -54,7 +54,7 @@ export default function Rating(props) {
                 : 'fa fa-star-o'
             }
           ></i>
-          <span className="td-ms-15">{amountRating + '則評論'}</span>
+          {amountRating && <span className="td-ms-15">{amountRating + '則評論'}</span>}
         </label>
       </div>
     </>

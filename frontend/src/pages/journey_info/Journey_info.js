@@ -9,7 +9,7 @@ import ScrollUp from '../../component/scrollUp'
 import '../../style/journey-info.css'
 
 function Journey_info(props) {
-  const findResult = journeyinfoData.Info.find(
+  const findResult = journeyinfoData.find(
     (x) => x._id === props.match.params.id
   )
   if (!findResult) {

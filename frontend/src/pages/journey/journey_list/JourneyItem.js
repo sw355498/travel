@@ -2,25 +2,23 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Rating from '../../../component/Rating'
 
-function JourneyItem(props) {
-  const { image1, rating, amountRating, _id, price, description, name, tribe } =
-    props.Info
+function JourneyItem({ product }) {
   return (
     <>
       <div className="row filter-result td-mb-25">
         <div
           className="col-md-4 col-12 filter-result-imgarea d-flex align-content-between "
-          key={_id}
+          key={product._id}
         >
-          <img src={`/images/${image1}`} alt="" />
+          <img src={`/images/data/行程照片/${product.img1}`} alt="" />
         </div>
         <div className="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
           <div className="row ">
             <div className="col-md-12 order-1">
               <div className="d-flex justify-content-between mt-md-2">
-                <div className="title">{name}</div>
+                <div className="title">{product.name}</div>
                 <div className="tag">
-                  <i className="fas fa-tags">{tribe}</i>
+                  <i className="fas fa-tags">{product.tribe}</i>
                 </div>
               </div>
             </div>
@@ -29,7 +27,7 @@ function JourneyItem(props) {
             <div>
               <div className="row">
                 <div className="col-9 col-md-10">
-                  <Rating rating={rating} amountRating={amountRating}></Rating>
+                  <Rating rating={product.rating} amountRating={product.amountRating}></Rating>
                 </div>
                 <div className="col-3">
                   <i
@@ -41,16 +39,16 @@ function JourneyItem(props) {
             </div>
           </div>
           <div className="col-12 reviewStar-content">
-            <div className="content">{description}</div>
+            <div className="content">{product.description}</div>
           </div>
         </div>
         <div className="col-md-3 journey-price  mt-md-4">
           <div className="row">
             <div className="col-7 col-md-12 d-md-flex justify-content-md-center">
-              <p className="mt-3">TWD&nbsp;{price}</p>
+              <p className="mt-3">TWD&nbsp;{product.price}</p>
             </div>
             <div className="col-5 col-md-12 d-flex flex-md-column align-items-md-center justify-content-between ">
-              <Link className="td-btn-medium-w" to={`journey_Info/${_id}`}>
+              <Link className="td-btn-medium-w" to={`journey_Info/${product._id}`}>
                 <span>詳細</span>
               </Link>
               <button className="td-btn-medium-o">選擇</button>

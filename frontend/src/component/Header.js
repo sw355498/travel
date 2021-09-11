@@ -64,7 +64,7 @@ function Header() {
             <div className="td-burger">
               <input type="checkbox" id="td-burger-toggle" />
               <label
-                for="td-burger-toggle"
+                htmlFor="td-burger-toggle"
                 className="td-burger-btn d-flex flex-column"
               >
                 <span></span>
@@ -77,7 +77,7 @@ function Header() {
                   <i className="fas fa-home"></i>回到首頁
                 </Link>
 
-                <Link href="/home">
+                <Link to="/home">
                   <i className="fas fa-shoe-prints"></i>花島行程
                 </Link>
                 <a href="/">
