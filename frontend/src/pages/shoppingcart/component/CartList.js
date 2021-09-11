@@ -9,11 +9,6 @@ import '../../../style/checkbox.css'
 import '../../../style/shoppingcart-cart-list.css'
 import '../../../style/fons.css'
 
-// 圖片引入
-import total from '../../../img/total.png'
-import ashcan from '../../../img/delete.png'
-import collect from '../../../img/collect.png'
-
 function CartList(props) {
   console.log(props)
   const [mycart, setMycart] = useState([])
@@ -165,12 +160,12 @@ function CartList(props) {
               <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
                 <div>
                   <button className="td-mt-25 btn">
-                    <img className="collect" src={collect} alt="收藏" />
+                    <img className="collect" src="/images/collect.png" alt="收藏" />
                   </button>
                 </div>
                 <div>
                   <button className="td-mt-25 btn">
-                    <img src={ashcan} alt="刪除" />
+                    <img src="/images/delete.png" alt="刪除" />
                   </button>
                 </div>
                 <div className="text-title-size24 shoppingcart-price td-mt-25">
@@ -196,7 +191,7 @@ function CartList(props) {
           <div className="col-12 col-lg-4 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
             <div className="text-title-size20 me-1">{mycartDisplay.length}件商品合計</div>
             <div>
-              <img src={total} alt="total" />
+              <img src="/images/total.png" alt="total" />
             </div>
             <div className="text-title-size24 shoppingcart-price">
               TWD {sum(mycartDisplay)}
