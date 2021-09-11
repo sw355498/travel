@@ -118,6 +118,7 @@ function CartList(props) {
         </div>
         {/* 購物車清單內容 */}
         {mycartDisplay.map((item, index) => {
+          console.log("顯示",mycartDisplay)
           return (
             <div className="row align-items-center text-center" key={item.id}>
               {/* checkbox */}
@@ -193,7 +194,7 @@ function CartList(props) {
             </button>
           </div>
           <div className="col-12 col-lg-4 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
-            <div className="text-title-size20 me-1">件商品合計</div>
+            <div className="text-title-size20 me-1">{mycartDisplay.length}件商品合計</div>
             <div>
               <img src={total} alt="total" />
             </div>
