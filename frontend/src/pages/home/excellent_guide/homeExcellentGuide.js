@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 function homeExcellentGuide() {
   return (
     <>
@@ -227,12 +228,9 @@ function homeExcellentGuide() {
             </div>
             <div className="d-flex justify-content-center td-mb-25 ">
               {' '}
-              <a
-                href="/page/guild/guild-list.html"
-                className="btn btn-guide-all text-center "
-              >
+              <Link to="/journey" className="btn btn-guide-all text-center ">
                 全部導遊
-              </a>
+              </Link>
             </div>
           </div>
         </div>

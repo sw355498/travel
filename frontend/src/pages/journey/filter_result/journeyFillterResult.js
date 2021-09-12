@@ -3,11 +3,11 @@ import FilterBar from '../filter_bar/FilterBar'
 import JourneyList from '../journey_list/JourneyList'
 import JourneyInfoData from '../../journey_info/JourneyInfoData/JourneyInfoData'
 
-function JourneyFillterResult({ tribe }) {
+function JourneyFilterResult({ tribe }) {
   const [products, setProducts] = useState(JourneyInfoData)
   const [displayProducts, setDisplayProducts] = useState(JourneyInfoData)
-  const [tags, setTags] = useState([tribe])
-  const [stars, setStars] = useState(['5', '4', '3', '2', '1'])
+  const [tags, setTags] = useState(['靜浦部落'])
+  const [stars, setStars] = useState(['5'])
   const tagTypes = [
     '靜浦部落',
     '新社部落',
@@ -17,7 +17,9 @@ function JourneyFillterResult({ tribe }) {
     '奇萊雅部落',
     '撒固兒',
   ]
-  const starsTypes = ['5', '4', '3', '2', '1']
+
+  console.dir(displayProducts, { depth: null })
+  const starsTypes = ['5', '4', '3', '2']
   // const [isLoading, setIsLoading] = useState(false)
   // useEffect(() => {
   //   setIsLoading(true)
@@ -84,4 +86,4 @@ function JourneyFillterResult({ tribe }) {
   )
 }
 
-export default JourneyFillterResult
+export default JourneyFilterResult

@@ -24,10 +24,7 @@ function Journey_info(props) {
             <p>{findResult.name}</p>
           </div>
           <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center flex-column flex-md-row align-items-center">
-            <i
-              className="far fa-heart td-me-50 journey-info-like order-2 order-md-1"
-              onclick="collect(this)"
-            ></i>
+            <i className="far fa-heart td-me-50 journey-info-like order-2 order-md-1"></i>
             <p className="journey-info-price order-1 order-md-2">
               TWD{findResult.price} 起
             </p>

@@ -5,18 +5,23 @@ import Rating from '../../../component/Rating'
 function FilterBar(props) {
   const { stars, setStars, starsTypes, tags, setTags, tagTypes } = props
 
-  const handleChecked = (e) => {
+  console.log(`###### tags: ${tags}`)
+  console.log(`###### tagTypes: ${tagTypes}`)
+
+  const tagCheckHandler = (e) => {
     const value = e.target.value
-    if (!tags.includes(value)) return setTags([...tags, value])
-    if (tags.includes(value)) {
+    if (!tags.includes(value)) {
+      return setTags([...tags, value])
+    } else {
       const newTags = tags.filter((v) => v !== value)
       setTags(newTags)
     }
   }
-  const handleChecked2 = (e) => {
+  const starCheckHandler = (e) => {
     const value = e.target.value
-    if (!stars.includes(value)) return setStars([...stars, value])
-    if (stars.includes(value)) {
+    if (!stars.includes(value)) {
+      return setStars([...stars, value])
+    } else {
       const newStars = stars.filter((v) => v !== value)
       setStars(newStars)
     }
@@ -39,7 +44,7 @@ function FilterBar(props) {
                 key={i}
                 value={value}
                 checked={tags?.includes(value)}
-                handleChecked={handleChecked}
+                handleChecked={tagCheckHandler}
               >
                 {value}
               </TribeCheckbox>
@@ -47,18 +52,18 @@ function FilterBar(props) {
           </div>
         </div>
         {/* <!-- 星等篩選 --> */}
-        <div className="filter-tribe">
-          <div className="filter-tribe-title col-2 position-relative">
+        <div className="filter-stars">
+          <div className="filter-stars-title col-2 position-relative">
             <p className="position-absolute text-white">星等</p>
           </div>
           {/* <!-- checkbox選項 --> */}
-          <div className="filter-tribe-check col-10">
+          <div className="filter-stars-check my-auto d-flex flex-nowrap col-10">
             {starsTypes?.map((value, i) => (
               <TribeCheckbox
                 key={i}
                 value={value}
                 checked={stars?.includes(value)}
-                handleChecked={handleChecked2}
+                handleChecked={starCheckHandler}
               >
                 <Rating rating={value} />
               </TribeCheckbox>
@@ -96,7 +101,7 @@ function FilterBar(props) {
                     key={i}
                     value={value}
                     checked={tags?.includes(value)}
-                    handleChecked={handleChecked}
+                    handleChecked={tagCheckHandler}
                   >
                     {value}
                   </TribeCheckbox>
@@ -110,7 +115,7 @@ function FilterBar(props) {
                     key={i}
                     value={value}
                     checked={stars?.includes(value)}
-                    handleChecked={handleChecked2}
+                    handleChecked={starCheckHandler}
                   >
                     <Rating rating={value} />
                   </TribeCheckbox>

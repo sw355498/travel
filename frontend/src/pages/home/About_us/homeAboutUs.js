@@ -5,7 +5,7 @@ function homeAboutUs() {
       <section>
         <div class="container home-aboutus ">
           <div class="row">
-            <div class="col-12">
+            <div className="col-12">
               {' '}
               <img
                 src="images/img/aboutus-img.png"

@@ -7,8 +7,10 @@ function JourneyList(props) {
     <div className="container td-mt-75 filter-resultcontainer ">
       <h5 className="page-title text-center">篩選結果:{tags.toString()}</h5>
       {products
-        .filter((product) => tags.includes(product.tribe))
-        .filter((product) => stars.includes(product.rating))
+        .filter((product) => tags.some((tag) => product.tribe.includes(tag)))
+        .filter((product) =>
+          stars.some((star) => product.rating.includes(star))
+        )
         .map((product, i) => {
           return <JourneyItem key={i} product={product} />
         })}

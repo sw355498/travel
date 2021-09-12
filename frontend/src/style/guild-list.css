@@ -168,10 +168,11 @@ input[type='checkbox'] {
 }
 /* 星等 */
 .filter-stars-check div {
-  min-width: 200px;
+  max-width: 175px;
   display: flex;
   align-items: center;
 }
+
 /* 語言篩選 */
 .lan-check-input,
 .stars-check-input {

@@ -1,4 +1,5 @@
 import React from 'react'
+import DatePicker from './date_picker/DatePicker'
 
 function journeyReservationArea() {
   return (
@@ -8,13 +9,8 @@ function journeyReservationArea() {
         <div className="journey-info-name ">
           <p>預約日期</p>
         </div>
-        <div className="row td-mt-25">
-          <div className="col-6">
-            <input type="date" id="picker" className="form-control" />
-          </div>
-          <div className="col-6">
-            <input type="date" id="picker" className="form-control" />
-          </div>
+        <div className="row td-mt-25 d-flex justify-content-center">
+          <DatePicker></DatePicker>
         </div>
         <div className="journey-info-name td-mt-75">
           <p>選擇導遊</p>

@@ -27,7 +27,19 @@ function JourneyItem({ product }) {
             <div>
               <div className="row">
                 <div className="col-9 col-md-10">
-                  <Rating rating={product.rating} amountRating={product.amountRating}></Rating>
+                  <div className="d-flex align-items-center">
+                    <label className="ml-5">
+                      <Rating
+                        rating={product.rating}
+                        amountRating={product.amountRating}
+                      ></Rating>
+                      {product.amountRating && (
+                        <span className="td-ms-15">
+                          {product.amountRating + '則評論'}
+                        </span>
+                      )}
+                    </label>
+                  </div>
                 </div>
                 <div className="col-3">
                   <i
@@ -48,7 +60,10 @@ function JourneyItem({ product }) {
               <p className="mt-3">TWD&nbsp;{product.price}</p>
             </div>
             <div className="col-5 col-md-12 d-flex flex-md-column align-items-md-center justify-content-between ">
-              <Link className="td-btn-medium-w" to={`journey_Info/${product._id}`}>
+              <Link
+                className="td-btn-medium-w"
+                to={`journey_Info/${product._id}`}
+              >
                 <span>詳細</span>
               </Link>
               <button className="td-btn-medium-o">選擇</button>
