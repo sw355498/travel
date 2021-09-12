@@ -100,30 +100,40 @@ function CartList(props) {
   }
 
   // checkbox全選設定：全部
-  function checkAllDelete() {
-    let deleteCurrentCart = document.getElementsByName('deleteCurrentCart')
-    let deleteAllCurrentCart = document.getElementById('all')
-    for (let i = 0; i < deleteCurrentCart.length; i++) {
-      if (deleteAllCurrentCart.checked) {
-        deleteCurrentCart[i].checked = true
+  function checkAll() {
+    let ckeckOne = document.getElementsByName('ckeckOne')
+    let ckeckAll = document.getElementById('all')
+    for (let i = 0; i < ckeckOne.length; i++) {
+      if (ckeckAll.checked) {
+        ckeckOne[i].checked = true
       } else {
-        deleteCurrentCart[i].checked = false
+        ckeckOne[i].checked = false
       }
     }
   }
 
   // checkbox全選設定：單一
-  function checkOneDelete() {
-    let deleteCurrentCart = document.getElementsByName('deleteCurrentCart')
+  function checkOne() {
+    let ckeckOne = document.getElementsByName('ckeckOne')
     let flag = true
-    for (let i = 0; i < deleteCurrentCart.length; i++) {
-      if (!deleteCurrentCart[i].checked) {
+    for (let i = 0; i < ckeckOne.length; i++) {
+      if (!ckeckOne[i].checked) {
         document.getElementById('all').checked = false //將all的按鈕顯示去掉
         flag = false
         break
       }
       if (flag) {
         document.getElementById('all').checked = true
+      }
+    }
+  }
+
+  // 刪除checkbox已勾選項目
+  function deleteCheck(item) {
+    let ckeckOne = document.getElementsByName('ckeckOne')
+    for (let i = 0; i < ckeckOne.length; i++) {
+      if (ckeckOne[i].checked) {
+        deleteCartToLocalStorage(item)
       }
     }
   }
@@ -137,7 +147,7 @@ function CartList(props) {
       </div>
     </>
   )
-
+console.log(mycartDisplay)
   const display = (
     <>
       <div className="text-title-size24 d-none d-lg-block fw-bold">
@@ -155,14 +165,10 @@ function CartList(props) {
               <div
                 className="col-3 col-lg-1"
                 onClick={() => {
-                  checkOneDelete()
+                  checkOne()
                 }}
               >
-                <input
-                  className="my-auto"
-                  type="checkbox"
-                  name="deleteCurrentCart"
-                />
+                <input className="my-auto" type="checkbox" name="ckeckOne" />
               </div>
               {/* 行程圖片 */}
               <div className="col-9 col-lg-4 d-flex justify-content-start justify-content-lg-center">
@@ -235,12 +241,17 @@ function CartList(props) {
               type="checkbox"
               id="all"
               onClick={() => {
-                checkAllDelete()
+                checkAll()
               }}
             />
           </div>
           <div className="col-8 col-lg-3 d-flex justify-content-start justify-content-lg-center">
-            <button className="btn text-title-size20">
+            <button
+              className="btn text-title-size20"
+              onClick={() => {
+                deleteCheck(mycartDisplay.item)
+              }}
+            >
               刪除已選項目
               <img src="/images/三角.png" alt="刪除" />
             </button>
