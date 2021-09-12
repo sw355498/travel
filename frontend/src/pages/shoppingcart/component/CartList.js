@@ -10,7 +10,6 @@ import '../../../style/shoppingcart-cart-list.css'
 import '../../../style/fons.css'
 
 function CartList(props) {
-  console.log(props)
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
   //切換頁面載入的指示圖示
@@ -22,7 +21,7 @@ function CartList(props) {
 
     const newCart = localStorage.getItem('cart') || '[]'
 
-    console.log(JSON.parse(newCart))
+    // console.log(JSON.parse(newCart))
 
     setMycart(JSON.parse(newCart))
   }
@@ -65,20 +64,17 @@ function CartList(props) {
 
   // 更新購物車中的商品數量
   const updateCartToLocalStorage = (item, isAdded = true) => {
-    console.log(item, isAdded)
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
-    // find if the product in the localstorage with its id
+    // 確認 localstorage 有沒有這個id
     const index = currentCart.findIndex((v) => v.id === item.id)
 
-    console.log('index', index)
     // found: index! == -1
     if (index > -1) {
       isAdded ? currentCart[index].amount++ : currentCart[index].amount--
     }
 
     localStorage.setItem('cart', JSON.stringify(currentCart))
-
     // 設定資料
     setMycart(currentCart)
   }
@@ -90,6 +86,17 @@ function CartList(props) {
       total += items[i].amount * items[i].price
     }
     return total
+  }
+
+  // 刪除購物車中的商品
+  const deleteCartToLocalStorage = (item) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+    // 確認 localstorage 有沒有這個id
+    // const index = currentCart.findIndex((v) => v.id === item.id)
+    currentCart.splice(currentCart.indexOf(item,1))
+    localStorage.setItem('cart', JSON.stringify(currentCart))
+    // 設定資料
+    setMycart(currentCart)
   }
 
   const loading = (
@@ -113,7 +120,6 @@ function CartList(props) {
         </div>
         {/* 購物車清單內容 */}
         {mycartDisplay.map((item, index) => {
-          console.log("顯示",mycartDisplay)
           return (
             <div className="row align-items-center text-center" key={item.id}>
               {/* checkbox */}
@@ -160,11 +166,18 @@ function CartList(props) {
               <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
                 <div>
                   <button className="td-mt-25 btn">
-                    <img className="collect" src="/images/collect.png" alt="收藏" />
+                    <img
+                      className="collect"
+                      src="/images/collect.png"
+                      alt="收藏"
+                    />
                   </button>
                 </div>
                 <div>
-                  <button className="td-mt-25 btn">
+                  <button
+                    className="td-mt-25 btn"
+                    onClick={() => deleteCartToLocalStorage(item)}
+                  >
                     <img src="/images/delete.png" alt="刪除" />
                   </button>
                 </div>
@@ -189,7 +202,9 @@ function CartList(props) {
             </button>
           </div>
           <div className="col-12 col-lg-4 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
-            <div className="text-title-size20 me-1">{mycartDisplay.length}件商品合計</div>
+            <div className="text-title-size20 me-1">
+              {mycartDisplay.length}件商品合計
+            </div>
             <div>
               <img src="/images/total.png" alt="total" />
             </div>
