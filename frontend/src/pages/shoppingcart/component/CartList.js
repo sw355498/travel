@@ -247,13 +247,12 @@ console.log(mycartDisplay)
           </div>
           <div className="col-8 col-lg-3 d-flex justify-content-start justify-content-lg-center">
             <button
-              className="btn text-title-size20"
+              className="btn td-btn-large-delete text-title-size20"
               onClick={() => {
                 deleteCheck(mycartDisplay.item)
               }}
             >
               刪除已選項目
-              <img src="/images/三角.png" alt="刪除" />
             </button>
           </div>
           <div className="col-12 col-lg-5 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">

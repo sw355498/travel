@@ -93,6 +93,15 @@
   color: #ffffff;
 }
 
+.td-btn-large-delete {
+  width: 192px;
+  height: 60px;
+  background: #174157;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+}
+
 .td-btn-large-pay {
   width: 192px;
   height: 60px;
