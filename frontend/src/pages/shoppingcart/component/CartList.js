@@ -1,5 +1,5 @@
 //模組,元件引入
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
 // css引入
@@ -91,12 +91,41 @@ function CartList(props) {
   // 刪除購物車中的商品
   const deleteCartToLocalStorage = (item) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-    // 確認 localstorage 有沒有這個id
-    // const index = currentCart.findIndex((v) => v.id === item.id)
-    currentCart.splice(currentCart.indexOf(item,1))
+
+    //將當前選擇的行程從localStorage移除
+    currentCart.splice(currentCart.indexOf(item, 1))
     localStorage.setItem('cart', JSON.stringify(currentCart))
     // 設定資料
     setMycart(currentCart)
+  }
+
+  // checkbox全選設定：全部
+  function checkAllDelete() {
+    let deleteCurrentCart = document.getElementsByName('deleteCurrentCart')
+    let deleteAllCurrentCart = document.getElementById('all')
+    for (let i = 0; i < deleteCurrentCart.length; i++) {
+      if (deleteAllCurrentCart.checked) {
+        deleteCurrentCart[i].checked = true
+      } else {
+        deleteCurrentCart[i].checked = false
+      }
+    }
+  }
+
+  // checkbox全選設定：單一
+  function checkOneDelete() {
+    let deleteCurrentCart = document.getElementsByName('deleteCurrentCart')
+    let flag = true
+    for (let i = 0; i < deleteCurrentCart.length; i++) {
+      if (!deleteCurrentCart[i].checked) {
+        document.getElementById('all').checked = false //將all的按鈕顯示去掉
+        flag = false
+        break
+      }
+      if (flag) {
+        document.getElementById('all').checked = true
+      }
+    }
   }
 
   const loading = (
@@ -123,8 +152,17 @@ function CartList(props) {
           return (
             <div className="row align-items-center text-center" key={item.id}>
               {/* checkbox */}
-              <div className="col-3 col-lg-1">
-                <input className="my-auto" type="checkbox" />
+              <div
+                className="col-3 col-lg-1"
+                onClick={() => {
+                  checkOneDelete()
+                }}
+              >
+                <input
+                  className="my-auto"
+                  type="checkbox"
+                  name="deleteCurrentCart"
+                />
               </div>
               {/* 行程圖片 */}
               <div className="col-9 col-lg-4 d-flex justify-content-start justify-content-lg-center">
@@ -191,17 +229,23 @@ function CartList(props) {
         })}
         {/* 總顯示區塊 */}
         <div className="row align-items-center text-center td-py-25">
-          <div className="col-3 col-lg-1">
-            <input className="my-auto" type="checkbox" />
+          <div className="col-4 col-lg-1">
+            <input
+              className="my-auto"
+              type="checkbox"
+              id="all"
+              onClick={() => {
+                checkAllDelete()
+              }}
+            />
           </div>
-          <div className="col-9 col-lg-4 d-flex justify-content-start justify-content-lg-center">
-            <button className="btn text-title-size20">全選 (0)</button>
+          <div className="col-8 col-lg-3 d-flex justify-content-start justify-content-lg-center">
             <button className="btn text-title-size20">
               刪除已選項目
               <img src="/images/三角.png" alt="刪除" />
             </button>
           </div>
-          <div className="col-12 col-lg-4 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
+          <div className="col-12 col-lg-5 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
             <div className="text-title-size20 me-1">
               {mycartDisplay.length}件商品合計
             </div>
