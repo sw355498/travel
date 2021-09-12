@@ -235,7 +235,7 @@ console.log(mycartDisplay)
         })}
         {/* 總顯示區塊 */}
         <div className="row align-items-center text-center td-py-25">
-          <div className="col-4 col-lg-1">
+          <div className="col-3 col-lg-1">
             <input
               className="my-auto"
               type="checkbox"
@@ -245,7 +245,7 @@ console.log(mycartDisplay)
               }}
             />
           </div>
-          <div className="col-8 col-lg-3 d-flex justify-content-start justify-content-lg-center">
+          <div className="col-9 col-lg-3 d-flex justify-content-start justify-content-lg-center">
             <button
               className="btn td-btn-large-delete text-title-size20"
               onClick={() => {
