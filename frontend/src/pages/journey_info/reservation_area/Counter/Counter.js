@@ -16,14 +16,14 @@ function Counter() {
           className="td-me-15 td-btn-medium-blueborder"
           onClick={handleDecrement}
         >
-          <i class="fas fa-minus"></i>
+          <i className="fas fa-minus"></i>
         </button>
         <h5>參加人數 {count}</h5>
         <button
           className="td-ms-15 td-btn-medium-blueborder"
           onClick={handleIncrement}
         >
-          <i class="fas fa-plus"></i>
+          <i className="fas fa-plus"></i>
         </button>
         <button
           className="td-ms-25 td-btn-medium-b"

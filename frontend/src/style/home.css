@@ -74,7 +74,8 @@ button:hover,
   margin-top: 25%;
 }
 
-.dropdown button {
+.dropdown-row button,
+.dropdown-column button {
   width: 50%;
   border-radius: 20px;
   height: auto;
@@ -83,25 +84,28 @@ button:hover,
   color: rgba(23, 65, 87, 1);
   font-size: 18px;
 }
-.dropdown .show {
+.dropdown-row .show,
+.dropdown-column .show {
   margin-top: 25px;
   background: rgba(196, 196, 196, 0.79);
   opacity: 1;
   border-radius: 10px;
-   box-shadow: 4px 4px 9px -3px #3b3a3a;
+  box-shadow: 4px 4px 9px -3px #3b3a3a;
   -webkit-box-shadow: 4px 4px 9px -3px #3b3a3a;
   -moz-box-shadow: 4px 4px 9px -3px #3b3a3a;
   -o-box-shadow: 4px 4px 9px -3px #3b3a3a;
 }
 
-.dropdown .show h6 {
+.dropdown-row .show h6,
+.dropdown-column .show h6 {
   font-weight: bold;
   font-size: 28px;
   line-height: 38px;
   color: #000000;
   margin-left: 25px;
 }
-.dropdown .show input {
+.dropdown-row .show input,
+.dropdown-column .show input {
   width: 25px;
   height: 25px;
   font-weight: 300;
@@ -112,7 +116,8 @@ button:hover,
   margin-left: 5px;
 }
 
-.dropdown a {
+.dropdown-row .show a,
+.dropdown-column .show a {
   display: inline-block;
   width: 50%;
   border-radius: 20px;
@@ -123,13 +128,15 @@ button:hover,
   font-size: 18px;
 }
 
-.dropdown .show .list h6 {
+.dropdown-row .show .list h6,
+.dropdown-column .show .list h6 {
   font-weight: 300;
   font-size: 28px;
   line-height: 33px;
   color: #000000;
 }
-.dropdown .show .list {
+.dropdown-row .show .list ,
+.dropdown-column .show .list {
   font-weight: 300;
   font-size: 24px;
   line-height: 28px;
@@ -201,7 +208,7 @@ button:hover,
     display: none;
   }
 
-   .dropdown .show{
+  .dropdown-row .show ,.dropdown-column .show{
     width: 50%;
   }
 }
@@ -210,7 +217,6 @@ button:hover,
   .dropdown-column {
     display: none;
   }
- 
 }
 /* about us end */
 /* gallery-area  */
