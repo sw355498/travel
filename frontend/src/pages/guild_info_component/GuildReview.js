@@ -1,5 +1,5 @@
 import React from 'react'
-import guestAvatar from '../../data/靜埔部落/導遊/導遊1/何俊雄.jpg'
+import guestAvatar from '../../data/靜浦部落/導遊/導遊1/何俊雄.jpg'
 import ReviewImg from '../../data/太巴塱部落/行程1圖片/太巴朢1.png'
 import order from '../../img/排序 icon.png'
 

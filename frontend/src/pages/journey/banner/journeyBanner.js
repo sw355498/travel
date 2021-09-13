@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function journeyBanner() {
   return (
     <section>
@@ -53,11 +54,15 @@ function journeyBanner() {
               />
             </div>
             <div className="carousel-item">
-              <img src="images/" className="d-block w-100" alt="太巴塱部落" />
+              <img
+                src="/images/img/奇美部落大圖1.png"
+                className="d-block w-100"
+                alt=""
+              />
             </div>
             <div className="carousel-item">
               <img
-                src="/data/小banner圖/太巴塱.jpg"
+                src="/images/data/小banner圖/太巴塱.jpg"
                 className="d-block w-100"
                 alt="太巴塱部落"
               />

@@ -18,8 +18,8 @@ function JourneyFilterResult({ tribe }) {
     '撒固兒',
   ]
 
-  console.dir(displayProducts, { depth: null })
-  const starsTypes = ['5', '4', '3', '2']
+  // console.dir(displayProducts, { depth: null })
+  const starsTypes = ['5', '4', '3', '2', '1']
   // const [isLoading, setIsLoading] = useState(false)
   // useEffect(() => {
   //   setIsLoading(true)

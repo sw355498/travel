@@ -27,7 +27,19 @@ transform: translateY(-5px);
     background-color: #072b7b;
 }
 
-
+.Dropdown-control {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent !important;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #333;
+    cursor: default;
+    outline: none;
+    padding: 8px 52px 8px 10px;
+    transition: all 200ms ease;
+}
 
 .journey-info-name {
   font-weight: bold;
@@ -287,6 +299,14 @@ transform: translateY(-5px);
   margin: 0 0 0 25px;
 }
 
+.react-calendar {
+    width: 5000px !important;
+    max-width: 100%;
+    background: white;
+    border: 1px solid #a0a096;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+}
 @media only screen and (max-width: 768px) {
   .coustomerreview button {
     display: none;

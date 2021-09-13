@@ -1,6 +1,22 @@
 import React from 'react'
 
 function JourneyCoustomerReview() {
+  const options = [
+    { name: '5星好評', value: '5' },
+    { name: '4星好評', value: '4' },
+    { name: '3星好評', value: '3' },
+    { name: '2星好評', value: '2' },
+    { name: '1星好評', value: '1' },
+  ]
+  const reviwer = [
+    {
+      name: 'Joe',
+      rating: '5',
+      message: '好玩',
+      guestImg: 'male1-70.jpg',
+      reviewImg: '水璉部落6.jpg',
+    },
+  ]
   return (
     <>
       <div className="container td-mt-75 coustomerreview ">
@@ -32,9 +48,10 @@ function JourneyCoustomerReview() {
               排序<i className="fas fa-align-left"></i>
             </button>
           </div>
+
           <div className="col-2 col-md-1"></div>
-          <div className="col-10 td-mt-25 col-md-2">
-            <p>獨木舟好好玩，謝謝C大帶我們去玩。</p>
+          <div className="col-10 td-mt-25 col-md-2 ">
+            <p className="td-mb-15">獨木舟好好玩，謝謝C大帶我們去玩。</p>
             <img
               src="/images/data/旅客評價內行程圖/水璉部落6.jpg"
               alt=""
@@ -85,7 +102,7 @@ function JourneyCoustomerReview() {
           <div className="col-6 col-md-8 d-flex justify-content-end"></div>
           <div className="col-2 col-md-1"></div>
           <div className="col-10 td-mt-25 col-md-2">
-            <p>獨木舟好好玩，謝謝C大帶我們去玩。</p>
+            <p className="td-mb-15">獨木舟好好玩，謝謝C大帶我們去玩。</p>
             <img
               src="/images/data/旅客評價內行程圖/水璉部落6.jpg"
               alt=""

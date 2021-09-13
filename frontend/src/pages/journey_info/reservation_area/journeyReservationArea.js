@@ -1,7 +1,8 @@
 import React from 'react'
 import DatePicker from './date_picker/DatePicker'
+import Counter from './Counter/Counter'
 
-function journeyReservationArea() {
+function JourneyReservationArea() {
   return (
     <div className="journey-reservationarea-container td-mt-75 ">
       <div className="necessary"></div>
@@ -104,6 +105,7 @@ function journeyReservationArea() {
             </div>
           </div>
         </div>
+        <Counter />
         <div className="d-flex justify-content-center mt--2">
           <button className="btn journey-reservation-button ">
             加入購物車
@@ -114,4 +116,4 @@ function journeyReservationArea() {
   )
 }
 
-export default journeyReservationArea
+export default JourneyReservationArea

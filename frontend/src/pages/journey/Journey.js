@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollToTop from 'react-scroll-to-top'
 import JourneyBanner from './banner/journeyBanner'
 import JourneyFilterResult from './filter_result/JourneyFillterResult'
 import Pagination from './pagination/Pagination'
@@ -17,6 +18,7 @@ function Journey() {
       <JourneyBanner />
       <JourneyFilterResult tribe={tribe} />
       <Pagination />
+      <ScrollToTop smooth />
     </>
   )
 }

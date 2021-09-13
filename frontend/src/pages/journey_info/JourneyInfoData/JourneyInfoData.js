@@ -1,8 +1,8 @@
 const JourneyInfoData = [
   {
     _id: '1',
-    name: '新社部落',
-    tribe: '奇美部落',
+    name: '靜浦部落',
+    tribe: '靜浦部落',
     price: '2,000',
     rating: '5',
     location: '新社部落',
@@ -23,8 +23,8 @@ const JourneyInfoData = [
   },
   {
     _id: '2',
-    name: '靜浦部落',
-    tribe: '靜浦部落',
+    name: '新社部落',
+    tribe: '新社部落',
     price: '2,000',
     rating: '5',
     location: '新社部落',
@@ -45,8 +45,8 @@ const JourneyInfoData = [
   },
   {
     _id: '3',
-    name: '新社部落',
-    tribe: '奇美部落',
+    name: '太巴塱部落',
+    tribe: '太巴塱部落',
     price: '2,000',
     rating: '5',
     location: '新社部落',
@@ -67,8 +67,8 @@ const JourneyInfoData = [
   },
   {
     _id: '4',
-    name: '新社部落',
-    tribe: '奇美部落',
+    name: '水璉部落',
+    tribe: '水璉部落',
     price: '2,000',
     rating: '5',
     location: '新社部落',
@@ -89,7 +89,7 @@ const JourneyInfoData = [
   },
   {
     _id: '5',
-    name: '新社部落',
+    name: '奇美部落',
     tribe: '奇美部落',
     price: '2,000',
     rating: '5',
@@ -111,8 +111,8 @@ const JourneyInfoData = [
   },
   {
     _id: '6',
-    name: '新社部落',
-    tribe: '奇美部落',
+    name: '奇萊雅部落',
+    tribe: '奇萊雅部落',
     price: '2,000',
     rating: '5',
     location: '新社部落',
@@ -133,8 +133,8 @@ const JourneyInfoData = [
   },
   {
     _id: '7',
-    name: '新社部落',
-    tribe: '奇美部落',
+    name: '撒固兒',
+    tribe: '撒固兒',
     price: '2,000',
     rating: '5',
     location: '新社部落',

@@ -1,13 +1,14 @@
-import React from 'react'
+import { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
-function scrollUp() {
-  return (
-    <>
-      <a href="#" className="scrollup" id="scroll-up">
-        <i className="fas fa-arrow-up scrollup-icon"></i>
-      </a>
-    </>
-  )
+class ScrollUp extends Component {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0)
+    }
+  }
+  render() {
+    return this.props.children
+  }
 }
-
-export default scrollUp
+export default withRouter(ScrollUp)

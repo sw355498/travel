@@ -42,10 +42,7 @@ function JourneyItem({ product }) {
                   </div>
                 </div>
                 <div className="col-3">
-                  <i
-                    className="far fa-heart mb-1 fa-heart-show"
-                    onclick="collect(this)"
-                  ></i>
+                  <i className="far fa-heart mb-1 fa-heart-show"></i>
                 </div>
               </div>
             </div>
@@ -67,10 +64,7 @@ function JourneyItem({ product }) {
                 <span>詳細</span>
               </Link>
               <button className="td-btn-medium-o">選擇</button>
-              <i
-                className="far fa-heart mb-1 fa-heart-hide"
-                onclick="collect(this)"
-              ></i>
+              <i className="far fa-heart mb-1 fa-heart-hide"></i>
             </div>
           </div>
           <div className="d-flex flex-md-column align-items-center justify-content-around align-items-center"></div>

@@ -1,11 +1,11 @@
 import React from 'react'
+import ScrollToTop from 'react-scroll-to-top'
 import journeyinfoData from './JourneyInfoData/JourneyInfoData'
 import JourneyBanner from '../journey/banner/journeyBanner'
-import JourneyReservationArea from './reservation_area/journeyReservationArea'
+import JourneyReservationArea from './reservation_area/JourneyReservationArea'
 import JourneyShoppingNote from './shopping_notes/journeyShoppingNote'
 import JourneyCoustomerReview from './coustomer_review/JourneyCoustomerReview'
 import Pagination from '../journey/pagination/Pagination'
-import ScrollUp from '../../component/scrollUp'
 import '../../style/journey-info.css'
 
 function Journey_info(props) {
@@ -132,7 +132,7 @@ function Journey_info(props) {
       <JourneyShoppingNote />
       <JourneyCoustomerReview />
       <Pagination />
-      <ScrollUp />
+      <ScrollToTop smooth />
     </>
   )
 }
