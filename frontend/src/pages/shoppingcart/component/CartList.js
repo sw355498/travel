@@ -90,7 +90,6 @@ function CartList(props) {
     return total
   }
 
-  //收藏行程
   // 將收藏的行程放入至LocalStorage
   const updateLikeToLocalStorage = (item) => {
     // 解析目前購物車的資料
@@ -98,7 +97,11 @@ function CartList(props) {
 
     // 比對當前加入的行程id是否已存在
     const index = currentLike.findIndex((v) => v.id === item.id)
-    currentLike.push(item)
+    if (index > -1) {
+      currentLike.splice(currentLike.indexOf(item, 1))
+    } else {
+      currentLike.push(item)
+    }
     //將當前的行程資訊加入至LocalStorage
     localStorage.setItem('like', JSON.stringify(currentLike))
 
@@ -165,7 +168,6 @@ function CartList(props) {
       </div>
     </>
   )
-  console.log(mycartDisplay)
   const display = (
     <>
       <div className="text-title-size24 d-none d-lg-block fw-bold">
@@ -231,9 +233,8 @@ function CartList(props) {
               {/* 收藏.刪除及價錢 */}
               <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
                 <div>
-                  <button className="td-mt-25 btn">
                     <img
-                      className={`collect`}
+                      className="collect td-mt-25 "
                       src="/images/collect.png"
                       alt="收藏"
                       onClick={() => {
@@ -242,7 +243,6 @@ function CartList(props) {
                         })
                       }}
                     />
-                  </button>
                 </div>
                 <div>
                   <button

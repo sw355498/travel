@@ -51,12 +51,15 @@
 }
 
 /* 收藏dom設定 */
-.collect {
+/* .collect {
   width: 36px;
   height: 36px;
   background-repeat: no-repeat;
   background-image: url('../img/collect.png');
 }
-.collect.like {
+.like {
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
   background-image: url('../img/collect-click.png');
-}
+} */
