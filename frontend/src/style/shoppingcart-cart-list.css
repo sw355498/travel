@@ -58,6 +58,6 @@
   background-repeat: no-repeat;
   background-image: url('../img/collect.png');
 }
-.collect.like {
+.like {
   background-image: url('../img/collect-click.png');
 }

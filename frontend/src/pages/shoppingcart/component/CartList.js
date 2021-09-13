@@ -1,5 +1,5 @@
 //模組,元件引入
-import React, { useState, useEffect, Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
 // css引入
@@ -14,6 +14,8 @@ function CartList(props) {
   const [mycartDisplay, setMycartDisplay] = useState([])
   //切換頁面載入的指示圖示
   const [dataLoading, setDataLoading] = useState(false)
+  //收藏
+  const [like, setLike] = useState([])
 
   function getCartFromLocalStorage() {
     // 開啟載入的指示圖示
@@ -88,6 +90,22 @@ function CartList(props) {
     return total
   }
 
+  //收藏行程
+  // 將收藏的行程放入至LocalStorage
+  const updateLikeToLocalStorage = (item) => {
+    // 解析目前購物車的資料
+    const currentLike = JSON.parse(localStorage.getItem('like')) || []
+
+    // 比對當前加入的行程id是否已存在
+    const index = currentLike.findIndex((v) => v.id === item.id)
+    currentLike.push(item)
+    //將當前的行程資訊加入至LocalStorage
+    localStorage.setItem('like', JSON.stringify(currentLike))
+
+    // 設定資料
+    setLike(currentLike)
+  }
+
   // 刪除購物車中的商品
   const deleteCartToLocalStorage = (item) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
@@ -147,7 +165,7 @@ function CartList(props) {
       </div>
     </>
   )
-console.log(mycartDisplay)
+  console.log(mycartDisplay)
   const display = (
     <>
       <div className="text-title-size24 d-none d-lg-block fw-bold">
@@ -180,9 +198,13 @@ console.log(mycartDisplay)
               </div>
               {/* 行程內容 */}
               <div className="col-12 col-lg-4 text-title-size20 td-my-25">
-                <a className="shoppingcart-title" href="/">
+                <Link
+                  to={`journey_Info/${item.id}`}
+                  className="shoppingcart-title"
+                  href="/"
+                >
                   {item.name}
-                </a>
+                </Link>
                 <div className="td-mt-25">{item.go_time}</div>
                 <div className="td-mt-25">帶團導遊：{item.guild}</div>
                 <div className="td-mt-25">
@@ -211,9 +233,14 @@ console.log(mycartDisplay)
                 <div>
                   <button className="td-mt-25 btn">
                     <img
-                      className="collect"
+                      className={`collect`}
                       src="/images/collect.png"
                       alt="收藏"
+                      onClick={() => {
+                        updateLikeToLocalStorage({
+                          id: item.id,
+                        })
+                      }}
                     />
                   </button>
                 </div>
@@ -273,7 +300,7 @@ console.log(mycartDisplay)
                 props.history.push('/Pay')
               }}
             >
-              前往結帳
+              下一步
             </button>
           </div>
         </div>
