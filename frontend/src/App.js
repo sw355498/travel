@@ -22,7 +22,7 @@ function App() {
         <Route path="/journey_info" component={JourneyInfo} />
         <Route path="/journey/:id" component={JourneyInfo} />
         <Route path="/Guild" component={Guild} />
-        <Route path="/GuildInfo" component={GuildInfo} />
+        <Route path="/GuildInfo/:id" component={GuildInfo} />
         <Route path="/Shoppingcart" component={Shoppingcart} />
         <Redirect to="/" />
       </Switch>

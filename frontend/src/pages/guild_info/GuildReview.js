@@ -76,25 +76,6 @@ function GuildReview() {
           </div>
         </div>
       </div>
-      {/* <!-- 頁碼 -->
-    <nav aria-label="Page navigation example" className="td-mt-25">
-      <ul className="pagination mx-auto">
-        <li className="page-item">
-          <a className="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">
-               </span>
-          </a>
-        </li>
-        <li className="page-item"><a className="page-link " href="#"><span>1</span></a></li>
-        <li className="page-item"><a className="page-link" href="#"><span className="text-center">2</span></a></li>
-        <li className="page-item">
-          <a className="page-link" href="#" aria-label="Next">
-            <span className="text-center" aria-hidden="true">></span>
-          </a>
-        </li>
-      </ul>
-    </nav>
- */}
     </section>
   )
 }
