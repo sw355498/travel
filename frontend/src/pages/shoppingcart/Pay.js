@@ -17,7 +17,7 @@ function Pay(props) {
         <PayMember />
 
         {/* 旅客資料 */}
-        <PayConnection />
+        {/* <PayConnection /> */}
 
         {/* 付款資訊 */}
         <PaymentProfile />
