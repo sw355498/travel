@@ -6,6 +6,23 @@ import '../../../style/shoppingcart-payment.css'
 import '../../../style/fons.css'
 
 function PaymentProfile() {
+  /*信用卡付款*/
+  // let creditCard = document.getElementById('creditCard')
+  // let creditCardMaterial = document.getElementById('creditCardMaterial')
+  // creditCard.addEventListener('click', function () {
+  //   creditCardMaterial.classList.remove('pay-switch')
+  //   transferMaterial.classList.add('pay-switch')
+  // })
+  /*轉帳代繳*/
+  // let transfer = document.getElementById('transfer')
+  // let transferMaterial = document.getElementById('transferMaterial')
+  // transfer.addEventListener('click', function () {
+  //   creditCardMaterial.classList.add('pay-switch')
+  //   transferMaterial.classList.remove('pay-switch')
+  // })
+
+
+
   return (
     <>
       <div class="accordion td-mt-75" id="accordionExample">
@@ -54,14 +71,14 @@ function PaymentProfile() {
                 {/* 信用卡付款資料填寫 */}
                 <div class="td-mt-25 pay-switch" id="creditCardMaterial">
                   <div class="row">
-                    <div class="col-12 col-lg-2">
+                    <div class="col-12 mb-2">
                       <label>信用卡號:</label>
                     </div>
                     <div class="col-3 col-lg-2">
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="1-4碼"
+                        placeholder="4碼"
                         aria-label="信用卡1-4碼"
                       />
                     </div>
@@ -69,7 +86,7 @@ function PaymentProfile() {
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="5-8碼"
+                        placeholder="4碼"
                         aria-label="信用卡5-8碼"
                       />
                     </div>
@@ -77,7 +94,7 @@ function PaymentProfile() {
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="9-12碼"
+                        placeholder="4碼"
                         aria-label="信用卡9-12碼"
                       />
                     </div>
@@ -85,13 +102,13 @@ function PaymentProfile() {
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="13-16碼"
+                        placeholder="4碼"
                         aria-label="信用卡13-16碼"
                       />
                     </div>
                   </div>
                   <div class="row td-mt-25">
-                    <div class="col-12 col-2">
+                    <div class="col-12 mb-2">
                       <label>有效日期:</label>
                     </div>
                     <div class="col-6 col-lg-2">
@@ -110,7 +127,7 @@ function PaymentProfile() {
                         aria-label="有效日期/年"
                       />
                     </div>
-                    <div class="col-12 col-lg-2 td-mt-25 mt-lg-0">
+                    <div class="col-12 mt-4 mb-2">
                       <label>背面檢驗碼:</label>
                     </div>
                     <div class="col-12 col-lg-2">
@@ -126,10 +143,10 @@ function PaymentProfile() {
                 {/* 轉帳代繳付款資料填寫 */}
                 <div class="td-mt-25 pay-switch" id="transferMaterial">
                   <div class="row td-mt-25">
-                    <div class="col-12 col-lg-2">
+                    <div class="col-12 mb-2">
                       <label>轉帳帳號:</label>
                     </div>
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12">
                       <input
                         type="text"
                         class="form-control"
