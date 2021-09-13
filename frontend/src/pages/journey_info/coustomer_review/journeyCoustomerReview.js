@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import GuideList from './guide_list/GuideList'
+import JourneyGuideList from './journey_guide_review_list/JourneyGuideList'
 import DropdownFilter from './filter_dropdown/DropdownFilter'
 import Review from './Review'
 
@@ -22,7 +22,7 @@ function JourneyCoustomerReview() {
           />
         </div>
       </div>
-      <GuideList guidereviews={guidereviews} stars={stars} />
+      <JourneyGuideList guidereviews={guidereviews} stars={stars} />
     </>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Rating(props) {
-  const { rating} = props
+  const { rating } = props
   return (
     <>
       <i

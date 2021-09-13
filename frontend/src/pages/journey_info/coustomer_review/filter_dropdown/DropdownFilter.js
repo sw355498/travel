@@ -23,7 +23,7 @@ function DropdownFilter(props) {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          全部
+          <i class="fas fa-align-right"></i>
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           {starsTypes.map((value, i) => (

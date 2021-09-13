@@ -1,7 +1,7 @@
 import React from 'react'
-import GuideItem from './GuideItem'
+import JourneyGuideItem from './JourneyGuideItem'
 
-function GuideList(props) {
+function JourneyGuideList(props) {
   const { guidereviews, stars } = props
   return (
     <>
@@ -10,10 +10,10 @@ function GuideList(props) {
           stars.some((star) => guidereview.rating.includes(star))
         )
         .map((guidereview, i) => {
-          return <GuideItem Key={i} guidereview={guidereview} />
+          return <JourneyGuideItem Key={i} guidereview={guidereview} />
         })}
     </>
   )
 }
 
-export default GuideList
+export default JourneyGuideList

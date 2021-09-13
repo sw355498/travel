@@ -1,7 +1,7 @@
 import React from 'react'
 import Rating from '../../../../component/Rating'
 
-function GuideItem({ guidereview }) {
+function JourneyGuideItem({ guidereview }) {
   return (
     <>
       <div className="container td-mt-25 coustomerreview ">
@@ -53,4 +53,4 @@ function GuideItem({ guidereview }) {
   )
 }
 
-export default GuideItem
+export default JourneyGuideItem
