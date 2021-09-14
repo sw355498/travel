@@ -1,0 +1,89 @@
+
+body{
+  font-size: 16px;
+}
+
+a{
+  text-decoration: none;
+}
+.tab-content{
+ max-width: 950px;
+  height: auto;
+  display:flex;
+  flex-direction:column;
+  margin:40px auto;
+  max-width: 460px;
+  background-color: var(--blue-color);
+  margin-bottom: 20px;
+  padding: 30px 40px;
+  position: relative;
+  
+}
+.form-group{
+  color:#fff;
+  margin-bottom: 1rem;
+  margin-top: 25px;
+  box-shadow: none;
+}
+
+label{
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 20px;
+  font-weight: normal;
+  }
+.form-control{
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  background-color: #EAF0ED;
+  height: auto;
+  border: none;
+  color: #8DA291;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.btn-group{
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  justify-content: center;
+  align-items:center;
+}
+.btn{
+  width: 50%;
+  line-height: 56px;
+  padding: 0;
+  font-size: 20px;
+  background-color:  var(--blue-color);
+  border-radius: 0;
+  color: #EAF0ED;
+  text-align:center;
+  font-weight: bold;
+  border: 1px solid #EAF0ED;
+}
+.active{
+  background-color: #EAF0ED;
+  color:  var(--blue-color);
+}
+.sign-icon .fab{
+  font-size: 40px;
+}
+.sign-icon a{
+  color: #fff;
+}
+.lines{
+  width: 20px;
+  height: 1px;
+  color: #8DA291;
+}
+.or{
+  margin-top: 15px;
+}
+.sign-in-btn{
+  width: 100%;
+  border: none;
+  background: #fff;
+  color: var(--blue-color);
+  border-radius: 20px;
+}

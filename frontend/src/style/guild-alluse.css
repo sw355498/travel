@@ -1,0 +1,127 @@
+/* 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400&display=swap');
+
+/* 顏色 */
+:root {
+  --blue-color: rgba(7, 43, 123, 1);
+  --heart--color: rgba(255, 149, 100, 1);
+  --bg-color: rgba(232, 247, 255, 1);
+  --btn-color: rgba(255, 156, 0, 1);
+  --tribe-color: rgba(61, 60, 60, 1);
+  --btnorder-color: rgba(254, 201, 13, 1);
+}
+
+/* btn */
+.btn-consult {
+  width: 115px;
+  height: 48px;
+  align-items: center;
+  background: var(--btn-color);
+  border: none;
+  border-radius: 50px;
+  margin-top: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+.btn-detail {
+  width: 85px;
+  height: 40px;
+  border: 1px solid var(--btn-color);
+  border-radius: 50px;
+  color: var(--btn-color);
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+}
+.btn-booking {
+  width: 115px;
+  height: 48px;
+  /* border: 1px solid var(--btn-color); */
+  border-radius: 50px;
+  color: #fff;
+  background-color: var(--btn-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 46px;
+}
+.btn-booking-md {
+  width: 85px;
+  height: 40px;
+  border: 1px solid var(--btn-color);
+  border-radius: 50px;
+  color: #fff;
+  background-color: var(--btn-color);
+  font-size: 14px;
+  line-height: 20px;
+}
+.btn-sort {
+  width: 115px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  background: var(--btnorder-color);
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  right: 0;
+  top: 67px;
+}
+.btn-sort span {
+  padding-right: 10px;
+}
+.btn-sort a {
+  width: 35.17px;
+  height: 32.41px;
+}
+
+/* 頁碼 */
+
+.pagination {
+  width: 149px;
+}
+.page-link {
+  padding: 0px;
+  text-align: center;
+}
+.page-link:hover {
+  background-color: var(--blue-color);
+}
+.page-item:hover span,
+.page-link:focus span {
+  color: #fff;
+}
+.page-link:focus {
+  box-shadow: none;
+  background-color: var(--blue-color);
+}
+.page-item {
+  padding-right: 7px;
+}
+.page-item .page-link {
+  height: 32px;
+  width: 32px;
+}
+.page-item span {
+  color: rgba(196, 196, 196, 1);
+  font-weight: normal;
+  font-size: 20px;
+  vertical-align: middle;
+}
+/* 頭像共用 */
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.stars-s i {
+  font-size: 20px;
+  color: var(--btnorder-color);
+}

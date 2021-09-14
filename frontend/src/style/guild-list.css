@@ -1,0 +1,459 @@
+/* 導遊列表頁面 */
+/* BANNER 輪播圖*/
+.carousel-item {
+  max-width: 100%;
+  height: 444px;
+}
+.carousel-item img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 輪播圖點點 */
+.carousel-indicators {
+  height: 15px;
+  bottom: 15px;
+}
+
+.carousel-indicators button {
+  height: 15px;
+}
+.carousel-indicators [data-bs-target] {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 30px;
+  opacity: unset;
+}
+
+.carousel-indicators [data-bs-target].active {
+  background-color: var(--blue-color);
+}
+.carousel-control-next,
+.carousel-control-prev {
+  opacity: 0.8;
+}
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+  box-shadow: unset;
+  transform: unset;
+  transition: unset;
+  opacity: 1;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background: rgb(0, 0, 0, 0.4);
+  padding: 5px;
+  width: 3rem;
+  height: 3rem;
+}
+.carousel-control-prev-icon i,
+.carousel-control-next-icon i {
+  font-size: 2rem;
+}
+
+/* 快速篩選-共用 */
+.filter-tribe,
+.filter-lan,
+.filter-stars {
+  border: 1px solid var(--blue-color);
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  display: flex;
+}
+
+.filter-lan-title,
+.filter-stars-title {
+  min-height: 48px;
+  margin-right: 25px;
+  background-color: var(--blue-color);
+  border-radius: 10px;
+}
+.filter-tribe-title p,
+.filter-lan-title p,
+.filter-stars-title p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.guildlist-filter-title,
+.filter-result-title,
+.guildlist-new-title {
+  color: var(--blue-color);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 18px;
+}
+/* 導遊item共用 */
+.filter-result-item-main,
+.guildlist-new-main {
+  width: 267px;
+  height: 400px;
+}
+
+/* 快速篩選 */
+input[type='checkbox'] {
+  width: unset;
+  height: unset;
+  font-size: unset;
+}
+.guildlist-filter {
+  color: var(--blue-color);
+}
+
+.guildlist-filter-rwd {
+  display: none;
+}
+/* 星等 */
+.stars-label-group i {
+  font-size: 25px;
+  color: var(--btnorder-color);
+}
+
+/* 部落篩選 */
+.filter-tribe-title {
+  min-height: 96px;
+  margin-right: 25px;
+  background-color: var(--blue-color);
+  border-radius: 10px;
+}
+
+.filter-tribe-check {
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter-tribe-check div {
+  width: 175px;
+  display: flex;
+  align-items: center;
+}
+.filter-tribe-check .tribe-check-input {
+  visibility: hidden;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.filter-tribe-check .tribe-check-input::after {
+  content: '';
+  position: absolute;
+  background: unset;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--blue-color);
+  border-radius: 50%;
+  visibility: visible;
+}
+.filter-tribe-check .tribe-check-input:checked::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  visibility: visible;
+  background: var(--blue-color);
+}
+.tribe-check-label {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+}
+/* 星等 */
+.filter-stars-check div {
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+}
+/* 語言篩選 */
+.lan-check-input,
+.stars-check-input {
+  visibility: hidden;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.filter-lan .lan-check-input::after,
+.filter-stars .stars-check-input::after {
+  content: '';
+  position: absolute;
+  background: unset;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--blue-color);
+  border-radius: 50%;
+  visibility: visible;
+}
+.filter-lan .lan-check-input:checked::after,
+.filter-stars .stars-check-input:checked::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  visibility: visible;
+  background: var(--blue-color);
+}
+.lan-check-label {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.filter-lan-check div {
+  width: 175px;
+}
+
+/* 篩選結果 */
+.filter-result-box {
+  margin-bottom: 25px;
+}
+.filter-result-item {
+  width: 350px;
+  height: 450px;
+  background-color: var(--bg-color);
+  margin-bottom: 50px;
+
+  transition: all 0.3s;
+}
+.filter-result-item:hover,
+.guildlist-new-item:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 3px 3px 3px #eee;
+}
+.filter-result-item:nth-child(4),
+.filter-result-item:nth-child(5),
+.filter-result-item:nth-child(6) {
+  margin-bottom: 0px;
+}
+.guild-tribe {
+  top: 15px;
+  right: 15px;
+  color: var(--tribe-color);
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.guild-info {
+  margin-bottom: 25px;
+  width: 100%;
+}
+.guild-info-avatar {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  object-fit: cover;
+}
+.guild-info-name {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
+.guild-info-stars {
+  width: 156px;
+}
+
+.interview-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+.interview-content {
+  width: 100%;
+  height: 48px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* 新人導遊推薦 */
+.guildlist-new {
+  width: 100%;
+  height: auto;
+  background: var(--bg-color);
+}
+
+.guildlist-new-item {
+  width: 350px;
+  height: 450px;
+  background-color: #fff;
+  margin-bottom: 25px;
+  transition: all 0.3s;
+}
+.pagination .page-link {
+  padding: 5px 0 5px 0;
+}
+/* ------------RWD---------- */
+@media screen and (max-width: 1200px) {
+  .filter-result-box {
+    justify-content: space-around;
+  }
+
+  .stars-label-group {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 992px) {
+  /* 去掉特效 */
+  .guildlist-filter-rwd .dropdown button {
+    opacity: 1;
+    transform: unset;
+  }
+
+  .guildlist-filter-rwd .dropdown button:hover {
+    transition: unset;
+    box-shadow: unset;
+    opacity: unset;
+  }
+  .guildlist-banner .carousel-indicators button:hover {
+    transition: unset;
+    transform: unset;
+    box-shadow: unset;
+  }
+  .guildlist-filter-rwd .dropdown .show {
+    margin: 0;
+  }
+  .guildlist-filter-rwd .dropdown .show input {
+    width: unset;
+    height: unset;
+    margin-left: 0;
+  }
+  .guildlist-filter-rwd input[type='checkbox']:after {
+    width: unset;
+    height: unset;
+    font-size: unset;
+    background: unset;
+    border-radius: 50%;
+  }
+  .guildlist-filter-rwd input[type='checkbox']:checked:after {
+    width: unset;
+    height: unset;
+    font-size: unset;
+    content: '';
+  }
+  /* ------------------------------------------ */
+  .carousel-item {
+    max-width: 100%;
+    max-height: 385px;
+  }
+  .filter-result-title,
+  .guildlist-new-title {
+    text-align: center;
+  }
+
+  .filter-result-item {
+    margin-bottom: 25px;
+  }
+  .filter-result-item:nth-child(4),
+  .filter-result-item:nth-child(5),
+  .filter-result-item:nth-child(6) {
+    margin-bottom: 25px;
+  }
+  .filter-result-box {
+    margin-bottom: 0px;
+  }
+  .guildlist-filter-title,
+  .filter-tribe,
+  .filter-lan,
+  .filter-stars {
+    display: none;
+  }
+
+  /* 搜尋rwd */
+  .guildlist-filter .guildlist-filter-rwd {
+    display: block;
+  }
+  .filter-result-item,
+  .guildlist-new-item {
+    margin-right: 15px;
+  }
+  .guildlist-filter-rwd .dropdown-toggle {
+    width: 445px;
+    height: 48px;
+    background-color: var(--blue-color);
+    border: none;
+    border-radius: 100px;
+  }
+  .guildlist-filter-rwd .dropdown-toggle:after {
+    border: none;
+  }
+  .guildlist-filter-rwd .dropdown-toggle .fas {
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    transform: rotate(0deg);
+  }
+
+  .guildlist-filter-rwd .dropdown-menu {
+    width: 445px;
+    background-color: var(--bg-color);
+    padding-left: 15px;
+    padding-bottom: 0;
+  }
+
+  .filter-title-web {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  /* 部落篩選rwd */
+  .guildlist-filter-rwd .dropdown-menu h2 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+  .filter-tribe-check div {
+    width: 123px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+  }
+  /* rwd篩選input */
+  .guildlist-filter-rwd .dropdown-menu input:after {
+    border: 1px solid #000;
+    width: 18px;
+    height: 18px;
+  }
+  .guildlist-filter-rwd .dropdown-menu input:checked:after {
+    width: 18px;
+    height: 18px;
+    background: #000;
+  }
+  .guildlist-filter-rwd .dropdown-menu label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .filter-stars-check-item {
+    margin-bottom: 15px;
+  }
+  .filter-stars-check-item:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+/* RWD */
+@media screen and (max-width: 576px) {
+  .filter-result-item {
+    max-width: 100%;
+  }
+
+  .filter-result-item,
+  .guildlist-new-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
