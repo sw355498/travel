@@ -4,6 +4,8 @@ import { withRouter } from 'react-router-dom'
 import DatePicker from './date_picker/DatePicker'
 import Counter from './Counter/Counter'
 function JourneyReservationArea(props) {
+  
+  console.log(props.findResult.price)
   //目前DatePicker狀態
   const [dateState, setDateState] = useState(new Date())
   

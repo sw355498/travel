@@ -255,6 +255,18 @@ header {
     margin-right: 10px;
   }
 }
+.cart-quantity{
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -5px;
+  left: 26px;
+}
 @media screen and (max-width: 576px) {
   .td-nav {
     margin-left: 0px;
