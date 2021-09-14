@@ -1,3 +1,5 @@
+import React, { useState } from 'react'
+
 // css引入
 import '../../../style/spacing.css'
 import '../../../style/button.css'
@@ -6,6 +8,20 @@ import '../../../style/shoppingcart-payment.css'
 import '../../../style/fons.css'
 
 function PayMember() {
+  // 姓氏
+  const [surName, setSurName] = useState('')
+  // 名字
+  const [name, setName] = useState('')
+  // 聯絡電話
+  const [phone, setPhone] = useState('')
+  //國家
+  const [nation, setNation] = useState('')
+  // 地址
+  const [address, setAddress] = useState('')
+  // 信箱
+  const [email, setEmail] = useState('')
+  //勾選更新方塊
+  const [renew, setRenew] = useState(true)
   return (
     <>
       <div class="accordion td-mt-75" id="accordionExample">
@@ -29,7 +45,7 @@ function PayMember() {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body menu-bg">
-              <form class="td-mt-50" action="">
+              <form class="td-mt-50" action="POST">
                 <div class="row">
                   {/* <姓名區塊 */}
                   <div class="col-12 col-lg-6">
@@ -41,9 +57,13 @@ function PayMember() {
                     </label>
                     <input
                       type="text"
+                      value={surName}
                       class="form-control"
                       id="formGroupExampleInput"
                       placeholder="請輸入您的名子"
+                      onChange={(e) => {
+                        setSurName(e.target.value)
+                      }}
                     />
                   </div>
 
@@ -57,9 +77,13 @@ function PayMember() {
                     </label>
                     <input
                       type="text"
+                      value={name}
                       class="form-control"
                       id="formGroupExampleInput2"
                       placeholder="請輸入您的姓氏"
+                      onChange={(e) => {
+                        setName(e.target.value)
+                      }}
                     />
                   </div>
 
@@ -73,9 +97,13 @@ function PayMember() {
                     </label>
                     <input
                       type="text"
+                      value={phone}
                       class="form-control"
                       id="formGroupExampleInput2"
                       placeholder="請輸入您的連絡電話"
+                      onChange={(e) => {
+                        setPhone(e.target.value)
+                      }}
                     />
                   </div>
                   {/* 選格國家區塊 */}
@@ -88,9 +116,13 @@ function PayMember() {
                     </label>
 
                     <select
+                      value={nation}
                       class="form-select"
                       id="validationDefault04"
                       required
+                      onChange={(e) => {
+                        setNation(e.target.value)
+                      }}
                     >
                       <option selected disabled value="">
                         請選擇國家
@@ -112,9 +144,13 @@ function PayMember() {
                     </label>
                     <input
                       type="text"
+                      value={address}
                       class="form-control"
                       id="formGroupExampleInput2"
                       placeholder="請輸入您的聯絡地址"
+                      onChange={(e) => {
+                        setAddress(e.target.value)
+                      }}
                     />
                   </div>
 
@@ -128,9 +164,13 @@ function PayMember() {
                     </label>
                     <input
                       type="email"
+                      value={email}
                       class="form-control"
                       id="formGroupExampleInput2"
                       placeholder="請輸入您的E-mail"
+                      onChange={(e) => {
+                        setEmail(e.target.value)
+                      }}
                     />
                   </div>
 
@@ -138,11 +178,13 @@ function PayMember() {
                   <div class="td-mt-75">
                     <div class="form-check">
                       <input
-                        class="form-check-input"
                         type="checkbox"
-                        value=""
+                        checked={renew}
+                        class="form-check-input"
                         id="flexCheckChecked"
-                        checked
+                        onChange={(e) => {
+                          setRenew(e.target.checked)
+                        }}
                       />
                       <label
                         class="form-check-label text-title-size20 td-ms-15"

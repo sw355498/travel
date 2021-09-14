@@ -2,6 +2,7 @@
 import People from './component/People'
 import CartList from './component/CartList'
 import CartRecommend from './component/CartRecommend'
+import ScrollToTop from 'react-scroll-to-top'
 
 // css引入
 import '../../style/spacing.css'
@@ -10,7 +11,7 @@ import '../../style/checkbox.css'
 import '../../style/shoppingcart-cart-list.css'
 import '../../style/fons.css'
 
-function ShoppingcartCartList() {
+function ShoppingcartCartList(props) {
   return (
     <>
       <div className="container">
@@ -24,6 +25,7 @@ function ShoppingcartCartList() {
 
         {/* 其它旅客還購買 */}
         <CartRecommend />
+        <ScrollToTop smooth />
       </div>
     </>
   )

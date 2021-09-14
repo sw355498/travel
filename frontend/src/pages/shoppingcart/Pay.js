@@ -4,8 +4,9 @@ import PayMember from './component/PayMember'
 import PayConnection from './component/PayConnection'
 import PaymentProfile from './component/PaymentProfile'
 import PayContent from './component/PayContent'
+import ScrollToTop from 'react-scroll-to-top'
 
-function Pay() {
+function Pay(props) {
   return (
     <>
       {/* 內容  */}
@@ -17,13 +18,14 @@ function Pay() {
         <PayMember />
 
         {/* 旅客資料 */}
-        <PayConnection />
+        {/* <PayConnection /> */}
 
         {/* 付款資訊 */}
         <PaymentProfile />
 
         {/* 訂單明細 */}
         <PayContent />
+        <ScrollToTop smooth />
       </div>
     </>
   )

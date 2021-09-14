@@ -1,0 +1,8 @@
+{
+  "name": "travel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sw355498/travel.git",
+  "author": "sihua <yaya14chen@gmail.com>",
+  "license": "MIT"
+}

@@ -1,9 +1,10 @@
 import React from 'react'
-import GuildInfoBanner from './guild_info_component/GuildInfoBanner'
-import GuildIntro from './guild_info_component/GuildIntro'
-import GuildJourney from './guild_info_component/GuildJourney'
-import GuildReview from './guild_info_component/GuildReview'
-// import GuildListPage from './guild_list_component/guildListPage'
+import GuildInfoBanner from './guild_info/GuildInfoBanner'
+import GuildIntro from './guild_info/GuildIntro'
+import GuildJourney from './guild_info/GuildJourney'
+import GuildReview from './guild_info/GuildReview'
+import GuildListPage from './guild/guildListPage'
+import ScrollToTop from 'react-scroll-to-top'
 //CSS
 import '../style/guild-alluse.css'
 import '../style/guild-intro.css'
@@ -19,7 +20,8 @@ function GuildInfo() {
         <GuildIntro />
         <GuildJourney />
         <GuildReview />
-        {/* <GuildListPage /> */}
+        <GuildListPage />
+        <ScrollToTop smooth />
       </article>
     </>
   )
