@@ -176,10 +176,7 @@ function JourneyReservationArea(props) {
                   {' '}
                   讓奇美部落的勇士帶著你順著溪水一路說故事、撒網、抓蝦、野炊、玩耍、盡情融入阿美族文化與大自然嬉戲。讓你放鬆心情慢慢體會古老部落的文化智慧，以及大自然的驚奇。
                 </p>
-                <button
-                  href="#"
-                  className="btn td-btn-large-o td-mt-25"
-                >
+                <button href="#" className="btn td-btn-large-o td-mt-25">
                   選擇
                 </button>
               </div>
