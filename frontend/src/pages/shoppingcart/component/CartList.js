@@ -6,7 +6,7 @@ import moment from 'moment'
 // css引入
 import '../../../style/spacing.css'
 import '../../../style/button.css'
-import '../../../style/checkbox.css'
+// import '../../../style/checkbox.css'
 import '../../../style/shoppingcart-cart-list.css'
 import '../../../style/fons.css'
 
@@ -189,7 +189,7 @@ function CartList(props) {
                   checkOne()
                 }}
               >
-                <input className="my-auto" type="checkbox" name="ckeckOne" />
+                <input className="my-auto checkbox-size" type="checkbox" name="ckeckOne" />
               </div>
               {/* 行程圖片 */}
               <div className="col-9 col-lg-4 d-flex justify-content-start justify-content-lg-center">
@@ -266,7 +266,7 @@ function CartList(props) {
         <div className="row align-items-center text-center td-py-25">
           <div className="col-3 col-lg-1">
             <input
-              className="my-auto"
+              className="my-auto checkbox-size"
               type="checkbox"
               id="all"
               onClick={() => {

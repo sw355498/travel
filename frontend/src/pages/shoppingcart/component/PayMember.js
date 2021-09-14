@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 // css引入
 import '../../../style/spacing.css'
 import '../../../style/button.css'
-import '../../../style/checkbox.css'
+// import '../../../style/checkbox.css'
 import '../../../style/shoppingcart-payment.css'
 import '../../../style/fons.css'
 
@@ -180,14 +180,14 @@ function PayMember() {
                       <input
                         type="checkbox"
                         checked={renew}
-                        class="form-check-input"
+                        class="form-check-input checkbox-size"
                         id="flexCheckChecked"
                         onChange={(e) => {
                           setRenew(e.target.checked)
                         }}
                       />
                       <label
-                        class="form-check-label text-title-size20 td-ms-15"
+                        class="form-check-label text-title-size20 td-ms-15 mt-1"
                         for="flexCheckChecked"
                       >
                         同時更新會員資料
