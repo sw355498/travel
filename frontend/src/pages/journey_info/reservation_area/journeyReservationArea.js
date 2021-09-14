@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 import DatePicker from './date_picker/DatePicker'
 import Counter from './Counter/Counter'
 function JourneyReservationArea(props) {
+  //目前DatePicker狀態
+  const [dateState, setDateState] = useState(new Date())
+  
+  //設定counter狀態
+  const [count, setCount] = useState(0)
   // 目前購物車狀態
   const [mycart, setMycart] = useState([])
 
@@ -89,7 +94,10 @@ function JourneyReservationArea(props) {
           <p>預約日期</p>
         </div>
         <div className="row td-mt-25 d-flex justify-content-center">
-          <DatePicker></DatePicker>
+          <DatePicker
+            dateState={dateState}
+            setDateState={setDateState}
+          ></DatePicker>
         </div>
         <div className="journey-info-name td-mt-75">
           <p>選擇導遊</p>
@@ -183,7 +191,7 @@ function JourneyReservationArea(props) {
             </div>
           </div>
         </div>
-        <Counter />
+        <Counter count={count} setCount={setCount} />
         <div className="d-flex justify-content-center mt--2">
           <button
             className="btn journey-reservation-button"
@@ -191,9 +199,9 @@ function JourneyReservationArea(props) {
               updateCartToLocalStorage({
                 id: props.findResult._id,
                 name: props.findResult.introname,
-                amount: 1,
+                amount: count,
                 img: props.findResult.img1,
-                go_time: '2021-10-15',
+                go_time: dateState,
                 guild: '雅馨',
                 price: props.findResult.price,
               })

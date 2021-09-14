@@ -1,6 +1,7 @@
 //模組,元件引入
 import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
+import moment from 'moment'
 
 // css引入
 import '../../../style/spacing.css'
@@ -207,7 +208,9 @@ function CartList(props) {
                 >
                   {item.name}
                 </Link>
-                <div className="td-mt-25">{item.go_time}</div>
+                <div className="td-mt-25">
+                  {moment(item.go_time).format('YYYY-MM-DD')}
+                </div>
                 <div className="td-mt-25">帶團導遊：{item.guild}</div>
                 <div className="td-mt-25">
                   人數：

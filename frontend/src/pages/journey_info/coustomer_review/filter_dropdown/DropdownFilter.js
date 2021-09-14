@@ -24,7 +24,7 @@ function DropdownFilter(props) {
           aria-expanded="false"
         >
           <span className="text-content-size18 td-me-15 ">篩選評價</span>
-          <i class="fas fa-align-right"></i>
+          <i className="fas fa-align-right"></i>
         </button>
         <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
           {starsTypes.map((value, i) => (
@@ -36,7 +36,7 @@ function DropdownFilter(props) {
                 handleChecked={starCheckHandler}
               >
                 {' '}
-                {value}星評價
+                <span className="td-ms-25 d-inline-block">{value}星評價</span>
               </DropdownUl>
             </>
           ))}
