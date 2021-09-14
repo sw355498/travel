@@ -1,3 +1,6 @@
+//元件,模組引入
+import { Link } from 'react-router-dom'
+
 // css引入
 import '../style/header.css'
 import '../style/spacing.css'
@@ -7,7 +10,6 @@ import logo from '../img/logo.png'
 import hualsland from '../img/花島（黑）.png'
 import cart from '../img/cart.png'
 import avatar from '../img/avatar.png'
-import { Link } from 'react-router-dom'
 function Header() {
   return (
     <>
@@ -77,12 +79,12 @@ function Header() {
                   <i className="fas fa-home"></i>回到首頁
                 </Link>
 
-                <Link to="/home">
-                  <i className="fas fa-shoe-prints"></i>花島行程
+                <Link to="/journey">
+                  <i className="fas fa-shoe-prints"></i>部落行程
                 </Link>
-                <a href="/">
+                <Link to="/Guild">
                   <i className="fas fa-street-view"></i>在地導遊
-                </a>
+                </Link>
               </ul>
             </div>
           </nav>

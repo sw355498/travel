@@ -5,10 +5,6 @@ import '../../../style/checkbox.css'
 import '../../../style/shoppingcart-cart-list.css'
 import '../../../style/fons.css'
 
-// 圖片引入
-import matanki from '../../../img/馬太鞍部落03.jpg'
-import jingpu from '../../../img/靜浦06.jpg'
-import sibilian from '../../../img/水璉部落3.jpg'
 
 function CartTitle() {
   return (
@@ -22,7 +18,7 @@ function CartTitle() {
             <div className="card td-my-25 recommend-card">
               <img
                 className="recommend-img"
-                src={matanki}
+                src="/images/馬太鞍部落03.jpg"
                 alt="馬太鞍部落03"
                 title="馬太鞍部落03"
               />
@@ -43,7 +39,7 @@ function CartTitle() {
             <div className="card td-my-25 recommend-card text-center">
               <img
                 className="recommend-img"
-                src={jingpu}
+                src="/images/靜浦06.jpg"
                 alt="靜浦06"
                 title="靜浦06"
               />
@@ -64,7 +60,7 @@ function CartTitle() {
             <div className="card td-my-25 recommend-card text-center">
               <img
                 className="recommend-img"
-                src={sibilian}
+                src="/images/水璉部落3.jpg"
                 alt="水璉部落3"
                 title="水璉部落3"
               />
@@ -85,7 +81,7 @@ function CartTitle() {
         </div>
       </div>
       {/* 其旅客還購買rwd版 */}
-      <div className="shoppingcart-bg td-mt-75 td-mb-25  d-block d-lg-none">
+      <div className="shoppingcart-bg td-mt-75 td-mb-25  d-lg-none">
         <div className="text-title-size28 shoppingcart-title text-center td-pt-25 d-lg-none d-block">
           其它旅客還購買
         </div>
@@ -100,7 +96,7 @@ function CartTitle() {
               <div className="card td-my-25 recommend-card container p-0">
                 <img
                   className="recommend-img"
-                  src={matanki}
+                  src="/images/馬太鞍部落03.jpg"
                   alt="馬太鞍部落03"
                   title="馬太鞍部落03"
                 />
@@ -123,7 +119,7 @@ function CartTitle() {
               <div className="card td-my-25 recommend-card container p-0">
                 <img
                   className="recommend-img"
-                  src={jingpu}
+                  src="/images/靜浦06.jpg"
                   alt="靜浦06"
                   title="靜浦06"
                 />
@@ -146,7 +142,7 @@ function CartTitle() {
               <div className="card td-my-25 recommend-card container p-0">
                 <img
                   className="recommend-img"
-                  src={sibilian}
+                  src="/images/水璉部落3.jpg"
                   alt="水璉部落3"
                   title="水璉部落3"
                 />

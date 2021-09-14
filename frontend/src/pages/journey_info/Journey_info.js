@@ -2,9 +2,9 @@ import React from 'react'
 import ScrollToTop from 'react-scroll-to-top'
 import journeyinfoData from './JourneyInfoData/JourneyInfoData'
 import JourneyBanner from '../journey/banner/journeyBanner'
-import JourneyReservationArea from './reservation_area/JourneyReservationArea'
+import JourneyReservationArea from './reservation_area/journeyReservationArea'
 import JourneyShoppingNote from './shopping_notes/journeyShoppingNote'
-import JourneyCoustomerReview from './coustomer_review/JourneyCoustomerReview'
+import JourneyCoustomerReview from './coustomer_review/journeyCoustomerReview'
 import Pagination from '../journey/pagination/Pagination'
 import '../../style/journey-info.css'
 
@@ -15,6 +15,7 @@ function Journey_info(props) {
   if (!findResult) {
     return <div>找不到您想要的行程</div>
   }
+
   return (
     <>
       <JourneyBanner />
@@ -128,7 +129,7 @@ function Journey_info(props) {
           />
         </div>
       </div>
-      <JourneyReservationArea />
+      <JourneyReservationArea findResult={findResult}/>
       <JourneyShoppingNote />
       <JourneyCoustomerReview />
       <Pagination />

@@ -10,7 +10,7 @@ import '../../style/checkbox.css'
 import '../../style/shoppingcart-cart-list.css'
 import '../../style/fons.css'
 
-function ShoppingcartCartList() {
+function ShoppingcartCartList(props) {
   return (
     <>
       <div className="container">

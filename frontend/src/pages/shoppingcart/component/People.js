@@ -2,9 +2,6 @@
 import '../../../style/spacing.css'
 import '../../../style/shoopcart-process.css'
 import '../../../style/fons.css'
-
-// 圖片引入
-import people from '../../../img/走路小人.png'
 function People() {
   return (
     <>
