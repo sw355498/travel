@@ -233,16 +233,16 @@ function CartList(props) {
               {/* 收藏.刪除及價錢 */}
               <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
                 <div>
-                    <img
-                      className="collect td-mt-25 "
-                      src="/images/collect.png"
-                      alt="收藏"
-                      onClick={() => {
-                        updateLikeToLocalStorage({
-                          id: item.id,
-                        })
-                      }}
-                    />
+                  <img
+                    className="collect td-mt-25 "
+                    src="/images/collect.png"
+                    alt="收藏"
+                    onClick={() => {
+                      updateLikeToLocalStorage({
+                        id: item.id,
+                      })
+                    }}
+                  />
                 </div>
                 <div>
                   <button
