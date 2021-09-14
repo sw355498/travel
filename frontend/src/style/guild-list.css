@@ -165,7 +165,7 @@
   border-radius: 50%;
   visibility: visible;
 }
-.filter-tribe-check .tribe-check-input:checked::after {
+.tribe-check-input:checked::after {
   content: '';
   width: 15px;
   height: 15px;
@@ -173,6 +173,7 @@
   visibility: visible;
   background: var(--blue-color);
 }
+
 .tribe-check-label {
   font-weight: normal;
   font-size: 20px;
@@ -180,10 +181,11 @@
 }
 /* 星等 */
 .filter-stars-check div {
-  min-width: 200px;
+  max-width: 175px;
   display: flex;
   align-items: center;
 }
+
 /* 語言篩選 */
 .lan-check-input,
 .stars-check-input {

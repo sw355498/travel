@@ -9,36 +9,6 @@ button:hover ,.btn:hover {
   -o-box-shadow: 4px 4px 9px -3px #636161;
 }
 
-.filter-title {
-  font-size: 1.25rem;
-  line-height: 1.438rem;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background: #072b7b;
-  border-radius: 10px;
-}
-
-.filter-title p {
-  margin-top: 0%;
-  margin-bottom: 0%;
-}
-
-.filter-radio p {
-  font-size: 1.25rem;
-  line-height: 1.438rem;
-  color: #072b7b;
-}
-.filter-bystar input {
-  margin-top: 10px;
-}
-
-.filter-bystar img{
-  max-width: 165.25px;
-  height: auto;
-}
 .page-title {
   font-weight: bold;
   font-size: 1.75rem;
@@ -112,61 +82,11 @@ button:hover ,.btn:hover {
   }
 }
 
-
-
 @media only screen and (min-width: 768px) {
   .filter-resultcontainer .page-title {
     text-align: left !important;
   }
-   .filter-dropdown {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .filter-dropdown button {
-    max-width: 445px;
-    height: auto;
-    width: 100%;
-    color: #ffffff;
-    background: #072b7b;
-    border-radius: 100px;
-    margin-top: 75px;
-  }
-
-  .dropdown-menu.show {
-    display: block;
-    will-change: transform;
-    margin: 0 auto;
-    background: #e8f7ff;
-    border-radius: 10px;
-    max-width: 445px;
-    left: 0 !important;
-  }
-  .filter-dropdown .form-check {
-    max-width: 150px;
-    width: 100%;
-    font-size: 1.125rem;
-    line-height: 23px;
-    color: #000000;
-    margin-right: 0.75rem;
-    margin-left: 1.4rem;
-  }
-
-}
-.filter-dropdown h6 {
-  margin-left: 20px;
-}
-.filter-border {
-  border: 1px solid #072b7b;
-  box-sizing: border-box;
-  border-radius: 10px;
-  width: 100%;
-  height: auto;
-}
-.filter-dropdown img{
-  max-width: 156.27;
-  width: 100%;
+ 
 }
 .link-right {
   width: 35%;

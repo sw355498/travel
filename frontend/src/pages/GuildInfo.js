@@ -4,6 +4,7 @@ import GuildIntro from './guild_info/GuildIntro'
 import GuildJourney from './guild_info/GuildJourney'
 import GuildReview from './guild_info/GuildReview'
 import GuildListPage from './guild/guildListPage'
+import ScrollToTop from 'react-scroll-to-top'
 //CSS
 import '../style/guild-alluse.css'
 import '../style/guild-intro.css'
@@ -20,6 +21,7 @@ function GuildInfo() {
         <GuildJourney />
         <GuildReview />
         <GuildListPage />
+        <ScrollToTop smooth />
       </article>
     </>
   )

@@ -4,6 +4,7 @@ import GuildFilterResult from './guild/guild_filter_result/GuildFilterResult'
 import GuildListPage from './guild/guildListPage'
 import GuildNew from './guild/guildNew'
 import { useLocation } from 'react-router-dom'
+import ScrollToTop from 'react-scroll-to-top'
 //CSS
 import '../style/guild-alluse.css'
 import '../style/guild-list.css'
@@ -23,6 +24,7 @@ function Guild() {
         <GuildFilterResult tribe={tribe} />
         <GuildListPage />
         <GuildNew />
+        <ScrollToTop smooth />
       </article>
     </>
   )

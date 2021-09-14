@@ -7,10 +7,7 @@ function homeGallryArea() {
         <div className="container">
           <p>部落行程</p>
           <div id="journey" className="td-mt-25">
-            <div
-              className="journey-paterungan img-fluid "
-              onclick="location.href='/page/jounery/journey.html';"
-            >
+            <div className="journey-paterungan img-fluid ">
               <div className="card">
                 <div className="imgBx">
                   <a href="/page/jounery/journey.html" title="新社部落">
@@ -31,10 +28,7 @@ function homeGallryArea() {
                 </div>
               </div>
             </div>
-            <div
-              className="journey-kiwit img-fluid "
-              onclick="location.href='/page/jounery/journey.html';"
-            >
+            <div className="journey-kiwit img-fluid ">
               <div className="card">
                 <div className="imgBx">
                   <img
@@ -56,10 +50,7 @@ function homeGallryArea() {
                 </div>
               </div>
             </div>
-            <div
-              className="journey-cawi img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
-            >
+            <div className="journey-cawi img-fluid">
               <div className="card">
                 <div className="imgBx">
                   <img
@@ -81,10 +72,7 @@ function homeGallryArea() {
                 </div>
               </div>
             </div>
-            <div
-              className="journey-ciwidian img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
-            >
+            <div className="journey-ciwidian img-fluid">
               <div className="card">
                 <div className="imgBx">
                   <img
@@ -106,10 +94,7 @@ function homeGallryArea() {
                 </div>
               </div>
             </div>
-            <div
-              className="journey-tafalong img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
-            >
+            <div className="journey-tafalong img-fluid">
               <div className="card">
                 <div className="imgBx">
                   <img
@@ -131,10 +116,7 @@ function homeGallryArea() {
                 </div>
               </div>
             </div>
-            <div
-              className="journey-sakur img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
-            >
+            <div className="journey-sakur img-fluid">
               <div className="card">
                 <div className="imgBx">
                   <img
@@ -156,19 +138,13 @@ function homeGallryArea() {
                 </div>
               </div>
             </div>
-            <div
-              className="journey-vataan img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
-            >
+            <div className="journey-vataan img-fluid">
               <img
                 src="images/data/首頁部落圖/馬太鞍部落封面.jpg"
                 alt="馬太鞍部落"
               />
             </div>
-            <div
-              className="journey-vataan img-fluid"
-              onclick="location.href='/page/jounery/journey.html';"
-            >
+            <div className="journey-vataan img-fluid">
               <div className="card">
                 <div className="imgBx">
                   <img
