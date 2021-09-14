@@ -212,25 +212,24 @@ function CartList(props) {
                   {moment(item.go_time).format('YYYY-MM-DD')}
                 </div>
                 <div className="td-mt-25">帶團導遊：{item.guild}</div>
-                <div className="td-mt-25">
-                  人數：
+                <div className="td-mt-25 d-flex align-items-center">
                   <button
-                    className="td-btn-people"
+                    className="td-ms-15 td-btn-medium-blueborder"
                     onClick={() => {
                       if (item.amount === 1) return
                       updateCartToLocalStorage(item, false)
                     }}
                   >
-                    -
+                    <i className="fas fa-minus"></i>
                   </button>
-                  {item.amount}
+                  <p className="td-ms-15 text-nowrap">參加人數 {item.amount}</p>
+
                   <button
-                    className="td-btn-people"
+                    className="td-ms-15 td-btn-medium-blueborder"
                     onClick={() => updateCartToLocalStorage(item, true)}
                   >
-                    +
+                    <i className="fas fa-plus"></i>
                   </button>
-                  人
                 </div>
               </div>
               {/* 收藏.刪除及價錢 */}
