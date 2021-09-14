@@ -8,6 +8,7 @@ import Header from '../src/component/Header'
 import Footer from '../src/component/Footer'
 import Guild from './pages/Guild'
 import GuildInfo from './pages/GuildInfo'
+import Shoppingcart from './pages/shoppingcart/Shoppingcart'
 import './style/header.css'
 import './style/footer.css'
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/journey_info/:id" component={journeyInfo} />
           <Route path="/Guild" component={Guild} />
           <Route path="/GuildInfo" component={GuildInfo} />
+          <Route path="/Shoppingcart" component={Shoppingcart} />
           <Redirect to="/" />
         </Switch>
         <Footer />
