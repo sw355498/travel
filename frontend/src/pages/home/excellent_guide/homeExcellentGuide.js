@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-function homeExcellentGuide() {
+function HomeExcellentGuide() {
   return (
     <>
       <section id="excellent-guide">
@@ -228,7 +228,7 @@ function homeExcellentGuide() {
             </div>
             <div className="d-flex justify-content-center td-mb-25 ">
               {' '}
-              <Link to="/journey" className="btn btn-guide-all text-center ">
+              <Link to="/Guild" className="btn btn-guide-all text-center ">
                 全部導遊
               </Link>
             </div>
@@ -239,4 +239,4 @@ function homeExcellentGuide() {
   )
 }
 
-export default homeExcellentGuide
+export default HomeExcellentGuide

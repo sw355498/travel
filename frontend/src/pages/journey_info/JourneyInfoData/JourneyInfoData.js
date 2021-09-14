@@ -3,7 +3,7 @@ const JourneyInfoData = [
     _id: '1',
     name: '靜浦部落',
     tribe: '靜浦部落',
-    price: '2000',
+    price: '5000',
     rating: '5',
     location: '新社部落',
     describe: '行程長度：約 1000小時',

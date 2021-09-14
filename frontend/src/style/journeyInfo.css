@@ -1,5 +1,5 @@
-button:hover{
-transform: translateY(-5px);
+button:hover {
+  transform: translateY(-5px);
 }
 
 .carousel-indicators [data-bs-target] {
@@ -23,22 +23,22 @@ transform: translateY(-5px);
   transition: opacity 0.6s ease;
 }
 .carousel-indicators .active {
-    opacity: 1;
-    background-color: #072b7b;
+  opacity: 1;
+  background-color: #072b7b;
 }
 
 .Dropdown-control {
-    position: relative;
-    overflow: hidden;
-    background-color: transparent !important;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    box-sizing: border-box;
-    color: #333;
-    cursor: default;
-    outline: none;
-    padding: 8px 52px 8px 10px;
-    transition: all 200ms ease;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent !important;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #333;
+  cursor: default;
+  outline: none;
+  padding: 8px 52px 8px 10px;
+  transition: all 200ms ease;
 }
 
 .journey-info-name {
@@ -277,7 +277,7 @@ transform: translateY(-5px);
   max-height: 70px;
 }
 
-.coustomerreview .fa-align-left{
+.coustomerreview .fa-align-left {
   color: #ffffff;
   font-size: 16px;
   margin-left: 8px;
@@ -300,12 +300,12 @@ transform: translateY(-5px);
 }
 
 .react-calendar {
-    width: 5000px !important;
-    max-width: 100%;
-    background: white;
-    border: 1px solid #a0a096;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.125em;
+  width: 5000px !important;
+  max-width: 100%;
+  background: white;
+  border: 1px solid #a0a096;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
 }
 @media only screen and (max-width: 768px) {
   .coustomerreview button {
@@ -346,43 +346,11 @@ transform: translateY(-5px);
   background-color: #072b7b;
   border-color: #072b7b;
 }
-/* scrollup */
-.scrollup {
-  position: fixed;
-  right: 1rem;
-  bottom: -20%;
-  padding: 0.5rem;
-  background: #072b7b;
-  opacity: 0.6;
-  z-index: 1000;
-  transition: 0.4s;
-  height: auto;
-  
-}
-.scrollup-icon{
-  color: #ffffff;
-}
 
-.scrollup:hover{
-  background-color: #ff9c00;
-  opacity: 1;
+.journeyInfo-dropdown .dropdown-menu {
+  border: 5px solid #072b7b ;
+  border-radius: 50px;
 }
-
-.show-scroll{
-  bottom: 5rem;
-}
-
-/* scrollbar  */
-
-::-webkit-scrollbar{
-  width: .60rem;
-  background: #636161;
-}
-
-::-webkit-scrollbar-thumb{
-  background: #a5a5a8;
-}
-::-webkit-scrollbar-thumb:hover{
-  background-color:#ff9c00;
-  opacity: 0.6;
+.journeyInfo-dropdown .dropdown-toggle::after {
+  content: ' ';
 }
