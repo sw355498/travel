@@ -20,19 +20,19 @@
 </head>
 
 <body>
-    <div class="tab-content container ">
-        <div class="btn-group checkout-btn" role="group" id="tabs">
-            <a href="#" class="btn active" id=> 登入</a>
-            <a href="#" class="btn" id=>註冊</a>
-        </div>
-        <div id="tab-inner" class="">
-            <!-- 登入-->
+    <div class="tab-content">
+    <!-- 上方切換tab -->
+        <!-- <div class="btn-group checkout-btn" role="group" id="tabs">
+            <a href="#" class="tab-btn active" id=> 登入</a>
+            <a href="#" class="tab-btn" id=>註冊</a>
+        </div> -->
+        <!-- <div id="tab-inner" class=""> -->
+            <!-- 登入
             <form class="form-content" id=tab1>
-                <div class="text-center text-white td-mt-25">
+                <div class="text-center  td-mt-25">
                     <p>使用社交平台帳戶登入</p>
-                    <p>立即登入，隨時收到獨家優惠</p>
                     <div class="sign-icon mx-auto">
-                        <a href=""><i class="fab fa-facebook"></i></a></i>
+                        <a href=""><i class="fab fa-facebook"></i></ㄏㄢa></i>
                         <a href=""><i class="fab fa-line"></i></a>
                         <a href=""><i class="fab fa-google"></i></a>
                     </div>
@@ -54,11 +54,10 @@
                     <a href="" class="text-white free">免費註冊</a>
             </form>
 
-            <!-- 註冊-->
+             註冊
             <form class=" form-content">
-                <div class="text-center text-white td-mt-25">
-                    <p>使用社交平台帳戶登入</p>
-                    <p>立即登入，隨時收到獨家優惠</p>
+                <div class="text-center td-mt-25">
+                    <p>使用社交平台帳戶註冊</p>
                     <div class="sign-icon mx-auto">
                         <a href=""><i class="fab fa-facebook"></i></a></i>
                         <a href=""><i class="fab fa-line"></i></a>
@@ -78,11 +77,42 @@
                     <label for="password">密碼</label>
                     <input type="password" class="form-control" id="password" placeholder="">
             </form>
-            <button type=" button" class="mx-auto sign-in-btn  td-mb-25 td-mt-25">註冊</button>
+            <button type="button" class="mx-auto sign-up-btn  td-mb-25 td-mt-25">註冊</button>
 
         </div>
-    </div>
+    </div> -->
 
+    <!-- 登入-->
+    <div id="tab-inner" class="">
+        
+        <form class="form-content" id=tab1>
+            <!-- 社交平台登入 -->
+            <div class="text-center  td-mt-25">
+                <p>使用社交平台帳戶登入</p>
+                <div class="sign-icon mx-auto">
+                    <a href=""><i class="fab fa-facebook"></i></ㄏㄢa></i>
+                    <a href=""><i class="fab fa-line"></i></a>
+                    <a href=""><i class="fab fa-google"></i></a>
+                </div>
+                <div class="or">
+                    <span class="lines"></span>
+                    <span>或</span>
+                    <span class="lines"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="" id="email" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="password">密碼</label>
+                <input type="password" class="form-control" id="password  placeholder="">
+            </div>
+            <button type=" button" class="mx-auto sign-in-btn  td-mb-25 ">登入</button>
+            <a href="" class="free">免費註冊</a>
+        </form>
+    </div>
     <script>
         let tabLink = document.getElementById("tabs").querySelectorAll("a");
 
@@ -121,10 +151,6 @@
             }
 
         };
-
-
-
-
 
     </script>
 

@@ -1,22 +1,22 @@
 import React from 'react'
 
-function TribeCheckboxGuild(props) {
+function LanCheckboxGuild(props) {
   const { value, handleChecked, checked, children } = props
   return (
     <div>
       <input
         type="checkbox"
-        className="tribe-check-input position-relative"
-        name="tribeCheckInput"
-        id="tribeCheckInput1"
+        className="lan-check-input position-relative"
+        name="lanCheckInput"
+        id="anCheckInput1"
         value={value}
         checked={checked}
         onChange={handleChecked}
       />
       {children}
-      <label className="tribe-check-label" htmlFor="tribeCheckInput1"></label>
+      <label className="lan-check-label" htmlFor="lanCheckInput1"></label>
     </div>
   )
 }
 
-export default TribeCheckboxGuild
+export default LanCheckboxGuild

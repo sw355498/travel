@@ -21,15 +21,6 @@ function GuildFilterResult({ tribe }) {
 
   const starsTypes = ['5', '4', '3', '2', '1']
 
-  // const spinner = (
-  //   <>
-  //     <div className="d-flex justify-content-center">
-  //       <div className="spinner-border text-success" role="status">
-  //         <span className="sr-only">Loading...</span>
-  //       </div>
-  //     </div>
-  //   </>
-  // )
   return (
     <>
       <GuildFilterBar

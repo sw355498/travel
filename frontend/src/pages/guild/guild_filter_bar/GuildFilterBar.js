@@ -1,9 +1,21 @@
 import React from 'react'
-import TribeCheckboxGuild from './TribeCheckboxGuild'
 import Rating from '../../../component/Rating'
+import TribeCheckboxGuild from './TribeCheckboxGuild'
+import LanCheckboxGuild from './LanCheckboxGuild'
+import StarCheckboxGuild from './StarCheckboxGuild'
 
 function GuildFilterBar(props) {
-  const { stars, setStars, starsTypes, tags, setTags, tagTypes } = props
+  const {
+    stars,
+    setStars,
+    starsTypes,
+    tags,
+    setTags,
+    tagTypes,
+    lans,
+    setLans,
+    lansTypes,
+  } = props
 
   console.log(`###### tags: ${tags}`)
   console.log(`###### tagTypes: ${tagTypes}`)
@@ -24,6 +36,15 @@ function GuildFilterBar(props) {
     } else {
       const newStars = stars.filter((v) => v !== value)
       setStars(newStars)
+    }
+  }
+  const LanCheckHandler = (e) => {
+    const value = e.target.value
+    if (!lans.includes(value)) {
+      return setLans([...lans, value])
+    } else {
+      const newLans = lans.filter((v) => v !== value)
+      setLans(newLans)
     }
   }
 
@@ -51,6 +72,25 @@ function GuildFilterBar(props) {
             ))}
           </div>
         </div>
+        {/* <!-- 語言篩選 --> */}
+        <div class="filter-lan align-items-center">
+          <div class="filter-lan-title col-2 position-relative">
+            <p class="position-absolute text-white">語言</p>
+          </div>
+          {/* <!-- checkbox選項 --> */}
+          <div class="filter-lan-check d-flex col-10">
+            {lansTypes?.map((value, i) => (
+              <LanCheckboxGuild
+                key={i}
+                value={value}
+                checked={lans?.includes(value)}
+                handleChecked={LanCheckHandler}
+              >
+                {value}
+              </LanCheckboxGuild>
+            ))}
+          </div>
+        </div>
         {/* <!-- 星等篩選 --> */}
         <div className="filter-stars">
           <div className="filter-stars-title col-2 position-relative">
@@ -59,14 +99,14 @@ function GuildFilterBar(props) {
           {/* <!-- checkbox選項 --> */}
           <div className="filter-stars-check my-auto d-flex flex-nowrap col-10">
             {starsTypes?.map((value, i) => (
-              <TribeCheckboxGuild
+              <StarCheckboxGuild
                 key={i}
                 value={value}
                 checked={stars?.includes(value)}
                 handleChecked={starCheckHandler}
               >
                 <Rating rating={value} />
-              </TribeCheckboxGuild>
+              </StarCheckboxGuild>
             ))}
           </div>
         </div>
@@ -95,7 +135,7 @@ function GuildFilterBar(props) {
             {/* <!-- 部落 --> */}
             <div className="filter-tribe-rwd td-mb-25">
               <h2>部落篩選</h2>
-              <div className="filter-tribe-check col-10">
+              <div>
                 {tagTypes?.map((value, i) => (
                   <TribeCheckboxGuild
                     key={i}
@@ -108,17 +148,17 @@ function GuildFilterBar(props) {
                 ))}
               </div>
               {/* <!-- 星等 --> */}
-              <div className="filter-star-rwd td-mb-25">
+              <div>
                 <h2>星等</h2>
                 {starsTypes?.map((value, i) => (
-                  <TribeCheckboxGuild
+                  <StarCheckboxGuild
                     key={i}
                     value={value}
                     checked={stars?.includes(value)}
                     handleChecked={starCheckHandler}
                   >
                     <Rating rating={value} />
-                  </TribeCheckboxGuild>
+                  </StarCheckboxGuild>
                 ))}
               </div>
             </div>

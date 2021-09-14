@@ -5,10 +5,6 @@ import Rating from '../../../component/Rating'
 function GuildItem({ guild }) {
   return (
     <>
-      {/* <!-- 篩選結果 --> */}
-      {/* <section className="container guildlist-filter-result td-mb-25">
-        <h2 className="filter-result-title">篩選結果：</h2> */}
-      {/* <div className="filter-result-box d-flex flex-wrap justify-content-evenly col-12"> */}
       <div
         className="filter-result-item position-relative d-flex align-items-center"
         key={guild.id}
@@ -52,8 +48,6 @@ function GuildItem({ guild }) {
           </Link>
         </div>
       </div>
-      {/* </div> */}
-      {/* </section> */}
     </>
   )
 }
