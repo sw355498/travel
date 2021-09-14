@@ -5,7 +5,7 @@ function DropdownUl(props) {
 
   return (
     <>
-      <li>
+      <li className="fw-bolder text-content-size18 p-2 ">
         <input
           type="checkbox"
           className="tribe-check-input position-relative"

@@ -17,15 +17,16 @@ function DropdownFilter(props) {
     <>
       <div className="dropdown journeyInfo-dropdown">
         <button
-          className="btn btn-lg dropdown-toggle"
+          className="btn btn-lg td-btn-large-Sort-w d-flex align-items-center justify-content-center flex-nowrap"
           type="button"
           id="dropdownMenuButton1"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
+          <span className="text-content-size18 td-me-15 ">篩選評價</span>
           <i class="fas fa-align-right"></i>
         </button>
-        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
           {starsTypes.map((value, i) => (
             <>
               <DropdownUl
@@ -35,7 +36,7 @@ function DropdownFilter(props) {
                 handleChecked={starCheckHandler}
               >
                 {' '}
-                {value}
+                {value}星評價
               </DropdownUl>
             </>
           ))}

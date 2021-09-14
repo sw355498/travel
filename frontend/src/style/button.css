@@ -27,8 +27,8 @@
   background: #ffffff;
   border-radius: 50px;
   border: none;
-  color:  #ff9c00;
-  border:1px solid  #ff9c00;
+  color: #ff9c00;
+  border: 1px solid #ff9c00;
 }
 
 .td-btn-medium-blueborder {
@@ -39,10 +39,9 @@
   background: #ffffff;
   border-radius: 50px;
   border: none;
-  color:  #ff9c00;
-  border:1px solid  #ff9c00;
+  color: #ff9c00;
+  border: 1px solid #ff9c00;
 }
-
 
 .td-btn-large-o {
   width: 115px;
@@ -124,4 +123,15 @@
   border-radius: 50px;
   border: none;
   color: #ffffff;
+}
+
+.td-btn-large-Sort-w {
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 25px;
+  border: none;
+  color: #072b7b;
+  border: 1px solid #072b7b;
 }
