@@ -7,7 +7,6 @@ import ScrollToTop from 'react-scroll-to-top'
 // css引入
 import '../../style/spacing.css'
 import '../../style/button.css'
-import '../../style/checkbox.css'
 import '../../style/shoppingcart-cart-list.css'
 import '../../style/fons.css'
 
