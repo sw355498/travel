@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>花島</title>
+    <title>會員詳細資料</title>
     <!-- Bootstrap引入 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
@@ -62,10 +62,10 @@
           <div class="right-nav">
             <a href="通知"><i class="fas fa-comment-dots"></i></a>
             <a class="td-cart" href="購物車"
-              ><img src="/img/cart.png" alt="cart"
+              ><img src="img/cart.png" alt="cart"
             /></a>
             <a class="td-member" href="會員首頁#"
-              ><img class="td-member-avatar" src="/img/avatar.png" alt="avatar"
+              ><img class="td-member-avatar" src="img/avatar.png" alt="avatar"
             /></a>
           </div>
         </nav>
@@ -73,202 +73,187 @@
     </header>
     <!-- content -->
     <!-- <nav></nav> -->
-    <main class="align-items-center">
-      <nav class="container left-member">
-        <img
-          class="container nav-member-avatar"
-          src="/img/avatar.png"
-          alt="avatar"
-        />
-        <ul class="container list nav-member-size18">
-          <li>黃凱莉</li>
-          <li>初階會員</li>
-          <li>您的點數:10000點</li>
-        </ul>
-      </nav>
-      <nav class="container left-member2">
-        <ul class="container list nav-member2-size18">
-          <li>
-            <a href="/page/member/member-information.html">基本資料設定</a>
-          </li>
-          <li><a href="#">會籍</a></li>
-          <li><a href="#">訂單管理</a></li>
-          <li><a href="/page/member/member-hope-order.html">願望清單</a></li>
-          <li><a href="/page/member/member-Evaluation.html">我的評價</a></li>
-        </ul>
-      </nav>
-      <article class="container main-article">
-        <div class="main-article-text">訂單管理>訂單詳細資訊</div>
 
-        <article class="main-article-article">
-          <section class="">
-            <img
-              class="nav-article-section-image"
-              src="/img/訂單管理照片.jpg"
-              alt="avatar"
-            />
-            <div class="flexbox">
-              <div class="flexbox-text1">付款詳情</div>
+    <nav class="member-background">
+      <div class="container">
+        <div class="parent">
+          <div>
+            <nav class="left-member">
+              <img
+                class="nav-member-avatar"
+                src="img/avatar.png"
+                alt="avatar"
+              />
+              <ul class="container list nav-member-size18">
+                <li>黃凱莉</li>
+                <li>初階會員</li>
+                <li>您的點數:10000點</li>
+              </ul>
+            </nav>
+            <nav class="left-member2">
+              <ul class="list list1 nav-member2-size18">
+                <li ><a href="member-information.html"></a>基本資料設定</li>
+                <!-- <li><a href="#">會籍</a></li> -->
+                <li class="list-color">訂單管理</a></li>          
+                <li ><a href="member-hope-order.html">願望清單</a></li>
+                <li><a href="member-Evaluation.html">我的評價</a></li>
+              </ul>
+            </nav>
+          </div>
 
-              <li class="flexbox-text2">付款方式</li>
-              <li class="flexbox-text3">實際付款金額</li>
-              <li class="flexbox-text4">此訂單獲得點數</li>
-              <li class="flex1box-text1">付款方式</li>
-              <li class="flex1box-text2">TWD 1,799</li>
-              <li class="flex1box-text3">
+          <div class="container">
+            <div class="main-article">
+              <div class="box-order-number">
+                <p class="order-number">訂單編號#19KK052055619</p>
+                <p>訂購人姓名：黃凱莉</p>
+                <p>人數： 2人</p>
+                <p>國家/地區：台灣</p>
+                <p>電子信箱：lily@gmail.com</p>
+                <p>連絡電話：0930123456</p>
+                <p>訂購日期： 2021/6/25</p>
+              </div>
+              <div class="main-order-box">
+                <div class="main-article-text">訂單管理>訂單詳細資訊</div>
                 <img
-                  class="flex1box-image"
-                  src="/img/金錢圖案.jpg"
+                  class="nav-article-section-image"
+                  src="img/訂單管理照片.jpg"
                   alt="avatar"
-                />1000點
-              </li>
-              <!-- <div class="flexbox-text1"></div>
-              <div class="flexbox-text2">付款方式</div>
-              <div class="flexbox-text3">實際付款金額</div>
-              <div class="flexbox-text4">付款方式</div>
-              <div class="flexbox-text5">此訂單獲得點數</div>
-              <div class="flexbox-text6">付款方式</div> -->
-            </div>
-            <div class="nav-article-section-text nav-article-section-text1">
-              訂單編號#19KK052055619
-            </div>
-            <div class="nav-article-section-text nav-article-section-text2">
-              訂購人姓名：黃凱莉
-            </div>
-            <div class="nav-article-section-text nav-article-section-text3">
-              人數： 2人
-            </div>
-            <div class="nav-article-section-text nav-article-section-text4">
-              國家/地區：台灣
-            </div>
-            <div class="nav-article-section-text nav-article-section-text5">
-              電子信箱：lily@gmail.com
-            </div>
-            <div class="nav-article-section-text nav-article-section-text6">
-              連絡電話：0930123456
-            </div>
-            <div class="nav-article-section-text nav-article-section-text7">
-              訂購日期： 2021/6/25
-            </div>
-            <button
-              class="btn btn-secondary nav-article-section-delete"
-              type="button"
-              aria-label=""
-            >
-              取消訂單
-            </button>
-          </section>
-          <section class="section-journey-info">
-            <div class="journey-info-name1 mt-25">
-              <p>方案詳情</p>
-            </div>
-            <div class="journey-info-name1 mt-25">
-              <p>走進太陽的部落-靜浦部落情</p>
-            </div>
-            <div class="journey-info-smalltitle">
-              <p>一&nbsp;行程資訊&nbsp;一</p>
-            </div>
-            <div class="d-flex flex-row bd-highlight td-mt-25">
-              <div class="p-2 bd-highlight text-center">
-                <i class="fas fa-map-marker-alt icon"></i>
-              </div>
-              <div class="p-2 bd-highlight">
-                <div class="text-title-size20 mt-15">
-                  台灣&nbsp;|&nbsp;靜浦部落
-                </div>
-              </div>
-            </div>
+                />
+                <div class="flexbox">
+                  <div class="flexbox-text1">付款詳情</div>
 
-            <div class="d-flex flex-row bd-highlight td-mt-15">
-              <div class="p-2 bd-highlight text-center">
-                <i class="far fa-clock icon"></i>
-              </div>
-              <div class="p-2 bd-highlight">
-                <div class="text-title-size20 mt-15">
-                  行程長度：約 2.5小時（含著裝及解說時間，不含盥洗及接駁時間）
+                  <li class="flexbox-text2">付款方式</li>
+                  <li class="flexbox-text3">實際付款金額</li>
+                  <li class="flexbox-text4">此訂單獲得點數</li>
+                  <li class="flex1box-text1">付款方式</li>
+                  <li class="flex1box-text2">TWD 1,799</li>
+                  <li class="flex1box-text3">
+                    <img
+                      class="flex1box-image"
+                      src="img/金錢圖案.jpg"
+                      alt="avatar"
+                    />1000點
+                  </li>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-2">
-                <div class="d-flex flex-row bd-highlight td-mt-15">
+              <div class="box-main">
+                <div class="journey-info-name1 mt-25">
+                  <p>方案詳情</p>
+                </div>
+                <div class="journey-info-name1 mt-25">
+                  <p>走進太陽的部落-靜浦部落情</p>
+                </div>
+                <div class="journey-info-smalltitle">
+                  <p>一&nbsp;行程資訊&nbsp;一</p>
+                </div>
+                <div class="d-flex flex-row bd-highlight td-mt-25">
                   <div class="p-2 bd-highlight text-center">
-                    <i class="fas fa-globe"></i>
+                    <i class="fas fa-map-marker-alt icon"></i>
                   </div>
                   <div class="p-2 bd-highlight">
-                    <div class="journey-info-icon-text text-title-size20">
-                      中文導覽
+                    <div class="text-title-size18 mt-15">
+                      台灣&nbsp;|&nbsp;靜浦部落
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-10">
+
                 <div class="d-flex flex-row bd-highlight td-mt-15">
                   <div class="p-2 bd-highlight text-center">
-                    <i class="fas fa-motorcycle"></i>
+                    <i class="far fa-clock icon"></i>
                   </div>
-
                   <div class="p-2 bd-highlight">
-                    <div class="text-title-size20">機車</div>
+                    <div class="text-title-size18 mt-15">
+                      行程長度：約
+                      2.5小時（含著裝及解說時間，不含盥洗及接駁時間）
+                    </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-2">
+                    <div class="d-flex flex-row bd-highlight td-mt-15">
+                      <div class="p-2 bd-highlight text-center">
+                        <i class="fas fa-globe"></i>
+                      </div>
+                      <div class="p-2 bd-highlight">
+                        <div class="journey-info-icon-text text-title-size18">
+                          中文導覽
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="journey-info-smalltitle td-mt-50">
+                  <p>一&nbsp;行程簡介&nbsp;一</p>
+                </div>
+                <div class="journey-info-smalltitle td-mt-25">
+                  <p>半日漁獵生活體驗:</p>
+                </div>
+                <div class="journey-info-smalltitle td-mt-25">
+                  <p>
+                    踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗)
+                  </p>
+                </div>
+                <div class="journey-info-name mt-40">
+                  <p>商品說明</p>
+                </div>
+
+                <div class="journey-info-smalltitle td-mt-25">
+                  <p>一&nbsp;行程資訊&nbsp;一</p>
+                </div>
+                <div class="journey-info-smalltitle td-mt-25">
+                  <p>&nbsp;&nbsp;&nbsp;&nbsp;上午場-09：00 / 下午場-14：00</p>
+                  <p>
+                    <li class="journey-info-smalltitle-list">
+                      花蓮靜浦部落集合
+                    </li>
+                  </p>
+                  <br />
+                  <p>&nbsp;&nbsp;開啟靜浦部落的半日漁獵生活體驗：</p>
+                  <p>
+                    <li class="journey-info-smalltitle-list">
+                      踏上膠筏，划向秀姑巒溪(約50分鐘)
+                    </li>
+                  </p>
+                  <p>
+                    <li class="journey-info-smalltitle-list">
+                      岸邊找尋浪花蟹X八卦網捕魚體驗(約60分鐘)
+                    </li>
+                  </p>
+                  <p>
+                    <li class="journey-info-smalltitle-list">
+                      部落神射手－射箭體驗(約40分鐘)
+                    </li>
+                  </p>
+                </div>
               </div>
+              <button
+                class="btn btn-secondary nav-article-section-delete"
+                type="button"
+                aria-label=""
+              >
+                取消訂單
+              </button>
             </div>
-            <div class="journey-info-smalltitle td-mt-50">
-              <p>一&nbsp;行程簡介&nbsp;一</p>
-            </div>
-            <div class="journey-info-smalltitle td-mt-25">
-              <p>半日漁獵生活體驗:</p>
-            </div>
-            <div class="journey-info-smalltitle td-mt-25">
-              <p>
-                踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗)
-              </p>
-            </div>
-            <div class="journey-info-name mt-40">
-              <p>商品說明</p>
-            </div>
-
-            <div class="journey-info-smalltitle td-mt-25">
-              <p>一&nbsp;行程資訊&nbsp;一</p>
-            </div>
-            <div class="journey-info-smalltitle td-mt-25">
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;上午場-09：00 / 下午場-14：00</p>
-              <p>
-                <li class="journey-info-smalltitle-list">花蓮靜浦部落集合</li>
-              </p>
-              <br />
-              <p>&nbsp;&nbsp;開啟靜浦部落的半日漁獵生活體驗：</p>
-              <p>
-                <li class="journey-info-smalltitle-list">
-                  踏上膠筏，划向秀姑巒溪(約50分鐘)
-                </li>
-              </p>
-              <p>
-                <li class="journey-info-smalltitle-list">
-                  岸邊找尋浪花蟹X八卦網捕魚體驗(約60分鐘)
-                </li>
-              </p>
-              <p>
-                <li class="journey-info-smalltitle-list">
-                  部落神射手－射箭體驗(約40分鐘)
-                </li>
-              </p>
-            </div>
-          </section>
-        </article>
-      </article>
-      <div class="main-order-evaluation">訂單評價</div>
-      <img class="main-order-evaluation1" src="/img/訂單評價.jpg" alt="" />
-
-      <button
-        class="btn btn-secondary nav-article-section-detel"
-        type="button"
-        aria-label=""
-      >
-        詳細資訊
-      </button>
-    </main>
+          </div>
+          <div class="container">
+            <div class="main-order-evaluation">訂單評價</div>
+            <input
+              type="email"
+              class="form-control main-text2"
+              id="exampleFormControlInput1"
+              placeholder="0912345678"
+            />
+            <button
+              class="btn btn-secondary nav-detel"
+              type="button"
+              aria-label=""
+            >
+              評價
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <!-- content end-->
     <!-- footer -->
