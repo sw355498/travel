@@ -13,7 +13,6 @@ function CartTitle(props) {
   const [recommends, setRecommends] = useState(JourneyData)
   //暫時使用星級篩選
   let attach = recommends.Info.filter((recommend) => recommend.rating >= 5)
-  console.log(attach[0])
   return (
     <>
       {/* 其旅客還購買web版 */}
