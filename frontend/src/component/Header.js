@@ -32,17 +32,20 @@ function Header() {
               </Link>
             </ul>
             {/* 導覽列登入前右側 */}
-            {/* <div className="td-nav-before d-flex align-items-center">
+            <div className="td-nav-before d-flex align-items-center">
               <a className="btn td-btn-medium-o td-header-login text-center">
                 登入
               </a>
-              <a className="btn td-btn-medium-b td-header-register text-center">
+              <Link
+                to="/Register"
+                className="btn td-btn-medium-b td-header-register text-center"
+              >
                 註冊
-              </a>
-            </div> */}
+              </Link>
+            </div>
 
             {/* 導覽列登入後右側 */}
-            <div className="td-right-nav">
+            {/* <div className="td-right-nav">
               <a href="通知">
                 <i className="fas fa-comment-dots"></i>
               </a>
@@ -60,7 +63,7 @@ function Header() {
               >
                 <img className="td-member-avatar" src={avatar} alt="avatar" />
               </Link>
-            </div>
+            </div> */}
 
             {/* 漢堡 */}
             <div className="td-burger">

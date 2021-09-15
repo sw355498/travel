@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import GuildFilterBar from '../guild_filter_bar/GuildFilterBar'
-import GuildList from '../guild_list/guildList'
+import GuildList from '../guild_list/GuildList'
 import GuildData from '../../../data/guildData'
 
 function GuildFilterResult({ tribe }) {
-  // eslint-disable-next-line no-unused-vars
   const [guilds, setGuilds] = useState(GuildData)
   const [displayGuilds, setDisplayGuilds] = useState(GuildData)
   const [tags, setTags] = useState(['靜浦部落'])
+  const [lans, setLans] = useState(['中文'])
   const [stars, setStars] = useState(['5'])
   const tagTypes = [
     '靜浦部落',
@@ -18,7 +18,7 @@ function GuildFilterResult({ tribe }) {
     '奇萊雅部落',
     '撒固兒',
   ]
-
+  const lanTypes = ['中文', '英文']
   const starsTypes = ['5', '4', '3', '2', '1']
 
   return (
@@ -27,12 +27,20 @@ function GuildFilterResult({ tribe }) {
         tagTypes={tagTypes}
         tags={tags}
         setTags={setTags}
+        lanTypes={lanTypes}
+        lans={lans}
+        setLans={setLans}
         stars={stars}
         setStars={setStars}
         starsTypes={starsTypes}
       />
       <div className="container td-mt-75 filter-resultcontainer ">
-        <GuildList tags={tags} stars={stars} guilds={displayGuilds} />
+        <GuildList
+          tags={tags}
+          slans={lans}
+          tars={stars}
+          guilds={displayGuilds}
+        />
       </div>
     </>
   )

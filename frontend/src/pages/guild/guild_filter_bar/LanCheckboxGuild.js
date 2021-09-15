@@ -8,7 +8,7 @@ function LanCheckboxGuild(props) {
         type="checkbox"
         className="lan-check-input position-relative"
         name="lanCheckInput"
-        id="anCheckInput1"
+        id="lanCheckInput1"
         value={value}
         checked={checked}
         onChange={handleChecked}

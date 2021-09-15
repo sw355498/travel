@@ -10,6 +10,7 @@ import Guild from './pages/Guild'
 import GuildInfo from './pages/GuildInfo'
 import Shoppingcart from './pages/shoppingcart/Shoppingcart'
 import Pay from './pages/shoppingcart/Pay'
+import Register from './pages/sign-in-up/Register'
 import './style/header.css'
 import './style/footer.css'
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/Shoppingcart" component={Shoppingcart} />
           <Route path="/Pay" component={Pay} />
           <Redirect to="/" />
+          <Route path="/Register" component={Register} />
         </Switch>
         <Footer />
       </ScrollUp>

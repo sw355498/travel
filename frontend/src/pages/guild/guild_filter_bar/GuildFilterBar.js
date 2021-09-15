@@ -147,6 +147,19 @@ function GuildFilterBar(props) {
                   </TribeCheckboxGuild>
                 ))}
               </div>
+              {/* 語言 */}
+              <div>
+                {lansTypes?.map((value, i) => (
+                  <LanCheckboxGuild
+                    key={i}
+                    value={value}
+                    checked={lans?.includes(value)}
+                    handleChecked={LanCheckHandler}
+                  >
+                    {value}
+                  </LanCheckboxGuild>
+                ))}
+              </div>
               {/* <!-- 星等 --> */}
               <div>
                 <h2>星等</h2>

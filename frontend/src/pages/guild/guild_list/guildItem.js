@@ -22,6 +22,8 @@ function GuildItem({ guild }) {
             />
             {/* 姓名 */}
             <div className="guild-info-name text-center">{guild.name}</div>
+            {/* 語言 */}
+            <div className="guild-info-lan text-center">{guild.lan}</div>
             {/* 星等 */}
             <div className="guild-info-stars mx-auto">
               <Rating
