@@ -99,7 +99,7 @@ function CartList(props) {
     // 比對當前加入的行程id是否已存在
     const index = currentLike.findIndex((v) => v.id === item.id)
     if (index > -1) {
-      currentLike.splice(currentLike.indexOf(item, 1))
+      currentLike.splice(currentLike.indexOf(currentLike[index]), 1)
     } else {
       currentLike.push(item)
     }
@@ -115,7 +115,8 @@ function CartList(props) {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
     //將當前選擇的行程從localStorage移除
-    currentCart.splice(currentCart.indexOf(item, 1))
+    const index = currentCart.findIndex((v) => v.id === item.id)
+    currentCart.splice(currentCart.indexOf(currentCart[index]), 1)
     localStorage.setItem('cart', JSON.stringify(currentCart))
     // 設定資料
     setMycart(currentCart)
@@ -135,7 +136,7 @@ function CartList(props) {
   }
 
   // checkbox全選設定：單一
-  function checkOne() {
+  function checkOne(item) {
     let ckeckOne = document.getElementsByName('ckeckOne')
     let flag = true
     for (let i = 0; i < ckeckOne.length; i++) {
@@ -155,7 +156,7 @@ function CartList(props) {
     let ckeckOne = document.getElementsByName('ckeckOne')
     for (let i = 0; i < ckeckOne.length; i++) {
       if (ckeckOne[i].checked) {
-        deleteCartToLocalStorage(item)
+        deleteCartToLocalStorage(item[i])
       }
     }
   }
@@ -186,10 +187,14 @@ function CartList(props) {
               <div
                 className="col-3 col-lg-1"
                 onClick={() => {
-                  checkOne()
+                  checkOne(item)
                 }}
               >
-                <input className="my-auto checkbox-size" type="checkbox" name="ckeckOne" />
+                <input
+                  className="my-auto checkbox-size"
+                  type="checkbox"
+                  name="ckeckOne"
+                />
               </div>
               {/* 行程圖片 */}
               <div className="col-9 col-lg-4 d-flex justify-content-start justify-content-lg-center">
@@ -278,7 +283,7 @@ function CartList(props) {
             <button
               className="btn td-btn-large-delete text-title-size20"
               onClick={() => {
-                deleteCheck(mycartDisplay.item)
+                deleteCheck(mycartDisplay)
               }}
             >
               刪除已選項目

@@ -4,11 +4,10 @@ import { withRouter } from 'react-router-dom'
 import DatePicker from './date_picker/DatePicker'
 import Counter from './Counter/Counter'
 function JourneyReservationArea(props) {
-  
   console.log(props.findResult.price)
   //目前DatePicker狀態
   const [dateState, setDateState] = useState(new Date())
-  
+
   //設定counter狀態
   const [count, setCount] = useState(0)
   // 目前購物車狀態
@@ -201,7 +200,7 @@ function JourneyReservationArea(props) {
               updateCartToLocalStorage({
                 id: props.findResult._id,
                 name: props.findResult.introname,
-                amount: count,
+                amount: count + 1,
                 img: props.findResult.img1,
                 go_time: dateState,
                 guild: '雅馨',
