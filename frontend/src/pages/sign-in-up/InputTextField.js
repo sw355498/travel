@@ -25,10 +25,10 @@ function InputTextField({
           id={name}
           name={name}
           type={fieldType}
-          className={`form-control ${error !== '' ? 'is-invalid' : ''}`}
+          //   className={`form-control ${error !== '' ? 'is-invalid' : ''}`}
           value={state}
           onChange={setState}
-          required={required}
+          //   required={required}
           minLength={minLength}
           maxLength={maxLength}
           pattern={pattern}

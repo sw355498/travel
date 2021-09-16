@@ -11,6 +11,7 @@ import GuildInfo from './pages/GuildInfo'
 import Shoppingcart from './pages/shoppingcart/Shoppingcart'
 import Pay from './pages/shoppingcart/Pay'
 import Register from './pages/sign-in-up/Register'
+import Login from './pages/sign-in-up/Login'
 import './style/header.css'
 import './style/footer.css'
 
@@ -28,8 +29,9 @@ function App() {
           <Route path="/GuildInfo" component={GuildInfo} />
           <Route path="/Shoppingcart" component={Shoppingcart} />
           <Route path="/Pay" component={Pay} />
-          <Redirect to="/" />
           <Route path="/Register" component={Register} />
+          <Route path="/Login" component={Login} />
+          <Redirect to="/" />
         </Switch>
         <Footer />
       </ScrollUp>

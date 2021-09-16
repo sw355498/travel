@@ -33,9 +33,12 @@ function Header() {
             </ul>
             {/* 導覽列登入前右側 */}
             <div className="td-nav-before d-flex align-items-center">
-              <a className="btn td-btn-medium-o td-header-login text-center">
+              <Link
+                to="/Login"
+                className="btn td-btn-medium-o td-header-login text-center"
+              >
                 登入
-              </a>
+              </Link>
               <Link
                 to="/Register"
                 className="btn td-btn-medium-b td-header-register text-center"

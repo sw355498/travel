@@ -17,6 +17,10 @@ a {
   border: 2px solid var(--blue-color);
   border-radius: 30px;
 }
+.tab-content .form-control:focus {
+  box-shadow: unset;
+  border-color: var(--blue-color);
+}
 .form-group {
   color: #000;
   margin-bottom: 1rem;
@@ -27,7 +31,7 @@ a {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
-  font-size: 20px;
+  /* font-size:  20px; */
   font-weight: normal;
 }
 .form-control {
@@ -92,4 +96,5 @@ label {
 }
 .free {
   color: var(--blue-color);
+  font-size: 16px;
 }
