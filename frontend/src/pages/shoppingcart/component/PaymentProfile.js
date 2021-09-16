@@ -1,17 +1,32 @@
+//模組引入
+import React, { useState, useEffect } from 'react'
+import Cards from 'react-credit-cards'
+
 // css引入
 import '../../../style/spacing.css'
 import '../../../style/button.css'
 // import '../../../style/checkbox.css'
 import '../../../style/shoppingcart-payment.css'
 import '../../../style/fons.css'
+import 'react-credit-cards/es/styles-compiled.css'
 
 function PaymentProfile() {
+  //信用卡卡號
+  const [number, setNumber] = useState('')
+  //信用卡持卡人姓名
+  const [name, setName] = useState('')
+  //信用卡到期日
+  const [expiry, setExpiry] = useState('')
+  //信用卡CVC確認碼
+  const [cvc, setCvc] = useState('')
+  const [focus, setFocus] = useState('')
+
   /*信用卡付款*/
   // let creditCard = document.getElementById('creditCard')
   // let creditCardMaterial = document.getElementById('creditCardMaterial')
   // creditCard.addEventListener('click', function () {
   //   creditCardMaterial.classList.remove('pay-switch')
-  //   transferMaterial.classList.add('pay-switch')
+  //   // transferMaterial.classList.add('pay-switch')
   // })
   /*轉帳代繳*/
   // let transfer = document.getElementById('transfer')
@@ -20,8 +35,6 @@ function PaymentProfile() {
   //   creditCardMaterial.classList.add('pay-switch')
   //   transferMaterial.classList.remove('pay-switch')
   // })
-
-
 
   return (
     <>
@@ -58,6 +71,7 @@ function PaymentProfile() {
                     type="radio"
                     name="pay"
                     id="creditCard"
+                    checked="true"
                   />
                   <span class="text-title-size20">信用卡付款</span>
                   <input
@@ -69,8 +83,61 @@ function PaymentProfile() {
                   <span class="text-title-size20">轉帳代繳</span>
                 </div>
                 {/* 信用卡付款資料填寫 */}
-                <div class="td-mt-25 pay-switch" id="creditCardMaterial">
-                  <div class="row">
+                <div class="td-mt-25 row" id="PaymentForm">
+                  <Cards
+                    number={number}
+                    name={name}
+                    expiry={expiry}
+                    cvc={cvc}
+                    focused={focus}
+                  />
+                  <form>
+                    <div class="col-12 my-2">
+                      <input
+                      class="form-control"
+                        type="tel"
+                        name="number"
+                        placeholder="卡號"
+                        value={number}
+                        onChange={(e) => setNumber(e.target.value)}
+                        onFocus={(e) => setFocus(e.target.name)}
+                      />
+                    </div>
+                    <div class="col-12 mb-2">
+                      <input
+                      class="form-control"
+                        type="text"
+                        name="name"
+                        placeholder="持卡人姓名"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        onFocus={(e) => setFocus(e.target.name)}
+                      />
+                    </div>
+                    <div class="col-12 mb-2">
+                      <input
+                      class="form-control"
+                        type="text"
+                        name="expiry"
+                        placeholder="MM/YY 有效日期"
+                        value={expiry}
+                        onChange={(e) => setExpiry(e.target.value)}
+                        onFocus={(e) => setFocus(e.target.name)}
+                      />
+                    </div>
+                    <div class="col-12 mb-2">
+                      <input
+                      class="form-control"
+                        type="tel"
+                        name="cvc"
+                        placeholder="CVC"
+                        value={cvc}
+                        onChange={(e) => setCvc(e.target.value)}
+                        onFocus={(e) => setFocus(e.target.name)}
+                      />
+                    </div>
+                  </form>
+                  {/* <div class="row">
                     <div class="col-12 mb-2">
                       <label>信用卡號:</label>
                     </div>
@@ -138,7 +205,7 @@ function PaymentProfile() {
                         aria-label="檢驗碼"
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 {/* 轉帳代繳付款資料填寫 */}
                 <div class="td-mt-25 pay-switch" id="transferMaterial">
