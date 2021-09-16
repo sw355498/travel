@@ -6,17 +6,19 @@ import Pagination from './pagination/Pagination'
 import '../../style/journey.css'
 import { useLocation } from 'react-router-dom'
 
+import qs from "qs"
+
 function useQuery() {
-  return new URLSearchParams(useLocation().search)
+  return qs.parse(useLocation().search.slice(1))
 }
 
 function Journey() {
   const query = useQuery()
-  const tribe = query.get('tribe')
+  const {tribes} = query
   return (
     <>
       <JourneyBanner />
-      <JourneyFilterResult tribe={tribe} />
+      <JourneyFilterResult tribes={tribes} />
       <Pagination />
       <ScrollToTop smooth />
     </>

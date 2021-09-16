@@ -5,7 +5,7 @@ function DropdownUl(props) {
 
   return (
     <>
-      <li className="fw-bolder text-content-size18 p-2 ">
+      <li className="fw-bolder text-content-size18 p-2">
         <input
           type="checkbox"
           className=" position-relative"
@@ -14,7 +14,6 @@ function DropdownUl(props) {
           value={value}
           checked={checked}
           onChange={handleChecked}
-
         />
         {children}
         <label className="tribe-check-label" htmlFor="tribeCheckInput1">

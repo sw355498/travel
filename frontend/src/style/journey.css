@@ -217,7 +217,13 @@ button:hover ,.btn:hover {
 }
 @media only screen and (min-width: 768px) {
   .journey-price .td-btn-medium-w {
-    margin-top: 45px;
+   
+    margin-top: 55px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+     text-decoration: none;  
+   
   }
   .journey-price .td-btn-medium-o {
     margin-top: 10px;

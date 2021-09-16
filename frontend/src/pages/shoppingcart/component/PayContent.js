@@ -1,6 +1,7 @@
 //模組,元件引入
 import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
+import moment from 'moment'
 import { Modal, Button } from 'react-bootstrap'
 
 // css引入
@@ -109,7 +110,10 @@ function PayContent(props) {
                         <a className="shoppingcart-title" href="/">
                           {item.name}
                         </a>
-                        <div className="td-mt-25">{item.go_time}</div>
+                        <div className="td-mt-25">
+                          {' '}
+                          {moment(item.go_time).format('YYYY-MM-DD')}
+                        </div>
                         <div className="td-mt-25">帶團導遊：{item.guild}</div>
                         <div className="td-mt-25">人數： {item.amount} 人</div>
                       </div>

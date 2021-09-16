@@ -15,7 +15,7 @@ function JourneyItem({ product }) {
         <div className="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
           <div className="row ">
             <div className="col-md-12 order-1">
-              <div className="d-flex justify-content-between mt-md-2">
+              <div className="d-flex justify-content-between mt-lg-2 mt-md-3">
                 <div className="title">{product.name}</div>
                 <div className="tag">
                   <i className="fas fa-tags">{product.tribe}</i>
@@ -26,7 +26,7 @@ function JourneyItem({ product }) {
           <div className="col-12 reviewStar">
             <div>
               <div className="row">
-                <div className="col-9 col-md-10">
+                <div className="col-9 col-md-12">
                   <div className="d-flex align-items-center">
                     <label className="ml-5">
                       <Rating
@@ -54,7 +54,7 @@ function JourneyItem({ product }) {
         <div className="col-md-3 journey-price  mt-md-4">
           <div className="row">
             <div className="col-7 col-md-12 d-md-flex justify-content-md-center">
-              <p className="mt-3">TWD&nbsp;{product.price}</p>
+              <p className="mt-lg-3">TWD&nbsp;{product.price}</p>
             </div>
             <div className="col-5 col-md-12 d-flex flex-md-column align-items-md-center justify-content-between ">
               <Link
@@ -63,7 +63,6 @@ function JourneyItem({ product }) {
               >
                 <span>詳細</span>
               </Link>
-              <button className="td-btn-medium-o">選擇</button>
               <i className="far fa-heart mb-1 fa-heart-hide"></i>
             </div>
           </div>

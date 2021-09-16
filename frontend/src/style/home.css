@@ -114,6 +114,8 @@ button:hover,
   color: #000000;
   border-radius: 50%;
   margin-left: 5px;
+  margin-right:5px;
+margin-top:0%;
 }
 
 .dropdown-row .show a,
@@ -144,13 +146,14 @@ button:hover,
   color: #000000;
 }
 
-.form-check-input:checked[type='radio'] {
+.form-check-input:checked[type='checkbox'] {
   content: '';
   width: 20px;
   height: 20px;
   border-radius: 50%;
   visibility: visible;
   background: var(--blue-color);
+  margin-right:5px;
 }
 
 .form-check-inline {

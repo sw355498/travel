@@ -70,7 +70,7 @@ function Home() {
           </div>
         </section>
       </Fade>
-      <HomeGallryArea />
+      <HomeGallryArea tribes={tribes}/>
       <HomeExcellentGuide />
       <ScrollToTop smooth />
     </>

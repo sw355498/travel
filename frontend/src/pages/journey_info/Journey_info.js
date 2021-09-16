@@ -1,9 +1,9 @@
 import React from 'react'
 import ScrollToTop from 'react-scroll-to-top'
+import Rating from '../../component/Rating'
 import journeyinfoData from './JourneyInfoData/JourneyInfoData'
 import JourneyBanner from '../journey/banner/journeyBanner'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
-import JourneyShoppingNote from './shopping_notes/journeyShoppingNote'
 import JourneyCoustomerReview from './coustomer_review/journeyCoustomerReview'
 import Pagination from '../journey/pagination/Pagination'
 import '../../style/journey-info.css'
@@ -25,23 +25,17 @@ function Journey_info(props) {
             <p>{findResult.name}</p>
           </div>
           <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center flex-column flex-md-row align-items-center">
-            <i className="far fa-heart td-me-50 journey-info-like order-2 order-md-1"></i>
+            <i className="far fa-heart td-me-50 journey-info-like order-2 order-md-1 mt-md-2"></i>
             <p className="journey-info-price order-1 order-md-2">
               TWD{findResult.price} 起
             </p>
           </div>
         </div>
-        <div className="row d-flex justify-content-end journey-info-point">
-          <div className="d-flex justify-content-md-end justify-content-center td-mt-15 align-items-center">
-            {' '}
-            5.0 &nbsp;
-            <i className="fas fa-star small-star "></i>
-            <i className="fas fa-star small-star "></i>
-            <i className="fas fa-star small-star "></i>
-            <i className="fas fa-star small-star "></i>
-            <i className="fas fa-star small-star "></i>
-          </div>
+        <div className="d-flex justify-content-end">
+          {' '}
+          <Rating rating={findResult.rating}></Rating>
         </div>
+
         <div className="journey-info-smalltitle">
           <p>一&nbsp;行程資訊&nbsp;一</p>
         </div>
@@ -62,7 +56,7 @@ function Journey_info(props) {
             <i className="far fa-clock icon"></i>
           </div>
           <div className="p-2 bd-highlight">
-            <div className="text-title-size20 mt-1">{findResult.describe}</div>
+            <div className="text-title-size20 mt-1">{`行程長度：約${findResult.total_time}小時`}</div>
           </div>
         </div>
         <div className="row">
@@ -129,8 +123,34 @@ function Journey_info(props) {
           />
         </div>
       </div>
-      <JourneyReservationArea findResult={findResult}/>
-      <JourneyShoppingNote />
+      <JourneyReservationArea findResult={findResult} />
+
+      <div className="container td-mt-75 journey-watchoutnote">
+        <div className="td-mt-25">&nbsp;</div>
+        <div className="journey-info-name ">
+          <p>備註</p>
+        </div>
+        <div className="td-mt-25 ">
+          <p>{findResult.Precautions}</p>
+        </div>
+        <div className="td-md-25">&nbsp;</div>
+      </div>
+
+      <div className="container td-mt-75 journey-notes">
+        <div className="journey-info-name ">
+          <p>取消政策</p>
+        </div>
+        <div className="td-mt-25">
+          <p>- 所選日期 3 天（含）之前取消，收取手續費 0%</p>
+          <p> - 所選日期 0 ~ 2 天之間取消，收取手續費 100%</p>
+          <p className="remark">
+            注意：由於站內商品來自全球各地，訂單取消時間將依該供應商所在時區判定。供應商需
+            2-5
+            個工作天進行取消流程，依照您購買的商品取消政策收取手續費，並於取消流程完成後14
+            個工作天內退款 。
+          </p>
+        </div>
+      </div>
       <JourneyCoustomerReview />
       <Pagination />
       <ScrollToTop smooth />
