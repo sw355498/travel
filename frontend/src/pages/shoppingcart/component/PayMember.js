@@ -1,12 +1,5 @@
 import React, { useState } from 'react'
 
-// css引入
-import '../../../style/spacing.css'
-import '../../../style/button.css'
-// import '../../../style/checkbox.css'
-import '../../../style/shoppingcart-payment.css'
-import '../../../style/fons.css'
-
 function PayMember() {
   // 姓氏
   const [surName, setSurName] = useState('')

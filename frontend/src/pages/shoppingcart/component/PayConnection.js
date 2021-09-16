@@ -1,10 +1,3 @@
-// css引入
-import '../../../style/spacing.css'
-import '../../../style/button.css'
-// import '../../../style/checkbox.css'
-import '../../../style/shoppingcart-payment.css'
-import '../../../style/fons.css'
-
 function PayConnection() {
   return (
     <>

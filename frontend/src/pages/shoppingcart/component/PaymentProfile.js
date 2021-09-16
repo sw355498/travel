@@ -2,14 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import Cards from 'react-credit-cards'
 
-// css引入
-import '../../../style/spacing.css'
-import '../../../style/button.css'
-// import '../../../style/checkbox.css'
-import '../../../style/shoppingcart-payment.css'
-import '../../../style/fons.css'
-import 'react-credit-cards/es/styles-compiled.css'
-
 function PaymentProfile() {
   //信用卡卡號
   const [number, setNumber] = useState('')

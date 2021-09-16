@@ -3,13 +3,6 @@ import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import moment from 'moment'
 
-// css引入
-import '../../../style/spacing.css'
-import '../../../style/button.css'
-// import '../../../style/checkbox.css'
-import '../../../style/shoppingcart-cart-list.css'
-import '../../../style/fons.css'
-
 function CartList(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
@@ -17,15 +10,12 @@ function CartList(props) {
   const [dataLoading, setDataLoading] = useState(false)
   //收藏
   const [like, setLike] = useState([])
+  const [likeStyle, setLikeStyle] =useState()
 
   function getCartFromLocalStorage() {
     // 開啟載入的指示圖示
     setDataLoading(true)
-
     const newCart = localStorage.getItem('cart') || '[]'
-
-    // console.log(JSON.parse(newCart))
-
     setMycart(JSON.parse(newCart))
   }
 
@@ -98,6 +88,7 @@ function CartList(props) {
 
     // 比對當前加入的行程id是否已存在
     const index = currentLike.findIndex((v) => v.id === item.id)
+    console.log(index)
     if (index > -1) {
       currentLike.splice(currentLike.indexOf(currentLike[index]), 1)
     } else {
