@@ -103,9 +103,13 @@ function PayContent(props) {
                         <a className="shoppingcart-title" href="/">
                           {item.name}
                         </a>
-                        <div className="td-mt-25">{moment(item.go_time).format('YYYY-MM-DD')}</div>
+                        <div className="td-mt-25">
+                          {moment(item.go_time).format('YYYY-MM-DD')}
+                        </div>
                         <div className="td-mt-25">帶團導遊：{item.guild}</div>
-                        <div className="td-mt-25">人數： {item.amount} 人</div>
+                        <div className="td-mt-25">
+                          人數：<span className="fw-bold text-title-size24"> {item.amount}</span> 人
+                        </div>
                       </div>
                       {/* 價錢 */}
                       <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
@@ -121,7 +125,8 @@ function PayContent(props) {
                 <div class="row align-items-center text-center td-py-25 ">
                   <div class="col-12 col-lg-6 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
                     <div class="text-title-size20 me-1">
-                      {mycartDisplay.length}件商品合計
+                      <span className="fw-bold text-title-size24">{mycartDisplay.length}</span>
+                      件商品合計
                     </div>
                     <div>
                       <img src="/images/total.png" alt="total" />
