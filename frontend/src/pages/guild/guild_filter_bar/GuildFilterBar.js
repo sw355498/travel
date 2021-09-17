@@ -6,15 +6,15 @@ import StarCheckboxGuild from './StarCheckboxGuild'
 
 function GuildFilterBar(props) {
   const {
-    stars,
-    setStars,
-    starsTypes,
     tags,
     setTags,
     tagTypes,
     lans,
     setLans,
-    lansTypes,
+    lanTypes,
+    stars,
+    setStars,
+    starsTypes,
   } = props
 
   console.log(`###### tags: ${tags}`)
@@ -29,15 +29,6 @@ function GuildFilterBar(props) {
       setTags(newTags)
     }
   }
-  const starCheckHandler = (e) => {
-    const value = e.target.value
-    if (!stars.includes(value)) {
-      return setStars([...stars, value])
-    } else {
-      const newStars = stars.filter((v) => v !== value)
-      setStars(newStars)
-    }
-  }
   const LanCheckHandler = (e) => {
     const value = e.target.value
     if (!lans.includes(value)) {
@@ -45,6 +36,15 @@ function GuildFilterBar(props) {
     } else {
       const newLans = lans.filter((v) => v !== value)
       setLans(newLans)
+    }
+  }
+  const starCheckHandler = (e) => {
+    const value = e.target.value
+    if (!stars.includes(value)) {
+      return setStars([...stars, value])
+    } else {
+      const newStars = stars.filter((v) => v !== value)
+      setStars(newStars)
     }
   }
 
@@ -79,7 +79,7 @@ function GuildFilterBar(props) {
           </div>
           {/* <!-- checkbox選項 --> */}
           <div class="filter-lan-check d-flex col-10">
-            {lansTypes?.map((value, i) => (
+            {lanTypes?.map((value, i) => (
               <LanCheckboxGuild
                 key={i}
                 value={value}
@@ -149,7 +149,7 @@ function GuildFilterBar(props) {
               </div>
               {/* 語言 */}
               <div>
-                {lansTypes?.map((value, i) => (
+                {lanTypes?.map((value, i) => (
                   <LanCheckboxGuild
                     key={i}
                     value={value}

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import GuildFilterBar from '../guild_filter_bar/GuildFilterBar'
 import GuildList from '../guild_list/GuildList'
 import GuildData from '../../../data/guildData'
-function GuildFilterResult({ tribe }) {
+function GuildFilterResult({ tribes }, { languages }) {
   const [guilds, setGuilds] = useState(GuildData)
   const [displayGuilds, setDisplayGuilds] = useState(GuildData)
   const [tags, setTags] = useState(['靜浦部落'])
@@ -15,7 +15,7 @@ function GuildFilterResult({ tribe }) {
     '水璉部落',
     '奇美部落',
     '奇萊雅部落',
-    '撒固兒',
+    '撒固兒部落',
   ]
   const lanTypes = ['中文', '英文']
   const starsTypes = ['5', '4', '3', '2', '1']
@@ -36,8 +36,8 @@ function GuildFilterResult({ tribe }) {
       <div className="container td-mt-75 filter-resultcontainer ">
         <GuildList
           tags={tags}
-          slans={lans}
-          tars={stars}
+          lans={lans}
+          stars={stars}
           guilds={displayGuilds}
         />
       </div>

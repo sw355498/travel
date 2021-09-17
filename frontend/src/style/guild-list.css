@@ -187,6 +187,10 @@
 }
 
 /* 語言篩選 */
+.guild-info-lan {
+  font-size: 16px;
+  color: var(--tribe-color);
+}
 .lan-check-input,
 .stars-check-input {
   visibility: hidden;
