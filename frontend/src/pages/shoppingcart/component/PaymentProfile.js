@@ -1,27 +1,32 @@
-// css引入
-import '../../../style/spacing.css'
-import '../../../style/button.css'
-import '../../../style/checkbox.css'
-import '../../../style/shoppingcart-payment.css'
-import '../../../style/fons.css'
+//模組引入
+import React, { useState, useEffect } from 'react'
+import Cards from 'react-credit-cards'
 
 function PaymentProfile() {
+  //信用卡卡號
+  const [number, setNumber] = useState('')
+  //信用卡持卡人姓名
+  const [name, setName] = useState('')
+  //信用卡到期日
+  const [expiry, setExpiry] = useState('')
+  //信用卡CVC確認碼
+  const [cvc, setCvc] = useState('')
+  //輸入資料時的聚焦
+  const [focus, setFocus] = useState('')
+
+  // 付款區塊切換
+  const [cardDisplay, setCardDisplay] = useState('pay-switch')
+  const [transferDisplay, setTransferDisplay] = useState('pay-switch')
   /*信用卡付款*/
-  // let creditCard = document.getElementById('creditCard')
-  // let creditCardMaterial = document.getElementById('creditCardMaterial')
-  // creditCard.addEventListener('click', function () {
-  //   creditCardMaterial.classList.remove('pay-switch')
-  //   transferMaterial.classList.add('pay-switch')
-  // })
+  function creditCardPayment() {
+    setCardDisplay('')
+    setTransferDisplay('pay-switch')
+  }
   /*轉帳代繳*/
-  // let transfer = document.getElementById('transfer')
-  // let transferMaterial = document.getElementById('transferMaterial')
-  // transfer.addEventListener('click', function () {
-  //   creditCardMaterial.classList.add('pay-switch')
-  //   transferMaterial.classList.remove('pay-switch')
-  // })
-
-
+  function transfer() {
+    setCardDisplay('pay-switch')
+    setTransferDisplay('')
+  }
 
   return (
     <>
@@ -58,6 +63,9 @@ function PaymentProfile() {
                     type="radio"
                     name="pay"
                     id="creditCard"
+                    onChange={() => {
+                      creditCardPayment()
+                    }}
                   />
                   <span class="text-title-size20">信用卡付款</span>
                   <input
@@ -65,95 +73,116 @@ function PaymentProfile() {
                     type="radio"
                     name="pay"
                     id="transfer"
+                    onChange={() => {
+                      transfer()
+                    }}
                   />
                   <span class="text-title-size20">轉帳代繳</span>
                 </div>
                 {/* 信用卡付款資料填寫 */}
-                <div class="td-mt-25 pay-switch" id="creditCardMaterial">
-                  <div class="row">
+                <div class={`td-mt-25 row ${cardDisplay}`} id="PaymentForm">
+                  <Cards
+                    number={number}
+                    name={name}
+                    expiry={expiry}
+                    cvc={cvc}
+                    focused={focus}
+                  />
+                  <form>
+                    <div class="col-12 my-2">
+                      <input
+                        class="form-control"
+                        type="tel"
+                        name="number"
+                        placeholder="卡號"
+                        value={number}
+                        onChange={(e) => setNumber(e.target.value)}
+                        onFocus={(e) => setFocus(e.target.name)}
+                      />
+                    </div>
                     <div class="col-12 mb-2">
-                      <label>信用卡號:</label>
-                    </div>
-                    <div class="col-3 col-lg-2">
                       <input
-                        type="text"
                         class="form-control"
-                        placeholder="4碼"
-                        aria-label="信用卡1-4碼"
+                        type="text"
+                        name="name"
+                        placeholder="持卡人姓名"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        onFocus={(e) => setFocus(e.target.name)}
                       />
                     </div>
-                    <div class="col-3 col-lg-2">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="4碼"
-                        aria-label="信用卡5-8碼"
-                      />
-                    </div>
-                    <div class="col-3 col-lg-2">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="4碼"
-                        aria-label="信用卡9-12碼"
-                      />
-                    </div>
-                    <div class="col-3 col-lg-2">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="4碼"
-                        aria-label="信用卡13-16碼"
-                      />
-                    </div>
-                  </div>
-                  <div class="row td-mt-25">
                     <div class="col-12 mb-2">
-                      <label>有效日期:</label>
-                    </div>
-                    <div class="col-6 col-lg-2">
                       <input
-                        type="text"
                         class="form-control"
-                        placeholder="MM"
-                        aria-label="有效日期/月"
+                        type="text"
+                        name="expiry"
+                        placeholder="MM/YY 有效日期"
+                        value={expiry}
+                        onChange={(e) => setExpiry(e.target.value)}
+                        onFocus={(e) => setFocus(e.target.name)}
                       />
                     </div>
-                    <div class="col-6 col-lg-2">
+                    <div class="col-12 mb-2">
                       <input
-                        type="text"
                         class="form-control"
-                        placeholder="YY"
-                        aria-label="有效日期/年"
+                        type="tel"
+                        name="cvc"
+                        placeholder="CVC"
+                        value={cvc}
+                        onChange={(e) => setCvc(e.target.value)}
+                        onFocus={(e) => setFocus(e.target.name)}
                       />
                     </div>
-                    <div class="col-12 mt-4 mb-2">
-                      <label>背面檢驗碼:</label>
-                    </div>
-                    <div class="col-12 col-lg-2">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="3碼"
-                        aria-label="檢驗碼"
-                      />
-                    </div>
-                  </div>
+                  </form>
                 </div>
                 {/* 轉帳代繳付款資料填寫 */}
-                <div class="td-mt-25 pay-switch" id="transferMaterial">
+                <div
+                  class={`td-mt-25 ${transferDisplay}`}
+                  id="transferMaterial"
+                >
                   <div class="row td-mt-25">
-                    <div class="col-12 mb-2">
-                      <label>轉帳帳號:</label>
+                    <div class="col-12 td-mt-25">
+                      <select
+                        class="form-select"
+                        id="validationDefault04"
+                        required
+                      >
+                        <option selected disabled value="">
+                          銀行代碼
+                        </option>
+                        <option>004 台灣銀行</option>
+                        <option>005 土地銀行</option>
+                        <option>006 合作銀行</option>
+                        <option>007 第一商業銀行</option>
+                        <option>008 華南商業銀行</option>
+                        <option>012 台北富邦銀行</option>
+                        <option>013 國泰世華銀行銀行</option>
+                        <option>021 花旗(台灣)銀行</option>
+                        <option>053 台中商業銀行</option>
+                        <option>102 華泰商業銀行</option>
+                        <option>700 中華郵政</option>
+                        <option>803 聯邦商業銀行</option>
+                        <option>808 玉山銀行</option>
+                        <option>822 中國信託商業銀行</option>
+                      </select>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 td-mt-25">
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="MM"
+                        placeholder="請輸入轉帳帳號"
                         aria-label="轉帳帳號"
                       />
                     </div>
+                    <div class="col-12 td-mt-25">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="請輸入金額"
+                        aria-label="轉帳金額"
+                      />
+                    </div>
+                    <p class="fs-6 mt-2 text-danger">*請於24小時內完成轉帳</p>
                   </div>
                 </div>
                 {/* 發票資料 */}

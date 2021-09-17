@@ -7,6 +7,7 @@ import JourneyinfoGuideCard from './journeyinfo_guide_card/JourneyinfoGuideCard'
 import GuideData from '../../../data/guildData'
 
 function JourneyReservationArea(props) {
+  console.log(props.findResult.price)
   //目前DatePicker狀態
   const [dateState, setDateState] = useState(new Date())
   //載入導遊資料

@@ -1,12 +1,12 @@
-// css引入
-import '../../../style/spacing.css'
-import '../../../style/button.css'
-import '../../../style/checkbox.css'
-import '../../../style/shoppingcart-cart-list.css'
-import '../../../style/fons.css'
+//元件引入
+import React, { useState, useEffect } from 'react'
+import JourneyData from '../../../data/journeyInfoData'
+import { withRouter, Link } from 'react-router-dom'
 
-
-function CartTitle() {
+function CartTitle(props) {
+  const [recommends, setRecommends] = useState(JourneyData)
+  //暫時使用星級篩選
+  let attach = recommends.Info.filter((recommend) => recommend.rating >= 5)
   return (
     <>
       {/* 其旅客還購買web版 */}
@@ -18,63 +18,72 @@ function CartTitle() {
             <div className="card td-my-25 recommend-card">
               <img
                 className="recommend-img"
-                src="/images/馬太鞍部落03.jpg"
-                alt="馬太鞍部落03"
-                title="馬太鞍部落03"
+                src={`/images/data/行程照片/${attach[0].img1}`}
+                alt={attach[0].img1}
+                title={attach[0].img1}
               />
               <div className="card-body text-center">
-                <h5 className="card-title">馬太鞍部落</h5>
+                <h5 className="card-title">{attach[0].introname}</h5>
                 <p
                   className="card-text recommend-text"
-                  title="馬太鞍是一個阿美族（邦查）部落的稱呼，位在花蓮縣光復鄉馬錫山山腳下，早期是一群阿美族人生活在馬太鞍溪與烏卡蓋溪（現今大興溪）形成的一塊沖積扇地形，後來因鹽水港製糖廠（現今花蓮糖廠）的設立，在原來靠北的土地上廣植蔗糖原料－甘蔗，而使得當地的阿美族人不得不往南遷移。"
+                  title={attach[0].introcontent}
                 >
-                  馬太鞍是一個阿美族（邦查）部落的稱呼，位在花蓮縣光復鄉馬錫山山腳下，早期是一群阿美族人生活在馬太鞍溪與烏卡蓋溪（現今大興溪）形成的一塊沖積扇地形，後來因鹽水港製糖廠（現今花蓮糖廠）的設立，在原來靠北的土地上廣植蔗糖原料－甘蔗，而使得當地的阿美族人不得不往南遷移。
+                  {attach[0].introcontent}
                 </p>
-                <a href="#" className="btn td-btn-medium-o mt-3">
+                <Link
+                  to={`journey_Info/${attach[0]._id}`}
+                  className="btn td-btn-medium-o m-3"
+                >
                   查看
-                </a>
+                </Link>
               </div>
             </div>
             {/* 第二項推薦 */}
             <div className="card td-my-25 recommend-card text-center">
               <img
                 className="recommend-img"
-                src="/images/靜浦06.jpg"
-                alt="靜浦06"
-                title="靜浦06"
+                src={`/images/data/行程照片/${attach[1].img1}`}
+                alt={attach[1].img1}
+                title={attach[1].img1}
               />
               <div className="card-body">
-                <h5 className="card-title">靜浦部落</h5>
+                <h5 className="card-title">{attach[1].introname}</h5>
                 <p
                   className="card-text recommend-text"
-                  title="靜浦部落，一個洋溢熱血與熱情的太陽部落，跟著靜浦部落達人，體驗超精彩的漁獵生活吧！划上膠筏欣賞秀姑巒溪出海口豐富生態景致，學習智慧古法捕捉浪花蟹，還可體驗傳統拉弓射箭趣，簡單的半日時光，深度體驗靜浦部落生活樂！"
+                  title={attach[1].introcontent}
                 >
-                  靜浦部落，一個洋溢熱血與熱情的太陽部落，跟著靜浦部落達人，體驗超精彩的漁獵生活吧！划上膠筏欣賞秀姑巒溪出海口豐富生態景致，學習智慧古法捕捉浪花蟹，還可體驗傳統拉弓射箭趣，簡單的半日時光，深度體驗靜浦部落生活樂！
+                  {attach[1].introcontent}
                 </p>
-                <a href="#" className="btn td-btn-medium-o mt-3">
+                <Link
+                  to={`journey_Info/${attach[1]._id}`}
+                  className="btn td-btn-medium-o m-3"
+                >
                   查看
-                </a>
+                </Link>
               </div>
             </div>
             {/* 第三項推薦 */}
             <div className="card td-my-25 recommend-card text-center">
               <img
                 className="recommend-img"
-                src="/images/水璉部落3.jpg"
-                alt="水璉部落3"
-                title="水璉部落3"
+                src={`/images/data/行程照片/${attach[2].img1}`}
+                alt={attach[2].img1}
+                title={attach[2].img1}
               />
               <div className="card-body">
-                <h5 className="card-title">水璉部落</h5>
+                <h5 className="card-title">{attach[2].introname}</h5>
                 <p
                   className="card-text recommend-text"
-                  title="阿美族語中的水璉部落，寫作Ciwidian知維地岸，是「此地多蛭」的意思。聽起來，以為水璉是個荒蕪之地，然而，這裡卻是和平閒適的小盆地，在山海的包圍下，從牧牛平原到高深峽谷，從溪流沿岸到動人沙灘，都展現出水璉之美，在靜謐中，帶有無限生命力。"
+                  title={attach[2].introcontent}
                 >
-                  阿美族語中的水璉部落，寫作Ciwidian知維地岸，是「此地多蛭」的意思。聽起來，以為水璉是個荒蕪之地，然而，這裡卻是和平閒適的小盆地，在山海的包圍下，從牧牛平原到高深峽谷，從溪流沿岸到動人沙灘，都展現出水璉之美，在靜謐中，帶有無限生命力。
+                  {attach[2].introcontent}
                 </p>
-                <a href="#" className="btn td-btn-medium-o mt-3">
+                <Link
+                  to={`journey_Info/${attach[2]._id}`}
+                  className="btn td-btn-medium-o m-3"
+                >
                   查看
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -96,21 +105,24 @@ function CartTitle() {
               <div className="card td-my-25 recommend-card container p-0">
                 <img
                   className="recommend-img"
-                  src="/images/馬太鞍部落03.jpg"
-                  alt="馬太鞍部落03"
-                  title="馬太鞍部落03"
+                  src={`/images/data/行程照片/${attach[0].img1}`}
+                  alt={attach[0].img1}
+                  title={attach[0].img1}
                 />
                 <div className="card-body text-center">
-                  <h5 className="card-title">馬太鞍部落</h5>
+                  <h5 className="card-title">{attach[0].introname}</h5>
                   <p
                     className="card-text recommend-text"
-                    title="馬太鞍是一個阿美族（邦查）部落的稱呼，位在花蓮縣光復鄉馬錫山山腳下，早期是一群阿美族人生活在馬太鞍溪與烏卡蓋溪（現今大興溪）形成的一塊沖積扇地形，後來因鹽水港製糖廠（現今花蓮糖廠）的設立，在原來靠北的土地上廣植蔗糖原料－甘蔗，而使得當地的阿美族人不得不往南遷移。"
+                    title={attach[0].introcontent}
                   >
-                    馬太鞍是一個阿美族（邦查）部落的稱呼，位在花蓮縣光復鄉馬錫山山腳下，早期是一群阿美族人生活在馬太鞍溪與烏卡蓋溪（現今大興溪）形成的一塊沖積扇地形，後來因鹽水港製糖廠（現今花蓮糖廠）的設立，在原來靠北的土地上廣植蔗糖原料－甘蔗，而使得當地的阿美族人不得不往南遷移。
+                    {attach[0].introcontent}
                   </p>
-                  <a href="#" className="btn td-btn-medium-o m-3">
+                  <Link
+                    to={`journey_Info/${attach[0]._id}`}
+                    className="btn td-btn-medium-o m-3"
+                  >
                     查看
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -119,44 +131,50 @@ function CartTitle() {
               <div className="card td-my-25 recommend-card container p-0">
                 <img
                   className="recommend-img"
-                  src="/images/靜浦06.jpg"
-                  alt="靜浦06"
-                  title="靜浦06"
+                  src={`/images/data/行程照片/${attach[1].img1}`}
+                  alt={attach[1].img1}
+                  title={attach[1].img1}
                 />
                 <div className="card-body text-center">
-                  <h5 className="card-title">靜浦部落</h5>
+                  <h5 className="card-title">{attach[1].introname}</h5>
                   <p
                     className="card-text recommend-text"
-                    title="靜浦部落，一個洋溢熱血與熱情的太陽部落，跟著靜浦部落達人，體驗超精彩的漁獵生活吧！划上膠筏欣賞秀姑巒溪出海口豐富生態景致，學習智慧古法捕捉浪花蟹，還可體驗傳統拉弓射箭趣，簡單的半日時光，深度體驗靜浦部落生活樂！"
+                    title={attach[1].introcontent}
                   >
-                    靜浦部落，一個洋溢熱血與熱情的太陽部落，跟著靜浦部落達人，體驗超精彩的漁獵生活吧！划上膠筏欣賞秀姑巒溪出海口豐富生態景致，學習智慧古法捕捉浪花蟹，還可體驗傳統拉弓射箭趣，簡單的半日時光，深度體驗靜浦部落生活樂！
+                    {attach[1].introcontent}
                   </p>
-                  <a href="#" className="btn td-btn-medium-o m-3">
+                  <Link
+                    to={`journey_Info/${attach[1]._id}`}
+                    className="btn td-btn-medium-o m-3"
+                  >
                     查看
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
             {/* 第三項推薦 */}
             <div className="carousel-item">
               <div className="card td-my-25 recommend-card container p-0">
-                <img
+              <img
                   className="recommend-img"
-                  src="/images/水璉部落3.jpg"
-                  alt="水璉部落3"
-                  title="水璉部落3"
+                  src={`/images/data/行程照片/${attach[2].img1}`}
+                  alt={attach[2].img1}
+                  title={attach[2].img1}
                 />
                 <div className="card-body text-center">
-                  <h5 className="card-title">水璉部落</h5>
+                  <h5 className="card-title">{attach[2].introname}</h5>
                   <p
                     className="card-text recommend-text"
-                    title="阿美族語中的水璉部落，寫作Ciwidian知維地岸，是「此地多蛭」的意思。聽起來，以為水璉是個荒蕪之地，然而，這裡卻是和平閒適的小盆地，在山海的包圍下，從牧牛平原到高深峽谷，從溪流沿岸到動人沙灘，都展現出水璉之美，在靜謐中，帶有無限生命力。"
+                    title={attach[2].introcontent}
                   >
-                    阿美族語中的水璉部落，寫作Ciwidian知維地岸，是「此地多蛭」的意思。聽起來，以為水璉是個荒蕪之地，然而，這裡卻是和平閒適的小盆地，在山海的包圍下，從牧牛平原到高深峽谷，從溪流沿岸到動人沙灘，都展現出水璉之美，在靜謐中，帶有無限生命力。
+                    {attach[2].introcontent}
                   </p>
-                  <a href="#" className="btn td-btn-medium-o m-3">
+                  <Link
+                    to={`journey_Info/${attach[2]._id}`}
+                    className="btn td-btn-medium-o m-3"
+                  >
                     查看
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -191,4 +209,4 @@ function CartTitle() {
   )
 }
 
-export default CartTitle
+export default withRouter(CartTitle)

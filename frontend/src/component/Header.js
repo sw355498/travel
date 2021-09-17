@@ -1,4 +1,5 @@
 //元件,模組引入
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 // css引入
@@ -10,7 +11,12 @@ import logo from '../img/logo.png'
 import hualsland from '../img/花島（黑）.png'
 import cart from '../img/cart.png'
 import avatar from '../img/avatar.png'
-function Header() {
+function Header(porps) {
+  const [quantity, setQuantity] = useState()
+  setInterval(() => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+    setQuantity(currentCart.length)
+  }, 1000)
   return (
     <>
       <header className="td-header">
@@ -54,10 +60,13 @@ function Header() {
               </a>
               <Link
                 to="/Shoppingcart"
-                className="td-cart"
+                className="td-cart position-relative"
                 href="../pages/shoppingcart/ShoppingcartCartList"
               >
                 <img src={cart} alt="cart" />
+                <div className="cart-quantity justify-content-center">
+                  <p className="mt-1">{quantity}</p>
+                </div>
               </Link>
               <Link
                 to="member"

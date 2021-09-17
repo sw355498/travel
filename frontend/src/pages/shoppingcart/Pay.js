@@ -6,6 +6,14 @@ import PaymentProfile from './component/PaymentProfile'
 import PayContent from './component/PayContent'
 import ScrollToTop from 'react-scroll-to-top'
 
+// css引入
+import '../../style/spacing.css'
+import '../../style/button.css'
+import '../../style/fons.css'
+import '../../style/shoppingcart-payment.css'
+import '../../style/shoopcart-process.css'
+import 'react-credit-cards/es/styles-compiled.css'
+
 function Pay(props) {
   return (
     <>

@@ -3,13 +3,6 @@ import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import moment from 'moment'
 
-// css引入
-import '../../../style/spacing.css'
-import '../../../style/button.css'
-import '../../../style/checkbox.css'
-import '../../../style/shoppingcart-cart-list.css'
-import '../../../style/fons.css'
-
 function CartList(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
@@ -17,15 +10,12 @@ function CartList(props) {
   const [dataLoading, setDataLoading] = useState(false)
   //收藏
   const [like, setLike] = useState([])
+  const [likeStyle, setLikeStyle] =useState()
 
   function getCartFromLocalStorage() {
     // 開啟載入的指示圖示
     setDataLoading(true)
-
     const newCart = localStorage.getItem('cart') || '[]'
-
-    // console.log(JSON.parse(newCart))
-
     setMycart(JSON.parse(newCart))
   }
 
@@ -98,8 +88,9 @@ function CartList(props) {
 
     // 比對當前加入的行程id是否已存在
     const index = currentLike.findIndex((v) => v.id === item.id)
+    console.log(index)
     if (index > -1) {
-      currentLike.splice(currentLike.indexOf(item, 1))
+      currentLike.splice(currentLike.indexOf(currentLike[index]), 1)
     } else {
       currentLike.push(item)
     }
@@ -115,7 +106,8 @@ function CartList(props) {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
     //將當前選擇的行程從localStorage移除
-    currentCart.splice(currentCart.indexOf(item, 1))
+    const index = currentCart.findIndex((v) => v.id === item.id)
+    currentCart.splice(currentCart.indexOf(currentCart[index]), 1)
     localStorage.setItem('cart', JSON.stringify(currentCart))
     // 設定資料
     setMycart(currentCart)
@@ -135,7 +127,7 @@ function CartList(props) {
   }
 
   // checkbox全選設定：單一
-  function checkOne() {
+  function checkOne(item) {
     let ckeckOne = document.getElementsByName('ckeckOne')
     let flag = true
     for (let i = 0; i < ckeckOne.length; i++) {
@@ -155,7 +147,7 @@ function CartList(props) {
     let ckeckOne = document.getElementsByName('ckeckOne')
     for (let i = 0; i < ckeckOne.length; i++) {
       if (ckeckOne[i].checked) {
-        deleteCartToLocalStorage(item)
+        deleteCartToLocalStorage(item[i])
       }
     }
   }
@@ -186,10 +178,14 @@ function CartList(props) {
               <div
                 className="col-3 col-lg-1"
                 onClick={() => {
-                  checkOne()
+                  checkOne(item)
                 }}
               >
-                <input className="my-auto" type="checkbox" name="ckeckOne" />
+                <input
+                  className="my-auto checkbox-size"
+                  type="checkbox"
+                  name="ckeckOne"
+                />
               </div>
               {/* 行程圖片 */}
               <div className="col-9 col-lg-4 d-flex justify-content-start justify-content-lg-center">
@@ -212,25 +208,24 @@ function CartList(props) {
                   {moment(item.go_time).format('YYYY-MM-DD')}
                 </div>
                 <div className="td-mt-25">帶團導遊：{item.guild}</div>
-                <div className="td-mt-25">
-                  人數：
+                <div className="td-mt-25 d-flex align-items-center">
                   <button
-                    className="td-btn-people"
+                    className="td-ms-15 td-btn-medium-blueborder"
                     onClick={() => {
                       if (item.amount === 1) return
                       updateCartToLocalStorage(item, false)
                     }}
                   >
-                    -
+                    <i className="fas fa-minus"></i>
                   </button>
-                  {item.amount}
+                  <p className="td-ms-15 text-nowrap">參加人數 {item.amount}</p>
+
                   <button
-                    className="td-btn-people"
+                    className="td-ms-15 td-btn-medium-blueborder"
                     onClick={() => updateCartToLocalStorage(item, true)}
                   >
-                    +
+                    <i className="fas fa-plus"></i>
                   </button>
-                  人
                 </div>
               </div>
               {/* 收藏.刪除及價錢 */}
@@ -267,7 +262,7 @@ function CartList(props) {
         <div className="row align-items-center text-center td-py-25">
           <div className="col-3 col-lg-1">
             <input
-              className="my-auto"
+              className="my-auto checkbox-size"
               type="checkbox"
               id="all"
               onClick={() => {
@@ -279,7 +274,7 @@ function CartList(props) {
             <button
               className="btn td-btn-large-delete text-title-size20"
               onClick={() => {
-                deleteCheck(mycartDisplay.item)
+                deleteCheck(mycartDisplay)
               }}
             >
               刪除已選項目
