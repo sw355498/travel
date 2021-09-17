@@ -1,7 +1,3 @@
-// css引入
-import '../../../style/spacing.css'
-import '../../../style/shoopcart-process.css'
-import '../../../style/fons.css'
 function People() {
   return (
     <>

@@ -7,9 +7,9 @@ import ScrollToTop from 'react-scroll-to-top'
 // css引入
 import '../../style/spacing.css'
 import '../../style/button.css'
-import '../../style/checkbox.css'
 import '../../style/shoppingcart-cart-list.css'
 import '../../style/fons.css'
+import '../../style/checkbox.css'
 
 function ShoppingcartCartList(props) {
   return (
@@ -19,7 +19,7 @@ function ShoppingcartCartList(props) {
         <People />
 
         {/* 購物車清單內容 */}
-        <div className="td-mt-75 cartlist">
+        <div className="td-mt-75 cartlist checkStyle">
           <CartList />
         </div>
 

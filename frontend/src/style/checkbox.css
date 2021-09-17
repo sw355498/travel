@@ -1,4 +1,4 @@
-.cartlist input[type='checkbox'] {
+.checkStyle input[type='checkbox'] {
   cursor: pointer; /*屬標樣式*/
   position: relative;
   width: 25px;
@@ -6,9 +6,10 @@
   font-size: 0.9rem;
   visibility: hidden; /*不顯示但仍占空間*/
 }
-.cartlist input[type='checkbox']::after {
+.checkStyle input[type='checkbox']::after {
   position: absolute;
-  top: 0px;
+  top: -1px;
+  left: -2px;
   background-color: #fec90d;
   color: #fff;
   width: 30px;
@@ -19,7 +20,7 @@
   content: ''; /*::before和::after偽元素中插入內容*/
   border-radius: 5px;
 }
-.cartlist input[type='checkbox']:checked::after {
+.checkStyle input[type='checkbox']:checked::after {
   content: '✔';
   font-size: 22px;
   font-weight: bold;
