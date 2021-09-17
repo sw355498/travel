@@ -53,7 +53,7 @@ function HomeDropdownFilter(props) {
         >
           <form action="" onSubmit={handleSubmit}>
             <div className="mt-3 list ml-3">
-              <h6 className="mt-3 mr-3 mb-3">搜尋部落:</h6>
+              <h6 className="mt-3 mr-3 mb-3">選擇部落:</h6>
               {tribes.map((value, i) => (
                 <div className="form-check form-check-inline mt-3" key={i}>
                   <input
@@ -123,19 +123,24 @@ function HomeDropdownFilter(props) {
           className="dropdown-menu td-mt-50"
           aria-labelledby="dropdownMenuButton"
         >
-          <form action="">
+          <form action="" onSubmit={handleSubmit}>
             <div className="mt-3 list ml-3">
               <h6 className="mt-3 mr-3 mb-3">搜尋部落:</h6>
               {tribes.map((value, i) => (
-                <div className="form-check form-check-inline" key={i}>
+                <div className="form-check form-check-inline mt-3" key={i}>
                   <input
-                    className="form-check-input"
-                    type="radio"
+                    className="form-check-input tribe-check-input"
+                    type="checkbox"
                     id="inlineCheckbox2"
-                    value="option2"
+                    value={value.tribe}
+                    checked={tribesInput[value.tribe]}
+                    onChange={handleTribesObjectChanged}
                   />
-                  <label className="form-check-label" htmlFor="inlineCheckbox2">
-                    {value.tribe}
+                  <label
+                    className="form-check-label align-center"
+                    htmlFor="inlineCheckbox2"
+                  >
+                    <span className="align-center">{value.tribe}</span>
                   </label>
                 </div>
               ))}
@@ -145,7 +150,7 @@ function HomeDropdownFilter(props) {
               <div className="form-check form-check-inline">
                 <input
                   className="form-check-input"
-                  type="radio"
+                  type="checkbox"
                   id="inlineCheckbox1"
                   value="option1"
                 />
@@ -156,7 +161,7 @@ function HomeDropdownFilter(props) {
               <div className="form-check form-check-inline">
                 <input
                   className="form-check-input"
-                  type="radio"
+                  type="checkbox"
                   id="inlineCheckbox2"
                   value="option2"
                 />
@@ -167,13 +172,9 @@ function HomeDropdownFilter(props) {
             </div>
             <div className="text-center text-title-size24">
               {' '}
-              <Link
-                to="/Guild"
-                type="submit"
-                className="td-mt-25 td-mb-25 fw-bold"
-              >
+              <button type="submit" className="td-mt-25 td-mb-25 fw-bold">
                 送出
-              </Link>
+              </button>
             </div>
           </form>
         </div>

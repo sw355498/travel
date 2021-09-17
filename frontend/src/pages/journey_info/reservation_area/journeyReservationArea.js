@@ -13,6 +13,7 @@ function JourneyReservationArea(props) {
   const [JourneyGuideInfo] = useState(GuideData)
   const [TribeForGuide] = useState(props.findResult)
   const [guideChecked, setGuideChecked] = useState(false)
+
   //設定counter狀態
   const [count, setCount] = useState(0)
   // 目前購物車狀態

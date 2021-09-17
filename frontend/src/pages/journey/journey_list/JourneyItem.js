@@ -56,12 +56,12 @@ function JourneyItem({ product }) {
             <div className="col-7 col-md-12 d-md-flex justify-content-md-center">
               <p className="mt-lg-3">TWD&nbsp;{product.price}</p>
             </div>
-            <div className="col-5 col-md-12 d-flex flex-md-column align-items-md-center justify-content-between ">
+            <div className="col-5 col-md-12 d-flex flex-md-column align-items-md-center justify-content-end">
               <Link
-                className="td-btn-medium-w"
+                className="td-btn-medium-w "
                 to={`journey_Info/${product._id}`}
               >
-                <span>詳細</span>
+                <span className="text-center">詳細</span>
               </Link>
               <i className="far fa-heart mb-1 fa-heart-hide"></i>
             </div>

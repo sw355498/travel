@@ -10,6 +10,7 @@ function FilterBar(props) {
 
   const tagCheckHandler = (e) => {
     const value = e.target.value
+    console.log(value)
     if (!tags.includes(value)) {
       return setTags([...tags, value])
     } else {

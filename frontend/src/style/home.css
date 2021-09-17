@@ -12,6 +12,11 @@ button:hover,
   -o-box-shadow: 4px 4px 9px -3px #636161;
 }
 
+.home-aboutus ,.gallery-area p {
+  z-index: -100;
+  position: relative;
+}
+
 .animate__animated.animate__backInDown,
 .animate__animated.animate__backInLeft {
   --animate-duration: 2s;
@@ -114,8 +119,8 @@ button:hover,
   color: #000000;
   border-radius: 50%;
   margin-left: 5px;
-  margin-right:5px;
-margin-top:0%;
+  margin-right: 5px;
+  margin-top: 0%;
 }
 
 .dropdown-row .show a,
@@ -137,7 +142,7 @@ margin-top:0%;
   line-height: 33px;
   color: #000000;
 }
-.dropdown-row .show .list ,
+.dropdown-row .show .list,
 .dropdown-column .show .list {
   font-weight: 300;
   font-size: 24px;
@@ -153,7 +158,7 @@ margin-top:0%;
   border-radius: 50%;
   visibility: visible;
   background: var(--blue-color);
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .form-check-inline {
@@ -211,7 +216,8 @@ margin-top:0%;
     display: none;
   }
 
-  .dropdown-row .show ,.dropdown-column .show{
+  .dropdown-row .show,
+  .dropdown-column .show {
     width: 50%;
   }
 }

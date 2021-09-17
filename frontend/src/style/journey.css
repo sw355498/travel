@@ -1,6 +1,5 @@
-
-
-button:hover ,.btn:hover {
+button:hover,
+.btn:hover {
   transform: translateY(-5px);
   transition: 0.3s;
   box-shadow: 4px 4px 9px -3px #636161;
@@ -44,8 +43,8 @@ button:hover ,.btn:hover {
   transition: opacity 0.6s ease;
 }
 .carousel-indicators .active {
-    opacity: 1;
-    background-color: #072b7b;
+  opacity: 1;
+  background-color: #072b7b;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -71,13 +70,12 @@ button:hover ,.btn:hover {
     color: #072b7b;
     margin-top: 0.6rem;
   }
-  
 }
 @media only screen and (max-width: 768px) {
   .filter-bystar .form-check {
     display: none;
   }
-   .filter {
+  .filter {
     display: none;
   }
 }
@@ -86,7 +84,6 @@ button:hover ,.btn:hover {
   .filter-resultcontainer .page-title {
     text-align: left !important;
   }
- 
 }
 .link-right {
   width: 35%;
@@ -121,40 +118,35 @@ button:hover ,.btn:hover {
 }
 
 @media only screen and (min-width: 1400px) {
-  .filter-result{
+  .filter-result {
     max-height: 319.98px;
     max-height: 280.91;
   }
 
-  .filter-result img{
+  .filter-result img {
     max-height: 319.98px;
     max-height: 280.91;
   }
-  .journey-price{
+  .journey-price {
     margin-top: 30px !important;
   }
 
-  .fa-heart-hide{
+  .fa-heart-hide {
     margin-top: 30px !important;
   }
-  .reviewStar{
+  .reviewStar {
     margin-top: 90px !important;
-
   }
-  .reviewStar-point{
+  .reviewStar-point {
     font-size: 1.3rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
- .journey-info .reviewStar-point {
-   width: max-content;
+  .journey-info .reviewStar-point {
+    width: max-content;
+  }
 }
-
-}
-
-
-
 
 .journey-info .reviewStar {
   margin-top: 60px;
@@ -163,7 +155,6 @@ button:hover ,.btn:hover {
   text-align: center;
   color: #000000;
   padding: 0%;
-
 }
 .reviewStar-point {
   margin-top: 13px;
@@ -181,7 +172,7 @@ button:hover ,.btn:hover {
 }
 
 .filter-result:hover {
-    box-shadow: 4px 4px 9px -3px #636161;
+  box-shadow: 4px 4px 9px -3px #636161;
   -webkit-box-shadow: 4px 4px 9px -3px #636161;
   -moz-box-shadow: 4px 4px 9px -3px #636161;
   -o-box-shadow: 4px 4px 9px -3px #636161;
@@ -193,7 +184,6 @@ button:hover ,.btn:hover {
   /* identical to box height, or 130% */
   color: #000000;
 }
-
 
 .filter-resultcontainer .filter-result-imgarea {
   padding: 0%;
@@ -217,13 +207,11 @@ button:hover ,.btn:hover {
 }
 @media only screen and (min-width: 768px) {
   .journey-price .td-btn-medium-w {
-   
     margin-top: 55px;
     text-align: center;
     align-items: center;
     margin-bottom: 20px;
-     text-decoration: none;  
-   
+    text-decoration: none;
   }
   .journey-price .td-btn-medium-o {
     margin-top: 10px;
@@ -242,16 +230,15 @@ button:hover ,.btn:hover {
   margin-top: 10px;
 }
 
-
 .filter-result img {
   border-radius: 10px;
   width: 100%;
 }
 
 .reviewStar img {
-    border-radius: 10px;
-    width: 100%;
-    margin-left: 25px;
+  border-radius: 10px;
+  width: 100%;
+  margin-left: 25px;
 }
 
 .pagination-container nav {
@@ -299,32 +286,67 @@ button:hover ,.btn:hover {
   z-index: 1000;
   transition: 0.4s;
   height: auto;
-  
 }
-.scrollup-icon{
+.scrollup-icon {
   color: #ffffff;
 }
 
-.scrollup:hover{
+.scrollup:hover {
   background-color: #ff9c00;
   opacity: 1;
 }
 
-.show-scroll{
+.show-scroll {
   bottom: 5rem;
 }
 
 /* scrollbar  */
 
-::-webkit-scrollbar{
-  width: .60rem;
+::-webkit-scrollbar {
+  width: 0.6rem;
   background: #636161;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #a5a5a8;
 }
-::-webkit-scrollbar-thumb:hover{
-  background-color:#ff9c00;
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff9c00;
   opacity: 0.6;
 }
+
+.td-btn-medium-w {
+  width: 85px;
+  height: 40px;
+  padding: 10px 20px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 50px;
+  border: none;
+  color: #ff9c00;
+  border: 1px solid #ff9c00;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+}
+
+.journey-reservationarea-container .card {
+  cursor: pointer;
+}
+.journey-reservationarea-container .fa-check-circle:before {
+    content: "\f058";
+    font-size: 30px;
+    color: slategrey;
+} 
+
+.journey-reservationarea-container .td-btn-medium-b {
+  width: 85px;
+  height: 40px;
+  align-items: center;
+  border-radius: 50px;
+  border: none;
+  background-color: white;
+  border: 1px solid slategrey;
+  color: slategrey;
+}
+

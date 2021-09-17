@@ -48,10 +48,10 @@ function Home() {
           </div>
         </div>
       </section>
-      <Fade left cascade>
-        <section>
-          <div className="container home-aboutus ">
-            <div className="row">
+      <section>
+        <div className="container home-aboutus ">
+          <div className="row">
+            <Fade left cascade>
               <div className="col-12">
                 {' '}
                 <img
@@ -60,17 +60,18 @@ function Home() {
                   className="aboutus-img "
                 />
               </div>
-              <div className="col-lg-6 col-md-3 "></div>
-              <div className="col-lg-6 col-md-7">
-                <p>
-                  原住民部落如能運用當地傳統工藝、文化及生活習俗配合豐富生態資源，導入文化體驗或深度文化旅行、生態旅遊將可帶動當地經濟，進而提升就業率。
-                </p>
-              </div>
+            </Fade>
+            <div className="col-lg-6 col-md-3 "></div>
+            <div className="col-lg-6 col-md-7">
+              <p>
+                原住民部落如能運用當地傳統工藝、文化及生活習俗配合豐富生態資源，導入文化體驗或深度文化旅行、生態旅遊將可帶動當地經濟，進而提升就業率。
+              </p>
             </div>
           </div>
-        </section>
-      </Fade>
-      <HomeGallryArea tribes={tribes}/>
+        </div>
+      </section>
+
+      <HomeGallryArea tribes={tribes} />
       <HomeExcellentGuide />
       <ScrollToTop smooth />
     </>

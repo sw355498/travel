@@ -6,7 +6,7 @@ import Pagination from './pagination/Pagination'
 import '../../style/journey.css'
 import { useLocation } from 'react-router-dom'
 
-import qs from "qs"
+import qs from 'qs'
 
 function useQuery() {
   return qs.parse(useLocation().search.slice(1))
@@ -14,7 +14,7 @@ function useQuery() {
 
 function Journey() {
   const query = useQuery()
-  const {tribes} = query
+  const { tribes } = query
   return (
     <>
       <JourneyBanner />
