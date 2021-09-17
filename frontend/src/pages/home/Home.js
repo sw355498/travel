@@ -5,7 +5,7 @@ import ScrollToTop from 'react-scroll-to-top'
 
 
 //引入首頁組件
-import HomeExcellentGuide from './excellent_guide/homeExcellentGuide'
+import HomeExcellentGuide from './excellent_guide/HomeExcellentGuide'
 import HomeGallryArea from './gallery_area/homeGallryArea'
 
 // css引入
@@ -70,7 +70,7 @@ function Home() {
           </div>
         </section>
       </Fade>
-      <HomeGallryArea />
+      <HomeGallryArea tribes={tribes}/>
       <HomeExcellentGuide />
       <ScrollToTop smooth />
     </>

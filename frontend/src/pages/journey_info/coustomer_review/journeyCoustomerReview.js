@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import JourneyGuideList from './journey_guide_review_list/JourneyGuideList'
+import JourneyGuideList from './journey_guide_list/JourneyGuideList'
 import DropdownFilter from './filter_dropdown/DropdownFilter'
 import Review from './Review'
 

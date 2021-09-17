@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function homeGallryArea() {
+function homeGallryArea(props) {
+  const { tribes } = props
+
   return (
     <>
       <section className="gallery-area td-mt-75">
@@ -8,26 +11,27 @@ function homeGallryArea() {
           <p>部落行程</p>
           <div id="journey" className="td-mt-25">
             <div className="journey-paterungan img-fluid ">
-              <div className="card">
-                <div className="imgBx">
-                  <a href="/page/jounery/journey.html" title="新社部落">
+              <Link to={`/journey/?tribes[]=新社部落`} title="新社部落">
+                <div className="card">
+                  <div className="imgBx">
                     <img src="/images/data/首頁部落圖/新社稻草人.jpg" alt="" />
-                  </a>
-                  <div className="journey-tag">
-                    <p>新社部落</p>
-                    <div className="journey-tag-price mt-2">TW 330 起</div>
+                    <div className="journey-tag">
+                      <p>新社部落</p>
+                      <div className="journey-tag-price mt-2">TW 330 起</div>
+                    </div>
+                  </div>
+                  <div className="contentBx">
+                    <div className="content">
+                      <h3 className="text-center">新社部落</h3>
+                      <p className="text-center td-mt-25">
+                        以噶瑪蘭族為主要族群的新社部落，夾於太平洋與海岸山脈之間，面積廣泛的梯田在收穫期是一片金黃色的美景，半島梯田上的各種裝置藝術呈現了噶瑪蘭族的工藝技術及美學。與眾不同的飲食習慣、祭儀、工藝技術在族人們的努力下傳承至今，有機會來到東海岸千萬別錯過囉！
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="contentBx">
-                  <div className="content">
-                    <h3 className="text-center">新社部落</h3>
-                    <p className="text-center td-mt-25">
-                      以噶瑪蘭族為主要族群的新社部落，夾於太平洋與海岸山脈之間，面積廣泛的梯田在收穫期是一片金黃色的美景，半島梯田上的各種裝置藝術呈現了噶瑪蘭族的工藝技術及美學。與眾不同的飲食習慣、祭儀、工藝技術在族人們的努力下傳承至今，有機會來到東海岸千萬別錯過囉！
-                    </p>
-                  </div>
-                </div>
-              </div>
+              </Link>
             </div>
+
             <div className="journey-kiwit img-fluid ">
               <div className="card">
                 <div className="imgBx">

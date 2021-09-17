@@ -3,10 +3,10 @@ import FilterBar from '../filter_bar/FilterBar'
 import JourneyList from '../journey_list/JourneyList'
 import JourneyInfoData from '../../journey_info/JourneyInfoData/JourneyInfoData'
 
-function JourneyFilterResult({ tribe }) {
+function JourneyFilterResult({ tribes }) {
   const [products, setProducts] = useState(JourneyInfoData)
   const [displayProducts, setDisplayProducts] = useState(JourneyInfoData)
-  const [tags, setTags] = useState(['靜浦部落'])
+  const [tags, setTags] = useState(tribes ? tribes : ['靜浦部落'])
   const [stars, setStars] = useState(['5'])
   const tagTypes = [
     '靜浦部落',

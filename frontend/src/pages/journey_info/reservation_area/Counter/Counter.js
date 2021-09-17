@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
-function Counter() {
-  const [count, setCount] = useState(0)
+function Counter(props) {
+  const { count, setCount } = props
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1)
   }
   const handleDecrement = () => {
-    setCount((prevCount) => prevCount - 1)
+    if (count >= 1) {
+      setCount((prevCount) => prevCount - 1)
+    }
   }
 
   return (
@@ -18,7 +20,7 @@ function Counter() {
         >
           <i className="fas fa-minus"></i>
         </button>
-        <h5>參加人數 {count}</h5>
+        <h5>參加人數 {count + 1}</h5>
         <button
           className="td-ms-15 td-btn-medium-blueborder"
           onClick={handleIncrement}

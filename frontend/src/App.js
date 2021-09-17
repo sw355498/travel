@@ -21,7 +21,6 @@ function App() {
       <ScrollUp>
         <Header />
         <Switch>
-          {/* Home跟journey路徑我改成我的版本，如影響到其他檔案我再改過 */}
           <Route path="/" component={Home} exact />
           <Route path="/journey" component={Journey} exact />
           <Route path="/journey_info/:id" component={journeyInfo} />
