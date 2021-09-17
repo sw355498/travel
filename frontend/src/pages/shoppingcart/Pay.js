@@ -18,7 +18,7 @@ function Pay(props) {
   return (
     <>
       {/* 內容  */}
-      <div class="container-lg td-content">
+      <div class="container-lg td-content checkStyle">
         {/* 小人走路流程圖 */}
         <PayPeople />
 
