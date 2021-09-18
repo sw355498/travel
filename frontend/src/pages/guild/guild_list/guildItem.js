@@ -10,7 +10,9 @@ function GuildItem({ guild }) {
         key={guild.id}
       >
         {/* 部落 */}
-        <div className="guild-tribe position-absolute">{guild.tribe}</div>
+        <div className="guild-tribe position-absolute d-flex flex-column">
+          <div>{guild.tribe}</div>
+        </div>
         <div className="filter-result-item-main mx-auto d-flex flex-wrp flex-column align-items-center">
           {/* <!-- 上方導遊基本資料 --> */}
           <div className="guild-info">
