@@ -208,7 +208,7 @@ function CartList(props) {
                   {moment(item.go_time).format('YYYY-MM-DD')}
                 </div>
                 <div className="td-mt-25">帶團導遊：{item.guild}</div>
-                <div className="td-mt-25 d-flex align-items-center">
+                <div className="td-mt-25 d-flex justify-content-center align-items-center">
                   <button
                     className="td-ms-15 td-btn-medium-blueborder"
                     onClick={() => {
