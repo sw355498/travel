@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 import DatePicker from './date_picker/DatePicker'
@@ -13,8 +13,15 @@ function JourneyReservationArea(props) {
   //載入導遊資料
   const [JourneyGuideInfo] = useState(GuideData)
   const [TribeForGuide] = useState(props.findResult)
-  const [guideChecked, setGuideChecked] = useState(false)
+  const JourneyGuideSelected = useMemo(
+    () =>
+      JourneyGuideInfo.filter(
+        (item) => item.tribe === TribeForGuide.tribe
+      ).slice(0, 3),
+    [JourneyGuideInfo, TribeForGuide.tribe]
+  )
 
+  const [GuidesIdxSelected, setGuidesIdxSelected] = useState(-1)
   //設定counter狀態
   const [count, setCount] = useState(0)
   // 目前購物車狀態
@@ -112,12 +119,14 @@ function JourneyReservationArea(props) {
         </div>
         <div className="row journey-selectguide d-flex align-content-between">
           <div className="col-md-12   text-center d-flex justify-content-md-evenly flex-column align-items-center flex-md-row">
-            <JourneyinfoGuideCard
-              JourneyGuideInfo={JourneyGuideInfo}
-              TribeForGuide={TribeForGuide}
-              guideChecked={guideChecked}
-              setGuideChecked={setGuideChecked}
-            />
+            {JourneyGuideSelected.map((card, idx) => (
+              <JourneyinfoGuideCard
+                key={idx}
+                guideChecked={idx === GuidesIdxSelected}
+                handleClick={() => setGuidesIdxSelected(idx)}
+                card={card}
+              />
+            ))}
           </div>
         </div>
         <Counter count={count} setCount={setCount} />
@@ -131,7 +140,7 @@ function JourneyReservationArea(props) {
                 amount: count + 1,
                 img: props.findResult.img1,
                 go_time: dateState,
-                guild: '雅馨',
+                guild: JourneyGuideSelected[GuidesIdxSelected].name,
                 price: props.findResult.price,
               })
             }}

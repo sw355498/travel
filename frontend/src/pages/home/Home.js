@@ -3,7 +3,6 @@ import Zoom from 'react-reveal/Zoom'
 import Fade from 'react-reveal/Fade'
 import ScrollToTop from 'react-scroll-to-top'
 
-
 //引入首頁組件
 import HomeExcellentGuide from './excellent_guide/homeExcellentGuide'
 import HomeGallryArea from './gallery_area/homeGallryArea'
