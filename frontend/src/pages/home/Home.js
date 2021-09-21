@@ -18,7 +18,6 @@ import HomeDropdownFilter from './home_banner/HomeDropdownFilter'
 
 function Home() {
   const [tribes] = useState(JourneyInfoData)
-
   return (
     <>
       <section className="banner">

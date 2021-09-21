@@ -13,7 +13,7 @@ const JourneyInfoData = [
     introname: '九日漁獵生活',
     description: '不想出門啦',
     amountRating: 20,
-    status: 0,
+    status: true,
     introcontent:
       '  踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗)',
     content: `上午場-09：00 / 下午場-14：00-花蓮靜浦部落集合開啟靜浦部落的半日漁獵生活體驗：   →踏上膠筏，划向秀姑巒溪(約50分鐘)
@@ -33,7 +33,7 @@ const JourneyInfoData = [
   },
   {
     _id: '2',
-    name: '新社部落',
+    name: '靜浦部落',
     tribe: '新社部落',
     tribeintro: '',
     price: '2000',
@@ -45,7 +45,7 @@ const JourneyInfoData = [
     introname: '九日漁獵生活',
     description: '不想出門啦',
     amountRating: 20,
-    status: 1,
+    status: false,
     introcontent:
       '  踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗)',
     content: `上午場-09：00 / 下午場-14：00-花蓮靜浦部落集合開啟靜浦部落的半日漁獵生活體驗：   →踏上膠筏，划向秀姑巒溪(約50分鐘)
@@ -68,7 +68,7 @@ const JourneyInfoData = [
     introname: '九日漁獵生活',
     description: '不想出門啦',
     amountRating: 20,
-    status: 1,
+    status: false,
     introcontent:
       '  踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗)',
     content: `上午場-09：00 / 下午場-14：00-花蓮靜浦部落集合開啟靜浦部落的半日漁獵生活體驗：   →踏上膠筏，划向秀姑巒溪(約50分鐘)
@@ -91,7 +91,7 @@ const JourneyInfoData = [
     introname: '九日漁獵生活',
     description: '不想出門啦',
     amountRating: 20,
-    status: 1,
+    status: false,
     introcontent:
       '  踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗)',
     content: `上午場-09：00 / 下午場-14：00-花蓮靜浦部落集合開啟靜浦部落的半日漁獵生活體驗：   →踏上膠筏，划向秀姑巒溪(約50分鐘)
@@ -114,7 +114,7 @@ const JourneyInfoData = [
     introname: '九日漁獵生活',
     description: '不想出門啦',
     amountRating: 20,
-    status: 1,
+    status: false,
     introcontent:
       '  踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗)',
     content: `上午場-09：00 / 下午場-14：00-花蓮靜浦部落集合開啟靜浦部落的半日漁獵生活體驗：   →踏上膠筏，划向秀姑巒溪(約50分鐘)
@@ -125,8 +125,8 @@ const JourneyInfoData = [
   },
   {
     _id: '6',
-    name: '奇萊雅部落',
-    tribe: '奇萊雅部落',
+    name: '馬太鞍部落',
+    tribe: '馬太鞍部落',
     tribeintro: '',
     price: '2000',
     rating: '5',
@@ -137,7 +137,7 @@ const JourneyInfoData = [
     introname: '九日漁獵生活',
     description: '不想出門啦',
     amountRating: 20,
-    status: 1,
+    status: false,
     introcontent:
       '  踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗)',
     content: `上午場-09：00 / 下午場-14：00-花蓮靜浦部落集合開啟靜浦部落的半日漁獵生活體驗：   →踏上膠筏，划向秀姑巒溪(約50分鐘)
@@ -160,7 +160,7 @@ const JourneyInfoData = [
     introname: '九日漁獵生活',
     description: '不想出門啦',
     amountRating: 20,
-    status: 1,
+    status: false,
     introcontent:
       '  踏上膠筏，划向秀姑巒溪→岸邊找尋浪花蟹X八卦網捕魚體驗→部落神射手(射箭體驗)',
     content: `上午場-09：00 / 下午場-14：00-花蓮靜浦部落集合開啟靜浦部落的半日漁獵生活體驗：   →踏上膠筏，划向秀姑巒溪(約50分鐘)
@@ -168,7 +168,7 @@ const JourneyInfoData = [
          →部落神射手－射箭體驗(約40分鐘)`,
     img1: '靜浦-竹筏漫遊.jpg',
     img2: '靜浦-追花逐浪花蟹.jpg',
-  },
+  }
 ]
 
 export default JourneyInfoData

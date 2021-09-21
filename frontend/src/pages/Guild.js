@@ -1,4 +1,5 @@
 import React from 'react'
+import qs from 'qs'
 import GuildListBanner from './guild/guildListBanner'
 import GuildFilterResult from './guild/guild_filter_result/GuildFilterResult'
 import GuildListPage from './guild/guildListPage'
@@ -12,16 +13,16 @@ import '../style/spacing.css'
 import '../style/button.css'
 
 function useQuery() {
-  return new URLSearchParams(useLocation().search)
+  return qs.parse(useLocation().search.slice(1))
 }
 function Guild() {
   const query = useQuery()
-  const tribe = query.get('tribe')
+  const { tribes } = query
   return (
     <>
       <article>
         <GuildListBanner />
-        <GuildFilterResult tribe={tribe} />
+        <GuildFilterResult tribes={tribes} />
         <GuildListPage />
         <GuildNew />
         <ScrollToTop smooth />

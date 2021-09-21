@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import Rating from '../../../component/Rating'
 
-function JourneyItem({ product, selected, handleClick }) {
+import API from '../../../api'
+
+function JourneyItem(props) {
+  const { product, selected, handleClick } = props
+
+  const onClick = () => {
+    API.toggleJourneyLike(product._id).then(handleClick)
+  }
   return (
     <div className="row filter-result td-mb-25">
       <div
@@ -48,7 +55,7 @@ function JourneyItem({ product, selected, handleClick }) {
                     selected && 'fw-bold'
                   )}
                   style={{ cursor: 'pointer' }}
-                  onClick={handleClick}
+                  onClick={onClick}
                 ></i>
               </div>
             </div>
@@ -76,7 +83,7 @@ function JourneyItem({ product, selected, handleClick }) {
                 selected && 'fw-bold'
               )}
               style={{ cursor: 'pointer' }}
-              onClick={handleClick}
+              onClick={onClick}
             ></i>
           </div>
         </div>

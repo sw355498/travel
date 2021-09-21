@@ -1,23 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ScrollToTop from 'react-scroll-to-top'
 import clsx from 'clsx'
 import Rating from '../../component/Rating'
-import journeyinfoData from './JourneyInfoData/JourneyInfoData'
 import JourneyBanner from '../journey/banner/journeyBanner'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
 import JourneyCoustomerReview from './coustomer_review/journeyCoustomerReview'
 import Pagination from '../journey/pagination/Pagination'
 import '../../style/journey-info.css'
 
-function Journey_info(props) {
-  const findResult = journeyinfoData.find(
-    (x) => x._id === props.match.params.id
-  )
-  if (!findResult) {
-    return <div>找不到您想要的行程</div>
-  }
+import API from '../../api'
 
-  return (
+function Journey_info(props) {
+  const [findResult, setFindResult] = useState(null)
+  const id = props.match.params.id
+  useEffect(() => {
+    API.fetchJourney(id).then(setFindResult)
+  }, [id])
+  return findResult ? (
     <>
       <JourneyBanner />
       <div className="container td-mt-75 journey-info">
@@ -28,7 +27,8 @@ function Journey_info(props) {
           <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center flex-column flex-md-row align-items-center">
             <i
               className={clsx(
-                'far fa-heart td-me-50 journey-info-like order-2 order-md-1 mt-md-2'
+                'far fa-heart td-me-50 journey-info-like order-2 order-md-1 mt-md-2',
+                findResult.status && 'fw-bold'
               )}
             ></i>
             <p className="journey-info-price order-1 order-md-2">
@@ -160,6 +160,8 @@ function Journey_info(props) {
       <Pagination />
       <ScrollToTop smooth />
     </>
+  ) : (
+    <div>Loading</div>
   )
 }
 
