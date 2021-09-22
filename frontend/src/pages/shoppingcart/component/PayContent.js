@@ -3,15 +3,55 @@ import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import moment from 'moment'
 import { Modal, Button } from 'react-bootstrap'
+import axios from 'axios'
 
 function PayContent(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
+  async function handleSubmit() {
+    for (let i = 0; i < mycartDisplay.length; i++) {
+      try {
+        let guide_id = mycartDisplay[i].guild
+        let journey_id = mycartDisplay[i].name
+        let sur_name = props.surName
+        let name = props.name
+        let phone = props.phone
+        let nation = props.nation
+        let address = props.address
+        let email = props.email
+        let go_time = moment(mycartDisplay[i].go_time).format('YYYY-MM-DD')
+        let total_amount = mycartDisplay[i].amount
+        let total_price = mycartDisplay[i].amount * mycartDisplay[i].price
+        let pay_status = props.paymentMethod
+        let card_number = props.payNumber
+        let bill_status = props.bill
+        let order_status = '已付款'
+        const response = await axios.post(`http://localhost:3002/pay`, {
+          guide_id,
+          journey_id,
+          sur_name,
+          name,
+          phone,
+          nation,
+          address,
+          email,
+          go_time,
+          total_amount,
+          total_price,
+          pay_status,
+          card_number,
+          bill_status,
+          order_status,
+        })
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }
+
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
-
-    console.log(JSON.parse(newCart))
 
     setMycart(JSON.parse(newCart))
   }
@@ -84,7 +124,6 @@ function PayContent(props) {
               <div class="td-mt-25 shoppingcart-bg">
                 {/* 購物車清單內容 */}
                 {mycartDisplay.map((item, index) => {
-                  console.log('顯示', mycartDisplay)
                   return (
                     <div
                       className="row align-items-center text-center"
@@ -108,7 +147,12 @@ function PayContent(props) {
                         </div>
                         <div className="td-mt-25">帶團導遊：{item.guild}</div>
                         <div className="td-mt-25">
-                          人數：<span className="fw-bold text-title-size24"> {item.amount}</span> 人
+                          人數：
+                          <span className="fw-bold text-title-size24">
+                            {' '}
+                            {item.amount}
+                          </span>{' '}
+                          人
                         </div>
                       </div>
                       {/* 價錢 */}
@@ -125,7 +169,9 @@ function PayContent(props) {
                 <div class="row align-items-center text-center td-py-25 ">
                   <div class="col-12 col-lg-6 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
                     <div class="text-title-size20 me-1">
-                      <span className="fw-bold text-title-size24">{mycartDisplay.length}</span>
+                      <span className="fw-bold text-title-size24">
+                        {mycartDisplay.length}
+                      </span>
                       件商品合計
                     </div>
                     <div>
@@ -138,7 +184,7 @@ function PayContent(props) {
                   <div class="col-12 col-lg-3">
                     <button
                       className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
-                      href="/page/shoppingcart/shoppingcart-payment.html"
+                      onClick={handleSubmit}
                     >
                       付款
                     </button>

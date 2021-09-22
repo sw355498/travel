@@ -28,6 +28,8 @@ function Pay(props) {
   // 信箱
   const [email, setEmail] = useState('')
 
+  //付款方式
+  const [paymentMethod, setPaymentMethod] = useState('')
   //信用卡卡號
   const [payNumber, setPayNumber] = useState('')
   //信用卡持卡人姓名
@@ -63,6 +65,7 @@ function Pay(props) {
 
         {/* 付款資訊 */}
         <PaymentProfile
+          setPaymentMethod={setPaymentMethod}
           setPayNumber={setPayNumber}
           setPayCardName={setPayCardName}
           setPayExpiry={setPayExpiry}
@@ -79,6 +82,7 @@ function Pay(props) {
           nation={nation}
           address={address}
           email={email}
+          paymentMethod={paymentMethod}
           payNumber={payNumber}
           payCardName={payCardName}
           payExpiry={payExpiry}

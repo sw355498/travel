@@ -65,6 +65,7 @@ function PaymentProfile(props) {
                     id="creditCard"
                     onChange={() => {
                       creditCardPayment()
+                      props.setPaymentMethod('信用卡付款')
                     }}
                   />
                   <span class="text-title-size20">信用卡付款</span>
@@ -75,6 +76,7 @@ function PaymentProfile(props) {
                     id="transfer"
                     onChange={() => {
                       transfer()
+                      props.setPaymentMethod('轉帳代繳')
                     }}
                   />
                   <span class="text-title-size20">轉帳代繳</span>
