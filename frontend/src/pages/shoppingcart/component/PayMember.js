@@ -1,18 +1,6 @@
 import React, { useState } from 'react'
 
-function PayMember() {
-  // 姓氏
-  const [surName, setSurName] = useState('')
-  // 名字
-  const [name, setName] = useState('')
-  // 聯絡電話
-  const [phone, setPhone] = useState('')
-  //國家
-  const [nation, setNation] = useState('')
-  // 地址
-  const [address, setAddress] = useState('')
-  // 信箱
-  const [email, setEmail] = useState('')
+function PayMember(props) {
   //勾選更新方塊
   const [renew, setRenew] = useState(true)
   return (
@@ -50,12 +38,12 @@ function PayMember() {
                     </label>
                     <input
                       type="text"
-                      value={surName}
+                      value={props.surName}
                       class="form-control"
                       id="formGroupExampleInput"
                       placeholder="請輸入您的名子"
                       onChange={(e) => {
-                        setSurName(e.target.value)
+                        props.setSurName(e.target.value)
                       }}
                     />
                   </div>
@@ -70,12 +58,12 @@ function PayMember() {
                     </label>
                     <input
                       type="text"
-                      value={name}
+                      value={props.name}
                       class="form-control"
                       id="formGroupExampleInput2"
                       placeholder="請輸入您的姓氏"
                       onChange={(e) => {
-                        setName(e.target.value)
+                        props.setName(e.target.value)
                       }}
                     />
                   </div>
@@ -90,12 +78,12 @@ function PayMember() {
                     </label>
                     <input
                       type="text"
-                      value={phone}
+                      value={props.phone}
                       class="form-control"
                       id="formGroupExampleInput2"
                       placeholder="請輸入您的連絡電話"
                       onChange={(e) => {
-                        setPhone(e.target.value)
+                        props.setPhone(e.target.value)
                       }}
                     />
                   </div>
@@ -109,12 +97,12 @@ function PayMember() {
                     </label>
 
                     <select
-                      value={nation}
+                      value={props.nation}
                       class="form-select"
                       id="validationDefault04"
                       required
                       onChange={(e) => {
-                        setNation(e.target.value)
+                        props.setNation(e.target.value)
                       }}
                     >
                       <option selected disabled value="">
@@ -137,12 +125,12 @@ function PayMember() {
                     </label>
                     <input
                       type="text"
-                      value={address}
+                      value={props.address}
                       class="form-control"
                       id="formGroupExampleInput2"
                       placeholder="請輸入您的聯絡地址"
                       onChange={(e) => {
-                        setAddress(e.target.value)
+                        props.setAddress(e.target.value)
                       }}
                     />
                   </div>
@@ -157,18 +145,18 @@ function PayMember() {
                     </label>
                     <input
                       type="email"
-                      value={email}
+                      value={props.email}
                       class="form-control"
                       id="formGroupExampleInput2"
                       placeholder="請輸入您的E-mail"
                       onChange={(e) => {
-                        setEmail(e.target.value)
+                        props.setEmail(e.target.value)
                       }}
                     />
                   </div>
 
                   {/* checkbox */}
-                  <div class="td-mt-75">
+                  {/* <div class="td-mt-75">
                     <div class="form-check">
                       <input
                         type="checkbox"
@@ -186,7 +174,7 @@ function PayMember() {
                         同時更新會員資料
                       </label>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </form>
             </div>

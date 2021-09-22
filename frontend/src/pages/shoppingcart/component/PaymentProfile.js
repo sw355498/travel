@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Cards from 'react-credit-cards'
 
-function PaymentProfile() {
+function PaymentProfile(props) {
   //信用卡卡號
   const [number, setNumber] = useState('')
   //信用卡持卡人姓名
@@ -96,7 +96,10 @@ function PaymentProfile() {
                         name="number"
                         placeholder="卡號"
                         value={number}
-                        onChange={(e) => setNumber(e.target.value)}
+                        onChange={(e) => {
+                          props.setPayNumber(e.target.value)
+                          setNumber(e.target.value)
+                        }}
                         onFocus={(e) => setFocus(e.target.name)}
                       />
                     </div>
@@ -107,7 +110,10 @@ function PaymentProfile() {
                         name="name"
                         placeholder="持卡人姓名"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => {
+                          props.setPayCardName(e.target.value)
+                          setName(e.target.value)
+                        }}
                         onFocus={(e) => setFocus(e.target.name)}
                       />
                     </div>
@@ -118,7 +124,10 @@ function PaymentProfile() {
                         name="expiry"
                         placeholder="MM/YY 有效日期"
                         value={expiry}
-                        onChange={(e) => setExpiry(e.target.value)}
+                        onChange={(e) => {
+                          props.setPayExpiry(e.target.value)
+                          setExpiry(e.target.value)
+                        }}
                         onFocus={(e) => setFocus(e.target.name)}
                       />
                     </div>
@@ -129,7 +138,10 @@ function PaymentProfile() {
                         name="cvc"
                         placeholder="CVC"
                         value={cvc}
-                        onChange={(e) => setCvc(e.target.value)}
+                        onChange={(e) => {
+                          props.setPayCvc(e.target.value)
+                          setCvc(e.target.value)
+                        }}
                         onFocus={(e) => setFocus(e.target.name)}
                       />
                     </div>
@@ -193,7 +205,15 @@ function PaymentProfile() {
                       *
                     </span>
                   </label>
-                  <select class="form-select" id="validationDefault04" required>
+                  <select
+                    value={props.bill}
+                    class="form-select"
+                    id="validationDefault04"
+                    onChange={(e) => {
+                      props.setBill(e.target.value)
+                    }}
+                    required
+                  >
                     <option selected disabled value="">
                       請選擇發票處理方式
                     </option>
