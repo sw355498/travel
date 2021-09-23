@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import ScrollToTop from 'react-scroll-to-top'
-import clsx from 'clsx'
+
 import Rating from '../../component/Rating'
 import JourneyBanner from '../journey/banner/journeyBanner'
+import Like from './Like'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
 import JourneyCoustomerReview from './coustomer_review/journeyCoustomerReview'
 import Pagination from '../journey/pagination/Pagination'
@@ -13,9 +14,14 @@ import API from '../../api'
 function Journey_info(props) {
   const [findResult, setFindResult] = useState(null)
   const id = props.match.params.id
-  useEffect(() => {
+
+  const fetchAndUpdateJourneysLike = useCallback(async () => {
     API.fetchJourney(id).then(setFindResult)
   }, [id])
+
+  useEffect(() => {
+    fetchAndUpdateJourneysLike()
+  }, [fetchAndUpdateJourneysLike])
   return findResult ? (
     <>
       <JourneyBanner />
@@ -24,13 +30,13 @@ function Journey_info(props) {
           <div className="col-md-6 col-12 journey-info-name">
             <p>{findResult.name}</p>
           </div>
+
           <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center flex-column flex-md-row align-items-center">
-            <i
-              className={clsx(
-                'far fa-heart td-me-50 journey-info-like order-2 order-md-1 mt-md-2',
-                findResult.status && 'fw-bold'
-              )}
-            ></i>
+            <Like
+              findResult={findResult}
+              selected={findResult.status}
+              handleClick={fetchAndUpdateJourneysLike}
+            />
             <p className="journey-info-price order-1 order-md-2">
               TWD{findResult.price} 起
             </p>
@@ -115,7 +121,7 @@ function Journey_info(props) {
         </div>
         <div className=" td-mt-25 ">
           <img
-            src={`/images/data/行程照片/${findResult.img1}`}
+            src={`/images/data/行程照片/${findResult.journey_img}`}
             className="journey-info-pic"
             alt=""
           />
@@ -136,7 +142,7 @@ function Journey_info(props) {
           <p>備註</p>
         </div>
         <div className="td-mt-25 ">
-          <p>{findResult.Precautions}</p>
+          <p>{findResult.needtoknow}</p>
         </div>
         <div className="td-md-25">&nbsp;</div>
       </div>

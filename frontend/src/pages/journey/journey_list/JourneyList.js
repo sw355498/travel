@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import JourneyItem from './JourneyItem'
-
-import API from '../../../api'
 
 function JourneyList(props) {
   const { products, tags, stars, handleClick } = props

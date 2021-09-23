@@ -25,7 +25,6 @@ APIrouter.put("/journeys/:id/like", async (req, res, next) => {
   const {id} = req.params
   const result = await connection.queryAsync('SELECT status FROM journey WHERE _id=?', [id])
   const status = result[0].status
-  console.log(status)
   await connection.queryAsync('UPDATE journey SET status=? WHERE _id=?',[
     !status,
     id,

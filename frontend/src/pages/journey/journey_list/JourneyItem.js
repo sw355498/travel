@@ -17,15 +17,15 @@ function JourneyItem(props) {
         className="col-md-4 col-12 filter-result-imgarea d-flex align-content-between "
         key={product._id}
       >
-        <img src={`/images/data/行程照片/${product.img1}`} alt="" />
+        <img src={`/images/data/行程照片/${product.journey_img}`} alt="" />
       </div>
       <div className="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
         <div className="row ">
           <div className="col-md-12 order-1">
-            <div className="d-flex justify-content-between mt-lg-2 mt-md-3">
-              <div className="title">{product.name}</div>
+            <div className="d-flex justify-content-between mt-lg-2 mt-md-3 ">
+              <div className="title text-left  ">{product.name}</div>
               <div className="tag">
-                <i className="fas fa-tags">{product.tribe}</i>
+                <i className="fas fa-tags  flex-grow-1">{product.tribe}</i>
               </div>
             </div>
           </div>

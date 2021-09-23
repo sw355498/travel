@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import FilterBar from '../filter_bar/FilterBar'
 import JourneyList from '../journey_list/JourneyList'
-import JourneyInfoData from '../../journey_info/JourneyInfoData/JourneyInfoData'
 
 import API from '../../../api'
 
 function JourneyFilterResult({ tribes }) {
+  
   const [displayProducts, setDisplayProducts] = useState(null)
 
   const fetchAndUpdateJourneys = useCallback(async () => {
@@ -15,8 +15,6 @@ function JourneyFilterResult({ tribes }) {
   useEffect(() => {
     fetchAndUpdateJourneys()
   }, [fetchAndUpdateJourneys])
-
-  console.log(displayProducts)
 
   const [tags, setTags] = useState(tribes ? tribes : ['靜浦部落'])
   const [stars, setStars] = useState([5])
@@ -101,7 +99,7 @@ function JourneyFilterResult({ tribes }) {
           />
         </div>
       ) : (
-        <div>Loading</div>
+        <div>{spinner}</div>
       )}
     </>
   )

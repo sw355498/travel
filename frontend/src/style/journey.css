@@ -171,6 +171,10 @@ button:hover,
   border-radius: 10px;
 }
 
+.filter-result i{
+  width: max-content !important;
+}
+
 .filter-result:hover {
   box-shadow: 4px 4px 9px -3px #636161;
   -webkit-box-shadow: 4px 4px 9px -3px #636161;
