@@ -21,6 +21,11 @@ APIrouter.get('/journeys/:id', async (req, res, next) => {
   res.json(result[0])
 })
 
+APIrouter.get('/home/tribes',async(req,res,next)=>{
+  const result = await connection.queryAsync('SELECT * FROM tribes')
+  res.json(result)
+})
+
 APIrouter.put("/journeys/:id/like", async (req, res, next) => {
   const {id} = req.params
   const result = await connection.queryAsync('SELECT status FROM journey WHERE _id=?', [id])
@@ -32,6 +37,8 @@ APIrouter.put("/journeys/:id/like", async (req, res, next) => {
   
   res.status(204).end()
 })
+
+
 
 app.use("/api", APIrouter)
 

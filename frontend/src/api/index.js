@@ -7,6 +7,10 @@ const API = {
     const res = await axios.get(`${serverURI}/api/journeys`)
     return res.data
   },
+  fetchTribes: async () => {
+    const res = await axios.get(`${serverURI}/api/home/tribes`)
+    return res.data
+  },
   fetchJourney: async (id) => {
     const res = await axios.get(`${serverURI}/api/journeys/${id}`)
     return res.data

@@ -140,6 +140,15 @@ button:hover,
   .reviewStar-point {
     font-size: 1.3rem;
   }
+  .journey-info .content {
+  margin-top: 10%;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-feature-settings: 'salt' on, 'liga' off;
+  color: #000000;
+
+}
 }
 
 @media only screen and (min-width: 768px) {

@@ -5,7 +5,6 @@ import JourneyList from '../journey_list/JourneyList'
 import API from '../../../api'
 
 function JourneyFilterResult({ tribes }) {
-  
   const [displayProducts, setDisplayProducts] = useState(null)
 
   const fetchAndUpdateJourneys = useCallback(async () => {
@@ -16,6 +15,7 @@ function JourneyFilterResult({ tribes }) {
     fetchAndUpdateJourneys()
   }, [fetchAndUpdateJourneys])
 
+  console.log(displayProducts)
   const [tags, setTags] = useState(tribes ? tribes : ['靜浦部落'])
   const [stars, setStars] = useState([5])
   const tagTypes = [

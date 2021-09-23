@@ -24,7 +24,7 @@ function JourneyItem(props) {
           <div className="col-md-12 order-1">
             <div className="d-flex justify-content-between mt-lg-2 mt-md-3 ">
               <div className="title text-left  ">{product.name}</div>
-              <div className="tag">
+              <div className="tag m-md-2">
                 <i className="fas fa-tags  flex-grow-1">{product.tribe}</i>
               </div>
             </div>
@@ -62,7 +62,7 @@ function JourneyItem(props) {
           </div>
         </div>
         <div className="col-12 reviewStar-content">
-          <div className="content">{product.description}</div>
+          <div className="content ">{product.description}</div>
         </div>
       </div>
       <div className="col-md-3 journey-price  mt-md-4">
