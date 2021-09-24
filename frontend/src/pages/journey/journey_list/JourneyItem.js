@@ -3,22 +3,29 @@ import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import Rating from '../../../component/Rating'
 
-function JourneyItem({ product, selected, handleClick }) {
+import API from '../../../api'
+
+function JourneyItem(props) {
+  const { product, selected, handleClick } = props
+
+  const onClick = () => {
+    API.toggleJourneyLike(product._id).then(handleClick)
+  }
   return (
     <div className="row filter-result td-mb-25">
       <div
         className="col-md-4 col-12 filter-result-imgarea d-flex align-content-between "
         key={product._id}
       >
-        <img src={`/images/data/行程照片/${product.img1}`} alt="" />
+        <img src={`/images/data/行程照片/${product.journey_img}`} alt="" />
       </div>
       <div className="col-md-5 flex-md-column journey-info mt-lg-4 mb-3">
         <div className="row ">
           <div className="col-md-12 order-1">
-            <div className="d-flex justify-content-between mt-lg-2 mt-md-3">
-              <div className="title">{product.name}</div>
-              <div className="tag">
-                <i className="fas fa-tags">{product.tribe}</i>
+            <div className="d-flex justify-content-between mt-lg-2 mt-md-3 ">
+              <div className="title text-left  ">{product.name}</div>
+              <div className="tag m-md-2">
+                <i className="fas fa-tags  flex-grow-1">{product.tribe}</i>
               </div>
             </div>
           </div>
@@ -48,14 +55,14 @@ function JourneyItem({ product, selected, handleClick }) {
                     selected && 'fw-bold'
                   )}
                   style={{ cursor: 'pointer' }}
-                  onClick={handleClick}
+                  onClick={onClick}
                 ></i>
               </div>
             </div>
           </div>
         </div>
         <div className="col-12 reviewStar-content">
-          <div className="content">{product.description}</div>
+          <div className="content ">{product.description}</div>
         </div>
       </div>
       <div className="col-md-3 journey-price  mt-md-4">
@@ -76,7 +83,7 @@ function JourneyItem({ product, selected, handleClick }) {
                 selected && 'fw-bold'
               )}
               style={{ cursor: 'pointer' }}
-              onClick={handleClick}
+              onClick={onClick}
             ></i>
           </div>
         </div>

@@ -1,36 +1,133 @@
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import ScrollToTop from 'react-scroll-to-top'
-import clsx from 'clsx'
+
 import Rating from '../../component/Rating'
-import journeyinfoData from './JourneyInfoData/JourneyInfoData'
 import JourneyBanner from '../journey/banner/journeyBanner'
+import Like from './Like'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
 import JourneyCoustomerReview from './coustomer_review/journeyCoustomerReview'
 import Pagination from '../journey/pagination/Pagination'
 import '../../style/journey-info.css'
 
-function Journey_info(props) {
-  const findResult = journeyinfoData.find(
-    (x) => x._id === props.match.params.id
-  )
-  if (!findResult) {
-    return <div>找不到您想要的行程</div>
-  }
+import API from '../../api'
 
-  return (
+function Journey_info(props) {
+  const [findResult, setFindResult] = useState(null)
+  const id = props.match.params.id
+
+  const fetchAndUpdateJourneysLike = useCallback(async () => {
+    API.fetchJourney(id).then(setFindResult)
+  }, [id])
+
+  useEffect(() => {
+    fetchAndUpdateJourneysLike()
+  }, [fetchAndUpdateJourneysLike])
+  return findResult ? (
     <>
-      <JourneyBanner />
+      <section>
+        <div className="container td-mt-75">
+          <div
+            id="carouselExampleIndicators"
+            className="carousel slide carousel-fade "
+            data-bs-ride="carousel"
+          >
+            <div className="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                className="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="3"
+                aria-label="Slide 0"
+              ></button>
+            </div>
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img
+                  src={`/images/data/小banner圖/${findResult.banner_img}`}
+                  className="d-block w-100"
+                  alt="#"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src={`/images/data/小banner圖/${findResult.banner_img2}`}
+                  className="d-block w-100"
+                  alt="#"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src={`/images/data/小banner圖/${findResult.banner_img3}`}
+                  className="d-block w-100"
+                  alt="#"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src={`/images/data/小banner圖/${findResult.banner_img4}`}
+                  className="d-block w-100"
+                  alt="#"
+                />
+              </div>
+            </div>
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
       <div className="container td-mt-75 journey-info">
         <div className="row d-flex align-content-md-between tb journey-intro">
           <div className="col-md-6 col-12 journey-info-name">
             <p>{findResult.name}</p>
           </div>
+
           <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center flex-column flex-md-row align-items-center">
-            <i
-              className={clsx(
-                'far fa-heart td-me-50 journey-info-like order-2 order-md-1 mt-md-2'
-              )}
-            ></i>
+            <Like
+              findResult={findResult}
+              selected={findResult.status}
+              handleClick={fetchAndUpdateJourneysLike}
+            />
             <p className="journey-info-price order-1 order-md-2">
               TWD{findResult.price} 起
             </p>
@@ -115,14 +212,14 @@ function Journey_info(props) {
         </div>
         <div className=" td-mt-25 ">
           <img
-            src={`/images/data/行程照片/${findResult.img1}`}
+            src={`/images/data/行程照片/${findResult.journey_img}`}
             className="journey-info-pic"
             alt=""
           />
         </div>
         <div className=" mt-10 journey-info-pic">
           <img
-            src={`/images/data/行程照片/${findResult.img2}`}
+            src={`/images/data/行程照片/${findResult.journey_img2}`}
             className="journey-info-pic"
             alt=""
           />
@@ -136,7 +233,7 @@ function Journey_info(props) {
           <p>備註</p>
         </div>
         <div className="td-mt-25 ">
-          <p>{findResult.Precautions}</p>
+          <p>{findResult.needtoknow}</p>
         </div>
         <div className="td-md-25">&nbsp;</div>
       </div>
@@ -160,6 +257,8 @@ function Journey_info(props) {
       <Pagination />
       <ScrollToTop smooth />
     </>
+  ) : (
+    <div>Loading</div>
   )
 }
 

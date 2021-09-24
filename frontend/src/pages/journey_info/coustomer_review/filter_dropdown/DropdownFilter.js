@@ -28,17 +28,15 @@ function DropdownFilter(props) {
         </button>
         <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton1">
           {starsTypes.map((value, i) => (
-            <>
-              <DropdownUl
-                key={i}
-                value={value}
-                checked={stars?.includes(value)}
-                handleChecked={starCheckHandler}
-              >
-                {' '}
-                <span className="td-ms-25 d-inline-block">{value}星評價</span>
-              </DropdownUl>
-            </>
+            <DropdownUl
+              key={i}
+              value={value}
+              checked={stars?.includes(value)}
+              handleChecked={starCheckHandler}
+            >
+              {' '}
+              <span className="td-ms-25 d-inline-block">{value}星評價</span>
+            </DropdownUl>
           ))}
         </ul>
       </div>

@@ -19,7 +19,7 @@ function FilterBar(props) {
     }
   }
   const starCheckHandler = (e) => {
-    const value = e.target.value
+    const value = parseInt(e.target.value, 10)
     if (!stars.includes(value)) {
       return setStars([...stars, value])
     } else {

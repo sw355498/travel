@@ -20,8 +20,8 @@ function JourneyReservationArea(props) {
       ).slice(0, 3),
     [JourneyGuideInfo, TribeForGuide.tribe]
   )
+  const [GuidesIdxSelected, setGuidesIdxSelected] = useState(0)
 
-  const [GuidesIdxSelected, setGuidesIdxSelected] = useState(-1)
   //設定counter狀態
   const [count, setCount] = useState(0)
   // 目前購物車狀態

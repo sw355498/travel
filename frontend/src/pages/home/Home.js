@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Zoom from 'react-reveal/Zoom'
 import Fade from 'react-reveal/Fade'
 import ScrollToTop from 'react-scroll-to-top'
@@ -15,9 +15,19 @@ import '../../style/home.css'
 //data 引入
 import JourneyInfoData from '../journey_info/JourneyInfoData/JourneyInfoData'
 import HomeDropdownFilter from './home_banner/HomeDropdownFilter'
+import API from '../../api'
 
 function Home() {
-  const [tribes] = useState(JourneyInfoData)
+  // const [tribes] = useState(JourneyInfoData)
+  const [tribes, setTribes] = useState(null)
+  // const fetchAndUpdateJourneys = useCallback()
+
+  const fetchTribes = useCallback(async () => {
+    API.fetchTribes().then(setTribes)
+  }, [])
+  useEffect(() => {
+    fetchTribes()
+  }, [fetchTribes])
 
   return (
     <>
@@ -40,7 +50,11 @@ function Home() {
                   <h2 className="first-h2 text-center">
                     帶領你認識花蓮深入部落
                   </h2>
-                  <HomeDropdownFilter tribes={tribes} />
+                  {tribes ? (
+                    <HomeDropdownFilter tribes={tribes} />
+                  ) : (
+                    <div>loading....</div>
+                  )}
                 </Zoom>
               </div>
             </div>
@@ -69,8 +83,7 @@ function Home() {
           </div>
         </div>
       </section>
-
-      <HomeGallryArea tribes={tribes} />
+      {tribes ? <HomeGallryArea tribes={tribes} /> : <div>loading....</div>}
       <HomeExcellentGuide />
       <ScrollToTop smooth />
     </>

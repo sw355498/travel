@@ -5,7 +5,6 @@ import JourneyFilterResult from './filter_result/journeyFillterResult'
 import Pagination from './pagination/Pagination'
 import '../../style/journey.css'
 import { useLocation } from 'react-router-dom'
-
 import qs from 'qs'
 
 function useQuery() {
