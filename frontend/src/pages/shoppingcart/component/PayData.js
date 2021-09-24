@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import InputTextField from './InputTextField'
-import SelectField from './SelectField'
+import SelectNation from './SelectNation'
+import SelectBill from './SelectBill'
 import Cards from 'react-credit-cards'
 import moment from 'moment'
 import axios from 'axios'
 function PayData(props) {
   // spinner用的狀態
   const [isLoading, setIsLoading] = useState(false)
-
-  //信用卡卡號
-  const [number, setNumber] = useState('')
-  //信用卡持卡人姓名
-  const [name, setName] = useState('')
-  //信用卡到期日
-  const [expiry, setExpiry] = useState('')
-  //信用卡CVC確認碼
-  const [cvc, setCvc] = useState('')
-  //輸入資料時的聚焦
+  // Cards輸入資料時的聚焦
   const [focus, setFocus] = useState('')
-  //LocalStorage
+  // LocalStorage
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
@@ -120,7 +112,7 @@ function PayData(props) {
         let guide_id = mycartDisplay[i].guild
         let journey_id = mycartDisplay[i].name
         let sur_name = props.fields.surName
-        let name = props.fields.name
+        let first_name = props.fields.firstName
         let phone = props.fields.phone
         let nation = props.fields.nation
         let address = props.fields.address
@@ -128,13 +120,13 @@ function PayData(props) {
         let go_time = moment(mycartDisplay[i].go_time).format('YYYY-MM-DD')
         let total_amount = mycartDisplay[i].amount
         let total_price = mycartDisplay[i].amount * mycartDisplay[i].price
-        let card_number = number
-        let bill_status = props.bill
-        const response = await axios.post(`http://localhost:3002/pay`, {
+        let card_number = props.fields.number
+        let bill_status = props.fields.bill
+        await axios.post(`http://localhost:3002/pay`, {
           guide_id,
           journey_id,
           sur_name,
-          name,
+          first_name,
           phone,
           nation,
           address,
@@ -161,7 +153,7 @@ function PayData(props) {
   )
   const display = (
     <>
-      <div class="accordion td-mt-75" id="accordionExample">
+      <div class="accordion td-mt-75 td-mb-25" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button
@@ -191,11 +183,13 @@ function PayData(props) {
                   {/* <姓名區塊 */}
                   <div class="col-12 col-lg-6">
                     <InputTextField
-                      name="name"
+                      name="firstName"
                       label="姓名"
-                      state={props.fields.name}
+                      state={props.fields.firstName}
                       setState={handleFieldChange}
-                      error={props.fieldErrors.name}
+                      setFocus={setFocus}
+                      error={props.fieldErrors.firstName}
+                      maxLength="50"
                       required
                     />
                   </div>
@@ -207,7 +201,9 @@ function PayData(props) {
                       label="姓氏"
                       state={props.fields.surName}
                       setState={handleFieldChange}
+                      setFocus={setFocus}
                       error={props.fieldErrors.surName}
+                      maxLength="50"
                       required
                     />
                   </div>
@@ -220,30 +216,25 @@ function PayData(props) {
                       label="連絡電話"
                       state={props.fields.phone}
                       setState={handleFieldChange}
+                      setFocus={setFocus}
                       error={props.fieldErrors.phone}
                       minLength="10"
                       maxLength="10"
                       required
                     />
                   </div>
+
                   {/* 選擇國家區塊 */}
                   <div class="col-12 col-lg-6">
-                    <SelectField
+                    <SelectNation
                       name="nation"
                       label="國家/地區"
                       state={props.fields.nation}
                       setState={handleFieldChange}
+                      setFocus={setFocus}
                       error={props.fieldErrors.nation}
                       required
-                    >
-                      <option selected disabled value="">
-                        請選擇國家
-                      </option>
-                      <option>台灣</option>
-                      <option>日本</option>
-                      <option>韓國</option>
-                      <option>其它</option>
-                    </SelectField>
+                    ></SelectNation>
                   </div>
 
                   {/* 聯絡地址 */}
@@ -253,7 +244,9 @@ function PayData(props) {
                       label="聯絡地址"
                       state={props.fields.address}
                       setState={handleFieldChange}
+                      setFocus={setFocus}
                       error={props.fieldErrors.address}
+                      maxLength="50"
                       required
                     />
                   </div>
@@ -266,7 +259,9 @@ function PayData(props) {
                       label="電子郵件"
                       state={props.fields.email}
                       setState={handleFieldChange}
+                      setFocus={setFocus}
                       error={props.fieldErrors.email}
+                      maxLength="50"
                       required
                     />
                   </div>
@@ -276,105 +271,86 @@ function PayData(props) {
                 <div class="td-mt-50 row" id="PaymentForm">
                   <span class="text-title-size20">信用卡付款</span>
                   <Cards
-                    number={number}
-                    name={name}
-                    expiry={expiry}
-                    cvc={cvc}
+                    number={props.fields.number}
+                    name={props.fields.name}
+                    expiry={props.fields.expiry}
+                    cvc={props.fields.cvc}
                     focused={focus}
                   />
 
-                  <div class="col-12 my-3">
-                    <input
-                      class="form-control"
-                      type="tel"
+                  <div class="col-12">
+                    <InputTextField
                       name="number"
-                      placeholder="卡號"
-                      value={number}
-                      maxlength="16"
-                      minLength="16"
-                      onChange={(e) => {
-                        props.setPayNumber(e.target.value)
-                        setNumber(e.target.value)
-                      }}
-                      onFocus={(e) => setFocus(e.target.name)}
-                    />
-                  </div>
-                  <div class="col-12 mb-3">
-                    <input
-                      class="form-control"
-                      type="text"
-                      name="name"
-                      placeholder="持卡人姓名"
-                      value={name}
-                      onChange={(e) => {
-                        props.setPayCardName(e.target.value)
-                        setName(e.target.value)
-                      }}
-                      onFocus={(e) => setFocus(e.target.name)}
-                    />
-                  </div>
-                  <div class="col-12 mb-3">
-                    <input
-                      class="form-control"
-                      type="text"
-                      name="expiry"
-                      placeholder="MM/YY 有效日期"
-                      value={expiry}
-                      maxlength="4"
-                      onChange={(e) => {
-                        props.setPayExpiry(e.target.value)
-                        setExpiry(e.target.value)
-                      }}
-                      onFocus={(e) => setFocus(e.target.name)}
-                    />
-                  </div>
-                  <div class="col-12 mb-3">
-                    <input
-                      class="form-control"
                       type="tel"
+                      label="卡號"
+                      state={props.fields.number}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.number}
+                      minLength="16"
+                      maxLength="16"
+                      setFocus={setFocus}
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <InputTextField
+                      name="name"
+                      type="text"
+                      label="持卡人姓名"
+                      state={props.fields.name}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.name}
+                      maxLength="50"
+                      setFocus={setFocus}
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <InputTextField
+                      name="expiry"
+                      type="tel"
+                      label="有效日期"
+                      state={props.fields.expiry}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.expiry}
+                      minLength="4"
+                      maxLength="4"
+                      setFocus={setFocus}
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <InputTextField
                       name="cvc"
-                      placeholder="CVC"
-                      value={cvc}
-                      maxlength="3"
-                      onChange={(e) => {
-                        props.setPayCvc(e.target.value)
-                        setCvc(e.target.value)
-                      }}
-                      onFocus={(e) => setFocus(e.target.name)}
+                      type="tel"
+                      label="cvc"
+                      state={props.fields.cvc}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.cvc}
+                      minLength="3"
+                      maxLength="3"
+                      setFocus={setFocus}
+                      required
                     />
                   </div>
                 </div>
                 {/* 發票資料 */}
                 <div class="col-12 td-mt-50">
-                  <label for="validationDefault04" class="form-label">
-                    <span class="text-title-size20">發票資料</span>
-                    <span class="text-danger td-ms-15 text-title-size20">
-                      *
-                    </span>
-                  </label>
-                  <select
-                    value={props.bill}
-                    class="form-select"
-                    id="validationDefault04"
-                    onChange={(e) => {
-                      props.setBill(e.target.value)
-                    }}
+                  <SelectBill
+                    name="bill"
+                    label="發票資料"
+                    state={props.fields.bill}
+                    setState={handleFieldChange}
+                    error={props.fieldErrors.bill}
                     required
-                  >
-                    <option selected disabled value="">
-                      請選擇發票處理方式
-                    </option>
-                    <option>電子發票</option>
-                    <option>雲端發票捐贈</option>
-                    <option>個人紙本發票</option>
-                  </select>
+                  ></SelectBill>
                 </div>
                 <div class="td-mt-50 d-flex justify-content-center justify-content-lg-end">
                   <button
                     type="submit"
                     className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
                   >
-                    確認
+                    付款
                   </button>
                   <button
                     to="/journey"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SelectField({
+function SelectNation({
   name,
   label,
   state,
@@ -38,4 +38,4 @@ function SelectField({
   )
 }
 
-export default SelectField
+export default SelectNation

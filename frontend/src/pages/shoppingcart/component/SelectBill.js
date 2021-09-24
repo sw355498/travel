@@ -1,41 +1,40 @@
 import React from 'react'
 
-function InputTextField({
+function SelectBill({
   name,
   label,
-  type,
   state,
   setState,
-  setFocus,
   error,
   required,
-  minLength,
-  maxLength,
   pattern,
 }) {
-  // email, password...etc
-  const fieldType = type ? type : 'text'
   return (
     <>
       <div className="form-group">
         <label htmlFor={name}>{label}</label>
-        <input
+        <select
           id={name}
           name={name}
-          type={fieldType}
-          className={`form-control ${error !== '' ? 'is-invalid' : ''}`}
+          className={`form-control bg-white ${
+            error !== '' ? 'is-invalid' : ''
+          }`}
           value={state}
           onChange={setState}
           required={required}
-          minLength={minLength}
-          maxLength={maxLength}
           pattern={pattern}
-          onFocus={(e) => setFocus(e.target.name)}
-        />
+        >
+          <option selected disabled value="">
+            請選擇發票處理方式
+          </option>
+          <option>電子發票</option>
+          <option>雲端發票捐贈</option>
+          <option>個人紙本發票</option>
+        </select>
         {error !== '' && <div className="invalid-feedback">{error}</div>}
       </div>
     </>
   )
 }
 
-export default InputTextField
+export default SelectBill
