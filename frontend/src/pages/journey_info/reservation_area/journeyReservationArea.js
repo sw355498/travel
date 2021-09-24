@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 import DatePicker from './date_picker/DatePicker'
-import Counter from './Counter/Counter'
+
 import GuideCard from './GuideCard/GuideCard'
 
 import API from '../../../api'
@@ -19,8 +19,6 @@ function JourneyReservationArea(props) {
     API.fetchJourneyInfoGuide().then(setJourneyGuideInfo)
   }, [])
 
-  //設定counter狀態
-  const [count, setCount] = useState(0)
   // 目前購物車狀態
   const [mycart, setMycart] = useState([])
 
@@ -117,29 +115,12 @@ function JourneyReservationArea(props) {
           <GuideCard
             findResult={findResult}
             JourneyGuideInfo={JourneyGuideInfo}
+            updateCartToLocalStorage={updateCartToLocalStorage}
+            dateState={dateState}
           />
         ) : (
           <div>{spinner}</div>
         )}
-        <Counter count={count} setCount={setCount} />
-        <div className="d-flex justify-content-center mt--2">
-          <button
-            className="btn journey-reservation-button"
-            onClick={() => {
-              updateCartToLocalStorage({
-                id: props.findResult._id,
-                name: props.findResult.introname,
-                amount: count + 1,
-                img: props.findResult.img1,
-                go_time: dateState,
-                guild: 1,
-                price: props.findResult.price,
-              })
-            }}
-          >
-            加入購物車
-          </button>
-        </div>
       </div>
     </div>
   )
