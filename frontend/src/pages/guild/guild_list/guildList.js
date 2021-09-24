@@ -1,6 +1,6 @@
 import React from 'react'
-import GuildItem from './GuildItem'
-import axios from 'axios'
+import GuildItem from './guildItem'
+
 
 // const getGuildData = async () => {
 //   try {
