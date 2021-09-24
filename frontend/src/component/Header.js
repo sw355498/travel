@@ -54,11 +54,11 @@ function Header(porps) {
             </div>
 
             {/* 導覽列登入後右側 */}
-            {/* <div className="td-right-nav">
-              <a href="通知">
+            {/* <div className="td-right-nav"> */}
+            {/* <a href="通知">
                 <i className="fas fa-comment-dots"></i>
-              </a>
-              <Link
+              </a> */}
+            {/* <Link
                 to="/Shoppingcart"
                 className="td-cart position-relative"
                 href="../pages/shoppingcart/ShoppingcartCartList"
@@ -74,6 +74,12 @@ function Header(porps) {
                 href="/page/member/member-information.html"
               >
                 <img className="td-member-avatar" src={avatar} alt="avatar" />
+              </Link>
+              <Link
+                to="#"
+                className="btn td-btn-medium-b td-header-register text-center"
+              >
+                登出
               </Link>
             </div> */}
 

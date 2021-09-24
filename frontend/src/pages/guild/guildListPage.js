@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function GuildListPage() {
+  // //現在在第幾頁
+  // const [page, setPage] = useState(1);
+  // //總共有幾頁
+  // const [totalPage, settotalPage] = useState(0)
+  // const getPages = ()=>{
+  //   let pages=[];
+  //   for(let i = i; i<=totalPage; i++){
+  //     pages.push()
+  //   }
+  // }
+
   return (
     <nav aria-label="Page navigation example">
       <ul className="pagination mx-auto td-mb-25">

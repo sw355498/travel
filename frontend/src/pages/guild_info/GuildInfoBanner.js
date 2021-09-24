@@ -1,5 +1,5 @@
 import React from 'react'
-import GuildInfoBanner1 from '../../data/水璉部落/導遊/導遊2.jpg'
+// import GuildInfoBanner1 from '../../data/水璉部落/導遊/導遊2.jpg'
 import quote from '../../img/quotes.png'
 
 function GuildInfoBanner() {
@@ -7,7 +7,7 @@ function GuildInfoBanner() {
     <div className="guilddt-banner position-relative td-mt-75">
       <img
         className="img-fluid guilddt-banner-img"
-        src={GuildInfoBanner1}
+        src="/images/data/水璉部落/導遊/導遊2.jpg"
         alt="banner-img"
       />
       <div className="container guilddt-banner-content position-absolute d-flex">
