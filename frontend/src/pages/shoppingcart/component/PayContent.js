@@ -9,46 +9,46 @@ function PayContent(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
-  async function handleSubmit() {
-    for (let i = 0; i < mycartDisplay.length; i++) {
-      try {
-        let guide_id = mycartDisplay[i].guild
-        let journey_id = mycartDisplay[i].name
-        let sur_name = props.surName
-        let name = props.name
-        let phone = props.phone
-        let nation = props.nation
-        let address = props.address
-        let email = props.email
-        let go_time = moment(mycartDisplay[i].go_time).format('YYYY-MM-DD')
-        let total_amount = mycartDisplay[i].amount
-        let total_price = mycartDisplay[i].amount * mycartDisplay[i].price
-        let pay_status = props.paymentMethod
-        let card_number = props.payNumber
-        let bill_status = props.bill
-        let order_status = '已付款'
-        const response = await axios.post(`http://localhost:3002/pay`, {
-          guide_id,
-          journey_id,
-          sur_name,
-          name,
-          phone,
-          nation,
-          address,
-          email,
-          go_time,
-          total_amount,
-          total_price,
-          pay_status,
-          card_number,
-          bill_status,
-          order_status,
-        })
-      } catch (error) {
-        console.error(error)
-      }
-    }
-  }
+  // async function handleSubmit() {
+  //   for (let i = 0; i < mycartDisplay.length; i++) {
+  //     try {
+  //       let guide_id = mycartDisplay[i].guild
+  //       let journey_id = mycartDisplay[i].name
+  //       let sur_name = props.fields.surName
+  //       let name = props.fields.name
+  //       let phone = props.fields.phone
+  //       let nation = props.fields.nation
+  //       let address = props.fields.address
+  //       let email = props.fields.email
+  //       let go_time = moment(mycartDisplay[i].go_time).format('YYYY-MM-DD')
+  //       let total_amount = mycartDisplay[i].amount
+  //       let total_price = mycartDisplay[i].amount * mycartDisplay[i].price
+  //       let pay_status = props.fields.paymentMethod
+  //       let card_number = props.fields.payNumber
+  //       let bill_status = props.fields.bill
+  //       let order_status = '已付款'
+  //       const response = await axios.post(`http://localhost:3002/pay`, {
+  //         guide_id,
+  //         journey_id,
+  //         sur_name,
+  //         name,
+  //         phone,
+  //         nation,
+  //         address,
+  //         email,
+  //         go_time,
+  //         total_amount,
+  //         total_price,
+  //         pay_status,
+  //         card_number,
+  //         bill_status,
+  //         order_status,
+  //       })
+  //     } catch (error) {
+  //       console.error(error)
+  //     }
+  //   }
+  // }
 
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
@@ -181,15 +181,15 @@ function PayContent(props) {
                       TWD {sum(mycartDisplay)}
                     </div>
                   </div>
-                  <div class="col-12 col-lg-3">
+                  {/* <div class="col-12 col-lg-3">
                     <button
                       className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
                       onClick={handleSubmit}
                     >
                       付款
                     </button>
-                  </div>
-                  <div class="col-12 col-lg-3">
+                  </div> */}
+                  {/* <div class="col-12 col-lg-3">
                     <button
                       to="/journey"
                       className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
@@ -199,7 +199,7 @@ function PayContent(props) {
                     >
                       <span>回上一步</span>
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

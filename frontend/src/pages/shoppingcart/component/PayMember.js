@@ -1,8 +1,56 @@
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
+import { withRouter } from 'react-router-dom'
+import InputTextField from './InputTextField'
+import SelectField from './SelectField'
 function PayMember(props) {
-  //勾選更新方塊
-  const [renew, setRenew] = useState(true)
+  // spinner用的狀態
+  const [isLoading, setIsLoading] = useState(false)
+
+  // 自動1秒後關閉指示的spinner
+  useEffect(() => {
+    if (isLoading) {
+      setTimeout(() => setIsLoading(false), 1000)
+    }
+  }, [isLoading])
+
+  // 處理每個欄位的變動，只能用於文字類的欄位
+  const handleFieldChange = (e) => {
+    // 更新輸入欄位的變動
+    // 用新輸入的屬性值和原物件作合併
+    const updatedFields = {
+      ...props.fields,
+      [e.target.name]: e.target.value,
+    }
+
+    props.setFields(updatedFields)
+  }
+
+  // 整個表單有任何變動(ex.某個欄位有輸入)
+  // 使用者正在改有錯誤的欄位，清除某個欄位的錯誤訊息
+  const handleFormChange = (e) => {
+    console.log('更新欄位: ', e.target.name)
+
+    // 該欄位的錯誤訊息清空
+    const updatedFieldErrors = {
+      ...props.fieldErrors,
+      [e.target.name]: '',
+    }
+
+    props.setFieldErrors(updatedFieldErrors)
+  }
+
+  // 表單有不合法的檢查出現時
+  const handleFormInvalid = (e) => {
+    // 擋住錯誤訊息預設呈現方式(跳出的訊息泡泡)
+    e.preventDefault()
+
+    const updatedFieldErrors = {
+      ...props.fieldErrors,
+      [e.target.name]: e.target.validationMessage,
+    }
+
+    props.setFieldErrors(updatedFieldErrors)
+  }
   return (
     <>
       <div class="accordion td-mt-75" id="accordionExample">
@@ -26,84 +74,59 @@ function PayMember(props) {
             data-bs-parent="#accordionExample"
           >
             <div class="accordion-body menu-bg">
-              <form class="td-mt-50" action="POST">
+              <form
+                onChange={handleFormChange}
+                onInvalid={handleFormInvalid}
+                action="POST"
+              >
                 <div class="row">
                   {/* <姓名區塊 */}
                   <div class="col-12 col-lg-6">
-                    <label for="formGroupExampleInput" class="form-label">
-                      <span class="text-title-size20">名字</span>
-                      <span class="text-danger td-ms-15 text-title-size20">
-                        *
-                      </span>
-                    </label>
-                    <input
-                      type="text"
-                      value={props.surName}
-                      class="form-control"
-                      id="formGroupExampleInput"
-                      placeholder="請輸入您的名子"
-                      onChange={(e) => {
-                        props.setSurName(e.target.value)
-                      }}
+                    <InputTextField
+                      name="name"
+                      label="姓名"
+                      state={props.fields.name}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.name}
+                      required
                     />
                   </div>
 
                   {/* 姓氏區塊 */}
-                  <div class="col-12 td-mt-50 col-lg-6 mt-lg-0">
-                    <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">姓氏</span>
-                      <span class="text-danger td-ms-15 text-title-size20">
-                        *
-                      </span>
-                    </label>
-                    <input
-                      type="text"
-                      value={props.name}
-                      class="form-control"
-                      id="formGroupExampleInput2"
-                      placeholder="請輸入您的姓氏"
-                      onChange={(e) => {
-                        props.setName(e.target.value)
-                      }}
+                  <div class="col-12 col-lg-6">
+                    <InputTextField
+                      name="surName"
+                      label="姓氏"
+                      state={props.fields.surName}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.surName}
+                      required
                     />
                   </div>
 
                   {/* 連絡電話區塊 */}
-                  <div class="col-12 col-lg-6 td-mt-50">
-                    <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">連絡電話</span>
-                      <span class="text-danger td-ms-15 text-title-size20">
-                        *
-                      </span>
-                    </label>
-                    <input
-                      type="text"
-                      value={props.phone}
-                      class="form-control"
-                      id="formGroupExampleInput2"
-                      placeholder="請輸入您的連絡電話"
-                      onChange={(e) => {
-                        props.setPhone(e.target.value)
-                      }}
+                  <div class="col-12 col-lg-6">
+                    <InputTextField
+                      name="phone"
+                      type="tel"
+                      label="連絡電話"
+                      state={props.fields.phone}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.phone}
+                      minLength="10"
+                      maxLength="10"
+                      required
                     />
                   </div>
-                  {/* 選格國家區塊 */}
-                  <div class="col-12 col-lg-6 td-mt-50">
-                    <label for="validationDefault04" class="form-label">
-                      <span class="text-title-size20">國家/地區</span>
-                      <span class="text-danger td-ms-15 text-title-size20">
-                        *
-                      </span>
-                    </label>
-
-                    <select
-                      value={props.nation}
-                      class="form-select"
-                      id="validationDefault04"
+                  {/* 選擇國家區塊 */}
+                  <div class="col-12 col-lg-6">
+                    <SelectField
+                      name="nation"
+                      label="國家/地區"
+                      state={props.fields.nation}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.nation}
                       required
-                      onChange={(e) => {
-                        props.setNation(e.target.value)
-                      }}
                     >
                       <option selected disabled value="">
                         請選擇國家
@@ -112,69 +135,38 @@ function PayMember(props) {
                       <option>日本</option>
                       <option>韓國</option>
                       <option>其它</option>
-                    </select>
+                    </SelectField>
                   </div>
 
                   {/* 聯絡地址 */}
-                  <div class="col-12 td-mt-50">
-                    <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">地址</span>
-                      <span class="text-danger td-ms-15 text-title-size20">
-                        *
-                      </span>
-                    </label>
-                    <input
-                      type="text"
-                      value={props.address}
-                      class="form-control"
-                      id="formGroupExampleInput2"
-                      placeholder="請輸入您的聯絡地址"
-                      onChange={(e) => {
-                        props.setAddress(e.target.value)
-                      }}
+                  <div class="col-12">
+                    <InputTextField
+                      name="address"
+                      label="聯絡地址"
+                      state={props.fields.address}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.address}
+                      required
                     />
                   </div>
 
                   {/* 聯絡信箱 */}
                   <div class="col-12 td-mt-50">
-                    <label for="formGroupExampleInput2" class="form-label">
-                      <span class="text-title-size20">信箱</span>
-                      <span class="text-danger td-ms-15 text-title-size20">
-                        *
-                      </span>
-                    </label>
-                    <input
+                    <InputTextField
+                      name="email"
                       type="email"
-                      value={props.email}
-                      class="form-control"
-                      id="formGroupExampleInput2"
-                      placeholder="請輸入您的E-mail"
-                      onChange={(e) => {
-                        props.setEmail(e.target.value)
-                      }}
+                      label="電子郵件"
+                      state={props.fields.email}
+                      setState={handleFieldChange}
+                      error={props.fieldErrors.email}
+                      required
                     />
                   </div>
-
-                  {/* checkbox */}
-                  {/* <div class="td-mt-75">
-                    <div class="form-check">
-                      <input
-                        type="checkbox"
-                        checked={renew}
-                        class="form-check-input checkbox-size"
-                        id="flexCheckChecked"
-                        onChange={(e) => {
-                          setRenew(e.target.checked)
-                        }}
-                      />
-                      <label
-                        class="form-check-label text-title-size20 td-ms-15 mt-1"
-                        for="flexCheckChecked"
-                      >
-                        同時更新會員資料
-                      </label>
-                    </div>
-                  </div> */}
+                </div>
+                <div class="td-mt-50 d-flex justify-content-center justify-content-lg-end">
+                  <button className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3">
+                    確認
+                  </button>
                 </div>
               </form>
             </div>
@@ -185,4 +177,4 @@ function PayMember(props) {
   )
 }
 
-export default PayMember
+export default withRouter(PayMember)

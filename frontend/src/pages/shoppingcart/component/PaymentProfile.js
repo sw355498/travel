@@ -14,6 +14,8 @@ function PaymentProfile(props) {
   //輸入資料時的聚焦
   const [focus, setFocus] = useState('')
 
+  const [mycart, setMycart] = useState([])
+  const [mycartDisplay, setMycartDisplay] = useState([])
   // 付款區塊切換
   const [cardDisplay, setCardDisplay] = useState('pay-switch')
   const [transferDisplay, setTransferDisplay] = useState('pay-switch')
@@ -28,6 +30,53 @@ function PaymentProfile(props) {
     setTransferDisplay('')
   }
 
+  function getCartFromLocalStorage() {
+    const newCart = localStorage.getItem('cart') || '[]'
+
+    setMycart(JSON.parse(newCart))
+  }
+
+  useEffect(() => {
+    getCartFromLocalStorage()
+  }, [])
+
+  useEffect(() => {
+    // mycartDisplay運算
+    let newMycartDisplay = []
+
+    //尋找mycartDisplay
+    for (let i = 0; i < mycart.length; i++) {
+      //尋找mycartDisplay中有沒有此mycart[i].id
+      //有找到會返回陣列成員的索引值
+      //沒找到會返回-1
+      const index = newMycartDisplay.findIndex(
+        (value) => value.id === mycart[i].id
+      )
+      //有的話就數量+1
+      if (index !== -1) {
+        //每次只有加1個數量
+        //newMycartDisplay[index].amount++
+        //假設是加數量的
+        newMycartDisplay[index].amount += mycart[i].amount
+      } else {
+        //沒有的話就把項目加入，數量為1
+        const newItem = { ...mycart[i] }
+        newMycartDisplay = [...newMycartDisplay, newItem]
+      }
+    }
+
+    // console.log(newMycartDisplay)
+    setMycartDisplay(newMycartDisplay)
+  }, [mycart])
+
+  // 計算總價用的函式
+  const sum = (items) => {
+    let total = 0
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].amount * items[i].price
+    }
+    return total
+  }
   return (
     <>
       <div class="accordion td-mt-75" id="accordionExample">
@@ -52,7 +101,7 @@ function PaymentProfile(props) {
           >
             {/* 付款方式 */}
             <div class="accordion-body menu-bg">
-              <div class="col-12 col-lg-6 td-mt-50">
+              <from class="col-12 td-mt-50">
                 <label for="validationDefault04" class="form-label">
                   <span class="text-title-size20">付款方式</span>
                   <span class="text-danger td-ms-15 text-title-size20">*</span>
@@ -90,71 +139,74 @@ function PaymentProfile(props) {
                     cvc={cvc}
                     focused={focus}
                   />
-                  <form>
-                    <div class="col-12 my-2">
-                      <input
-                        class="form-control"
-                        type="tel"
-                        name="number"
-                        placeholder="卡號"
-                        value={number}
-                        onChange={(e) => {
-                          props.setPayNumber(e.target.value)
-                          setNumber(e.target.value)
-                        }}
-                        onFocus={(e) => setFocus(e.target.name)}
-                      />
-                    </div>
-                    <div class="col-12 mb-2">
-                      <input
-                        class="form-control"
-                        type="text"
-                        name="name"
-                        placeholder="持卡人姓名"
-                        value={name}
-                        onChange={(e) => {
-                          props.setPayCardName(e.target.value)
-                          setName(e.target.value)
-                        }}
-                        onFocus={(e) => setFocus(e.target.name)}
-                      />
-                    </div>
-                    <div class="col-12 mb-2">
-                      <input
-                        class="form-control"
-                        type="text"
-                        name="expiry"
-                        placeholder="MM/YY 有效日期"
-                        value={expiry}
-                        onChange={(e) => {
-                          props.setPayExpiry(e.target.value)
-                          setExpiry(e.target.value)
-                        }}
-                        onFocus={(e) => setFocus(e.target.name)}
-                      />
-                    </div>
-                    <div class="col-12 mb-2">
-                      <input
-                        class="form-control"
-                        type="tel"
-                        name="cvc"
-                        placeholder="CVC"
-                        value={cvc}
-                        onChange={(e) => {
-                          props.setPayCvc(e.target.value)
-                          setCvc(e.target.value)
-                        }}
-                        onFocus={(e) => setFocus(e.target.name)}
-                      />
-                    </div>
-                  </form>
+
+                  <div class="col-12 my-3">
+                    <input
+                      class="form-control"
+                      type="tel"
+                      name="number"
+                      placeholder="卡號"
+                      value={number}
+                      maxlength="16"
+                      minLength="16"
+                      onChange={(e) => {
+                        props.setPayNumber(e.target.value)
+                        setNumber(e.target.value)
+                      }}
+                      onFocus={(e) => setFocus(e.target.name)}
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="name"
+                      placeholder="持卡人姓名"
+                      value={name}
+                      onChange={(e) => {
+                        props.setPayCardName(e.target.value)
+                        setName(e.target.value)
+                      }}
+                      onFocus={(e) => setFocus(e.target.name)}
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="expiry"
+                      placeholder="MM/YY 有效日期"
+                      value={expiry}
+                      maxlength="4"
+                      onChange={(e) => {
+                        props.setPayExpiry(e.target.value)
+                        setExpiry(e.target.value)
+                      }}
+                      onFocus={(e) => setFocus(e.target.name)}
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <input
+                      class="form-control"
+                      type="tel"
+                      name="cvc"
+                      placeholder="CVC"
+                      value={cvc}
+                      maxlength="3"
+                      onChange={(e) => {
+                        props.setPayCvc(e.target.value)
+                        setCvc(e.target.value)
+                      }}
+                      onFocus={(e) => setFocus(e.target.name)}
+                    />
+                  </div>
                 </div>
                 {/* 轉帳代繳付款資料填寫 */}
                 <div
                   class={`td-mt-25 ${transferDisplay}`}
                   id="transferMaterial"
                 >
-                  <div class="row td-mt-25">
+                  <div class="td-mt-25">
                     <div class="col-12 td-mt-25">
                       <select
                         class="form-select"
@@ -192,8 +244,9 @@ function PaymentProfile(props) {
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="請輸入金額"
+                        placeholder={sum(mycartDisplay)}
                         aria-label="轉帳金額"
+                        disabled
                       />
                     </div>
                     <p class="fs-6 mt-2 text-danger">*請於24小時內完成轉帳</p>
@@ -224,7 +277,15 @@ function PaymentProfile(props) {
                     <option>個人紙本發票</option>
                   </select>
                 </div>
-              </div>
+                <div class="td-mt-50 d-flex justify-content-center justify-content-lg-end">
+                  <button
+                    className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
+                    // onClick={handleSubmit}
+                  >
+                    確認
+                  </button>
+                </div>
+              </from>
             </div>
           </div>
         </div>
