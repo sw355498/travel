@@ -1,22 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import axios from 'axios'
+import { API_URL } from '../../config'
+
 import '../../style/sign-in-up.css'
 
-function Login() {
+const Login = () => {
+  const [email, setEmail] = useState('test@gmail.com')
+  const [password, setPassword] = useState('12345')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    let result = await axios.post(`${API_URL}/auth/login`, { email, password })
+    console.log(result)
+  }
+
   return (
     <div className="tab-content">
       <div id="tab-inner">
-        <div className="text-center td-mt-25">
+        {/* <div className="text-center td-mt-25">
           <p>使用社交平台帳戶登入</p>
-        </div>
-        <form className="form-content" id="tab1">
+        </div> */}
+        <form className="form-content" id="tab1" onSubmit={handleSubmit}>
           <div className="form-group">
             <label for="email">Email</label>
             <input
               type="email"
               className="form-control"
               id="email"
-              placeholder=""
+              name="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value)
+              }}
+              required
             />
           </div>
           <div className="form-group">
@@ -25,7 +43,12 @@ function Login() {
               type="password"
               className="form-control"
               id="password"
-              placeholder=""
+              name="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value)
+              }}
+              required
             />
           </div>
           <button type="submit" className="mx-auto sign-in-btn  td-mb-25 ">
@@ -39,5 +62,4 @@ function Login() {
     </div>
   )
 }
-
 export default Login

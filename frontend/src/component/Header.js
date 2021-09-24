@@ -38,7 +38,7 @@ function Header(porps) {
               </Link>
             </ul>
             {/* 導覽列登入前右側 */}
-            {/* <div className="td-nav-before d-flex align-items-center">
+            <div className="td-nav-before d-flex align-items-center">
               <Link
                 to="/Login"
                 className="btn td-btn-medium-o td-header-login text-center"
@@ -51,14 +51,14 @@ function Header(porps) {
               >
                 註冊
               </Link>
-            </div> */}
+            </div>
 
             {/* 導覽列登入後右側 */}
-            <div className="td-right-nav">
-              {/* <a href="通知">
+            {/* <div className="td-right-nav"> */}
+            {/* <a href="通知">
                 <i className="fas fa-comment-dots"></i>
               </a> */}
-              <Link
+            {/* <Link
                 to="/Shoppingcart"
                 className="td-cart position-relative"
                 href="../pages/shoppingcart/ShoppingcartCartList"
@@ -81,7 +81,7 @@ function Header(porps) {
               >
                 登出
               </Link>
-            </div>
+            </div> */}
 
             {/* 漢堡 */}
             <div className="td-burger">

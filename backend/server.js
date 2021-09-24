@@ -50,8 +50,6 @@ app.get("/guild",async (req,res,next)=>{
     res.json({result});
 })
 
-
-
 app.get("/guild/:guildNum",async (req,res,next)=>{
     // ("SELECT * FROM guild_tribes JOIN guild on guild_tribes.guild_id = guild.id JOIN tribes on guild_tribes.tribes_id = tribes.id WHERE guild.id = ?",[req.params.guildNum])
     let result = await connection.queryAsync("SELECT * FROM guild WHERE id = ?",[req.params.guildNum]);
@@ -66,10 +64,10 @@ const registerRule = [
     body("password").isLength({min:6}).withMessage("密碼長度至少為6"),
 ];
 
+//引入加密套件
 const bcrypt = require ("bcrypt");
-
-//建立好註冊路由
-app.post("/auth/register",registerRule,async (req,res,next)=>{
+//註冊
+app.post("/auth/register",registerRule,async (req,res,next) => {
     const validateResult = validationResult(req);
     //validateResult不是空的，代表有錯誤
     if(!validateResult.isEmpty()){
@@ -91,12 +89,10 @@ app.post("/auth/register",registerRule,async (req,res,next)=>{
        });
     }
 
-
-
     //確認有拿到資料
     console.log(req.body);
     //建立使用者，存進資料庫
-    //todo4:密碼隱藏:bcrypt.hash(明文，salt)
+    //密碼隱藏:bcrypt.hash(明文，salt)
     let hashPassword = await bcrypt.hash(req.body.password,10);
     let result = await connection.queryAsync(
         "INSERT INTO member(member_name, email, password) VALUES (?);",
@@ -105,10 +101,35 @@ app.post("/auth/register",registerRule,async (req,res,next)=>{
     res.json({});
 })
 
+
+//登入
+app.post("/auth/login", async (req, res, next) => {
+    let member = await connection.queryAsync(
+        "SELECT * FROM member WHERE email = ? ; ",[req.body.email]
+        );
+        if(member.length === 0 ){
+           return next({
+               status:400,
+               message:"找不到帳號",
+           });
+        }
+    
+    res.json({});
+})
+
+
+
+
+
+
+
+
+
 //處理找不到路由的錯誤的中間件
 app.use((req,res,next)=>{
     res.status(404).json({message:"NOT FOUND"});
 })
+
 
 //有四個參數，用來處理錯誤 Exception用的
 app.use((err,req,res,next)=>{
@@ -116,8 +137,8 @@ app.use((err,req,res,next)=>{
    res.status(err.status).json({message:err.message});
 })
 
-const port =
-app.listen(3001, async function () {
+const port = 3001
+app.listen(port, async function () {
     //因為改成pool，所以不用手動連線了
     // await connection.connectAsync();
     console.log(`我的server${port}跑起來了~`);
