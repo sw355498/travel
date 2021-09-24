@@ -1,5 +1,16 @@
 import React from 'react'
 import GuildItem from './GuildItem'
+import axios from 'axios'
+
+// const getGuildData = async () => {
+//   try {
+//     let res = await axios.get('http://localhost:3001/Guild')
+//     let data = res.data
+//     console.log(data)
+//   } catch (e) {
+//     console.log(e)
+//   }
+// }
 
 function GuildList(props) {
   const { guilds, tags, lans, stars } = props
