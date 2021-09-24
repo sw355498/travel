@@ -2,30 +2,35 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
-
+import { API_URL } from '../../config'
 import '../../style/sign-in-up.css'
 
 const Register = () => {
   const [email, setEmail] = useState('test@gmail.com')
-  const [name, setName] = useState('yaya')
+  const [name, setName] = useState('test')
   const [password, setPassword] = useState('12345')
 
   const handleSubmit = async (e) => {
-    e.preventdefault()
-    //todo:可以送出註冊資料到後端
-    // try {
-    //   let response = await axios.post('http://localhost:3001/Register')
-    //   console.log(response)
-    // } catch (e) {
-    //   console.erroe(e)
-    // }
+    e.preventDefault()
+    // 送出註冊資料到後端
+    try {
+      let response = await axios.post(`${API_URL}/auth/register`, {
+        email,
+        name,
+        password,
+      })
+      console.log(response)
+    } catch (e) {
+      console.error(e.response)
+      alert(e.response.data.message)
+    }
   }
   return (
     <div className="tab-content">
       <div id="tab-inner">
         <form className="form-content" onSubmit={handleSubmit}>
           <div className="text-center td-mt-25">
-            <p>使用社交平台帳戶註冊</p>
+            {/* <p>使用社交平台帳戶註冊</p> */}
             {/* <div className="sign-icon mx-auto">
               <a href="">
                 <i className="fab fa-facebook"></i>
@@ -47,11 +52,13 @@ const Register = () => {
               type="email"
               className="form-control"
               id="email"
+              name="email"
               placeholder=""
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value)
               }}
+              required
             />
           </div>
           <div className="form-group">
@@ -60,11 +67,13 @@ const Register = () => {
               type="text"
               className="form-control"
               id="name"
+              name="name"
               placeholder=""
               value={name}
               onChange={(e) => {
                 setName(e.target.value)
               }}
+              required
             />
           </div>
           <div className="form-group">
@@ -73,6 +82,7 @@ const Register = () => {
               type="password"
               className="form-control"
               id="password"
+              name="password"
               placeholder=""
               value={password}
               onChange={(e) => {
