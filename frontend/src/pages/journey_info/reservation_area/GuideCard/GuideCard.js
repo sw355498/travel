@@ -27,6 +27,7 @@ function GuideCard(props) {
               guideChecked={idx === GuidesIdxSelected}
               handleClick={() => setGuidesIdxSelected(idx)}
               card={card}
+              TribeForGuide={TribeForGuide}
             />
           ))}
         </div>

@@ -2,10 +2,11 @@ import React from 'react'
 import Rating from '../../../../component/Rating'
 
 function JourneyinfoGuideCard(props) {
-  const { guideChecked, handleClick, card } = props
+  const { guideChecked, handleClick, card, TribeForGuide } = props
   const filtertribe = card.tribe
-  const aaa = filtertribe.match('靜浦部落')
-  
+  const aaa = filtertribe.match(TribeForGuide.tribe)
+  console.log(aaa)
+
   return (
     <div className="card" onClick={handleClick}>
       <div className="d-flex justify-content-lg-between">
