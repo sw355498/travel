@@ -26,15 +26,15 @@ app.get("/" ,(req, res, next) => {
     res.send("hello with nodemon")
 })
 
-app.get("/shoopcart",(req, res, next) => {
-    res.send("shoopcart us")
+app.post("/pay",(req, res, next) => {
+    res.json({})
 })
 
 /* 全部會員購買紀錄 */
-app.get("/order_form", async(request, response, next) => {
+app.get("/order_form", async(req, res, next) => {
     try {
         let result = await connection.queryAsync("SELECT * FROM order_form");
-        response.json(result);
+        res.json(result);
     } catch (e) {
         console.error(e);
     }
@@ -53,7 +53,6 @@ app.get("/order_form/:memberId", async(req, res, next) => {
     }
 });
 
-
 // 404 放所有路由最下方
 app.use((req, res, next) => {
     res.status(404).json({ message: "NOT FOUND" });
@@ -62,3 +61,19 @@ app.use((req, res, next) => {
 app.listen(3002,async () => {
     console.log("web server啟動了");
 })
+
+/* 錯誤訊息 */
+// let isLogin = false
+// if(isLogin){
+//     next();
+// }else{
+//     next({
+//         code: "11001",
+//         status: 401,
+//         messag:"登入失敗或尚未登入"
+//     })
+// }
+// app.use((err, req, res,next) => {
+//     console.error.error(err)
+//     res.status(err.status).json({message: err.message})
+// })
