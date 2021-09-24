@@ -118,11 +118,33 @@ app.post("/auth/login", async (req, res, next) => {
 })
 
 
+/*購物車付款資訊 */
+app.post("/pay",(req, res, next) => {
+    res.json({})
+})
 
+/* 全部會員購買紀錄 */
+app.get("/order_form", async(req, res, next) => {
+    try {
+        let result = await connection.queryAsync("SELECT * FROM order_form");
+        res.json(result);
+    } catch (e) {
+        console.error(e);
+    }
+});
 
-
-
-
+/* 會員個別購買紀錄 */
+app.get("/order_form/:memberId", async(req, res, next) => {
+    try {
+        let result = await connection.queryAsync(
+            "SELECT * FROM order_form WHERE member_id=?",
+            [req.params.memberId]
+        );
+        res.json(result);
+    } catch (e) {
+        console.error(e);
+    }
+});
 
 
 //處理找不到路由的錯誤的中間件
