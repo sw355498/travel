@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 import DatePicker from './date_picker/DatePicker'
-
 import GuideCard from './GuideCard/GuideCard'
-
 import API from '../../../api'
 
 function JourneyReservationArea(props) {

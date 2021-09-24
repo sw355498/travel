@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function homeGallryArea(props) {
   return (
     <>
-      <section className="gallery-area td-mt-75">
+      <section className="gallery-area td-mt-75 text-decoration-none">
         <div className="container">
           <p>部落行程</p>
           <div id="journey" className="td-mt-25">
@@ -12,10 +12,13 @@ function homeGallryArea(props) {
               <Link to={`/journey/?tribes[]=新社部落`} title="新社部落">
                 <div className="card">
                   <div className="imgBx">
-                    <img src="/images/data/首頁部落圖/新社稻草人.jpg" alt="" />
+                    <img
+                      src="/images/data/新社部落/15_Kavalan_噶瑪蘭族_Aboriginal_Tribe_Taiwan.jpg"
+                      alt=""
+                    />
                     <div className="journey-tag">
                       <p>新社部落</p>
-                      <div className="journey-tag-price mt-2">TW 330 起</div>
+                      <div className="journey-tag-price mt-2">TW 1,200 起</div>
                     </div>
                   </div>
                   <div className="contentBx">
@@ -40,7 +43,7 @@ function homeGallryArea(props) {
                     />
                     <div className="journey-tag">
                       <p>奇美部落</p>
-                      <div className="journey-tag-price mt-2">TW330</div>
+                      <div className="journey-tag-price mt-2">TW 900 起</div>
                     </div>
                   </div>
                   <div className="contentBx">
@@ -59,12 +62,12 @@ function homeGallryArea(props) {
                 <div className="card">
                   <div className="imgBx">
                     <img
-                      src="images/data/首頁部落圖/靜埔遺址.jpg"
+                      src="images/data/靜浦部落/大圖/靜浦-阿美族豐年祭.jpg"
                       alt="靜埔遺址"
                     />
                     <div className="journey-tag">
                       <p>靜浦部落</p>
-                      <div className="journey-tag-price mt-2">TW330</div>
+                      <div className="journey-tag-price mt-2">TW 1,000 起</div>
                     </div>
                   </div>
                   <div className="contentBx">
@@ -79,7 +82,11 @@ function homeGallryArea(props) {
               </Link>
             </div>
             <div className="journey-ciwidian img-fluid">
-              <Link to={`/journey/?tribes[]=水璉部落`} title="水璉部落">
+              <Link
+                to={`/journey/?tribes[]=水璉部落`}
+                title="水璉部落"
+                className=""
+              >
                 <div className="card">
                   <div className="imgBx">
                     <img
@@ -88,7 +95,7 @@ function homeGallryArea(props) {
                     />
                     <div className="journey-tag">
                       <p>水璉部落</p>
-                      <div className="journey-tag-price mt-2">TW330</div>
+                      <div className="journey-tag-price mt-2">TW 1,200 起</div>
                     </div>
                   </div>
                   <div className="contentBx">
@@ -112,7 +119,7 @@ function homeGallryArea(props) {
                     />
                     <div className="journey-tag">
                       <p>太巴塱部落</p>
-                      <div className="journey-tag-price mt-2">TW330</div>
+                      <div className="journey-tag-price mt-2">TW 850 起</div>
                     </div>
                   </div>
                   <div className="contentBx">
@@ -136,7 +143,7 @@ function homeGallryArea(props) {
                     />
                     <div className="journey-tag">
                       <p>撒固兒部落</p>
-                      <div className="journey-tag-price mt-2">TW330</div>
+                      <div className="journey-tag-price mt-2">TW 800 起</div>
                     </div>
                   </div>
                   <div className="contentBx">
@@ -166,7 +173,7 @@ function homeGallryArea(props) {
                     />
                     <div className="journey-tag">
                       <p>馬太鞍部落</p>
-                      <div className="journey-tag-price mt-2">TW330</div>
+                      <div className="journey-tag-price mt-2">TW 888 起</div>
                     </div>
                   </div>
                   <div className="contentBx">

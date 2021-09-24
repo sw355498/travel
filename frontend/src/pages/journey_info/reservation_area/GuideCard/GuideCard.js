@@ -14,7 +14,6 @@ function GuideCard(props) {
     [JourneyGuideInfo, TribeForGuide.tribe]
   )
   const [GuidesIdxSelected, setGuidesIdxSelected] = useState(0)
-
   //設定counter狀態
   const [count, setCount] = useState(0)
 
