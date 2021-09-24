@@ -1,8 +1,7 @@
 //模組,元件引入
 import React, { useState, useEffect } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import moment from 'moment'
-import { Modal, Button } from 'react-bootstrap'
 
 function PayContent(props) {
   const [mycart, setMycart] = useState([])
@@ -10,9 +9,6 @@ function PayContent(props) {
 
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
-
-    console.log(JSON.parse(newCart))
-
     setMycart(JSON.parse(newCart))
   }
 
@@ -60,7 +56,7 @@ function PayContent(props) {
 
   return (
     <>
-      <div class="accordion td-mt-75 td-mb-25" id="accordionExample">
+      <div class="accordion td-mt-75" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingFour">
             <button
@@ -84,7 +80,6 @@ function PayContent(props) {
               <div class="td-mt-25 shoppingcart-bg">
                 {/* 購物車清單內容 */}
                 {mycartDisplay.map((item, index) => {
-                  console.log('顯示', mycartDisplay)
                   return (
                     <div
                       className="row align-items-center text-center"
@@ -108,7 +103,12 @@ function PayContent(props) {
                         </div>
                         <div className="td-mt-25">帶團導遊：{item.guild}</div>
                         <div className="td-mt-25">
-                          人數：<span className="fw-bold text-title-size24"> {item.amount}</span> 人
+                          人數：
+                          <span className="fw-bold text-title-size24">
+                            {' '}
+                            {item.amount}
+                          </span>{' '}
+                          人
                         </div>
                       </div>
                       {/* 價錢 */}
@@ -125,7 +125,9 @@ function PayContent(props) {
                 <div class="row align-items-center text-center td-py-25 ">
                   <div class="col-12 col-lg-6 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
                     <div class="text-title-size20 me-1">
-                      <span className="fw-bold text-title-size24">{mycartDisplay.length}</span>
+                      <span className="fw-bold text-title-size24">
+                        {mycartDisplay.length}
+                      </span>
                       件商品合計
                     </div>
                     <div>
@@ -134,25 +136,6 @@ function PayContent(props) {
                     <div class="text-title-size24 shoppingcart-price">
                       TWD {sum(mycartDisplay)}
                     </div>
-                  </div>
-                  <div class="col-12 col-lg-3">
-                    <button
-                      className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
-                      href="/page/shoppingcart/shoppingcart-payment.html"
-                    >
-                      付款
-                    </button>
-                  </div>
-                  <div class="col-12 col-lg-3">
-                    <button
-                      to="/journey"
-                      className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
-                      onClick={() => {
-                        props.history.push('/Shoppingcart')
-                      }}
-                    >
-                      <span>回上一步</span>
-                    </button>
                   </div>
                 </div>
               </div>
