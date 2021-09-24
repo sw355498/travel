@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import GuildFilterBar from '../guild_filter_bar/GuildFilterBar'
-import GuildList from '../guild_list/GuildList'
+import GuildList from '../guild_list/guildList'
 import GuildData from '../../../data/guildData'
-import axios from 'axios'
+
 
 // const getGuildData = async () => {
 //   try {

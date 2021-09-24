@@ -3,15 +3,16 @@ import Rating from '../../../../component/Rating'
 
 function JourneyinfoGuideCard(props) {
   const { guideChecked, handleClick, card, TribeForGuide } = props
-  const filtertribe = card.tribe
-  const aaa = filtertribe.match(TribeForGuide.tribe)
-  console.log(aaa)
-
+  const cardTribe = card.tribe
+  const cardTribeSplit = cardTribe.split(',')
+  const cardfilterResult = cardTribeSplit.filter((item) =>
+    item.includes(TribeForGuide.tribe)
+  )
   return (
     <div className="card" onClick={handleClick}>
       <div className="d-flex justify-content-lg-between">
         {guideChecked && <i className="far fa-check-circle m-3 "></i>}
-        <p className="smalltag">{card.tribe}</p>
+        <p className="smalltag">{cardfilterResult}</p>
       </div>
       <img
         src="/images/data/奇美部落/導遊/導遊1.jpg"
