@@ -26,6 +26,11 @@ APIrouter.get('/home/tribes',async(req,res,next)=>{
   res.json(result)
 })
 
+APIrouter.get('/journeyinfo/guides',async(req,res,next)=>{
+  const result = await connection.queryAsync('SELECT * FROM guild')
+  res.json(result)
+})
+
 APIrouter.put("/journeys/:id/like", async (req, res, next) => {
   const {id} = req.params
   const result = await connection.queryAsync('SELECT status FROM journey WHERE _id=?', [id])

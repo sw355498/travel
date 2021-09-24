@@ -19,7 +19,7 @@ function JourneyinfoGuideCard(props) {
         <h5 className="card-title">{card.name}</h5>
         <Rating rating={card.rating} />
         <h5 className="journey-selectguide-title ">{card.journey_name}</h5>
-        <p className="card-text">{card.journey_intro}</p>
+        <p className="card-text">{card.intro}</p>
       </div>
     </div>
   )

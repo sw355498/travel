@@ -13,7 +13,6 @@ import '../../style/fons.css'
 import '../../style/reset.css'
 import '../../style/home.css'
 //data 引入
-import JourneyInfoData from '../journey_info/JourneyInfoData/JourneyInfoData'
 import HomeDropdownFilter from './home_banner/HomeDropdownFilter'
 import API from '../../api'
 

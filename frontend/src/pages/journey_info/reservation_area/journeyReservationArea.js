@@ -1,26 +1,23 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 import DatePicker from './date_picker/DatePicker'
 import Counter from './Counter/Counter'
-import JourneyinfoGuideCard from './journeyinfo_guide_card/JourneyinfoGuideCard'
-import GuideData from '../../../data/guildData'
+import GuideCard from './GuideCard/GuideCard'
+
+import API from '../../../api'
 
 function JourneyReservationArea(props) {
-  console.log(props.findResult.price)
   //目前DatePicker狀態
   const [dateState, setDateState] = useState(new Date())
   //載入導遊資料
-  const [JourneyGuideInfo] = useState(GuideData)
-  const [TribeForGuide] = useState(props.findResult)
-  const JourneyGuideSelected = useMemo(
-    () =>
-      JourneyGuideInfo.filter(
-        (item) => item.tribe === TribeForGuide.tribe
-      ).slice(0, 3),
-    [JourneyGuideInfo, TribeForGuide.tribe]
-  )
-  const [GuidesIdxSelected, setGuidesIdxSelected] = useState(0)
+  // const [JourneyGuideInfo, setJourneyGuideInfo] = useState(GuideData)
+  const [JourneyGuideInfo, setJourneyGuideInfo] = useState(null)
+  const { findResult } = props
+
+  useEffect(() => {
+    API.fetchJourneyInfoGuide().then(setJourneyGuideInfo)
+  }, [])
 
   //設定counter狀態
   const [count, setCount] = useState(0)
@@ -62,7 +59,15 @@ function JourneyReservationArea(props) {
     setJourneyName('行程：' + item.name + '已成功加入購物車')
     handleShow()
   }
-
+  const spinner = (
+    <>
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    </>
+  )
   const messageModal = (
     <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
       <Modal.Header closeButton>
@@ -92,15 +97,6 @@ function JourneyReservationArea(props) {
     </Modal>
   )
 
-  const spinner = (
-    <>
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-    </>
-  )
   const display = (
     <div className="journey-reservationarea-container td-mt-75 ">
       <div className="necessary"></div>
@@ -117,18 +113,14 @@ function JourneyReservationArea(props) {
         <div className="journey-info-name td-mt-75">
           <p>選擇導遊</p>
         </div>
-        <div className="row journey-selectguide d-flex align-content-between">
-          <div className="col-md-12   text-center d-flex justify-content-md-evenly flex-column align-items-center flex-md-row">
-            {JourneyGuideSelected.map((card, idx) => (
-              <JourneyinfoGuideCard
-                key={idx}
-                guideChecked={idx === GuidesIdxSelected}
-                handleClick={() => setGuidesIdxSelected(idx)}
-                card={card}
-              />
-            ))}
-          </div>
-        </div>
+        {JourneyGuideInfo ? (
+          <GuideCard
+            findResult={findResult}
+            JourneyGuideInfo={JourneyGuideInfo}
+          />
+        ) : (
+          <div>{spinner}</div>
+        )}
         <Counter count={count} setCount={setCount} />
         <div className="d-flex justify-content-center mt--2">
           <button
@@ -140,7 +132,7 @@ function JourneyReservationArea(props) {
                 amount: count + 1,
                 img: props.findResult.img1,
                 go_time: dateState,
-                guild: JourneyGuideSelected[GuidesIdxSelected].name,
+                guild: 1,
                 price: props.findResult.price,
               })
             }}

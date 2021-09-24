@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react'
 import ScrollToTop from 'react-scroll-to-top'
 
 import Rating from '../../component/Rating'
-import JourneyBanner from '../journey/banner/journeyBanner'
 import Like from './Like'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
 import JourneyCoustomerReview from './coustomer_review/journeyCoustomerReview'
