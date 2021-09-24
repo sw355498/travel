@@ -8,8 +8,8 @@ function GuideCard(props) {
   const [JourneyGuideInfo] = useState(props.JourneyGuideInfo)
   const JourneyGuideSelected = useMemo(
     () =>
-      JourneyGuideInfo.filter(
-        (item) => item.tribe === TribeForGuide.tribe
+      JourneyGuideInfo.filter((item) =>
+        item.tribe.includes(TribeForGuide.tribe)
       ).slice(0, 3),
     [JourneyGuideInfo, TribeForGuide.tribe]
   )
