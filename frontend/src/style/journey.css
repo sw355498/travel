@@ -141,20 +141,23 @@ button:hover,
     font-size: 1.3rem;
   }
   .journey-info .content {
-  margin-top: 10%;
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-feature-settings: 'salt' on, 'liga' off;
-  color: #000000;
-
-}
+    margin-top: 10%;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #000000;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .journey-info .reviewStar-point {
     width: max-content;
   }
+  .journey-price .journey-price-content{
+  height: 250px;
+  max-height: 100%;
+}
 }
 
 .journey-info .reviewStar {
@@ -180,7 +183,7 @@ button:hover,
   border-radius: 10px;
 }
 
-.filter-result i{
+.filter-result i {
   width: max-content !important;
 }
 
@@ -220,10 +223,8 @@ button:hover,
 }
 @media only screen and (min-width: 768px) {
   .journey-price .td-btn-medium-w {
-    margin-top: 55px;
     text-align: center;
     align-items: center;
-    margin-bottom: 20px;
     text-decoration: none;
   }
   .journey-price .td-btn-medium-o {
@@ -347,10 +348,10 @@ button:hover,
   cursor: pointer;
 }
 .journey-reservationarea-container .fa-check-circle:before {
-    content: "\f058";
-    font-size: 30px;
-    color: slategrey;
-} 
+  content: '\f058';
+  font-size: 30px;
+  color: slategrey;
+}
 
 .journey-reservationarea-container .td-btn-medium-b {
   width: 85px;
@@ -362,4 +363,3 @@ button:hover,
   border: 1px solid slategrey;
   color: slategrey;
 }
-
