@@ -10,7 +10,7 @@ function DatePicker(props) {
   return (
     <>
       <div className="d-flex justify-content-center Sample">
-        <Calendar onChange={changeDate} showWeekNumbers value={dateState} />
+        <Calendar onChange={changeDate} value={dateState} />
       </div>
       <p className="text-center td-mt-25 fw-bold text-title-size24">
         你選擇的日期是

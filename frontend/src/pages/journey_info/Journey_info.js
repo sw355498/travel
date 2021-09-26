@@ -21,6 +21,26 @@ function Journey_info(props) {
   useEffect(() => {
     fetchAndUpdateJourneysLike()
   }, [fetchAndUpdateJourneysLike])
+
+  //轉換成貨幣形式
+  const digitsRE = /(\d{3})(?=\d)/g
+
+  function currency(value, currency, decimals) {
+    value = parseFloat(value)
+    if (!isFinite(value) || (!value && value !== 0)) return ''
+    currency = currency != null ? currency : 'TWD'
+    decimals = decimals != null ? decimals : 0
+    var stringified = Math.abs(value).toFixed(decimals)
+    var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified
+    var i = _int.length % 3
+    var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : ''
+    var _float = decimals ? stringified.slice(-1 - decimals) : ''
+    var sign = value < 0 ? '-' : ''
+    return (
+      sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
+    )
+  }
+
   return findResult ? (
     <>
       <section>
@@ -128,7 +148,7 @@ function Journey_info(props) {
               handleClick={fetchAndUpdateJourneysLike}
             />
             <p className="journey-info-price order-1 order-md-2">
-              TWD{findResult.price} 起
+              {`${currency(findResult.price)} 起`}
             </p>
           </div>
         </div>
@@ -190,11 +210,9 @@ function Journey_info(props) {
           <p>一&nbsp;行程簡介&nbsp;一</p>
         </div>
         <div className="journey-info-smalltitle td-mt-25">
-          <p>{findResult.introname}:</p>
+          <p dangerouslySetInnerHTML={{ __html: findResult.introname }}></p>
         </div>
-        <div className="journey-info-smalltitle td-mt-25">
-          <p>{findResult.introcontent}</p>
-        </div>
+
         <div className="journey-info-name mt-40">
           <p>商品說明</p>
         </div>
@@ -203,7 +221,7 @@ function Journey_info(props) {
           <p>一&nbsp;行程資訊&nbsp;一</p>
         </div>
         <div className="journey-info-smalltitle td-mt-25">
-          {findResult.content}
+          <p dangerouslySetInnerHTML={{ __html: findResult.content }}></p>
         </div>
 
         <div className="journey-info-name td-mt-75 ">
@@ -231,8 +249,8 @@ function Journey_info(props) {
         <div className="journey-info-name ">
           <p>備註</p>
         </div>
-        <div className="td-mt-25 ">
-          <p>{findResult.needtoknow}</p>
+        <div className="td-mt-25 journey-info-smalltitle p">
+          <p dangerouslySetInnerHTML={{ __html: findResult.needtoknow }}></p>
         </div>
         <div className="td-md-25">&nbsp;</div>
       </div>
@@ -241,7 +259,7 @@ function Journey_info(props) {
         <div className="journey-info-name ">
           <p>取消政策</p>
         </div>
-        <div className="td-mt-25">
+        <div className="td-mt-25 journey-info-smalltitle p">
           <p>- 所選日期 3 天（含）之前取消，收取手續費 0%</p>
           <p> - 所選日期 0 ~ 2 天之間取消，收取手續費 100%</p>
           <p className="remark">
