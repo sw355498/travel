@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Pagination() {
+  
+  useEffect(()=>{
+
+  })
   return (
     <div className="container d-flex justify-content-center td-mt-25 td-mb-25 pagination-container">
       <nav aria-label="Page navigation example">

@@ -6,10 +6,11 @@ import API from '../../../api'
 
 function JourneyItem(props) {
   const { product, selected, handleClick } = props
-
+ 
   const onClick = () => {
     API.toggleJourneyLike(product._id).then(handleClick)
   }
+
   //轉化price to 貨幣型態
   const tranferPriceFormat = product.price
   const digitsRE = /(\d{3})(?=\d)/g

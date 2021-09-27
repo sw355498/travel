@@ -29,46 +29,7 @@ function JourneyFilterResult({ tribes }) {
 
   // console.dir(displayProducts, { depth: null })
   const starsTypes = [5, 4, 3, 2, 1]
-  // const [isLoading, setIsLoading] = useState(false)
-  // useEffect(() => {
-  //   setIsLoading(true)
-
-  //   setProducts(JourneyInfoData)
-  //   setDisplayProducts(JourneyInfoData)
-
-  //   setTimeout(() => {
-  //     setIsLoading(false)
-  //   }, 1500)
-  // }, [])
-
-  // const handleTags = (products, tags) => {
-  //   let newProducts = [...products]
-
-  //   if (tags.lenght > 0) {
-  //     newProducts = [...newProducts].filter((product) => {
-  //       let isFound = false
-  //       const productTags = product.tags.split(',')
-  //       for (let i = 0; i < tags.lenght; i++) {
-  //         if (productTags.includes(tags[i])) {
-  //           return true
-  //         }
-  //       }
-  //       return isFound
-  //     })
-  //   }
-  //   return newProducts
-  // }
-
-  // useEffect(() => {
-  //   setIsLoading(true)
-  //   let newProducts = []
-  //   newProducts = handleTags(newProducts, tags)
-  //   setDisplayProducts(newProducts)
-  //   setTimeout(() => {
-  //     setIsLoading(false)
-  //   }, 800)
-  // }, [products, tags])
-
+ 
   const spinner = (
     <>
       <div className="d-flex justify-content-center">

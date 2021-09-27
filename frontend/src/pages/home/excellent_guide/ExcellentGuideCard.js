@@ -1,13 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Rating from '../../../component/Rating'
 
 function ExcellentGuideCard(props) {
   const { JourneyGuideInfo } = props
   const limitGuideDispalynum = JourneyGuideInfo.slice(0, 3)
+  console.log(limitGuideDispalynum.id)
   return (
     <>
+    
       {limitGuideDispalynum.map((value, i) => (
-        <div className="card d-flex guide-figure" key={i} >
+        <div className="card d-flex guide-figure" key={i}>
           <p className="smalltag">{value.tribe}</p>
           <div className="row justify-content-lg-start ">
             <div className="col-lg-5 col-md-12 mt-3 ">
@@ -35,9 +38,9 @@ function ExcellentGuideCard(props) {
                   奇美部落一日遊
                 </h5>
                 <p className="card-text text-center">{value.intro}</p>
-                <a href="/page/guild/guild-intro.html" className="btn">
+                <Link to={`GuildInfo/${value.id}`} className="btn">
                   預約
-                </a>
+                </Link>
               </div>
             </div>
           </div>
