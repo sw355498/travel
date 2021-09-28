@@ -1,6 +1,7 @@
 const cors = require ("cors");
 const express = require('express')
 const connection = require('./utils/db')
+const moment = require('moment')
 
 //利用express建立了一個express application
 let app = express();
@@ -119,15 +120,78 @@ app.post("/auth/login", async (req, res, next) => {
 
 
 /*購物車付款資訊 */
-app.post("/pay",(req, res, next) => {
-    res.json({})
+app.post("/pay",async (req, res, next) => {
+    let isLogin = true;
+    //產生一個6位數亂碼加上時間用以做訂單編號
+    let order_time = new Date()
+    let order_code = ''
+    for(let i = 0; i < 6; i++){
+        order_code += Math.floor(Math.random()*10)
+    }
+    order_number =`${order_code}${moment(order_time).format('YYYYMMDD')}`
+    if(isLogin){
+        let journeyData = req.body.journey
+        for(let n = 0; n < journeyData.length; n++){
+            let go_time = moment(journeyData[n].go_time).format('YYYY-MM-DD')
+            let totalprice = journeyData[n].price * journeyData[n].amount //每筆行程總價格
+        await connection.queryAsync(
+                "INSERT INTO order_detail (guide, journey_id, name, img, go_time, amount, price, order_number) VALUES (?);",
+                [[ 
+                    journeyData[n].guild,
+                    journeyData[n].id,
+                    journeyData[n].name,
+                    journeyData[n].img,
+                    go_time,
+                    journeyData[n].amount,
+                    totalprice,
+                    order_number,
+                ]]
+        );
+    }
+        await connection.queryAsync(
+            "INSERT INTO order_form (member_id, sur_name, first_name, phone, nation, address, email, card_number, bill_status, order_status, order_number) VALUES (?);",
+            [[ 
+                1,
+                req.body.payData.surName,
+                req.body.payData.firstName,
+                req.body.payData.phone,
+                req.body.payData.nation,
+                req.body.payData.address,
+                req.body.payData.email,
+                req.body.payData.number,
+                req.body.payData.bill,
+                "已付款",
+                order_number,
+            ]]
+        );
+        res.json({})
+        next()
+    }else{
+        next({
+            status:401,
+            message:"尚未登入會員",
+        })
+    }
 })
 
-/* 全部會員購買紀錄 */
+/* 全部會員購買紀錄(分頁) */
 app.get("/order_form", async(req, res, next) => {
     try {
-        let result = await connection.queryAsync("SELECT * FROM order_form");
-        res.json(result);
+        let page = req.query.page || 1 ;//目前在第幾頁,預設第1頁
+        const perPage = 1;//每一頁筆數
+        let count = await connection.queryAsync("SELECT COUNT(*) AS total FROM order_form");;
+        const total = count[0].total//總共有幾筆
+        const totalPages = Math.ceil(total / perPage)//總夠有幾頁
+        //取得當頁資料
+        let offset = (page-1) * perPage//要跳過的比數
+        let result = await connection.queryAsync("SELECT * FROM order_form LIMIT ? OFFSET ?",[perPage, offset]);
+        let pagination = {
+            total,
+            perPage,
+            totalPages,
+            page
+        }
+        res.json({result,pagination});//回覆給前端
     } catch (e) {
         console.error(e);
     }
@@ -183,11 +247,6 @@ APIrouter.put("/journeys/:id/like", async (req, res, next) => {
 })
 
 app.use("/api", APIrouter)
-
-app.use((req, res, next) => {
-  res.status(404).json({ message: 'NOT FOUND' })
-})
-
 
 
 //處理找不到路由的錯誤的中間件

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-09-24 19:11:25
+-- 產生時間： 2021-09-28 16:43:44
 -- 伺服器版本： 10.4.19-MariaDB
 -- PHP 版本： 8.0.7
 
@@ -95,7 +95,7 @@ CREATE TABLE `journey` (
 --
 
 INSERT INTO `journey` (`_id`, `guide_id`, `member_id`, `name`, `total_time`, `price`, `total_people`, `journey_img`, `location`, `transportation`, `introname`, `content`, `rating`, `status`, `tribe_intro`, `tribe`, `tribe_img`, `lang`, `needtoknow`, `amountRating`, `description`, `journey_img2`, `banner_img`, `banner_img2`, `banner_img3`, `banner_img4`) VALUES
-(1, 0, 0, '半日漁獵生活體驗｜走進太陽的部落', 4, 1000, 0, '靜浦-竹筏漫遊.jpg', '花蓮縣豐濱鄉靜浦村3鄰140號', '自行前往', '●走進傳說中的太陽部落－靜浦部落\r\n●零距離接觸太平洋特有的浪花蟹生態\r\n●花蓮海岸旁的部落體驗，開啟豐富的半日漁獵生活', '◥上午場-09：00 / 下午場-14：00\r\n◥花蓮靜浦部落集合\r\n◥開啟靜浦部落的半日漁獵生活體驗\r\n◥踏上膠筏，划向秀姑巒溪(約40分鐘)\r\n◥岸邊找尋浪花蟹X八卦網捕魚體驗(約60分鐘)\r\n◥部落神射手－射箭體驗(約40分鐘)\r\n◥12：00 / 17：00 靜浦部落半日體驗結束', 5, 0, '花蓮靜浦部落，一個洋溢熱血與熱情的太陽部', '靜浦部落', '', '中文，英文', '- 此靜浦部落半日體驗因安排較多戶外活動體驗，較適合10歲以上孩童參加。\r\n- 請提早10~20分鐘前往靜浦部落集合。\r\n- 各項體驗活動時間會視現場執行狀況調整。\r\n- 活動為團進團出，一旦團隊已離岸，無法讓遲到者另行下水出航，亦無法退費。請特別注意勿遲到，以免影響自身權益 。\r\n- 靜浦部落半日體驗多為水上活動，易濺濕衣物，可多帶替換衣物以便現場更換。\r\n- 為顧慮您的安全，活動請遵從部落族人指示，以免發生危險或受傷。', 20, '花蓮海岸旁的部落體驗，開啟豐富的半日漁獵生活', '半日漁獵生活體驗｜走進太陽的部落2.jpg', '靜浦部落1.jpg', '靜浦部落2.jpg', '靜浦部落3.jpg', '靜浦部落4.jpg'),
+(1, 0, 0, '半日漁獵生活體驗｜走進太陽的部落', 4, 1000, 0, '靜浦-竹筏漫遊.jpg', '花蓮縣豐濱鄉靜浦村3鄰140號', '自行前往', '●走進傳說中的太陽部落－靜浦部落\r\n●零距離接觸太平洋特有的浪花蟹生態\r\n●花蓮海岸旁的部落體驗，開啟豐富的半日漁獵生活', '◥上午場-09：00 / 下午場-14：00\r\n◥花蓮靜浦部落集合\r\n◥開啟靜浦部落的半日漁獵生活體驗\r\n◥踏上膠筏，划向秀姑巒溪(約40分鐘)\r\n◥岸邊找尋浪花蟹X八卦網捕魚體驗(約60分鐘)\r\n◥部落神射手－射箭體驗(約40分鐘)\r\n◥12：00 / 17：00 靜浦部落半日體驗結束', 5, 1, '花蓮靜浦部落，一個洋溢熱血與熱情的太陽部', '靜浦部落', '', '中文，英文', '- 此靜浦部落半日體驗因安排較多戶外活動體驗，較適合10歲以上孩童參加。\r\n- 請提早10~20分鐘前往靜浦部落集合。\r\n- 各項體驗活動時間會視現場執行狀況調整。\r\n- 活動為團進團出，一旦團隊已離岸，無法讓遲到者另行下水出航，亦無法退費。請特別注意勿遲到，以免影響自身權益 。\r\n- 靜浦部落半日體驗多為水上活動，易濺濕衣物，可多帶替換衣物以便現場更換。\r\n- 為顧慮您的安全，活動請遵從部落族人指示，以免發生危險或受傷。', 20, '花蓮海岸旁的部落體驗，開啟豐富的半日漁獵生活', '半日漁獵生活體驗｜走進太陽的部落2.jpg', '靜浦部落1.jpg', '靜浦部落2.jpg', '靜浦部落3.jpg', '靜浦部落4.jpg'),
 (2, 0, 0, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', 8, 1280, 0, '靜浦-追花逐浪花蟹.jpg', '花蓮縣豐濱鄉靜浦村3鄰140號', '自行前往', '08:00 花蓮火車站或酒店出發\r\n\r\n09:30 靜浦部落\r\n\r\n12:00 午餐﹙自理﹚\r\n\r\n14:00~ 麻糬洞-新社梯田-大鼻石山步道-返回花蓮市區\r\n', '●走進傳說中的太陽部落－靜浦部落\r\n●在秀姑巒溪上一面體驗划竹筏的樂趣，一面欣賞沿途景色：優雅的長虹橋，背後層山疊翠，旁有幽靜的奚卜蘭島，前方是寬闊的太平洋，山、海、溪、島交織，伴著微風吹襲，黃昏時刻，還能望見純白的鷺鷥群飛過。\r\n●俐落的收繩索、披掛外網、分開內網，抓好八卦網利用身體擺動用力將網撒出去。流暢的動作，可不是每個人都有辦法。靜浦的捕魚生活，八卦網是重要的一環，歡迎體驗漁民生活\r\n●嚮往傳說中的神射手\r\n●石門洞海岸地景，因此處海岸有海蝕洞，形狀如門才有此稱呼，當地人也俗稱此地為麻糬洞。位於台11 線旁石門遊憩區，從木棧道向海岸前行，因角度的關係，海蝕洞從特定方向看過去，像似從前出產過的「March」汽車，所以也被稱為「March 洞」，更因大導演馬丁．史柯西斯拍攝電影《沉默》在此取景而聲名大噪。嗎？到靜浦，放手一搏。拿起傳統弓箭，從上弓弦開始學習，對準標靶，測試看看自己有沒有當獵人的潛力。', 5, 0, '花蓮靜浦部落，一個洋溢熱血與熱情的太陽部', '靜浦部落', '', '中文', '★含專業教練導覽解說、活動費用(划竹筏、追逐浪花蟹二選一，參加其他活動則需另行報價)。\r\n\r\n★請穿著排汗快乾衣褲和運動鞋，擔心曬傷則以長袖、長褲為佳，並勿穿著棉質或牛仔褲等易吸水質料服裝。\r\n\r\n★若活動當天風浪狀況不佳，或遇豪大雨、打雷、風勢過大、颱風來襲等不可抗力之因素，基於安全考量，將視情況決定活動是否取消。', 8, '在秀姑巒溪上一面體驗划竹筏的樂趣，一面欣賞沿途景色：優雅的長虹橋，背後層山疊翠，旁有幽靜的奚卜蘭島，前方是寬闊的太平洋。', '靜浦部落2.jpg', '靜浦部落5.jpg', '靜浦部落6.jpg', '靜浦部落7.jpg', '靜浦部落1.jpg'),
 (3, 0, 0, '噶瑪蘭族文化體驗｜野菜採集文化漫步，飲食饗宴，香蕉絲工藝\r\n', 8, 1200, 0, '香蕉絲體驗.jpg', ' 花蓮縣豐濱鄉花東海岸公路(葛瑪蘭文化展示中心)', '自行前往', '部落導覽→野菜採集體驗→風味餐→香蕉絲工', '跟著噶瑪蘭族族人，漫走在部落傾聽族人遷徙', 5, 1, '座落在花蓮縣豐濱鄉，以噶瑪蘭族為主要族群', '新社部落', '', '中文', '當天活動多有戶外行程，請來參加學員務必攜帶防曬物品及衣物，穿著長褲和自備環瓶、筷，以及2~3個口罩。', 1, '跟著噶瑪蘭族族人，漫走在部落傾聽族人遷徙的歷史淵源！沿途認識部落常吃的野菜，體驗噶瑪蘭族融於生活中的野菜採集文化！', '新社部落2.jpg', '小湖船澳文化體驗（季節限定）.jpg', '封面裡-新社部落.jpg', '海人家2.jpg', '海人家.jpg'),
 (4, 0, 0, '走進大海的部落', 12, 1200, 0, '新社部落藝術品.jpg', ' 花蓮縣豐濱鄉花東海岸公路(葛瑪蘭文化展示中心) ', '專車接送', '跟著部落達人的腳步，一起來場小旅行吧！一邊走訪部落、一邊從分享的故 事中，踏上噶瑪蘭族歷史文化之旅，走入部落的文化展示中心，認識岩棺出土地，遙想新石器時代的神祕生活；接著徜徉在半島梯田的絕美風景裡，再聽族人補充 過去跨越磯崎、新社兩地，親不知子斷崖的感傷故事。', '\r\n09:00-10:30 花蓮火車站—新社部落\r\n\r\n10:30-12:00【導覽】部落及藝術季作品\r\n\r\n12:00-13:00 傳統風味午餐\r\n\r\n13:00-15:00【部落體驗】香蕉絲工坊\r\n\r\n15:00-17:00【火堆論壇】族群裡的原生植物\r\n\r\n17:00-18:00 傳統風味晚餐\r\n\r\n18:00-20:00 新社部落—花蓮火車站', 5, 1, '座落在花蓮縣豐濱鄉，以噶瑪蘭族為主要族群', '新社部落', '', '中文，英文', '當天活動多有戶外行程，請來參加學員務必攜帶防曬物品及衣物，穿著長褲和自備環瓶、筷，以及2~3個口罩。', 33, '跟著部落達人的腳步，一起來場小旅行吧！一邊走訪部落、一邊從分享的故 事中，踏上噶瑪蘭族歷史文化之旅，走入部落的文化展示中心，認識岩棺出土地，遙想新石器時代的神祕生活!', '1511056_509912942464471_5152166478911128497_n.jpg', '海部落1.jpg', '海部落2.jpg', '海部落3.jpg', 'P3201106-1024x768.jpg'),
@@ -153,38 +153,58 @@ CREATE TABLE `member` (
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `id` int(6) UNSIGNED NOT NULL,
+  `guide` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `journey_id` int(6) UNSIGNED NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `go_time` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` int(6) UNSIGNED NOT NULL,
+  `price` int(6) UNSIGNED NOT NULL,
+  `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `guide`, `journey_id`, `name`, `img`, `go_time`, `amount`, `price`, `order_number`) VALUES
+(1, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-09-25', 1, 1000, '73191620210928'),
+(2, '瓦庫2', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-09-25', 4, 5120, '73191620210928'),
+(3, '瓦丹', 4, '走進大海的部落', '新社部落藝術品.jpg', '2021-09-30', 7, 8400, '73191620210928');
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `order_form`
 --
 
 CREATE TABLE `order_form` (
   `id` int(6) UNSIGNED NOT NULL,
-  `member_id` int(5) UNSIGNED NOT NULL,
-  `guide_id` int(5) UNSIGNED NOT NULL,
-  `journey_id` int(5) UNSIGNED NOT NULL,
-  `sur_name` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `first_name` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nation` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `go_time` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `total_amount` int(10) UNSIGNED NOT NULL,
-  `total_price` int(10) UNSIGNED NOT NULL,
-  `pay_status` tinyint(1) UNSIGNED NOT NULL,
-  `card_number` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pay_account` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `bill_status` tinyint(2) UNSIGNED NOT NULL,
-  `order_status` tinyint(2) UNSIGNED NOT NULL,
-  `order_time` date NOT NULL
+  `member_id` int(6) UNSIGNED NOT NULL,
+  `sur_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `first_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nation` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `card_number` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bill_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order_time` date NOT NULL DEFAULT current_timestamp(),
+  `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `order_form`
 --
 
-INSERT INTO `order_form` (`id`, `member_id`, `guide_id`, `journey_id`, `sur_name`, `first_name`, `phone`, `nation`, `address`, `email`, `go_time`, `total_amount`, `total_price`, `pay_status`, `card_number`, `pay_account`, `bill_status`, `order_status`, `order_time`) VALUES
-(3, 1, 1, 1, '王', '小明', '0910123456', '桃園市中壢區中大路300號', '台灣', 'test@gmail.com', '2021-09-22', 2, 4000, 1, '1234567898765432', '', 1, 2, '2021-09-21'),
-(4, 2, 1, 1, '詹', '天佑', '0910654321', '桃園市中壢區中大路300號', '日本', 'hello@gmail.com', '2021-09-23', 1, 6000, 2, '', '0123456789', 1, 2, '2021-09-21');
+INSERT INTO `order_form` (`id`, `member_id`, `sur_name`, `first_name`, `phone`, `nation`, `address`, `email`, `card_number`, `bill_status`, `order_status`, `order_time`, `order_number`) VALUES
+(1, 1, '王', '小明', '0933333333', '台灣', '桃', '123@test.com', '4132415615644891', '電子發票', '已付款', '2021-09-28', '73191620210928');
 
 -- --------------------------------------------------------
 
@@ -233,6 +253,12 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `order_form`
 --
 ALTER TABLE `order_form`
@@ -267,10 +293,16 @@ ALTER TABLE `member`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_form`
 --
 ALTER TABLE `order_form`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `tribes`

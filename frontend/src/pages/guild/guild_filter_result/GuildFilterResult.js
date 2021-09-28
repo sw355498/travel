@@ -3,7 +3,6 @@ import GuildFilterBar from '../guild_filter_bar/GuildFilterBar'
 import GuildList from '../guild_list/GuildList'
 import GuildData from '../../../data/guildData'
 
-
 // const getGuildData = async () => {
 //   try {
 //     let res = await axios.get('http://localhost:3001/Guild')
