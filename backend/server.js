@@ -2,12 +2,31 @@ const cors = require ("cors");
 const express = require('express')
 const connection = require('./utils/db')
 const moment = require('moment')
+require('dotenv').config()
+//註冊檢驗middleware
+const {loginCheckMiddleware} = require ('./middlewares/auth.js')
 
 //利用express建立了一個express application
 let app = express();
 
-//處理cors問題
-app.use(cors());
+//處理cors問題:允許前端打api
+app.use(
+    cors({
+        origin: ["http://localhost:3000"],
+        credentials: true,
+    })
+);
+
+// 啟用session
+const expressSession = require('express-session');
+app.use(
+  expressSession({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    })
+);
+
 
 //使用這個中間件，才可以讀到body的資料
 app.use(express.urlencoded({extended:true}));
@@ -20,7 +39,7 @@ app.use((req,res,next)=>{
 })
 
 
-//API
+//Guild API
 app.get("/guild",async (req,res,next)=>{
 // -----------------------頁碼----------------------------------
     // let page= req.query.page || 1; //目前在第幾頁，預設第一頁
@@ -62,9 +81,13 @@ app.get("/guild/:guildNum",async (req,res,next)=>{
 const {body,validationResult} = require ('express-validator');
 const registerRule = [
     body("email").isEmail().withMessage("請填寫正確格式的Email"),
-    body("password").isLength({min:6}).withMessage("密碼長度至少為6"),
+    body("password").isLength({min:6, max:12}).withMessage("輸入6-12位密碼"),
+    body("checkPassword")
+    .custom((value, {req})=>{
+        return value === req.body.password;
+    })
+    .withMessage("兩次密碼輸入不一致"),
 ];
-
 //引入加密套件
 const bcrypt = require ("bcrypt");
 //註冊
@@ -106,17 +129,55 @@ app.post("/auth/register",registerRule,async (req,res,next) => {
 //登入
 app.post("/auth/login", async (req, res, next) => {
     let member = await connection.queryAsync(
-        "SELECT * FROM member WHERE email = ? ; ",[req.body.email]
+        "SELECT * FROM member WHERE email = ? ; ",
+        [req.body.email]
         );
+        // console.log(member);
+        //有註冊過的email V
+        //沒有註冊過的email
         if(member.length === 0 ){
            return next({
                status:400,
-               message:"找不到帳號",
+               message:"帳號或密碼錯誤",
            });
         }
-    
-    res.json({});
+    //有找到，而且應該只會有一個（註冊時會檢查有沒有註冊過）
+    member = member[0];
+    //密碼跟資料庫的比對
+    let result = await bcrypt.compare(req.body.password, member.password);
+    if (!result){
+        //不一致：回覆錯誤（400）
+        return next({
+            status:400,
+            message:"帳號或密碼錯誤",
+        });
+    }
+    //紀錄session
+    let returnMember = {
+        id: member.id,
+        name: member.member_name,
+        // name:member.member_name
+    };
+    req.session.member = returnMember;
+    // 回覆給前端
+    res.json({
+        // id: member.id,
+        name: member.member_name,
+        // name:member.member_name
+    });
 })
+
+// app.use(loginCheckMiddleware);
+app.get("/",(req, res, next) => {
+    res.json(req.session.member)
+});
+
+//登出
+app.get("/auth/logout", (req, res, next) => {
+    req.session.member = null;
+    res.sendStatus(202);
+  });
+
 
 
 /*購物車付款資訊 */
@@ -242,7 +303,6 @@ APIrouter.put("/journeys/:id/like", async (req, res, next) => {
     !status,
     id,
   ])
-  
   res.status(204).end()
 })
 
