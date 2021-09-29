@@ -110,7 +110,9 @@ function JourneyItem(props) {
         <div className="d-flex flex-md-column align-items-center justify-content-around align-items-center"></div>
       </div>
     </div>
+    
   )
+  
 }
 
 export default JourneyItem

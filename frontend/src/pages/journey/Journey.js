@@ -2,7 +2,6 @@ import React from 'react'
 import ScrollToTop from 'react-scroll-to-top'
 import JourneyBanner from './banner/journeyBanner'
 import JourneyFilterResult from './filter_result/journeyFillterResult'
-import Pagination from './pagination/Pagination'
 import '../../style/journey.css'
 import { useLocation } from 'react-router-dom'
 import qs from 'qs'
@@ -18,7 +17,6 @@ function Journey() {
     <>
       <JourneyBanner />
       <JourneyFilterResult tribes={tribes} />
-      <Pagination />
       <ScrollToTop smooth />
     </>
   )

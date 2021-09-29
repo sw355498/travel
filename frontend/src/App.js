@@ -22,8 +22,9 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/journey" component={Journey} exact />
+          <Route path="/journey" component={Journey} exact/>
           <Route path="/journey_info/:id" component={journeyInfo} />
+          <Route path='/journey/:currentPage?'><Journey/></Route>
           <Route path="/Guild" component={Guild} />
           <Route path="/GuildInfo" component={GuildInfo} />
           <Route path="/Shoppingcart" component={Shoppingcart} />

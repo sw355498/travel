@@ -5,7 +5,6 @@ import Rating from '../../component/Rating'
 import Like from './Like'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
 import JourneyCoustomerReview from './coustomer_review/journeyCoustomerReview'
-import Pagination from '../journey/pagination/Pagination'
 import '../../style/journey-info.css'
 
 import API from '../../api'
@@ -271,7 +270,6 @@ function Journey_info(props) {
         </div>
       </div>
       <JourneyCoustomerReview />
-      <Pagination />
       <ScrollToTop smooth />
     </>
   ) : (
