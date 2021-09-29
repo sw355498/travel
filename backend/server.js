@@ -164,7 +164,7 @@ app.post("/pay",async (req, res, next) => {
                 order_number,
             ]]
         );
-        res.json({})
+        res.json({order_number})
         next()
     }else{
         next({

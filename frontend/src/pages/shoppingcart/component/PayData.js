@@ -6,6 +6,7 @@ import SelectBill from './SelectBill'
 import Cards from 'react-credit-cards'
 import axios from 'axios'
 import { API_URL } from '../../../config'
+import { Modal, Button } from 'react-bootstrap'
 function PayData(props) {
   // spinner用的狀態
   const [isLoading, setIsLoading] = useState(false)
@@ -16,6 +17,12 @@ function PayData(props) {
   const [mycartDisplay, setMycartDisplay] = useState([])
 
   const [error, setError] = useState(null)
+  //成功付款顯示彈跳視窗
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+  //訂單編號
+  const [orderNumber, setOrderNumber] = useState('null')
 
   // 自動1秒後關閉指示的spinner
   useEffect(() => {
@@ -104,17 +111,49 @@ function PayData(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // console.log(props.fields)
-    // console.log(mycartDisplay)
     try {
       let journey = mycartDisplay
       let payData = props.fields
-      await axios.post(`${API_URL}/pay`, { journey, payData })
+      let res = await axios.post(`${API_URL}/pay`, { journey, payData })
+      localStorage.removeItem('cart')
+      setOrderNumber(res.data.order_number)
+      handleShow()
     } catch (e) {
       console.error(e)
       setError(e.message)
     }
   }
+
+  const messageModal = (
+    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+      <Modal.Title className="d-flex justify-content-center td-mt-25 td-mb-15 text-title-size40">
+        <img className="td-logo-img" src="/images/logo.png" alt="logo" />
+        <img
+          className="td-logo-text"
+          src="/images/花島（黑）.png"
+          alt="花島（黑）"
+        />
+        感謝您的訂購!
+      </Modal.Title>
+      <Modal.Body className="text-center text-title-size24 td-mb-15">
+        訂購單編號：{orderNumber}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button
+          className="btn journey-reservation-button mx-auto"
+          variant="secondary"
+          onClick={() => {
+            props.history.push('/')
+            
+          }}
+        >
+          確認
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  )
+
+  console.log()
   const loading = (
     <>
       <div className="d-flex justify-content-center">
@@ -342,7 +381,12 @@ function PayData(props) {
       </div>
     </>
   )
-  return <>{isLoading ? loading : display}</>
+  return (
+    <>
+      {messageModal}
+      {isLoading ? loading : display}
+    </>
+  )
 }
 
 export default withRouter(PayData)
