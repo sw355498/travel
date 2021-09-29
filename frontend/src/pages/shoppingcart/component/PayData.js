@@ -144,7 +144,6 @@ function PayData(props) {
           variant="secondary"
           onClick={() => {
             props.history.push('/')
-            
           }}
         >
           確認
