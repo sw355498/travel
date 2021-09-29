@@ -67,7 +67,7 @@ app.get("/guild",async (req,res,next)=>{
     //     lastPage,//總共幾頁（最後一頁）
     //     page//目前在第幾頁
     // }
-    res.json({result});
+    res.json(result);
 })
 
 app.get("/guild/:guildNum",async (req,res,next)=>{
