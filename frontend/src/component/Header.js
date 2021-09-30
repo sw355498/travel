@@ -54,7 +54,7 @@ function Header() {
               <Link
                 to="member"
                 className="td-member"
-                href="/page/member/member-information.html"
+                href="../page/member/Member"
               >
                 <img className="td-member-avatar" src={avatar} alt="avatar" />
               </Link>
