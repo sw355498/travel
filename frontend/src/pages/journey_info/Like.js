@@ -10,7 +10,7 @@ function Like(props) {
   return (
     <i
       className={clsx(
-        'far fa-heart td-me-50 journey-info-like order-2 order-md-1 mt-md-2',
+        'far fa-heart  journey-info-like order-2 order-md-1 mt-md-2 me-md-5',
         selected && 'fw-bold'
       )}
       style={{ cursor: 'pointer' }}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Rating from '../../../component/Rating'
 
 function FirstCard({ JourneyGuideInfo }) {
-    console.log(JourneyGuideInfo)
   return (
     <div className="col-md-6 col-12 text-center d-flex justify-content-md-center ">
       <div className="card">
@@ -17,17 +17,13 @@ function FirstCard({ JourneyGuideInfo }) {
               <p className="text-right smalltag"></p>
             </div>
           </div>
-          <h5 className="card-title">{JourneyGuideInfo[4].name}</h5>
-          <i className="fas fa-star mt-2"></i>
-          <i className="fas fa-star"></i>
-          <i className="fas fa-star"></i>
-          <i className="fas fa-star"></i>
-          <i className="fas fa-star"></i>
-          <h6>一日山林野外求生</h6>
-          <p className="card-text mt-2">
-            擁抱土地的阿美獵人生活
-            阿美族語中的水璉部落，寫作Ciwidian知維地岸，是「此地多蛭」的意思。聽起來，以為水璉是個荒蕪之地，然而，這裡卻是和平閒適的小盆地，在山海的包圍下，從牧牛平原到高深峽谷，從溪流沿岸到動人沙灘，都展現出水璉之美，在靜謐中，帶有無限生命力。
-          </p>
+          <h5 className="card-title td-mt-25">{JourneyGuideInfo[4].name}</h5>
+          <Rating
+            rating={JourneyGuideInfo[4].rating}
+            className="td-mt-25"
+          ></Rating>
+          <h6>{JourneyGuideInfo[4].intro_title}</h6>
+          <p className="card-text td-mt-25">{JourneyGuideInfo[4].intro}</p>
           <Link
             to={`GuildInfo/${JourneyGuideInfo[4].id}`}
             className="btn td-btn-large-o td-mt-50"

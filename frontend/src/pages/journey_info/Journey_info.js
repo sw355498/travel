@@ -140,18 +140,18 @@ function Journey_info(props) {
             <p>{findResult.name}</p>
           </div>
 
-          <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center flex-column flex-md-row align-items-center">
+          <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center flex-column flex-md-row align-items-center ">
             <Like
               findResult={findResult}
               selected={findResult.status}
               handleClick={fetchAndUpdateJourneysLike}
             />
-            <p className="journey-info-price order-1 order-md-2">
+            <p className="journey-info-price order-1 order-md-2 ">
               {`${currency(findResult.price)} 起`}
             </p>
           </div>
         </div>
-        <div className="d-flex justify-content-end">
+        <div className="d-flex justify-content-md-end justify-content-center td-mt-25">
           {' '}
           <Rating rating={findResult.rating}></Rating>
         </div>
@@ -160,8 +160,8 @@ function Journey_info(props) {
           <p>一&nbsp;行程資訊&nbsp;一</p>
         </div>
         <div className="d-flex flex-row bd-highlight td-mt-25 justify-content-center justify-content-md-start">
-          <div className="p-2 bd-highlight text-center ">
-            <i className="fas fa-map-marker-alt icon"></i>
+          <div className="p-2 bd-highlight text-center my-auto ">
+            <i className="fas fa-map-marker-alt icon "></i>
           </div>
           <div className="p-2 bd-highlight">
             <div className="text-title-size20 mt-1">
@@ -171,7 +171,7 @@ function Journey_info(props) {
         </div>
 
         <div className="d-flex flex-row bd-highlight td-mt-25 justify-content-center justify-content-md-start text-md-left text-center">
-          <div className="p-2 bd-highlight text-center">
+          <div className="p-2 bd-highlight text-center my-auto">
             {' '}
             <i className="far fa-clock icon"></i>
           </div>
@@ -182,19 +182,19 @@ function Journey_info(props) {
         <div className="row">
           <div className="col-md-4 justify-content-center d-flex justify-content-md-start">
             <div className="d-flex flex-row bd-highlight td-mt-25 ">
-              <div className="p-2 bd-highlight text-center">
-                <i className="fas fa-globe"></i>
+              <div className="p-2 bd-highlight text-center my-auto">
+                <i className="fas fa-globe "></i>
               </div>
-              <div className="p-2 bd-highlight">
-                <div className="text-title-size20 mt-1">
+              <div className="p-2 bd-highlight ">
+                <div className="text-title-size20 mt-1 ">
                   {findResult.lang}導覽
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-md-8 justify-content-center d-flex justify-content-md-start">
+          <div className="col-md-8 justify-content-center d-flex justify-content-md-start ">
             <div className="d-flex flex-row bd-highlight td-mt-25">
-              <div className="p-2 bd-highlight text-center">
+              <div className="p-2 bd-highlight text-center my-auto">
                 <i className="fas fa-motorcycle"></i>
               </div>
               <div className="p-2 bd-highlight">

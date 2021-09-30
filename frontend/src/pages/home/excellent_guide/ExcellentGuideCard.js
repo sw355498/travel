@@ -4,11 +4,10 @@ import Rating from '../../../component/Rating'
 
 function ExcellentGuideCard(props) {
   const { JourneyGuideInfo } = props
+  JourneyGuideInfo.forEach((item, i) => {})
   const limitGuideDispalynum = JourneyGuideInfo.slice(0, 3)
-  console.log(limitGuideDispalynum.id)
   return (
     <>
-    
       {limitGuideDispalynum.map((value, i) => (
         <div className="card d-flex guide-figure" key={i}>
           <p className="smalltag">{value.tribe}</p>
@@ -23,10 +22,10 @@ function ExcellentGuideCard(props) {
                       alt="奇美導遊"
                     />
                   </div>
-                  <div className="col-12">
+                  <div className="col-12 mt-lg-4 mt-xxl-3">
                     <h5>{value.name}</h5>
                   </div>
-                  <div className="col-12 mb-2">
+                  <div className="col-12 mb-2 mt-lg-5 mt-3 mt-xl-4 mt-xxl-3">
                     <Rating rating={value.rating} className="small-star" />
                   </div>
                 </div>
@@ -35,7 +34,7 @@ function ExcellentGuideCard(props) {
             <div className="col-lg-7 col-md-12 justify-content-between">
               <div className="card-body">
                 <h5 className="card-title text-center mt-xxl-2">
-                  奇美部落一日遊
+                  {value.intro_title}
                 </h5>
                 <p className="card-text text-center">{value.intro}</p>
                 <Link to={`GuildInfo/${value.id}`} className="btn">

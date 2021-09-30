@@ -3,7 +3,6 @@ import axios from 'axios'
 const serverURI = 'http://localhost:3001'
 
 const API = {
-
   fetchJourneys: async (page) => {
     const res = await axios.get(`${serverURI}/api/journeys`)
     return res.data

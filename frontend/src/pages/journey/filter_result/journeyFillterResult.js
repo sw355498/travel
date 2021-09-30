@@ -6,6 +6,7 @@ import Pagination from './Pagination'
 
 function JourneyFilterResult({ tribes }) {
   const [displayProducts, setDisplayProducts] = useState(null)
+
   //分頁屬性
   const [currentPage, setCurrentPage] = useState(1)
   const [perPage, setPerpage] = useState(2)
@@ -63,7 +64,6 @@ function JourneyFilterResult({ tribes }) {
               handleClick={fetchAndUpdateJourneys}
               currentPage={currentPage}
               perPage={perPage}
-              setPerpage={setPerpage}
             />
           </div>
           <div className="container d-flex justify-content-center td-mt-25 td-mb-25 pagination-container">

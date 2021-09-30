@@ -110,12 +110,6 @@ button:hover {
   }
 }
 
-.journey-info .fa-map-marker-alt {
-  font-size: 36px;
-  color: rgba(245, 8, 8, 1);
-  margin-left: 6px;
-}
-
 .journey-info-pic {
   width: 100%;
   max-width: 729px;
@@ -333,42 +327,8 @@ button:hover {
   background-color: #072b7b;
   border-color: #072b7b;
 }
-/* scrollup */
-.scrollup {
-  position: fixed;
-  right: 1rem;
-  bottom: -20%;
-  padding: 0.5rem;
-  background: #072b7b;
-  opacity: 0.6;
-  z-index: 1000;
-  transition: 0.4s;
-  height: auto;
-}
-.scrollup-icon {
-  color: #ffffff;
-}
 
-.scrollup:hover {
-  background-color: #ff9c00;
-  opacity: 1;
-}
-
-.show-scroll {
-  bottom: 5rem;
-}
-
-/* scrollbar  */
-
-::-webkit-scrollbar {
-  width: 0.6rem;
-  background: #636161;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #a5a5a8;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: #ff9c00;
-  opacity: 0.6;
+.journey-info .fa-map-marker-alt {
+    font-size: 20px;
+    color: rgba(245, 8, 8, 1);
 }
