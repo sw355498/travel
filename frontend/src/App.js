@@ -49,7 +49,7 @@ function App() {
             <Route path="/journey" component={Journey} exact />
             <Route path="/journey_info/:id" component={journeyInfo} />
             <Route path="/Guild" component={Guild} />
-            <Route path="/GuildInfo" component={GuildInfo} />
+            <Route path="/GuildInfo/:guildId" component={GuildInfo} />
             <Route path="/Shoppingcart" component={Shoppingcart} />
             <Route path="/Pay" component={Pay} />
             <Route path="/Register" component={Register} />

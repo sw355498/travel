@@ -69,9 +69,9 @@ app.get("/guild",async (req,res,next)=>{
     res.json(result);
 })
 
-app.get("/guild/:guildNum",async (req,res,next)=>{
+app.get("/guild/:guildId",async (req,res,next)=>{
     // ("SELECT * FROM guild_tribes JOIN guild on guild_tribes.guild_id = guild.id JOIN tribes on guild_tribes.tribes_id = tribes.id WHERE guild.id = ?",[req.params.guildNum])
-    let result = await connection.queryAsync("SELECT * FROM guild WHERE id = ?",[req.params.guildNum]);
+    let result = await connection.queryAsync("SELECT * FROM guild WHERE id = ?",[req.params.guildId]);
     res.json(result);
 })
 

@@ -1,21 +1,30 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import GuildFilterBar from '../guild_filter_bar/GuildFilterBar'
 import GuildList from '../guild_list/guildList'
+import axios from 'axios'
 // import GuildData from '../../../data/guildData'
-// import axios from 'axios'
-import API from '../../../api/index'
+// import API from '../../../api/index'
 
 function GuildFilterResult({ tribes }) {
   // const [guilds, setGuilds] = useState(GuildData)
   const [displayGuilds, setDisplayGuilds] = useState(null)
 
-  const fetchAndUpdateGuilds = useCallback(async () => {
-    API.fetchGuilds().then(setDisplayGuilds)
-  }, [])
+  // const fetchAndUpdateGuilds = useCallback(async () => {
+  //   API.fetchGuilds().then(setDisplayGuilds)
+  // }, [])
 
+  // useEffect(() => {
+  //   fetchAndUpdateGuilds()
+  // }, [fetchAndUpdateGuilds])
   useEffect(() => {
-    fetchAndUpdateGuilds()
-  }, [fetchAndUpdateGuilds])
+    const getGuilds = async () => {
+      let res = await axios.get('http://localhost:3001/Guild')
+      // return res.data
+      let data = res.data
+      setDisplayGuilds(data)
+    }
+    getGuilds()
+  }, [])
 
   // const [error, setError] = useState(null)
   const [tags, setTags] = useState(tribes ? tribes : ['靜浦部落'])
@@ -33,6 +42,7 @@ function GuildFilterResult({ tribes }) {
   const lanTypes = ['中文', '英文']
   const starsTypes = ['5', '4', '3', '2', '1']
 
+  //先註解
   const spinner = (
     <>
       <div className="d-flex justify-content-center">
@@ -63,7 +73,6 @@ function GuildFilterResult({ tribes }) {
             lans={lans}
             stars={stars}
             guilds={displayGuilds}
-            // handleClick={fetchAndUpdateGuilds}
           />
         </div>
       ) : (
