@@ -23,7 +23,7 @@ function PayData(props) {
   const handleShow = () => setShow(true)
   //訂單編號
   const [orderNumber, setOrderNumber] = useState('null')
-
+  console.log(props)
   // 自動1秒後關閉指示的spinner
   useEffect(() => {
     if (isLoading) {

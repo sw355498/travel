@@ -138,7 +138,7 @@ app.post("/auth/login", async (req, res, next) => {
         if(member.length === 0 ){
            return next({
                status:400,
-               message:"帳號或密碼錯誤",
+               message:"帳號錯誤",
            });
         }
     //有找到，而且應該只會有一個（註冊時會檢查有沒有註冊過）
@@ -149,7 +149,7 @@ app.post("/auth/login", async (req, res, next) => {
         //不一致：回覆錯誤（400）
         return next({
             status:400,
-            message:"帳號或密碼錯誤",
+            message:"密碼錯誤",
         });
     }
     //紀錄session
