@@ -1,23 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Rating from '../../../component/Rating'
+import TribeTag from './TribeTag'
 
 function ExcellentGuideCard(props) {
   const { JourneyGuideInfo } = props
-  JourneyGuideInfo.forEach((item, i) => {})
   const limitGuideDispalynum = JourneyGuideInfo.slice(0, 3)
+  console.log(limitGuideDispalynum[0].img1)
+
   return (
     <>
       {limitGuideDispalynum.map((value, i) => (
         <div className="card d-flex guide-figure" key={i}>
-          <p className="smalltag">{value.tribe}</p>
+          <TribeTag card={value} />
           <div className="row justify-content-lg-start ">
             <div className="col-lg-5 col-md-12 mt-3 ">
               <div className="d-flex flex-column align-content-md-between">
                 <div className="row d-flex flex-column align-content-md-stretch m-auto">
                   <div className="col">
                     <img
-                      src="/images/data/奇美部落/導遊/導遊1.jpg"
+                      src={`/images/data/導遊圖片/${value.avatar}`}
                       className="card-img-top"
                       alt="奇美導遊"
                     />

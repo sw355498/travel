@@ -158,7 +158,8 @@ button:hover {
 
 .journey-selectguide img {
   border-radius: 50%;
-  max-width: 125px;
+  width: 125px;
+  height: 125px;
   margin: 25px auto auto auto;
 }
 

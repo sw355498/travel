@@ -3,18 +3,20 @@ import { Link } from 'react-router-dom'
 import Rating from '../../../component/Rating'
 
 function FirstCard({ JourneyGuideInfo }) {
+  const cardTribeSplit = JourneyGuideInfo[4].tribe.split(',')
+  console.log(cardTribeSplit[0])
   return (
     <div className="col-md-6 col-12 text-center d-flex justify-content-md-center ">
       <div className="card">
         <div className="card-body">
           <div className=" d-flex justify-content-center position-relative">
             <img
-              src="images/data/水璉部落/導遊/導遊7.jpg"
+              src={`/images/data/導遊圖片/${JourneyGuideInfo[4].avatar}`}
               className="card-img-top guideImgBig"
               alt="..."
             />
             <div>
-              <p className="text-right smalltag"></p>
+              <p className="text-right smalltag"> {cardTribeSplit[0]}</p>
             </div>
           </div>
           <h5 className="card-title td-mt-25">{JourneyGuideInfo[4].name}</h5>
