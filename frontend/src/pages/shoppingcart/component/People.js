@@ -1,10 +1,3 @@
-// css引入
-import '../../../style/spacing.css'
-import '../../../style/shoopcart-process.css'
-import '../../../style/fons.css'
-
-// 圖片引入
-import people from '../../../img/走路小人.png'
 function People() {
   return (
     <>
@@ -12,7 +5,11 @@ function People() {
       <div className="d-flex justify-content-center">
         <div className="td-mt-75">
           <div className="d-flex justify-content-start ">
-            <img className="people-img" src="/images/走路小人.png" alt="走路小人" />
+            <img
+              className="people-img"
+              src="/images/走路小人.png"
+              alt="走路小人"
+            />
           </div>
           <div className="d-flex justify-content-between ">
             <div className="process-bg pt-1 pt-lg-2">

@@ -99,7 +99,7 @@
 }
 
 /* 快速篩選 */
-input[type='checkbox'] {
+.guildlist-filter [type='checkbox'] {
   width: unset;
   height: unset;
   font-size: unset;
@@ -116,7 +116,20 @@ input[type='checkbox'] {
   font-size: 25px;
   color: var(--btnorder-color);
 }
-
+/* .stars-label-group label {
+  text-align: center;
+  display: block;
+} */
+.guild-info-stars span {
+  margin-left: unset;
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 14px;
+}
+.guild-info-stars .reviewStar-point {
+  justify-content: center;
+  margin: unset;
+}
 /* 部落篩選 */
 .filter-tribe-title {
   min-height: 96px;
@@ -152,7 +165,7 @@ input[type='checkbox'] {
   border-radius: 50%;
   visibility: visible;
 }
-.filter-tribe-check .tribe-check-input:checked::after {
+.tribe-check-input:checked::after {
   content: '';
   width: 15px;
   height: 15px;
@@ -160,6 +173,7 @@ input[type='checkbox'] {
   visibility: visible;
   background: var(--blue-color);
 }
+
 .tribe-check-label {
   font-weight: normal;
   font-size: 20px;
@@ -167,11 +181,16 @@ input[type='checkbox'] {
 }
 /* 星等 */
 .filter-stars-check div {
-  min-width: 200px;
+  max-width: 175px;
   display: flex;
   align-items: center;
 }
+
 /* 語言篩選 */
+.guild-info-lan {
+  font-size: 16px;
+  color: var(--tribe-color);
+}
 .lan-check-input,
 .stars-check-input {
   visibility: hidden;
@@ -253,15 +272,19 @@ input[type='checkbox'] {
   object-fit: cover;
 }
 .guild-info-name {
-  margin-bottom: 10px;
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
 }
-.guild-info-stars {
+/* .guild-info-stars {
   width: 156px;
+} */
+.guild-info-stars span {
+  display: block;
 }
-
+.guild-info-stars {
+  text-align: center;
+}
 .interview-title {
   font-weight: 700;
   font-size: 24px;
@@ -275,6 +298,10 @@ input[type='checkbox'] {
   font-size: 16px;
   line-height: 24px;
   margin: 0;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /* 新人導遊推薦 */
@@ -300,10 +327,10 @@ input[type='checkbox'] {
     justify-content: space-around;
   }
 
-  .stars-label-group {
+  /* .stars-label-group {
     margin-top: 5px;
     margin-bottom: 5px;
-  }
+  } */
 }
 @media screen and (max-width: 992px) {
   /* 去掉特效 */

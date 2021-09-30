@@ -1,24 +1,31 @@
 import React from 'react'
-import GuildListBanner from './guild_list_component/guildListBanner'
-import GuildFilter from './guild_list_component/guildFilter'
-import GuildResult from './guild_list_component/guildResultItem'
-import GuildListPage from './guild_list_component/guildListPage'
-import GuildNew from './guild_list_component/guildNew'
+import qs from 'qs'
+import GuildListBanner from './guild/guildListBanner'
+import GuildFilterResult from './guild/guild_filter_result/GuildFilterResult'
+import GuildListPage from './guild/guildListPage'
+import GuildNew from './guild/guildNew'
+import { useLocation } from 'react-router-dom'
+import ScrollToTop from 'react-scroll-to-top'
 //CSS
 import '../style/guild-alluse.css'
 import '../style/guild-list.css'
 import '../style/spacing.css'
 import '../style/button.css'
 
+function useQuery() {
+  return qs.parse(useLocation().search.slice(1))
+}
 function Guild() {
+  const query = useQuery()
+  const { tribes } = query
   return (
     <>
       <article>
         <GuildListBanner />
-        <GuildFilter />
-        <GuildResult />
+        <GuildFilterResult tribes={tribes} />
         <GuildListPage />
         <GuildNew />
+        <ScrollToTop smooth />
       </article>
     </>
   )

@@ -1,5 +1,5 @@
-button:hover{
-transform: translateY(-5px);
+button:hover {
+  transform: translateY(-5px);
 }
 
 .carousel-indicators [data-bs-target] {
@@ -23,11 +23,9 @@ transform: translateY(-5px);
   transition: opacity 0.6s ease;
 }
 .carousel-indicators .active {
-    opacity: 1;
-    background-color: #072b7b;
+  opacity: 1;
+  background-color: #072b7b;
 }
-
-
 
 .journey-info-name {
   font-weight: bold;
@@ -265,7 +263,7 @@ transform: translateY(-5px);
   max-height: 70px;
 }
 
-.coustomerreview .fa-align-left{
+.coustomerreview .fa-align-left {
   color: #ffffff;
   font-size: 16px;
   margin-left: 8px;
@@ -292,6 +290,7 @@ transform: translateY(-5px);
     display: none;
   }
 }
+
 .pagination-container nav {
   width: 149px !important;
   height: 33.39px !important;
@@ -337,32 +336,31 @@ transform: translateY(-5px);
   z-index: 1000;
   transition: 0.4s;
   height: auto;
-  
 }
-.scrollup-icon{
+.scrollup-icon {
   color: #ffffff;
 }
 
-.scrollup:hover{
+.scrollup:hover {
   background-color: #ff9c00;
   opacity: 1;
 }
 
-.show-scroll{
+.show-scroll {
   bottom: 5rem;
 }
 
 /* scrollbar  */
 
-::-webkit-scrollbar{
-  width: .60rem;
+::-webkit-scrollbar {
+  width: 0.6rem;
   background: #636161;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #a5a5a8;
 }
-::-webkit-scrollbar-thumb:hover{
-  background-color:#ff9c00;
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff9c00;
   opacity: 0.6;
 }
