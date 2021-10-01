@@ -156,6 +156,7 @@ app.post("/auth/login", async (req, res, next) => {
     let returnMember = {
         id: member.id,
         name: member.member_name,
+        email:member.email
         // name:member.member_name
     };
     req.session.member = returnMember;
@@ -163,6 +164,7 @@ app.post("/auth/login", async (req, res, next) => {
     res.json({
         // id: member.id,
         name: member.member_name,
+        email:member.email
         // name:member.member_name
     });
 })
@@ -182,7 +184,7 @@ app.get("/auth/logout", (req, res, next) => {
 
 /*購物車付款資訊 */
 app.post("/pay",async (req, res, next) => {
-    let isLogin = true;
+    let isLogin = req.body.isLogin
     //產生一個6位數亂碼加上時間用以做訂單編號
     let order_time = new Date()
     let order_code = ''
@@ -190,7 +192,7 @@ app.post("/pay",async (req, res, next) => {
         order_code += Math.floor(Math.random()*10)
     }
     order_number =`${order_code}${moment(order_time).format('YYYYMMDD')}`
-    if(isLogin){
+    if(isLogin != "false"){
         let journeyData = req.body.journey
         for(let n = 0; n < journeyData.length; n++){
             let go_time = moment(journeyData[n].go_time).format('YYYY-MM-DD')
@@ -210,9 +212,9 @@ app.post("/pay",async (req, res, next) => {
         );
     }
         await connection.queryAsync(
-            "INSERT INTO order_form (member_id, sur_name, first_name, phone, nation, address, email, card_number, bill_status, order_status, order_number) VALUES (?);",
+            "INSERT INTO order_form (member_email, sur_name, first_name, phone, nation, address, email, card_number, bill_status, order_status, order_number) VALUES (?);",
             [[ 
-                1,
+                req.body.isLogin,
                 req.body.payData.surName,
                 req.body.payData.firstName,
                 req.body.payData.phone,
@@ -226,7 +228,6 @@ app.post("/pay",async (req, res, next) => {
             ]]
         );
         res.json({order_number})
-        next()
     }else{
         next({
             status:401,
