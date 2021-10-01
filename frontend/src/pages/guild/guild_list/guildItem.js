@@ -19,7 +19,7 @@ function GuildItem({ guild }) {
             {/* 頭像 */}
             <img
               className="guild-info-avatar d-block mx-auto"
-              src={`/images/${guild.img1}`}
+              src={`/images/data/導遊圖片/${guild.avatar}`}
               alt="guild-avatar"
             />
             {/* 姓名 */}

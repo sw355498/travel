@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 27, 2021 at 11:01 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- 主機： 127.0.0.1
+-- 產生時間： 2021-09-28 16:43:44
+-- 伺服器版本： 10.4.19-MariaDB
+-- PHP 版本： 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -1972,24 +1972,36 @@ USE `tribe_db`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `guide`
+-- 資料表結構 `guild`
 --
 
-CREATE TABLE `guide` (
+CREATE TABLE `guild` (
   `id` int(3) UNSIGNED NOT NULL,
   `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tribe` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tribe` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `language` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `license` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `banner` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `img` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `video` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `intro_title` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `stars` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `avatar` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `journey_id` int(10) UNSIGNED NOT NULL,
-  `selected_day` date DEFAULT NULL
+  `intro` varchar(50) NOT NULL,
+  `rating` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avatar` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `guild`
+--
+
+INSERT INTO `guild` (`id`, `name`, `tribe`, `language`, `license`, `banner`, `img`, `video`, `intro_title`, `intro`, `rating`, `avatar`) VALUES
+(1, '瓦丹', '靜浦部落,新社部落', '中文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦丹', '5', ''),
+(2, '瓦庫', '靜浦部落', '中文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫', '5', ''),
+(3, '瓦庫2', '靜浦部落', '中文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫2', '5', ''),
+(4, '瓦庫', '3,4', '中文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫', '5', ''),
+(5, '瓦庫2', '3,4', '中文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫2', '5', ''),
+(6, '瓦庫2', '3,4', '中文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫2', '5', ''),
+(7, '瓦庫2', '3,4', '中文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫2', '5', '');
 
 -- --------------------------------------------------------
 
@@ -2060,7 +2072,7 @@ CREATE TABLE `journey` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `journey`
+-- 傾印資料表的資料 `journey`
 --
 
 INSERT INTO `journey` (`_id`, `guide_id`, `member_id`, `name`, `total_time`, `price`, `total_people`, `journey_img`, `location`, `transportation`, `introname`, `content`, `rating`, `status`, `tribe_intro`, `tribe`, `lang`, `needtoknow`, `amountRating`, `description`, `journey_img2`, `banner_img`, `banner_img2`, `banner_img3`, `banner_img4`) VALUES
@@ -2082,7 +2094,7 @@ INSERT INTO `journey` (`_id`, `guide_id`, `member_id`, `name`, `total_time`, `pr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- 資料表結構 `member`
 --
 
 CREATE TABLE `member` (
@@ -2122,36 +2134,63 @@ CREATE TABLE `member` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_form`
+-- 資料表結構 `order_detail`
 --
 
-CREATE TABLE `order_form` (
+CREATE TABLE `order_detail` (
   `id` int(6) UNSIGNED NOT NULL,
-  `member_id` int(5) UNSIGNED NOT NULL,
-  `guide_id` int(5) UNSIGNED NOT NULL,
-  `journey_id` int(5) UNSIGNED NOT NULL,
-  `sur_name` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nation` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `go_time` date NOT NULL,
-  `total_amount` int(10) UNSIGNED NOT NULL,
-  `total_people` tinyint(5) UNSIGNED NOT NULL,
-  `total_price` int(10) UNSIGNED NOT NULL,
-  `pay_status` tinyint(1) UNSIGNED NOT NULL,
-  `card_number` int(5) UNSIGNED NOT NULL,
-  `pay_amount` int(5) UNSIGNED NOT NULL,
-  `bill_status` tinyint(2) UNSIGNED NOT NULL,
-  `order_status` tinyint(2) UNSIGNED NOT NULL,
-  `order_time` date NOT NULL
+  `guide` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `journey_id` int(6) UNSIGNED NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `go_time` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` int(6) UNSIGNED NOT NULL,
+  `price` int(6) UNSIGNED NOT NULL,
+  `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `guide`, `journey_id`, `name`, `img`, `go_time`, `amount`, `price`, `order_number`) VALUES
+(1, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-09-25', 1, 1000, '73191620210928'),
+(2, '瓦庫2', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-09-25', 4, 5120, '73191620210928'),
+(3, '瓦丹', 4, '走進大海的部落', '新社部落藝術品.jpg', '2021-09-30', 7, 8400, '73191620210928');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tribes`
+-- 資料表結構 `order_form`
+--
+
+CREATE TABLE `order_form` (
+  `id` int(6) UNSIGNED NOT NULL,
+  `member_id` int(6) UNSIGNED NOT NULL,
+  `sur_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `first_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nation` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `card_number` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bill_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order_time` date NOT NULL DEFAULT current_timestamp(),
+  `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `order_form`
+--
+
+INSERT INTO `order_form` (`id`, `member_id`, `sur_name`, `first_name`, `phone`, `nation`, `address`, `email`, `card_number`, `bill_status`, `order_status`, `order_time`, `order_number`) VALUES
+(1, 1, '王', '小明', '0933333333', '台灣', '桃', '123@test.com', '4132415615644891', '電子發票', '已付款', '2021-09-28', '73191620210928');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `tribes`
 --
 
 CREATE TABLE `tribes` (
@@ -2160,7 +2199,7 @@ CREATE TABLE `tribes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tribes`
+-- 傾印資料表的資料 `tribes`
 --
 
 INSERT INTO `tribes` (`id`, `tribe`) VALUES
@@ -2173,13 +2212,13 @@ INSERT INTO `tribes` (`id`, `tribe`) VALUES
 (7, '撒固兒部落');
 
 --
--- Indexes for dumped tables
+-- 已傾印資料表的索引
 --
 
 --
--- Indexes for table `guide`
+-- 資料表索引 `guild`
 --
-ALTER TABLE `guide`
+ALTER TABLE `guild`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -2195,32 +2234,38 @@ ALTER TABLE `journey`
   ADD PRIMARY KEY (`_id`);
 
 --
--- Indexes for table `member`
+-- 資料表索引 `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order_form`
+-- 資料表索引 `order_detail`
+--
+ALTER TABLE `order_detail`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `order_form`
 --
 ALTER TABLE `order_form`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tribes`
+-- 資料表索引 `tribes`
 --
 ALTER TABLE `tribes`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
 --
--- AUTO_INCREMENT for table `guide`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `guild`
 --
-ALTER TABLE `guide`
-  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `guild`
+  MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `guild`
@@ -2235,19 +2280,25 @@ ALTER TABLE `journey`
   MODIFY `_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `member`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `member`
 --
 ALTER TABLE `member`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `order_form`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `order_detail`
 --
-ALTER TABLE `order_form`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `order_detail`
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tribes`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `order_form`
+--
+ALTER TABLE `order_form`
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `tribes`
 --
 ALTER TABLE `tribes`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;

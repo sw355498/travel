@@ -8,7 +8,8 @@ import '../../style/sign-in-up.css'
 const Register = () => {
   const [email, setEmail] = useState('test@gmail.com')
   const [name, setName] = useState('test')
-  const [password, setPassword] = useState('12345')
+  const [password, setPassword] = useState('123456')
+  const [checkPassword, setCheckPassword] = useState('123456')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -18,8 +19,10 @@ const Register = () => {
         email,
         name,
         password,
+        checkPassword,
       })
       console.log(response)
+      alert('註冊成功！')
     } catch (e) {
       console.error(e.response)
       alert(e.response.data.message)
@@ -30,7 +33,7 @@ const Register = () => {
       <div id="tab-inner">
         <form className="form-content" onSubmit={handleSubmit}>
           <div className="text-center td-mt-25">
-            {/* <p>使用社交平台帳戶註冊</p> */}
+            <p>註冊</p>
             {/* <div className="sign-icon mx-auto">
               <a href="">
                 <i className="fab fa-facebook"></i>
@@ -88,6 +91,22 @@ const Register = () => {
               onChange={(e) => {
                 setPassword(e.target.value)
               }}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label for="checkPassword">在輸入一次密碼</label>
+            <input
+              type="password"
+              className="form-control"
+              id="checkPassword"
+              name="checkpassword"
+              placeholder=""
+              value={checkPassword}
+              onChange={(e) => {
+                setCheckPassword(e.target.value)
+              }}
+              required
             />
           </div>
 

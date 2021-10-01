@@ -1,6 +1,9 @@
 //元件,模組引入
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect, useRef } from 'react'
+import { Link, matchPath } from 'react-router-dom'
+import { API_URL } from '../utils/config'
+import axios from 'axios'
+import { useAuth } from '../context/auth'
 
 // css引入
 import '../style/header.css'
@@ -9,13 +12,25 @@ import '../style/spacing.css'
 // 圖片引入
 import logo from '../img/logo.png'
 import hualsland from '../img/花島（黑）.png'
+import cart from '../img/cart.png'
+import avatar from '../img/avatar.png'
 
 function Header(porps) {
+  const { member, setMember } = useAuth()
+
+  const handleLogout = async () => {
+    await axios.get(`${API_URL}/auth/logout`, {
+      withCredentials: true,
+    })
+    setMember(null)
+  }
+
   const [quantity, setQuantity] = useState()
   setInterval(() => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
     setQuantity(currentCart.length)
   }, 1000)
+
   return (
     <>
       <header className="td-header">
@@ -36,51 +51,60 @@ function Header(porps) {
                 <span>在地導遊</span>
               </Link>
             </ul>
-            {/* 導覽列登入前右側 */}
-            <div className="td-nav-before d-flex align-items-center">
-              <Link
-                to="/Login"
-                className="btn td-btn-medium-o td-header-login text-center"
-              >
-                登入
-              </Link>
-              <Link
-                to="/Register"
-                className="btn td-btn-medium-b td-header-register text-center"
-              >
-                註冊
-              </Link>
-            </div>
 
-            {/* 導覽列登入後右側 */}
-            {/* <div className="td-right-nav"> */}
-            {/* <a href="通知">
-                <i className="fas fa-comment-dots"></i>
-              </a> */}
-            {/* <Link
-                to="/Shoppingcart"
-                className="td-cart position-relative"
-                href="../pages/shoppingcart/ShoppingcartCartList"
-              >
-                <img src={cart} alt="cart" />
-                <div className="cart-quantity justify-content-center">
-                  <p className="mt-1">{quantity}</p>
+            {/* 導覽列登入前右側 */}
+            {member ? (
+              <>
+                <div className="td-right-nav">
+                  <Link
+                    to="/Shoppingcart"
+                    className="td-cart position-relative"
+                    href="../pages/shoppingcart/ShoppingcartCartList"
+                  >
+                    <img src={cart} alt="cart" />
+                    <div className="cart-quantity justify-content-center">
+                      <p className="mt-1">{quantity}</p>
+                    </div>
+                  </Link>
+                  <Link
+                    to="member#"
+                    className="td-member"
+                    href="/page/member/member-information.html"
+                  >
+                    {/* hi,{member.member_name} */}
+                    <img
+                      className="td-member-avatar"
+                      src={avatar}
+                      alt="avatar"
+                    />
+                  </Link>
+                  <Link
+                    to="/"
+                    className="btn td-btn-medium-b td-header-register text-center"
+                    onClick={handleLogout}
+                  >
+                    登出
+                  </Link>
                 </div>
-              </Link>
-              <Link
-                to="member"
-                className="td-member"
-                href="/page/member/member-information.html"
-              >
-                <img className="td-member-avatar" src={avatar} alt="avatar" />
-              </Link>
-              <Link
-                to="#"
-                className="btn td-btn-medium-b td-header-register text-center"
-              >
-                登出
-              </Link>
-            </div> */}
+              </>
+            ) : (
+              <>
+                <div className="td-nav-before d-flex align-items-center">
+                  <Link
+                    to="/Login"
+                    className="btn td-btn-medium-o td-header-login text-center"
+                  >
+                    登入
+                  </Link>
+                  <Link
+                    to="/Register"
+                    className="btn td-btn-medium-b td-header-register text-center"
+                  >
+                    註冊
+                  </Link>
+                </div>
+              </>
+            )}
 
             {/* 漢堡 */}
             <div className="td-burger">

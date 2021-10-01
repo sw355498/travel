@@ -4,8 +4,9 @@ import InputTextField from './InputTextField'
 import SelectNation from './SelectNation'
 import SelectBill from './SelectBill'
 import Cards from 'react-credit-cards'
-import moment from 'moment'
 import axios from 'axios'
+import { API_URL } from '../../../config'
+import { Modal, Button } from 'react-bootstrap'
 function PayData(props) {
   // spinner用的狀態
   const [isLoading, setIsLoading] = useState(false)
@@ -15,6 +16,14 @@ function PayData(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
+  const [error, setError] = useState(null)
+  //成功付款顯示彈跳視窗
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+  //訂單編號
+  const [orderNumber, setOrderNumber] = useState('null')
+  console.log(props)
   // 自動1秒後關閉指示的spinner
   useEffect(() => {
     if (isLoading) {
@@ -76,7 +85,7 @@ function PayData(props) {
   // 整個表單有任何變動(ex.某個欄位有輸入)
   // 使用者正在改有錯誤的欄位，清除某個欄位的錯誤訊息
   const handleFormChange = (e) => {
-    console.log('更新欄位: ', e.target.name)
+    // console.log('更新欄位: ', e.target.name)
 
     // 該欄位的錯誤訊息清空
     const updatedFieldErrors = {
@@ -102,46 +111,48 @@ function PayData(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const formdata = new FormData(e.target)
-    for (let pair of formdata.entries()) {
-      console.log(pair)
-    }
-    // 送到伺服器
-    for (let i = 0; i < mycartDisplay.length; i++) {
-      try {
-        let guide_id = mycartDisplay[i].guild
-        let journey_id = mycartDisplay[i].name
-        let sur_name = props.fields.surName
-        let first_name = props.fields.firstName
-        let phone = props.fields.phone
-        let nation = props.fields.nation
-        let address = props.fields.address
-        let email = props.fields.email
-        let go_time = moment(mycartDisplay[i].go_time).format('YYYY-MM-DD')
-        let total_amount = mycartDisplay[i].amount
-        let total_price = mycartDisplay[i].amount * mycartDisplay[i].price
-        let card_number = props.fields.number
-        let bill_status = props.fields.bill
-        await axios.post(`http://localhost:3002/pay`, {
-          guide_id,
-          journey_id,
-          sur_name,
-          first_name,
-          phone,
-          nation,
-          address,
-          email,
-          go_time,
-          total_amount,
-          total_price,
-          card_number,
-          bill_status,
-        })
-      } catch (e) {
-        console.error(e)
-      }
+    try {
+      let journey = mycartDisplay
+      let payData = props.fields
+      let res = await axios.post(`${API_URL}/pay`, { journey, payData })
+      localStorage.removeItem('cart')
+      setOrderNumber(res.data.order_number)
+      handleShow()
+    } catch (e) {
+      console.error(e)
+      setError(e.message)
     }
   }
+
+  const messageModal = (
+    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+      <Modal.Title className="d-flex justify-content-center td-mt-25 td-mb-15 text-title-size40">
+        <img className="td-logo-img" src="/images/logo.png" alt="logo" />
+        <img
+          className="td-logo-text"
+          src="/images/花島（黑）.png"
+          alt="花島（黑）"
+        />
+        感謝您的訂購!
+      </Modal.Title>
+      <Modal.Body className="text-center text-title-size24 td-mb-15">
+        訂購單編號：{orderNumber}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button
+          className="btn journey-reservation-button mx-auto"
+          variant="secondary"
+          onClick={() => {
+            props.history.push('/')
+          }}
+        >
+          確認
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  )
+
+  console.log()
   const loading = (
     <>
       <div className="d-flex justify-content-center">
@@ -369,7 +380,12 @@ function PayData(props) {
       </div>
     </>
   )
-  return <>{isLoading ? loading : display}</>
+  return (
+    <>
+      {messageModal}
+      {isLoading ? loading : display}
+    </>
+  )
 }
 
 export default withRouter(PayData)

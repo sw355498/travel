@@ -22,6 +22,10 @@ const API = {
   toggleJourneyLike: async (id) => {
     await axios.put(`${serverURI}/api/journeys/${id}/like`)
   },
+  fetchGuilds: async () => {
+    const res = await axios.get(`${serverURI}/Guild`)
+    return res.data
+  },
 }
 
 export default API
