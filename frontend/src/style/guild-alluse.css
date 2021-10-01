@@ -102,9 +102,7 @@
   box-shadow: none;
   background-color: var(--blue-color);
 }
-.page-item {
-  padding-right: 7px;
-}
+
 .page-item .page-link {
   height: 32px;
   width: 32px;

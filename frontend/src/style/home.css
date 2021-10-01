@@ -574,8 +574,8 @@ button:hover,
 
 #excellent-guide .card .guideImgBig {
   width: 50%;
-  max-width: 165px;
-  height: auto;
+  width: 165px;
+  height: 165px;
   border-radius: 50%;
 }
 @media only screen and (max-width: 992px) {
@@ -761,7 +761,9 @@ button:hover,
 
 .guide-figure img {
   border-radius: 50%;
-  max-width: 125px;
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
   margin-top: 50px;
 }
 

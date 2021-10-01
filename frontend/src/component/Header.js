@@ -15,7 +15,7 @@ import hualsland from '../img/花島（黑）.png'
 import cart from '../img/cart.png'
 import avatar from '../img/avatar.png'
 
-function Header() {
+function Header(porps) {
   const { member, setMember } = useAuth()
 
   const handleLogout = async () => {

@@ -5,6 +5,7 @@ function JourneyinfoGuideCard(props) {
   const { guideChecked, handleClick, card, TribeForGuide } = props
   const cardTribe = card.tribe
   const cardTribeSplit = cardTribe.split(',')
+  console.log(cardTribeSplit)
   const cardfilterResult = cardTribeSplit.filter((item) =>
     item.includes(TribeForGuide.tribe)
   )
@@ -15,7 +16,7 @@ function JourneyinfoGuideCard(props) {
         <p className="smalltag">{cardfilterResult}</p>
       </div>
       <img
-        src="/images/data/奇美部落/導遊/導遊1.jpg"
+        src={`/images/data/導遊圖片/${card.avatar}`}
         className="card-img-top"
         alt="..."
       />
