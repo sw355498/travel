@@ -1,0 +1,15 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"tribe_db"},
+{"type":"table","name":"guild","database":"tribe_db","data":
+[
+{"id":"1","name":"瓦丹","tribe":"太巴塱部落,靜浦部落太巴,新社部落","language":"中文","license":"華語導遊證照","banner1":"太巴塱導遊banner.jpg\r\n","img1":"太巴塱導遊1.jpg","img2":"太巴塱導遊2.jpg","img3":"太巴塱導遊3.jpg","img4":"太巴塱導遊4.jpeg","video":"https:\/\/www.youtube.com\/embed\/0cy7lE9Imuk","intro_title":"的瘋狂冒險團","intro":"我是雅固，我熱愛我的家鄉跟部落，希望能夠讓更多人看到部落文化。請放心地跟著我，我會帶著你們一覽最美的部落風景，吃最好吃的部落美食，聽最感人的部落故事。\r\n","rating":"5","avatar":"太巴塱導遊1.jpg"},
+{"id":"2","name":"芭奈‧法老","tribe":"水璉部落,太巴塱部落,靜浦部落","language":"中文,英文","license":"華語導遊證照","banner1":"水璉導遊banner1.png\r\n","img1":"水璉導遊1.jpg","img2":"水璉導遊3.jpg","img3":"水璉導遊5.jpg","img4":"水璉導遊6.jpg","video":"https:\/\/www.youtube.com\/watch?v=ap7IFQUHgDE&t=165s","intro_title":"的瘋狂冒險團","intro":"大家好我是芭奈‧法老,老人家們的智慧如此珍貴，如果再不傳承，這些寶物極有可能消失不見！\r\n創立了吉籟獵人學校獵人,在獵人學校裡可以學到原住民獵人寶貴的知識與技能。\r\n","rating":"5","avatar":"水璉導遊1.jpg"},
+{"id":"3","name":"巴隆","tribe":"奇美部落,撒固兒部落,水璉部落","language":"中文","license":"華語導遊證照","banner1":"奇美導遊banner.png\r\n","img1":"奇美導遊1.jpg","img2":"奇美導遊2.jpg","img3":"奇美導遊3.jpg","img4":"奇美導遊4.jpg","video":"https:\/\/www.youtube.com\/watch?v=du6uL8LsDnA","intro_title":"的瘋狂冒險團","intro":"各位好我是巴隆，從事旅遊業15年, 也熱愛交朋友, 更熱愛這塊我生長的土地~我將盡所能的介紹奇美部落這個我愛的地方, 我知道的景點, 並希望帶給您們愉快的旅遊回憶~\r\n\r\n","rating":"5","avatar":"奇美導遊3.jpg"},
+{"id":"4","name":"希達","tribe":"馬太鞍部落,奇美部落,靜浦部落","language":"中文,英文","license":"華語導遊證照","banner1":"奇美部落大圖1.png\r\n","img1":"奇美部落大圖1.png","img2":"奇美部落大圖1.png","img3":"奇美部落大圖1.png","img4":"奇美部落大圖1.png","video":"https:\/\/www.youtube.com\/embed\/9viHdDVNNH0","intro_title":"的瘋狂冒險團","intro":"我的名字叫希達，我的部落是一座美麗、安靜的部落，您可以在那裡放鬆身心、享用美味佳餚。在那裡您還可以享受娛樂和舞蹈。相信在我的帶領下您會在馬太鞍部落過得愉快。","rating":"5","avatar":"奇美部落大圖1.png"},
+{"id":"5","name":"卡拉","tribe":"撒固兒部落,馬太鞍部落,奇美部落","language":"中文","license":"華語導遊證照","banner1":"撒固兒導遊banner.png\r\n","img1":"撒固兒導遊1.jpg","img2":"撒固兒導遊2.jpg","img3":"撒固兒導遊3.jpg","img4":"撒固兒導遊4.jpg","video":"https:\/\/www.youtube.com\/watch?v=QUGATx_64T4\r\n","intro_title":"的瘋狂冒險團","intro":"我是卡拉，非常歡迎大家來到部落旅行，我會竭盡我所知，竭盡我所能，為大家講解部落的歷史，部落的文化，讓大家不虛此行。\r\n","rating":"4","avatar":"撒固兒導遊3.jpg"},
+{"id":"6","name":"新社導遊","tribe":"新社部落,奇美部落,撒固兒部落","language":"英文","license":"華語導遊證照","banner1":"新社導遊banner.jpg","img1":"新社導遊1.jpg","img2":"新社導遊2.jpg","img3":"新社導遊3.jpg","img4":"新社導遊4.jpg","video":"https:\/\/www.youtube.com\/embed\/9viHdDVNNH0","intro_title":"的瘋狂冒險團","intro":"我是新社導遊","rating":"3","avatar":"新社導遊1.jpg"},
+{"id":"7","name":"瓦庫2","tribe":"靜浦部落,奇美部落,水璉部落","language":"中文,英文","license":"華語導遊證照","banner1":"靜浦導遊banner.jpg\r\n","img1":"靜浦導遊1.jpg","img2":"靜浦導遊2.jpg","img3":"靜浦導遊3.jpg","img4":"靜浦導遊4.jpg","video":"https:\/\/www.youtube.com\/embed\/9viHdDVNNH0","intro_title":"的瘋狂冒險團","intro":"靜浦導遊","rating":"4","avatar":"靜浦導遊4.jpg"}
+]
+}
+]
