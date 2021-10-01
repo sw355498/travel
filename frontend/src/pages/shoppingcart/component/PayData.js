@@ -315,6 +315,7 @@ function PayData(props) {
                       minLength="16"
                       maxLength="16"
                       setFocus={setFocus}
+                      pattern="[0-9]{16}"
                       required
                     />
                   </div>
@@ -342,6 +343,7 @@ function PayData(props) {
                       minLength="4"
                       maxLength="4"
                       setFocus={setFocus}
+                      pattern="[0-1]{1}[0-9]{1}[0-3]{1}[0-9]{1}"
                       required
                     />
                   </div>
@@ -356,6 +358,7 @@ function PayData(props) {
                       minLength="3"
                       maxLength="3"
                       setFocus={setFocus}
+                      pattern="[0-9]{3}"
                       required
                     />
                   </div>
