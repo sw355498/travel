@@ -23,7 +23,16 @@ function PayData(props) {
   const handleShow = () => setShow(true)
   //訂單編號
   const [orderNumber, setOrderNumber] = useState('null')
-  console.log(props)
+
+  //登入帳號傳至後端
+  const [isLogin, setIsLogin] = useState('false')
+  useEffect(() => {
+    if (props.member != null) {
+      setIsLogin(props.member['email'])
+    }
+    console.log(isLogin)
+  }, [isLogin])
+
   // 自動1秒後關閉指示的spinner
   useEffect(() => {
     if (isLoading) {
@@ -114,7 +123,11 @@ function PayData(props) {
     try {
       let journey = mycartDisplay
       let payData = props.fields
-      let res = await axios.post(`${API_URL}/pay`, { journey, payData })
+      let res = await axios.post(`${API_URL}/pay`, {
+        journey,
+        payData,
+        isLogin,
+      })
       localStorage.removeItem('cart')
       setOrderNumber(res.data.order_number)
       handleShow()
@@ -152,7 +165,6 @@ function PayData(props) {
     </Modal>
   )
 
-  console.log()
   const loading = (
     <>
       <div className="d-flex justify-content-center">

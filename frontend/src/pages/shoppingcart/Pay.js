@@ -13,8 +13,6 @@ import '../../style/shoopcart-process.css'
 import 'react-credit-cards/es/styles-compiled.css'
 
 function Pay(props) {
-  // const [step, setStep] = useState(1)
-
   // 狀態為物件，處理多個欄位
   const [fields, setFields] = useState({
     firstName: '',
@@ -58,6 +56,7 @@ function Pay(props) {
           setFields={setFields}
           fieldErrors={fieldErrors}
           setFieldErrors={setFieldErrors}
+          member={props.member}
         />
         <ScrollToTop smooth />
       </div>
