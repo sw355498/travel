@@ -5,7 +5,6 @@ import Rating from '../../component/Rating'
 import Like from './Like'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
 import JourneyCoustomerReview from './coustomer_review/journeyCoustomerReview'
-import Pagination from '../journey/pagination/Pagination'
 import '../../style/journey-info.css'
 
 import API from '../../api'
@@ -21,6 +20,26 @@ function Journey_info(props) {
   useEffect(() => {
     fetchAndUpdateJourneysLike()
   }, [fetchAndUpdateJourneysLike])
+
+  //轉換成貨幣形式
+  const digitsRE = /(\d{3})(?=\d)/g
+
+  function currency(value, currency, decimals) {
+    value = parseFloat(value)
+    if (!isFinite(value) || (!value && value !== 0)) return ''
+    currency = currency != null ? currency : 'TWD'
+    decimals = decimals != null ? decimals : 0
+    var stringified = Math.abs(value).toFixed(decimals)
+    var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified
+    var i = _int.length % 3
+    var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : ''
+    var _float = decimals ? stringified.slice(-1 - decimals) : ''
+    var sign = value < 0 ? '-' : ''
+    return (
+      sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
+    )
+  }
+
   return findResult ? (
     <>
       <section>
@@ -121,18 +140,18 @@ function Journey_info(props) {
             <p>{findResult.name}</p>
           </div>
 
-          <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center flex-column flex-md-row align-items-center">
+          <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center flex-column flex-md-row align-items-center ">
             <Like
               findResult={findResult}
               selected={findResult.status}
               handleClick={fetchAndUpdateJourneysLike}
             />
-            <p className="journey-info-price order-1 order-md-2">
-              TWD{findResult.price} 起
+            <p className="journey-info-price order-1 order-md-2 ">
+              {`${currency(findResult.price)} 起`}
             </p>
           </div>
         </div>
-        <div className="d-flex justify-content-end">
+        <div className="d-flex justify-content-md-end justify-content-center td-mt-25">
           {' '}
           <Rating rating={findResult.rating}></Rating>
         </div>
@@ -141,8 +160,8 @@ function Journey_info(props) {
           <p>一&nbsp;行程資訊&nbsp;一</p>
         </div>
         <div className="d-flex flex-row bd-highlight td-mt-25 justify-content-center justify-content-md-start">
-          <div className="p-2 bd-highlight text-center ">
-            <i className="fas fa-map-marker-alt icon"></i>
+          <div className="p-2 bd-highlight text-center my-auto ">
+            <i className="fas fa-map-marker-alt icon "></i>
           </div>
           <div className="p-2 bd-highlight">
             <div className="text-title-size20 mt-1">
@@ -152,7 +171,7 @@ function Journey_info(props) {
         </div>
 
         <div className="d-flex flex-row bd-highlight td-mt-25 justify-content-center justify-content-md-start text-md-left text-center">
-          <div className="p-2 bd-highlight text-center">
+          <div className="p-2 bd-highlight text-center my-auto">
             {' '}
             <i className="far fa-clock icon"></i>
           </div>
@@ -163,19 +182,19 @@ function Journey_info(props) {
         <div className="row">
           <div className="col-md-4 justify-content-center d-flex justify-content-md-start">
             <div className="d-flex flex-row bd-highlight td-mt-25 ">
-              <div className="p-2 bd-highlight text-center">
-                <i className="fas fa-globe"></i>
+              <div className="p-2 bd-highlight text-center my-auto">
+                <i className="fas fa-globe "></i>
               </div>
-              <div className="p-2 bd-highlight">
-                <div className="text-title-size20 mt-1">
+              <div className="p-2 bd-highlight ">
+                <div className="text-title-size20 mt-1 ">
                   {findResult.lang}導覽
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-md-8 justify-content-center d-flex justify-content-md-start">
+          <div className="col-md-8 justify-content-center d-flex justify-content-md-start ">
             <div className="d-flex flex-row bd-highlight td-mt-25">
-              <div className="p-2 bd-highlight text-center">
+              <div className="p-2 bd-highlight text-center my-auto">
                 <i className="fas fa-motorcycle"></i>
               </div>
               <div className="p-2 bd-highlight">
@@ -190,11 +209,9 @@ function Journey_info(props) {
           <p>一&nbsp;行程簡介&nbsp;一</p>
         </div>
         <div className="journey-info-smalltitle td-mt-25">
-          <p>{findResult.introname}:</p>
+          <p dangerouslySetInnerHTML={{ __html: findResult.introname }}></p>
         </div>
-        <div className="journey-info-smalltitle td-mt-25">
-          <p>{findResult.introcontent}</p>
-        </div>
+
         <div className="journey-info-name mt-40">
           <p>商品說明</p>
         </div>
@@ -203,7 +220,7 @@ function Journey_info(props) {
           <p>一&nbsp;行程資訊&nbsp;一</p>
         </div>
         <div className="journey-info-smalltitle td-mt-25">
-          {findResult.content}
+          <p dangerouslySetInnerHTML={{ __html: findResult.content }}></p>
         </div>
 
         <div className="journey-info-name td-mt-75 ">
@@ -231,8 +248,8 @@ function Journey_info(props) {
         <div className="journey-info-name ">
           <p>備註</p>
         </div>
-        <div className="td-mt-25 ">
-          <p>{findResult.needtoknow}</p>
+        <div className="td-mt-25 journey-info-smalltitle p">
+          <p dangerouslySetInnerHTML={{ __html: findResult.needtoknow }}></p>
         </div>
         <div className="td-md-25">&nbsp;</div>
       </div>
@@ -241,7 +258,7 @@ function Journey_info(props) {
         <div className="journey-info-name ">
           <p>取消政策</p>
         </div>
-        <div className="td-mt-25">
+        <div className="td-mt-25 journey-info-smalltitle p">
           <p>- 所選日期 3 天（含）之前取消，收取手續費 0%</p>
           <p> - 所選日期 0 ~ 2 天之間取消，收取手續費 100%</p>
           <p className="remark">
@@ -253,7 +270,6 @@ function Journey_info(props) {
         </div>
       </div>
       <JourneyCoustomerReview />
-      <Pagination />
       <ScrollToTop smooth />
     </>
   ) : (

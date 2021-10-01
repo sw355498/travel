@@ -1,12 +1,32 @@
 const cors = require ("cors");
 const express = require('express')
 const connection = require('./utils/db')
+const moment = require('moment')
+require('dotenv').config()
+//註冊檢驗middleware
+const {loginCheckMiddleware} = require ('./middlewares/auth.js')
 
 //利用express建立了一個express application
 let app = express();
 
-//處理cors問題
-app.use(cors());
+//處理cors問題:允許前端打api
+app.use(
+    cors({
+        origin: ["http://localhost:3000"],
+        credentials: true,
+    })
+);
+
+// 啟用session
+const expressSession = require('express-session');
+app.use(
+  expressSession({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    })
+);
+
 
 //使用這個中間件，才可以讀到body的資料
 app.use(express.urlencoded({extended:true}));
@@ -19,7 +39,7 @@ app.use((req,res,next)=>{
 })
 
 
-//API
+//Guild API
 app.get("/guild",async (req,res,next)=>{
 // -----------------------頁碼----------------------------------
     // let page= req.query.page || 1; //目前在第幾頁，預設第一頁
@@ -47,12 +67,12 @@ app.get("/guild",async (req,res,next)=>{
     //     lastPage,//總共幾頁（最後一頁）
     //     page//目前在第幾頁
     // }
-    res.json({result});
+    res.json(result);
 })
 
-app.get("/guild/:guildNum",async (req,res,next)=>{
+app.get("/guild/:guildId",async (req,res,next)=>{
     // ("SELECT * FROM guild_tribes JOIN guild on guild_tribes.guild_id = guild.id JOIN tribes on guild_tribes.tribes_id = tribes.id WHERE guild.id = ?",[req.params.guildNum])
-    let result = await connection.queryAsync("SELECT * FROM guild WHERE id = ?",[req.params.guildNum]);
+    let result = await connection.queryAsync("SELECT * FROM guild WHERE id = ?",[req.params.guildId]);
     res.json(result);
 })
 
@@ -61,9 +81,13 @@ app.get("/guild/:guildNum",async (req,res,next)=>{
 const {body,validationResult} = require ('express-validator');
 const registerRule = [
     body("email").isEmail().withMessage("請填寫正確格式的Email"),
-    body("password").isLength({min:6}).withMessage("密碼長度至少為6"),
+    body("password").isLength({min:6, max:12}).withMessage("輸入6-12位密碼"),
+    body("checkPassword")
+    .custom((value, {req})=>{
+        return value === req.body.password;
+    })
+    .withMessage("兩次密碼輸入不一致"),
 ];
-
 //引入加密套件
 const bcrypt = require ("bcrypt");
 //註冊
@@ -105,29 +129,130 @@ app.post("/auth/register",registerRule,async (req,res,next) => {
 //登入
 app.post("/auth/login", async (req, res, next) => {
     let member = await connection.queryAsync(
-        "SELECT * FROM member WHERE email = ? ; ",[req.body.email]
+        "SELECT * FROM member WHERE email = ? ; ",
+        [req.body.email]
         );
+        // console.log(member);
+        //有註冊過的email V
+        //沒有註冊過的email
         if(member.length === 0 ){
            return next({
                status:400,
-               message:"找不到帳號",
+               message:"帳號錯誤",
            });
         }
-    
-    res.json({});
+    //有找到，而且應該只會有一個（註冊時會檢查有沒有註冊過）
+    member = member[0];
+    //密碼跟資料庫的比對
+    let result = await bcrypt.compare(req.body.password, member.password);
+    if (!result){
+        //不一致：回覆錯誤（400）
+        return next({
+            status:400,
+            message:"密碼錯誤",
+        });
+    }
+    //紀錄session
+    let returnMember = {
+        id: member.id,
+        name: member.member_name,
+        // name:member.member_name
+    };
+    req.session.member = returnMember;
+    // 回覆給前端
+    res.json({
+        // id: member.id,
+        name: member.member_name,
+        // name:member.member_name
+    });
 })
+
+// app.use(loginCheckMiddleware);
+app.get("/",(req, res, next) => {
+    res.json(req.session.member)
+});
+
+//登出
+app.get("/auth/logout", (req, res, next) => {
+    req.session.member = null;
+    res.sendStatus(202);
+  });
+
 
 
 /*購物車付款資訊 */
-app.post("/pay",(req, res, next) => {
-    res.json({})
+app.post("/pay",async (req, res, next) => {
+    let isLogin = true;
+    //產生一個6位數亂碼加上時間用以做訂單編號
+    let order_time = new Date()
+    let order_code = ''
+    for(let i = 0; i < 6; i++){
+        order_code += Math.floor(Math.random()*10)
+    }
+    order_number =`${order_code}${moment(order_time).format('YYYYMMDD')}`
+    if(isLogin){
+        let journeyData = req.body.journey
+        for(let n = 0; n < journeyData.length; n++){
+            let go_time = moment(journeyData[n].go_time).format('YYYY-MM-DD')
+            let totalprice = journeyData[n].price * journeyData[n].amount //每筆行程總價格
+        await connection.queryAsync(
+                "INSERT INTO order_detail (guide, journey_id, name, img, go_time, amount, price, order_number) VALUES (?);",
+                [[ 
+                    journeyData[n].guild,
+                    journeyData[n].id,
+                    journeyData[n].name,
+                    journeyData[n].img,
+                    go_time,
+                    journeyData[n].amount,
+                    totalprice,
+                    order_number,
+                ]]
+        );
+    }
+        await connection.queryAsync(
+            "INSERT INTO order_form (member_id, sur_name, first_name, phone, nation, address, email, card_number, bill_status, order_status, order_number) VALUES (?);",
+            [[ 
+                1,
+                req.body.payData.surName,
+                req.body.payData.firstName,
+                req.body.payData.phone,
+                req.body.payData.nation,
+                req.body.payData.address,
+                req.body.payData.email,
+                req.body.payData.number,
+                req.body.payData.bill,
+                "已付款",
+                order_number,
+            ]]
+        );
+        res.json({order_number})
+        next()
+    }else{
+        next({
+            status:401,
+            message:"尚未登入會員",
+        })
+    }
 })
 
-/* 全部會員購買紀錄 */
+/* 全部會員購買紀錄(分頁) */
 app.get("/order_form", async(req, res, next) => {
     try {
-        let result = await connection.queryAsync("SELECT * FROM order_form");
-        res.json(result);
+        let page = req.query.page || 1 ;//目前在第幾頁,預設第1頁
+        const perPage = 1;//每一頁筆數
+        let count = await connection.queryAsync("SELECT COUNT(*) AS total FROM order_form");;
+        const total = count[0].total//總共有幾筆
+        const totalPages = Math.ceil(total / perPage)//總夠有幾頁
+        //取得當頁資料
+        let offset = (page-1) * perPage//要跳過的比數
+        let result = await connection.queryAsync("SELECT * FROM order_form LIMIT ? OFFSET ?",[perPage, offset]);
+        let pagination = {
+            total,
+            perPage,
+            totalPages,
+            page
+        }
+        res.json({result,pagination});//回覆給前端
     } catch (e) {
         console.error(e);
     }
@@ -150,8 +275,24 @@ app.get("/order_form/:memberId", async(req, res, next) => {
 const APIrouter = express.Router();
 
 APIrouter.get('/journeys', async (req, res, next) => {
-  const result = await connection.queryAsync('SELECT * FROM journey')
-  res.json(result)
+// let page = req.query.page || 1 //目前在第幾頁
+// const perPage = 3 //每一頁資料
+//  let count = await connection.queryAsync('SELECT COUNT(*) As total FROM journey')
+//  const total = count[0].total 
+//  const lastPage = Math.ceil(total / perPage)
+//  console.log(total, lastPage)
+//  let offset = (page-1) * perPage
+ 
+let result = await connection.queryAsync('SELECT * FROM journey ')
+
+
+// let pagination = {
+//     total, //總共14筆資料
+//     perPage, //一頁有幾頁
+//     lastPage, //總共有幾頁
+//     page , //目前在第幾頁
+// }
+res.json(result)
 })
 
 APIrouter.get('/journeys/:id', async (req, res, next) => {
@@ -178,16 +319,10 @@ APIrouter.put("/journeys/:id/like", async (req, res, next) => {
     !status,
     id,
   ])
-  
   res.status(204).end()
 })
 
 app.use("/api", APIrouter)
-
-app.use((req, res, next) => {
-  res.status(404).json({ message: 'NOT FOUND' })
-})
-
 
 
 //處理找不到路由的錯誤的中間件

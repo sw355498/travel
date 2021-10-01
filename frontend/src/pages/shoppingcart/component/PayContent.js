@@ -123,7 +123,7 @@ function PayContent(props) {
                 })}
                 {/* 總顯示區塊 */}
                 <div class="row align-items-center text-center td-py-25 ">
-                  <div class="col-12 col-lg-6 td-my-25 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-lg-center">
+                  <div class="col-12 td-my-25 my-lg-0 d-flex justify-content-center align-items-lg-center">
                     <div class="text-title-size20 me-1">
                       <span className="fw-bold text-title-size24">
                         {mycartDisplay.length}
