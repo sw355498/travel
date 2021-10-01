@@ -133,6 +133,9 @@ function PayData(props) {
       handleShow()
     } catch (e) {
       console.error(e)
+      if ((e.message = '尚未登入會員')) {
+        props.history.push('/Login')
+      }
       setError(e.message)
     }
   }
