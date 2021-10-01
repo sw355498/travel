@@ -4,7 +4,6 @@ import Rating from '../../../component/Rating'
 
 function FirstCard({ JourneyGuideInfo }) {
   const cardTribeSplit = JourneyGuideInfo[4].tribe.split(',')
-  console.log(cardTribeSplit[0])
   return (
     <div className="col-md-6 col-12 text-center d-flex justify-content-md-center ">
       <div className="card">
