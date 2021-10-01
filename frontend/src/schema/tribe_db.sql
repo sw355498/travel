@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-10-01 09:46:27
+-- 產生時間： 2021-10-01 10:34:51
 -- 伺服器版本： 10.4.19-MariaDB
 -- PHP 版本： 8.0.7
 
@@ -40,7 +40,7 @@ CREATE TABLE `guild` (
   `img4` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `video` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `intro_title` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `intro` varchar(50) NOT NULL,
+  `intro` varchar(100) NOT NULL,
   `rating` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `avatar` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -50,13 +50,13 @@ CREATE TABLE `guild` (
 --
 
 INSERT INTO `guild` (`id`, `name`, `tribe`, `language`, `license`, `banner1`, `img1`, `img2`, `img3`, `img4`, `video`, `intro_title`, `intro`, `rating`, `avatar`) VALUES
-(1, '瓦丹', '太巴塱部落,靜浦部落太巴,新社部落', '中文', '華語導遊證照', '太巴塱導遊banner.jpg\r\n', '太巴塱導遊1.jpg', '太巴塱導遊2.jpg', '太巴塱導遊3.jpg', '太巴塱導遊4.jpeg', 'https://www.youtube.com/embed/9viHdDVNNH0', '瓦丹的瘋狂冒險團', '我是瓦丹', '5', '太巴塱導遊1.jpg'),
-(2, '瓦庫', '太巴塱部落,水璉部落,靜浦部落', '中文,英文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', '', '', '', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫', '5', ''),
-(3, '瓦庫2', '奇美部落,撒固兒部落,水璉部落', '中文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', '', '', '', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫2', '5', ''),
-(4, '瓦庫', '靜浦部落,奇美部落,水璉部落', '中文,英文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', '', '', '', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫', '5', ''),
-(5, '瓦庫2', '馬太鞍部落,撒固兒部落,奇美部落', '中文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', '', '', '', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫2', '4', ''),
-(6, '瓦庫2', '新社部落,奇美部落,撒固兒部落', '英文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', '', '', '', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫2', '3', ''),
-(7, '瓦庫2', '靜浦部落,奇美部落,水璉部落', '中文,英文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', '', '', '', 'https://www.youtube.com/embed/9viHdDVNNH0', '', '我是瓦庫2', '4', '');
+(1, '瓦丹', '太巴塱部落,靜浦部落太巴,新社部落', '中文', '華語導遊證照', '太巴塱導遊banner.jpg\r\n', '太巴塱導遊1.jpg', '太巴塱導遊2.jpg', '太巴塱導遊3.jpg', '太巴塱導遊4.jpeg', 'https://www.youtube.com/embed/0cy7lE9Imuk', '的瘋狂冒險團', '我是雅固，我熱愛我的家鄉跟部落，希望能夠讓更多人看到部落文化。請放心地跟著我，我會帶著你們一覽最美的部落風景，吃最好吃的部落美食，聽最感人的部落故事。\r\n', '5', '太巴塱導遊1.jpg'),
+(2, '芭奈‧法老', '水璉部落,太巴塱部落,靜浦部落', '中文,英文', '華語導遊證照', '水璉導遊banner1.png\r\n', '水璉導遊1.jpg', '水璉導遊3.jpg', '水璉導遊5.jpg', '水璉導遊6.jpg', 'https://www.youtube.com/watch?v=ap7IFQUHgDE&t=165s', '的瘋狂冒險團', '大家好我是芭奈‧法老,老人家們的智慧如此珍貴，如果再不傳承，這些寶物極有可能消失不見！\r\n創立了吉籟獵人學校獵人,在獵人學校裡可以學到原住民獵人寶貴的知識與技能。\r\n', '5', '水璉導遊1.jpg'),
+(3, '巴隆', '奇美部落,撒固兒部落,水璉部落', '中文', '華語導遊證照', '奇美導遊banner.png\r\n', '奇美導遊1.jpg', '奇美導遊2.jpg', '奇美導遊3.jpg', '奇美導遊4.jpg', 'https://www.youtube.com/watch?v=du6uL8LsDnA', '的瘋狂冒險團', '各位好我是巴隆，從事旅遊業15年, 也熱愛交朋友, 更熱愛這塊我生長的土地~我將盡所能的介紹奇美部落這個我愛的地方, 我知道的景點, 並希望帶給您們愉快的旅遊回憶~\r\n\r\n', '5', '奇美導遊3.jpg'),
+(4, '希達', '馬太鞍部落,奇美部落,靜浦部落', '中文,英文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', '奇美部落大圖1.png', '奇美部落大圖1.png', '奇美部落大圖1.png', 'https://www.youtube.com/embed/9viHdDVNNH0', '的瘋狂冒險團', '我的名字叫希達，我的部落是一座美麗、安靜的部落，您可以在那裡放鬆身心、享用美味佳餚。在那裡您還可以享受娛樂和舞蹈。相信在我的帶領下您會在馬太鞍部落過得愉快。', '5', '奇美部落大圖1.png'),
+(5, '卡拉', '撒固兒部落,馬太鞍部落,奇美部落', '中文', '華語導遊證照', '撒固兒導遊banner.png\r\n', '撒固兒導遊1.jpg', '撒固兒導遊2.jpg', '撒固兒導遊3.jpg', '撒固兒導遊4.jpg', 'https://www.youtube.com/watch?v=QUGATx_64T4\r\n', '的瘋狂冒險團', '我是卡拉，非常歡迎大家來到部落旅行，我會竭盡我所知，竭盡我所能，為大家講解部落的歷史，部落的文化，讓大家不虛此行。\r\n', '4', '撒固兒導遊3.jpg'),
+(6, '新社導遊', '新社部落,奇美部落,撒固兒部落', '英文', '華語導遊證照', '新社導遊banner.jpg', '新社導遊1.jpg', '新社導遊2.jpg', '新社導遊3.jpg', '新社導遊4.jpg', 'https://www.youtube.com/embed/9viHdDVNNH0', '的瘋狂冒險團', '我是新社導遊', '3', '新社導遊1.jpg'),
+(7, '瓦庫2', '靜浦部落,奇美部落,水璉部落', '中文,英文', '華語導遊證照', '靜浦導遊banner.jpg\r\n', '靜浦導遊1.jpg', '靜浦導遊2.jpg', '靜浦導遊3.jpg', '靜浦導遊4.jpg', 'https://www.youtube.com/embed/9viHdDVNNH0', '的瘋狂冒險團', '靜浦導遊', '4', '靜浦導遊4.jpg');
 
 -- --------------------------------------------------------
 
