@@ -130,21 +130,21 @@
   border-radius: 10px;
 }
 
-.list {
+.member-background .list {
   position: relative;
   top: 30px;
   margin-top: 25px;
   list-style-type: none;
   text-align: center;
 }
-.list1 {
+.member-background .list1 {
   position: relative;
   left: -18px;
   margin-top: 25px;
   list-style-type: none;
   text-align: center;
 }
-.list a {
+.member-background .list a {
   color: rgb(2, 2, 2);
   text-decoration: none;
 }
@@ -161,7 +161,7 @@
   color: #072b7b;
   text-decoration: none;
 }
-a:hover {
+.member-background a:hover {
   color: #072b7b;
 }
 

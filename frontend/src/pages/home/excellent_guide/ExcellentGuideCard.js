@@ -6,8 +6,6 @@ import TribeTag from './TribeTag'
 function ExcellentGuideCard(props) {
   const { JourneyGuideInfo } = props
   const limitGuideDispalynum = JourneyGuideInfo.slice(0, 3)
-  console.log(limitGuideDispalynum[0].img1)
-
   return (
     <>
       {limitGuideDispalynum.map((value, i) => (

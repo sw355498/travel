@@ -88,6 +88,7 @@ button:hover,
   opacity: 0.7;
   color: rgba(23, 65, 87, 1);
   font-size: 18px;
+  margin-top: 3rem;
 }
 .dropdown-row .show,
 .dropdown-column .show {
@@ -107,7 +108,7 @@ button:hover,
   font-size: 28px;
   line-height: 38px;
   color: #000000;
-  margin-left: 25px;
+  /* margin-left: 25px; */
 }
 .dropdown-row .show input,
 .dropdown-column .show input {
@@ -147,7 +148,6 @@ button:hover,
   font-weight: 300;
   font-size: 24px;
   line-height: 28px;
-
   color: #000000;
 }
 

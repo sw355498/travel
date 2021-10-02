@@ -306,6 +306,10 @@ APIrouter.get('/home/tribes',async(req,res,next)=>{
   const result = await connection.queryAsync('SELECT * FROM tribes')
   res.json(result)
 })
+APIrouter.get('/home/langs', async (req, res, next) => {
+  const result = await connection.queryAsync('SELECT * FROM lang')
+  res.json(result)
+})
 
 APIrouter.get('/journeyinfo/guides',async(req,res,next)=>{
   const result = await connection.queryAsync('SELECT * FROM guild')

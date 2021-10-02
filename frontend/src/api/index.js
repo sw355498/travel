@@ -11,6 +11,10 @@ const API = {
     const res = await axios.get(`${serverURI}/api/home/tribes`)
     return res.data
   },
+  fetchLangs: async () => {
+    const res = await axios.get(`${serverURI}/api/home/langs`)
+    return res.data
+  },
   fetchJourneyInfoGuide: async () => {
     const res = await axios.get(`${serverURI}/api/journeyinfo/guides`)
     return res.data

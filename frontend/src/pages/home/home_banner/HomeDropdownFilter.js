@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import qs from 'qs'
 
 function HomeDropdownFilter(props) {
+  // console.log(props)
   const history = useHistory()
   const tribesObject = useMemo(() => {
     const ret = {}
@@ -11,27 +12,46 @@ function HomeDropdownFilter(props) {
     })
     return ret
   }, [props.tribes])
+
+  const langsObject = useMemo(() => {
+    const ret = {}
+    props.langs.forEach((lang) => {
+      ret[lang.lang] = false
+    })
+    return ret
+  }, [props.langs])
   const [tribesInput, setTribesInput] = useState(tribesObject)
-  const { tribes } = props
+  const [langsInput, setlangsInput] = useState(langsObject)
+
+  const { tribes, langs } = props
 
   const handleTribesObjectChanged = (e) => {
     const value = e.target.value
     const checked = e.target.checked
     const newState = { ...tribesInput }
+    const newlangState = { ...langsInput }
     newState[value] = checked
+    newlangState[value] = checked
     setTribesInput(newState)
+    setlangsInput(newlangState)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const tribes = []
+    const langs = []
     Object.entries(tribesInput).forEach(([key, value]) => {
       if (value) {
         tribes.push(key)
       }
     })
-    const query = qs.stringify({ tribes })
-    history.push(`/journey?${query}`)
+    Object.entries(langsInput).forEach(([key, value]) => {
+      if (value) {
+        langs.push(key)
+      }
+    })
+    const query = qs.stringify({ tribes, langs })
+    history.push(`/Guild?${query}`)
   }
 
   return (
@@ -53,7 +73,7 @@ function HomeDropdownFilter(props) {
         >
           <form action="" onSubmit={handleSubmit}>
             <div className="mt-3 list ml-3">
-              <h6 className="mt-3 mr-3 mb-3">選擇部落:</h6>
+              <h6 className="mt-3 mr-3 mb-3 text-center">選擇部落:</h6>
               {tribes.map((value, i) => (
                 <div className="form-check form-check-inline mt-3" key={i}>
                   <input
@@ -73,30 +93,24 @@ function HomeDropdownFilter(props) {
                 </div>
               ))}
             </div>
+
             <div className="mt-3 list ml-3 ">
-              <h6 className="mt-3  mb-3">選擇導遊語言:</h6>
-              <div className="form-check form-check-inline  mt-3">
-                <input
-                  className="form-check-input "
-                  type="checkbox"
-                  id="inlineCheckbox1"
-                  value="option1"
-                />
-                <label className="form-check-label" htmlFor="inlineCheckbox1">
-                  中文
-                </label>
-              </div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox2"
-                  value="option2"
-                />
-                <label className="form-check-label" htmlFor="inlineCheckbox2">
-                  英文{' '}
-                </label>
-              </div>
+              <h6 className="mt-3  mb-3 text-center">選擇導遊語言:</h6>
+              {langs.map((value, i) => (
+                <div className="form-check form-check-inline  mt-3">
+                  <input
+                    className="form-check-input "
+                    type="checkbox"
+                    id="inlineCheckbox1"
+                    value={value.lang}
+                    checked={langsInput[value.lang]}
+                    onChange={handleTribesObjectChanged}
+                  />
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
+                    {value.lang}
+                  </label>
+                </div>
+              ))}
             </div>
             <div className="text-center text-title-size24">
               {' '}
@@ -125,7 +139,7 @@ function HomeDropdownFilter(props) {
         >
           <form action="" onSubmit={handleSubmit}>
             <div className="mt-3 list ml-3">
-              <h6 className="mt-3 mr-3 mb-3">搜尋部落:</h6>
+              <h6 className="mt-3 mr-3 mb-3 text-center">搜尋部落:</h6>
               {tribes.map((value, i) => (
                 <div className="form-check form-check-inline mt-3" key={i}>
                   <input
@@ -146,29 +160,22 @@ function HomeDropdownFilter(props) {
               ))}
             </div>
             <div className="mt-3 list ml-3 ">
-              <h6 className="mt-3  mb-3">選擇導遊語言:</h6>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox1"
-                  value="option1"
-                />
-                <label className="form-check-label" htmlFor="inlineCheckbox1">
-                  中文
-                </label>
-              </div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox2"
-                  value="option2"
-                />
-                <label className="form-check-label" htmlFor="inlineCheckbox2">
-                  英文{' '}
-                </label>
-              </div>
+              <h6 className="mt-3  mb-3 text-center">選擇導遊語言:</h6>
+              {langs.map((value, i) => (
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="inlineCheckbox1"
+                    value={value.lang}
+                    checked={langsInput[value.lang]}
+                    onChange={handleTribesObjectChanged}
+                  />
+                  <label className="form-check-label" htmlFor="inlineCheckbox1">
+                    {value.lang}
+                  </label>
+                </div>
+              ))}
             </div>
             <div className="text-center text-title-size24">
               {' '}

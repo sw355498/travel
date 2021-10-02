@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import GuildFilterBar from '../guild_filter_bar/GuildFilterBar'
-import GuildList from '../guild_list/GuildList'
+import GuildList from '../guild_list/guildList'
 import axios from 'axios'
 // import GuildData from '../../../data/guildData'
 // import API from '../../../api/index'
 
-function GuildFilterResult({ tribes }) {
+function GuildFilterResult({ tribes, langs }) {
   // const [guilds, setGuilds] = useState(GuildData)
   const [displayGuilds, setDisplayGuilds] = useState(null)
 
@@ -28,7 +28,7 @@ function GuildFilterResult({ tribes }) {
 
   // const [error, setError] = useState(null)
   const [tags, setTags] = useState(tribes ? tribes : ['靜浦部落'])
-  const [lans, setLans] = useState(['中文'])
+  const [lans, setLans] = useState(langs ? langs : ['中文'])
   const [stars, setStars] = useState(['5'])
   const tagTypes = [
     '靜浦部落',

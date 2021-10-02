@@ -16,8 +16,7 @@ import Login from './pages/sign-in-up/Login'
 import { AuthContext } from './context/auth'
 import { API_URL } from './config'
 import axios from 'axios'
-import Member from './pages/member/Member'
-
+import Member from '../src/pages/member/member'
 
 import './style/header.css'
 import './style/footer.css'
@@ -46,7 +45,6 @@ function App() {
       <ScrollUp>
         <AuthContext.Provider value={{ member, setMember: setAuthMember }}>
           <Header />
-
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/journey" component={Journey} exact />
@@ -65,7 +63,7 @@ function App() {
             <Route path="/Register" component={Register} />
             <Route path="/Login" component={Login} />
             <Route path="/member" component={Member} />
-        {/* <Route path="/member" component={member} /> */}
+            {/* <Route path="/member" component={member} /> */}
             <Redirect to="/" />
           </Switch>
           <Footer />

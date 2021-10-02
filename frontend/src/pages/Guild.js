@@ -18,11 +18,12 @@ function useQuery() {
 function Guild() {
   const query = useQuery()
   const { tribes } = query
+  const { langs } = query
   return (
     <>
       <article>
         <GuildListBanner />
-        <GuildFilterResult tribes={tribes} />
+        <GuildFilterResult tribes={tribes} langs={langs} />
         <GuildListPage />
         <GuildNew />
         <ScrollToTop smooth />

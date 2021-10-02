@@ -17,9 +17,6 @@ function GuildFilterBar(props) {
     starsTypes,
   } = props
 
-  console.log(`###### tags: ${tags}`)
-  console.log(`###### tagTypes: ${tagTypes}`)
-
   const tagCheckHandler = (e) => {
     const value = e.target.value
     if (!tags.includes(value)) {
