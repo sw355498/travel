@@ -9,6 +9,8 @@ function CartList(props) {
   //切換頁面載入的指示圖示
   const [dataLoading, setDataLoading] = useState(false)
 
+  const [show, setShow] = useState('d-none')
+
   function getCartFromLocalStorage() {
     // 開啟載入的指示圖示
     setDataLoading(true)
@@ -224,7 +226,11 @@ function CartList(props) {
           )
         })}
         {/* 總顯示區塊 */}
-        <div className="row align-items-center text-center td-py-25">
+        <div
+          className={`row align-items-center text-center td-py-25 ${
+            mycartDisplay.length === 0 ? 'd-none' : 'd-block'
+          }`}
+        >
           <div className="col-3 col-lg-1">
             <input
               className="my-auto checkbox-size"
@@ -265,6 +271,15 @@ function CartList(props) {
             >
               下一步
             </button>
+          </div>
+        </div>
+        <div
+          className={`row align-items-center text-center td-py-25 ${
+            mycartDisplay.length === 0 ? 'd-block' : 'd-none'
+          }`}
+        >
+          <div className="col-12 td-my-25 d-flex justify-content-center">
+            購物車內無任何商品
           </div>
         </div>
       </div>

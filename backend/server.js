@@ -193,6 +193,38 @@ app.post("/pay",async (req, res, next) => {
     }
     order_number =`${order_code}${moment(order_time).format('YYYYMMDD')}`
     if(isLogin != "false"){
+        //檢查卡號是否存在
+        let card_number = await connection.queryAsync ("SELECT * FROM card_data WHERE number=?",[req.body.payData.number]);
+        if(card_number.length <= 0 ){
+            next({
+                status:400,
+                message:"卡號輸入錯誤",
+            });
+        }
+        //驗證信用卡名是否相同
+        let card_name = await connection.queryAsync ("SELECT * FROM card_data WHERE name=?",[req.body.payData.name]);
+        if(card_name.length <= 0 ){
+            next({
+                status:400,
+                message:"持卡人姓名錯誤",
+            });
+        }
+        //驗證信用卡有效日期是否相同
+        let card_expiry = await connection.queryAsync ("SELECT * FROM card_data WHERE expiry=?",[req.body.payData.expiry]);
+        if(card_expiry.length <= 0 ){
+            next({
+                status:400,
+                message:"有效日期錯誤",
+            });
+        }
+        //驗證信用卡cvc是否相同
+        let card_cvc = await connection.queryAsync ("SELECT * FROM card_data WHERE cvc=?",[req.body.payData.cvc]);
+        if(card_cvc.length <= 0 ){
+            next({
+                status:400,
+                message:"cvc錯誤",
+            });
+        }
         let journeyData = req.body.journey
         for(let n = 0; n < journeyData.length; n++){
             let go_time = moment(journeyData[n].go_time).format('YYYY-MM-DD')
