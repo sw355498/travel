@@ -9,6 +9,7 @@ function JourneyFilterResult({ tribes }) {
 
   //分頁屬性
   const [currentPage, setCurrentPage] = useState(1)
+  const [productnum, setProductnum] = useState(null)
   const [perPage, setPerpage] = useState(2)
 
   const fetchAndUpdateJourneys = useCallback(async () => {
@@ -19,9 +20,10 @@ function JourneyFilterResult({ tribes }) {
   }, [fetchAndUpdateJourneys])
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
-
+  const proNum = (proNumber) => setProductnum(proNumber)
   const [tags, setTags] = useState(tribes ? tribes : ['靜浦部落'])
   const [stars, setStars] = useState([5])
+
   const tagTypes = [
     '靜浦部落',
     '新社部落',
@@ -70,27 +72,31 @@ function JourneyFilterResult({ tribes }) {
             <nav aria-label="Page navigation example">
               <ul className="pagination">
                 <li className="page-item ">
-                  <a
+                  <div
                     className="page-link page-sign"
                     href="#"
                     aria-label="Previous"
                   >
                     <span aria-hidden="true">&lt;</span>
-                  </a>
+                  </div>
                 </li>
                 <Pagination
                   perPage={perPage}
                   totalPosts={displayProducts.length}
                   paginate={paginate}
+                  currentPage={currentPage}
+                  products={displayProducts}
+                  stars={stars}
+                  tags={tags}
                 />
                 <li className="page-item">
-                  <a
+                  <div
                     className="page-link page-sign page-sign-next"
                     href="#"
                     aria-label="Next"
                   >
                     <span aria-hidden="true">&gt;</span>
-                  </a>
+                  </div>
                 </li>
               </ul>
             </nav>

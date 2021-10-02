@@ -17,17 +17,15 @@ import HomeDropdownFilter from './home_banner/HomeDropdownFilter'
 import API from '../../api'
 
 function Home() {
-  // const [tribes] = useState(JourneyInfoData)
   const [tribes, setTribes] = useState(null)
-  // const fetchAndUpdateJourneys = useCallback()
-
+  const [lang, setLang] = useState(null)
   const fetchTribes = useCallback(async () => {
     API.fetchTribes().then(setTribes)
+    API.fetchLangs().then(setLang)
   }, [])
   useEffect(() => {
     fetchTribes()
   }, [fetchTribes])
-
   return (
     <>
       <section className="banner">
@@ -49,8 +47,8 @@ function Home() {
                   <h2 className="first-h2 text-center">
                     帶領你認識花蓮深入部落
                   </h2>
-                  {tribes ? (
-                    <HomeDropdownFilter tribes={tribes} />
+                  {(tribes , lang) ? (
+                    <HomeDropdownFilter tribes={tribes} langs={lang} />
                   ) : (
                     <div>loading....</div>
                   )}

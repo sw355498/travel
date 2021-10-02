@@ -4,13 +4,8 @@ import Rating from '../../../component/Rating'
 
 function FilterBar(props) {
   const { stars, setStars, starsTypes, tags, setTags, tagTypes } = props
-
-  // console.log(`###### tags: ${tags}`)
-  // console.log(`###### tagTypes: ${tagTypes}`)
-
   const tagCheckHandler = (e) => {
     const value = e.target.value
-    console.log(value)
     if (!tags.includes(value)) {
       return setTags([...tags, value])
     } else {
