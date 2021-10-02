@@ -16,7 +16,7 @@ import Login from './pages/sign-in-up/Login'
 import { AuthContext } from './context/auth'
 import { API_URL } from './config'
 import axios from 'axios'
-import Member from '../src/pages/member/member'
+import Member from '../src/pages/member/Member'
 
 import './style/header.css'
 import './style/footer.css'

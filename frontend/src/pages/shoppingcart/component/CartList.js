@@ -228,7 +228,7 @@ function CartList(props) {
         {/* 總顯示區塊 */}
         <div
           className={`row align-items-center text-center td-py-25 ${
-            mycartDisplay.length === 0 ? 'd-none' : 'd-block'
+            mycartDisplay.length === 0 ? 'd-none' : 'd-flex'
           }`}
         >
           <div className="col-3 col-lg-1">
