@@ -10,24 +10,19 @@ function FilterBar(props) {
     tags,
     setTags,
     tagTypes,
-    currentPage,
-    perPage,
-    products,
     setTotalPage,
     setPerpage,
+    slicedPosts,
   } = props
 
   //篩選後顯示頁面長度
-  const indexOfLastPost = currentPage * perPage
-  const indexOfFirstPost = indexOfLastPost - perPage
-  const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost)
+
   const newArray = new Array(
-    currentPosts
+    slicedPosts
       .filter((product) => tags.includes(product.tribe))
       .filter((product) => stars.includes(product.rating))
       .map((product, i) => {})
   )
-  const displayProductLength = newArray[0].length
 
   //tag篩選
   const tagCheckHandler = (e) => {

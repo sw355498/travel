@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 import qs from 'qs'
 
 function HomeDropdownFilter(props) {
-  // console.log(props)
   const history = useHistory()
   const tribesObject = useMemo(() => {
     const ret = {}

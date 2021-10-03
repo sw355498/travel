@@ -11,7 +11,7 @@ function JourneyFilterResult({ tribes, pageNum }) {
   const [totalPage, setTotalPage] = useState(14)
   const [currentPage, setCurrentPage] = useState(pageNum || 1)
   const [perPage, setPerpage] = useState(2)
-
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
   const fetchAndUpdateJourneys = useCallback(async () => {
     API.fetchJourneys().then(setDisplayProducts)
   }, [])
@@ -70,13 +70,10 @@ function JourneyFilterResult({ tribes, pageNum }) {
             stars={stars}
             setStars={setStars}
             starsTypes={starsTypes}
-            perPage={perPage}
-            paginate={setCurrentPage}
-            currentPage={currentPage}
-            products={displayProducts}
             totalPosts={totalPage}
             setTotalPage={setTotalPage}
             setPerpage={setPerpage}
+            slicedPosts={slicedPosts}
           />
 
           <div className="container td-mt-75 filter-resultcontainer ">
@@ -103,6 +100,8 @@ function JourneyFilterResult({ tribes, pageNum }) {
                   totalPosts={filteredPosts.length}
                   currentPage={currentPage}
                   tribes={tags}
+                  paginate={paginate}
+                  setCurrentPage={setCurrentPage}
                 />
                 <li className="page-item">
                   <div
