@@ -59,6 +59,7 @@ function JourneyFilterResult({ tribes, pageNum }) {
     () => filteredPosts?.slice(indexOfFirstPost, indexOfLastPost),
     [filteredPosts, indexOfFirstPost, indexOfLastPost]
   )
+  console.log(Math.ceil(filteredPosts.length / perPage))
   //last onClick
   const prevPage = pageNum - 1
   const prevPageNum = prevPage >= 1 ? prevPage : '1'
@@ -74,7 +75,8 @@ function JourneyFilterResult({ tribes, pageNum }) {
   }
   //next onClick
   const nextPage = pageNum + 1
-  const nextPageNum = nextPage <= pageNum ? nextPage : pageNum
+  const nextPageNum =
+    nextPage <= Math.ceil(filteredPosts.length / perPage) ? nextPage : pageNum
 
   const next = (nextPageNum, e) => {
     setCurrentPage(nextPageNum)
@@ -129,7 +131,6 @@ function JourneyFilterResult({ tribes, pageNum }) {
                   tribes={tags}
                   paginate={paginate}
                   setCurrentPage={setCurrentPage}
-                  currentPage={currentPage}
                 />
                 <li className="page-item">
                   <div

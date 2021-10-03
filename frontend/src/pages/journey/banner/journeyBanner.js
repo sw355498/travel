@@ -1,6 +1,6 @@
 import React from 'react'
 
-function journeyBanner() {
+function JourneyBanner() {
   return (
     <section>
       <div className="container td-mt-75">
@@ -98,4 +98,4 @@ function journeyBanner() {
   )
 }
 
-export default journeyBanner
+export default JourneyBanner

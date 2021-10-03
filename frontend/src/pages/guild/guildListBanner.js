@@ -64,9 +64,7 @@ function GuildListBanner() {
         data-bs-target="#carouselExampleIndicators"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true">
-          <i className="fas fa-chevron-left text-center "></i>
-        </span>
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Previous</span>
       </button>
       <button
@@ -75,9 +73,7 @@ function GuildListBanner() {
         data-bs-target="#carouselExampleIndicators"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true">
-          <i className="fas fa-chevron-right text-center"></i>
-        </span>
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
     </div>

@@ -42,17 +42,6 @@
   transition: unset;
   opacity: 1;
 }
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background: rgb(0, 0, 0, 0.4);
-  padding: 5px;
-  width: 3rem;
-  height: 3rem;
-}
-.carousel-control-prev-icon i,
-.carousel-control-next-icon i {
-  font-size: 2rem;
-}
 
 /* 快速篩選-共用 */
 .filter-tribe,
@@ -449,14 +438,14 @@
   }
   /* rwd篩選input */
   .guildlist-filter-rwd .dropdown-menu input:after {
-    border: 1px solid #000;
+    border: 1px solid var(--blue-color);
     width: 18px;
     height: 18px;
   }
   .guildlist-filter-rwd .dropdown-menu input:checked:after {
     width: 18px;
     height: 18px;
-    background: #000;
+    background: var(--blue-color);
   }
   .guildlist-filter-rwd .dropdown-menu label {
     font-weight: 500;
