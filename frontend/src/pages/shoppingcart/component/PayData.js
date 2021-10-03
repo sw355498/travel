@@ -7,6 +7,7 @@ import Cards from 'react-credit-cards'
 import axios from 'axios'
 import { API_URL } from '../../../config'
 import { Modal, Button } from 'react-bootstrap'
+
 function PayData(props) {
   // spinner用的狀態
   const [isLoading, setIsLoading] = useState(false)
@@ -197,35 +198,35 @@ function PayData(props) {
   )
   const display = (
     <>
-      <div class="accordion td-mt-75 td-mb-25" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
+      <div className="accordion td-mt-75 td-mb-25" id="accordionExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingOne">
             <button
-              class="accordion-button menu-bg"
+              className="accordion-button menu-bg"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              <p class="menu-title text-title-size24 my-auto">訂購人資訊</p>
+              <p className="menu-title text-title-size24 my-auto">訂購人資訊</p>
             </button>
           </h2>
           <div
             id="collapseOne"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body menu-bg">
+            <div className="accordion-body menu-bg">
               <form
                 onChange={handleFormChange}
                 onInvalid={handleFormInvalid}
                 onSubmit={handleSubmit}
               >
-                <div class="row">
+                <div className="row">
                   {/* <姓名區塊 */}
-                  <div class="col-12 col-lg-6">
+                  <div className="col-12 col-lg-6">
                     <InputTextField
                       name="firstName"
                       label="姓名"
@@ -239,7 +240,7 @@ function PayData(props) {
                   </div>
 
                   {/* 姓氏區塊 */}
-                  <div class="col-12 col-lg-6">
+                  <div className="col-12 col-lg-6">
                     <InputTextField
                       name="surName"
                       label="姓氏"
@@ -253,7 +254,7 @@ function PayData(props) {
                   </div>
 
                   {/* 連絡電話區塊 */}
-                  <div class="col-12 col-lg-6">
+                  <div className="col-12 col-lg-6">
                     <InputTextField
                       name="phone"
                       type="tel"
@@ -269,7 +270,7 @@ function PayData(props) {
                   </div>
 
                   {/* 選擇國家區塊 */}
-                  <div class="col-12 col-lg-6">
+                  <div className="col-12 col-lg-6">
                     <SelectNation
                       name="nation"
                       label="國家/地區"
@@ -282,7 +283,7 @@ function PayData(props) {
                   </div>
 
                   {/* 聯絡地址 */}
-                  <div class="col-12">
+                  <div className="col-12">
                     <InputTextField
                       name="address"
                       label="聯絡地址"
@@ -296,7 +297,7 @@ function PayData(props) {
                   </div>
 
                   {/* 聯絡信箱 */}
-                  <div class="col-12">
+                  <div className="col-12">
                     <InputTextField
                       name="email"
                       type="email"
@@ -312,8 +313,8 @@ function PayData(props) {
                 </div>
 
                 {/* 信用卡付款資料填寫 */}
-                <div class="td-mt-50 row" id="PaymentForm">
-                  <span class="text-title-size20">信用卡付款</span>
+                <div className="td-mt-50 row" id="PaymentForm">
+                  <span className="text-title-size20">信用卡付款</span>
                   <Cards
                     number={props.fields.number}
                     name={props.fields.name}
@@ -322,7 +323,7 @@ function PayData(props) {
                     focused={focus}
                   />
 
-                  <div class="col-12">
+                  <div className="col-12">
                     <InputTextField
                       name="number"
                       type="tel"
@@ -337,7 +338,7 @@ function PayData(props) {
                       required
                     />
                   </div>
-                  <div class="col-12">
+                  <div className="col-12">
                     <InputTextField
                       name="name"
                       type="text"
@@ -350,7 +351,7 @@ function PayData(props) {
                       required
                     />
                   </div>
-                  <div class="col-12">
+                  <div className="col-12">
                     <InputTextField
                       name="expiry"
                       type="tel"
@@ -365,7 +366,7 @@ function PayData(props) {
                       required
                     />
                   </div>
-                  <div class="col-12">
+                  <div className="col-12">
                     <InputTextField
                       name="cvc"
                       type="tel"
@@ -382,7 +383,7 @@ function PayData(props) {
                   </div>
                 </div>
                 {/* 發票資料 */}
-                <div class="col-12 td-mt-50">
+                <div className="col-12 td-mt-50">
                   <SelectBill
                     name="bill"
                     label="發票資料"
@@ -392,7 +393,7 @@ function PayData(props) {
                     required
                   ></SelectBill>
                 </div>
-                <div class="td-mt-50 d-flex justify-content-center justify-content-lg-end">
+                <div className="td-mt-50 d-flex justify-content-center justify-content-lg-end">
                   <button
                     type="submit"
                     className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"

@@ -56,28 +56,28 @@ function PayContent(props) {
 
   return (
     <>
-      <div class="accordion td-mt-75" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
+      <div className="accordion td-mt-75" id="accordionExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingFour">
             <button
-              class="accordion-button menu-bg"
+              className="accordion-button menu-bg"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseFour"
               aria-expanded="true"
               aria-controls="collapseFour"
             >
-              <p class="menu-title text-title-size24 my-auto">訂單明細</p>
+              <p className="menu-title text-title-size24 my-auto">訂單明細</p>
             </button>
           </h2>
           <div
             id="collapseFour"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="headingFour"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body menu-bg">
-              <div class="td-mt-25 shoppingcart-bg">
+            <div className="accordion-body menu-bg">
+              <div className="td-mt-25 shoppingcart-bg">
                 {/* 購物車清單內容 */}
                 {mycartDisplay.map((item, index) => {
                   return (
@@ -122,9 +122,9 @@ function PayContent(props) {
                   )
                 })}
                 {/* 總顯示區塊 */}
-                <div class="row align-items-center text-center td-py-25 ">
-                  <div class="col-12 td-my-25 my-lg-0 d-flex justify-content-center align-items-lg-center">
-                    <div class="text-title-size20 me-1">
+                <div className="row align-items-center text-center td-py-25 ">
+                  <div className="col-12 td-my-25 my-lg-0 d-flex justify-content-center align-items-lg-center">
+                    <div className="text-title-size20 me-1">
                       <span className="fw-bold text-title-size24">
                         {mycartDisplay.length}
                       </span>
@@ -133,7 +133,7 @@ function PayContent(props) {
                     <div>
                       <img src="/images/total.png" alt="total" />
                     </div>
-                    <div class="text-title-size24 shoppingcart-price">
+                    <div className="text-title-size24 shoppingcart-price">
                       TWD {sum(mycartDisplay)}
                     </div>
                   </div>

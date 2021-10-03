@@ -9,8 +9,6 @@ function CartList(props) {
   //切換頁面載入的指示圖示
   const [dataLoading, setDataLoading] = useState(false)
 
-  const [show, setShow] = useState('d-none')
-
   function getCartFromLocalStorage() {
     // 開啟載入的指示圖示
     setDataLoading(true)
@@ -130,7 +128,6 @@ function CartList(props) {
       }
     }
   }
-
   const loading = (
     <>
       <div className="d-flex justify-content-center">
