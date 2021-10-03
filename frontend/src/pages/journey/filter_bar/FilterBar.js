@@ -3,7 +3,33 @@ import TribeCheckbox from './TribeCheckbox'
 import Rating from '../../../component/Rating'
 
 function FilterBar(props) {
-  const { stars, setStars, starsTypes, tags, setTags, tagTypes } = props
+  const {
+    stars,
+    setStars,
+    starsTypes,
+    tags,
+    setTags,
+    tagTypes,
+    currentPage,
+    perPage,
+    products,
+    setTotalPage,
+    setPerpage,
+  } = props
+
+  //篩選後顯示頁面長度
+  const indexOfLastPost = currentPage * perPage
+  const indexOfFirstPost = indexOfLastPost - perPage
+  const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost)
+  const newArray = new Array(
+    currentPosts
+      .filter((product) => tags.includes(product.tribe))
+      .filter((product) => stars.includes(product.rating))
+      .map((product, i) => {})
+  )
+  const displayProductLength = newArray[0].length
+
+  //tag篩選
   const tagCheckHandler = (e) => {
     const value = e.target.value
     if (!tags.includes(value)) {
@@ -13,6 +39,7 @@ function FilterBar(props) {
       setTags(newTags)
     }
   }
+  //star篩選
   const starCheckHandler = (e) => {
     const value = parseInt(e.target.value, 10)
     if (!stars.includes(value)) {
@@ -22,7 +49,11 @@ function FilterBar(props) {
       setStars(newStars)
     }
   }
-
+  //改變perpage
+  const handlePerPage = (e) => {
+    setTotalPage(newArray[0].length)
+    setPerpage(2)
+  }
   return (
     <section className="container guildlist-filter td-mb-75">
       {/* <!-- WEB版篩選 --> */}
@@ -41,6 +72,7 @@ function FilterBar(props) {
                 value={value}
                 checked={tags?.includes(value)}
                 handleChecked={tagCheckHandler}
+                pageClick={handlePerPage}
               >
                 {value}
               </TribeCheckbox>
@@ -60,6 +92,7 @@ function FilterBar(props) {
                 value={value}
                 checked={stars?.includes(value)}
                 handleChecked={starCheckHandler}
+                pageClick={handlePerPage}
               >
                 <Rating rating={value} />
               </TribeCheckbox>

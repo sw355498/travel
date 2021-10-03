@@ -12,11 +12,11 @@ function useQuery() {
 
 function Journey() {
   const query = useQuery()
-  const { tribes } = query
+  const { tribes, pageNum } = query
   return (
     <>
       <JourneyBanner />
-      <JourneyFilterResult tribes={tribes} />
+      <JourneyFilterResult tribes={tribes} pageNum={parseInt(pageNum)} />
       <ScrollToTop smooth />
     </>
   )

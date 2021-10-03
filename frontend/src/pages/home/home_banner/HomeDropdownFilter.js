@@ -73,7 +73,7 @@ function HomeDropdownFilter(props) {
         >
           <form action="" onSubmit={handleSubmit}>
             <div className="mt-3 list ml-3">
-              <h6 className="mt-3 mr-3 mb-3 text-center">選擇部落:</h6>
+              <h6 className="mt-3 mr-3 mb-3 text-center fw-bold">選擇部落:</h6>
               {tribes.map((value, i) => (
                 <div className="form-check form-check-inline mt-3" key={i}>
                   <input
@@ -95,7 +95,7 @@ function HomeDropdownFilter(props) {
             </div>
 
             <div className="mt-3 list ml-3 ">
-              <h6 className="mt-3  mb-3 text-center">選擇導遊語言:</h6>
+              <h6 className="mt-3  mb-3 text-center fw-bold">選擇導遊語言:</h6>
               {langs.map((value, i) => (
                 <div className="form-check form-check-inline  mt-3">
                   <input
@@ -131,7 +131,7 @@ function HomeDropdownFilter(props) {
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <span className="td-mt-25 fw-bold ">探索行程</span>
+          <span className="td-mt-25 fw-bold">探索行程</span>
         </button>
         <div
           className="dropdown-menu td-mt-50"
@@ -139,7 +139,7 @@ function HomeDropdownFilter(props) {
         >
           <form action="" onSubmit={handleSubmit}>
             <div className="mt-3 list ml-3">
-              <h6 className="mt-3 mr-3 mb-3 text-center">搜尋部落:</h6>
+              <h6 className="mt-3 mr-3 mb-3 text-center fw-bold">搜尋部落:</h6>
               {tribes.map((value, i) => (
                 <div className="form-check form-check-inline mt-3" key={i}>
                   <input
@@ -160,7 +160,7 @@ function HomeDropdownFilter(props) {
               ))}
             </div>
             <div className="mt-3 list ml-3 ">
-              <h6 className="mt-3  mb-3 text-center">選擇導遊語言:</h6>
+              <h6 className="mt-3  mb-3 text-center fw-bold">選擇導遊語言:</h6>
               {langs.map((value, i) => (
                 <div className="form-check form-check-inline">
                   <input
