@@ -3,7 +3,13 @@ import qs from 'qs'
 import { useHistory } from 'react-router-dom'
 import { number } from 'prop-types'
 
-const Pagination = ({ perPage, totalPosts, tribes, setCurrentPage }) => {
+const Pagination = ({
+  perPage,
+  totalPosts,
+  tribes,
+  setCurrentPage,
+  currentPage,
+}) => {
   const history = useHistory()
   const pageNumbers = []
   for (let i = 1; i <= Math.ceil(totalPosts / perPage); i++) {
@@ -18,12 +24,20 @@ const Pagination = ({ perPage, totalPosts, tribes, setCurrentPage }) => {
     }
     return handleClick(number)
   }
+  console.log(currentPage)
 
   return (
     <>
       {pageNumbers.map((number) => (
         <li key={number} className="page-item">
-          <div onClick={(e) => paginate(number, e)} className="page-link">
+          <div
+            onClick={(e) => paginate(number, e)}
+            style={{
+              backgroundColor: currentPage === number ? '#072b7b' : '',
+              color: currentPage === number ? 'white' : '',
+            }}
+            className="page-link"
+          >
             {number}
           </div>
         </li>

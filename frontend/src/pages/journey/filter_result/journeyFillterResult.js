@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
+import { useHistory } from 'react-router-dom'
+import qs from 'qs'
 import FilterBar from '../filter_bar/FilterBar'
 import JourneyList from '../journey_list/JourneyList'
 import API from '../../../api'
@@ -18,7 +20,6 @@ function JourneyFilterResult({ tribes, pageNum }) {
   useEffect(() => {
     fetchAndUpdateJourneys()
   }, [fetchAndUpdateJourneys])
-
   const [tags, setTags] = useState(tribes || ['靜浦部落'])
   const [stars, setStars] = useState([5])
 
@@ -58,7 +59,32 @@ function JourneyFilterResult({ tribes, pageNum }) {
     () => filteredPosts?.slice(indexOfFirstPost, indexOfLastPost),
     [filteredPosts, indexOfFirstPost, indexOfLastPost]
   )
+  //last onClick
+  const prevPage = pageNum - 1
+  const prevPageNum = prevPage >= 1 ? prevPage : '1'
+  const history = useHistory()
+  const prev = (prevPageNum, e) => {
+    setCurrentPage(prevPageNum)
+    e.preventDefault()
+    const handleClick = (number, e) => {
+      const query = qs.stringify({ tribes, pageNum: prevPageNum })
+      history.push(`/journey?${query}`)
+    }
+    return handleClick(pageNum)
+  }
+  //next onClick
+  const nextPage = pageNum + 1
+  const nextPageNum = nextPage <= pageNum ? nextPage : pageNum
 
+  const next = (nextPageNum, e) => {
+    setCurrentPage(nextPageNum)
+    e.preventDefault()
+    const handleClick = (number, e) => {
+      const query = qs.stringify({ tribes, pageNum: nextPageNum })
+      history.push(`/journey?${query}`)
+    }
+    return handleClick(pageNum)
+  }
   return (
     <>
       {displayProducts ? (
@@ -91,6 +117,7 @@ function JourneyFilterResult({ tribes, pageNum }) {
                     className="page-link page-sign"
                     href="#"
                     aria-label="Previous"
+                    onClick={(e) => prev(prevPageNum, e)}
                   >
                     <span aria-hidden="true">&lt;</span>
                   </div>
@@ -102,12 +129,14 @@ function JourneyFilterResult({ tribes, pageNum }) {
                   tribes={tags}
                   paginate={paginate}
                   setCurrentPage={setCurrentPage}
+                  currentPage={currentPage}
                 />
                 <li className="page-item">
                   <div
                     className="page-link page-sign page-sign-next"
                     href="#"
                     aria-label="Next"
+                    onClick={(e) => next(nextPageNum, e)}
                   >
                     <span aria-hidden="true">&gt;</span>
                   </div>
