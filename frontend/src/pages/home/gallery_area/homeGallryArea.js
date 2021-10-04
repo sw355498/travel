@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function homeGallryArea(props) {
+  const pageNum = 1
   return (
     <>
       <section className="gallery-area td-mt-75 text-decoration-none">
@@ -9,7 +10,10 @@ function homeGallryArea(props) {
           <p>部落行程</p>
           <div id="journey" className="td-mt-25">
             <div className="journey-paterungan img-fluid ">
-              <Link to={`/journey/?tribes[]=新社部落`} title="新社部落">
+              <Link
+                to={`/journey/?tribes[]=新社部落&pageNum=1`}
+                title="新社部落"
+              >
                 <div className="card">
                   <div className="imgBx">
                     <img
@@ -34,7 +38,10 @@ function homeGallryArea(props) {
             </div>
 
             <div className="journey-kiwit img-fluid ">
-              <Link to={`/journey/?tribes[]=奇美部落`} title="奇美部落">
+              <Link
+                to={`/journey/?tribes[]=奇美部落&pageNum={pageNum}`}
+                title="奇美部落"
+              >
                 <div className="card">
                   <div className="imgBx">
                     <img
@@ -58,7 +65,10 @@ function homeGallryArea(props) {
               </Link>
             </div>
             <div className="journey-cawi img-fluid">
-              <Link to={`/journey/?tribes[]=靜浦部落`} title="靜浦部落">
+              <Link
+                to={`/journey/?tribes[]=靜浦部落&pageNum=1`}
+                title="靜浦部落"
+              >
                 <div className="card">
                   <div className="imgBx">
                     <img
@@ -83,7 +93,7 @@ function homeGallryArea(props) {
             </div>
             <div className="journey-ciwidian img-fluid">
               <Link
-                to={`/journey/?tribes[]=水璉部落`}
+                to={`/journey/?tribes[]=水璉部落&pageNum=1`}
                 title="水璉部落"
                 className=""
               >
@@ -110,7 +120,10 @@ function homeGallryArea(props) {
               </Link>
             </div>
             <div className="journey-tafalong img-fluid">
-              <Link to={`/journey/?tribes[]=太巴塱部落`} title="太巴塱部落">
+              <Link
+                to={`/journey/?tribes[]=太巴塱部落&pageNum=1`}
+                title="太巴塱部落"
+              >
                 <div className="card">
                   <div className="imgBx">
                     <img
@@ -134,7 +147,10 @@ function homeGallryArea(props) {
               </Link>
             </div>
             <div className="journey-sakur img-fluid">
-              <Link to={`/journey/?tribes[]=撒固兒部落`} title="撒固兒部落">
+              <Link
+                to={`/journey/?tribes[]=撒固兒部落&pageNum=1`}
+                title="撒固兒部落"
+              >
                 <div className="card">
                   <div className="imgBx">
                     <img
@@ -164,7 +180,10 @@ function homeGallryArea(props) {
               />
             </div>
             <div className="journey-vataan img-fluid">
-              <Link to={`/journey/?tribes[]=馬太鞍部落`} title="馬太鞍部落">
+              <Link
+                to={`/journey/?tribes[]=馬太鞍部落&pageNum=1`}
+                title="馬太鞍部落"
+              >
                 <div className="card">
                   <div className="imgBx">
                     <img

@@ -35,7 +35,6 @@ function JourneyFilterResult({ tribes, pageNum }) {
 
   // console.dir(displayProducts, { depth: null })
   const starsTypes = [5, 4, 3, 2, 1]
-
   const spinner = (
     <>
       <div className="d-flex justify-content-center">
@@ -59,34 +58,7 @@ function JourneyFilterResult({ tribes, pageNum }) {
     () => filteredPosts?.slice(indexOfFirstPost, indexOfLastPost),
     [filteredPosts, indexOfFirstPost, indexOfLastPost]
   )
-  console.log(Math.ceil(filteredPosts.length / perPage))
-  //last onClick
-  const prevPage = pageNum - 1
-  const prevPageNum = prevPage >= 1 ? prevPage : '1'
-  const history = useHistory()
-  const prev = (prevPageNum, e) => {
-    setCurrentPage(prevPageNum)
-    e.preventDefault()
-    const handleClick = (number, e) => {
-      const query = qs.stringify({ tribes, pageNum: prevPageNum })
-      history.push(`/journey?${query}`)
-    }
-    return handleClick(pageNum)
-  }
-  //next onClick
-  const nextPage = pageNum + 1
-  const nextPageNum =
-    nextPage <= Math.ceil(filteredPosts.length / perPage) ? nextPage : pageNum
 
-  const next = (nextPageNum, e) => {
-    setCurrentPage(nextPageNum)
-    e.preventDefault()
-    const handleClick = (number, e) => {
-      const query = qs.stringify({ tribes, pageNum: nextPageNum })
-      history.push(`/journey?${query}`)
-    }
-    return handleClick(pageNum)
-  }
   return (
     <>
       {displayProducts ? (
@@ -111,40 +83,15 @@ function JourneyFilterResult({ tribes, pageNum }) {
               handleClick={fetchAndUpdateJourneys}
             />
           </div>
-          <div className="container d-flex justify-content-center td-mt-25 td-mb-25 pagination-container">
-            <nav aria-label="Page navigation example">
-              <ul className="pagination">
-                <li className="page-item ">
-                  <div
-                    className="page-link page-sign"
-                    href="#"
-                    aria-label="Previous"
-                    onClick={(e) => prev(prevPageNum, e)}
-                  >
-                    <span aria-hidden="true">&lt;</span>
-                  </div>
-                </li>
-                <Pagination
-                  perPage={perPage}
-                  totalPosts={filteredPosts.length}
-                  currentPage={currentPage}
-                  tribes={tags}
-                  paginate={paginate}
-                  setCurrentPage={setCurrentPage}
-                />
-                <li className="page-item">
-                  <div
-                    className="page-link page-sign page-sign-next"
-                    href="#"
-                    aria-label="Next"
-                    onClick={(e) => next(nextPageNum, e)}
-                  >
-                    <span aria-hidden="true">&gt;</span>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-          </div>
+
+          <Pagination
+            perPage={perPage}
+            totalPosts={filteredPosts.length}
+            currentPage={currentPage}
+            tribes={tags}
+            paginate={paginate}
+            setCurrentPage={setCurrentPage}
+          />
         </>
       ) : (
         <div>{spinner}</div>

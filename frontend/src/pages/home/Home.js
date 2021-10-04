@@ -47,7 +47,7 @@ function Home() {
                   <h2 className="first-h2 text-center">
                     帶領你認識花蓮深入部落
                   </h2>
-                  {(tribes , lang) ? (
+                  {(tribes, lang) ? (
                     <HomeDropdownFilter tribes={tribes} langs={lang} />
                   ) : (
                     <div>loading....</div>
