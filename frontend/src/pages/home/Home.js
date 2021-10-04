@@ -30,10 +30,6 @@ function Home() {
     <>
       <section className="banner">
         <div className="container ">
-          {/* <div className="row d-flex flex-column">
-            <div className="col-10"></div>
-            <div className="col-2"></div>
-          </div> */}
           <div className="row  d-flex align-items-center">
             <div className="col-md-5 ">
               <div className="banner-content d-flex flex-column">

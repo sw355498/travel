@@ -64,10 +64,10 @@ label {
   font-weight: bold;
   border: 1px solid #eaf0ed;
 }
-.active {
+/* .active {
   background-color: var(--blue-color);
   color: #fff;
-}
+} */
 .sign-icon .fab {
   font-size: 40px;
 }
