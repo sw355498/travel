@@ -118,6 +118,7 @@ function PayData(props) {
   }
 
   const handleSubmit = async (e) => {
+    console.log(e)
     e.preventDefault()
     try {
       let journey = mycartDisplay
@@ -128,14 +129,17 @@ function PayData(props) {
         isLogin,
       })
       localStorage.removeItem('cart')
-      setOrderNumber(res.data.order_number)
+      setOrderNumber(res.data.orderNumber)
       handleShow()
     } catch (e) {
       setError(e.response.data.message)
-      if ((e.response.data.message = '尚未登入會員')) {
+      if (e.response.data.message == '尚未登入會員') {
         props.history.push('/Login')
       }
       errorHandleShow()
+      // if (!e.response.data.message == '尚未登入會員') {
+      //   errorHandleShow()
+      // }
     }
   }
 
@@ -258,13 +262,14 @@ function PayData(props) {
                     <InputTextField
                       name="phone"
                       type="tel"
-                      label="連絡電話"
+                      label="連絡手機"
                       state={props.fields.phone}
                       setState={handleFieldChange}
                       setFocus={setFocus}
                       error={props.fieldErrors.phone}
                       minLength="10"
                       maxLength="10"
+                      pattern="09\d{8}"
                       required
                     />
                   </div>

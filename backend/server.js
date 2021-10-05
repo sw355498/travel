@@ -90,6 +90,7 @@ const registerRule = [
 ];
 //引入加密套件
 const bcrypt = require ("bcrypt");
+const { join } = require("bluebird");
 //註冊
 app.post("/auth/register",registerRule,async (req,res,next) => {
     const validateResult = validationResult(req);
@@ -186,45 +187,107 @@ app.get("/auth/logout", (req, res, next) => {
 app.post("/pay",async (req, res, next) => {
     let isLogin = req.body.isLogin
     //產生一個6位數亂碼加上時間用以做訂單編號
-    let order_time = new Date()
-    let order_code = ''
+    let orderTime = new Date()
+    let orderCode = ''
+
     for(let i = 0; i < 6; i++){
-        order_code += Math.floor(Math.random()*10)
+        orderCode += Math.floor(Math.random()*10)
     }
-    order_number =`${order_code}${moment(order_time).format('YYYYMMDD')}`
+    orderNumber =`${orderCode}${moment(orderTime).format('YYYYMMDD')}`
     if(isLogin != "false"){
-        //檢查卡號是否存在
-        let card_number = await connection.queryAsync ("SELECT * FROM card_data WHERE number=?",[req.body.payData.number]);
-        if(card_number.length <= 0 ){
+        //名子欄位檢查
+        let firstName = req.body.payData.firstName.replace(/\s*/g,"")//去除所有空格號
+        if(firstName == "" || firstName == " "){
+            next({
+                status:400,
+                message:"請填寫名子",
+            });
+        }
+        //姓氏欄位檢查
+        let surName = req.body.payData.surName.replace(/\s*/g,"")//去除所有空格號
+        if(surName == "" || surName == " "){
+            next({
+                status:400,
+                message:"請填寫姓氏",
+            });
+        }
+        //連絡電話欄位檢查
+        let format = /^09[0-9]{8}$/ //手機驗證格式
+        let phone = req.body.payData.phone
+        if(phone.length > 10 || phone.length < 10 || !format.test(phone)){
+            next({
+                status:400,
+                message:"連絡電話未填寫或填寫錯誤",
+            });
+        }
+        //國家/地區欄位檢查
+        let nation = req.body.payData.nation
+        if(nation == ""){
+            next({
+                status:400,
+                message:"請選擇 國家/地區",
+            });
+        }
+        //地址欄位檢查
+        let address = req.body.payData.address.replace(/\s*/g,"")//去除所有空格號
+        if(address == "" || address == " "){
+            next({
+                status:400,
+                message:"請填寫地址",
+            });
+        }
+        //電子郵件欄位檢查
+        //輸入的數據必須包含 ＠ 符號和點號(.)；同时 ＠ 不可以是首字符，並且 ＠ 之后需有至少一個點號
+        let orderEmail = req.body.payData.email
+        let atpos = orderEmail.indexOf("@")
+        let dotpos = orderEmail.lastIndexOf(".")
+        if(atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= orderEmail.length){
+            next({
+                status:400,
+                message:"電子郵件填寫錯誤",
+            });
+        }
+        //國家/地區欄位檢查
+        let bill = req.body.payData.bill
+        if(bill == ""){
+            next({
+                status:400,
+                message:"請選擇發票處理方式",
+                });
+        }
+        //檢查資料庫卡號是否存在
+        let cardNumber = await connection.queryAsync ("SELECT * FROM card_data WHERE number=?",[req.body.payData.number]);
+        if(cardNumber.length <= 0 ){
             next({
                 status:400,
                 message:"卡號輸入錯誤",
             });
         }
-        //驗證信用卡名是否相同
-        let card_name = await connection.queryAsync ("SELECT * FROM card_data WHERE name=?",[req.body.payData.name]);
-        if(card_name.length <= 0 ){
+        //驗證資料庫信用卡名是否相同
+        let cardName = await connection.queryAsync ("SELECT * FROM card_data WHERE name=?",[req.body.payData.name]);
+        if(cardName.length <= 0 ){
             next({
                 status:400,
                 message:"持卡人姓名錯誤",
             });
         }
-        //驗證信用卡有效日期是否相同
-        let card_expiry = await connection.queryAsync ("SELECT * FROM card_data WHERE expiry=?",[req.body.payData.expiry]);
-        if(card_expiry.length <= 0 ){
+        //驗證資料庫信用卡有效日期是否相同
+        let cardExpiry = await connection.queryAsync ("SELECT * FROM card_data WHERE expiry=?",[req.body.payData.expiry]);
+        if(cardExpiry.length <= 0 ){
             next({
                 status:400,
                 message:"有效日期錯誤",
             });
         }
-        //驗證信用卡cvc是否相同
-        let card_cvc = await connection.queryAsync ("SELECT * FROM card_data WHERE cvc=?",[req.body.payData.cvc]);
-        if(card_cvc.length <= 0 ){
+        //驗證資料庫信用卡cvc是否相同
+        let cardCvc = await connection.queryAsync ("SELECT * FROM card_data WHERE cvc=?",[req.body.payData.cvc]);
+        if(cardCvc.length <= 0 ){
             next({
                 status:400,
                 message:"cvc錯誤",
             });
         }
+
         let journeyData = req.body.journey
         for(let n = 0; n < journeyData.length; n++){
             let go_time = moment(journeyData[n].go_time).format('YYYY-MM-DD')
@@ -239,7 +302,7 @@ app.post("/pay",async (req, res, next) => {
                     go_time,
                     journeyData[n].amount,
                     totalprice,
-                    order_number,
+                    orderNumber,
                 ]]
         );
     }
@@ -256,10 +319,10 @@ app.post("/pay",async (req, res, next) => {
                 req.body.payData.number,
                 req.body.payData.bill,
                 "已付款",
-                order_number,
+                orderNumber,
             ]]
         );
-        res.json({order_number})
+        res.json({orderNumber})
     }else{
         next({
             status:401,

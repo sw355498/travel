@@ -1,5 +1,5 @@
 import React from 'react'
-import GuildItem from './guildItem'
+import GuildItem from './GuildItem'
 
 function GuildList(props) {
   const { guilds, tags, lans, stars } = props
