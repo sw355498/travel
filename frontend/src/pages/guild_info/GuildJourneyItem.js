@@ -6,20 +6,38 @@ import axios from 'axios'
 function GuildJourneyItem(props) {
   const { card, idx, tribeForJourney, guildJourneyItem } = props
   const tribeItem = card.tribe
-  // console.log('tribeItem', tribeItem)
 
   const tribeItemSplit = tribeItem.split(',')
-  // console.log(tribeItemSplit)
-  // console.log(tribeForJourney.tribe)
-  // const tribefilterResult = tribeItemSplit.filter((item) =>
-  //   item.includes(tribeForJourney.tirbe)
-  // )
+  const tribefilterResult = tribeItemSplit.filter((item) =>
+    item.includes(tribeForJourney.tirbe)
+  )
   const getGuildJourney = async () => {
     let res = await axios.get(`http://localhost:3001/journeys/${idx}`, {
       withCredentials: true,
     })
     getGuildJourney(idx)
   }
+
+  //轉化price to 貨幣型態
+  const tranferPriceFormat = card.price
+  const digitsRE = /(\d{3})(?=\d)/g
+
+  function currency(value, currency, decimals) {
+    value = parseFloat(value)
+    if (!isFinite(value) || (!value && value !== 0)) return ''
+    currency = currency != null ? currency : 'TWD'
+    decimals = decimals != null ? decimals : 0
+    var stringified = Math.abs(value).toFixed(decimals)
+    var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified
+    var i = _int.length % 3
+    var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : ''
+    var _float = decimals ? stringified.slice(-1 - decimals) : ''
+    var sign = value < 0 ? '-' : ''
+    return (
+      sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
+    )
+  }
+  const PriceFormated = currency(tranferPriceFormat)
 
   return (
     <div className="guild-journey-item td-mb-25 position-relative">
@@ -42,7 +60,7 @@ function GuildJourneyItem(props) {
             <div className="line"></div>
           </div>
           <div className="guild-journey-item-price ">
-            <span>{card.price}</span>
+            <span>{PriceFormated}</span>
           </div>
           <div className="guild-journey-item-txt">
             <p dangerouslySetInnerHTML={{ __html: card.introname }}></p>

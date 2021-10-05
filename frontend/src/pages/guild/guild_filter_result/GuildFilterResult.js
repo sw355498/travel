@@ -1,16 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import GuildFilterBar from '../guild_filter_bar/GuildFilterBar'
 import GuildList from '../guild_list/guildList'
 import axios from 'axios'
-// import GuildData from '../../../data/guildData'
-// import API from '../../../api/index'
+// import { API_URL } from '../../../config'
 
 function GuildFilterResult({ tribes }) {
-  // const [guilds, setGuilds] = useState(GuildData)
   const [displayGuilds, setDisplayGuilds] = useState(null)
   useEffect(() => {
     const getGuilds = async () => {
-      let res = await axios.get('http://localhost:3001/Guild')
+      let res = await axios.get(`http://localhost:3001/Guild`)
       let data = res.data
       setDisplayGuilds(data)
     }

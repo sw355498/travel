@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import GuildJourney from './guild_info/GuildJourney'
-import GuildReview from './guild_info/GuildReview'
-import GuildListPage from './guild/guildListPage'
+import JourneyCoustomerReview from './journey_info/coustomer_review/journeyCoustomerReview'
 import ScrollToTop from 'react-scroll-to-top'
 import axios from 'axios'
+import { API_URL } from '../config'
 //CSS
 import '../style/guild-alluse.css'
 import '../style/guild-intro.css'
@@ -20,7 +20,7 @@ function GuildInfo(props) {
 
   useEffect(() => {
     const getGuildData = async (id) => {
-      let res = await axios.get(`http://localhost:3001/GuildInfo/${id}`, {
+      let res = await axios.get(`${API_URL}/GuildInfo/${id}`, {
         withCredentials: true,
       })
       let data = res.data
@@ -71,14 +71,7 @@ function GuildInfo(props) {
             <div className="guild-intro-title-review d-flex align-items-center">
               <div className="score">{guildData.rating}</div>
               <Rating rating={guildData.rating} />
-              {/* <div className="intro-title-star text-white">
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-            </div> */}
-              <div className="review-num">(27)</div>
+              <div className="review-num">{guildData.amountRating}</div>
             </div>
           </div>
           {/* <!-- web版介紹 --> */}
@@ -134,7 +127,7 @@ function GuildInfo(props) {
                     <p className="item-lan-txt">{guildData.language}</p>
                   </div>
                 </div>
-                <button className="btn-consult text-white">預約</button>
+                {/* <button className="btn-consult text-white">預約</button> */}
               </div>
               {/* <!-- 影片 --> */}
               <div className="guild-intro-video ">
@@ -173,7 +166,7 @@ function GuildInfo(props) {
                     <p className="item-lan-txt">{guildData.language}</p>
                   </div>
                 </div>
-                <button className="btn-consult text-white">預約</button>
+                {/* <button className="btn-consult text-white">預約</button> */}
               </div>
             </div>
             {/* <!-- 導遊圖片 --> */}
@@ -206,6 +199,9 @@ function GuildInfo(props) {
 
         {/* 導遊行程 */}
         <GuildJourney guildData={guildData} guildJourney={guildJourney} />
+        {/* 旅客評論 */}
+        <JourneyCoustomerReview />
+        <ScrollToTop smooth />
       </div>
     </>
   ) : (

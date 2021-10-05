@@ -1,30 +1,25 @@
-import { object } from 'prop-types'
+// import { object } from 'prop-types'
 import React, { useState, useMemo } from 'react'
 import GuildJourneyItem from './GuildJourneyItem'
-import axios from 'axios'
 
 function GuildJourney(props) {
-  const { guildData, guildJourney } = props
-  const [tribeForJourney] = useState(props.guildData)
-  const [guildJourneyItem] = useState(props.guildJourney)
-  // const { guildData, guildJourney } = props
+  const { guildJourney } = props
 
-  const guildJourneySelect = useMemo(() =>
-    guildJourneyItem.filter(
-      (object) =>
-        object.tribe === `${tribeForJourney.tribe.split(',')[0]}` ||
-        object.tribe === `${tribeForJourney.tribe.split(',')[1]}` ||
-        object.tribe === `${tribeForJourney.tribe.split(',')[2]}`
-    )
+  const { guildData } = props
+  const [tribeForJourney] = useState(props.guildData)
+
+  const [guildJourneyItem] = useState(props.guildJourney)
+
+  const guildJourneySelect = useMemo(
+    () =>
+      guildJourneyItem.filter(
+        (obj) =>
+          obj.tribe === `${tribeForJourney.tribe.split(',')[0]}` ||
+          obj.tribe === `${tribeForJourney.tribe.split(',')[1]}` ||
+          obj.tribe === `${tribeForJourney.tribe.split(',')[2]}`
+      ),
+    [guildJourneyItem, tribeForJourney.tribe]
   )
-  // console.log(
-  //   guildJourneyItem.filter(
-  //     (obj) =>
-  //       obj.tribe === `${tribeForJourney.tribe.split(',')[0]}` ||
-  //       obj.tribe === `${tribeForJourney.tribe.split(',')[1]}` ||
-  //       obj.tribe === `${tribeForJourney.tribe.split(',')[2]}`
-  //   )
-  // )
 
   return (
     <>
