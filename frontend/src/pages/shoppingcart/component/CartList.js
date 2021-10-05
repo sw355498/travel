@@ -9,6 +9,25 @@ function CartList(props) {
   //切換頁面載入的指示圖示
   const [dataLoading, setDataLoading] = useState(false)
 
+  //轉換成貨幣形式
+  const digitsRE = /(\d{3})(?=\d)/g
+
+  function currency(value, currency, decimals) {
+    value = parseFloat(value)
+    if (!isFinite(value) || (!value && value !== 0)) return ''
+    currency = currency != null ? currency : 'TWD '
+    decimals = decimals != null ? decimals : 0
+    var stringified = Math.abs(value).toFixed(decimals)
+    var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified
+    var i = _int.length % 3
+    var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : ''
+    var _float = decimals ? stringified.slice(-1 - decimals) : ''
+    var sign = value < 0 ? '-' : ''
+    return (
+      sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
+    )
+  }
+
   function getCartFromLocalStorage() {
     // 開啟載入的指示圖示
     setDataLoading(true)
@@ -215,7 +234,7 @@ function CartList(props) {
                   </button>
                 </div>
                 <div className="text-title-size24 shoppingcart-price td-mt-25">
-                  <div>TWD {parseFloat(item.price) * item.amount}</div>
+                  <div>{currency(parseFloat(item.price) * item.amount)}</div>
                 </div>
               </div>
               <div className="shoppingcart-solid"></div>
@@ -256,7 +275,7 @@ function CartList(props) {
               <img src="/images/total.png" alt="total" />
             </div>
             <div className="text-title-size24 shoppingcart-price">
-              TWD {sum(mycartDisplay)}
+              {currency(sum(mycartDisplay))}
             </div>
           </div>
           <div className="col-12 col-lg-3">

@@ -7,6 +7,25 @@ function PayContent(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
+  //轉換成貨幣形式
+  const digitsRE = /(\d{3})(?=\d)/g
+
+  function currency(value, currency, decimals) {
+    value = parseFloat(value)
+    if (!isFinite(value) || (!value && value !== 0)) return ''
+    currency = currency != null ? currency : 'TWD '
+    decimals = decimals != null ? decimals : 0
+    var stringified = Math.abs(value).toFixed(decimals)
+    var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified
+    var i = _int.length % 3
+    var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : ''
+    var _float = decimals ? stringified.slice(-1 - decimals) : ''
+    var sign = value < 0 ? '-' : ''
+    return (
+      sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
+    )
+  }
+
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
     setMycart(JSON.parse(newCart))
@@ -114,7 +133,9 @@ function PayContent(props) {
                       {/* 價錢 */}
                       <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
                         <div className="text-title-size24 shoppingcart-price td-mt-25">
-                          <div>TWD {parseFloat(item.price) * item.amount}</div>
+                          <div>
+                            {currency(parseFloat(item.price) * item.amount)}
+                          </div>
                         </div>
                       </div>
                       <div className="shoppingcart-solid"></div>
@@ -134,7 +155,7 @@ function PayContent(props) {
                       <img src="/images/total.png" alt="total" />
                     </div>
                     <div className="text-title-size24 shoppingcart-price">
-                      TWD {sum(mycartDisplay)}
+                      {currency(sum(mycartDisplay))}
                     </div>
                   </div>
                 </div>
