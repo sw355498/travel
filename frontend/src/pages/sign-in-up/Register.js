@@ -15,7 +15,7 @@ const Register = () => {
     e.preventDefault()
     // 送出註冊資料到後端
     try {
-      let response = await axios.post(`${API_URL}/auth/register`, {
+      let response = await axios.post(`${API_URL}/api/auth/register`, {
         email,
         name,
         password,

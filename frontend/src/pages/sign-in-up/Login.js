@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault()
     try {
       let result = await axios.post(
-        `${API_URL}/auth/login`,
+        `${API_URL}/login`,
         // 設定可以跨源存取 cookie
         { email, password },
         { withCredentials: true }
