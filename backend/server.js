@@ -3,8 +3,9 @@ const express = require('express')
 const connection = require('./utils/db')
 const moment = require('moment')
 require('dotenv').config()
+const path = require ('path')
 //註冊檢驗middleware
-const {loginCheckMiddleware} = require ('./middlewares/auth.js')
+const { loginCheckMiddleware } = require("./middlewares/auth");
 
 //利用express建立了一個express application
 let app = express();
@@ -14,17 +15,25 @@ app.use(
     cors({
         origin: ["http://localhost:3000"],
         credentials: true,
+
     })
 );
 
-// 啟用session
-const expressSession = require('express-session');
+
+// 啟用 session 機制
+const expressSession = require("express-session");
+// 引入 file store
+var FileStore = require("session-file-store")(expressSession);
 app.use(
   expressSession({
+    // 設定 session 的 store 為 FileStore
+    store: new FileStore({ path: path.join(__dirname, "..", "sessions") }),
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: true,
-    })
+    // 強制將未初始化的session存回 session store，未初始化的意思是它是新的而且未被修改。
+    // 用 FileStore 的話建議設定一下
+    saveUninitialized: false,
+  })
 );
 
 
@@ -34,46 +43,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use((req,res,next)=>{
-    console.log("我是第個一個中間件",req.body);
+    console.log("我是第個一個中間件");
     next();
-})
-
-
-//Guild API
-app.get("/guild",async (req,res,next)=>{
-// -----------------------頁碼----------------------------------
-    // let page= req.query.page || 1; //目前在第幾頁，預設第一頁
-    // const perPage =6; //每一頁資料是6筆
-
-    //todo1:總共有幾筆
-    // let count = await connection.queryAsync("SELECT COUNT(*) AS total FROM guild ");
-    // console.log(count);
-    // const total = count[0].total;
-    // const lastPage = Math.ceil(total/perPage);//知道有幾頁
-    // console.log(total,lastPage);
-
-    //todo2:取得這一頁應該要有的資料
-    //page1:1-6
-    //page2:11-20
-    //limit:要取幾筆資料（這一頁要幾筆資料）
-    //offset：要跳過多少
-    // let offset = (page - 1) * perPage;
-    let result = await connection.queryAsync("SELECT * FROM guild");
-    // let result = await connection.queryAsync("SELECT guild.* , GROUP_CONCAT(tribes.tribe SEPARATOR',') AS 'tribe'FROM guild, tribes WHERE guild.id = tribes.id GROUP BY guild.id LIMIT ? OFFSET ? ",[perPage,offset]);
-
-    // let pagination = {
-    //     total, //共幾筆
-    //     perPage,//一頁幾筆
-    //     lastPage,//總共幾頁（最後一頁）
-    //     page//目前在第幾頁
-    // }
-    res.json(result);
-})
-
-app.get("/guild/:guildId",async (req,res,next)=>{
-    // ("SELECT * FROM guild_tribes JOIN guild on guild_tribes.guild_id = guild.id JOIN tribes on guild_tribes.tribes_id = tribes.id WHERE guild.id = ?",[req.params.guildNum])
-    let result = await connection.queryAsync("SELECT * FROM guild WHERE id = ?",[req.params.guildId]);
-    res.json(result);
 })
 
 
@@ -91,7 +62,7 @@ const registerRule = [
 //引入加密套件
 const bcrypt = require ("bcrypt");
 //註冊
-app.post("/auth/register",registerRule,async (req,res,next) => {
+app.post("/register",registerRule,async (req,res,next) => {
     const validateResult = validationResult(req);
     //validateResult不是空的，代表有錯誤
     if(!validateResult.isEmpty()){
@@ -125,62 +96,109 @@ app.post("/auth/register",registerRule,async (req,res,next) => {
     res.json({});
 })
 
-
 //登入
-app.post("/auth/login", async (req, res, next) => {
+app.post("/login", async (req, res, next) => {
+    console.log(req.body);
+    // - 確認有沒有帳號 (email 是否存在)
     let member = await connection.queryAsync(
-        "SELECT * FROM member WHERE email = ? ; ",
-        [req.body.email]
-        );
-        // console.log(member);
-        //有註冊過的email V
-        //沒有註冊過的email
-        if(member.length === 0 ){
-           return next({
-               status:400,
-               message:"帳號錯誤",
-           });
-        }
-    //有找到，而且應該只會有一個（註冊時會檢查有沒有註冊過）
-    member = member[0];
-    //密碼跟資料庫的比對
-    let result = await bcrypt.compare(req.body.password, member.password);
-    if (!result){
-        //不一致：回覆錯誤（400）
-        return next({
-            status:400,
-            message:"密碼錯誤",
-        });
+      "SELECT * FROM member WHERE email = ?;",
+      [req.body.email]
+    );
+    console.log(member);
+    if (member.length === 0) {
+      // member 陣列是空的 => 表示沒找到
+      return next({
+        status: 400,
+        message: "找不到帳號",
+      });
     }
-    //紀錄session
+    // 有找到，而且應該只會有一個（因為我們註冊的地方有檢查 email 有沒有重複）
+    member = member[0];
+    // - 密碼比對
+    let result = await bcrypt.compare(req.body.password, member.password);
+    if (!result) {
+      // - 不一致，回覆錯誤(400)
+      return next({
+        // code: "330002",
+        status: 400,
+        message: "密碼錯誤",
+      });
+    }
+    //     - 紀錄 session
     let returnMember = {
-        id: member.id,
-        name: member.member_name,
-        email:member.email
-        // name:member.member_name
+      id: member.id,
+      email: member.email,
+      name: member.member_name,
     };
     req.session.member = returnMember;
+    // console.log(req.sessionID);
+    if (! req.session.member ){
+        console.log("no");
+    }else{
+        console.log("yes");
+    }
     // 回覆給前端
     res.json({
-        // id: member.id,
+        id: member.id,
+        email: member.email,
         name: member.member_name,
-        email:member.email
-        // name:member.member_name
-    });
-})
-
-// app.use(loginCheckMiddleware);
-app.get("/",(req, res, next) => {
-    res.json(req.session.member)
-});
-
+      });
+  });
+  
 //登出
-app.get("/auth/logout", (req, res, next) => {
+app.get("/logout", (req, res, next) => {
     req.session.member = null;
     res.sendStatus(202);
   });
 
 
+//Guild API
+app.get("/guild",   async (req,res,next)=>{
+  
+// -----------------------頁碼----------------------------------
+    // let page= req.query.page || 1; //目前在第幾頁，預設第一頁
+    // const perPage =6; //每一頁資料是6筆
+
+    //todo1:總共有幾筆
+    // let count = await connection.queryAsync("SELECT COUNT(*) AS total FROM guild ");
+    // console.log(count);
+    // const total = count[0].total;
+    // const lastPage = Math.ceil(total/perPage);//知道有幾頁
+    // console.log(total,lastPage);
+
+    //todo2:取得這一頁應該要有的資料
+    //page1:1-6
+    //page2:11-20
+    //limit:要取幾筆資料（這一頁要幾筆資料）
+    //offset：要跳過多少
+    // let offset = (page - 1) * perPage;
+    let result = await connection.queryAsync("SELECT * FROM guild");
+    // let result = await connection.queryAsync("SELECT guild.* , GROUP_CONCAT(tribes.tribe SEPARATOR',') AS 'tribe'FROM guild, tribes WHERE guild.id = tribes.id GROUP BY guild.id LIMIT ? OFFSET ? ",[perPage,offset]);
+
+    // let pagination = {
+    //     total, //共幾筆
+    //     perPage,//一頁幾筆
+    //     lastPage,//總共幾頁（最後一頁）
+    //     page//目前在第幾頁
+    // }
+    res.json(result);
+})
+
+app.get("/GuildInfo/:id",async (req,res,next)=>{
+  const {id} = req.params
+  const result = await connection.queryAsync('SELECT * FROM guild WHERE id=?', [id])
+  res.json(result[0])
+//   console.log(result[]);
+})
+
+
+app.get('/guild/journeys',async(req,res,next)=>{
+    const result = await connection.queryAsync('SELECT * FROM journey')
+    res.json(result)
+  })
+
+
+  
 
 /*購物車付款資訊 */
 app.post("/pay",async (req, res, next) => {
@@ -275,7 +293,7 @@ app.get("/order_form/:memberId", async(req, res, next) => {
 
 const APIrouter = express.Router();
 
-APIrouter.get('/journeys', async (req, res, next) => {
+APIrouter.get('/journeys' ,async (req, res, next) => {
 // let page = req.query.page || 1 //目前在第幾頁
 // const perPage = 3 //每一頁資料
 //  let count = await connection.queryAsync('SELECT COUNT(*) As total FROM journey')
@@ -312,10 +330,10 @@ APIrouter.get('/journeyinfo/guides',async(req,res,next)=>{
   res.json(result)
 })
 
-APIrouter.put("/journeys/:id/like", async (req, res, next) => {
+APIrouter.put("/journeys/:id/like", loginCheckMiddleware, async (req, res, next) => {
   const {id} = req.params
   const result = await connection.queryAsync('SELECT status FROM journey WHERE _id=?', [id])
-  const status = result[0].status
+  const status = result[0].status;
   await connection.queryAsync('UPDATE journey SET status=? WHERE _id=?',[
     !status,
     id,
@@ -324,6 +342,8 @@ APIrouter.put("/journeys/:id/like", async (req, res, next) => {
 })
 
 app.use("/api", APIrouter)
+
+
 
 
 //處理找不到路由的錯誤的中間件

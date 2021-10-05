@@ -39,9 +39,7 @@ function GuildItem({ guild }) {
             <p className="interview-title text-center ">
               <span>{guild.journey_name}</span>
             </p>
-            <p className="interview-content text-center">
-              {guild.journey_intro}
-            </p>
+            <p className="interview-content text-center">{guild.intro}</p>
           </div>
           {/* <!-- 預約button --> */}
           <Link

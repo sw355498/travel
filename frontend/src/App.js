@@ -18,7 +18,6 @@ import { API_URL } from './config'
 import axios from 'axios'
 import Member from './pages/member/Member'
 
-
 import './style/header.css'
 import './style/footer.css'
 
@@ -55,17 +54,17 @@ function App() {
               <Journey />
             </Route>
             <Route path="/Guild" component={Guild} />
-            <Route path="/GuildInfo/:guildId" component={GuildInfo} />
+            <Route path="/GuildInfo/:id" component={GuildInfo} />
             <Route path="/Shoppingcart" component={Shoppingcart} />
             <Route path="/Pay" component={Pay}>
-              <Pay member={member}/>
+              <Pay member={member} />
             </Route>
             {/* <Route path="/Pay" component={Pay} /> */}
             <Route path="/order_form/:oderPage?" component={Oder} />
-            <Route path="/Register" component={Register} />
-            <Route path="/Login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route path="/member" component={Member} />
-        {/* <Route path="/member" component={member} /> */}
+            {/* <Route path="/member" component={member} /> */}
             <Redirect to="/" />
           </Switch>
           <Footer />

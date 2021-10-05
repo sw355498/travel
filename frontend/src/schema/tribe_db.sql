@@ -2,8 +2,8 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- 主機： 127.0.0.1
--- 產生時間： 2021-10-01 10:34:51
+-- 主機： localhost
+-- 產生時間： 2021 年 10 月 02 日 08:16
 -- 伺服器版本： 10.4.19-MariaDB
 -- PHP 版本： 8.0.7
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- 資料庫: `tribe_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `card_data`
+--
+
+CREATE TABLE `card_data` (
+  `id` int(11) NOT NULL,
+  `number` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiry` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cvc` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `card_data`
+--
+
+INSERT INTO `card_data` (`id`, `number`, `name`, `expiry`, `cvc`) VALUES
+(1, '5555444433331111', 'JohnSmith', '1020', '737'),
+(2, '4111111111111111', 'JohnSmith', '1020', '737'),
+(3, '370000000000002', 'JohnSmith', '1020', '737'),
+(4, '3600666633334444', 'JohnSmith', '1020', '737'),
+(5, '6011601160116611', 'JohnSmith', '1020', '737'),
+(6, '5066991111111118', 'JohnSmith', '1020', '737'),
+(7, '6250946000000016', 'JohnSmith', '1020', '737'),
+(8, '6062828888666688', 'JohnSmith', '1020', '737');
 
 -- --------------------------------------------------------
 
@@ -113,6 +141,25 @@ INSERT INTO `journey` (`_id`, `name`, `total_time`, `price`, `total_people`, `jo
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `lang`
+--
+
+CREATE TABLE `lang` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `lang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `lang`
+--
+
+INSERT INTO `lang` (`id`, `lang`) VALUES
+(1, '中文'),
+(2, '英文');
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `member`
 --
 
@@ -178,19 +225,6 @@ CREATE TABLE `order_detail` (
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- 傾印資料表的資料 `order_detail`
---
-
-INSERT INTO `order_detail` (`id`, `guide`, `journey_id`, `name`, `img`, `go_time`, `amount`, `price`, `order_number`) VALUES
-(1, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-15', 1, 1000, '61157520211001'),
-(2, '瓦丹', 3, '噶瑪蘭族文化體驗｜野菜採集文化漫步，飲食饗宴，香蕉絲工藝\r\n', '香蕉絲體驗.jpg', '2021-10-15', 4, 4800, '61157520211001'),
-(3, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-06', 2, 2560, '61157520211001'),
-(4, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-27', 8, 8000, '37902120211001'),
-(5, '瓦丹', 4, '走進大海的部落', '新社部落藝術品.jpg', '2021-10-23', 4, 4800, '37902120211001'),
-(6, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-01', 1, 1000, '74885820211001'),
-(7, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-01', 1, 1000, '73652820211001');
-
 -- --------------------------------------------------------
 
 --
@@ -212,16 +246,6 @@ CREATE TABLE `order_form` (
   `order_time` date NOT NULL DEFAULT current_timestamp(),
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- 傾印資料表的資料 `order_form`
---
-
-INSERT INTO `order_form` (`id`, `member_email`, `sur_name`, `first_name`, `phone`, `nation`, `address`, `email`, `card_number`, `bill_status`, `order_status`, `order_time`, `order_number`) VALUES
-(1, 'false', '王', '小明', '0911111111', '台灣', '桃園市中央路', '45656@test.com', '5555555555555555', '電子發票', '已付款', '2021-10-01', '61157520211001'),
-(2, 'test@gmail.com', '王', '小明', '0911111111', '台灣', '桃園市中央路', 'test1@gmail.com', '5555555555555555', '電子發票', '已付款', '2021-10-01', '37902120211001'),
-(3, 'false', '王', '小明', '0911111111', '台灣', '桃園市中央路', 'Bijins8928isme@gmail.com', '5555555555555555', '個人紙本發票', '已付款', '2021-10-01', '74885820211001'),
-(4, 'test@gmail.com', '王', '小明', '0955491832', '台灣', '桃園市中央路', '45656@test.com', '5555555555555555', '電子發票', '已付款', '2021-10-01', '73652820211001');
 
 -- --------------------------------------------------------
 
@@ -252,6 +276,12 @@ INSERT INTO `tribes` (`id`, `tribe`) VALUES
 --
 
 --
+-- 資料表索引 `card_data`
+--
+ALTER TABLE `card_data`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `guild`
 --
 ALTER TABLE `guild`
@@ -262,6 +292,12 @@ ALTER TABLE `guild`
 --
 ALTER TABLE `journey`
   ADD PRIMARY KEY (`_id`);
+
+--
+-- 資料表索引 `lang`
+--
+ALTER TABLE `lang`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- 資料表索引 `member`
@@ -292,6 +328,12 @@ ALTER TABLE `tribes`
 --
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `card_data`
+--
+ALTER TABLE `card_data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `guild`
 --
 ALTER TABLE `guild`
@@ -304,6 +346,12 @@ ALTER TABLE `journey`
   MODIFY `_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `lang`
+--
+ALTER TABLE `lang`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member`
 --
 ALTER TABLE `member`
@@ -313,13 +361,13 @@ ALTER TABLE `member`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_form`
 --
 ALTER TABLE `order_form`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `tribes`

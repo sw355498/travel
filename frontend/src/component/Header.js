@@ -19,7 +19,7 @@ function Header(porps) {
   const { member, setMember } = useAuth()
 
   const handleLogout = async () => {
-    await axios.get(`${API_URL}/auth/logout`, {
+    await axios.get(`${API_URL}/logout`, {
       withCredentials: true,
     })
     setMember(null)
@@ -91,13 +91,13 @@ function Header(porps) {
               <>
                 <div className="td-nav-before d-flex align-items-center">
                   <Link
-                    to="/Login"
+                    to="/login"
                     className="btn td-btn-medium-o td-header-login text-center"
                   >
                     登入
                   </Link>
                   <Link
-                    to="/Register"
+                    to="/register"
                     className="btn td-btn-medium-b td-header-register text-center"
                   >
                     註冊
