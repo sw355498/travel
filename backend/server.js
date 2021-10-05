@@ -182,6 +182,15 @@ app.get("/auth/logout", (req, res, next) => {
   });
 
 
+/* 推薦購買 */
+app.get("/shoppingcart_recommend", async(req, res, next) => {
+    try {
+        let result = await connection.queryAsync("SELECT * FROM journey ORDER BY amountRating");
+        res.json(result);
+    } catch (e) {
+        console.error("shoop",e);
+    }
+});
 
 /*購物車付款資訊 */
 app.post("/pay",async (req, res, next) => {
