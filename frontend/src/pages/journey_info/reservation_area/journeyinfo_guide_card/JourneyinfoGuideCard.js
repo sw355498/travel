@@ -5,7 +5,6 @@ function JourneyinfoGuideCard(props) {
   const { guideChecked, handleClick, card, TribeForGuide } = props
   const cardTribe = card.tribe
   const cardTribeSplit = cardTribe.split(',')
-  console.log(cardTribeSplit)
   const cardfilterResult = cardTribeSplit.filter((item) =>
     item.includes(TribeForGuide.tribe)
   )

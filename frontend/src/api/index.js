@@ -15,6 +15,10 @@ const API = {
     const res = await axios.get(`${serverURI}/api/home/langs`)
     return res.data
   },
+  fetchMapApiKey: async () => {
+    const res = await axios.get(`${serverURI}/api/journeyinfo/MapApiKey`)
+    return res.data
+  },
   fetchJourneyInfoGuide: async () => {
     const res = await axios.get(`${serverURI}/api/journeyinfo/guides`)
     return res.data
