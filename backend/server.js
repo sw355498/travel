@@ -47,7 +47,6 @@ app.use((req,res,next)=>{
     next();
 })
 
-
 //註冊驗證
 const {body,validationResult} = require ('express-validator');
 const registerRule = [
@@ -99,19 +98,32 @@ app.post("/register",registerRule,async (req,res,next) => {
 //登入
 app.post("/login", async (req, res, next) => {
     console.log(req.body);
+
+    if (req.body.email === "" || req.body.email === ' ') {
+        return next({
+          status: 400,
+          message: "請輸入Email",
+        });
+      }    
+
+
     // - 確認有沒有帳號 (email 是否存在)
     let member = await connection.queryAsync(
       "SELECT * FROM member WHERE email = ?;",
       [req.body.email]
     );
+
     console.log(member);
+
+
     if (member.length === 0) {
       // member 陣列是空的 => 表示沒找到
       return next({
         status: 400,
-        message: "找不到帳號",
+        message: "帳號或密碼錯誤",
       });
-    }
+    }    
+
     // 有找到，而且應該只會有一個（因為我們註冊的地方有檢查 email 有沒有重複）
     member = member[0];
     // - 密碼比對
@@ -121,7 +133,7 @@ app.post("/login", async (req, res, next) => {
       return next({
         // code: "330002",
         status: 400,
-        message: "密碼錯誤",
+        message: "帳號或密碼錯誤",
       });
     }
     //     - 紀錄 session
@@ -154,33 +166,7 @@ app.get("/logout", (req, res, next) => {
 
 //Guild API
 app.get("/guild",   async (req,res,next)=>{
-  
-// -----------------------頁碼----------------------------------
-    // let page= req.query.page || 1; //目前在第幾頁，預設第一頁
-    // const perPage =6; //每一頁資料是6筆
-
-    //todo1:總共有幾筆
-    // let count = await connection.queryAsync("SELECT COUNT(*) AS total FROM guild ");
-    // console.log(count);
-    // const total = count[0].total;
-    // const lastPage = Math.ceil(total/perPage);//知道有幾頁
-    // console.log(total,lastPage);
-
-    //todo2:取得這一頁應該要有的資料
-    //page1:1-6
-    //page2:11-20
-    //limit:要取幾筆資料（這一頁要幾筆資料）
-    //offset：要跳過多少
-    // let offset = (page - 1) * perPage;
     let result = await connection.queryAsync("SELECT * FROM guild");
-    // let result = await connection.queryAsync("SELECT guild.* , GROUP_CONCAT(tribes.tribe SEPARATOR',') AS 'tribe'FROM guild, tribes WHERE guild.id = tribes.id GROUP BY guild.id LIMIT ? OFFSET ? ",[perPage,offset]);
-
-    // let pagination = {
-    //     total, //共幾筆
-    //     perPage,//一頁幾筆
-    //     lastPage,//總共幾頁（最後一頁）
-    //     page//目前在第幾頁
-    // }
     res.json(result);
 })
 
@@ -345,6 +331,19 @@ app.use("/api", APIrouter)
 
 
 
+// 這一個 router 的路由都會先經過這個中間件
+app.use(loginCheckMiddleware);
+
+app.get("/member",   async (req,res,next)=>{
+    let result = await connection.queryAsync("SELECT * FROM member");
+    res.json(result);
+    console.log("會員");
+})
+
+
+// app.get("/", (req, res, next) => {
+//   res.json(req.session.member);
+// });
 
 //處理找不到路由的錯誤的中間件
 app.use((req,res,next)=>{
