@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2021 年 10 月 02 日 08:16
+-- 產生時間： 2021 年 10 月 08 日 07:00
 -- 伺服器版本： 10.4.19-MariaDB
 -- PHP 版本： 8.0.7
 
@@ -58,33 +58,34 @@ INSERT INTO `card_data` (`id`, `number`, `name`, `expiry`, `cvc`) VALUES
 CREATE TABLE `guild` (
   `id` int(3) UNSIGNED NOT NULL,
   `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tribe` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tribe` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `language` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `license` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `banner1` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img1` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img3` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img4` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `banner1` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img1` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img3` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img4` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `video` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `intro_title` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `intro` varchar(100) NOT NULL,
+  `intro` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `rating` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `avatar` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `amountRating` int(5) NOT NULL,
+  `avatar` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- 傾印資料表的資料 `guild`
 --
 
-INSERT INTO `guild` (`id`, `name`, `tribe`, `language`, `license`, `banner1`, `img1`, `img2`, `img3`, `img4`, `video`, `intro_title`, `intro`, `rating`, `avatar`) VALUES
-(1, '瓦丹', '太巴塱部落,靜浦部落太巴,新社部落', '中文', '華語導遊證照', '太巴塱導遊banner.jpg\r\n', '太巴塱導遊1.jpg', '太巴塱導遊2.jpg', '太巴塱導遊3.jpg', '太巴塱導遊4.jpeg', 'https://www.youtube.com/embed/0cy7lE9Imuk', '的瘋狂冒險團', '我是雅固，我熱愛我的家鄉跟部落，希望能夠讓更多人看到部落文化。請放心地跟著我，我會帶著你們一覽最美的部落風景，吃最好吃的部落美食，聽最感人的部落故事。\r\n', '5', '太巴塱導遊1.jpg'),
-(2, '芭奈‧法老', '水璉部落,太巴塱部落,靜浦部落', '中文,英文', '華語導遊證照', '水璉導遊banner1.png\r\n', '水璉導遊1.jpg', '水璉導遊3.jpg', '水璉導遊5.jpg', '水璉導遊6.jpg', 'https://www.youtube.com/watch?v=ap7IFQUHgDE&t=165s', '的瘋狂冒險團', '大家好我是芭奈‧法老,老人家們的智慧如此珍貴，如果再不傳承，這些寶物極有可能消失不見！\r\n創立了吉籟獵人學校獵人,在獵人學校裡可以學到原住民獵人寶貴的知識與技能。\r\n', '5', '水璉導遊1.jpg'),
-(3, '巴隆', '奇美部落,撒固兒部落,水璉部落', '中文', '華語導遊證照', '奇美導遊banner.png\r\n', '奇美導遊1.jpg', '奇美導遊2.jpg', '奇美導遊3.jpg', '奇美導遊4.jpg', 'https://www.youtube.com/watch?v=du6uL8LsDnA', '的瘋狂冒險團', '各位好我是巴隆，從事旅遊業15年, 也熱愛交朋友, 更熱愛這塊我生長的土地~我將盡所能的介紹奇美部落這個我愛的地方, 我知道的景點, 並希望帶給您們愉快的旅遊回憶~\r\n\r\n', '5', '奇美導遊3.jpg'),
-(4, '希達', '馬太鞍部落,奇美部落,靜浦部落', '中文,英文', '華語導遊證照', '奇美部落大圖1.png\r\n', '奇美部落大圖1.png', '奇美部落大圖1.png', '奇美部落大圖1.png', '奇美部落大圖1.png', 'https://www.youtube.com/embed/9viHdDVNNH0', '的瘋狂冒險團', '我的名字叫希達，我的部落是一座美麗、安靜的部落，您可以在那裡放鬆身心、享用美味佳餚。在那裡您還可以享受娛樂和舞蹈。相信在我的帶領下您會在馬太鞍部落過得愉快。', '5', '奇美部落大圖1.png'),
-(5, '卡拉', '撒固兒部落,馬太鞍部落,奇美部落', '中文', '華語導遊證照', '撒固兒導遊banner.png\r\n', '撒固兒導遊1.jpg', '撒固兒導遊2.jpg', '撒固兒導遊3.jpg', '撒固兒導遊4.jpg', 'https://www.youtube.com/watch?v=QUGATx_64T4\r\n', '的瘋狂冒險團', '我是卡拉，非常歡迎大家來到部落旅行，我會竭盡我所知，竭盡我所能，為大家講解部落的歷史，部落的文化，讓大家不虛此行。\r\n', '4', '撒固兒導遊3.jpg'),
-(6, '新社導遊', '新社部落,奇美部落,撒固兒部落', '英文', '華語導遊證照', '新社導遊banner.jpg', '新社導遊1.jpg', '新社導遊2.jpg', '新社導遊3.jpg', '新社導遊4.jpg', 'https://www.youtube.com/embed/9viHdDVNNH0', '的瘋狂冒險團', '我是新社導遊', '3', '新社導遊1.jpg'),
-(7, '瓦庫2', '靜浦部落,奇美部落,水璉部落', '中文,英文', '華語導遊證照', '靜浦導遊banner.jpg\r\n', '靜浦導遊1.jpg', '靜浦導遊2.jpg', '靜浦導遊3.jpg', '靜浦導遊4.jpg', 'https://www.youtube.com/embed/9viHdDVNNH0', '的瘋狂冒險團', '靜浦導遊', '4', '靜浦導遊4.jpg');
+INSERT INTO `guild` (`id`, `name`, `tribe`, `language`, `license`, `banner1`, `img1`, `img2`, `img3`, `img4`, `video`, `intro_title`, `intro`, `rating`, `amountRating`, `avatar`) VALUES
+(1, '瓦丹', '太巴塱部落,靜浦部落,新社部落', '中文', '華語導遊證照', '太巴塱導遊banner.jpg', '太巴塱導遊1.jpg', '太巴塱導遊2.jpg', '太巴塱導遊3.jpg', '太巴塱導遊4.jpeg', 'https://www.youtube.com/embed/0cy7lE9Imuk', '的瘋狂冒險團', '我是雅固，我熱愛我的家鄉跟部落，希望能夠讓更多人看到部落文化。請放心地跟著我，我會帶著你們一覽最美的部落風景，吃最好吃的部落美食，聽最感人的部落故事。\r\n', '5', 27, '太巴塱導遊1.jpg'),
+(2, '芭奈‧法老', '水璉部落,太巴塱部落,靜浦部落', '中文,英文', '華語導遊證照', '水璉導遊banner1.png\r\n', '水璉導遊1.jpg', '水璉導遊3.jpg', '水璉導遊5.jpg', '水璉導遊6.jpg', 'https://www.youtube.com/embed/XA3gQOoo9-Q', '的瘋狂冒險團', '大家好我是芭奈‧法老,老人家們的智慧如此珍貴，如果再不傳承，這些寶物極有可能消失不見！\r\n創立了吉籟獵人學校獵人,在獵人學校裡可以學到原住民獵人寶貴的知識與技能。\r\n', '5', 22, '水璉導遊1.jpg'),
+(3, '巴隆', '奇美部落,撒固兒部落,水璉部落', '中文', '華語導遊證照', '奇美導遊banner.png\r\n', '奇美導遊1.jpg', '奇美導遊2.jpg', '奇美導遊3.jpg', '奇美導遊4.jpg', 'https://www.youtube.com/embed/du6uL8LsDnA', '的瘋狂冒險團', '各位好我是巴隆，從事旅遊業15年, 也熱愛交朋友, 更熱愛這塊我生長的土地~我將盡所能的介紹奇美部落這個我愛的地方, 我知道的景點, 並希望帶給您們愉快的旅遊回憶~\r\n\r\n', '5', 17, '奇美導遊3.jpg'),
+(4, '希達', '馬太鞍部落,奇美部落,靜浦部落', '中文,英文', '華語導遊證照', '馬太鞍banner.jpg\r\n', '馬太鞍導遊1.jpg', '馬太鞍導遊2.jpg', '馬太鞍導遊3.jpg', '馬太鞍導遊4.jpg', 'https://www.youtube.com/embed/iz_cHO_hUbM', '的瘋狂冒險團', '我的名字叫希達，我的部落是一座美麗、安靜的部落，您可以在那裡放鬆身心、享用美味佳餚。在那裡您還可以享受娛樂和舞蹈。相信在我的帶領下您會在馬太鞍部落過得愉快。', '5', 11, '馬太鞍導遊1.jpg'),
+(5, '卡拉', '撒固兒部落,馬太鞍部落,奇美部落', '中文', '華語導遊證照', '撒固兒導遊banner.png\r\n', '撒固兒導遊1.jpg', '撒固兒導遊2.jpg', '撒固兒導遊3.jpg', '撒固兒導遊4.jpg', 'https://www.youtube.com/embed/QUGATx_64T4\r\n', '的瘋狂冒險團', '我是卡拉，非常歡迎大家來到部落旅行，我會竭盡我所知，竭盡我所能，為大家講解部落的歷史，部落的文化，讓大家不虛此行。\r\n', '4', 5, '撒固兒導遊3.jpg'),
+(6, '阿里曼', '新社部落,奇美部落,撒固兒部落', '英文', '華語導遊證照', '新社導遊banner.jpg', '新社導遊1.jpg', '新社導遊2.jpg', '新社導遊3.jpg', '新社導遊4.jpg', 'https://www.youtube.com/embed/9viHdDVNNH0', '的瘋狂冒險團', '我是素有工藝之家美稱的噶瑪蘭族人，因為噶瑪蘭族人的文化與工藝讓新社部落變得不同！走～沿著台11線海岸公路，讓我帶著你們巡禮水稻田、海岸、部落文化與香蕉絲編織DIY體驗，遠眺那美麗浪漫的新社梯田。', '3', 33, '新社導遊1.jpg'),
+(7, '石阿松', '靜浦部落,奇美部落,水璉部落', '中文,英文', '華語導遊證照', '靜浦導遊banner.jpg\r\n', '靜浦導遊1.jpg', '靜浦導遊2.jpg', '靜浦導遊3.jpg', '靜浦導遊4.jpg', 'https://www.youtube.com/embed/6EIr1Hgdwdc', '的瘋狂冒險團', '歡迎大家來到靜浦部落。在深夜、凌晨到出海口利用傳統的三角網捕撈，與海浪搏鬥是族人的日常，一盞一盞頭燈在出海口閃爍，絕對是其他地方看不到的奇妙美景喔！', '4', 18, '靜浦導遊4.jpg');
 
 -- --------------------------------------------------------
 
@@ -198,15 +199,6 @@ CREATE TABLE `member` (
   `member_order_review` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- 傾印資料表的資料 `member`
---
-
-INSERT INTO `member` (`id`, `member_id`, `guild_id`, `guide_review`, `guide_review_star`, `guide_review_number`, `guide_review_image`, `member_ avatar`, `member_name`, `member_evaluation`, `member_star`, `member_collect`, `journey_review_content`, `journey_review_point`, `sur_name`, `phone`, `nation`, `birthday`, `email`, `password`, `sex`, `order_time`, `order_status`, `order_id`, `pay_status`, `total_price`, `journey_id`, `total_people`, `journey_name`, `journey_information`, `info`, `member_order_review`) VALUES
-(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test@', '$2b$10$Caa/vT1mzQE.88ws5FaBv.2scmXLc02NZAaLt8l2SVeGf6/9sjbRu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test1@gmail.com', '$2b$10$ixEsUB7lsk.NltreWz4SmuHExoR2p8CpLG0lEjQDna4LLIfIxvdu2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test@gmail.com', '$2b$10$1SyQEFd9t5OKGIXa2XkodOmvO5GlncWDAtHnwiubklgQJoRne8ohK', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -224,6 +216,25 @@ CREATE TABLE `order_detail` (
   `price` int(6) UNSIGNED NOT NULL,
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `guide`, `journey_id`, `name`, `img`, `go_time`, `amount`, `price`, `order_number`) VALUES
+(1, '雅馨', 1, '九日漁獵生活', '靜浦-竹筏漫遊.jpg', '2021-09-25', 1, 5000, '84483420211004'),
+(2, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-08', 1, 1000, '84483420211004'),
+(3, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '75350220211007'),
+(4, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '75350220211007'),
+(5, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '17967320211007'),
+(6, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '17967320211007'),
+(7, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '46747120211007'),
+(8, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '46747120211007'),
+(9, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '24427520211007'),
+(10, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '24427520211007'),
+(11, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '74270020211007'),
+(12, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '74270020211007'),
+(13, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '75817620211007');
 
 -- --------------------------------------------------------
 
@@ -246,6 +257,14 @@ CREATE TABLE `order_form` (
   `order_time` date NOT NULL DEFAULT current_timestamp(),
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `order_form`
+--
+
+INSERT INTO `order_form` (`id`, `member_email`, `sur_name`, `first_name`, `phone`, `nation`, `address`, `email`, `card_number`, `bill_status`, `order_status`, `order_time`, `order_number`) VALUES
+(1, 'test@gmail.com', '1', '123', '09222222', '台灣', '西屯路二段２８２巷１３號', 'yaya14chen@gmail.com', '1233444433332222', '電子發票', '已付款', '2021-10-04', '84483420211004'),
+(2, 'test@gmail.com', '1', '123', '09222223', '台灣', '西屯路二段２８２巷１３號', 'tom@test.com', '1233444433332222', '電子發票', '已付款', '2021-10-06', '75817620211007');
 
 -- --------------------------------------------------------
 
@@ -355,19 +374,19 @@ ALTER TABLE `lang`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_form`
 --
 ALTER TABLE `order_form`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `tribes`
