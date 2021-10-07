@@ -10,17 +10,16 @@ function GuildList(props) {
         篩選結果：{tags.toString()},{lans},{stars.toString() + '星'}
       </h2>
       <div className="filter-result-box d-flex flex-wrap justify-content-evenly col-12">
-        {guilds
-
-          .filter(
-            (guild) =>
-              lans.some((lan) => guild.language.includes(lan)) &&
-              tags.some((tag) => guild.tribe.includes(tag)) &&
-              stars.some((star) => guild.rating.includes(star))
+        {guilds.map((guild, i) => {
+          return (
+            <GuildItem
+              key={i}
+              guild={guild}
+              // selected={product.status}
+              // handleClick={handleClick}
+            />
           )
-          .map((guild, i) => {
-            return <GuildItem key={i} guild={guild} />
-          })}
+        })}
       </div>
     </section>
   )

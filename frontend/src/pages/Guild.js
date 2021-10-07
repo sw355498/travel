@@ -2,7 +2,6 @@ import React from 'react'
 import qs from 'qs'
 import GuildListBanner from './guild/guildListBanner'
 import GuildFilterResult from './guild/guild_filter_result/GuildFilterResult'
-import GuildListPage from './guild/guildListPage'
 import GuildNew from './guild/guildNew'
 import { useLocation } from 'react-router-dom'
 import ScrollToTop from 'react-scroll-to-top'
@@ -17,13 +16,12 @@ function useQuery() {
 }
 function Guild() {
   const query = useQuery()
-  const { tribes } = query
+  const { tribes, pageNum } = query
   return (
     <>
       <article>
         <GuildListBanner />
-        <GuildFilterResult tribes={tribes} />
-        <GuildListPage />
+        <GuildFilterResult tribes={tribes} pageNum={parseInt(pageNum)} />
         <GuildNew />
         <ScrollToTop smooth />
       </article>

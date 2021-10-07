@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TribeCheckboxGuild(props) {
-  const { value, handleChecked, checked, children } = props
+  const { value, handleChecked, checked, children, pageClick } = props
   return (
     <div>
       <input
@@ -12,6 +12,7 @@ function TribeCheckboxGuild(props) {
         value={value}
         checked={checked}
         onChange={handleChecked}
+        onClick={pageClick}
       />
       {children}
       <label className="tribe-check-label" htmlFor="tribeCheckInput1"></label>

@@ -38,12 +38,11 @@ function GuildInfo(props) {
       })
       let data = res.data
       setGuildJourney(data)
-      // console.log(data)
     }
     getGuildJourney()
   }, [])
 
-  return guildData ? (
+  return guildData && guildJourney ? (
     <>
       {/* banner */}
       <div className="guilddt-banner position-relative td-mt-75">
@@ -69,9 +68,11 @@ function GuildInfo(props) {
               {guildData.intro_title}
             </h1>
             <div className="guild-intro-title-review d-flex align-items-center">
-              <div className="score">{guildData.rating}</div>
+              <div className="score">{`${guildData.rating}` + '.0'}</div>
               <Rating rating={guildData.rating} />
-              <div className="review-num">{guildData.amountRating}</div>
+              <div className="review-num">
+                {'(' + `${guildData.amountRating}` + ')'}
+              </div>
             </div>
           </div>
           {/* <!-- web版介紹 --> */}
@@ -107,21 +108,28 @@ function GuildInfo(props) {
             <div className="guild-intro-item-group d-flex flex-column td-mb-25">
               <div className="guild-intro-item-dt">
                 <div className="guild-intro-tribe d-flex align-items-center">
-                  <div className="item-icon"></div>
+                  <div className="item-icon">
+                    <i className="fas fa-map-signs"></i>
+                  </div>
                   <div className="guild-intro-item-tribe">
                     <p className="item-tribe-title">帶團部落</p>
                     <p className="item-tribe-txt">{guildData.tribe}</p>
                   </div>
                 </div>
                 <div className="guild-intro-license d-flex align-items-center">
-                  <div className="item-icon"></div>
+                  <div className="item-icon">
+                    <i className="fas fa-id-badge"></i>
+                  </div>
                   <div className="guild-intro-item-license">
                     <p className="item-license-title">證照</p>
                     <p className="item-license-txt">華語導遊證照</p>
                   </div>
                 </div>
                 <div className="guild-intro-lan d-flex align-items-center">
-                  <div className="item-icon"></div>
+                  <div className="item-icon">
+                    {' '}
+                    <i class="fas fa-globe"></i>
+                  </div>
                   <div className="guild-intro-item-lan">
                     <p className="item-lan-title">語言</p>
                     <p className="item-lan-txt">{guildData.language}</p>

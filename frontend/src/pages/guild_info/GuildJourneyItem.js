@@ -80,10 +80,15 @@ function GuildJourneyItem(props) {
                 <img src={collect} alt="" />
               </a> */}
           </div>
-          <div className="guild-journey-review d-flex align-items-center">
-            <div className="guild-journey-review-title">評價：</div>
-            <div className="guild-journey-review-score">{card.rating}</div>
-            <Rating rating={card.rating} />
+        </div>
+        <div className="guild-journey-review d-flex align-items-center">
+          <div className="guild-journey-review-title">評價：</div>
+          <div className="guild-journey-review-score">
+            {`${card.rating}` + '.0'}
+          </div>
+          <Rating rating={card.rating} />
+          <div className="guild-journey-review-title">
+            {'(' + `${card.amountRating}` + ')'}
           </div>
         </div>
       </div>

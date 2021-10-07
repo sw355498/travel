@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Rating from '../../../component/Rating'
 
-function GuildItem({ guild }) {
+function GuildItem(props) {
+  const { guild } = props
   return (
     <>
       <div
@@ -25,7 +26,7 @@ function GuildItem({ guild }) {
             {/* 姓名 */}
             <div className="guild-info-name text-center">{guild.name}</div>
             {/* 語言 */}
-            <div className="guild-info-lan text-center">{guild.lan}</div>
+            <div className="guild-info-lan text-center">{guild.language}</div>
             {/* 星等 */}
             <div className="guild-info-stars mx-auto">
               <Rating
@@ -37,7 +38,7 @@ function GuildItem({ guild }) {
           {/* <!-- 導遊下方評價 --> */}
           <div className="guild-interview">
             <p className="interview-title text-center ">
-              <span>{guild.journey_name}</span>
+              <span></span>
             </p>
             <p className="interview-content text-center">{guild.intro}</p>
           </div>

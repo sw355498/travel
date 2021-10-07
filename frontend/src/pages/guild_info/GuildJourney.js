@@ -1,14 +1,22 @@
 // import { object } from 'prop-types'
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import GuildJourneyItem from './GuildJourneyItem'
 
-function GuildJourney(props) {
+const GuildJourney = (props) => {
   const { guildJourney } = props
-
   const { guildData } = props
-  const [tribeForJourney] = useState(props.guildData)
+  const [tribeForJourney, setTribeForJourney] = useState(props.guildData)
+  const [guildJourneyItem, setGuildJourneyItem] = useState(props.guildJourney)
 
-  const [guildJourneyItem] = useState(props.guildJourney)
+  useEffect(() => {
+    setTribeForJourney(props.guildData)
+    setGuildJourneyItem(props.guildJourney)
+  }, [props.guildData, props.guildJourney])
+
+  // console.log('4', tribeForJourney)
+  // console.log('5', guildJourneyItem)
+
+  // console.log('6', setTribeForJourney)
 
   const guildJourneySelect = useMemo(
     () =>
