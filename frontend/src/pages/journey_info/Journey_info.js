@@ -30,7 +30,6 @@ function Journey_info(props) {
   useEffect(() => {
     fetchMapApi()
   }, [fetchMapApi])
-  console.log(MapApi)
   //轉換成貨幣形式
   const digitsRE = /(\d{3})(?=\d)/g
 
@@ -164,7 +163,6 @@ function Journey_info(props) {
           {' '}
           <Rating rating={findResult.rating}></Rating>
         </div>
-
         <div className="journey-info-smalltitle">
           <p>一&nbsp;行程資訊&nbsp;一</p>
         </div>
@@ -178,7 +176,6 @@ function Journey_info(props) {
             </div>
           </div>
         </div>
-
         <div className="d-flex flex-row bd-highlight td-mt-25 justify-content-center justify-content-md-start text-md-left text-center">
           <div className="p-2 bd-highlight text-center my-auto">
             {' '}
@@ -220,18 +217,15 @@ function Journey_info(props) {
         <div className="journey-info-smalltitle td-mt-25">
           <p dangerouslySetInnerHTML={{ __html: findResult.introname }}></p>
         </div>
-
         <div className="journey-info-name mt-40">
           <p>行程說明</p>
         </div>
-
         <div className="journey-info-smalltitle td-mt-25">
           <p>一&nbsp;行程資訊&nbsp;一</p>
         </div>
         <div className="journey-info-smalltitle td-mt-25">
           <p dangerouslySetInnerHTML={{ __html: findResult.content }}></p>
         </div>
-
         <div className="journey-info-name td-mt-75 ">
           <p>行程照片</p>
         </div>
@@ -252,12 +246,11 @@ function Journey_info(props) {
         <div className="journey-info-name mt-40 td-mb-25">
           <p>體驗地點</p>
         </div>
-
-        <GoogleMapApi
-          findResult={findResult}
-          MapApi={MapApi}
-          className="map-style"
-        />
+        {MapApi ? (
+          <GoogleMapApi findResult={findResult} MapApi={MapApi} />
+        ) : (
+          <div>Loading</div>
+        )}
       </div>
 
       <JourneyReservationArea findResult={findResult} />

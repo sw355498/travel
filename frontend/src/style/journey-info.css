@@ -335,8 +335,27 @@ button:hover {
 }
 
 .goole-map-style {
-  width: 100%;
+  margin:15px auto 15px auto;
+  width: 97%;
+  height: 95%;
   max-width: 729px;
   max-height: 400px;
   height: auto;
+}
+
+.gm-style .gm-style-iw-t::after {
+  display: none;
+}
+
+.map-border {
+  border: 1px solid #eee;
+  width: 100%;
+  max-width: 729px;
+  height: auto;
+  border-radius: 5px;
+
+}
+.map-board{
+  border: 1px solid #eee;
+  border-radius: 5px;
 }
