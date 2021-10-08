@@ -84,9 +84,11 @@
 .filter-result-item-main,
 .guildlist-new-main {
   width: 267px;
-  height: 400px;
+  /* height: 400px; */
 }
-
+.guildlist-new-main {
+  margin-top: 45px;
+}
 /* 快速篩選 */
 .guildlist-filter [type='checkbox'] {
   width: unset;
@@ -169,10 +171,12 @@
   line-height: 30px;
 }
 /* 星等 */
+
 .filter-stars-check div {
   max-width: 175px;
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
 
 /* 語言篩選 */
@@ -242,7 +246,7 @@
   margin-bottom: 0px;
 }
 .guild-tribe {
-  top: 15px;
+  top: 10px;
   right: 15px;
   color: var(--tribe-color);
   font-size: 16px;
@@ -250,7 +254,7 @@
 }
 
 .guild-info {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   width: 100%;
 }
 .guild-info-avatar {
@@ -265,9 +269,9 @@
   font-size: 18px;
   line-height: 27px;
 }
-/* .guild-info-stars {
-  width: 156px;
-} */
+.guild-info-stars {
+  margin-top: 5px;
+}
 .guild-info-stars span {
   display: block;
 }
@@ -282,14 +286,14 @@
 }
 .interview-content {
   width: 100%;
-  height: 48px;
+  height: 70px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   margin: 0;
   display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 

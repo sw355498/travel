@@ -7,7 +7,6 @@ function InputTextField({
   state,
   setState,
   error,
-  password,
   required,
   minLength,
   maxLength,
@@ -15,20 +14,19 @@ function InputTextField({
 }) {
   // email, password...etc
   const fieldType = type ? type : 'text'
-
+  console.log('error', error)
   return (
     <>
       <div className="form-group">
         <label htmlFor={name}>{label}</label>
         <input
-          className="form-control"
           id={name}
           name={name}
           type={fieldType}
-          //   className={`form-control ${error !== '' ? 'is-invalid' : ''}`}
+          className={`form-control ${error !== '' ? 'is-invalid' : ''}`}
           value={state}
           onChange={setState}
-          //   required={required}
+          required={required}
           minLength={minLength}
           maxLength={maxLength}
           pattern={pattern}

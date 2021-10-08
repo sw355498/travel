@@ -137,11 +137,9 @@ function PayData(props) {
         props.history.push('/Login')
       }
       errorHandleShow()
-      // if (!e.response.data.message == '尚未登入會員') {
-      //   errorHandleShow()
-      // }
     }
   }
+  console.log('1', props.fieldErrors)
 
   //成功付款彈跳視窗
   const messageModal = (

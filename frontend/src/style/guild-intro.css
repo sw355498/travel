@@ -124,7 +124,8 @@
 .item-icon {
   width: 32px;
   height: 32px;
-  background: #000;
+  font-size: 30px;
+  /* background: #000; */
   margin-right: 30px;
 }
 .item-tribe-title,
@@ -214,6 +215,7 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 26px;
+  margin-right: 130px;
 }
 .line {
   border: 1px solid #000;
@@ -245,11 +247,13 @@
   align-items: center;
 }
 .act-btn {
-  margin-top: 30px;
+  margin-top: 150px;
 }
 /* 體驗行程評分 */
 .guild-journey-review {
-  margin-top: 30px;
+  position: absolute;
+
+  margin-top: 0px;
 }
 .guild-journey-review-title {
   font-weight: normal;
@@ -381,6 +385,11 @@
   .guild-intro-license,
   .guild-intro-lan {
     margin-bottom: 25px;
+  }
+  .guild-intro-tribe,
+  .guild-intro-license,
+  .guild-intro-lan {
+    margin-left: 20px;
   }
 
   .guild-intro-box {

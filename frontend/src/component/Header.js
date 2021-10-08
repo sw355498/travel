@@ -19,7 +19,7 @@ function Header(porps) {
   const { member, setMember } = useAuth()
 
   const handleLogout = async () => {
-    await axios.get(`${API_URL}/auth/logout`, {
+    await axios.get(`${API_URL}/logout`, {
       withCredentials: true,
     })
     setMember(null)
@@ -80,7 +80,7 @@ function Header(porps) {
                   </Link>
                   <Link
                     to="/"
-                    className="btn td-btn-medium-b td-header-register text-center"
+                    className="btn web-logout td-btn-medium-b td-header-logout text-center"
                     onClick={handleLogout}
                   >
                     登出
@@ -91,13 +91,13 @@ function Header(porps) {
               <>
                 <div className="td-nav-before d-flex align-items-center">
                   <Link
-                    to="/Login"
+                    to="/login"
                     className="btn td-btn-medium-o td-header-login text-center"
                   >
                     登入
                   </Link>
                   <Link
-                    to="/Register"
+                    to="/register"
                     className="btn td-btn-medium-b td-header-register text-center"
                   >
                     註冊
@@ -119,6 +119,14 @@ function Header(porps) {
               </label>
               {/* 漢堡選單 */}
               <ul className="td-burger-list d-flex flex-column position-absolute text-center justify-content-around">
+                {/* <Link
+                  to="/"
+                  className="btn rwd-logout td-btn-medium-b td-header-logout text-center"
+                  onClick={handleLogout}
+                >
+                  登出
+                </Link> */}
+
                 <Link to="/home">
                   <i className="fas fa-home"></i>回到首頁
                 </Link>

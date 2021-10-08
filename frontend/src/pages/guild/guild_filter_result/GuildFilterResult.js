@@ -1,34 +1,31 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import GuildFilterBar from '../guild_filter_bar/GuildFilterBar'
-import GuildList from '../guild_list/GuildList'
+import GuildList from '../guild_list/guildList'
 import axios from 'axios'
-// import GuildData from '../../../data/guildData'
-// import API from '../../../api/index'
+import qs from 'qs'
+import GuildListPage from '../guildListPage'
+import { API_URL } from '../../../config'
 
-function GuildFilterResult({ tribes, langs }) {
-  // const [guilds, setGuilds] = useState(GuildData)
+function GuildFilterResult({ tribes, pageNum }) {
   const [displayGuilds, setDisplayGuilds] = useState(null)
 
-  // const fetchAndUpdateGuilds = useCallback(async () => {
-  //   API.fetchGuilds().then(setDisplayGuilds)
-  // }, [])
+  //分頁屬性
+  const [totalPage, setTotalPage] = useState(14)
+  const [currentPage, setCurrentPage] = useState(pageNum || 1)
+  const [perPage, setPerpage] = useState(3)
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
-  // useEffect(() => {
-  //   fetchAndUpdateGuilds()
-  // }, [fetchAndUpdateGuilds])
   useEffect(() => {
     const getGuilds = async () => {
-      let res = await axios.get('http://localhost:3001/Guild')
-      // return res.data
+      let res = await axios.get(`http://localhost:3001/Guild`)
       let data = res.data
       setDisplayGuilds(data)
+      console.log('data', data)
     }
     getGuilds()
   }, [])
-
-  // const [error, setError] = useState(null)
   const [tags, setTags] = useState(tribes ? tribes : ['靜浦部落'])
-  const [lans, setLans] = useState(langs ? langs : ['中文'])
+  const [lans, setLans] = useState(['中文'])
   const [stars, setStars] = useState(['5'])
   const tagTypes = [
     '靜浦部落',
@@ -42,7 +39,7 @@ function GuildFilterResult({ tribes, langs }) {
   const lanTypes = ['中文', '英文']
   const starsTypes = ['5', '4', '3', '2', '1']
 
-  //先註解
+  //spinner
   const spinner = (
     <>
       <div className="d-flex justify-content-center">
@@ -53,28 +50,71 @@ function GuildFilterResult({ tribes, langs }) {
     </>
   )
 
+  const indexOfLastPost = currentPage * perPage
+  const indexOfFirstPost = indexOfLastPost - perPage
+
+  //嚴格選擇
+  // const filteredPosts = useMemo(() =>
+  //   displayGuilds
+  //     ?.filter((guild) => guild.tribe.includes(tags))
+  //     ?.filter((guild) => guild.rating.includes(stars))
+  //     ?.filter((guild) => guild.language.includes(lans))
+  // )
+
+  const filteredPosts = useMemo(() =>
+    displayGuilds
+      ?.filter((guild) => tags.some((tag) => guild.tribe.includes(tag)))
+      ?.filter((guild) => stars.some((star) => guild.rating.includes(star)))
+      ?.filter((guild) => lans.some((lan) => guild.language.includes(lan)))
+  )
+
+  console.log(displayGuilds)
+  console.log('!', filteredPosts)
+
+  const slicedPosts = useMemo(
+    () => filteredPosts?.slice(indexOfFirstPost, indexOfLastPost),
+    [filteredPosts, indexOfFirstPost, indexOfLastPost]
+  )
+
   return (
     <>
-      <GuildFilterBar
-        tagTypes={tagTypes}
-        tags={tags}
-        setTags={setTags}
-        lanTypes={lanTypes}
-        lans={lans}
-        setLans={setLans}
-        stars={stars}
-        setStars={setStars}
-        starsTypes={starsTypes}
-      />
       {displayGuilds ? (
-        <div className="container td-mt-75 filter-resultcontainer ">
-          <GuildList
+        <>
+          <GuildFilterBar
+            tagTypes={tagTypes}
             tags={tags}
+            setTags={setTags}
+            lanTypes={lanTypes}
             lans={lans}
+            setLans={setLans}
             stars={stars}
-            guilds={displayGuilds}
+            setStars={setStars}
+            starsTypes={starsTypes}
+            totalPosts={totalPage}
+            setTotalPage={setTotalPage}
+            setPerpage={setPerpage}
+            slicedPosts={slicedPosts}
           />
-        </div>
+
+          <div className="container td-mt-75 filter-resultcontainer ">
+            <GuildList
+              tags={tags}
+              lans={lans}
+              stars={stars}
+              guilds={slicedPosts}
+              // handleClick={getGuilds()}
+            />
+          </div>
+
+          <GuildListPage
+            perPage={perPage}
+            totalPosts={filteredPosts.length}
+            currentPage={currentPage}
+            tribes={tags}
+            paginate={paginate}
+            setCurrentPage={setCurrentPage}
+          />
+        </>
       ) : (
         <div>{spinner}</div>
       )}

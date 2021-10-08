@@ -47,7 +47,9 @@ function Oder() {
   useEffect(() => {
     const getOrderData = async () => {
       try {
-        let res = await axios.get(`${API_URL}/order_form?page=${page}`)
+        let res = await axios.get(`${API_URL}/order_form?page=${page}`, {
+          withCredentials: true,
+        })
 
         let data = res.data.result
         setData(data)

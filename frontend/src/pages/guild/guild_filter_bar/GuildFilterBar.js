@@ -15,8 +15,33 @@ function GuildFilterBar(props) {
     stars,
     setStars,
     starsTypes,
+    setTotalPage,
+    setPerpage,
+    slicedPosts,
   } = props
 
+  console.log(`###### tags: ${tags}`)
+  console.log(`###### tagTypes: ${tagTypes}`)
+
+  //篩選後顯示頁面長度
+
+  // const newArray = new Array(
+  //   slicedPosts
+  //     .filter((guild) => guild.language.includes(lans))
+  //     .filter((guild) => guild.tribe.includes(tags))
+  //     .filter((guild) => guild.rating.includes(stars))
+
+  //     .map((guild, i) => {})
+  // )
+
+  const newArray = new Array(
+    slicedPosts
+      .filter((guild) => tags.some((tag) => guild.tribe.includes(tag)))
+      .filter((guild) => stars.some((star) => guild.rating.includes(star)))
+      .filter((guild) => lans.some((lan) => guild.language.includes(lan)))
+  )
+
+  //部落
   const tagCheckHandler = (e) => {
     const value = e.target.value
     if (!tags.includes(value)) {
@@ -26,6 +51,7 @@ function GuildFilterBar(props) {
       setTags(newTags)
     }
   }
+  //語言
   const LanCheckHandler = (e) => {
     const value = e.target.value
     if (!lans.includes(value)) {
@@ -35,6 +61,7 @@ function GuildFilterBar(props) {
       setLans(newLans)
     }
   }
+  //星等
   const starCheckHandler = (e) => {
     const value = e.target.value
     if (!stars.includes(value)) {
@@ -44,7 +71,11 @@ function GuildFilterBar(props) {
       setStars(newStars)
     }
   }
-
+  //改變perpage
+  const handlePerPage = (e) => {
+    setTotalPage(newArray[0].length)
+    setPerpage(3)
+  }
   return (
     <section className="container guildlist-filter td-mb-75">
       {/* <!-- WEB版篩選 --> */}
@@ -63,6 +94,7 @@ function GuildFilterBar(props) {
                 value={value}
                 checked={tags?.includes(value)}
                 handleChecked={tagCheckHandler}
+                pageClick={handlePerPage}
               >
                 {value}
               </TribeCheckboxGuild>
@@ -82,6 +114,7 @@ function GuildFilterBar(props) {
                 value={value}
                 checked={lans?.includes(value)}
                 handleChecked={LanCheckHandler}
+                pageClick={handlePerPage}
               >
                 {value}
               </LanCheckboxGuild>
@@ -101,6 +134,7 @@ function GuildFilterBar(props) {
                 value={value}
                 checked={stars?.includes(value)}
                 handleChecked={starCheckHandler}
+                pageClick={handlePerPage}
               >
                 <Rating rating={value} />
               </StarCheckboxGuild>
@@ -139,6 +173,7 @@ function GuildFilterBar(props) {
                     value={value}
                     checked={tags?.includes(value)}
                     handleChecked={tagCheckHandler}
+                    pageClick={handlePerPage}
                   >
                     {value}
                   </TribeCheckboxGuild>
@@ -152,6 +187,7 @@ function GuildFilterBar(props) {
                     value={value}
                     checked={lans?.includes(value)}
                     handleChecked={LanCheckHandler}
+                    pageClick={handlePerPage}
                   >
                     {value}
                   </LanCheckboxGuild>
@@ -166,6 +202,7 @@ function GuildFilterBar(props) {
                     value={value}
                     checked={stars?.includes(value)}
                     handleChecked={starCheckHandler}
+                    pageClick={handlePerPage}
                   >
                     <Rating rating={value} />
                   </StarCheckboxGuild>

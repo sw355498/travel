@@ -1,9 +1,26 @@
-import React from 'react'
-import guildListBanner1 from '../../data/奇美部落/大圖/奇美部落大圖1.png'
-import guildListBanner2 from '../../data/奇美部落/大圖/奇美部落大圖2.png'
-import guildListBanner3 from '../../data/奇美部落/大圖/奇美部落大圖3.png'
+import React, { useEffect, useState } from 'react'
+// import guildListBanner1 from '/images/data/導遊banner/太巴塱導遊banner.jpg'
+// import guildListBanner2 from '/images/data/導遊banner/奇美導遊banner.png'
+// import guildListBanner3 from '/images/data/導遊banner/撒固兒導遊banner.jpg'
+// import guildListBanner4 from '/images/data/導遊banner/水璉導遊banner.png'
+// import guildListBanner5 from '/images/data/導遊banner/水璉導遊banner3.png'
+
+import axios from 'axios'
 
 function GuildListBanner() {
+  // const [banner, setBanner] = useState(null)
+
+  // useEffect(() => {
+  //   const getNewGuilds = async () => {
+  //     let res = await axios.get(`http://localhost:3001/Guild`, {
+  //       withCredentials: true,
+  //     })
+  //     let data = res.data
+  //     setBanner(data)
+  //   }
+  //   getNewGuilds()
+  // }, [])
+
   return (
     <div
       id="carouselExampleIndicators"
@@ -34,25 +51,46 @@ function GuildListBanner() {
           aria-label="Slide 3"
           className="dot-button"
         ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+          className="dot-button"
+        ></button>
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img
-            src={guildListBanner1}
+            src="/images/data/導遊banner/新社導遊banner.jpg"
             className="d-block w-100 img-fluid "
             alt="banner大圖"
           />
         </div>
         <div className="carousel-item">
           <img
-            src={guildListBanner2}
+            src="/images/data/導遊banner/太巴塱導遊banner.jpg"
             className="d-block w-100 img-fluid"
             alt="banner大圖"
           />
         </div>
         <div className="carousel-item">
           <img
-            src={guildListBanner3}
+            src="/images/data/導遊banner/撒固兒導遊banner.jpg"
+            className="d-block w-100 img-fluid"
+            alt="banner大圖"
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            src="/images/data/導遊banner/水璉導遊banner.png"
+            className="d-block w-100 img-fluid"
+            alt="banner大圖"
+          />
+        </div>
+        <div className="carousel-item">
+          <img
+            src="/images/data/導遊banner/水璉導遊banner.png"
             className="d-block w-100 img-fluid"
             alt="banner大圖"
           />

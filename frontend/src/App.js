@@ -16,7 +16,7 @@ import Login from './pages/sign-in-up/Login'
 import { AuthContext } from './context/auth'
 import { API_URL } from './config'
 import axios from 'axios'
-import Member from '../src/pages/member/Member'
+import Member from './pages/member/Member'
 
 import './style/header.css'
 import './style/footer.css'
@@ -50,7 +50,10 @@ function App() {
             <Route path="/journey" component={Journey} exact />
             <Route path="/journey_info/:id" component={journeyInfo} />
             <Route path="/Guild" component={Guild} />
-            <Route path="/GuildInfo/:guildId" component={GuildInfo} />
+            <Route path="/GuildInfo/:id" component={GuildInfo} />
+            <Route path="/Guild/:currentPage?">
+              <Guild />
+            </Route>
             <Route path="/Shoppingcart" component={Shoppingcart}>
               <Shoppingcart member={member} />
             </Route>
@@ -58,8 +61,8 @@ function App() {
               <Pay member={member} />
             </Route>
             <Route path="/order_form/:oderPage?" component={Oder} />
-            <Route path="/Register" component={Register} />
-            <Route path="/Login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route path="/member" component={Member} />
             {/* <Route path="/member" component={member} /> */}
             <Redirect to="/" />
