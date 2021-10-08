@@ -20,6 +20,8 @@ app.use(
 );
 
 
+
+
 // 啟用 session 機制
 const expressSession = require("express-session");
 // 引入 file store
@@ -52,7 +54,7 @@ const {body,validationResult} = require ('express-validator');
 const registerRule = [
     body("email").isEmail().withMessage("請填寫正確格式的Email"),
     body("password").isLength({min:6, max:12}).withMessage("輸入6-12位密碼"),
-    body("checkPassword")
+    body("confirmPassword")
     .custom((value, {req})=>{
         return value === req.body.password;
     })
@@ -74,7 +76,6 @@ app.post("/register",registerRule,async (req,res,next) => {
         .json({field:error[0].param,message:error[0].msg})
     }
 
-    //檢查帳號是否重複
     let member = await connection.queryAsync("SELECT * FROM member WHERE email = ?; ",[req.body.email]);
     if(member.length > 0 ){
        return next({
@@ -94,6 +95,9 @@ app.post("/register",registerRule,async (req,res,next) => {
     );
     res.json({});
 })
+
+
+
 
 //登入
 app.post("/login", async (req, res, next) => {

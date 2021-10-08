@@ -12,8 +12,8 @@ import '../../style/sign-in-up.css'
 
 const Login = (props) => {
   const { member, setMember } = useAuth()
-  const [email, setEmail] = useState('test@gmail.com')
-  const [password, setPassword] = useState('12345')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [feedback, setFeedBack] = useState(null)
   const showFeedBack = () => {
     return feedback != null

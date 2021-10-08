@@ -542,6 +542,6 @@ a:hover {
   .list,
   .list1,
   .nav-member-avatar {
-    display: none;
+    /* display: none; */
   }
 }

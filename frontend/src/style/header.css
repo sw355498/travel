@@ -286,11 +286,10 @@ header {
     margin-left: 0px;
   }
   .td-nav .td-right-nav {
-    display: block;
-    width: 105px;
+    /* display: block;
+    width: 105px; */
     height: 35px;
-    margin-right: 10px;
-    z-index: 600;
+    /* margin-right: 10px; */
   }
   .td-right-nav .fa-comment-dots {
     font-size: 30px;
