@@ -1,6 +1,6 @@
 import React from 'react'
 import ScrollToTop from 'react-scroll-to-top'
-import JourneyBanner from './banner/journeyBanner'
+import JourneyBanner from './banner/JourneyBanner'
 import JourneyFilterResult from './filter_result/journeyFillterResult'
 import '../../style/journey.css'
 import { useLocation } from 'react-router-dom'
@@ -12,11 +12,11 @@ function useQuery() {
 
 function Journey() {
   const query = useQuery()
-  const { tribes } = query
+  const { tribes, pageNum } = query
   return (
     <>
       <JourneyBanner />
-      <JourneyFilterResult tribes={tribes} />
+      <JourneyFilterResult tribes={tribes} pageNum={parseInt(pageNum)} />
       <ScrollToTop smooth />
     </>
   )

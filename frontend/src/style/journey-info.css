@@ -28,12 +28,12 @@ button:hover {
 }
 
 .react-calendar {
-    width: 1500px;
-    max-width: 100%;
-    background: white;
-    border: 1px solid #a0a096;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.125em;
+  width: 1500px;
+  max-width: 100%;
+  background: white;
+  border: 1px solid #a0a096;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
 }
 .journey-info-name {
   font-weight: bold;
@@ -330,6 +330,34 @@ button:hover {
 }
 
 .journey-info .fa-map-marker-alt {
-    font-size: 20px;
-    color: rgba(245, 8, 8, 1);
+  font-size: 20px;
+  color: rgba(245, 8, 8, 1);
+}
+
+.goole-map-style {
+  margin: 15px auto 15px auto;
+  width: 97%;
+  height: 95%;
+  max-width: 729px;
+  max-height: 400px;
+  height: auto;
+}
+
+.gm-style .gm-style-iw-t::after {
+  display: none;
+}
+
+.map-border {
+  border: 1px solid #eee;
+  width: 100%;
+  max-width: 729px;
+  height: auto;
+  border-radius: 5px;
+}
+.map-board {
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+.map-border .title {
+  font-size: 18px;
 }

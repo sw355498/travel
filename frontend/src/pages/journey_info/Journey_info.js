@@ -5,12 +5,14 @@ import Rating from '../../component/Rating'
 import Like from './Like'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
 import JourneyCoustomerReview from './coustomer_review/journeyCoustomerReview'
+import GoogleMapApi from './GoogleMapApi'
 import '../../style/journey-info.css'
 
 import API from '../../api'
 
 function Journey_info(props) {
   const [findResult, setFindResult] = useState(null)
+  const [MapApi, setMapApi] = useState(null)
   const id = props.match.params.id
 
   const fetchAndUpdateJourneysLike = useCallback(async () => {
@@ -21,6 +23,13 @@ function Journey_info(props) {
     fetchAndUpdateJourneysLike()
   }, [fetchAndUpdateJourneysLike])
 
+  const fetchMapApi = useCallback(async () => {
+    API.fetchMapApiKey().then(setMapApi)
+  }, [])
+
+  useEffect(() => {
+    fetchMapApi()
+  }, [fetchMapApi])
   //轉換成貨幣形式
   const digitsRE = /(\d{3})(?=\d)/g
 
@@ -39,7 +48,6 @@ function Journey_info(props) {
       sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
     )
   }
-
   return findResult ? (
     <>
       <section>
@@ -155,7 +163,6 @@ function Journey_info(props) {
           {' '}
           <Rating rating={findResult.rating}></Rating>
         </div>
-
         <div className="journey-info-smalltitle">
           <p>一&nbsp;行程資訊&nbsp;一</p>
         </div>
@@ -169,7 +176,6 @@ function Journey_info(props) {
             </div>
           </div>
         </div>
-
         <div className="d-flex flex-row bd-highlight td-mt-25 justify-content-center justify-content-md-start text-md-left text-center">
           <div className="p-2 bd-highlight text-center my-auto">
             {' '}
@@ -211,18 +217,15 @@ function Journey_info(props) {
         <div className="journey-info-smalltitle td-mt-25">
           <p dangerouslySetInnerHTML={{ __html: findResult.introname }}></p>
         </div>
-
         <div className="journey-info-name mt-40">
-          <p>商品說明</p>
+          <p>行程說明</p>
         </div>
-
         <div className="journey-info-smalltitle td-mt-25">
           <p>一&nbsp;行程資訊&nbsp;一</p>
         </div>
         <div className="journey-info-smalltitle td-mt-25">
           <p dangerouslySetInnerHTML={{ __html: findResult.content }}></p>
         </div>
-
         <div className="journey-info-name td-mt-75 ">
           <p>行程照片</p>
         </div>
@@ -233,14 +236,23 @@ function Journey_info(props) {
             alt=""
           />
         </div>
-        <div className=" mt-10 journey-info-pic">
+        <div className=" mt-10 journey-info-pic td-mb-25">
           <img
             src={`/images/data/行程照片/${findResult.journey_img2}`}
             className="journey-info-pic"
             alt=""
           />
         </div>
+        <div className="journey-info-name mt-40 td-mb-25">
+          <p>體驗地點</p>
+        </div>
+        {MapApi ? (
+          <GoogleMapApi findResult={findResult} MapApi={MapApi} />
+        ) : (
+          <div>Loading</div>
+        )}
       </div>
+
       <JourneyReservationArea findResult={findResult} />
 
       <div className="container td-mt-75 journey-watchoutnote">

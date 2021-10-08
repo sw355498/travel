@@ -307,24 +307,13 @@ app.get("/order_form/:memberId", async(req, res, next) => {
 
 const APIrouter = express.Router();
 
+APIrouter.get('/journeyinfo/MapApiKey', async (req, res, next) => {
+    const MAP_API_Key = process.env.MAP_API_Key
+    res.json(MAP_API_Key)
+})
+
 APIrouter.get('/journeys', async (req, res, next) => {
-// let page = req.query.page || 1 //目前在第幾頁
-// const perPage = 3 //每一頁資料
-//  let count = await connection.queryAsync('SELECT COUNT(*) As total FROM journey')
-//  const total = count[0].total 
-//  const lastPage = Math.ceil(total / perPage)
-//  console.log(total, lastPage)
-//  let offset = (page-1) * perPage
- 
 let result = await connection.queryAsync('SELECT * FROM journey ')
-
-
-// let pagination = {
-//     total, //總共14筆資料
-//     perPage, //一頁有幾頁
-//     lastPage, //總共有幾頁
-//     page , //目前在第幾頁
-// }
 res.json(result)
 })
 
