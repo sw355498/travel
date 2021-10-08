@@ -31,26 +31,30 @@ function Home() {
       <section className="banner">
         <div className="container ">
           <div className="row  d-flex align-items-center">
-            <div className="col-md-5 ">
-              <div className="banner-content d-flex flex-column">
-                <Zoom>
-                  <img
-                    src="/images/img/花島（黑）.png"
-                    alt=""
-                    className="whitebird img-fluid "
-                  />
-                  <h2 className="first-h2 text-center">感受生活</h2>
-                  <h2 className="first-h2 text-center">
-                    帶領你認識花蓮深入部落
-                  </h2>
-                  {(tribes, lang) ? (
-                    <HomeDropdownFilter tribes={tribes} langs={lang} />
-                  ) : (
-                    <div>loading....</div>
-                  )}
-                </Zoom>
+            {lang ? (
+              <div className="col-md-5 ">
+                <div className="banner-content d-flex flex-column">
+                  <Zoom>
+                    <img
+                      src="/images/img/花島（黑）.png"
+                      alt=""
+                      className="whitebird img-fluid "
+                    />
+                    <h2 className="first-h2 text-center">感受生活</h2>
+                    <h2 className="first-h2 text-center">
+                      帶領你認識花蓮深入部落
+                    </h2>
+                    {tribes ? (
+                      <HomeDropdownFilter tribes={tribes} langs={lang} />
+                    ) : (
+                      <div>loading....</div>
+                    )}
+                  </Zoom>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div>loading....</div>
+            )}
           </div>
         </div>
       </section>
