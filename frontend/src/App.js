@@ -51,11 +51,12 @@ function App() {
             <Route path="/journey_info/:id" component={journeyInfo} />
             <Route path="/Guild" component={Guild} />
             <Route path="/GuildInfo/:guildId" component={GuildInfo} />
-            <Route path="/Shoppingcart" component={Shoppingcart} />
-            <Route path="/Pay" component={Pay}>
-              <Pay member={member}/>
+            <Route path="/Shoppingcart" component={Shoppingcart}>
+              <Shoppingcart member={member} />
             </Route>
-            {/* <Route path="/Pay" component={Pay} /> */}
+            <Route path="/Pay" component={Pay}>
+              <Pay member={member} />
+            </Route>
             <Route path="/order_form/:oderPage?" component={Oder} />
             <Route path="/Register" component={Register} />
             <Route path="/Login" component={Login} />
