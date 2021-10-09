@@ -6,7 +6,6 @@ function GuideCard(props) {
   const { dateState, updateCartToLocalStorage } = props
   const [TribeForGuide] = useState(props.findResult)
   const [JourneyGuideInfo] = useState(props.JourneyGuideInfo)
-  console.log(JourneyGuideInfo)
 
   const JourneyGuideSelected = useMemo(
     () =>
@@ -15,8 +14,6 @@ function GuideCard(props) {
       ).slice(0, 3),
     [JourneyGuideInfo, TribeForGuide.tribe]
   )
-
-  console.log(TribeForGuide.tribe)
 
   const [GuidesIdxSelected, setGuidesIdxSelected] = useState(0)
   //設定counter狀態

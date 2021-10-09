@@ -419,7 +419,7 @@ APIrouter.get('/journeyinfo/guides',async(req,res,next)=>{
   res.json(result)
 })
 
-APIrouter.put("/journeys/:id/like", async (req, res, next) => {
+APIrouter.put("/journeys/:id/like",loginCheckMiddleware, async (req, res, next) => {
   const {id} = req.params
   const result = await connection.queryAsync('SELECT status FROM journey WHERE _id=?', [id])
   const status = result[0].status
