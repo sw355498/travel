@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2021 年 10 月 08 日 18:08
+-- 產生時間： 2021 年 10 月 09 日 19:36
 -- 伺服器版本： 10.4.19-MariaDB
 -- PHP 版本： 8.0.7
 
@@ -207,15 +207,16 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `member_id`, `guild_id`, `guide_review`, `guide_review_star`, `guide_review_number`, `guide_review_image`, `member_ avatar`, `member_name`, `member_evaluation`, `member_star`, `member_collect`, `journey_review_content`, `journey_review_point`, `sur_name`, `phone`, `nation`, `birthday`, `email`, `password`, `sex`, `order_time`, `order_status`, `order_id`, `pay_status`, `total_price`, `journey_id`, `total_people`, `journey_name`, `journey_information`, `info`, `member_order_review`) VALUES
-(47, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1234@test.com', '$2b$10$1A3NexNI/dLRHYsi9gnbJOOS5J591AudHiOtjvTH3gYtJSSCLRDwC', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(47, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1234@test.com', '$2b$10$1A3NexNI/dLRHYsi9gnbJOOS5J591AudHiOtjvTH3gYtJSSCLRDwC', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test@gmail.com', '$2b$10$rqMZJ/h49KWDNmZ/Yx.lYejsUZFHAlgxYgUwkORCFaUeLSCrQH4n2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `order_detail`
+-- 資料表結構 `order_deta`
 --
 
-CREATE TABLE `order_detail` (
+CREATE TABLE `order_deta` (
   `id` int(6) UNSIGNED NOT NULL,
   `guide` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `journey_id` int(6) UNSIGNED NOT NULL,
@@ -226,25 +227,6 @@ CREATE TABLE `order_detail` (
   `price` int(6) UNSIGNED NOT NULL,
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- 傾印資料表的資料 `order_detail`
---
-
-INSERT INTO `order_detail` (`id`, `guide`, `journey_id`, `name`, `img`, `go_time`, `amount`, `price`, `order_number`) VALUES
-(1, '雅馨', 1, '九日漁獵生活', '靜浦-竹筏漫遊.jpg', '2021-09-25', 1, 5000, '84483420211004'),
-(2, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-08', 1, 1000, '84483420211004'),
-(3, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '75350220211007'),
-(4, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '75350220211007'),
-(5, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '17967320211007'),
-(6, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '17967320211007'),
-(7, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '46747120211007'),
-(8, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '46747120211007'),
-(9, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '24427520211007'),
-(10, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '24427520211007'),
-(11, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '74270020211007'),
-(12, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '74270020211007'),
-(13, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '75817620211007');
 
 -- --------------------------------------------------------
 
@@ -262,19 +244,12 @@ CREATE TABLE `order_form` (
   `address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `card_number` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_cost` int(11) UNSIGNED NOT NULL,
   `bill_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `order_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `order_time` date NOT NULL DEFAULT current_timestamp(),
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- 傾印資料表的資料 `order_form`
---
-
-INSERT INTO `order_form` (`id`, `member_email`, `sur_name`, `first_name`, `phone`, `nation`, `address`, `email`, `card_number`, `bill_status`, `order_status`, `order_time`, `order_number`) VALUES
-(1, 'test@gmail.com', '1', '123', '09222222', '台灣', '西屯路二段２８２巷１３號', 'yaya14chen@gmail.com', '1233444433332222', '電子發票', '已付款', '2021-10-04', '84483420211004'),
-(2, 'test@gmail.com', '1', '123', '09222223', '台灣', '西屯路二段２８２巷１３號', 'tom@test.com', '1233444433332222', '電子發票', '已付款', '2021-10-06', '75817620211007');
 
 -- --------------------------------------------------------
 
@@ -335,9 +310,9 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `order_detail`
+-- 資料表索引 `order_deta`
 --
-ALTER TABLE `order_detail`
+ALTER TABLE `order_deta`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -384,19 +359,19 @@ ALTER TABLE `lang`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `order_detail`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `order_deta`
 --
-ALTER TABLE `order_detail`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `order_deta`
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_form`
 --
 ALTER TABLE `order_form`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `tribes`
