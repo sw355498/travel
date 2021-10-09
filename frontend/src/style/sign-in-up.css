@@ -6,7 +6,7 @@ a {
   text-decoration: none;
 }
 .tab-content {
-  max-width: 530px;
+  max-width: 500px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -101,4 +101,14 @@ label {
 .free {
   color: var(--blue-color);
   font-size: 16px;
+}
+.alert {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 350px;
+  height: 40px;
+  transition: linear;
+  /* transition: ease-in-out 0.2s; */
 }

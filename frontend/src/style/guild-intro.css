@@ -144,8 +144,8 @@
   line-height: 24px;
 }
 .guild-intro-video {
-  width: 505px;
-  height: 296px;
+  max-width: 505px;
+  max-height: 296px;
 }
 
 .guild-intro-video iframe {
@@ -192,9 +192,11 @@
   position: absolute;
 }
 .guild-journey-content {
+  width: 100%;
   margin-top: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
+  /* margin-left: 30px;
+  margin-right: 30px; */
+  padding: 0 30px 30px 30px;
 }
 /* 所屬部落 */
 .guild-journey-tribe {
@@ -227,33 +229,50 @@
   font-weight: 500;
   font-size: 22px;
   line-height: 33px;
-  margin-top: 15px;
-  margin-right: 0px;
+  /* margin-top: 15px;
+  margin-right: 0px; */
+  right: 30px;
+  top: 140px;
   text-align: right;
+  position: absolute;
 }
-
+/* 
 .guild-journey-item-txt {
   width: 320px;
   font-weight: normal;
   font-size: 18px;
   line-height: 27px;
+} */
+.guild-journey-item-txt {
+  width: 320px;
+  height: 190px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  /* margin: 0; */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  margin-top: 30px;
 }
 .guild-journey-act {
-  right: 0;
-  top: 100px;
+  /* top: 100px; */
+  bottom: 100px;
+  /* bottom: 0; */
+  margin: auto;
+  right: 25px;
   display: flex;
   flex-direction: column;
   position: absolute;
   align-items: center;
 }
-.act-btn {
-  margin-top: 150px;
-}
+
 /* 體驗行程評分 */
 .guild-journey-review {
   position: absolute;
-
-  margin-top: 0px;
+  bottom: 30px;
+  left: 30px;
 }
 .guild-journey-review-title {
   font-weight: normal;
@@ -411,7 +430,7 @@
   .guild-intro-item-img .t-left,
   .guild-intro-item-img .t-right {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
   }
   .guild-intro-item-img img {
     object-fit: cover;
@@ -444,7 +463,7 @@
     height: 289px;
     background: var(--bg-color);
     border-radius: unset;
-    position: unset;
+    position: relative;
     top: -70px;
   }
   /* rwd體驗行程 */
@@ -480,32 +499,30 @@
     font-size: 20px;
     line-height: 30px;
     text-align: right;
-    position: absolute;
-
+    /* position: absolute; */
     left: 15px;
     bottom: 25px;
+    top: 60px;
   }
   /* rwd行程體驗-介紹 */
   .guild-journey-item-txt {
-    margin-top: 70px;
+    margin-top: 50px;
     width: 100%;
     font-weight: normal;
     font-size: 16px;
     line-height: 24px;
-    height: 68px;
+    height: 100px;
     overflow: hidden;
 
     text-overflow: ellipsis;
   }
   .guild-journey-item-txt p {
-    height: 100%;
+    /* height: 100%; */
   }
 
   /* rwd行程體驗-評論 */
   .guild-journey-review {
-    margin: 0;
-    position: absolute;
-    top: 77px;
+    left: 15px;
   }
   /* rwd行程體驗-按鈕*/
   .guild-journey-act {

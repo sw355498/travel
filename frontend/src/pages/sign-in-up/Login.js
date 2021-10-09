@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { API_URL } from '../../config'
 import { Alert, Modal, Button } from 'react-bootstrap'
@@ -9,6 +9,7 @@ import { Redirect } from 'react-router-dom'
 import Feedback from 'react-bootstrap/esm/Feedback'
 
 import '../../style/sign-in-up.css'
+import { left } from '@popperjs/core'
 
 const Login = (props) => {
   const { member, setMember } = useAuth()
@@ -75,19 +76,34 @@ const Login = (props) => {
   // if (member !== null) {
   //   return <Redirect to="/" />
   // }
-  const display = (
-    <div className="container">
-      <div className="tab-content col">
-        <Alert
-          variant="danger"
-          // isOpen={showFeedBack}
-          // fade={false}
-          // aria-label="feedback"
-          // onClose={() => setShow(false)}
-        >
-          {feedback}
-        </Alert>
 
+  useEffect(() => {
+    const timeId = setTimeout(() => {
+      // After 3 seconds set the show value to false
+      showFeedBack(null)
+    }, 3000)
+
+    return () => {
+      clearTimeout(timeId)
+    }
+  }, [])
+  const display = (
+    <div className="container position-relative">
+      <Alert
+        className={feedback ? '' : 'visually-hidden'}
+        // style={{ position: 'absolute',}}
+        variant="danger"
+        isOpen={showFeedBack}
+        fade={false}
+        aria-label="feedback"
+        // onClose={() => setShow(false)}
+      >
+        {feedback}
+
+        {/* <span> {feedback} </span> */}
+      </Alert>
+
+      <div className="tab-content col">
         <div id="tab-inner">
           <div className="text-center td-mt-25">
             <p>登入</p>

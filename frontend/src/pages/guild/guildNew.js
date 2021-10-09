@@ -66,7 +66,7 @@ function GuildNew() {
                       class="btn-booking text-white  d-flex align-items-center justify-content-center"
                       href="guild-intro.html"
                     >
-                      預約
+                      詳細
                     </Link>
                   </div>
                 </div>
