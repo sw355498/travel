@@ -205,7 +205,7 @@ app.post("/pay",async (req, res, next) => {
     //產生一個6位數亂碼加上時間用以做訂單編號
     let orderTime = new Date()
     let orderCode = ''
-
+    let fromError = false
     for(let i = 0; i < 6; i++){
         orderCode += Math.floor(Math.random()*10)
     }
@@ -214,6 +214,7 @@ app.post("/pay",async (req, res, next) => {
         //名子欄位檢查
         let firstName = req.body.payData.firstName.replace(/\s*/g,"")//去除所有空格號
         if(firstName == "" || firstName == " "){
+            fromError = true
             next({
                 status:400,
                 message:"請填寫名子",
@@ -222,6 +223,7 @@ app.post("/pay",async (req, res, next) => {
         //姓氏欄位檢查
         let surName = req.body.payData.surName.replace(/\s*/g,"")//去除所有空格號
         if(surName == "" || surName == " "){
+            fromError = true
             next({
                 status:400,
                 message:"請填寫姓氏",
@@ -231,6 +233,7 @@ app.post("/pay",async (req, res, next) => {
         let format = /^09[0-9]{8}$/ //手機驗證格式
         let phone = req.body.payData.phone
         if(phone.length > 10 || phone.length < 10 || !format.test(phone)){
+            fromError = true
             next({
                 status:400,
                 message:"連絡電話未填寫或填寫錯誤",
@@ -239,6 +242,7 @@ app.post("/pay",async (req, res, next) => {
         //國家/地區欄位檢查
         let nation = req.body.payData.nation
         if(nation == ""){
+            fromError = true
             next({
                 status:400,
                 message:"請選擇 國家/地區",
@@ -247,6 +251,7 @@ app.post("/pay",async (req, res, next) => {
         //地址欄位檢查
         let address = req.body.payData.address.replace(/\s*/g,"")//去除所有空格號
         if(address == "" || address == " "){
+            fromError = true
             next({
                 status:400,
                 message:"請填寫地址",
@@ -258,6 +263,7 @@ app.post("/pay",async (req, res, next) => {
         let atpos = orderEmail.indexOf("@")
         let dotpos = orderEmail.lastIndexOf(".")
         if(atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= orderEmail.length){
+            fromError = true
             next({
                 status:400,
                 message:"電子郵件填寫錯誤",
@@ -266,6 +272,7 @@ app.post("/pay",async (req, res, next) => {
         //國家/地區欄位檢查
         let bill = req.body.payData.bill
         if(bill == ""){
+            fromError = true
             next({
                 status:400,
                 message:"請選擇發票處理方式",
@@ -274,6 +281,7 @@ app.post("/pay",async (req, res, next) => {
         //檢查資料庫卡號是否存在
         let cardNumber = await connection.queryAsync ("SELECT * FROM card_data WHERE number=?",[req.body.payData.number]);
         if(cardNumber.length <= 0 ){
+            fromError = true
             next({
                 status:400,
                 message:"卡號輸入錯誤",
@@ -282,6 +290,7 @@ app.post("/pay",async (req, res, next) => {
         //驗證資料庫信用卡名是否相同
         let cardName = await connection.queryAsync ("SELECT * FROM card_data WHERE name=?",[req.body.payData.name]);
         if(cardName.length <= 0 ){
+            fromError = true
             next({
                 status:400,
                 message:"持卡人姓名錯誤",
@@ -290,6 +299,7 @@ app.post("/pay",async (req, res, next) => {
         //驗證資料庫信用卡有效日期是否相同
         let cardExpiry = await connection.queryAsync ("SELECT * FROM card_data WHERE expiry=?",[req.body.payData.expiry]);
         if(cardExpiry.length <= 0 ){
+            fromError = true
             next({
                 status:400,
                 message:"有效日期錯誤",
@@ -298,47 +308,50 @@ app.post("/pay",async (req, res, next) => {
         //驗證資料庫信用卡cvc是否相同
         let cardCvc = await connection.queryAsync ("SELECT * FROM card_data WHERE cvc=?",[req.body.payData.cvc]);
         if(cardCvc.length <= 0 ){
+            fromError = true
             next({
                 status:400,
                 message:"cvc錯誤",
             });
         }
-
-        let journeyData = req.body.journey
-        for(let n = 0; n < journeyData.length; n++){
-            let go_time = moment(journeyData[n].go_time).format('YYYY-MM-DD')
-            let totalprice = journeyData[n].price * journeyData[n].amount //每筆行程總價格
-        await connection.queryAsync(
-                "INSERT INTO order_detail (guide, journey_id, name, img, go_time, amount, price, order_number) VALUES (?);",
+        console.log(fromError)
+        if(fromError == false){
+            let journeyData = req.body.journey
+            for(let n = 0; n < journeyData.length; n++){
+                let go_time = moment(journeyData[n].go_time).format('YYYY-MM-DD')
+                let totalprice = journeyData[n].price * journeyData[n].amount //每筆行程總價格
+            await connection.queryAsync(
+                    "INSERT INTO order_detail (guide, journey_id, name, img, go_time, amount, price, order_number) VALUES (?);",
+                    [[ 
+                        journeyData[n].guild,
+                        journeyData[n].id,
+                        journeyData[n].name,
+                        journeyData[n].img,
+                        go_time,
+                        journeyData[n].amount,
+                        totalprice,
+                        orderNumber,
+                    ]]
+            );
+        }
+            await connection.queryAsync(
+                "INSERT INTO order_form (member_email, sur_name, first_name, phone, nation, address, email, card_number, bill_status, order_status, order_number) VALUES (?);",
                 [[ 
-                    journeyData[n].guild,
-                    journeyData[n].id,
-                    journeyData[n].name,
-                    journeyData[n].img,
-                    go_time,
-                    journeyData[n].amount,
-                    totalprice,
+                    req.body.isLogin,
+                    req.body.payData.surName,
+                    req.body.payData.firstName,
+                    req.body.payData.phone,
+                    req.body.payData.nation,
+                    req.body.payData.address,
+                    req.body.payData.email,
+                    req.body.payData.number,
+                    req.body.payData.bill,
+                    "已付款",
                     orderNumber,
                 ]]
-        );
-    }
-        await connection.queryAsync(
-            "INSERT INTO order_form (member_email, sur_name, first_name, phone, nation, address, email, card_number, bill_status, order_status, order_number) VALUES (?);",
-            [[ 
-                req.body.isLogin,
-                req.body.payData.surName,
-                req.body.payData.firstName,
-                req.body.payData.phone,
-                req.body.payData.nation,
-                req.body.payData.address,
-                req.body.payData.email,
-                req.body.payData.number,
-                req.body.payData.bill,
-                "已付款",
-                orderNumber,
-            ]]
-        );
-        res.json({orderNumber})
+            );
+            res.json({orderNumber})
+        }
     }else{
         next({
             status:401,
@@ -347,17 +360,21 @@ app.post("/pay",async (req, res, next) => {
     }
 })
 
-/* 全部會員購買紀錄(分頁) */
+/* 當前登入會員購買紀錄(分頁) */
 app.get("/order_form", async(req, res, next) => {
     try {
+        const member_email = req.session.member.email
         let page = req.query.page || 1 ;//目前在第幾頁,預設第1頁
         const perPage = 1;//每一頁筆數
-        let count = await connection.queryAsync("SELECT COUNT(*) AS total FROM order_form");;
+        let count = await connection.queryAsync("SELECT COUNT(*) AS total FROM order_form WHERE member_email=?",[member_email]);
         const total = count[0].total//總共有幾筆
         const totalPages = Math.ceil(total / perPage)//總夠有幾頁
         //取得當頁資料
         let offset = (page-1) * perPage//要跳過的比數
-        let result = await connection.queryAsync("SELECT * FROM order_form LIMIT ? OFFSET ?",[perPage, offset]);
+        let result = await connection.queryAsync(
+            "SELECT * FROM order_form WHERE member_email=? LIMIT ? OFFSET ?",
+            [member_email, perPage, offset]
+        );
         let pagination = {
             total,
             perPage,
@@ -369,20 +386,6 @@ app.get("/order_form", async(req, res, next) => {
         console.error(e);
     }
 });
-
-/* 會員個別購買紀錄 */
-app.get("/order_form/:memberId", async(req, res, next) => {
-    try {
-        let result = await connection.queryAsync(
-            "SELECT * FROM order_form WHERE member_id=?",
-            [req.params.memberId]
-        );
-        res.json(result);
-    } catch (e) {
-        console.error(e);
-    }
-});
-
 
 const APIrouter = express.Router();
 

@@ -158,6 +158,14 @@ function CartList(props) {
   )
   const display = (
     <>
+      <button
+        className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
+        onClick={() => {
+          props.history.push('/Order_form/?page=1')
+        }}
+      >
+        歷史紀錄
+      </button>
       <div className="text-title-size24 d-none d-lg-block fw-bold">
         <span>花島｜購物車</span>
       </div>
