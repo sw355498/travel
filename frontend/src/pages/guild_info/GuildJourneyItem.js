@@ -63,7 +63,8 @@ function GuildJourneyItem(props) {
             <span>{PriceFormated}</span>
           </div>
           <div className="guild-journey-item-txt">
-            <p dangerouslySetInnerHTML={{ __html: card.introname }}></p>
+            {card.description}
+            {/* <p dangerouslySetInnerHTML={{ __html: card.introname }}></p> */}
           </div>
         </div>
         <div className="guild-journey-review d-flex align-items-center">
