@@ -62,7 +62,11 @@ function Header(porps) {
                     href="../pages/shoppingcart/ShoppingcartCartList"
                   >
                     <img src={cart} alt="cart" />
-                    <div className="cart-quantity justify-content-center">
+                    <div
+                      className={`cart-quantity justify-content-center ${
+                        quantity === 0 ? 'd-none' : 'd-flex'
+                      }`}
+                    >
                       <p className="mt-1">{quantity}</p>
                     </div>
                   </Link>
