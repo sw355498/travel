@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
-import API from '../../api'
 import { Modal, Button } from 'react-bootstrap'
 import axios from 'axios'
 const serverURI = 'http://localhost:3001'
