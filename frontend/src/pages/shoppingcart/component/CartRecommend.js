@@ -180,7 +180,7 @@ function CartTitle(props) {
     }
     getRecommend()
   }, [])
-  console.log(recommendData)
+
   return (
     <>
       {/* 其旅客還購買web版 */}

@@ -21,26 +21,6 @@ function Oder(props) {
     let pages = []
     for (let i = 1; i <= totalPage; i++) {
       pages.push(
-        // <li
-        //   style={{
-        //     display: 'inline-block',
-        //     margin: '2px',
-        //     backgroundColor: page === i ? '#00d1b2' : '',
-        //     borderColor: page === i ? '#00d1b2' : '#dbdbdb',
-        //     color: page === i ? '#fff' : '#363636',
-        //     borderWidth: '1px',
-        //     width: '28px',
-        //     height: '28px',
-        //     borderRadius: '3px',
-        //     textAlign: 'center',
-        //   }}
-        // key={i}
-        // onClick={(e) => {
-        //   setPage(i)
-        // }}
-        // >
-        //   {i}
-        // </li>
         <li class={`page-item ${page === i ? 'active' : ''} `}>
           <button
             class="page-link"
@@ -69,7 +49,6 @@ function Oder(props) {
         setError(null)
         history.push(`/order_form/${page}`) //變更網址
       } catch (e) {
-        console.log(e)
         setError(e.message)
       }
     }
