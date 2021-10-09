@@ -519,7 +519,17 @@
   .guild-journey-item-txt p {
     /* height: 100%; */
   }
-
+  .guild-journey-review-score {
+    font-size: 18px;
+  }
+  .guild-journey-review i {
+    font-size: 20px;
+  }
+  .guild-journey-review-title {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 27px;
+  }
   /* rwd行程體驗-評論 */
   .guild-journey-review {
     left: 15px;

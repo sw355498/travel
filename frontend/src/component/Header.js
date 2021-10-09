@@ -1,5 +1,5 @@
 //元件,模組引入
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { API_URL } from '../utils/config'
 import axios from 'axios'
@@ -22,6 +22,22 @@ function Header(porps) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const toggle = () => setDropdownOpen((prevState) => !prevState)
 
+  const clickEvent = (e) => {
+    if (!e.target.className.inclueds('td-burger')) {
+      setDropdownOpen(false)
+      document.addEventListener('click', toggle)
+    }
+  }
+  useEffect(() => {
+    document.addEventListener('click', setDropdownOpen(false))
+    return () => {
+      document.removeEventListener('click', setDropdownOpen(true))
+    }
+  })
+
+  // const toggle =
+
+  //登出
   const handleLogout = async () => {
     await axios.get(`${API_URL}/logout`, {
       withCredentials: true,

@@ -87,23 +87,24 @@ const Login = (props) => {
       clearTimeout(timeId)
     }
   }, [])
+
   const display = (
-    <div className="container position-relative">
-      <Alert
-        className={feedback ? '' : 'visually-hidden'}
-        // style={{ position: 'absolute',}}
-        variant="danger"
-        isOpen={showFeedBack}
-        fade={false}
-        aria-label="feedback"
-        // onClose={() => setShow(false)}
-      >
-        {feedback}
+    <div className="container ">
+      <div className="tab-content col position-relative">
+        <Alert
+          className={feedback ? '' : 'visually-hidden'}
+          col-10
+          variant="danger"
+          isOpen={showFeedBack}
+          fade={false}
+          aria-label="feedback"
+          // onClose={() => setShow(false)}
+        >
+          {/* {feedback} */}
 
-        {/* <span> {feedback} </span> */}
-      </Alert>
+          {feedback}
+        </Alert>
 
-      <div className="tab-content col">
         <div id="tab-inner">
           <div className="text-center td-mt-25">
             <p>登入</p>

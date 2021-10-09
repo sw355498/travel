@@ -67,13 +67,14 @@ function GuildJourneyItem(props) {
           </div>
         </div>
         <div className="guild-journey-review d-flex align-items-center">
-          <div className="guild-journey-review-title">評價：</div>
+          {/* <div className="guild-journey-review-title">評價：</div> */}
           <div className="guild-journey-review-score">
             {`${card.rating}` + '.0'}
           </div>
           <Rating rating={card.rating} />
           <div className="guild-journey-review-title">
-            {'(' + `${card.amountRating}` + ')'}
+            {/* {'(' + `${card.amountRating}` + ')'} */}
+            {`${card.amountRating}` + '則評論'}
           </div>
         </div>
         <div className="guild-journey-act">
@@ -82,7 +83,7 @@ function GuildJourneyItem(props) {
             </a> */}
           {/* <button className="act-btn btn-detail">詳細</button> */}
           <Link
-            className="btn-booking d-flex align-items-center justify-content-center guild-journey-detail-btn"
+            className="td-btn-medium-w d-flex align-items-center justify-content-center guild-journey-detail-btn"
             to={`/journey_Info/${card._id}`}
           >
             詳細

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import GuildJourney from './guild_info/GuildJourney'
-import JourneyCoustomerReview from './journey_info/coustomer_review/journeyCoustomerReview'
+import Review from './journey_info/coustomer_review/Review'
 import ScrollToTop from 'react-scroll-to-top'
 import axios from 'axios'
 import { API_URL } from '../config'
@@ -215,7 +215,7 @@ function GuildInfo(props) {
         {/* 導遊行程 */}
         <GuildJourney guildData={guildData} guildJourney={guildJourney} />
         {/* 旅客評論 */}
-        <JourneyCoustomerReview />
+        <Review />
         <ScrollToTop smooth />
       </div>
     </>
