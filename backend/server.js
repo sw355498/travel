@@ -416,7 +416,7 @@ APIrouter.get('/journeyinfo/guides',async(req,res,next)=>{
   res.json(result)
 })
 
-APIrouter.put("/journeys/:id/like", async (req, res, next) => {
+APIrouter.put("/journeys/:id/like",loginCheckMiddleware,async (req, res, next) => {
   const {id} = req.params
   const result = await connection.queryAsync('SELECT status FROM journey WHERE _id=?', [id])
   const status = result[0].status
@@ -428,6 +428,17 @@ APIrouter.put("/journeys/:id/like", async (req, res, next) => {
 })
 
 app.use("/api", APIrouter)
+
+// 這一個 router 的路由都會先經過這個中間件
+app.use(loginCheckMiddleware);
+
+app.get("/member",   async (req,res,next)=>{
+    let result = await connection.queryAsync("SELECT * FROM member");
+    res.json(result);
+    console.log("會員");
+})
+
+
 
 //處理找不到路由的錯誤的中間件
 app.use((req,res,next)=>{

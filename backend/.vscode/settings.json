@@ -13,7 +13,13 @@
         "statusBar.foreground": "#e7e7e7",
         "statusBarItem.hoverBackground": "#5b8c8b",
         "titleBar.inactiveBackground": "#476d6c99",
-        "titleBar.inactiveForeground": "#e7e7e799"
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "editorGroup.border": "#5b8c8b",
+        "panel.border": "#5b8c8b",
+        "sash.hoverBorder": "#5b8c8b",
+        "sideBar.border": "#5b8c8b",
+        "statusBarItem.remoteBackground": "#476d6c",
+        "statusBarItem.remoteForeground": "#e7e7e7"
     },
     "git.ignoreLimitWarning": true,
     "peacock.color": "#476D6C"
