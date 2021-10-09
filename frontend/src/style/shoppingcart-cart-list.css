@@ -1,4 +1,3 @@
-
 /* 購物車清單內容設定 */
 .shoppingcart-bg {
   background: #e8f7ff;
@@ -37,6 +36,7 @@
 .recommend-card {
   width: 18rem;
 }
+
 /* 推薦商品圖片設定 */
 .recommend-img {
   width: 18rem;
@@ -50,7 +50,19 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.carousel-item{
+.carousel-item {
   height: 413px;
 }
 
+/*以下使用id覆蓋guild的css*/
+#recommend-card-bg {
+  background: #e8f7ff;
+}
+
+#recommend-next-bg {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+#recommend-previous-bg {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 
 function LanCheckboxGuild(props) {
-  const { value, handleChecked, checked, children } = props
+  const { value, handleChecked, checked, children, pageClick } = props
   return (
     <div>
       <input
@@ -12,6 +12,7 @@ function LanCheckboxGuild(props) {
         value={value}
         checked={checked}
         onChange={handleChecked}
+        onClick={pageClick}
       />
       {children}
       <label className="lan-check-label" htmlFor="lanCheckInput1"></label>

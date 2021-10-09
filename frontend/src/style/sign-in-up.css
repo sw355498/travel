@@ -10,12 +10,16 @@ a {
   height: auto;
   display: flex;
   flex-direction: column;
-  margin: 40px auto;
-  margin-bottom: 20px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding: 30px 40px;
   position: relative;
   border: 2px solid var(--blue-color);
   border-radius: 30px;
+}
+.tab-content p {
+  font-size: 24px;
 }
 .tab-content .form-control:focus {
   box-shadow: unset;

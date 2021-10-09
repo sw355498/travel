@@ -87,7 +87,7 @@ header {
 
 /* right nav */
 .td-right-nav {
-  width: 172px;
+  width: 200px;
   height: 42px;
   display: flex;
   justify-content: space-between;
@@ -116,13 +116,15 @@ header {
 
 /* header 登入 按鈕設定 */
 .td-header-login,
-.td-header-register {
+.td-header-register .td-header-logout {
   margin-right: 30px;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
 }
-
+.td-header-logout {
+  margin-right: 0px;
+}
 /* 漢堡隱藏 */
 .td-burger {
   display: none;
@@ -151,11 +153,15 @@ header {
   }
   /* 登入後的nav調整 */
   .td-right-nav {
-    max-width: 162px;
+    max-width: 100px;
     height: 42px;
   }
 
   /* 漢堡選單 */
+
+  .web-logout {
+    display: none;
+  }
   .td-burger {
     display: block;
   }
@@ -247,15 +253,22 @@ header {
     color: #fff;
     background-color: var(--blue-color);
   }
+
+  /* 漢堡logout */
+  .td-burger-list .rwd-logout {
+    width: 60%;
+    margin: 25px;
+  }
   #td-burger-toggle:checked ~ .td-burger-list {
     transform: scaleY(1);
   }
   .td-header-login,
-  .td-header-register {
+  .td-header-register,
+  .td-header-logout {
     margin-right: 10px;
   }
 }
-.cart-quantity{
+.cart-quantity {
   width: 25px;
   height: 25px;
   border-radius: 50px;
@@ -267,14 +280,16 @@ header {
   top: -5px;
   left: 26px;
 }
+
 @media screen and (max-width: 576px) {
   .td-nav {
     margin-left: 0px;
   }
-  .td-right-nav {
-    width: 145px;
+  .td-nav .td-right-nav {
+    /* display: block;
+    width: 105px; */
     height: 35px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
   }
   .td-right-nav .fa-comment-dots {
     font-size: 30px;

@@ -9,6 +9,25 @@ function CartList(props) {
   //切換頁面載入的指示圖示
   const [dataLoading, setDataLoading] = useState(false)
 
+  //轉換成貨幣形式
+  const digitsRE = /(\d{3})(?=\d)/g
+
+  function currency(value, currency, decimals) {
+    value = parseFloat(value)
+    if (!isFinite(value) || (!value && value !== 0)) return ''
+    currency = currency != null ? currency : 'TWD '
+    decimals = decimals != null ? decimals : 0
+    var stringified = Math.abs(value).toFixed(decimals)
+    var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified
+    var i = _int.length % 3
+    var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : ''
+    var _float = decimals ? stringified.slice(-1 - decimals) : ''
+    var sign = value < 0 ? '-' : ''
+    return (
+      sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
+    )
+  }
+
   function getCartFromLocalStorage() {
     // 開啟載入的指示圖示
     setDataLoading(true)
@@ -128,7 +147,6 @@ function CartList(props) {
       }
     }
   }
-
   const loading = (
     <>
       <div className="d-flex justify-content-center">
@@ -140,6 +158,14 @@ function CartList(props) {
   )
   const display = (
     <>
+      <button
+        className="btn td-btn-large-gopay text-title-size24 pt-3 pb-3"
+        onClick={() => {
+          props.history.push('/Order_form/?page=1')
+        }}
+      >
+        歷史紀錄
+      </button>
       <div className="text-title-size24 d-none d-lg-block fw-bold">
         <span>花島｜購物車</span>
       </div>
@@ -216,7 +242,7 @@ function CartList(props) {
                   </button>
                 </div>
                 <div className="text-title-size24 shoppingcart-price td-mt-25">
-                  <div>TWD {parseFloat(item.price) * item.amount}</div>
+                  <div>{currency(parseFloat(item.price) * item.amount)}</div>
                 </div>
               </div>
               <div className="shoppingcart-solid"></div>
@@ -224,7 +250,11 @@ function CartList(props) {
           )
         })}
         {/* 總顯示區塊 */}
-        <div className="row align-items-center text-center td-py-25">
+        <div
+          className={`row align-items-center text-center td-py-25 ${
+            mycartDisplay.length === 0 ? 'd-none' : 'd-flex'
+          }`}
+        >
           <div className="col-3 col-lg-1">
             <input
               className="my-auto checkbox-size"
@@ -253,7 +283,7 @@ function CartList(props) {
               <img src="/images/total.png" alt="total" />
             </div>
             <div className="text-title-size24 shoppingcart-price">
-              TWD {sum(mycartDisplay)}
+              {currency(sum(mycartDisplay))}
             </div>
           </div>
           <div className="col-12 col-lg-3">
@@ -265,6 +295,15 @@ function CartList(props) {
             >
               下一步
             </button>
+          </div>
+        </div>
+        <div
+          className={`row align-items-center text-center td-py-25 ${
+            mycartDisplay.length === 0 ? 'd-block' : 'd-none'
+          }`}
+        >
+          <div className="col-12 td-my-25 d-flex justify-content-center">
+            購物車內無任何商品
           </div>
         </div>
       </div>

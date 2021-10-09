@@ -7,11 +7,10 @@ module.exports = {
       // session 裡面沒有 member --> 還沒登入
       return next({
         status: 401,
-        message: "登入會員後，即可以享受更多專屬功能",
+        message: "登入會員後才可以用喔",
       });
     } else {
       // 如果 session 裡面是有 member 的
-      // 已經登入過的
       next();
     }
   }

@@ -7,6 +7,25 @@ function PayContent(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
+  //轉換成貨幣形式
+  const digitsRE = /(\d{3})(?=\d)/g
+
+  function currency(value, currency, decimals) {
+    value = parseFloat(value)
+    if (!isFinite(value) || (!value && value !== 0)) return ''
+    currency = currency != null ? currency : 'TWD '
+    decimals = decimals != null ? decimals : 0
+    var stringified = Math.abs(value).toFixed(decimals)
+    var _int = decimals ? stringified.slice(0, -1 - decimals) : stringified
+    var i = _int.length % 3
+    var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : ''
+    var _float = decimals ? stringified.slice(-1 - decimals) : ''
+    var sign = value < 0 ? '-' : ''
+    return (
+      sign + currency + head + _int.slice(i).replace(digitsRE, '$1,') + _float
+    )
+  }
+
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
     setMycart(JSON.parse(newCart))
@@ -56,28 +75,28 @@ function PayContent(props) {
 
   return (
     <>
-      <div class="accordion td-mt-75" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
+      <div className="accordion td-mt-75" id="accordionExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingFour">
             <button
-              class="accordion-button menu-bg"
+              className="accordion-button menu-bg"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseFour"
               aria-expanded="true"
               aria-controls="collapseFour"
             >
-              <p class="menu-title text-title-size24 my-auto">訂單明細</p>
+              <p className="menu-title text-title-size24 my-auto">訂單明細</p>
             </button>
           </h2>
           <div
             id="collapseFour"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="headingFour"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body menu-bg">
-              <div class="td-mt-25 shoppingcart-bg">
+            <div className="accordion-body menu-bg">
+              <div className="td-mt-25 shoppingcart-bg">
                 {/* 購物車清單內容 */}
                 {mycartDisplay.map((item, index) => {
                   return (
@@ -114,7 +133,9 @@ function PayContent(props) {
                       {/* 價錢 */}
                       <div className="col-12 col-lg-3 mb-3 mb-lg-0 d-flex d-lg-block justify-content-evenly align-items-center ">
                         <div className="text-title-size24 shoppingcart-price td-mt-25">
-                          <div>TWD {parseFloat(item.price) * item.amount}</div>
+                          <div>
+                            {currency(parseFloat(item.price) * item.amount)}
+                          </div>
                         </div>
                       </div>
                       <div className="shoppingcart-solid"></div>
@@ -122,9 +143,9 @@ function PayContent(props) {
                   )
                 })}
                 {/* 總顯示區塊 */}
-                <div class="row align-items-center text-center td-py-25 ">
-                  <div class="col-12 td-my-25 my-lg-0 d-flex justify-content-center align-items-lg-center">
-                    <div class="text-title-size20 me-1">
+                <div className="row align-items-center text-center td-py-25 ">
+                  <div className="col-12 td-my-25 my-lg-0 d-flex justify-content-center align-items-lg-center">
+                    <div className="text-title-size20 me-1">
                       <span className="fw-bold text-title-size24">
                         {mycartDisplay.length}
                       </span>
@@ -133,8 +154,8 @@ function PayContent(props) {
                     <div>
                       <img src="/images/total.png" alt="total" />
                     </div>
-                    <div class="text-title-size24 shoppingcart-price">
-                      TWD {sum(mycartDisplay)}
+                    <div className="text-title-size24 shoppingcart-price">
+                      {currency(sum(mycartDisplay))}
                     </div>
                   </div>
                 </div>

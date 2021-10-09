@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { withRouter, useParams, useHistory } from 'react-router-dom'
 import { API_URL } from '../../config'
 import axios from 'axios'
-
-function Oder() {
+import { Modal } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+function Oder(props) {
   const { oderPage } = useParams() //取得網址上oderPage的值
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
@@ -47,7 +48,9 @@ function Oder() {
   useEffect(() => {
     const getOrderData = async () => {
       try {
-        let res = await axios.get(`${API_URL}/order_form?page=${page}`)
+        let res = await axios.get(`${API_URL}/order_form?page=${page}`, {
+          withCredentials: true,
+        })
 
         let data = res.data.result
         setData(data)
@@ -61,6 +64,37 @@ function Oder() {
     }
     getOrderData()
   }, [page])
+
+  //未登入顯示彈跳視窗
+  const [show, setShow] = useState(true)
+  const handleClose = () => setShow(false)
+
+  if (!props.member) {
+    return (
+      <>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Body className="text-center text-title-size24 td-mt-50 td-mb-25">
+            請先登入會員
+          </Modal.Body>
+          <Modal.Footer>
+            <Link
+              to="/Login"
+              className="btn journey-reservation-button mx-auto"
+            >
+              前往登入會員
+            </Link>
+          </Modal.Footer>
+        </Modal>
+        )
+      </>
+    )
+  }
+
   return (
     <>
       <div>
@@ -79,7 +113,6 @@ function Oder() {
               <h2>購單聯絡人-地址:{Oder.nation}</h2>
               <h2>購單聯絡人-國家:{Oder.address}</h2>
               <h2>購單聯絡人-信箱:{Oder.email}</h2>
-              <h2>出發日期:{Oder.go_time.slice(0, 10)}</h2>
               <h2>人數:{Oder.total_amount}</h2>
               <h2>消費金額:{Oder.total_price}</h2>
               <h2>信用卡卡號:{Oder.card_number}</h2>
