@@ -38,7 +38,6 @@ function PayData(props) {
     if (props.member != null) {
       setIsLogin(props.member['email'])
     }
-    console.log(isLogin)
   }, [isLogin])
 
   // 自動1秒後關閉指示的spinner
@@ -118,15 +117,16 @@ function PayData(props) {
   }
 
   const handleSubmit = async (e) => {
-    console.log(e)
     e.preventDefault()
     try {
       let journey = mycartDisplay
       let payData = props.fields
+      let totalCost = sum(mycartDisplay)
       let res = await axios.post(`${API_URL}/pay`, {
         journey,
         payData,
         isLogin,
+        totalCost,
       })
       localStorage.removeItem('cart')
       setOrderNumber(res.data.orderNumber)
@@ -139,7 +139,14 @@ function PayData(props) {
       errorHandleShow()
     }
   }
-  console.log('1', props.fieldErrors)
+  // 計算總價用的函式
+  const sum = (items) => {
+    let total = 0
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].amount * items[i].price
+    }
+    return total
+  }
 
   //成功付款彈跳視窗
   const messageModal = (

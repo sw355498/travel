@@ -21,25 +21,36 @@ function Oder(props) {
     let pages = []
     for (let i = 1; i <= totalPage; i++) {
       pages.push(
-        <li
-          style={{
-            display: 'inline-block',
-            margin: '2px',
-            backgroundColor: page === i ? '#00d1b2' : '',
-            borderColor: page === i ? '#00d1b2' : '#dbdbdb',
-            color: page === i ? '#fff' : '#363636',
-            borderWidth: '1px',
-            width: '28px',
-            height: '28px',
-            borderRadius: '3px',
-            textAlign: 'center',
-          }}
-          key={i}
-          onClick={(e) => {
-            setPage(i)
-          }}
-        >
-          {i}
+        // <li
+        //   style={{
+        //     display: 'inline-block',
+        //     margin: '2px',
+        //     backgroundColor: page === i ? '#00d1b2' : '',
+        //     borderColor: page === i ? '#00d1b2' : '#dbdbdb',
+        //     color: page === i ? '#fff' : '#363636',
+        //     borderWidth: '1px',
+        //     width: '28px',
+        //     height: '28px',
+        //     borderRadius: '3px',
+        //     textAlign: 'center',
+        //   }}
+        // key={i}
+        // onClick={(e) => {
+        //   setPage(i)
+        // }}
+        // >
+        //   {i}
+        // </li>
+        <li class={`page-item ${page === i ? 'active' : ''} `}>
+          <button
+            class="page-link"
+            key={i}
+            onClick={(e) => {
+              setPage(i)
+            }}
+          >
+            {i}
+          </button>
         </li>
       )
     }
@@ -94,35 +105,38 @@ function Oder(props) {
       </>
     )
   }
-
   return (
     <>
-      <div>
+      <div className="container td-mt-75 td-mb-25">
         {error && <div>{error}</div>}
 
-        {data &&
-          data.map((Oder) => (
-            <div key={Oder.data}>
-              <h2>清單代碼:{Oder.id}</h2>
-              <h2>會員:{Oder.member_id}</h2>
-              <h2>導遊:{Oder.guide_id}</h2>
-              <h2>行程:{Oder.journey_id}</h2>
-              <h2>購單聯絡人-姓氏:{Oder.sur_name}</h2>
-              <h2>購單聯絡人-名字:{Oder.first_name}</h2>
-              <h2>購單聯絡人-連絡電話:{Oder.phone}</h2>
-              <h2>購單聯絡人-地址:{Oder.nation}</h2>
-              <h2>購單聯絡人-國家:{Oder.address}</h2>
-              <h2>購單聯絡人-信箱:{Oder.email}</h2>
-              <h2>人數:{Oder.total_amount}</h2>
-              <h2>消費金額:{Oder.total_price}</h2>
-              <h2>信用卡卡號:{Oder.card_number}</h2>
-              <h2>發票處理方式:{Oder.bill_status}</h2>
-              <h2>訂單狀況:{Oder.order_status}</h2>
-              <h2>結帳日期:{Oder.order_time}</h2>
-            </div>
-          ))}
+        <table class="table table-hover">
+          <thead>
+            <tr class="table-dark text-nowrap text-center">
+              <th>訂單編號</th>
+              <th>消費金額</th>
+              <th>付款卡號</th>
+              <th>發票處理方式</th>
+              <th>訂單狀況</th>
+              <th>結帳日期</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data &&
+              data.map((Oder) => (
+                <tr className="text-center table-secondary">
+                  <td>{Oder.order_number}</td>
+                  <td>${Oder.total_cost}</td>
+                  <td>{Oder.card_number}</td>
+                  <td>{Oder.bill_status}</td>
+                  <td>{Oder.order_status}</td>
+                  <td>{Oder.order_time}</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
       </div>
-      <ul>{getPages()}</ul>
+      <ul class="pagination td-my-25 mx-auto">{getPages()}</ul>
     </>
   )
 }
