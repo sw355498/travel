@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2021 年 10 月 10 日 07:06
+-- 產生時間： 2021 年 10 月 10 日 07:22
 -- 伺服器版本： 10.4.19-MariaDB
 -- PHP 版本： 8.0.7
 
@@ -218,25 +218,6 @@ CREATE TABLE `order_deta` (
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- 傾印資料表的資料 `order_deta`
---
-
-INSERT INTO `order_deta` (`id`, `guide`, `journey_id`, `name`, `img`, `go_time`, `amount`, `price`, `order_number`) VALUES
-(1, '雅馨', 1, '九日漁獵生活', '靜浦-竹筏漫遊.jpg', '2021-09-25', 1, 5000, '84483420211004'),
-(2, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-08', 1, 1000, '84483420211004'),
-(3, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '75350220211007'),
-(4, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '75350220211007'),
-(5, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '17967320211007'),
-(6, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '17967320211007'),
-(7, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '46747120211007'),
-(8, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '46747120211007'),
-(9, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '24427520211007'),
-(10, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '24427520211007'),
-(11, '瓦丹', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 1, 1280, '74270020211007'),
-(12, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '74270020211007'),
-(13, '瓦丹', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-04', 1, 1000, '75817620211007');
-
 -- --------------------------------------------------------
 
 --
@@ -258,14 +239,6 @@ CREATE TABLE `order_form` (
   `order_time` date NOT NULL DEFAULT current_timestamp(),
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- 傾印資料表的資料 `order_form`
---
-
-INSERT INTO `order_form` (`id`, `member_email`, `sur_name`, `first_name`, `phone`, `nation`, `address`, `email`, `card_number`, `bill_status`, `order_status`, `order_time`, `order_number`) VALUES
-(1, 'test@gmail.com', '1', '123', '09222222', '台灣', '西屯路二段２８２巷１３號', 'yaya14chen@gmail.com', '1233444433332222', '電子發票', '已付款', '2021-10-04', '84483420211004'),
-(2, 'test@gmail.com', '1', '123', '09222223', '台灣', '西屯路二段２８２巷１３號', 'tom@test.com', '1233444433332222', '電子發票', '已付款', '2021-10-06', '75817620211007');
 
 -- --------------------------------------------------------
 
@@ -375,19 +348,19 @@ ALTER TABLE `lang`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_deta`
 --
 ALTER TABLE `order_deta`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_form`
 --
 ALTER TABLE `order_form`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `tribes`
