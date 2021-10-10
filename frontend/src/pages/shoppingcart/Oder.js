@@ -86,36 +86,38 @@ function Oder(props) {
   }
   return (
     <>
-      <div className="container td-mt-75 td-mb-25">
-        {error && <div>{error}</div>}
+      <div className="order-h">
+        <div className="container td-mt-75 td-mb-25">
+          {error && <div>{error}</div>}
 
-        <table class="table table-hover">
-          <thead>
-            <tr class="table-dark text-nowrap text-center">
-              <th>訂單編號</th>
-              <th>消費金額</th>
-              <th>付款卡號</th>
-              <th>發票處理方式</th>
-              <th>訂單狀況</th>
-              <th>結帳日期</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data &&
-              data.map((Oder) => (
-                <tr className="text-center table-secondary">
-                  <td>{Oder.order_number}</td>
-                  <td>${Oder.total_cost}</td>
-                  <td>{Oder.card_number}</td>
-                  <td>{Oder.bill_status}</td>
-                  <td>{Oder.order_status}</td>
-                  <td>{Oder.order_time}</td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+          <table class="table table-hover">
+            <thead>
+              <tr class="table-dark text-nowrap text-center">
+                <th>訂單編號</th>
+                <th>消費金額</th>
+                <th>付款卡號</th>
+                <th>發票處理方式</th>
+                <th>訂單狀況</th>
+                <th>結帳日期</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data &&
+                data.map((Oder) => (
+                  <tr className="text-center table-secondary">
+                    <td>{Oder.order_number}</td>
+                    <td>${Oder.total_cost}</td>
+                    <td>{Oder.card_number}</td>
+                    <td>{Oder.bill_status}</td>
+                    <td>{Oder.order_status}</td>
+                    <td>{Oder.order_time}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+        <ul class="pagination td-my-25 mx-auto">{getPages()}</ul>
       </div>
-      <ul class="pagination td-my-25 mx-auto">{getPages()}</ul>
     </>
   )
 }

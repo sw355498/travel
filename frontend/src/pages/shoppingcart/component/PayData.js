@@ -341,10 +341,10 @@ function PayData(props) {
                       state={props.fields.number}
                       setState={handleFieldChange}
                       error={props.fieldErrors.number}
-                      minLength="16"
+                      minLength="14"
                       maxLength="16"
                       setFocus={setFocus}
-                      pattern="[0-9]{16}"
+                      // pattern="[0-9]{16}"
                       required
                     />
                   </div>
