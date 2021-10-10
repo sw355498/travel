@@ -3,10 +3,10 @@ import React from 'react'
 function LanCheckboxGuild(props) {
   const { value, handleChecked, checked, children, pageClick } = props
   return (
-    <div>
+    <div className="filter-tribe-check col-10">
       <input
         type="checkbox"
-        className="lan-check-input position-relative"
+        className="tribe-check-input position-relative"
         name="lanCheckInput"
         id="lanCheckInput1"
         value={value}

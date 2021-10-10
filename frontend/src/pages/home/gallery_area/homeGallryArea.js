@@ -1,70 +1,101 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import qs from 'qs'
 
-function homeGallryArea(props) {
-  const pageNum = 1
+function HomeGallryArea(props) {
+  const history = useHistory()
+  const { tribes } = props
+  console.log(tribes)
+  const handleClick = (e) => {
+    const value = tribes[1].tribe
+    const query = qs.stringify({ tribes: value })
+    history.push(`/journey?${query}`)
+  }
+  const handleClick2 = (e) => {
+    const value = tribes[4].tribe
+    const query = qs.stringify({ tribes: value })
+    history.push(`/journey?${query}`)
+  }
+  const handleClick3 = (e) => {
+    const value = tribes[0].tribe
+    const query = qs.stringify({ tribes: value })
+    history.push(`/journey?${query}`)
+  }
+  const handleClick4 = (e) => {
+    const value = tribes[3].tribe
+    const query = qs.stringify({ tribes: value })
+    history.push(`/journey?${query}`)
+  }
+  const handleClick5 = (e) => {
+    const value = tribes[2].tribe
+    const query = qs.stringify({ tribes: value })
+    history.push(`/journey?${query}`)
+  }
+  const handleClick6 = (e) => {
+    const value = tribes[6].tribe
+    const query = qs.stringify({ tribes: value })
+    history.push(`/journey?${query}`)
+  }
+  const handleClick7 = (e) => {
+    const value = tribes[5].tribe
+    const query = qs.stringify({ tribes: value })
+    history.push(`/journey?${query}`)
+  }
   return (
     <>
       <section className="gallery-area td-mt-75 text-decoration-none">
         <div className="container">
           <p>部落行程</p>
           <div id="journey" className="td-mt-25">
-            <div className="journey-paterungan img-fluid ">
-              <Link
-                to={`/journey/?tribes[]=新社部落&pageNum=1`}
-                title="新社部落"
-              >
-                <div className="card">
-                  <div className="imgBx">
-                    <img
-                      src="/images/data/新社部落/15_Kavalan_噶瑪蘭族_Aboriginal_Tribe_Taiwan.jpg"
-                      alt=""
-                    />
-                    <div className="journey-tag">
-                      <p>新社部落</p>
-                      <div className="journey-tag-price mt-2">TW 1,200 起</div>
-                    </div>
-                  </div>
-                  <div className="contentBx">
-                    <div className="content">
-                      <h3 className="text-center">新社部落</h3>
-                      <p className="text-center td-mt-25">
-                        以噶瑪蘭族為主要族群的新社部落，夾於太平洋與海岸山脈之間，面積廣泛的梯田在收穫期是一片金黃色的美景，半島梯田上的各種裝置藝術呈現了噶瑪蘭族的工藝技術及美學。與眾不同的飲食習慣、祭儀、工藝技術在族人們的努力下傳承至今，有機會來到東海岸千萬別錯過囉！
-                      </p>
-                    </div>
+            <div
+              className="journey-paterungan img-fluid "
+              onClick={handleClick}
+            >
+              <div className="card">
+                <div className="imgBx">
+                  <img
+                    src="/images/data/新社部落/15_Kavalan_噶瑪蘭族_Aboriginal_Tribe_Taiwan.jpg"
+                    alt=""
+                  />
+                  <div className="journey-tag">
+                    <p>新社部落</p>
+                    <div className="journey-tag-price mt-2">TW 1,200 起</div>
                   </div>
                 </div>
-              </Link>
+                <div className="contentBx">
+                  <div className="content">
+                    <h3 className="text-center">新社部落</h3>
+                    <p className="text-center td-mt-25">
+                      以噶瑪蘭族為主要族群的新社部落，夾於太平洋與海岸山脈之間，面積廣泛的梯田在收穫期是一片金黃色的美景，半島梯田上的各種裝置藝術呈現了噶瑪蘭族的工藝技術及美學。與眾不同的飲食習慣、祭儀、工藝技術在族人們的努力下傳承至今，有機會來到東海岸千萬別錯過囉！
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="journey-kiwit img-fluid ">
-              <Link
-                to={`/journey/?tribes[]=奇美部落&pageNum={pageNum}`}
-                title="奇美部落"
-              >
-                <div className="card">
-                  <div className="imgBx">
-                    <img
-                      src="/images/data/首頁部落圖/奇美部落大圖4.png"
-                      alt="奇美部落"
-                    />
-                    <div className="journey-tag">
-                      <p>奇美部落</p>
-                      <div className="journey-tag-price mt-2">TW 900 起</div>
-                    </div>
-                  </div>
-                  <div className="contentBx">
-                    <div className="content">
-                      <h3 className="text-center">奇美部落</h3>
-                      <p className="td-mt-25 text-center">
-                        山谷裡隱蔽的現代桃花源 整個奇美部落 是一座活的博物館{' '}
-                      </p>
-                    </div>
+            <div className="journey-kiwit img-fluid " onClick={handleClick2}>
+              <div className="card">
+                <div className="imgBx">
+                  <img
+                    src="/images/data/首頁部落圖/奇美部落大圖4.png"
+                    alt="奇美部落"
+                  />
+                  <div className="journey-tag">
+                    <p>奇美部落</p>
+                    <div className="journey-tag-price mt-2">TW 900 起</div>
                   </div>
                 </div>
-              </Link>
+                <div className="contentBx">
+                  <div className="content">
+                    <h3 className="text-center">奇美部落</h3>
+                    <p className="td-mt-25 text-center">
+                      山谷裡隱蔽的現代桃花源 整個奇美部落 是一座活的博物館{' '}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="journey-cawi img-fluid">
+            <div className="journey-cawi img-fluid" onClick={handleClick3}>
               <Link
                 to={`/journey/?tribes[]=靜浦部落&pageNum=1`}
                 title="靜浦部落"
@@ -91,7 +122,7 @@ function homeGallryArea(props) {
                 </div>
               </Link>
             </div>
-            <div className="journey-ciwidian img-fluid">
+            <div className="journey-ciwidian img-fluid" onClick={handleClick4}>
               <Link
                 to={`/journey/?tribes[]=水璉部落&pageNum=1`}
                 title="水璉部落"
@@ -119,7 +150,7 @@ function homeGallryArea(props) {
                 </div>
               </Link>
             </div>
-            <div className="journey-tafalong img-fluid">
+            <div className="journey-tafalong img-fluid" onClick={handleClick5}>
               <Link
                 to={`/journey/?tribes[]=太巴塱部落&pageNum=1`}
                 title="太巴塱部落"
@@ -146,7 +177,7 @@ function homeGallryArea(props) {
                 </div>
               </Link>
             </div>
-            <div className="journey-sakur img-fluid">
+            <div className="journey-sakur img-fluid" onClick={handleClick6}>
               <Link
                 to={`/journey/?tribes[]=撒固兒部落&pageNum=1`}
                 title="撒固兒部落"
@@ -173,7 +204,7 @@ function homeGallryArea(props) {
                 </div>
               </Link>
             </div>
-            <div className="journey-vataan img-fluid">
+            <div className="journey-vataan img-fluid" onClick={handleClick7}>
               <img
                 src="images/data/首頁部落圖/馬太鞍部落封面.jpg"
                 alt="馬太鞍部落"
@@ -213,4 +244,4 @@ function homeGallryArea(props) {
   )
 }
 
-export default homeGallryArea
+export default HomeGallryArea
