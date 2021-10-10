@@ -425,7 +425,8 @@
   /* RWD導遊圖片 */
   .guild-intro-item-img {
     width: 470px;
-    height: 765px;
+    margin-bottom: 20px !important;
+    /* height: 765px; */
   }
   .guild-intro-item-img .t-left,
   .guild-intro-item-img .t-right {
@@ -435,9 +436,12 @@
   .guild-intro-item-img img {
     object-fit: cover;
   }
-
+  .guild-intro-video iframe {
+    margin-top: 0px !important;
+  }
   .guild-intro-video {
     height: 305px;
+    margin: auto;
   }
   .btn-consult {
     margin-top: 25px;
