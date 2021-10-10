@@ -53,7 +53,7 @@ function GuildJourneyItem(props) {
           <span>{card.tribe}</span>
         </div>
         {/* <!-- 內容 --> */}
-        <div className="guild-journey-content position-relative">
+        <div className="guild-journey-content">
           {/* <!-- title部分 --> */}
           <div className="guild-journey-item-title">
             <div className="guild-journey-item-name">{card.name}</div>
@@ -63,33 +63,35 @@ function GuildJourneyItem(props) {
             <span>{PriceFormated}</span>
           </div>
           <div className="guild-journey-item-txt">
-            <p dangerouslySetInnerHTML={{ __html: card.introname }}></p>
-          </div>
-          <div className="guild-journey-act">
-            {/* <a className="act-btn heart" href="">
-              <img src="" alt="" />
-            </a> */}
-            {/* <button className="act-btn btn-detail">詳細</button> */}
-            <Link
-              className="act-btn btn-booking-md"
-              to={`/journey_Info/${card._id}`}
-            >
-              詳細
-            </Link>
-            {/* <a className="act-btn heart" href="">
-                <img src={collect} alt="" />
-              </a> */}
+            {card.description}
+            {/* <p dangerouslySetInnerHTML={{ __html: card.introname }}></p> */}
           </div>
         </div>
         <div className="guild-journey-review d-flex align-items-center">
-          <div className="guild-journey-review-title">評價：</div>
+          {/* <div className="guild-journey-review-title">評價：</div> */}
           <div className="guild-journey-review-score">
             {`${card.rating}` + '.0'}
           </div>
           <Rating rating={card.rating} />
           <div className="guild-journey-review-title">
-            {'(' + `${card.amountRating}` + ')'}
+            {/* {'(' + `${card.amountRating}` + ')'} */}
+            {`${card.amountRating}` + '則評論'}
           </div>
+        </div>
+        <div className="guild-journey-act">
+          {/* <a className="act-btn heart" href="">
+              <img src="" alt="" />
+            </a> */}
+          {/* <button className="act-btn btn-detail">詳細</button> */}
+          <Link
+            className="td-btn-medium-w d-flex align-items-center justify-content-center guild-journey-detail-btn"
+            to={`/journey_Info/${card._id}`}
+          >
+            詳細
+          </Link>
+          {/* <a className="act-btn heart" href="">
+                <img src={collect} alt="" />
+              </a> */}
         </div>
       </div>
     </div>

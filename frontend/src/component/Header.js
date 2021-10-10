@@ -1,9 +1,10 @@
 //元件,模組引入
-import React, { useState, useEffect, useRef } from 'react'
-import { Link, matchPath } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { API_URL } from '../utils/config'
 import axios from 'axios'
 import { useAuth } from '../context/auth'
+import { Dropdown } from 'react-bootstrap'
 
 // css引入
 import '../style/header.css'
@@ -18,6 +19,25 @@ import avatar from '../img/avatar.png'
 function Header(porps) {
   const { member, setMember } = useAuth()
 
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const toggle = () => setDropdownOpen((prevState) => !prevState)
+
+  const clickEvent = (e) => {
+    if (!e.target.className.inclueds('td-burger')) {
+      setDropdownOpen(false)
+      document.addEventListener('click', toggle)
+    }
+  }
+  useEffect(() => {
+    document.addEventListener('click', setDropdownOpen(false))
+    return () => {
+      document.removeEventListener('click', setDropdownOpen(true))
+    }
+  })
+
+  // const toggle =
+
+  //登出
   const handleLogout = async () => {
     await axios.get(`${API_URL}/logout`, {
       withCredentials: true,
@@ -90,6 +110,45 @@ function Header(porps) {
                     登出
                   </Link>
                 </div>
+
+                {/* 漢堡 (會員已登入）*/}
+                <Dropdown
+                  className="td-burger"
+                  isOpen={dropdownOpen}
+                  toggle={toggle}
+                  onClick={toggle}
+                >
+                  <Dropdown.Toggle className="burger-toggle">
+                    <i
+                      className={
+                        dropdownOpen ? 'fas fa-window-close' : 'fas fa-bars'
+                      }
+                    ></i>
+                  </Dropdown.Toggle>
+                  {/* 漢堡選單 (會員已登入）*/}
+                  <Dropdown.Menu className="td-burger-list text-center ">
+                    <Dropdown.Item
+                      href="/"
+                      className="btn rwd-logout text-center td-btn-medium-b"
+                      onClick={handleLogout}
+                    >
+                      登出
+                    </Dropdown.Item>
+                    <div>
+                      <Dropdown.Item href="/home">
+                        <i className="fas fa-home"></i>回到首頁
+                      </Dropdown.Item>
+
+                      <Dropdown.Item href="/journey">
+                        <i className="fas fa-shoe-prints"></i>部落行程
+                      </Dropdown.Item>
+
+                      <Dropdown.Item href="/Guild">
+                        <i className="fas fa-street-view"></i>在地導遊
+                      </Dropdown.Item>
+                    </div>
+                  </Dropdown.Menu>
+                </Dropdown>
               </>
             ) : (
               <>
@@ -107,42 +166,39 @@ function Header(porps) {
                     註冊
                   </Link>
                 </div>
+
+                {/* 漢堡(未登入會員) */}
+                <Dropdown
+                  className="td-burger"
+                  isOpen={dropdownOpen}
+                  toggle={toggle}
+                  onClick={toggle}
+                >
+                  <Dropdown.Toggle className="burger-toggle">
+                    <i
+                      className={
+                        dropdownOpen ? 'fas fa-window-close' : 'fas fa-bars'
+                      }
+                    ></i>
+                  </Dropdown.Toggle>
+
+                  {/* 漢堡選單 (未登入會員)*/}
+                  <Dropdown.Menu className="td-burger-list position-absolute text-center ">
+                    <div className="d-flex flex-column justify-content-around ">
+                      <Dropdown.Item href="/">
+                        <i className="fas fa-home"></i>回到首頁
+                      </Dropdown.Item>
+                      <Dropdown.Item href="/journey">
+                        <i className="fas fa-shoe-prints"></i>部落行程
+                      </Dropdown.Item>
+                      <Dropdown.Item href="/Guild">
+                        <i className="fas fa-street-view"></i>在地導遊
+                      </Dropdown.Item>
+                    </div>
+                  </Dropdown.Menu>
+                </Dropdown>
               </>
             )}
-
-            {/* 漢堡 */}
-            <div className="td-burger">
-              <input type="checkbox" id="td-burger-toggle" />
-              <label
-                htmlFor="td-burger-toggle"
-                className="td-burger-btn d-flex flex-column"
-              >
-                <span></span>
-                <span></span>
-                <span></span>
-              </label>
-              {/* 漢堡選單 */}
-              <ul className="td-burger-list d-flex flex-column position-absolute text-center justify-content-around">
-                {/* <Link
-                  to="/"
-                  className="btn rwd-logout td-btn-medium-b td-header-logout text-center"
-                  onClick={handleLogout}
-                >
-                  登出
-                </Link> */}
-
-                <Link to="/home">
-                  <i className="fas fa-home"></i>回到首頁
-                </Link>
-
-                <Link to="/journey">
-                  <i className="fas fa-shoe-prints"></i>部落行程
-                </Link>
-                <Link to="/Guild">
-                  <i className="fas fa-street-view"></i>在地導遊
-                </Link>
-              </ul>
-            </div>
           </nav>
         </div>
       </header>

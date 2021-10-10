@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import LazyLoad from 'react-lazyload'
 import GuildJourney from './guild_info/GuildJourney'
-import JourneyCoustomerReview from './journey_info/coustomer_review/journeyCoustomerReview'
 import ScrollToTop from 'react-scroll-to-top'
+import JourneyCoustomerReview from './journey_info/coustomer_review/journeyCoustomerReview'
 import axios from 'axios'
 import { API_URL } from '../config'
 //CSS
@@ -155,21 +155,29 @@ function GuildInfo(props) {
             <div className="guild-intro-item-group d-flex flex-column">
               <div className="guild-intro-item-dt mx-auto">
                 <div className="guild-intro-tribe d-flex align-items-center">
-                  <div className="item-icon"></div>
+                  <div className="item-icon">
+                    {' '}
+                    <i className="fas fa-map-signs"></i>
+                  </div>
                   <div className="guild-intro-item-tribe">
                     <p className="item-tribe-title">帶團部落</p>
                     <p className="item-tribe-txt">{guildData.tribe}</p>
                   </div>
                 </div>
                 <div className="guild-intro-license d-flex align-items-center">
-                  <div className="item-icon"></div>
+                  <div className="item-icon">
+                    <i className="fas fa-id-badge"></i>
+                  </div>
                   <div className="guild-intro-item-license">
                     <p className="item-license-title">證照</p>
                     <p className="item-license-txt">華語導遊證照</p>
                   </div>
                 </div>
                 <div className="guild-intro-lan d-flex align-items-center">
-                  <div className="item-icon"></div>
+                  <div className="item-icon">
+                    {' '}
+                    <i class="fas fa-globe"></i>
+                  </div>
                   <div className="guild-intro-item-lan">
                     <p className="item-lan-title">語言</p>
                     <p className="item-lan-txt">{guildData.language}</p>
@@ -192,10 +200,9 @@ function GuildInfo(props) {
               />
             </div>
             {/* <!-- 影片 --> */}
-            <div className="guild-intro-video td-mt-75">
+            <div className="guild-intro-video ">
               <iframe
-                width="505"
-                height="296"
+                className="td-mt-75"
                 src={guildData.video}
                 title="YouTube video player"
                 frameBorder="0"

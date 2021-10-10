@@ -155,6 +155,7 @@ header {
   .td-right-nav {
     max-width: 100px;
     height: 42px;
+    margin-right: 8px;
   }
 
   /* 漢堡選單 */
@@ -180,32 +181,37 @@ header {
   }
 
   /* 漢堡按鈕變化 */
-  #td-burger-toggle {
-    display: none;
+  .td-burger {
+    position: relative;
+    width: 30px;
   }
-
-  #td-burger-toggle:checked + .td-burger-btn {
-    background-color: var(--blue-color);
-    padding: 2px;
-    height: 25px;
+  .burger-toggle {
+    background-color: unset !important;
+    border: unset;
+    padding: unset;
   }
-
-  #td-burger-toggle:checked + .td-burger-btn span {
-    background-color: #fff;
-    border-radius: 10px;
-    transition: ease-in-out 0.2s;
-    top: 0;
+  .td-burger :hover {
+    transform: unset;
+    transition: unset;
+    box-shadow: unset;
   }
-  #td-burger-toggle:checked + .td-burger-btn span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 5px;
+  .burger-toggle:focus {
+    border: unset;
+    outline: unset;
+    box-shadow: unset !important;
   }
-  #td-burger-toggle:checked + .td-burger-btn span:nth-child(2) {
-    transform: rotate(-45deg);
-    top: -5px;
+  .td-nav .burger-toggle i {
+    color: var(--blue-color);
+    font-size: 25px;
   }
-  #td-burger-toggle:checked + .td-burger-btn span:nth-child(3) {
-    display: none;
+  .td-nav .burger-toggle .fa-bars {
+    padding-left: 5px;
+  }
+  .td-nav .burger-toggle .fa-window-close {
+    font-size: 28px;
+  }
+  .td-nav .burger-toggle::after {
+    display: none !important;
   }
 
   /* 選單內容 */
@@ -216,15 +222,17 @@ header {
     border: 3px solid var(--blue-color);
     box-sizing: border-box;
     border-radius: 10px;
-    right: 0px;
+    right: 50px;
     top: 83px;
     z-index: 500;
     background: #fff;
     padding: 0;
-    margin: 0;
-    transform: scaleY(0);
+    margin-top: 50px;
+    transform: translate3d(0px, 0px, 0px) !important ;
     transition: transform 0.2s ease-in;
-    transform-origin: 50% 0;
+  }
+  .td-burger-list div {
+    height: 270px;
   }
   .td-burger-list i {
     margin-right: 20px;
@@ -245,6 +253,10 @@ header {
     padding: 14px 0 14px 0;
     /* border-bottom: 1px solid var(--blue-color); */
   }
+  .td-burger-list a:hover {
+    background-color: var(--blue-color);
+    color: #fff;
+  }
 
   .td-burger-list a:focus {
     width: 100%;
@@ -257,11 +269,13 @@ header {
   /* 漢堡logout */
   .td-burger-list .rwd-logout {
     width: 60%;
-    margin: 25px;
+    height: 50px;
+    margin: 10px auto 10px auto;
+    color: white;
+    background-color: var(--blue-color);
+    font-size: 18px;
   }
-  #td-burger-toggle:checked ~ .td-burger-list {
-    transform: scaleY(1);
-  }
+
   .td-header-login,
   .td-header-register,
   .td-header-logout {

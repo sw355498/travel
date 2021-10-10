@@ -33,7 +33,7 @@ function GuildFilterResult({ tribes, pageNum }) {
     '太巴塱部落',
     '水璉部落',
     '奇美部落',
-    '奇萊雅部落',
+    '馬太鞍部落',
     '撒固兒部落',
   ]
   const lanTypes = ['中文', '英文']
@@ -68,8 +68,8 @@ function GuildFilterResult({ tribes, pageNum }) {
       ?.filter((guild) => lans.some((lan) => guild.language.includes(lan)))
   )
 
-  console.log(displayGuilds)
-  console.log('!', filteredPosts)
+  // console.log(displayGuilds)
+  // console.log('!', filteredPosts)
 
   const slicedPosts = useMemo(
     () => filteredPosts?.slice(indexOfFirstPost, indexOfLastPost),

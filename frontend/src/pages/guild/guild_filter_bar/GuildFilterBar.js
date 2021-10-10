@@ -166,7 +166,7 @@ function GuildFilterBar(props) {
             {/* <!-- 部落 --> */}
             <div className="filter-tribe-rwd td-mb-25">
               <h2>部落篩選</h2>
-              <div>
+              <div className="filter-tribe-check col-10">
                 {tagTypes?.map((value, i) => (
                   <TribeCheckboxGuild
                     key={i}
@@ -180,7 +180,8 @@ function GuildFilterBar(props) {
                 ))}
               </div>
               {/* 語言 */}
-              <div>
+              <h2>語言</h2>
+              <div className="filter-tribe-check col-10">
                 {lanTypes?.map((value, i) => (
                   <LanCheckboxGuild
                     key={i}

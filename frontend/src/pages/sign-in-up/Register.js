@@ -17,9 +17,9 @@ const Register = (props) => {
   const [confirmPassword, setConfirmPassword] = useState('')
 
   const [feedback, setFeedBack] = useState(null)
-  // const showFeedBack = () => {
-  //   return feedback != null
-  // }
+  const showFeedBack = () => {
+    return feedback != null
+  }
 
   // 彈跳
   const [show, setShow] = useState(false)
@@ -168,104 +168,107 @@ const Register = (props) => {
 
   const display = (
     <>
-      <div className="tab-content">
-        <div id="tab-inner">
-          <form
-            className="form-content"
-            onSubmit={handleSubmit}
-            onChange={handleFormChange}
-            onInvalid={handleFormInvalid}
+      <div className="container ">
+        <div className="tab-content col position-relative">
+          <Alert
+            variant="danger"
+            className={feedback ? '' : 'visually-hidden'}
+            isOpen={showFeedBack}
+            fade={false}
+            aria-label="feedback"
           >
-            <div className="text-center td-mt-25">
-              <p>註冊</p>
-            </div>
-            <Alert
-              variant="danger"
-              // isOpen={showFeedBack}
-              // fade={false}
-              // aria-label="feedback"
-              onClose={() => setShow(false)}
-            >
-              {feedback}
-            </Alert>
+            {feedback}
+          </Alert>
 
-            <div className="form-group">
-              {/* <label for="email">Email</label> */}
-              <GuildInput
-                label="Email"
-                type="email"
-                className="form-control"
-                id="email"
-                name="email"
-                placeholder=""
-                value={email}
-                state={fields.email}
-                setState={handleFieldChange}
-                error={fieldErrors.email}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <GuildInput
-                label="用戶名"
-                type="text"
-                className="form-control"
-                id="name"
-                name="name"
-                value={name}
-                placeholder=""
-                state={fields.name}
-                setState={handleFieldChange}
-                error={fieldErrors.name}
-                required
-              />
-            </div>
-            <div className="form-group">
-              {/* <label for="password">密碼</label> */}
-              <GuildInput
-                label="輸入密碼"
-                type="password"
-                className="form-control"
-                id="password"
-                name="password"
-                placeholder=""
-                value={password}
-                state={fields.password}
-                setState={handleFieldChange}
-                error={fieldErrors.password}
-                minLength="6"
-                maxLength="12"
-                required
-              />
-            </div>
-            <div className="form-group">
-              {/* <label for="confirmPassword">在輸入一次密碼</label> */}
-              <GuildInput
-                label="在輸入一次密碼"
-                type="password"
-                className="form-control"
-                id="confirmPassword"
-                name="confirmPassword"
-                placeholder=""
-                value={confirmPassword}
-                state={fields.confirmPassword}
-                setState={handleFieldChange}
-                error={fieldErrors.confirmPassword}
-                minLength="6"
-                maxLength="12"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="mx-auto sign-up-btn  td-mb-25 td-mt-25"
+          <div id="tab-inner">
+            <form
+              className="form-content"
+              onSubmit={handleSubmit}
+              onChange={handleFormChange}
+              onInvalid={handleFormInvalid}
             >
-              註冊
-            </button>
-            <Link to="/Login" className="free">
-              已經有帳號?去登入
-            </Link>
-          </form>
+              <div className="text-center td-mt-25">
+                <p>註冊</p>
+              </div>
+
+              <div className="form-group">
+                {/* <label for="email">Email</label> */}
+                <GuildInput
+                  label="Email"
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="email"
+                  placeholder=""
+                  value={email}
+                  state={fields.email}
+                  setState={handleFieldChange}
+                  error={fieldErrors.email}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <GuildInput
+                  label="用戶名"
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  name="name"
+                  value={name}
+                  placeholder=""
+                  state={fields.name}
+                  setState={handleFieldChange}
+                  error={fieldErrors.name}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                {/* <label for="password">密碼</label> */}
+                <GuildInput
+                  label="輸入密碼"
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  name="password"
+                  placeholder=""
+                  value={password}
+                  state={fields.password}
+                  setState={handleFieldChange}
+                  error={fieldErrors.password}
+                  minLength="6"
+                  maxLength="12"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                {/* <label for="confirmPassword">在輸入一次密碼</label> */}
+                <GuildInput
+                  label="在輸入一次密碼"
+                  type="password"
+                  className="form-control"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder=""
+                  value={confirmPassword}
+                  state={fields.confirmPassword}
+                  setState={handleFieldChange}
+                  error={fieldErrors.confirmPassword}
+                  minLength="6"
+                  maxLength="12"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="mx-auto sign-up-btn  td-mb-25 td-mt-25"
+              >
+                註冊
+              </button>
+              <Link to="/Login" className="free">
+                已經有帳號?去登入
+              </Link>
+            </form>
+          </div>
         </div>
       </div>
     </>

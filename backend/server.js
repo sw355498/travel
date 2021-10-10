@@ -321,7 +321,7 @@ app.post("/pay",async (req, res, next) => {
                 let go_time = moment(journeyData[n].go_time).format('YYYY-MM-DD')
                 let totalprice = journeyData[n].price * journeyData[n].amount //每筆行程總價格
             await connection.queryAsync(
-                    "INSERT INTO order_detail (guide, journey_id, name, img, go_time, amount, price, order_number) VALUES (?);",
+                    "INSERT INTO order_deta (guide, journey_id, name, img, go_time, amount, price, order_number) VALUES (?);",
                     [[ 
                         journeyData[n].guild,
                         journeyData[n].id,
@@ -335,7 +335,7 @@ app.post("/pay",async (req, res, next) => {
             );
         }
             await connection.queryAsync(
-                "INSERT INTO order_form (member_email, sur_name, first_name, phone, nation, address, email, card_number, bill_status, order_status, order_number) VALUES (?);",
+                "INSERT INTO order_form (member_email, sur_name, first_name, phone, nation, address, email, card_number, total_cost,  bill_status, order_status, order_number) VALUES (?);",
                 [[ 
                     req.body.isLogin,
                     req.body.payData.surName,
@@ -345,6 +345,7 @@ app.post("/pay",async (req, res, next) => {
                     req.body.payData.address,
                     req.body.payData.email,
                     req.body.payData.number,
+                    req.body.totalCost,
                     req.body.payData.bill,
                     "已付款",
                     orderNumber,
@@ -365,7 +366,7 @@ app.get("/order_form", async(req, res, next) => {
     try {
         const member_email = req.session.member.email
         let page = req.query.page || 1 ;//目前在第幾頁,預設第1頁
-        const perPage = 1;//每一頁筆數
+        const perPage = 10;//每一頁筆數
         let count = await connection.queryAsync("SELECT COUNT(*) AS total FROM order_form WHERE member_email=?",[member_email]);
         const total = count[0].total//總共有幾筆
         const totalPages = Math.ceil(total / perPage)//總夠有幾頁
@@ -431,6 +432,17 @@ APIrouter.put("/journeys/:id/like",loginCheckMiddleware, async (req, res, next) 
 })
 
 app.use("/api", APIrouter)
+
+// 這一個 router 的路由都會先經過這個中間件
+app.use(loginCheckMiddleware);
+
+app.get("/member",   async (req,res,next)=>{
+    let result = await connection.queryAsync("SELECT * FROM member");
+    res.json(result);
+    console.log("會員");
+})
+
+
 
 //處理找不到路由的錯誤的中間件
 app.use((req,res,next)=>{

@@ -59,8 +59,6 @@ function PayContent(props) {
         newMycartDisplay = [...newMycartDisplay, newItem]
       }
     }
-
-    // console.log(newMycartDisplay)
     setMycartDisplay(newMycartDisplay)
   }, [mycart])
 

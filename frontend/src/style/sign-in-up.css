@@ -6,7 +6,7 @@ a {
   text-decoration: none;
 }
 .tab-content {
-  max-width: 530px;
+  max-width: 500px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -24,6 +24,12 @@ a {
 .tab-content .form-control:focus {
   box-shadow: unset;
   border-color: var(--blue-color);
+}
+.tab-content span {
+  font-size: 15px;
+  font-style: italic;
+  margin-left: 10px;
+  color: var(--blue-color);
 }
 .form-group {
   color: #000;
@@ -101,4 +107,14 @@ label {
 .free {
   color: var(--blue-color);
   font-size: 16px;
+}
+.alert {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  max-width: 80%;
+  height: 40px;
+  transition: linear;
 }
