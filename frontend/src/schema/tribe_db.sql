@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2021 年 10 月 10 日 09:39
+-- 產生時間： 2021 年 10 月 10 日 20:52
 -- 伺服器版本： 10.4.19-MariaDB
 -- PHP 版本： 8.0.7
 
@@ -43,7 +43,7 @@ INSERT INTO `card_data` (`id`, `number`, `name`, `expiry`, `cvc`) VALUES
 (1, '5555444433331111', 'JohnSmith', '1020', '737'),
 (2, '4111111111111111', 'JohnSmith', '1020', '737'),
 (3, '370000000000002', 'JohnSmith', '1020', '737'),
-(4, '3600666633334444', 'JohnSmith', '1020', '737'),
+(4, '36006666333344', 'JohnSmith', '1020', '737'),
 (5, '6011601160116611', 'JohnSmith', '1020', '737'),
 (6, '5066991111111118', 'JohnSmith', '1020', '737'),
 (7, '6250946000000016', 'JohnSmith', '1020', '737'),
@@ -205,11 +205,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `member_id`, `guild_id`, `guide_review`, `guide_review_star`, `guide_review_number`, `guide_review_image`, `member_ avatar`, `member_name`, `member_evaluation`, `member_star`, `member_collect`, `journey_review_content`, `journey_review_point`, `sur_name`, `phone`, `nation`, `birthday`, `email`, `password`, `sex`, `order_time`, `order_status`, `order_id`, `pay_status`, `total_price`, `journey_id`, `total_people`, `journey_name`, `journey_information`, `info`, `member_order_review`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ann', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1234@test.com', '$2b$10$6uC10ylDM9HSGnYamfzHsOzuEbtLYvShDhn8lRe1/fyJofwYK7rCi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JohnSmith', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test@gmail.com', '$2b$10$LOmd33MnVVmsu3rSB01yGOvg8lgUmBC6fMcxqRUcV3KbnGtLuXrES', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test@test.com', '$2b$10$9UQVBjrFr9EsaKHKZ/.Qu.XGmtQhV5YNRdm43znhnmq3aF5hJvH/e', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1@gmail.com', '$2b$10$8Zmq4f3oNbaw1Oo1MlZ.7.mbJAqliMPWRIirnmRMbu/OJp921PadS', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '111@gmail.com', '$2b$10$td8YATYc0tYS5wM7pRtsju8cWEI.fvHa5rgcBNrZHJs6Sxi82Xyka', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ann', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ann@test.com', '$2b$10$4cvnrURa33wFLXULTWwwk.sa3cv8OGwo4LnCxJhh3Ly05oxK3ZN42', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'jim', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'jim@test.com', '$2b$10$74k1ELTN2WWyXG2vVXADIeLSHTuOWMA1LH7lp5b/cZlNJ901G.GFy', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -234,16 +231,18 @@ CREATE TABLE `order_deta` (
 --
 
 INSERT INTO `order_deta` (`id`, `guide`, `journey_id`, `name`, `img`, `go_time`, `amount`, `price`, `order_number`) VALUES
-(1, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '65998620211010'),
-(2, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '49261620211010'),
-(3, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '75945620211010'),
-(4, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '79039120211010'),
-(5, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '94863420211010'),
-(6, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '22882520211010'),
-(7, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '35047720211010'),
-(8, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '24549420211010'),
-(9, '希達', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-15', 4, 5120, '51214820211010'),
-(10, '卡拉', 14, '聆聽文史典藏半日遊', '撒固兒2.jpg', '2021-10-22', 5, 4000, '51214820211010');
+(1, '芭奈‧法老', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-11', 5, 5000, '35368520211011'),
+(2, '希達', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-28', 7, 8960, '35368520211011'),
+(3, '芭奈‧法老', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-15', 1, 1280, '95196720211011'),
+(4, '瓦丹', 3, '噶瑪蘭族文化體驗｜野菜採集文化漫步，飲食饗宴，香蕉絲工藝\r\n', '香蕉絲體驗.jpg', '2021-10-11', 1, 1200, '94141320211011'),
+(5, '瓦丹', 3, '噶瑪蘭族文化體驗｜野菜採集文化漫步，飲食饗宴，香蕉絲工藝\r\n', '香蕉絲體驗.jpg', '2021-10-11', 1, 1200, '82990320211011'),
+(6, '瓦丹', 3, '噶瑪蘭族文化體驗｜野菜採集文化漫步，飲食饗宴，香蕉絲工藝\r\n', '香蕉絲體驗.jpg', '2021-10-11', 1, 1200, '89925120211011'),
+(7, '瓦丹', 3, '噶瑪蘭族文化體驗｜野菜採集文化漫步，飲食饗宴，香蕉絲工藝\r\n', '香蕉絲體驗.jpg', '2021-10-11', 1, 1200, '11443420211011'),
+(8, '芭奈‧法老', 1, '半日漁獵生活體驗｜走進太陽的部落', '靜浦-竹筏漫遊.jpg', '2021-10-11', 1, 1000, '03598420211011'),
+(9, '希達', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-11', 1, 1280, '49849320211011'),
+(10, '希達', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-11', 1, 1280, '95969020211011'),
+(11, '卡拉', 9, '奇美部落深度旅遊{一}', '河邊撒網體驗01.jpg', '2021-10-22', 1, 1000, '25119320211011'),
+(12, '卡拉', 13, '走進撒固兒', '撒固兒1.jpg', '2021-10-27', 1, 1000, '35345620211011');
 
 -- --------------------------------------------------------
 
@@ -273,8 +272,14 @@ CREATE TABLE `order_form` (
 --
 
 INSERT INTO `order_form` (`id`, `member_email`, `sur_name`, `first_name`, `phone`, `nation`, `address`, `email`, `card_number`, `total_cost`, `bill_status`, `order_status`, `order_time`, `order_number`) VALUES
-(1, 'test@gmail.com', '陶', '淵明', '0933333333', '台灣', '1020', 'test@gmail.com', '5555444433331111', 2400, '電子發票', '已付款', '2021-10-10', '24549420211010'),
-(2, '111@gmail.com', '陶', '小明', '0933333333', '台灣', '高雄市楠梓區', '1234@test.com', '5555444433331111', 9120, '電子發票', '已付款', '2021-10-10', '51214820211010');
+(1, 'Ann@test.com', '林', '美呈', '0933333333', '台灣', '高雄市楠梓區', 'Ann@test.com', '5555444433331111', 13960, '電子發票', '已付款', '2021-10-11', '35368520211011'),
+(2, 'Ann@test.com', '林', '美呈', '0933333333', '台灣', '高雄市楠梓區', 'Ann@test.com', '4111111111111111', 1280, '電子發票', '已付款', '2021-10-11', '95196720211011'),
+(3, 'Ann@test.com', '林', '美呈', '0933333333', '台灣', '高雄市楠梓區', 'Ann@test.com', '36006666333344', 1200, '電子發票', '已付款', '2021-10-11', '11443420211011'),
+(4, 'Ann@test.com', '林', '美呈', '0933333333', '台灣', '高雄市楠梓區', 'Ann@test.com', '370000000000002', 1000, '電子發票', '已付款', '2021-10-11', '03598420211011'),
+(5, 'Ann@test.com', '林', '美呈', '0933333333', '台灣', '高雄市楠梓區', 'Ann@test.com', '6011601160116611', 1280, '個人紙本發票', '已付款', '2021-10-11', '49849320211011'),
+(6, 'Ann@test.com', '林', '美呈', '0911111111', '台灣', '高雄市楠梓區', 'Ann@test.com', '5066991111111118', 1280, '電子發票', '已付款', '2021-10-11', '95969020211011'),
+(7, 'Ann@test.com', '林', '美呈', '0933333333', '台灣', '高雄市楠梓區', 'Ann@test.com', '6250946000000016', 1000, '個人紙本發票', '已付款', '2021-10-11', '25119320211011'),
+(8, 'Ann@test.com', '林', '美呈', '0955491832', '台灣', '桃園市中央路', 'Ann@test.com', '6062828888666688', 1000, '雲端發票捐贈', '已付款', '2021-10-11', '35345620211011');
 
 -- --------------------------------------------------------
 
@@ -384,19 +389,19 @@ ALTER TABLE `lang`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_deta`
 --
 ALTER TABLE `order_deta`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_form`
 --
 ALTER TABLE `order_form`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `tribes`
