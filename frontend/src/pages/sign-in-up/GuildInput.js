@@ -1,4 +1,5 @@
 import React from 'react'
+import { Placeholder } from 'react-bootstrap'
 
 function InputTextField({
   name,
@@ -11,6 +12,7 @@ function InputTextField({
   minLength,
   maxLength,
   pattern,
+  placeholder,
 }) {
   // email, password...etc
   const fieldType = type ? type : 'text'
@@ -18,8 +20,10 @@ function InputTextField({
   return (
     <>
       <div className="form-group">
-        <label htmlFor={name}>{label}</label>
-        <span>(必填)</span>
+        <div>
+          <label htmlFor={name}>{label}</label>
+          <span>*必填</span>
+        </div>
         <input
           id={name}
           name={name}
@@ -31,6 +35,7 @@ function InputTextField({
           minLength={minLength}
           maxLength={maxLength}
           pattern={pattern}
+          placeholder={placeholder}
         />
         {error !== '' && <div className="invalid-feedback">{error}</div>}
       </div>

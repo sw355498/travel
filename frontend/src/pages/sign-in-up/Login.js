@@ -9,7 +9,6 @@ import { Redirect } from 'react-router-dom'
 import Feedback from 'react-bootstrap/esm/Feedback'
 
 import '../../style/sign-in-up.css'
-import { left } from '@popperjs/core'
 
 const Login = (props) => {
   const { member, setMember } = useAuth()
@@ -89,66 +88,87 @@ const Login = (props) => {
   }, [])
 
   const display = (
-    <div className="container ">
-      <div className="tab-content col position-relative">
-        <Alert
-          className={feedback ? '' : 'visually-hidden'}
-          col-10
-          variant="danger"
-          isOpen={showFeedBack}
-          fade={false}
-          aria-label="feedback"
-          // onClose={() => setShow(false)}
-        >
-          {/* {feedback} */}
+    <div className="container">
+      <div className="login-container">
+        <div className="d-flex login-inner position-relative ">
+          <img src="/images/data/register-bg.jpg" className="img"></img>
 
-          {feedback}
-        </Alert>
+          <div className="tab-content position-absolute">
+            <Alert
+              className={feedback ? '' : 'visually-hidden'}
+              col-10
+              variant="danger"
+              isOpen={showFeedBack}
+              fade={false}
+              aria-label="feedback"
+              // onClose={() => setShow(false)}
+            >
+              {/* {feedback} */}
 
-        <div id="tab-inner">
-          <div className="text-center td-mt-25">
-            <p>登入</p>
+              {feedback}
+            </Alert>
+
+            <div id="tab-inner">
+              <div className="text-center td-mt-35">
+                <p>登入</p>
+              </div>
+
+              <form className="form-content" id="tab1" onSubmit={handleSubmit}>
+                {/* Email */}
+                <div className="form-group">
+                  <div className="form-group">
+                    <div>
+                      {' '}
+                      <label for="email">Email</label>
+                    </div>
+
+                    <input
+                      type="email"
+                      className="login-control form-control"
+                      id="email"
+                      name="email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value)
+                      }}
+                      // required
+                    />
+                  </div>
+                </div>
+
+                {/* 密碼 */}
+                <div className="form-group">
+                  <div className="form-group">
+                    <div>
+                      {' '}
+                      <label for="password">密碼</label>
+                    </div>
+                    <input
+                      type="password"
+                      className="login-control form-control"
+                      id="password"
+                      name="password"
+                      value={password}
+                      onChange={(e) => {
+                        setPassword(e.target.value)
+                      }}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  className="mx-auto sign-in-btn  td-mb-25 d-block"
+                >
+                  登入
+                </button>
+                <Link to="/Register" href="" className="free">
+                  免費註冊
+                </Link>
+              </form>
+            </div>
           </div>
-
-          <form className="form-content col" id="tab1" onSubmit={handleSubmit}>
-            {/* Email */}
-            <div className="form-group">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                }}
-                // required
-              />
-            </div>
-
-            {/* 密碼 */}
-            <div className="form-group">
-              <label for="password">密碼</label>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value)
-                }}
-                required
-              />
-            </div>
-            <button type="submit" className="mx-auto sign-in-btn  td-mb-25 ">
-              登入
-            </button>
-            <Link to="/Register" href="" className="free">
-              免費註冊
-            </Link>
-          </form>
         </div>
       </div>
     </div>

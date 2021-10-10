@@ -144,8 +144,8 @@
   line-height: 24px;
 }
 .guild-intro-video {
-  max-width: 505px;
-  max-height: 296px;
+  width: 505px;
+  height: 296px;
 }
 
 .guild-intro-video iframe {
@@ -426,7 +426,7 @@
   .guild-intro-item-img {
     width: 470px;
     margin-bottom: 20px !important;
-    /* height: 765px; */
+    height: auto;
   }
   .guild-intro-item-img .t-left,
   .guild-intro-item-img .t-right {
@@ -441,6 +441,7 @@
   }
   .guild-intro-video {
     height: 305px;
+    width: 100%;
     margin: auto;
   }
   .btn-consult {
@@ -616,7 +617,7 @@
   /* 導遊介紹圖片 */
   .guild-intro-item-img {
     max-width: 100%;
-    height: 465px;
+    height: unset;
   }
   .guild-intro-item-img .t-left,
   .guild-intro-item-img .t-right {
@@ -647,13 +648,16 @@
 }
 
 @media screen and (max-width: 458px) {
-  .guild-journey-content {
+  /* .guild-journey-content {
     padding: 10px;
+  } */
+  .guild-journey-act {
+    right: 15px;
   }
   .guild-journey-tribe {
     color: var(--blue-color);
-    right: 10px;
-    top: 50px;
+    /* right: 10px;
+    top: 50px; */
   }
   .guild-journey-act .heart {
     right: 10px;

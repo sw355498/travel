@@ -5,23 +5,57 @@ body {
 a {
   text-decoration: none;
 }
+.login-inner a {
+  text-decoration: none;
+  padding-left: 40px;
+}
+
+.register-inner,
+.login-inner {
+  width: 980px;
+  margin: 30px auto 30px auto;
+  height: 570px;
+  overflow: hidden;
+}
+.register-inner p {
+  color: rgb(54, 54, 54);
+}
+.login-inner p {
+  color: rgb(54, 54, 54);
+}
+.register-inner label {
+  color: rgb(32, 32, 32);
+}
+.login-inner label {
+  color: rgb(32, 32, 32);
+}
+
 .tab-content {
-  max-width: 500px;
-  height: auto;
+  margin: auto;
+  width: 380px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 30px 40px;
   position: relative;
-  border: 2px solid var(--blue-color);
-  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.568);
+  /* border-radius: 20px; */
+}
+.login-inner .tab-content {
+  justify-content: center;
+  /* align-items: center; */
+}
+.text-center {
+  font-weight: 500;
+}
+.tab-content .form-content {
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 .tab-content p {
   font-size: 24px;
 }
-.tab-content .form-control:focus {
+.tab-content .form-control:focus,
+.tab-content .login-control:focus {
   box-shadow: unset;
   border-color: var(--blue-color);
 }
@@ -33,28 +67,45 @@ a {
 }
 .form-group {
   color: #000;
+  box-shadow: none;
   margin-bottom: 1rem;
   margin-top: 25px;
-  box-shadow: none;
 }
-
-label {
+.form-group .form-group {
+  width: 80%;
+  margin: auto;
+}
+/* .login-inner .form-group {
+  width: 80%;
+  margin: auto;
+} */
+.tab-content label {
   display: inline-block;
   margin-bottom: 0.5rem;
-  /* font-size:  20px; */
   font-weight: normal;
+  font-size: 16px;
 }
 .form-control {
   display: block;
   width: 100%;
   -webkit-appearance: none;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
   height: auto;
   border: none;
   color: #8da291;
   font-size: 1rem;
   line-height: 1.5;
-  border: 1px solid var(--blue-color);
+}
+.login-inner input {
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.8);
+  height: auto;
+  border: none;
+  color: #8da291;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 .btn-group {
   position: relative;
@@ -96,18 +147,26 @@ label {
 }
 .sign-in-btn,
 .sign-up-btn {
-  width: 100%;
-  padding: 8px;
+  width: 50%;
+  padding: 10px;
   border: unset;
-  background: var(--blue-color);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.89);
+  color: var(--blue-color);
   border-radius: 20px;
-  margin-top: 35px;
+  border: 3px solid var(--blue-color);
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+.sign-in-btn {
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 .free {
   color: var(--blue-color);
   font-size: 16px;
+  margin-left: 110px;
 }
+
 .alert {
   position: absolute;
   left: 0;

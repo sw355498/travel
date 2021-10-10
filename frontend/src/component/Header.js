@@ -14,7 +14,7 @@ import '../style/spacing.css'
 import logo from '../img/logo.png'
 import hualsland from '../img/花島（黑）.png'
 import cart from '../img/cart.png'
-import avatar from '../img/avatar.png'
+import avatar from '../img/會員頭像.png'
 
 function Header(porps) {
   const { member, setMember } = useAuth()
@@ -22,18 +22,18 @@ function Header(porps) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const toggle = () => setDropdownOpen((prevState) => !prevState)
 
-  const clickEvent = (e) => {
-    if (!e.target.className.inclueds('td-burger')) {
-      setDropdownOpen(false)
-      document.addEventListener('click', toggle)
-    }
-  }
-  useEffect(() => {
-    document.addEventListener('click', setDropdownOpen(false))
-    return () => {
-      document.removeEventListener('click', setDropdownOpen(true))
-    }
-  })
+  // const clickEvent = (e) => {
+  //   if (!e.target.className.inclueds('td-burger')) {
+  //     setDropdownOpen(false)
+  //     document.addEventListener('click', toggle)
+  //   }
+  // }
+  // useEffect(() => {
+  //   document.addEventListener('click', setDropdownOpen(false))
+  //   return () => {
+  //     document.removeEventListener('click', setDropdownOpen(true))
+  //   }
+  // })
 
   // const toggle =
 
