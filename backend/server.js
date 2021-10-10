@@ -366,14 +366,14 @@ app.get("/order_form", async(req, res, next) => {
     try {
         const member_email = req.session.member.email
         let page = req.query.page || 1 ;//目前在第幾頁,預設第1頁
-        const perPage = 10;//每一頁筆數
+        const perPage = 5;//每一頁筆數
         let count = await connection.queryAsync("SELECT COUNT(*) AS total FROM order_form WHERE member_email=?",[member_email]);
         const total = count[0].total//總共有幾筆
         const totalPages = Math.ceil(total / perPage)//總夠有幾頁
         //取得當頁資料
         let offset = (page-1) * perPage//要跳過的比數
         let result = await connection.queryAsync(
-            "SELECT * FROM order_form WHERE member_email=? LIMIT ? OFFSET ?",
+            "SELECT * FROM order_form  WHERE member_email=? LIMIT ? OFFSET ?",
             [member_email, perPage, offset]
         );
         let pagination = {
