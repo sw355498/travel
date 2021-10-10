@@ -1,7 +1,6 @@
 import React from 'react'
 import qs from 'qs'
 import { useHistory } from 'react-router-dom'
-import { number } from 'prop-types'
 
 const Pagination = ({
   perPage,
@@ -26,7 +25,6 @@ const Pagination = ({
     }
     return handleClick(number)
   }
-  console.log(currentPage)
   //last onClick
   const prevPage = currentPage - 1
   const prevPageNum = prevPage >= 1 ? prevPage : '1'
