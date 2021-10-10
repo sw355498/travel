@@ -80,7 +80,7 @@ function FilterBar(props) {
             <p className="position-absolute text-white">星等</p>
           </div>
           {/* <!-- checkbox選項 --> */}
-          <div className="filter-stars-check my-auto d-flex flex-nowrap col-10">
+          <div className="filter-tribe-check my-auto d-flex flex-nowrap col-10">
             {starsTypes?.map((value, i) => (
               <TribeCheckbox
                 key={i}

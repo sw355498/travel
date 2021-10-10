@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import LazyLoad from 'react-lazyload'
 import GuildJourney from './guild_info/GuildJourney'
 import ScrollToTop from 'react-scroll-to-top'
 import JourneyCoustomerReview from './journey_info/coustomer_review/journeyCoustomerReview'
@@ -215,7 +216,9 @@ function GuildInfo(props) {
         {/* 導遊行程 */}
         <GuildJourney guildData={guildData} guildJourney={guildJourney} />
         {/* 旅客評論 */}
-        <JourneyCoustomerReview />
+        <LazyLoad>
+          <JourneyCoustomerReview />
+        </LazyLoad>
         <ScrollToTop smooth />
       </div>
     </>

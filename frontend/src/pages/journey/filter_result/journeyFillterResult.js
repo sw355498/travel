@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
-import { useHistory } from 'react-router-dom'
-import qs from 'qs'
+
 import FilterBar from '../filter_bar/FilterBar'
 import JourneyList from '../journey_list/JourneyList'
 import API from '../../../api'

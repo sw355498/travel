@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import ScrollToTop from 'react-scroll-to-top'
-
+import LazyLoad from 'react-lazyload'
 import Rating from '../../component/Rating'
 import Like from './Like'
 import JourneyReservationArea from './reservation_area/journeyReservationArea'
@@ -246,11 +246,13 @@ function Journey_info(props) {
         <div className="journey-info-name mt-40 td-mb-25">
           <p>體驗地點</p>
         </div>
-        {MapApi ? (
-          <GoogleMapApi findResult={findResult} MapApi={MapApi} />
-        ) : (
-          <div>Loading</div>
-        )}
+        <LazyLoad>
+          {MapApi ? (
+            <GoogleMapApi findResult={findResult} MapApi={MapApi} />
+          ) : (
+            <div>Loading</div>
+          )}
+        </LazyLoad>
       </div>
 
       <JourneyReservationArea findResult={findResult} />
