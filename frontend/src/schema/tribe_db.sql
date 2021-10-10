@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2021 年 10 月 10 日 07:22
+-- 產生時間： 2021 年 10 月 10 日 09:39
 -- 伺服器版本： 10.4.19-MariaDB
 -- PHP 版本： 8.0.7
 
@@ -174,7 +174,7 @@ CREATE TABLE `member` (
   `guide_review_number` int(5) UNSIGNED DEFAULT NULL,
   `guide_review_image` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `member_ avatar` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `member_name` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `member_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `member_evaluation` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `member_star` int(5) UNSIGNED DEFAULT NULL,
   `member_collect` int(5) DEFAULT NULL,
@@ -200,6 +200,17 @@ CREATE TABLE `member` (
   `member_order_review` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- 傾印資料表的資料 `member`
+--
+
+INSERT INTO `member` (`id`, `member_id`, `guild_id`, `guide_review`, `guide_review_star`, `guide_review_number`, `guide_review_image`, `member_ avatar`, `member_name`, `member_evaluation`, `member_star`, `member_collect`, `journey_review_content`, `journey_review_point`, `sur_name`, `phone`, `nation`, `birthday`, `email`, `password`, `sex`, `order_time`, `order_status`, `order_id`, `pay_status`, `total_price`, `journey_id`, `total_people`, `journey_name`, `journey_information`, `info`, `member_order_review`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ann', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1234@test.com', '$2b$10$6uC10ylDM9HSGnYamfzHsOzuEbtLYvShDhn8lRe1/fyJofwYK7rCi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JohnSmith', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test@gmail.com', '$2b$10$LOmd33MnVVmsu3rSB01yGOvg8lgUmBC6fMcxqRUcV3KbnGtLuXrES', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'test@test.com', '$2b$10$9UQVBjrFr9EsaKHKZ/.Qu.XGmtQhV5YNRdm43znhnmq3aF5hJvH/e', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1@gmail.com', '$2b$10$8Zmq4f3oNbaw1Oo1MlZ.7.mbJAqliMPWRIirnmRMbu/OJp921PadS', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '111@gmail.com', '$2b$10$td8YATYc0tYS5wM7pRtsju8cWEI.fvHa5rgcBNrZHJs6Sxi82Xyka', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -218,6 +229,22 @@ CREATE TABLE `order_deta` (
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- 傾印資料表的資料 `order_deta`
+--
+
+INSERT INTO `order_deta` (`id`, `guide`, `journey_id`, `name`, `img`, `go_time`, `amount`, `price`, `order_number`) VALUES
+(1, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '65998620211010'),
+(2, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '49261620211010'),
+(3, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '75945620211010'),
+(4, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '79039120211010'),
+(5, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '94863420211010'),
+(6, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '22882520211010'),
+(7, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '35047720211010'),
+(8, '巴隆', 8, '獵人體驗｜我和浪花蟹有約 （季節限定）', '浪花蟹.jpg', '2021-10-15', 1, 2400, '24549420211010'),
+(9, '希達', 2, '划竹筏·八卦網·射箭·追逐浪花蟹一日遊', '靜浦-追花逐浪花蟹.jpg', '2021-10-15', 4, 5120, '51214820211010'),
+(10, '卡拉', 14, '聆聽文史典藏半日遊', '撒固兒2.jpg', '2021-10-22', 5, 4000, '51214820211010');
+
 -- --------------------------------------------------------
 
 --
@@ -234,11 +261,20 @@ CREATE TABLE `order_form` (
   `address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `card_number` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_cost` int(10) UNSIGNED NOT NULL,
   `bill_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `order_status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `order_time` date NOT NULL DEFAULT current_timestamp(),
   `order_number` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `order_form`
+--
+
+INSERT INTO `order_form` (`id`, `member_email`, `sur_name`, `first_name`, `phone`, `nation`, `address`, `email`, `card_number`, `total_cost`, `bill_status`, `order_status`, `order_time`, `order_number`) VALUES
+(1, 'test@gmail.com', '陶', '淵明', '0933333333', '台灣', '1020', 'test@gmail.com', '5555444433331111', 2400, '電子發票', '已付款', '2021-10-10', '24549420211010'),
+(2, '111@gmail.com', '陶', '小明', '0933333333', '台灣', '高雄市楠梓區', '1234@test.com', '5555444433331111', 9120, '電子發票', '已付款', '2021-10-10', '51214820211010');
 
 -- --------------------------------------------------------
 
@@ -348,19 +384,19 @@ ALTER TABLE `lang`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_deta`
 --
 ALTER TABLE `order_deta`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_form`
 --
 ALTER TABLE `order_form`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `tribes`
