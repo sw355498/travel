@@ -23,7 +23,9 @@ function FirstCard({ JourneyGuideInfo }) {
             rating={JourneyGuideInfo[4].rating}
             className="td-mt-25"
           ></Rating>
-          <h6>{JourneyGuideInfo[4].intro_title}</h6>
+          <h6>
+            {`${JourneyGuideInfo[4].name}${JourneyGuideInfo[4].intro_title}`}
+          </h6>
           <p className="card-text td-mt-25">{JourneyGuideInfo[4].intro}</p>
           <Link
             to={`GuildInfo/${JourneyGuideInfo[4].id}`}
