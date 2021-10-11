@@ -21,8 +21,8 @@ function InputTextField({
     <>
       <div className="form-group">
         <div>
-          <label htmlFor={name}>{label}</label>
-          <span>*必填</span>
+          <label htmlFor={name}>{label} *</label>
+          {/* <span className="must-write">*必填</span> */}
         </div>
         <input
           id={name}

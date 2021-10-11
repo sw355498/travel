@@ -43,7 +43,7 @@ function JourneyGuideList(props) {
                 <div className="col-1"></div>
                 <div className="col-11 d-flex  td-mt-25 align-items-center">
                   <img
-                    src={`/images/data/馬太鞍部落/導遊/${guidereview.guideImg}`}
+                    src={`/images/data/導遊圖片/${guidereview.guideImg}`}
                     alt="旅客1"
                     className="coustomerreview-img
         "

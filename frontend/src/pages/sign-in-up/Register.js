@@ -144,6 +144,17 @@ const Register = (props) => {
     for (let pair of formdata.entries()) {
       console.log(pair)
     }
+    // 確認密碼欄位驗証，不送出到伺服器
+    if (formdata.get('password') !== formdata.get('confirmPassword')) {
+      const updatedFieldErrors = {
+        ...fieldErrors,
+        password: '密碼與確認密碼欄位輸入值不同',
+        confirmPassword: '密碼與確認密碼欄位輸入值不同',
+      }
+      setFieldErrors(updatedFieldErrors)
+
+      return
+    }
 
     // 送出註冊資料到後端
     try {
@@ -174,7 +185,7 @@ const Register = (props) => {
             <img src="/images/data/register-bg.jpg" className="img"></img>
             <div className="tab-content position-absolute">
               <Alert
-                variant="danger"
+                variant="warning"
                 className={feedback ? '' : 'visually-hidden'}
                 isOpen={showFeedBack}
                 fade={false}
@@ -185,6 +196,7 @@ const Register = (props) => {
 
               <div id="tab-inner">
                 <form
+                  // autocomplete="off"
                   className="form-content"
                   onSubmit={handleSubmit}
                   onChange={handleFormChange}
@@ -263,15 +275,19 @@ const Register = (props) => {
                       required
                     />
                   </div>
+                  <div className="must-txt">＊每個欄位都為必填</div>
                   <button
                     type="submit"
                     className="mx-auto sign-up-btn  d-block "
                   >
                     註冊
                   </button>
-                  <Link to="/Login" className="free">
-                    <span>已經有帳號?去登入</span>
-                  </Link>
+                  <div className="d-flex justify-content-center">
+                    <Link to="/Login" className="free">
+                      <span>已經有帳號?</span>
+                      <span className="have-color">去登入</span>
+                    </Link>
+                  </div>
                 </form>
               </div>
             </div>

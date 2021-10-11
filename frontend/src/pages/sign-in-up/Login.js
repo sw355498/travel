@@ -97,14 +97,12 @@ const Login = (props) => {
             <Alert
               className={feedback ? '' : 'visually-hidden'}
               col-10
-              variant="danger"
+              variant="warning"
               isOpen={showFeedBack}
               fade={false}
               aria-label="feedback"
               // onClose={() => setShow(false)}
             >
-              {/* {feedback} */}
-
               {feedback}
             </Alert>
 
@@ -113,7 +111,12 @@ const Login = (props) => {
                 <p>登入</p>
               </div>
 
-              <form className="form-content" id="tab1" onSubmit={handleSubmit}>
+              <form
+                className="form-content"
+                id="tab1"
+                autocomplete="off"
+                onSubmit={handleSubmit}
+              >
                 {/* Email */}
                 <div className="form-group">
                   <div className="form-group">
@@ -163,9 +166,11 @@ const Login = (props) => {
                 >
                   登入
                 </button>
-                <Link to="/Register" href="" className="free">
-                  免費註冊
-                </Link>
+                <div className="d-flex justify-content-center free">
+                  <Link to="/Register" href="" className=" have-color">
+                    免費註冊
+                  </Link>
+                </div>
               </form>
             </div>
           </div>
