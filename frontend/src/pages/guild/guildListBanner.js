@@ -69,8 +69,8 @@ function GuildListBanner() {
         </div>
         <div className="carousel-item">
           <img
-            src="/images/data/導遊banner/太巴塱導遊banner.jpg"
-            className="d-block w-100 img-fluid"
+            src="/images/data/導遊banner/04.jpg"
+            className="d-block w-100 img-fluid change"
             alt="banner大圖"
           />
         </div>
