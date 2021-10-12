@@ -27,9 +27,16 @@ const Register = (props) => {
   const handleShow = () => setShow(true)
 
   const messageModal = (
-    <Modal show={show} backdrop="static" backdrop="static" keyboard={false}>
+    <Modal
+      className="login-modal"
+      show={show}
+      backdrop="static"
+      backdrop="static"
+      keyboard={false}
+    >
       <Button
-        clasName="position-absolute mr-0"
+        clasName="close-btn position-absolute "
+        id="close-btn"
         variant="secondary"
         onClick={() => {
           props.history.push('/')

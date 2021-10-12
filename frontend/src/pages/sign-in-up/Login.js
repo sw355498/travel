@@ -14,6 +14,7 @@ const Login = (props) => {
   const { member, setMember } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
   const [feedback, setFeedBack] = useState(null)
   const showFeedBack = () => {
     return feedback != null
@@ -25,7 +26,13 @@ const Login = (props) => {
   const handleShow = () => setShow(true)
 
   const messageModal = (
-    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+    <Modal
+      show={show}
+      onHide={handleClose}
+      backdrop="static"
+      keyboard={false}
+      className="login-modal"
+    >
       <Modal.Title className="d-flex justify-content-center td-mt-25 td-mb-15 text-title-size40">
         <img className="td-logo-img" src="/images/logo.png" alt="logo" />
         <img
@@ -36,7 +43,7 @@ const Login = (props) => {
         {/* 歡迎來到花島! */}
       </Modal.Title>
       <Modal.Body className="text-center text-title-size38 td-mb-15">
-        歡迎來到花島!
+        Hi {name}, 歡迎來到花島!
       </Modal.Body>
       <Modal.Footer>
         <Button
@@ -63,6 +70,8 @@ const Login = (props) => {
       )
       setMember(result.data)
       handleShow()
+      setName(result.data.name)
+      // console.log(result.data)
 
       // setFeedBack(`welcome ${email}`)
     } catch (e) {
