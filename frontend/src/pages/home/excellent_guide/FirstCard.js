@@ -43,14 +43,14 @@ function FirstCard({ JourneyGuideInfo }) {
               <div className="row">
                 <div className="col-lg-4 col-md-12 d-flex justify-content-lg-end align-items-lg-center justify-content-center align-items-md-center guide-firstcomment">
                   <img
-                    src="/images/data/旅客圖片/male3-70.jpg"
+                    src="/images/data/旅客圖片/male4-4.jpg"
                     className="card-img-top "
                     alt="..."
                   />
                 </div>
                 <div className="col-lg-8 col-md-12 d-flex justify-content-start align-items-center text-left coustomer-name">
                   <div className="card-body">
-                    <h5 className="card-title">Sara</h5>
+                    <h5 className="card-title">CJO</h5>
                     <i className="fas fa-star mt-2 small-star"></i>
                     <i className="fas fa-star small-star"></i>
                     <i className="fas fa-star small-star"></i>
@@ -59,9 +59,7 @@ function FirstCard({ JourneyGuideInfo }) {
                   </div>
                 </div>
                 <div className="col-12">
-                  <p className="card-text text-left">
-                    導遊有夠帥，專業解說，貼心服務 ，有機會會再次購買服務。
-                  </p>
+                  <p className="card-text text-left"> 謝謝導遊帶我們體驗。</p>
                 </div>
               </div>
             </div>

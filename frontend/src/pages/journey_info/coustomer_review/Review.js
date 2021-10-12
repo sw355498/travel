@@ -29,7 +29,7 @@ const Review = [
     message: '好玩',
     guestImg: 'woman1-70.jpg',
     reviewImg: '評價圖3.jpg',
-    guideImg: '導遊高清大圖.jpg',
+    guideImg: '新社導遊1.jpg',
     guidemessage: '不完美最完美',
   },
 ]
