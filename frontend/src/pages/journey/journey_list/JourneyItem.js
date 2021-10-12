@@ -93,7 +93,7 @@ function JourneyItem(props) {
           <img src={`/images/data/行程照片/${product.journey_img}`} alt="" />
         </div>
         <div className="col-md-5 flex-md-column  mt-md-4 mb-3">
-          <div className="col-md-12 d-flex flex-column justify-content-md-between journey-info">
+          <div className="col-md-12 d-flex flex-column justify-content-md-between journey-infocss">
             <div className="col-md-12 order-0">
               <div className="d-flex justify-content-between mt-3 mt-md-0">
                 <div className="title text-left  ">{product.name}</div>
