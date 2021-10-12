@@ -34,7 +34,7 @@ function ExcellentGuideCard(props) {
             <div className="col-lg-7 col-md-12 justify-content-between">
               <div className="card-body">
                 <h5 className="card-title text-center mt-xxl-2">
-                  {value.intro_title}
+                  {`${value.name}${value.intro_title}`}
                 </h5>
                 <p className="card-text text-center">{value.intro}</p>
                 <Link to={`GuildInfo/${value.id}`} className="btn">
