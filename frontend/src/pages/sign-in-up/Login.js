@@ -121,7 +121,7 @@ const Login = (props) => {
                   <div className="form-group">
                     <div>
                       {' '}
-                      <label for="email">Email</label>
+                      <label for="email">帳號</label>
                     </div>
 
                     <input

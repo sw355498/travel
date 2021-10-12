@@ -205,7 +205,7 @@ const Register = (props) => {
                   <div className="form-group">
                     {/* <label for="email">Email</label> */}
                     <GuildInput
-                      label="Email"
+                      label="帳號"
                       type="email"
                       className="form-control"
                       id="email"
