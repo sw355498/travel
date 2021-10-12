@@ -113,8 +113,6 @@ const Register = (props) => {
   // 整個表單有任何變動(ex.某個欄位有輸入)
   // 使用者正在改有錯誤的欄位，清除某個欄位的錯誤訊息
   const handleFormChange = (e) => {
-    console.log('更新欄位: ', e.target.name)
-
     // 該欄位的錯誤訊息清空
     const updatedFieldErrors = {
       ...fieldErrors,
@@ -159,11 +157,9 @@ const Register = (props) => {
     // 送出註冊資料到後端
     try {
       let response = await axios.post(`${API_URL}/register`, fields)
-      console.log('00', response)
       handleShow()
     } catch (e) {
       setFeedBack(e.response.data.message)
-      console.log(e.response.data)
     }
   }
 

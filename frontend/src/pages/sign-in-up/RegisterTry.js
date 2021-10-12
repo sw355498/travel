@@ -33,8 +33,6 @@ const Register = () => {
         password,
         checkPassword,
       })
-      console.log(response)
-      // alert('註冊成功！')
       handleShow()
     } catch (e) {
       console.error(e.response)

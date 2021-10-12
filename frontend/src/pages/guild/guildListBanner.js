@@ -1,11 +1,4 @@
-import React, { useEffect, useState } from 'react'
-// import guildListBanner1 from '/images/data/導遊banner/太巴塱導遊banner.jpg'
-// import guildListBanner2 from '/images/data/導遊banner/奇美導遊banner.png'
-// import guildListBanner3 from '/images/data/導遊banner/撒固兒導遊banner.jpg'
-// import guildListBanner4 from '/images/data/導遊banner/水璉導遊banner.png'
-// import guildListBanner5 from '/images/data/導遊banner/水璉導遊banner3.png'
-
-import axios from 'axios'
+import React from 'react'
 
 function GuildListBanner() {
   // const [banner, setBanner] = useState(null)

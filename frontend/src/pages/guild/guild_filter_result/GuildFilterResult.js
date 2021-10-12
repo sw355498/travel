@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import GuildFilterBar from '../guild_filter_bar/GuildFilterBar'
 import GuildList from '../guild_list/guildList'
 import axios from 'axios'
-import qs from 'qs'
 import GuildListPage from '../guildListPage'
-import { API_URL } from '../../../config'
 
 function GuildFilterResult({ tribes, pageNum }) {
   const [displayGuilds, setDisplayGuilds] = useState(null)
@@ -20,7 +18,6 @@ function GuildFilterResult({ tribes, pageNum }) {
       let res = await axios.get(`http://localhost:3001/Guild`)
       let data = res.data
       setDisplayGuilds(data)
-      console.log('data', data)
     }
     getGuilds()
   }, [])
@@ -67,9 +64,6 @@ function GuildFilterResult({ tribes, pageNum }) {
       ?.filter((guild) => stars.some((star) => guild.rating.includes(star)))
       ?.filter((guild) => lans.some((lan) => guild.language.includes(lan)))
   )
-
-  // console.log(displayGuilds)
-  // console.log('!', filteredPosts)
 
   const slicedPosts = useMemo(
     () => filteredPosts?.slice(indexOfFirstPost, indexOfLastPost),

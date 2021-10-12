@@ -61,7 +61,6 @@ const Login = (props) => {
         { email, password },
         { withCredentials: true }
       )
-      console.log(result)
       setMember(result.data)
       handleShow()
 

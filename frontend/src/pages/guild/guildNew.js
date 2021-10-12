@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Rating from '../../component/Rating'
-import GuildInfo from '../GuildInfo'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 function GuildNew() {
@@ -13,7 +12,6 @@ function GuildNew() {
         withCredentials: true,
       })
       let data = res.data.slice(4, 7)
-      console.log(data)
       setNewGuilds(data)
     }
     getNewGuilds()

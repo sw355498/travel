@@ -44,10 +44,8 @@ const API = {
           withCredentials: true,
         }
       )
-      console.log('收藏成功')
       alert('收藏成功')
     } catch (e) {
-      console.error(e.response)
       alert(e.response.data.message)
     }
   },

@@ -13,11 +13,6 @@ const GuildJourney = (props) => {
     setGuildJourneyItem(props.guildJourney)
   }, [props.guildData, props.guildJourney])
 
-  // console.log('4', tribeForJourney)
-  // console.log('5', guildJourneyItem)
-
-  // console.log('6', setTribeForJourney)
-
   const guildJourneySelect = useMemo(
     () =>
       guildJourneyItem.filter(

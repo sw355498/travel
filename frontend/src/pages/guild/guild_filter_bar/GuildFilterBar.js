@@ -20,9 +20,6 @@ function GuildFilterBar(props) {
     slicedPosts,
   } = props
 
-  console.log(`###### tags: ${tags}`)
-  console.log(`###### tagTypes: ${tagTypes}`)
-
   //篩選後顯示頁面長度
 
   // const newArray = new Array(

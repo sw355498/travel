@@ -166,11 +166,11 @@ function CartList(props) {
         </Link>
       </div>
       <Link
-          to="/Order_form/1"
-          className="text-title-size24 shoppingcart-continue d-lg-none d-flex justify-content-end"
-        >
-          <span>歷史紀錄 ＞</span>
-        </Link>
+        to="/Order_form/1"
+        className="text-title-size24 shoppingcart-continue d-lg-none d-flex justify-content-end"
+      >
+        <span>歷史紀錄 ＞</span>
+      </Link>
       <div className="td-mt-25 shoppingcart-bg">
         <div className="text-title-size28 shoppingcart-title text-center td-pt-25 d-lg-none d-block">
           購物車
@@ -309,12 +309,6 @@ function CartList(props) {
           </div>
         </div>
       </div>
-      {/* 繼續購物連結 */}
-      {/* <div className="d-flex justify-content-end td-mt-25">
-        <Link to="/journey" className="text-title-size24 shoppingcart-continue">
-          <span>繼續購物 ＞</span>
-        </Link>
-      </div> */}
     </>
   )
   // 以資料載入的指示狀態來切換要出現的畫面

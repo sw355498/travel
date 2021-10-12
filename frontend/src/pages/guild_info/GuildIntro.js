@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import GuildIntroImg1 from '../../data/水璉部落/導遊/導遊3.jpg'
-// import GuildIntroImg2 from '../../data/水璉部落/導遊/導遊4.jpg'
-// import GuildIntroImg3 from '../../data/水璉部落/導遊/導遊5.jpg'
-// import GuildIntroImg4 from '../../data/水璉部落/導遊/導遊6.jpg'
 
 function GuildIntro(props) {
   const [guildData, setGuildData] = useState(null)
@@ -14,7 +10,6 @@ function GuildIntro(props) {
       let res = await axios.get(`http://localhost:3001/GuildInfo/${id}`)
       let data = res.data
       setGuildData(data)
-      // console.log(data)
     }
     getGuildData(id)
   }, [id])
