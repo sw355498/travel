@@ -64,7 +64,20 @@ button:hover,
   transition: unset;
   opacity: 1;
 }
-
+.td-btn-medium-w {
+  width: 85px;
+  height: 40px;
+  padding: 10px 20px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 50px;
+  border: none;
+  color: #ff9c00;
+  border: 1px solid #ff9c00;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+}
 @media only screen and (max-width: 1400px) {
   .filter .form-check {
     margin-left: 25px;
@@ -74,19 +87,21 @@ button:hover,
 }
 
 @media only screen and (max-width: 992px) {
-  .journey-info .title {
+  .journey-infocss .title {
     font-weight: bold;
     font-size: 1.2rem !important;
     line-height: 2rem;
     color: #000000;
     margin-top: 0.3rem;
   }
-  .journey-info .tag {
+  .journey-infocss .tag {
     font-weight: bold;
     font-size: 1rem;
     line-height: 1.313rem;
     color: #072b7b;
     margin-top: 0.6rem;
+    width: 130px;
+    text-align: center;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -96,6 +111,14 @@ button:hover,
   .filter {
     display: none;
   }
+
+  .journey-price-content .td-btn-medium-w {
+    margin-right: 18px;
+  }
+  .fa-heart-hide {
+    font-size: 2.188rem;
+    color: pink;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -103,22 +126,14 @@ button:hover,
     text-align: left !important;
   }
 }
-.link-right {
-  width: 35%;
-  height: 1px;
-  border-top: solid #dddddd 1px;
-  right: 0;
-  top: 50%;
-}
-
-.journey-info .title {
+.journey-infocss .title {
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 2rem;
   color: #000000;
 }
 
-.journey-info .tag {
+.journey-infocss .tag {
   font-weight: bold;
   font-size: 1.25rem;
   line-height: 1.313rem;
@@ -126,8 +141,7 @@ button:hover,
   color: #072b7b;
   margin-top: 0.6rem;
 }
-.journey-info .content {
-  margin-top: 10%;
+.journey-infocss .content {
   font-weight: bold;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -136,30 +150,7 @@ button:hover,
 }
 
 @media only screen and (min-width: 1400px) {
-  .filter-result {
-    max-height: 319.98px;
-    max-height: 280.91;
-  }
-
-  .filter-result img {
-    max-height: 319.98px;
-    max-height: 280.91;
-  }
-  .journey-price {
-    margin-top: 30px !important;
-  }
-
-  .fa-heart-hide {
-    margin-top: 30px !important;
-  }
-  .reviewStar {
-    margin-top: 90px !important;
-  }
-  .reviewStar-point {
-    font-size: 1.3rem;
-  }
-  .journey-info .content {
-    margin-top: 10%;
+  .journey-infocss .content {
     font-weight: bold;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -169,31 +160,20 @@ button:hover,
 }
 
 @media only screen and (min-width: 768px) {
-  .journey-info .reviewStar-point {
-    width: max-content;
-  }
   .journey-price .journey-price-content {
-    height: 250px;
+    height: 280px;
+    max-height: 100%;
+  }
+
+  .journey-infocss {
+    height: 280px;
     max-height: 100%;
   }
 }
 
-.journey-info .reviewStar {
-  margin-top: 60px;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-  text-align: center;
-  color: #000000;
-  padding: 0%;
-}
-.reviewStar-point {
-  margin-top: 13px;
-}
-
-.reviewStar .fa-heart-show {
+.journey-infocss .fa-heart-show {
   font-size: 2.188rem;
   color: pink;
-  margin-top: 0.625rem;
 }
 
 .filter-result {
@@ -215,7 +195,6 @@ button:hover,
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.625rem;
-  /* identical to box height, or 130% */
   color: #000000;
 }
 
@@ -245,21 +224,14 @@ button:hover,
     align-items: center;
     text-decoration: none;
   }
-  .journey-price .td-btn-medium-o {
-    margin-top: 10px;
-  }
-  .journey-info .reviewStar a {
-    margin: auto;
-    font-size: 1.625rem;
-  }
-  .reviewStar .fa-heart-show {
+
+  .journey-infocss .fa-heart-show {
     display: none;
   }
 }
-.journey-price i {
+.journey-price-content i {
   font-size: 2.188rem;
   color: pink;
-  margin-top: 10px;
 }
 
 .filter-result img {
@@ -320,36 +292,6 @@ button:hover,
 
 .show-scroll {
   bottom: 5rem;
-}
-
-/* scrollbar  */
-
-::-webkit-scrollbar {
-  width: 0.6rem;
-  background: #636161;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #a5a5a8;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: #ff9c00;
-  opacity: 0.6;
-}
-
-.td-btn-medium-w {
-  width: 85px;
-  height: 40px;
-  padding: 10px 20px;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 50px;
-  border: none;
-  color: #ff9c00;
-  border: 1px solid #ff9c00;
-  text-decoration: none;
-  text-align: center;
-  align-items: center;
 }
 
 .journey-reservationarea-container .card {
