@@ -88,7 +88,7 @@ function GoogleMapApi(props) {
                 >
                   <p className="text-center">
                     {' '}
-                    <i className="fas fa-route text-center"> </i> 路線
+                    <i className="fas fa-route"></i> 路線
                   </p>
                 </a>
               </div>
