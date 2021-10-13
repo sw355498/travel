@@ -79,7 +79,6 @@ function GoogleMapApi(props) {
           >
             <div style={divStyle}>
               <div className="d-flex justify-content-between align-content-center ">
-                {' '}
                 <h1 className="td-mb-15 fw-bold me-3">{findResult.location}</h1>
                 <a
                   href={`https://www.google.com/maps/dir/${findResult.address}`}
@@ -87,8 +86,7 @@ function GoogleMapApi(props) {
                   rel="noreferrer"
                 >
                   <p className="text-center">
-                    {' '}
-                    <i className="fas fa-route text-center"> </i> 路線
+                    <i className="fas fa-route"> </i> 路線
                   </p>
                 </a>
               </div>
