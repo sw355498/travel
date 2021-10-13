@@ -153,14 +153,15 @@
   width: 15px;
   height: 15px;
   border: 1px solid var(--blue-color);
-  border-radius: 50%;
+  border-radius: 5px;
   visibility: visible;
 }
 .tribe-check-input:checked::after {
   content: '';
+  /* content: '✔'; */
   width: 15px;
   height: 15px;
-  border-radius: 50%;
+  border-radius: 5px;
   visibility: visible;
   background: var(--blue-color);
 }

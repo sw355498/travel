@@ -26,7 +26,6 @@ function GuildInfo(props) {
       })
       let data = res.data
       setGuildData(data)
-      // console.log(data)
     }
     getGuildData(id)
   }, [id])

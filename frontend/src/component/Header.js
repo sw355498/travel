@@ -1,5 +1,5 @@
 //元件,模組引入
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { API_URL } from '../utils/config'
 import axios from 'axios'

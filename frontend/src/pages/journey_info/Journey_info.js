@@ -30,7 +30,6 @@ function Journey_info(props) {
   useEffect(() => {
     fetchMapApi()
   }, [fetchMapApi])
-  console.log('last', MapApi)
 
   //轉換成貨幣形式
   const digitsRE = /(\d{3})(?=\d)/g

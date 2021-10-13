@@ -5,7 +5,6 @@ import qs from 'qs'
 function HomeGallryArea(props) {
   const history = useHistory()
   const { tribes } = props
-  console.log(tribes)
   const handleClick = (e) => {
     const value = tribes[1].tribe
     const query = qs.stringify({ tribes: value })

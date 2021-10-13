@@ -53,9 +53,7 @@ function JourneyItem(props) {
           withCredentials: true,
         }
       )
-      console.log('收藏成功')
     } catch (e) {
-      console.error(e.response.data.message)
       handleShow()
     }
   }

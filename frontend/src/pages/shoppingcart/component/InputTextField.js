@@ -13,7 +13,6 @@ function InputTextField({
   maxLength,
   pattern,
 }) {
-  // email, password...etc
   const fieldType = type ? type : 'text'
   return (
     <>

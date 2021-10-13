@@ -16,7 +16,6 @@ function InputTextField({
 }) {
   // email, password...etc
   const fieldType = type ? type : 'text'
-  console.log('error', error)
   return (
     <>
       <div className="form-group">
