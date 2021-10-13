@@ -79,7 +79,6 @@ function GoogleMapApi(props) {
           >
             <div style={divStyle}>
               <div className="d-flex justify-content-between align-content-center ">
-                {' '}
                 <h1 className="td-mb-15 fw-bold me-3">{findResult.location}</h1>
                 <a
                   href={`https://www.google.com/maps/dir/${findResult.address}`}
